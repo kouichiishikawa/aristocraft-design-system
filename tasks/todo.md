@@ -45,4 +45,4 @@
 - [x] @aristocraft/ui: Button、tsdown、Storybook 10 + vitest + a11y、GitHub Pages 公開
 - [x] Next.js 16 / Astro 7 サンプルでビルドと実画面を確認、ADR 0001〜0004
 - [ ] Chromatic: 本人が chromatic.com でプロジェクト作成 → `gh secret set CHROMATIC_PROJECT_TOKEN`
-- [ ] PF-05: トークン 1 件の変更が tokens → CSS → Storybook → Figma に伝わる往復を Button で検証
+- [x] PF-05: トークン 1 件の変更が tokens → CSS → Storybook → Figma に伝わる往復を Button で検証（PR #1、docs/pf-05-roundtrip.md、2026-09-29）
