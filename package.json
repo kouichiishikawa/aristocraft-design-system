@@ -13,8 +13,9 @@
   "scripts": {
     "build": "npm run build --ws --if-present",
     "test": "npm run test --ws --if-present",
-    "check:color": "cd docs/reference && python3 semantic_color_build.py",
-    "tokens": "npm run build -w @aristocraft/tokens"
+    "check:color": "cd docs/reference && python3 semantic_color_check.py",
+    "tokens": "npm run build -w @aristocraft/tokens",
+    "gen:color": "cd docs/reference && python3 semantic_color_build.py"
   },
   "license": "MIT",
   "allowScripts": {
