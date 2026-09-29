@@ -20,7 +20,9 @@ export default function Home() {
         <Button size="lg">Large</Button>
         <Button disabled>Disabled</Button>
       </div>
-      <ThemeToggle />
+      <div className="row">
+        <ThemeToggle />
+      </div>
     </main>
   );
 }

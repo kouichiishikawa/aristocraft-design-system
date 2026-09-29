@@ -39,3 +39,10 @@
 - [x] 検証: 496 変数・重複なし・alias が両モードで解決（figma/import.js の verify）
 - [x] 手順書 docs/pf-10-figma.md（正本へ戻す手順と例外）
 - [ ] 主要部品の variant / 状態 / レスポンシブ設計（PF-04 の部品ライブラリ決定後）
+
+## PF-04 技術構成（2026-09-29 完了）
+- [x] モノレポ化（packages/tokens・ui、examples/next・astro）、接頭辞 ac
+- [x] @aristocraft/ui: Button、tsdown、Storybook 10 + vitest + a11y、GitHub Pages 公開
+- [x] Next.js 16 / Astro 7 サンプルでビルドと実画面を確認、ADR 0001〜0004
+- [ ] Chromatic: 本人が chromatic.com でプロジェクト作成 → `gh secret set CHROMATIC_PROJECT_TOKEN`
+- [ ] PF-05: トークン 1 件の変更が tokens → CSS → Storybook → Figma に伝わる往復を Button で検証

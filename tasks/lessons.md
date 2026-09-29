@@ -31,3 +31,19 @@
 **Rule**: データはスクリプトに埋め込み、50k を超えるコレクションは分割する（figma/stage.js）。テキストスタイルの変数束縛は手動
 **Verification**: `node figma/stage.js <stage> [n/m]` の出力サイズを確認してから貼る
 **Applies to**: all projects
+
+### [2026-09-29] [code] 生成ファイルのヘッダーコメントに `**/*` を書くと CSS コメントが閉じる
+
+**Mistake**: `/** … Edit tokens/**/*.json … */` の `*/` でコメントが終わり、Lightning CSS の minify が失敗した
+**Root cause**: glob の `**/*` に `*/` が含まれる
+**Rule**: CSS / JS のブロックコメントに glob を書かない。書くなら `tokens/ の JSON` のように言い換える
+**Verification**: Storybook / Vite のビルドが通ること
+**Applies to**: all projects
+
+### [2026-09-29] [tooling] 2026-09 時点の相性: Storybook 10.6 は Vitest 4 まで、Base UI は @base-ui/react、npm 11 は postinstall を止める
+
+**Mistake**: Vitest 5 を入れて ERESOLVE、`@base-ui-components/react`（旧名）を使いかけた、esbuild の postinstall が承認待ちで止まった
+**Root cause**: 最新版同士でも peer 範囲が追いついていない。npm 11 の allow-scripts 既定
+**Rule**: `npm view <pkg> peerDependencies` で範囲を見てから版を決める。`npm approve-scripts` の一覧を確認する。tsdown で CSS を扱うには `@tsdown/css`、`'use client'` は banner で付ける
+**Verification**: `npm install` が警告なしで終わり、`npm test` が通ること
+**Applies to**: all projects

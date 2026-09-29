@@ -21,30 +21,24 @@
 - トークン変更 → 生成 → Figma 反映 / 差分確認 → 実装 / Storybook → CI の手順を再現できる
 - AI が既存部品と定義済みトークンで代表セクションを構築でき、型・基本 a11y 検査に合格する
 
-## トークンのビルド（PF-09）
+## リポジトリ構成（npm workspaces）
+
+| ワークスペース | 内容 |
+|---|---|
+| `packages/tokens` | `@aristocraft/tokens`。DTCG の正本 `tokens/` と生成物 `dist/`（CSS 変数 `--ac-*`、TS、JSON、Figma 用 JSON） |
+| `packages/ui` | `@aristocraft/ui`。React 19 + Base UI + CSS Modules の部品。Storybook 10（story = テスト + a11y） |
+| `examples/next` | Next.js 16 の薄いサンプル（サイト側の仮決定） |
+| `examples/astro` | Astro 7 の薄いサンプル（比較用） |
 
 ```bash
 npm install
-npm test        # tokens/ の検証 → dist/ 生成 → dist/ の検査
-npm run build   # dist/ の再生成だけ
+npx playwright install chromium          # story テスト用（初回のみ）
+npm test                                 # tokens 検証・生成 → ui 型検査・ビルド・story テスト → Next / Astro ビルド
+npm run storybook -w @aristocraft/ui     # Storybook をローカルで
+npm run tokens                           # tokens の dist/ だけ再生成
 ```
 
-- 正本は `tokens/`（DTCG）。`dist/` は生成物で手編集しない（CI が差分で検出）
-- 出力: `dist/css/tokens.css`（CSS 変数、light / dark）、`dist/ts/tokens.ts`、`dist/json/tokens.json`、`dist/figma/variables.json`
-- 設計と決定事項: `docs/pf-09-pipeline.md`
-
-## Figma への投入（PF-10）
-
-```bash
-node figma/stage.js primitives 1/2   # 出力を Figma MCP の use_figma に貼る（以下同じ順で）
-node figma/stage.js primitives 2/2
-node figma/stage.js semantic
-node figma/stage.js color 1/2
-node figma/stage.js color 2/2
-node figma/stage.js text
-node figma/stage.js effects
-node figma/stage.js verify
-```
-
-- Figma ファイル: https://www.figma.com/design/DZh0CenABaZxVYKjgisAGA/Aristocraft-Design-System
-- 手順・対応表・例外: `docs/pf-10-figma.md`
+- 正本は `packages/tokens/tokens/`。`dist/` は生成物で手編集しない（CI が差分で検出）
+- Storybook: https://kouichiishikawa.github.io/aristocraft-design-system/
+- Figma: https://www.figma.com/design/DZh0CenABaZxVYKjgisAGA/Aristocraft-Design-System （投入手順は `docs/pf-10-figma.md`、`node packages/tokens/figma/stage.js <stage>`）
+- 決定の記録: `docs/adr/`、各タスクの報告: `docs/pf-*.md`
