@@ -746,7 +746,7 @@ export const color = {
           "subtle": "#cee1fc",
           "default": "#adccfa",
           "bold": {
-            "DEFAULT": "#1c55e0",
+            "DEFAULT": "#316eee",
             "hovered": "#1c55e0",
             "pressed": "#1b44b9"
           },

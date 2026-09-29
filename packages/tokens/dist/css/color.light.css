@@ -96,7 +96,7 @@
   --ac-color-background-brand-subtlest: var(--ac-color-blue-50); /** ほのかな色の面 */
   --ac-color-background-brand-subtle: var(--ac-color-blue-100); /** 薄いタグ・通知の地（文字は .bold） */
   --ac-color-background-brand-default: var(--ac-color-blue-200); /** 色つきの面（文字は text.default） */
-  --ac-color-background-brand-bold: var(--ac-color-blue-700); /** 塗り（白文字）。2026-09-29 PF-05 の往復検証で 600 → 700 に変更 */
+  --ac-color-background-brand-bold: var(--ac-color-blue-600); /** 塗り（白文字。amber / lime は黒文字） */
   --ac-color-background-brand-bold-hovered: var(--ac-color-blue-700); /** 1 段濃く */
   --ac-color-background-brand-bold-pressed: var(--ac-color-blue-800); /** 2 段濃く */
   --ac-color-background-brand-boldest: var(--ac-color-blue-800); /** 最も強い塗り（light 白文字、dark 黒文字） */

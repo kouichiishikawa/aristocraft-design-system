@@ -5478,7 +5478,7 @@
         {
           "name": "color/background/brand/bold",
           "type": "COLOR",
-          "description": "塗り（白文字）。2026-09-29 PF-05 の往復検証で 600 → 700 に変更",
+          "description": "塗り（白文字。amber / lime は黒文字）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -5486,7 +5486,7 @@
           "codeSyntax": "var(--ac-color-background-brand-bold)",
           "values": {
             "light": {
-              "alias": "color/blue/700"
+              "alias": "color/blue/600"
             },
             "dark": {
               "alias": "color/blue/600"

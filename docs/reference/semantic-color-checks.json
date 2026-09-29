@@ -183,8 +183,8 @@
   "mode": "light",
   "label": "brand.bold + static.white",
   "fg": "neutral.0",
-  "bg": "blue.700",
-  "ratio": 6.13,
+  "bg": "blue.600",
+  "ratio": 4.57,
   "need": 4.5,
   "ok": true
  },

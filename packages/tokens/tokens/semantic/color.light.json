@@ -690,8 +690,8 @@
         "bold": {
           "$root": {
             "$type": "color",
-            "$value": "{color.blue.700}",
-            "$description": "塗り（白文字）。2026-09-29 PF-05 の往復検証で 600 → 700 に変更"
+            "$value": "{color.blue.600}",
+            "$description": "塗り（白文字。amber / lime は黒文字）"
           },
           "hovered": {
             "$type": "color",
