@@ -32,3 +32,10 @@
 - [x] 工程4: Figma 向け JSON（collection / mode 形式、color→COLOR、number/dimension→FLOAT、string→STRING）
 - [x] 工程5: 検証（参照切れ・重複・型、コントラスト 276 件）を npm test に束ねる
 - [x] 工程6: git init → GitHub public repo → Actions（build → test → dist 差分なし）。docs/pf-09-pipeline.md、Notion 完了報告
+
+## PF-10 Figma Variables とコンポーネント設計（2026-09-29 着手）
+- [x] Variables 投入: primitives 265 / semantic 36 / color 195（light・dark）を use_figma で投入、alias・scopes・codeSyntax 付き
+- [x] Text Styles 24、Effect Styles 4（影の色は color 変数に束縛、light / dark 追従）
+- [x] 検証: 496 変数・重複なし・alias が両モードで解決（figma/import.js の verify）
+- [x] 手順書 docs/pf-10-figma.md（正本へ戻す手順と例外）
+- [ ] 主要部品の variant / 状態 / レスポンシブ設計（PF-04 の部品ライブラリ決定後）

@@ -32,3 +32,19 @@ npm run build   # dist/ の再生成だけ
 - 正本は `tokens/`（DTCG）。`dist/` は生成物で手編集しない（CI が差分で検出）
 - 出力: `dist/css/tokens.css`（CSS 変数、light / dark）、`dist/ts/tokens.ts`、`dist/json/tokens.json`、`dist/figma/variables.json`
 - 設計と決定事項: `docs/pf-09-pipeline.md`
+
+## Figma への投入（PF-10）
+
+```bash
+node figma/stage.js primitives 1/2   # 出力を Figma MCP の use_figma に貼る（以下同じ順で）
+node figma/stage.js primitives 2/2
+node figma/stage.js semantic
+node figma/stage.js color 1/2
+node figma/stage.js color 2/2
+node figma/stage.js text
+node figma/stage.js effects
+node figma/stage.js verify
+```
+
+- Figma ファイル: https://www.figma.com/design/DZh0CenABaZxVYKjgisAGA/Aristocraft-Design-System
+- 手順・対応表・例外: `docs/pf-10-figma.md`

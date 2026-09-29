@@ -23,3 +23,11 @@
 **Rule**: DTCG の `{value, unit}` は自前の transform（`unit/css`）で `${value}${unit}` にする。組み込み transform は出力を必ず目視する
 **Verification**: dist.test.js の letterSpacing `-0.02em` / container.full `100%` の検査
 **Applies to**: all projects
+
+### [2026-09-29] [tooling] Figma MCP use_figma の制約: fetch なし・code 50k 文字上限・TextStyle.setBoundVariable 不可
+
+**Mistake**: GitHub raw から JSON を fetch する前提で投入スクリプトを書いた（ReferenceError: fetch is not defined）
+**Root cause**: use_figma のプラグイン sandbox にはネットワーク API がない。code は 50,000 文字まで
+**Rule**: データはスクリプトに埋め込み、50k を超えるコレクションは分割する（figma/stage.js）。テキストスタイルの変数束縛は手動
+**Verification**: `node figma/stage.js <stage> [n/m]` の出力サイズを確認してから貼る
+**Applies to**: all projects
