@@ -1,0 +1,28 @@
+{
+  "$comment": "Icon manifest: the curated set that exists in both @aristocraft/ui and the Figma library. Add a name here, rebuild, re-run figma/icons-stage.js.",
+  "lucide": {
+    "package": "lucide-react",
+    "version": "1.48.0",
+    "license": "ISC",
+    "groups": {
+      "navigation": ["menu", "x", "chevron-down", "chevron-up", "chevron-left", "chevron-right", "chevrons-up-down", "arrow-left", "arrow-right", "arrow-up-right", "external-link", "house", "ellipsis"],
+      "action": ["search", "plus", "minus", "check", "copy", "link", "download", "upload", "share-2", "refresh-cw", "funnel", "settings", "maximize-2", "minimize-2", "eye", "eye-off"],
+      "status": ["info", "circle-check", "circle-alert", "triangle-alert", "circle-x", "loader-circle"],
+      "communication": ["mail", "send", "message-circle", "bot", "sparkles", "quote"],
+      "content": ["calendar", "clock", "map-pin", "tag", "file-text", "image", "layout-grid", "list", "layers", "palette", "code", "briefcase", "user", "users", "heart", "star"],
+      "media": ["play", "pause", "skip-back", "skip-forward", "music", "headphones", "mic", "volume-2", "volume-x"],
+      "system": ["sun", "moon", "monitor", "globe", "languages"]
+    }
+  },
+  "brand": {
+    "package": "simple-icons",
+    "version": "16.33.0",
+    "license": "CC0-1.0",
+    "icons": ["github", "x", "instagram", "youtube", "spotify", "soundcloud", "applemusic", "bandcamp", "note"]
+  },
+  "animated": {
+    "source": "https://animateicons.in/icons/lucide",
+    "$comment": "Animated variants are adopted one by one when a component needs motion; list them here with the reason.",
+    "icons": []
+  }
+}

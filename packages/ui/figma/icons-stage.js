@@ -1,0 +1,98 @@
+// Prints the `use_figma` script that creates the icon library in Figma from icons.json:
+//   node figma/icons-stage.js icons 1/2   → icon/* components (Lucide, strokes bound to color/icon/default)
+//   node figma/icons-stage.js icons 2/2
+//   node figma/icons-stage.js brand       → brand/* components (Simple Icons, fills bound to color/icon/default)
+//   node figma/icons-stage.js wrapper     → "Icon" component set: size sm/md/lg/xl (bound to dimension/size) + instance swap
+// Idempotent: existing components are matched by name and left in place.
+import fs from 'node:fs';
+import path from 'node:path';
+import { createRequire } from 'node:module';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const require = createRequire(import.meta.url);
+const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'icons.json'), 'utf8'));
+const [stage, partSpec = '1/1'] = process.argv.slice(2);
+const [part, parts] = partSpec.split('/').map(Number);
+
+const lucideSvg = (name) => fs.readFileSync(require.resolve(`lucide-static/icons/${name}.svg`), 'utf8')
+  .replace(/<!--[\s\S]*?-->\s*/g, '').replace(/\s*class="[^"]*"/, '').replace(/\s+/g, ' ').trim();
+const brandSvg = (name) => {
+  const si = require('simple-icons')[`si${name[0].toUpperCase()}${name.slice(1)}`];
+  return { svg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#000" d="${si.path}"/></svg>`, title: si.title, hex: si.hex };
+};
+
+let data;
+if (stage === 'icons') {
+  const names = Object.values(manifest.lucide.groups).flat();
+  const size = Math.ceil(names.length / parts);
+  data = { kind: 'icons', prefix: 'icon', license: `Lucide ${manifest.lucide.version} (ISC)`, items: names.slice((part - 1) * size, part * size).map((n) => ({ name: n, svg: lucideSvg(n) })) };
+} else if (stage === 'brand') {
+  data = { kind: 'icons', prefix: 'brand', license: `Simple Icons ${manifest.brand.version} (CC0)`, items: manifest.brand.icons.map((n) => ({ name: n, ...brandSvg(n) })) };
+} else if (stage === 'wrapper') {
+  data = { kind: 'wrapper', defaultIcon: 'icon/arrow-right', sizes: [['sm', 300, 12], ['md', 400, 16], ['lg', 500, 20], ['xl', 600, 24]] };
+} else { console.error('stage: icons [n/m] | brand | wrapper'); process.exit(1); }
+
+const script = String.raw`
+const data = __DATA__;
+const out = { created: 0, updated: 0, errors: [], ids: [] };
+let page = figma.root.children.find((p) => p.name === 'Icons');
+if (!page) { page = figma.createPage(); page.name = 'Icons'; }
+await figma.setCurrentPageAsync(page);
+const vars = await figma.variables.getLocalVariablesAsync();
+const v = (name) => vars.find((x) => x.name === name);
+const iconColor = v('color/icon/default');
+const comps = new Map(page.findAll((n) => n.type === 'COMPONENT' || n.type === 'COMPONENT_SET').map((n) => [n.name, n]));
+const bindPaint = (paints, variable) => paints.map((p) => (p.type === 'SOLID' ? figma.variables.setBoundVariableForPaint(p, 'color', variable) : p));
+
+if (data.kind === 'icons') {
+  const GAP = 40, COLS = 16;
+  let i = [...comps.keys()].filter((k) => k.startsWith(data.prefix + '/')).length;
+  for (const item of data.items) {
+    const name = data.prefix + '/' + item.name;
+    if (comps.has(name)) { out.updated++; continue; }
+    const frame = figma.createNodeFromSvg(item.svg);
+    const comp = figma.createComponentFromNode(frame);
+    comp.name = name;
+    comp.description = (item.title ? item.title + ' · ' : '') + data.license + (item.hex ? ' · brand #' + item.hex : '');
+    comp.x = (data.prefix === 'brand' ? 900 : 0) + (i % COLS) * GAP; comp.y = Math.floor(i / COLS) * GAP; i++;
+    for (const child of comp.findAll((n) => n.type === 'VECTOR' || n.type === 'BOOLEAN_OPERATION')) {
+      child.constraints = { horizontal: 'SCALE', vertical: 'SCALE' };
+      if (child.strokes.length) child.strokes = bindPaint(child.strokes, iconColor);
+      if (child.fills !== figma.mixed && child.fills.length) child.fills = bindPaint(child.fills, iconColor);
+    }
+    comps.set(name, comp); out.created++; out.ids.push(comp.id);
+  }
+}
+
+if (data.kind === 'wrapper') {
+  if (comps.has('Icon')) { out.errors.push('Icon component set already exists; delete it to rebuild'); return out; }
+  const glyph = comps.get(data.defaultIcon);
+  if (!glyph) { out.errors.push(data.defaultIcon + ' missing: run the icons stage first'); return out; }
+  const variants = [];
+  for (const [label, token, px] of data.sizes) {
+    const c = figma.createComponent();
+    c.name = 'size=' + label;
+    c.resize(px, px);
+    c.setBoundVariable('width', v('dimension/size/' + token));
+    c.setBoundVariable('height', v('dimension/size/' + token));
+    const inst = glyph.createInstance();
+    c.appendChild(inst);
+    inst.x = 0; inst.y = 0; inst.resize(px, px);
+    inst.constraints = { horizontal: 'SCALE', vertical: 'SCALE' };
+    inst.name = 'glyph';
+    variants.push(c);
+  }
+  const set = figma.combineAsVariants(variants, page);
+  set.name = 'Icon';
+  set.description = 'Lucide のアイコン枠。size は dimension/size 300〜600、glyph は icon/* と brand/* をスワップ。コード: <Icon icon={…} size="md" />';
+  set.x = 0; set.y = -200;
+  const iconComps = [...comps.entries()].filter(([k]) => k.startsWith('icon/') || k.startsWith('brand/')).map(([, c]) => c);
+  const prop = set.addComponentProperty('glyph', 'INSTANCE_SWAP', glyph.id, { preferredValues: iconComps.map((c) => ({ type: 'COMPONENT', key: c.key })) });
+  for (const c of variants) { const inst = c.findChild((n) => n.name === 'glyph'); inst.componentPropertyReferences = { mainComponent: prop }; }
+  set.children.forEach((c, idx) => { c.x = idx * 48; c.y = 0; });
+  out.created = set.children.length; out.ids.push(set.id); out.property = prop; out.preferred = iconComps.length;
+}
+return out;`;
+
+process.stdout.write(script.replace('__DATA__', JSON.stringify(data)));

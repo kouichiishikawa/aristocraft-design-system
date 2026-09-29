@@ -58,6 +58,10 @@
 - `use_figma` の sandbox に `fetch` が無いので JSON はコードに埋め込む。コードは 50,000 文字までなので大きいコレクションは分割する
 - Figma REST Variables API は Enterprise 限定、Code Connect は Organization 以上。どちらも使わない前提
 
+## Icons ページ（2026-09-29 追加）
+
+`packages/ui/icons.json` から `packages/ui/figma/icons-stage.js` で生成。`icon/*` 71（Lucide）、`brand/*` 9（Simple Icons）、`Icon` コンポーネントセット（size sm / md / lg / xl を `dimension/size` に束縛、`glyph` は instance swap）。方針は `docs/icons.md`。
+
 ## 残り（PF-10 のもう半分）
 
 主要部品の variant / 状態 / レスポンシブ設計は、PF-04 で部品ライブラリ（React + TS）の構成を決めてから、PF-05 の Button 検証と合わせて進める。

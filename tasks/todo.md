@@ -46,3 +46,9 @@
 - [x] Next.js 16 / Astro 7 サンプルでビルドと実画面を確認、ADR 0001〜0004
 - [ ] Chromatic: 本人が chromatic.com でプロジェクト作成 → `gh secret set CHROMATIC_PROJECT_TOKEN`
 - [x] PF-05: トークン 1 件の変更が tokens → CSS → Storybook → Figma に伝わる往復を Button で検証（PR #1、docs/pf-05-roundtrip.md、2026-09-29）
+
+## アイコン（2026-09-29）
+- [x] 方針: Lucide + animateicons（必要時に個別採用）+ Simple Icons（ブランド）。docs/icons.md
+- [x] @aristocraft/ui: Icon / BrandIcon、icons.json（71 + 9）、Gallery story で存在検証
+- [x] Figma: Icons ページに icon/* 71、brand/* 9、Icon セット（size × glyph swap）
+- [ ] 採用一覧の見直し（本人）: 足りないアイコン・不要なアイコン、ブランドの追加

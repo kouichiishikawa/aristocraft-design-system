@@ -1,0 +1,12 @@
+/* Size from dimension.size tokens; the SVG's width/height attributes are overridden by these. */
+.icon {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  width: var(--ac-dimension-size-400);
+  height: var(--ac-dimension-size-400);
+}
+.icon[data-size='sm'] { width: var(--ac-dimension-size-300); height: var(--ac-dimension-size-300); }
+.icon[data-size='md'] { width: var(--ac-dimension-size-400); height: var(--ac-dimension-size-400); }
+.icon[data-size='lg'] { width: var(--ac-dimension-size-500); height: var(--ac-dimension-size-500); }
+.icon[data-size='xl'] { width: var(--ac-dimension-size-600); height: var(--ac-dimension-size-600); }
