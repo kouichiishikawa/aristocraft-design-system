@@ -69,8 +69,16 @@ test('figma json: aliases resolve, styles and skips are accounted for', () => {
   assert.equal(figma.textStyles.length, 24);
   assert.equal(figma.effectStyles.light.length, 4);
   assert.equal(figma.effectStyles.dark.length, 4);
-  const total = names.size + figma.textStyles.length + figma.effectStyles.light.length + figma.skipped.length;
+  const layerVars = [...names].filter((n) => /^elevation\/shadow\/.*\/layer\d$/.test(n)).length;
+  assert.equal(layerVars, 8, 'shadow layers become themed colour variables');
+  const total = names.size - layerVars + figma.textStyles.length + figma.effectStyles.light.length + figma.skipped.length;
   assert.equal(total, 524, 'every public name is a variable, a style, or an explicit skip');
+  for (const c of figma.collections) for (const v of c.variables) {
+    assert.ok(Array.isArray(v.scopes), `${v.name} scopes`);
+    assert.match(v.codeSyntax, /^var\(--[a-z0-9-]+\)$/, `${v.name} codeSyntax`);
+  }
+  for (const s of figma.textStyles) assert.ok(s.figmaFont.family && s.figmaFont.style, s.name);
+  for (const s of figma.effectStyles.light) for (const e of s.effects) assert.ok(names.has(e.colorVariable), e.colorVariable);
 });
 
 test('typescript module loads and mirrors the css values', async () => {

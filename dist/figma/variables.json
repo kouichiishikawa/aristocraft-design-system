@@ -12,6 +12,12 @@
           "name": "color/neutral/0",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-0)",
           "values": {
             "value": "#FFFFFF"
           }
@@ -20,6 +26,12 @@
           "name": "color/neutral/50",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-50)",
           "values": {
             "value": "#F8F6F4"
           }
@@ -28,6 +40,12 @@
           "name": "color/neutral/100",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-100)",
           "values": {
             "value": "#DEDCD8"
           }
@@ -36,6 +54,12 @@
           "name": "color/neutral/200",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-200)",
           "values": {
             "value": "#C5C2BD"
           }
@@ -44,6 +68,12 @@
           "name": "color/neutral/300",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-300)",
           "values": {
             "value": "#ACA9A2"
           }
@@ -52,6 +82,12 @@
           "name": "color/neutral/400",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-400)",
           "values": {
             "value": "#949089"
           }
@@ -60,6 +96,12 @@
           "name": "color/neutral/500",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-500)",
           "values": {
             "value": "#7C7871"
           }
@@ -68,6 +110,12 @@
           "name": "color/neutral/600",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-600)",
           "values": {
             "value": "#65615A"
           }
@@ -76,6 +124,12 @@
           "name": "color/neutral/700",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-700)",
           "values": {
             "value": "#4F4B45"
           }
@@ -84,6 +138,12 @@
           "name": "color/neutral/800",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-800)",
           "values": {
             "value": "#393631"
           }
@@ -92,6 +152,12 @@
           "name": "color/neutral/900",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-900)",
           "values": {
             "value": "#25221E"
           }
@@ -100,6 +166,12 @@
           "name": "color/neutral/950",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-950)",
           "values": {
             "value": "#12100D"
           }
@@ -108,6 +180,12 @@
           "name": "color/neutral/1000",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-1000)",
           "values": {
             "value": "#000000"
           }
@@ -116,6 +194,12 @@
           "name": "color/neutral/100a",
           "type": "COLOR",
           "description": "neutral.950 （light）α 11.6%。neutral.50 上で neutral.100 と一致（合成 #DDDBD9）",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-100a)",
           "values": {
             "value": "#12100D1E"
           }
@@ -124,6 +208,12 @@
           "name": "color/neutral/200a",
           "type": "COLOR",
           "description": "neutral.950 （light）α 22.9%。neutral.50 上で neutral.200 と一致（合成 #C3C1BF）",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-200a)",
           "values": {
             "value": "#12100D3A"
           }
@@ -132,6 +222,12 @@
           "name": "color/neutral/300a",
           "type": "COLOR",
           "description": "neutral.950 （light）α 34.0%。neutral.50 上で neutral.300 と一致（合成 #AAA8A5）",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-300a)",
           "values": {
             "value": "#12100D57"
           }
@@ -140,6 +236,12 @@
           "name": "color/neutral/400a",
           "type": "COLOR",
           "description": "neutral.950 （light）α 44.7%。neutral.50 上で neutral.400 と一致（合成 #918F8D）",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-400a)",
           "values": {
             "value": "#12100D72"
           }
@@ -148,6 +250,12 @@
           "name": "color/neutral/900a",
           "type": "COLOR",
           "description": "neutral.50 （dark）α 7.8%。neutral.950 上で neutral.900 と一致（合成 #24221F）",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-900a)",
           "values": {
             "value": "#F8F6F414"
           }
@@ -156,6 +264,12 @@
           "name": "color/neutral/800a",
           "type": "COLOR",
           "description": "neutral.50 （dark）α 16.4%。neutral.950 上で neutral.800 と一致（合成 #383633）",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-800a)",
           "values": {
             "value": "#F8F6F42A"
           }
@@ -164,6 +278,12 @@
           "name": "color/neutral/700a",
           "type": "COLOR",
           "description": "neutral.50 （dark）α 25.5%。neutral.950 上で neutral.700 と一致（合成 #4D4B48）",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-700a)",
           "values": {
             "value": "#F8F6F441"
           }
@@ -172,6 +292,12 @@
           "name": "color/neutral/600a",
           "type": "COLOR",
           "description": "neutral.50 （dark）α 34.9%。neutral.950 上で neutral.600 と一致（合成 #62605E）",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-neutral-600a)",
           "values": {
             "value": "#F8F6F459"
           }
@@ -180,6 +306,12 @@
           "name": "color/blue/50",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-blue-50)",
           "values": {
             "value": "#F0F6FE"
           }
@@ -188,6 +320,12 @@
           "name": "color/blue/100",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-blue-100)",
           "values": {
             "value": "#CEE1FC"
           }
@@ -196,6 +334,12 @@
           "name": "color/blue/200",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-blue-200)",
           "values": {
             "value": "#ADCCFA"
           }
@@ -204,6 +348,12 @@
           "name": "color/blue/300",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-blue-300)",
           "values": {
             "value": "#8CB6F9"
           }
@@ -212,6 +362,12 @@
           "name": "color/blue/400",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-blue-400)",
           "values": {
             "value": "#6C9FF8"
           }
@@ -220,6 +376,12 @@
           "name": "color/blue/500",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-blue-500)",
           "values": {
             "value": "#4C87F6"
           }
@@ -228,6 +390,12 @@
           "name": "color/blue/600",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-blue-600)",
           "values": {
             "value": "#316EEE"
           }
@@ -236,6 +404,12 @@
           "name": "color/blue/700",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-blue-700)",
           "values": {
             "value": "#1C55E0"
           }
@@ -244,6 +418,12 @@
           "name": "color/blue/800",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-blue-800)",
           "values": {
             "value": "#1B44B9"
           }
@@ -252,6 +432,12 @@
           "name": "color/blue/900",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-blue-900)",
           "values": {
             "value": "#183594"
           }
@@ -260,6 +446,12 @@
           "name": "color/blue/950",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-blue-950)",
           "values": {
             "value": "#122670"
           }
@@ -268,6 +460,12 @@
           "name": "color/violet/50",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-violet-50)",
           "values": {
             "value": "#F6F3FE"
           }
@@ -276,6 +474,12 @@
           "name": "color/violet/100",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-violet-100)",
           "values": {
             "value": "#E2D9FC"
           }
@@ -284,6 +488,12 @@
           "name": "color/violet/200",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-violet-200)",
           "values": {
             "value": "#CFBFFA"
           }
@@ -292,6 +502,12 @@
           "name": "color/violet/300",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-violet-300)",
           "values": {
             "value": "#BBA5F9"
           }
@@ -300,6 +516,12 @@
           "name": "color/violet/400",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-violet-400)",
           "values": {
             "value": "#A88AF8"
           }
@@ -308,6 +530,12 @@
           "name": "color/violet/500",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-violet-500)",
           "values": {
             "value": "#956DF6"
           }
@@ -316,6 +544,12 @@
           "name": "color/violet/600",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-violet-600)",
           "values": {
             "value": "#834BF4"
           }
@@ -324,6 +558,12 @@
           "name": "color/violet/700",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-violet-700)",
           "values": {
             "value": "#6E3BD5"
           }
@@ -332,6 +572,12 @@
           "name": "color/violet/800",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-violet-800)",
           "values": {
             "value": "#5830B1"
           }
@@ -340,6 +586,12 @@
           "name": "color/violet/900",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-violet-900)",
           "values": {
             "value": "#44268E"
           }
@@ -348,6 +600,12 @@
           "name": "color/violet/950",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-violet-950)",
           "values": {
             "value": "#311C6C"
           }
@@ -356,6 +614,12 @@
           "name": "color/purple/50",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-purple-50)",
           "values": {
             "value": "#F6F4F6"
           }
@@ -364,6 +628,12 @@
           "name": "color/purple/100",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-purple-100)",
           "values": {
             "value": "#E9DAE8"
           }
@@ -372,6 +642,12 @@
           "name": "color/purple/200",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-purple-200)",
           "values": {
             "value": "#E5B9E5"
           }
@@ -380,6 +656,12 @@
           "name": "color/purple/300",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-purple-300)",
           "values": {
             "value": "#E492E8"
           }
@@ -388,6 +670,12 @@
           "name": "color/purple/400",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-purple-400)",
           "values": {
             "value": "#E55DF0"
           }
@@ -396,6 +684,12 @@
           "name": "color/purple/500",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-purple-500)",
           "values": {
             "value": "#D91EEC"
           }
@@ -404,6 +698,12 @@
           "name": "color/purple/600",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-purple-600)",
           "values": {
             "value": "#BD00D2"
           }
@@ -412,6 +712,12 @@
           "name": "color/purple/700",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-purple-700)",
           "values": {
             "value": "#9D11B2"
           }
@@ -420,6 +726,12 @@
           "name": "color/purple/800",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-purple-800)",
           "values": {
             "value": "#7D1F8E"
           }
@@ -428,6 +740,12 @@
           "name": "color/purple/900",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-purple-900)",
           "values": {
             "value": "#5D236B"
           }
@@ -436,6 +754,12 @@
           "name": "color/purple/950",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-purple-950)",
           "values": {
             "value": "#41204B"
           }
@@ -444,6 +768,12 @@
           "name": "color/pink/50",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-pink-50)",
           "values": {
             "value": "#F6F4F5"
           }
@@ -452,6 +782,12 @@
           "name": "color/pink/100",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-pink-100)",
           "values": {
             "value": "#E9DBDF"
           }
@@ -460,6 +796,12 @@
           "name": "color/pink/200",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-pink-200)",
           "values": {
             "value": "#E5BDCA"
           }
@@ -468,6 +810,12 @@
           "name": "color/pink/300",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-pink-300)",
           "values": {
             "value": "#EA99B7"
           }
@@ -476,6 +824,12 @@
           "name": "color/pink/400",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-pink-400)",
           "values": {
             "value": "#F26AA6"
           }
@@ -484,6 +838,12 @@
           "name": "color/pink/500",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-pink-500)",
           "values": {
             "value": "#F41B97"
           }
@@ -492,6 +852,12 @@
           "name": "color/pink/600",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-pink-600)",
           "values": {
             "value": "#D50385"
           }
@@ -500,6 +866,12 @@
           "name": "color/pink/700",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-pink-700)",
           "values": {
             "value": "#B21272"
           }
@@ -508,6 +880,12 @@
           "name": "color/pink/800",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-pink-800)",
           "values": {
             "value": "#8D1E5E"
           }
@@ -516,6 +894,12 @@
           "name": "color/pink/900",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-pink-900)",
           "values": {
             "value": "#6A214A"
           }
@@ -524,6 +908,12 @@
           "name": "color/pink/950",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-pink-950)",
           "values": {
             "value": "#4A1F36"
           }
@@ -532,6 +922,12 @@
           "name": "color/red/50",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-red-50)",
           "values": {
             "value": "#FEF2F0"
           }
@@ -540,6 +936,12 @@
           "name": "color/red/100",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-red-100)",
           "values": {
             "value": "#FCD5CF"
           }
@@ -548,6 +950,12 @@
           "name": "color/red/200",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-red-200)",
           "values": {
             "value": "#FAB6AE"
           }
@@ -556,6 +964,12 @@
           "name": "color/red/300",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-red-300)",
           "values": {
             "value": "#FA958C"
           }
@@ -564,6 +978,12 @@
           "name": "color/red/400",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-red-400)",
           "values": {
             "value": "#F86E69"
           }
@@ -572,6 +992,12 @@
           "name": "color/red/500",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-red-500)",
           "values": {
             "value": "#F53C45"
           }
@@ -580,6 +1006,12 @@
           "name": "color/red/600",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-red-600)",
           "values": {
             "value": "#D92538"
           }
@@ -588,6 +1020,12 @@
           "name": "color/red/700",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-red-700)",
           "values": {
             "value": "#B91D31"
           }
@@ -596,6 +1034,12 @@
           "name": "color/red/800",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-red-800)",
           "values": {
             "value": "#991529"
           }
@@ -604,6 +1048,12 @@
           "name": "color/red/900",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-red-900)",
           "values": {
             "value": "#7A1021"
           }
@@ -612,6 +1062,12 @@
           "name": "color/red/950",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-red-950)",
           "values": {
             "value": "#5D0918"
           }
@@ -620,6 +1076,12 @@
           "name": "color/orange/50",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-orange-50)",
           "values": {
             "value": "#FEF3EA"
           }
@@ -628,6 +1090,12 @@
           "name": "color/orange/100",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-orange-100)",
           "values": {
             "value": "#FDDFC9"
           }
@@ -636,6 +1104,12 @@
           "name": "color/orange/200",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-orange-200)",
           "values": {
             "value": "#FCCAA7"
           }
@@ -644,6 +1118,12 @@
           "name": "color/orange/300",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-orange-300)",
           "values": {
             "value": "#FBB482"
           }
@@ -652,6 +1132,12 @@
           "name": "color/orange/400",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-orange-400)",
           "values": {
             "value": "#F99D5A"
           }
@@ -660,6 +1146,12 @@
           "name": "color/orange/500",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-orange-500)",
           "values": {
             "value": "#F6852B"
           }
@@ -668,6 +1160,12 @@
           "name": "color/orange/600",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-orange-600)",
           "values": {
             "value": "#E27826"
           }
@@ -676,6 +1174,12 @@
           "name": "color/orange/700",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-orange-700)",
           "values": {
             "value": "#AC581A"
           }
@@ -684,6 +1188,12 @@
           "name": "color/orange/800",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-orange-800)",
           "values": {
             "value": "#803E0F"
           }
@@ -692,6 +1202,12 @@
           "name": "color/orange/900",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-orange-900)",
           "values": {
             "value": "#662F0A"
           }
@@ -700,6 +1216,12 @@
           "name": "color/orange/950",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-orange-950)",
           "values": {
             "value": "#4E2205"
           }
@@ -708,6 +1230,12 @@
           "name": "color/amber/50",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-amber-50)",
           "values": {
             "value": "#FEF5DD"
           }
@@ -716,6 +1244,12 @@
           "name": "color/amber/100",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-amber-100)",
           "values": {
             "value": "#FDE8B6"
           }
@@ -724,6 +1258,12 @@
           "name": "color/amber/200",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-amber-200)",
           "values": {
             "value": "#FCDA8D"
           }
@@ -732,6 +1272,12 @@
           "name": "color/amber/300",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-amber-300)",
           "values": {
             "value": "#FBCB5D"
           }
@@ -740,6 +1286,12 @@
           "name": "color/amber/400",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-amber-400)",
           "values": {
             "value": "#F6BE33"
           }
@@ -748,6 +1300,12 @@
           "name": "color/amber/500",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-amber-500)",
           "values": {
             "value": "#CE9D29"
           }
@@ -756,6 +1314,12 @@
           "name": "color/amber/600",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-amber-600)",
           "values": {
             "value": "#A77D20"
           }
@@ -764,6 +1328,12 @@
           "name": "color/amber/700",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-amber-700)",
           "values": {
             "value": "#886418"
           }
@@ -772,6 +1342,12 @@
           "name": "color/amber/800",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-amber-800)",
           "values": {
             "value": "#6B4D0E"
           }
@@ -780,6 +1356,12 @@
           "name": "color/amber/900",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-amber-900)",
           "values": {
             "value": "#553C0A"
           }
@@ -788,6 +1370,12 @@
           "name": "color/amber/950",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-amber-950)",
           "values": {
             "value": "#402C06"
           }
@@ -796,6 +1384,12 @@
           "name": "color/lime/50",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-lime-50)",
           "values": {
             "value": "#F7F7DC"
           }
@@ -804,6 +1398,12 @@
           "name": "color/lime/100",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-lime-100)",
           "values": {
             "value": "#EFEFB9"
           }
@@ -812,6 +1412,12 @@
           "name": "color/lime/200",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-lime-200)",
           "values": {
             "value": "#E7E890"
           }
@@ -820,6 +1426,12 @@
           "name": "color/lime/300",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-lime-300)",
           "values": {
             "value": "#DEE05F"
           }
@@ -828,6 +1440,12 @@
           "name": "color/lime/400",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-lime-400)",
           "values": {
             "value": "#D4D736"
           }
@@ -836,6 +1454,12 @@
           "name": "color/lime/500",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-lime-500)",
           "values": {
             "value": "#ADB22B"
           }
@@ -844,6 +1468,12 @@
           "name": "color/lime/600",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-lime-600)",
           "values": {
             "value": "#888E20"
           }
@@ -852,6 +1482,12 @@
           "name": "color/lime/700",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-lime-700)",
           "values": {
             "value": "#6B7117"
           }
@@ -860,6 +1496,12 @@
           "name": "color/lime/800",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-lime-800)",
           "values": {
             "value": "#52580F"
           }
@@ -868,6 +1510,12 @@
           "name": "color/lime/900",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-lime-900)",
           "values": {
             "value": "#40460A"
           }
@@ -876,6 +1524,12 @@
           "name": "color/lime/950",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-lime-950)",
           "values": {
             "value": "#2E3405"
           }
@@ -884,6 +1538,12 @@
           "name": "color/green/50",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-green-50)",
           "values": {
             "value": "#F3F6F2"
           }
@@ -892,6 +1552,12 @@
           "name": "color/green/100",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-green-100)",
           "values": {
             "value": "#CBEAC1"
           }
@@ -900,6 +1566,12 @@
           "name": "color/green/200",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-green-200)",
           "values": {
             "value": "#9EDE8A"
           }
@@ -908,6 +1580,12 @@
           "name": "color/green/300",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-green-300)",
           "values": {
             "value": "#77CE62"
           }
@@ -916,6 +1594,12 @@
           "name": "color/green/400",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-green-400)",
           "values": {
             "value": "#50BC3B"
           }
@@ -924,6 +1608,12 @@
           "name": "color/green/500",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-green-500)",
           "values": {
             "value": "#29A818"
           }
@@ -932,6 +1622,12 @@
           "name": "color/green/600",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-green-600)",
           "values": {
             "value": "#019304"
           }
@@ -940,6 +1636,12 @@
           "name": "color/green/700",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-green-700)",
           "values": {
             "value": "#107B1A"
           }
@@ -948,6 +1650,12 @@
           "name": "color/green/800",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-green-800)",
           "values": {
             "value": "#1C6323"
           }
@@ -956,6 +1664,12 @@
           "name": "color/green/900",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-green-900)",
           "values": {
             "value": "#1F4C24"
           }
@@ -964,6 +1678,12 @@
           "name": "color/green/950",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-green-950)",
           "values": {
             "value": "#1D3720"
           }
@@ -972,6 +1692,12 @@
           "name": "color/teal/50",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-teal-50)",
           "values": {
             "value": "#E0FDF0"
           }
@@ -980,6 +1706,12 @@
           "name": "color/teal/100",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-teal-100)",
           "values": {
             "value": "#B8F5DC"
           }
@@ -988,6 +1720,12 @@
           "name": "color/teal/200",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-teal-200)",
           "values": {
             "value": "#87EDC8"
           }
@@ -996,6 +1734,12 @@
           "name": "color/teal/300",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-teal-300)",
           "values": {
             "value": "#3CE4B6"
           }
@@ -1004,6 +1748,12 @@
           "name": "color/teal/400",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-teal-400)",
           "values": {
             "value": "#37D3AA"
           }
@@ -1012,6 +1762,12 @@
           "name": "color/teal/500",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-teal-500)",
           "values": {
             "value": "#33C19D"
           }
@@ -1020,6 +1776,12 @@
           "name": "color/teal/600",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-teal-600)",
           "values": {
             "value": "#2DB091"
           }
@@ -1028,6 +1790,12 @@
           "name": "color/teal/700",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-teal-700)",
           "values": {
             "value": "#1F7D68"
           }
@@ -1036,6 +1804,12 @@
           "name": "color/teal/800",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-teal-800)",
           "values": {
             "value": "#126150"
           }
@@ -1044,6 +1818,12 @@
           "name": "color/teal/900",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-teal-900)",
           "values": {
             "value": "#0E4C3F"
           }
@@ -1052,6 +1832,12 @@
           "name": "color/teal/950",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-teal-950)",
           "values": {
             "value": "#07392F"
           }
@@ -1060,6 +1846,12 @@
           "name": "color/cyan/50",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-cyan-50)",
           "values": {
             "value": "#DBFDFD"
           }
@@ -1068,6 +1860,12 @@
           "name": "color/cyan/100",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-cyan-100)",
           "values": {
             "value": "#ADF4F6"
           }
@@ -1076,6 +1874,12 @@
           "name": "color/cyan/200",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-cyan-200)",
           "values": {
             "value": "#71ECF0"
           }
@@ -1084,6 +1888,12 @@
           "name": "color/cyan/300",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-cyan-300)",
           "values": {
             "value": "#3ADFE6"
           }
@@ -1092,6 +1902,12 @@
           "name": "color/cyan/400",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-cyan-400)",
           "values": {
             "value": "#35CDD6"
           }
@@ -1100,6 +1916,12 @@
           "name": "color/cyan/500",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-cyan-500)",
           "values": {
             "value": "#2FBCC5"
           }
@@ -1108,6 +1930,12 @@
           "name": "color/cyan/600",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-cyan-600)",
           "values": {
             "value": "#2EABB4"
           }
@@ -1116,6 +1944,12 @@
           "name": "color/cyan/700",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-cyan-700)",
           "values": {
             "value": "#1D7A82"
           }
@@ -1124,6 +1958,12 @@
           "name": "color/cyan/800",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-cyan-800)",
           "values": {
             "value": "#155E64"
           }
@@ -1132,6 +1972,12 @@
           "name": "color/cyan/900",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-cyan-900)",
           "values": {
             "value": "#0D4A50"
           }
@@ -1140,6 +1986,12 @@
           "name": "color/cyan/950",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-cyan-950)",
           "values": {
             "value": "#09373C"
           }
@@ -1148,6 +2000,12 @@
           "name": "color/sky/50",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-sky-50)",
           "values": {
             "value": "#EAF8FE"
           }
@@ -1156,6 +2014,12 @@
           "name": "color/sky/100",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-sky-100)",
           "values": {
             "value": "#C8ECFD"
           }
@@ -1164,6 +2028,12 @@
           "name": "color/sky/200",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-sky-200)",
           "values": {
             "value": "#A4DFFB"
           }
@@ -1172,6 +2042,12 @@
           "name": "color/sky/300",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-sky-300)",
           "values": {
             "value": "#7DD2FA"
           }
@@ -1180,6 +2056,12 @@
           "name": "color/sky/400",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-sky-400)",
           "values": {
             "value": "#4DC5F9"
           }
@@ -1188,6 +2070,12 @@
           "name": "color/sky/500",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-sky-500)",
           "values": {
             "value": "#2EB5ED"
           }
@@ -1196,6 +2084,12 @@
           "name": "color/sky/600",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-sky-600)",
           "values": {
             "value": "#29A5DA"
           }
@@ -1204,6 +2098,12 @@
           "name": "color/sky/700",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-sky-700)",
           "values": {
             "value": "#1B77A0"
           }
@@ -1212,6 +2112,12 @@
           "name": "color/sky/800",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-sky-800)",
           "values": {
             "value": "#145A7B"
           }
@@ -1220,6 +2126,12 @@
           "name": "color/sky/900",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-sky-900)",
           "values": {
             "value": "#0D4763"
           }
@@ -1228,6 +2140,12 @@
           "name": "color/sky/950",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR",
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--color-sky-950)",
           "values": {
             "value": "#06344B"
           }
@@ -1236,6 +2154,10 @@
           "name": "dimension/space/0",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-0)",
           "values": {
             "value": 0
           }
@@ -1244,6 +2166,10 @@
           "name": "dimension/space/100",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-100)",
           "values": {
             "value": 4
           }
@@ -1252,6 +2178,10 @@
           "name": "dimension/space/150",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-150)",
           "values": {
             "value": 6
           }
@@ -1260,6 +2190,10 @@
           "name": "dimension/space/200",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-200)",
           "values": {
             "value": 8
           }
@@ -1268,6 +2202,10 @@
           "name": "dimension/space/300",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-300)",
           "values": {
             "value": 12
           }
@@ -1276,6 +2214,10 @@
           "name": "dimension/space/400",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-400)",
           "values": {
             "value": 16
           }
@@ -1284,6 +2226,10 @@
           "name": "dimension/space/500",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-500)",
           "values": {
             "value": 20
           }
@@ -1292,6 +2238,10 @@
           "name": "dimension/space/600",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-600)",
           "values": {
             "value": 24
           }
@@ -1300,6 +2250,10 @@
           "name": "dimension/space/800",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-800)",
           "values": {
             "value": 32
           }
@@ -1308,6 +2262,10 @@
           "name": "dimension/space/1000",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-1000)",
           "values": {
             "value": 40
           }
@@ -1316,6 +2274,10 @@
           "name": "dimension/space/1200",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-1200)",
           "values": {
             "value": 48
           }
@@ -1324,6 +2286,10 @@
           "name": "dimension/space/1600",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-1600)",
           "values": {
             "value": 64
           }
@@ -1332,6 +2298,10 @@
           "name": "dimension/space/2000",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-2000)",
           "values": {
             "value": 80
           }
@@ -1340,6 +2310,10 @@
           "name": "dimension/space/2400",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-2400)",
           "values": {
             "value": 96
           }
@@ -1348,6 +2322,10 @@
           "name": "dimension/space/3200",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-3200)",
           "values": {
             "value": 128
           }
@@ -1356,6 +2334,10 @@
           "name": "dimension/space/4000",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-4000)",
           "values": {
             "value": 160
           }
@@ -1364,6 +2346,10 @@
           "name": "dimension/space/4800",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-4800)",
           "values": {
             "value": 192
           }
@@ -1372,6 +2358,10 @@
           "name": "dimension/space/6400",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-6400)",
           "values": {
             "value": 256
           }
@@ -1380,6 +2370,10 @@
           "name": "dimension/space/050",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-050)",
           "values": {
             "value": 2
           }
@@ -1388,6 +2382,10 @@
           "name": "dimension/space/negative/100",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-negative-100)",
           "values": {
             "value": -4
           }
@@ -1396,6 +2394,10 @@
           "name": "dimension/space/negative/150",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-negative-150)",
           "values": {
             "value": -6
           }
@@ -1404,6 +2406,10 @@
           "name": "dimension/space/negative/200",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-negative-200)",
           "values": {
             "value": -8
           }
@@ -1412,6 +2418,10 @@
           "name": "dimension/space/negative/300",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-negative-300)",
           "values": {
             "value": -12
           }
@@ -1420,6 +2430,10 @@
           "name": "dimension/space/negative/400",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-negative-400)",
           "values": {
             "value": -16
           }
@@ -1428,6 +2442,10 @@
           "name": "dimension/space/negative/600",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-negative-600)",
           "values": {
             "value": -24
           }
@@ -1436,6 +2454,10 @@
           "name": "dimension/space/negative/800",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-negative-800)",
           "values": {
             "value": -32
           }
@@ -1444,6 +2466,10 @@
           "name": "dimension/space/negative/050",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--dimension-space-negative-050)",
           "values": {
             "value": -2
           }
@@ -1452,6 +2478,10 @@
           "name": "dimension/size/300",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-size-300)",
           "values": {
             "value": 12
           }
@@ -1460,6 +2490,10 @@
           "name": "dimension/size/400",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-size-400)",
           "values": {
             "value": 16
           }
@@ -1468,6 +2502,10 @@
           "name": "dimension/size/500",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-size-500)",
           "values": {
             "value": 20
           }
@@ -1476,6 +2514,10 @@
           "name": "dimension/size/600",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-size-600)",
           "values": {
             "value": 24
           }
@@ -1484,6 +2526,10 @@
           "name": "dimension/size/800",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-size-800)",
           "values": {
             "value": 32
           }
@@ -1492,6 +2538,10 @@
           "name": "dimension/size/1000",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-size-1000)",
           "values": {
             "value": 40
           }
@@ -1500,6 +2550,10 @@
           "name": "dimension/size/1200",
           "type": "FLOAT",
           "description": "コントロールの標準・タッチターゲット（44 は持たず 48 で代替）",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-size-1200)",
           "values": {
             "value": 48
           }
@@ -1508,6 +2562,10 @@
           "name": "dimension/size/1600",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-size-1600)",
           "values": {
             "value": 64
           }
@@ -1516,6 +2574,10 @@
           "name": "dimension/size/2000",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-size-2000)",
           "values": {
             "value": 80
           }
@@ -1524,6 +2586,10 @@
           "name": "dimension/size/2400",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-size-2400)",
           "values": {
             "value": 96
           }
@@ -1532,6 +2598,10 @@
           "name": "dimension/size/3200",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-size-3200)",
           "values": {
             "value": 128
           }
@@ -1540,6 +2610,10 @@
           "name": "dimension/size/6000",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-size-6000)",
           "values": {
             "value": 240
           }
@@ -1548,6 +2622,10 @@
           "name": "dimension/size/12000",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-size-12000)",
           "values": {
             "value": 480
           }
@@ -1556,6 +2634,10 @@
           "name": "dimension/radius/100",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codeSyntax": "var(--dimension-radius-100)",
           "values": {
             "value": 4
           }
@@ -1564,6 +2646,10 @@
           "name": "dimension/radius/200",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codeSyntax": "var(--dimension-radius-200)",
           "values": {
             "value": 8
           }
@@ -1572,6 +2658,10 @@
           "name": "dimension/radius/300",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codeSyntax": "var(--dimension-radius-300)",
           "values": {
             "value": 12
           }
@@ -1580,6 +2670,10 @@
           "name": "dimension/radius/400",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codeSyntax": "var(--dimension-radius-400)",
           "values": {
             "value": 16
           }
@@ -1588,6 +2682,10 @@
           "name": "dimension/radius/600",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codeSyntax": "var(--dimension-radius-600)",
           "values": {
             "value": 24
           }
@@ -1596,6 +2694,10 @@
           "name": "dimension/radius/800",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codeSyntax": "var(--dimension-radius-800)",
           "values": {
             "value": 32
           }
@@ -1604,6 +2706,10 @@
           "name": "dimension/radius/1200",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codeSyntax": "var(--dimension-radius-1200)",
           "values": {
             "value": 48
           }
@@ -1612,6 +2718,10 @@
           "name": "dimension/radius/none",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codeSyntax": "var(--dimension-radius-none)",
           "values": {
             "value": 0
           }
@@ -1620,6 +2730,10 @@
           "name": "dimension/radius/050",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codeSyntax": "var(--dimension-radius-050)",
           "values": {
             "value": 2
           }
@@ -1628,6 +2742,10 @@
           "name": "dimension/radius/full",
           "type": "FLOAT",
           "description": "円・ピル",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codeSyntax": "var(--dimension-radius-full)",
           "values": {
             "value": 9999
           }
@@ -1636,6 +2754,8 @@
           "name": "dimension/radius/shape/default",
           "type": "STRING",
           "description": "CSS corner-shape の名前付き値（superellipse(2) = n 4）。Chromium 139+、非対応環境は円弧にフォールバック。Figma は Corner Smoothing 60%",
+          "scopes": [],
+          "codeSyntax": "var(--dimension-radius-shape-default)",
           "values": {
             "value": "squircle"
           }
@@ -1644,6 +2764,8 @@
           "name": "dimension/radius/shape/round",
           "type": "STRING",
           "description": "円弧。フォールバック",
+          "scopes": [],
+          "codeSyntax": "var(--dimension-radius-shape-round)",
           "values": {
             "value": "round"
           }
@@ -1652,6 +2774,8 @@
           "name": "dimension/radius/shape/figmaSmoothing",
           "type": "FLOAT",
           "description": "Figma Corner Smoothing 60%（iOS 相当）",
+          "scopes": [],
+          "codeSyntax": "var(--dimension-radius-shape-figma-smoothing)",
           "values": {
             "value": 0.6
           }
@@ -1660,6 +2784,8 @@
           "name": "dimension/radius/shape/continuous",
           "type": "STRING",
           "description": "Apple continuous corner（n≈5）の近似。代替候補",
+          "scopes": [],
+          "codeSyntax": "var(--dimension-radius-shape-continuous)",
           "values": {
             "value": "superellipse(2.32)"
           }
@@ -1668,6 +2794,10 @@
           "name": "dimension/border/0",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "codeSyntax": "var(--dimension-border-0)",
           "values": {
             "value": 0
           }
@@ -1676,6 +2806,10 @@
           "name": "dimension/border/100",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "codeSyntax": "var(--dimension-border-100)",
           "values": {
             "value": 4
           }
@@ -1684,6 +2818,10 @@
           "name": "dimension/border/025",
           "type": "FLOAT",
           "description": "既定の境界線",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "codeSyntax": "var(--dimension-border-025)",
           "values": {
             "value": 1
           }
@@ -1692,6 +2830,10 @@
           "name": "dimension/border/050",
           "type": "FLOAT",
           "description": "強調・フォーカスリング",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "codeSyntax": "var(--dimension-border-050)",
           "values": {
             "value": 2
           }
@@ -1700,6 +2842,10 @@
           "name": "dimension/border/075",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "codeSyntax": "var(--dimension-border-075)",
           "values": {
             "value": 3
           }
@@ -1708,6 +2854,10 @@
           "name": "dimension/breakpoint/xs",
           "type": "FLOAT",
           "description": "スマホ縦",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-breakpoint-xs)",
           "values": {
             "value": 0
           }
@@ -1716,6 +2866,10 @@
           "name": "dimension/breakpoint/sm",
           "type": "FLOAT",
           "description": "スマホ横・小型タブレット縦",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-breakpoint-sm)",
           "values": {
             "value": 480
           }
@@ -1724,6 +2878,10 @@
           "name": "dimension/breakpoint/md",
           "type": "FLOAT",
           "description": "タブレット縦",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-breakpoint-md)",
           "values": {
             "value": 768
           }
@@ -1732,6 +2890,10 @@
           "name": "dimension/breakpoint/lg",
           "type": "FLOAT",
           "description": "タブレット横・ノート PC",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-breakpoint-lg)",
           "values": {
             "value": 1024
           }
@@ -1740,6 +2902,10 @@
           "name": "dimension/breakpoint/xl",
           "type": "FLOAT",
           "description": "デスクトップ",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-breakpoint-xl)",
           "values": {
             "value": 1440
           }
@@ -1748,6 +2914,10 @@
           "name": "dimension/breakpoint/xxl",
           "type": "FLOAT",
           "description": "大型",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--dimension-breakpoint-xxl)",
           "values": {
             "value": 1768
           }
@@ -1756,6 +2926,10 @@
           "name": "typography/family/sans",
           "type": "STRING",
           "description": "欧文の本文・見出し・UI。可変フォント（opsz 軸あり）",
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codeSyntax": "var(--typography-family-sans)",
           "values": {
             "value": "Inter Variable"
           }
@@ -1764,6 +2938,10 @@
           "name": "typography/family/serif",
           "type": "STRING",
           "description": "欧文の引用・見出しの対比用。可変フォント",
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codeSyntax": "var(--typography-family-serif)",
           "values": {
             "value": "Lora"
           }
@@ -1772,6 +2950,10 @@
           "name": "typography/family/jp",
           "type": "STRING",
           "description": "和文。サブセット配信（Google Fonts の unicode-range）を前提",
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codeSyntax": "var(--typography-family-jp)",
           "values": {
             "value": "Noto Sans JP"
           }
@@ -1780,6 +2962,10 @@
           "name": "typography/family/mono",
           "type": "STRING",
           "description": "数値・コード・トークン名",
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codeSyntax": "var(--typography-family-mono)",
           "values": {
             "value": "Geist Mono"
           }
@@ -1788,6 +2974,10 @@
           "name": "typography/size/250",
           "type": "FLOAT",
           "description": "Major Third の下限（16 ÷ 1.25² = 10.24 → 10）",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": "var(--typography-size-250)",
           "values": {
             "value": 10
           }
@@ -1796,6 +2986,10 @@
           "name": "typography/size/300",
           "type": "FLOAT",
           "description": "16 ÷ 1.25 = 12.8 → 12（頻用）",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": "var(--typography-size-300)",
           "values": {
             "value": 12
           }
@@ -1804,6 +2998,10 @@
           "name": "typography/size/350",
           "type": "FLOAT",
           "description": "頻用のため追加（スケール外）",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": "var(--typography-size-350)",
           "values": {
             "value": 14
           }
@@ -1812,6 +3010,10 @@
           "name": "typography/size/400",
           "type": "FLOAT",
           "description": "基準",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": "var(--typography-size-400)",
           "values": {
             "value": 16
           }
@@ -1820,6 +3022,10 @@
           "name": "typography/size/450",
           "type": "FLOAT",
           "description": "頻用のため追加（スケール外）",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": "var(--typography-size-450)",
           "values": {
             "value": 18
           }
@@ -1828,6 +3034,10 @@
           "name": "typography/size/500",
           "type": "FLOAT",
           "description": "16 × 1.25",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": "var(--typography-size-500)",
           "values": {
             "value": 20
           }
@@ -1836,6 +3046,10 @@
           "name": "typography/size/600",
           "type": "FLOAT",
           "description": "16 × 1.25² = 25 → 24（頻用）",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": "var(--typography-size-600)",
           "values": {
             "value": 24
           }
@@ -1844,6 +3058,10 @@
           "name": "typography/size/700",
           "type": "FLOAT",
           "description": "頻用のため追加（スケール外）",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": "var(--typography-size-700)",
           "values": {
             "value": 28
           }
@@ -1852,6 +3070,10 @@
           "name": "typography/size/800",
           "type": "FLOAT",
           "description": "16 × 1.25³ = 31.25 → 32",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": "var(--typography-size-800)",
           "values": {
             "value": 32
           }
@@ -1860,6 +3082,10 @@
           "name": "typography/size/1000",
           "type": "FLOAT",
           "description": "16 × 1.25⁴ = 39.1 → 40",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": "var(--typography-size-1000)",
           "values": {
             "value": 40
           }
@@ -1868,6 +3094,10 @@
           "name": "typography/size/1200",
           "type": "FLOAT",
           "description": "16 × 1.25⁵ = 48.8 → 48",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": "var(--typography-size-1200)",
           "values": {
             "value": 48
           }
@@ -1876,6 +3106,10 @@
           "name": "typography/size/1600",
           "type": "FLOAT",
           "description": "16 × 1.25⁶ = 61 → 64",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": "var(--typography-size-1600)",
           "values": {
             "value": 64
           }
@@ -1884,6 +3118,10 @@
           "name": "typography/size/2000",
           "type": "FLOAT",
           "description": "16 × 1.25⁷ = 76.3 → 80",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": "var(--typography-size-2000)",
           "values": {
             "value": 80
           }
@@ -1892,6 +3130,10 @@
           "name": "typography/size/2400",
           "type": "FLOAT",
           "description": "16 × 1.25⁸ = 95.4 → 96",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": "var(--typography-size-2400)",
           "values": {
             "value": 96
           }
@@ -1900,6 +3142,10 @@
           "name": "typography/size/3200",
           "type": "FLOAT",
           "description": "16 × 1.25⁹ = 119 → 128（上限）",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codeSyntax": "var(--typography-size-3200)",
           "values": {
             "value": 128
           }
@@ -1908,6 +3154,10 @@
           "name": "typography/lineHeight/sm",
           "type": "FLOAT",
           "description": "見出し・大きな数字",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "codeSyntax": "var(--typography-line-height-sm)",
           "values": {
             "value": 1.25
           }
@@ -1916,6 +3166,10 @@
           "name": "typography/lineHeight/md",
           "type": "FLOAT",
           "description": "小見出し・UI ラベル",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "codeSyntax": "var(--typography-line-height-md)",
           "values": {
             "value": 1.375
           }
@@ -1924,6 +3178,10 @@
           "name": "typography/lineHeight/lg",
           "type": "FLOAT",
           "description": "本文の基準",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "codeSyntax": "var(--typography-line-height-lg)",
           "values": {
             "value": 1.5
           }
@@ -1932,6 +3190,10 @@
           "name": "typography/lineHeight/xl",
           "type": "FLOAT",
           "description": "和文本文・読み物",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "codeSyntax": "var(--typography-line-height-xl)",
           "values": {
             "value": 1.625
           }
@@ -1940,6 +3202,10 @@
           "name": "typography/lineHeight/xxl",
           "type": "FLOAT",
           "description": "和文の長文・ゆったりした本文",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "codeSyntax": "var(--typography-line-height-xxl)",
           "values": {
             "value": 1.75
           }
@@ -1948,6 +3214,10 @@
           "name": "typography/weight/regular",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "codeSyntax": "var(--typography-weight-regular)",
           "values": {
             "value": 400
           }
@@ -1956,6 +3226,10 @@
           "name": "typography/weight/medium",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "codeSyntax": "var(--typography-weight-medium)",
           "values": {
             "value": 500
           }
@@ -1964,6 +3238,10 @@
           "name": "typography/weight/semibold",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "codeSyntax": "var(--typography-weight-semibold)",
           "values": {
             "value": 600
           }
@@ -1972,6 +3250,10 @@
           "name": "typography/weight/bold",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "codeSyntax": "var(--typography-weight-bold)",
           "values": {
             "value": 700
           }
@@ -1980,6 +3262,8 @@
           "name": "motion/duration/instant",
           "type": "FLOAT",
           "description": "知覚できる遅延なし。リスト項目のホバー・選択・フォーカス、reduced-motion 時",
+          "scopes": [],
+          "codeSyntax": "var(--motion-duration-instant)",
           "unit": "ms",
           "values": {
             "value": 0
@@ -1989,6 +3273,8 @@
           "name": "motion/duration/presto",
           "type": "FLOAT",
           "description": "即時フィードバック。フォーカスリング、選択状態",
+          "scopes": [],
+          "codeSyntax": "var(--motion-duration-presto)",
           "unit": "ms",
           "values": {
             "value": 50
@@ -1998,6 +3284,8 @@
           "name": "motion/duration/vivace",
           "type": "FLOAT",
           "description": "控えめな押下、素早い退場。ポップアップの消去",
+          "scopes": [],
+          "codeSyntax": "var(--motion-duration-vivace)",
           "unit": "ms",
           "values": {
             "value": 100
@@ -2007,6 +3295,8 @@
           "name": "motion/duration/allegro",
           "type": "FLOAT",
           "description": "状態の強調と小さな入場。ボタンのホバー・押下、ポップアップの入場",
+          "scopes": [],
+          "codeSyntax": "var(--motion-duration-allegro)",
           "unit": "ms",
           "values": {
             "value": 150
@@ -2016,6 +3306,8 @@
           "name": "motion/duration/moderato",
           "type": "FLOAT",
           "description": "中規模の入場。モーダル・フラグの入場",
+          "scopes": [],
+          "codeSyntax": "var(--motion-duration-moderato)",
           "unit": "ms",
           "values": {
             "value": 250
@@ -2025,6 +3317,8 @@
           "name": "motion/duration/andante",
           "type": "FLOAT",
           "description": "大きな遷移。パネル・ページ遷移・全画面オーバーレイ",
+          "scopes": [],
+          "codeSyntax": "var(--motion-duration-andante)",
           "unit": "ms",
           "values": {
             "value": 400
@@ -2034,6 +3328,8 @@
           "name": "motion/duration/adagio",
           "type": "FLOAT",
           "description": "最大。オンボーディング、全画面の演出",
+          "scopes": [],
+          "codeSyntax": "var(--motion-duration-adagio)",
           "unit": "ms",
           "values": {
             "value": 600
@@ -2043,6 +3339,8 @@
           "name": "motion/easing/spring",
           "type": "STRING",
           "description": "減衰バネ（質量 1、剛性 170、減衰 20、減衰比 0.77、オーバーシュート約 2.3%、整定 630ms）を CSS linear() で 25 点サンプリング。duration には整定時間 630ms 前後を使う。非対応環境は out.bold にフォールバック",
+          "scopes": [],
+          "codeSyntax": "var(--motion-easing-spring)",
           "values": {
             "value": "linear(0.0, 0.049, 0.164, 0.307, 0.455, 0.591, 0.709, 0.804, 0.879, 0.934, 0.972, 0.997, 1.013, 1.02, 1.023, 1.023, 1.02, 1.017, 1.014, 1.011, 1.008, 1.005, 1.003, 1.002, 1.001)"
           }
@@ -2051,6 +3349,10 @@
           "name": "opacity/0",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "OPACITY"
+          ],
+          "codeSyntax": "var(--opacity-0)",
           "values": {
             "value": 0
           }
@@ -2059,6 +3361,10 @@
           "name": "opacity/4",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "OPACITY"
+          ],
+          "codeSyntax": "var(--opacity-4)",
           "values": {
             "value": 0.04
           }
@@ -2067,6 +3373,10 @@
           "name": "opacity/8",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "OPACITY"
+          ],
+          "codeSyntax": "var(--opacity-8)",
           "values": {
             "value": 0.08
           }
@@ -2075,6 +3385,10 @@
           "name": "opacity/12",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "OPACITY"
+          ],
+          "codeSyntax": "var(--opacity-12)",
           "values": {
             "value": 0.12
           }
@@ -2083,6 +3397,10 @@
           "name": "opacity/16",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "OPACITY"
+          ],
+          "codeSyntax": "var(--opacity-16)",
           "values": {
             "value": 0.16
           }
@@ -2091,6 +3409,10 @@
           "name": "opacity/24",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "OPACITY"
+          ],
+          "codeSyntax": "var(--opacity-24)",
           "values": {
             "value": 0.24
           }
@@ -2099,6 +3421,10 @@
           "name": "opacity/32",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "OPACITY"
+          ],
+          "codeSyntax": "var(--opacity-32)",
           "values": {
             "value": 0.32
           }
@@ -2107,6 +3433,10 @@
           "name": "opacity/40",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "OPACITY"
+          ],
+          "codeSyntax": "var(--opacity-40)",
           "values": {
             "value": 0.4
           }
@@ -2115,6 +3445,10 @@
           "name": "opacity/64",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "OPACITY"
+          ],
+          "codeSyntax": "var(--opacity-64)",
           "values": {
             "value": 0.64
           }
@@ -2123,6 +3457,10 @@
           "name": "opacity/80",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "OPACITY"
+          ],
+          "codeSyntax": "var(--opacity-80)",
           "values": {
             "value": 0.8
           }
@@ -2131,6 +3469,10 @@
           "name": "opacity/100",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "OPACITY"
+          ],
+          "codeSyntax": "var(--opacity-100)",
           "values": {
             "value": 1
           }
@@ -2147,6 +3489,10 @@
           "name": "font/family/default",
           "type": "STRING",
           "description": "Inter Variable,Inter,system-ui,sans-serif + Noto Sans JP,Hiragino Sans,Yu Gothic,sans-serif",
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codeSyntax": "var(--font-family-default)",
           "values": {
             "value": "Inter Variable"
           }
@@ -2155,6 +3501,10 @@
           "name": "font/family/serif",
           "type": "STRING",
           "description": "Lora,Georgia,serif + Noto Sans JP,Hiragino Sans,Yu Gothic,sans-serif。装飾用途（引用・Music など、英語のみ）。semantic の role は持たず、使う部品の component トークンで size / line box を display.* から借りて定義する",
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codeSyntax": "var(--font-family-serif)",
           "values": {
             "value": "Lora"
           }
@@ -2163,6 +3513,10 @@
           "name": "font/family/mono",
           "type": "STRING",
           "description": "Geist Mono,ui-monospace,SFMono-Regular,Menlo,monospace。数値・コード・トークン名",
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codeSyntax": "var(--font-family-mono)",
           "values": {
             "value": "Geist Mono"
           }
@@ -2171,6 +3525,10 @@
           "name": "layout/breakpoint/xs",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--layout-breakpoint-xs)",
           "values": {
             "value": {
               "alias": "dimension/breakpoint/xs"
@@ -2181,6 +3539,10 @@
           "name": "layout/breakpoint/sm",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--layout-breakpoint-sm)",
           "values": {
             "value": {
               "alias": "dimension/breakpoint/sm"
@@ -2191,6 +3553,10 @@
           "name": "layout/breakpoint/md",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--layout-breakpoint-md)",
           "values": {
             "value": {
               "alias": "dimension/breakpoint/md"
@@ -2201,6 +3567,10 @@
           "name": "layout/breakpoint/lg",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--layout-breakpoint-lg)",
           "values": {
             "value": {
               "alias": "dimension/breakpoint/lg"
@@ -2211,6 +3581,10 @@
           "name": "layout/breakpoint/xl",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--layout-breakpoint-xl)",
           "values": {
             "value": {
               "alias": "dimension/breakpoint/xl"
@@ -2221,6 +3595,10 @@
           "name": "layout/breakpoint/xxl",
           "type": "FLOAT",
           "description": "",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--layout-breakpoint-xxl)",
           "values": {
             "value": {
               "alias": "dimension/breakpoint/xxl"
@@ -2231,6 +3609,8 @@
           "name": "layout/grid/columns/xs",
           "type": "FLOAT",
           "description": "",
+          "scopes": [],
+          "codeSyntax": "var(--layout-grid-columns-xs)",
           "values": {
             "value": 4
           }
@@ -2239,6 +3619,8 @@
           "name": "layout/grid/columns/sm",
           "type": "FLOAT",
           "description": "",
+          "scopes": [],
+          "codeSyntax": "var(--layout-grid-columns-sm)",
           "values": {
             "value": 4
           }
@@ -2247,6 +3629,8 @@
           "name": "layout/grid/columns/md",
           "type": "FLOAT",
           "description": "",
+          "scopes": [],
+          "codeSyntax": "var(--layout-grid-columns-md)",
           "values": {
             "value": 6
           }
@@ -2255,6 +3639,8 @@
           "name": "layout/grid/columns/lg",
           "type": "FLOAT",
           "description": "",
+          "scopes": [],
+          "codeSyntax": "var(--layout-grid-columns-lg)",
           "values": {
             "value": 12
           }
@@ -2263,6 +3649,8 @@
           "name": "layout/grid/columns/xl",
           "type": "FLOAT",
           "description": "",
+          "scopes": [],
+          "codeSyntax": "var(--layout-grid-columns-xl)",
           "values": {
             "value": 12
           }
@@ -2271,6 +3659,8 @@
           "name": "layout/grid/columns/xxl",
           "type": "FLOAT",
           "description": "",
+          "scopes": [],
+          "codeSyntax": "var(--layout-grid-columns-xxl)",
           "values": {
             "value": 12
           }
@@ -2279,6 +3669,10 @@
           "name": "layout/grid/gutter/xs",
           "type": "FLOAT",
           "description": "16",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--layout-grid-gutter-xs)",
           "values": {
             "value": {
               "alias": "dimension/space/400"
@@ -2289,6 +3683,10 @@
           "name": "layout/grid/gutter/sm",
           "type": "FLOAT",
           "description": "16",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--layout-grid-gutter-sm)",
           "values": {
             "value": {
               "alias": "dimension/space/400"
@@ -2299,6 +3697,10 @@
           "name": "layout/grid/gutter/md",
           "type": "FLOAT",
           "description": "24",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--layout-grid-gutter-md)",
           "values": {
             "value": {
               "alias": "dimension/space/600"
@@ -2309,6 +3711,10 @@
           "name": "layout/grid/gutter/lg",
           "type": "FLOAT",
           "description": "32",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--layout-grid-gutter-lg)",
           "values": {
             "value": {
               "alias": "dimension/space/800"
@@ -2319,6 +3725,10 @@
           "name": "layout/grid/gutter/xl",
           "type": "FLOAT",
           "description": "32",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--layout-grid-gutter-xl)",
           "values": {
             "value": {
               "alias": "dimension/space/800"
@@ -2329,6 +3739,10 @@
           "name": "layout/grid/gutter/xxl",
           "type": "FLOAT",
           "description": "32",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--layout-grid-gutter-xxl)",
           "values": {
             "value": {
               "alias": "dimension/space/800"
@@ -2339,6 +3753,10 @@
           "name": "layout/grid/margin/xs",
           "type": "FLOAT",
           "description": "16",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--layout-grid-margin-xs)",
           "values": {
             "value": {
               "alias": "dimension/space/400"
@@ -2349,6 +3767,10 @@
           "name": "layout/grid/margin/sm",
           "type": "FLOAT",
           "description": "24",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--layout-grid-margin-sm)",
           "values": {
             "value": {
               "alias": "dimension/space/600"
@@ -2359,6 +3781,10 @@
           "name": "layout/grid/margin/md",
           "type": "FLOAT",
           "description": "32",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--layout-grid-margin-md)",
           "values": {
             "value": {
               "alias": "dimension/space/800"
@@ -2369,6 +3795,10 @@
           "name": "layout/grid/margin/lg",
           "type": "FLOAT",
           "description": "48",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--layout-grid-margin-lg)",
           "values": {
             "value": {
               "alias": "dimension/space/1200"
@@ -2379,6 +3809,10 @@
           "name": "layout/grid/margin/xl",
           "type": "FLOAT",
           "description": "64",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--layout-grid-margin-xl)",
           "values": {
             "value": {
               "alias": "dimension/space/1600"
@@ -2389,6 +3823,10 @@
           "name": "layout/grid/margin/xxl",
           "type": "FLOAT",
           "description": "80",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--layout-grid-margin-xxl)",
           "values": {
             "value": {
               "alias": "dimension/space/2000"
@@ -2399,6 +3837,10 @@
           "name": "layout/container/content",
           "type": "FLOAT",
           "description": "通常のセクション。これより広い画面では中央寄せ",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--layout-container-content)",
           "values": {
             "value": 1280
           }
@@ -2407,6 +3849,10 @@
           "name": "layout/container/prose",
           "type": "FLOAT",
           "description": "読み物本文。和文 40 字 × 18px",
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codeSyntax": "var(--layout-container-prose)",
           "values": {
             "value": 720
           }
@@ -2415,6 +3861,10 @@
           "name": "layout/section/sm",
           "type": "FLOAT",
           "description": "48",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--layout-section-sm)",
           "values": {
             "value": {
               "alias": "dimension/space/1200"
@@ -2425,6 +3875,10 @@
           "name": "layout/section/md",
           "type": "FLOAT",
           "description": "64",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--layout-section-md)",
           "values": {
             "value": {
               "alias": "dimension/space/1600"
@@ -2435,6 +3889,10 @@
           "name": "layout/section/lg",
           "type": "FLOAT",
           "description": "96",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--layout-section-lg)",
           "values": {
             "value": {
               "alias": "dimension/space/2400"
@@ -2445,6 +3903,10 @@
           "name": "layout/section/xl",
           "type": "FLOAT",
           "description": "128",
+          "scopes": [
+            "GAP"
+          ],
+          "codeSyntax": "var(--layout-section-xl)",
           "values": {
             "value": {
               "alias": "dimension/space/3200"
@@ -2455,6 +3917,10 @@
           "name": "border/width/default",
           "type": "FLOAT",
           "description": "1px。境界線、区切り線、入力欄の枠",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "codeSyntax": "var(--border-width-default)",
           "values": {
             "value": {
               "alias": "dimension/border/025"
@@ -2465,6 +3931,10 @@
           "name": "border/width/selected",
           "type": "FLOAT",
           "description": "2px。選択タブの下線、選択カードの枠（color.border.selected）",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "codeSyntax": "var(--border-width-selected)",
           "values": {
             "value": {
               "alias": "dimension/border/050"
@@ -2475,6 +3945,10 @@
           "name": "border/width/focused",
           "type": "FLOAT",
           "description": "2px。フォーカスリング（color.border.focused）。outline-offset は 2px",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "codeSyntax": "var(--border-width-focused)",
           "values": {
             "value": {
               "alias": "dimension/border/050"
@@ -2494,6 +3968,10 @@
           "name": "color/text/default",
           "type": "COLOR",
           "description": "本文・見出し",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-default)",
           "values": {
             "light": {
               "alias": "color/neutral/950"
@@ -2507,6 +3985,10 @@
           "name": "color/text/subtle",
           "type": "COLOR",
           "description": "副次テキスト",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-subtle)",
           "values": {
             "light": {
               "alias": "color/neutral/700"
@@ -2520,6 +4002,10 @@
           "name": "color/text/subtlest",
           "type": "COLOR",
           "description": "キャプション・メタ",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-subtlest)",
           "values": {
             "light": {
               "alias": "color/neutral/600"
@@ -2533,6 +4019,10 @@
           "name": "color/text/disabled",
           "type": "COLOR",
           "description": "無効（コントラスト要件の対象外）",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-disabled)",
           "values": {
             "light": {
               "alias": "color/neutral/400"
@@ -2546,6 +4036,10 @@
           "name": "color/text/inverse",
           "type": "COLOR",
           "description": "反転面の上",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-inverse)",
           "values": {
             "light": {
               "alias": "color/neutral/50"
@@ -2559,6 +4053,10 @@
           "name": "color/text/brand",
           "type": "COLOR",
           "description": "ブランド色の文字・リンク",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-brand)",
           "values": {
             "light": {
               "alias": "color/blue/700"
@@ -2572,6 +4070,10 @@
           "name": "color/text/brand/bold",
           "type": "COLOR",
           "description": "brand.subtle の面に乗せる文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-brand-bold)",
           "values": {
             "light": {
               "alias": "color/blue/800"
@@ -2585,6 +4087,10 @@
           "name": "color/text/selected",
           "type": "COLOR",
           "description": "選択状態の文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-selected)",
           "values": {
             "light": {
               "alias": "color/blue/700"
@@ -2598,6 +4104,10 @@
           "name": "color/text/static/white",
           "type": "COLOR",
           "description": "テーマに依存しない白。bold 塗り・写真・スクリムの上",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-static-white)",
           "values": {
             "light": {
               "alias": "color/neutral/0"
@@ -2611,6 +4121,10 @@
           "name": "color/text/static/black",
           "type": "COLOR",
           "description": "テーマに依存しない黒。amber / lime の bold 塗り・明るい写真の上",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-static-black)",
           "values": {
             "light": {
               "alias": "color/neutral/1000"
@@ -2624,6 +4138,10 @@
           "name": "color/text/status/success",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-status-success)",
           "values": {
             "light": {
               "alias": "color/green/700"
@@ -2637,6 +4155,10 @@
           "name": "color/text/status/success/bold",
           "type": "COLOR",
           "description": "success.subtle の面に乗せる文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-status-success-bold)",
           "values": {
             "light": {
               "alias": "color/green/800"
@@ -2650,6 +4172,10 @@
           "name": "color/text/status/warning",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-status-warning)",
           "values": {
             "light": {
               "alias": "color/amber/700"
@@ -2663,6 +4189,10 @@
           "name": "color/text/status/warning/bold",
           "type": "COLOR",
           "description": "warning.subtle の面に乗せる文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-status-warning-bold)",
           "values": {
             "light": {
               "alias": "color/amber/800"
@@ -2676,6 +4206,10 @@
           "name": "color/text/status/error",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-status-error)",
           "values": {
             "light": {
               "alias": "color/red/700"
@@ -2689,6 +4223,10 @@
           "name": "color/text/status/error/bold",
           "type": "COLOR",
           "description": "error.subtle の面に乗せる文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-status-error-bold)",
           "values": {
             "light": {
               "alias": "color/red/800"
@@ -2702,6 +4240,10 @@
           "name": "color/text/status/info",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-status-info)",
           "values": {
             "light": {
               "alias": "color/sky/700"
@@ -2715,6 +4257,10 @@
           "name": "color/text/status/info/bold",
           "type": "COLOR",
           "description": "info.subtle の面に乗せる文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-status-info-bold)",
           "values": {
             "light": {
               "alias": "color/sky/800"
@@ -2728,6 +4274,10 @@
           "name": "color/text/accent/blue",
           "type": "COLOR",
           "description": "意味を持たない色の文字（neutral 面・subtlest 面）",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-blue)",
           "values": {
             "light": {
               "alias": "color/blue/700"
@@ -2741,6 +4291,10 @@
           "name": "color/text/accent/blue/bold",
           "type": "COLOR",
           "description": "accent.blue.subtle の面に乗せる文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-blue-bold)",
           "values": {
             "light": {
               "alias": "color/blue/800"
@@ -2754,6 +4308,10 @@
           "name": "color/text/accent/violet",
           "type": "COLOR",
           "description": "意味を持たない色の文字（neutral 面・subtlest 面）",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-violet)",
           "values": {
             "light": {
               "alias": "color/violet/700"
@@ -2767,6 +4325,10 @@
           "name": "color/text/accent/violet/bold",
           "type": "COLOR",
           "description": "accent.violet.subtle の面に乗せる文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-violet-bold)",
           "values": {
             "light": {
               "alias": "color/violet/800"
@@ -2780,6 +4342,10 @@
           "name": "color/text/accent/purple",
           "type": "COLOR",
           "description": "意味を持たない色の文字（neutral 面・subtlest 面）",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-purple)",
           "values": {
             "light": {
               "alias": "color/purple/700"
@@ -2793,6 +4359,10 @@
           "name": "color/text/accent/purple/bold",
           "type": "COLOR",
           "description": "accent.purple.subtle の面に乗せる文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-purple-bold)",
           "values": {
             "light": {
               "alias": "color/purple/800"
@@ -2806,6 +4376,10 @@
           "name": "color/text/accent/pink",
           "type": "COLOR",
           "description": "意味を持たない色の文字（neutral 面・subtlest 面）",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-pink)",
           "values": {
             "light": {
               "alias": "color/pink/700"
@@ -2819,6 +4393,10 @@
           "name": "color/text/accent/pink/bold",
           "type": "COLOR",
           "description": "accent.pink.subtle の面に乗せる文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-pink-bold)",
           "values": {
             "light": {
               "alias": "color/pink/800"
@@ -2832,6 +4410,10 @@
           "name": "color/text/accent/red",
           "type": "COLOR",
           "description": "意味を持たない色の文字（neutral 面・subtlest 面）",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-red)",
           "values": {
             "light": {
               "alias": "color/red/700"
@@ -2845,6 +4427,10 @@
           "name": "color/text/accent/red/bold",
           "type": "COLOR",
           "description": "accent.red.subtle の面に乗せる文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-red-bold)",
           "values": {
             "light": {
               "alias": "color/red/800"
@@ -2858,6 +4444,10 @@
           "name": "color/text/accent/orange",
           "type": "COLOR",
           "description": "意味を持たない色の文字（neutral 面・subtlest 面）",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-orange)",
           "values": {
             "light": {
               "alias": "color/orange/700"
@@ -2871,6 +4461,10 @@
           "name": "color/text/accent/orange/bold",
           "type": "COLOR",
           "description": "accent.orange.subtle の面に乗せる文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-orange-bold)",
           "values": {
             "light": {
               "alias": "color/orange/800"
@@ -2884,6 +4478,10 @@
           "name": "color/text/accent/amber",
           "type": "COLOR",
           "description": "意味を持たない色の文字（neutral 面・subtlest 面）",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-amber)",
           "values": {
             "light": {
               "alias": "color/amber/700"
@@ -2897,6 +4495,10 @@
           "name": "color/text/accent/amber/bold",
           "type": "COLOR",
           "description": "accent.amber.subtle の面に乗せる文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-amber-bold)",
           "values": {
             "light": {
               "alias": "color/amber/800"
@@ -2910,6 +4512,10 @@
           "name": "color/text/accent/lime",
           "type": "COLOR",
           "description": "意味を持たない色の文字（neutral 面・subtlest 面）",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-lime)",
           "values": {
             "light": {
               "alias": "color/lime/700"
@@ -2923,6 +4529,10 @@
           "name": "color/text/accent/lime/bold",
           "type": "COLOR",
           "description": "accent.lime.subtle の面に乗せる文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-lime-bold)",
           "values": {
             "light": {
               "alias": "color/lime/800"
@@ -2936,6 +4546,10 @@
           "name": "color/text/accent/green",
           "type": "COLOR",
           "description": "意味を持たない色の文字（neutral 面・subtlest 面）",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-green)",
           "values": {
             "light": {
               "alias": "color/green/700"
@@ -2949,6 +4563,10 @@
           "name": "color/text/accent/green/bold",
           "type": "COLOR",
           "description": "accent.green.subtle の面に乗せる文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-green-bold)",
           "values": {
             "light": {
               "alias": "color/green/800"
@@ -2962,6 +4580,10 @@
           "name": "color/text/accent/teal",
           "type": "COLOR",
           "description": "意味を持たない色の文字（neutral 面・subtlest 面）",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-teal)",
           "values": {
             "light": {
               "alias": "color/teal/700"
@@ -2975,6 +4597,10 @@
           "name": "color/text/accent/teal/bold",
           "type": "COLOR",
           "description": "accent.teal.subtle の面に乗せる文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-teal-bold)",
           "values": {
             "light": {
               "alias": "color/teal/800"
@@ -2988,6 +4614,10 @@
           "name": "color/text/accent/cyan",
           "type": "COLOR",
           "description": "意味を持たない色の文字（neutral 面・subtlest 面）",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-cyan)",
           "values": {
             "light": {
               "alias": "color/cyan/700"
@@ -3001,6 +4631,10 @@
           "name": "color/text/accent/cyan/bold",
           "type": "COLOR",
           "description": "accent.cyan.subtle の面に乗せる文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-cyan-bold)",
           "values": {
             "light": {
               "alias": "color/cyan/800"
@@ -3014,6 +4648,10 @@
           "name": "color/text/accent/sky",
           "type": "COLOR",
           "description": "意味を持たない色の文字（neutral 面・subtlest 面）",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-sky)",
           "values": {
             "light": {
               "alias": "color/sky/700"
@@ -3027,6 +4665,10 @@
           "name": "color/text/accent/sky/bold",
           "type": "COLOR",
           "description": "accent.sky.subtle の面に乗せる文字",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-text-accent-sky-bold)",
           "values": {
             "light": {
               "alias": "color/sky/800"
@@ -3040,6 +4682,10 @@
           "name": "color/icon/default",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-icon-default)",
           "values": {
             "light": {
               "alias": "color/neutral/900"
@@ -3053,6 +4699,10 @@
           "name": "color/icon/subtle",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-icon-subtle)",
           "values": {
             "light": {
               "alias": "color/neutral/700"
@@ -3066,6 +4716,10 @@
           "name": "color/icon/subtlest",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-icon-subtlest)",
           "values": {
             "light": {
               "alias": "color/neutral/600"
@@ -3079,6 +4733,10 @@
           "name": "color/icon/disabled",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-icon-disabled)",
           "values": {
             "light": {
               "alias": "color/neutral/400"
@@ -3092,6 +4750,10 @@
           "name": "color/icon/inverse",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-icon-inverse)",
           "values": {
             "light": {
               "alias": "color/neutral/50"
@@ -3105,6 +4767,10 @@
           "name": "color/icon/brand",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-icon-brand)",
           "values": {
             "light": {
               "alias": "color/blue/600"
@@ -3118,6 +4784,10 @@
           "name": "color/icon/status/success",
           "type": "COLOR",
           "description": "状態アイコン",
+          "scopes": [
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-icon-status-success)",
           "values": {
             "light": {
               "alias": "color/green/700"
@@ -3131,6 +4801,10 @@
           "name": "color/icon/status/warning",
           "type": "COLOR",
           "description": "状態アイコン",
+          "scopes": [
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-icon-status-warning)",
           "values": {
             "light": {
               "alias": "color/amber/700"
@@ -3144,6 +4818,10 @@
           "name": "color/icon/status/error",
           "type": "COLOR",
           "description": "状態アイコン",
+          "scopes": [
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-icon-status-error)",
           "values": {
             "light": {
               "alias": "color/red/700"
@@ -3157,6 +4835,10 @@
           "name": "color/icon/status/info",
           "type": "COLOR",
           "description": "状態アイコン",
+          "scopes": [
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-icon-status-info)",
           "values": {
             "light": {
               "alias": "color/sky/700"
@@ -3170,6 +4852,10 @@
           "name": "color/icon/static/white",
           "type": "COLOR",
           "description": "テーマに依存しない白。bold 塗り・写真・スクリムの上",
+          "scopes": [
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-icon-static-white)",
           "values": {
             "light": {
               "alias": "color/neutral/0"
@@ -3183,6 +4869,10 @@
           "name": "color/icon/static/black",
           "type": "COLOR",
           "description": "テーマに依存しない黒。amber / lime の bold 塗り・明るい写真の上",
+          "scopes": [
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-icon-static-black)",
           "values": {
             "light": {
               "alias": "color/neutral/1000"
@@ -3196,6 +4886,10 @@
           "name": "color/border/subtlest",
           "type": "COLOR",
           "description": "装飾的な区切り（3:1 の要件なし）",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "codeSyntax": "var(--color-border-subtlest)",
           "values": {
             "light": {
               "alias": "color/neutral/100a"
@@ -3209,6 +4903,10 @@
           "name": "color/border/subtle",
           "type": "COLOR",
           "description": "カードの枠（装飾）",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "codeSyntax": "var(--color-border-subtle)",
           "values": {
             "light": {
               "alias": "color/neutral/200a"
@@ -3222,6 +4920,10 @@
           "name": "color/border/default",
           "type": "COLOR",
           "description": "既定の境界線（装飾）",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "codeSyntax": "var(--color-border-default)",
           "values": {
             "light": {
               "alias": "color/neutral/300a"
@@ -3235,6 +4937,10 @@
           "name": "color/border/bold",
           "type": "COLOR",
           "description": "入力欄など機能的な境界（3:1）",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "codeSyntax": "var(--color-border-bold)",
           "values": {
             "light": {
               "alias": "color/neutral/500"
@@ -3248,6 +4954,10 @@
           "name": "color/border/focused",
           "type": "COLOR",
           "description": "フォーカスリング",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "codeSyntax": "var(--color-border-focused)",
           "values": {
             "light": {
               "alias": "color/blue/600"
@@ -3261,6 +4971,10 @@
           "name": "color/border/inverse",
           "type": "COLOR",
           "description": "反転面の上",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "codeSyntax": "var(--color-border-inverse)",
           "values": {
             "light": {
               "alias": "color/neutral/50"
@@ -3274,6 +4988,10 @@
           "name": "color/border/brand",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "codeSyntax": "var(--color-border-brand)",
           "values": {
             "light": {
               "alias": "color/blue/600"
@@ -3287,6 +5005,10 @@
           "name": "color/border/disabled",
           "type": "COLOR",
           "description": "無効な入力欄の枠",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "codeSyntax": "var(--color-border-disabled)",
           "values": {
             "light": {
               "alias": "color/neutral/200a"
@@ -3300,6 +5022,10 @@
           "name": "color/border/selected",
           "type": "COLOR",
           "description": "選択タブの下線など",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "codeSyntax": "var(--color-border-selected)",
           "values": {
             "light": {
               "alias": "color/blue/600"
@@ -3313,6 +5039,10 @@
           "name": "color/border/static/white",
           "type": "COLOR",
           "description": "テーマに依存しない白。bold 塗り・写真・スクリムの上",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "codeSyntax": "var(--color-border-static-white)",
           "values": {
             "light": {
               "alias": "color/neutral/0"
@@ -3326,6 +5056,10 @@
           "name": "color/border/static/black",
           "type": "COLOR",
           "description": "テーマに依存しない黒。amber / lime の bold 塗り・明るい写真の上",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "codeSyntax": "var(--color-border-static-black)",
           "values": {
             "light": {
               "alias": "color/neutral/1000"
@@ -3339,6 +5073,10 @@
           "name": "color/border/status/success",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "codeSyntax": "var(--color-border-status-success)",
           "values": {
             "light": {
               "alias": "color/green/600"
@@ -3352,6 +5090,10 @@
           "name": "color/border/status/warning",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "codeSyntax": "var(--color-border-status-warning)",
           "values": {
             "light": {
               "alias": "color/amber/600"
@@ -3365,6 +5107,10 @@
           "name": "color/border/status/error",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "codeSyntax": "var(--color-border-status-error)",
           "values": {
             "light": {
               "alias": "color/red/600"
@@ -3378,6 +5124,10 @@
           "name": "color/border/status/info",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "codeSyntax": "var(--color-border-status-info)",
           "values": {
             "light": {
               "alias": "color/sky/600"
@@ -3391,6 +5141,11 @@
           "name": "color/background/disabled",
           "type": "COLOR",
           "description": "無効なボタン・入力欄の地",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-disabled)",
           "values": {
             "light": {
               "alias": "color/neutral/100a"
@@ -3404,6 +5159,11 @@
           "name": "color/background/selected",
           "type": "COLOR",
           "description": "ナビの現在地、タブ、選択行",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-selected)",
           "values": {
             "light": {
               "alias": "color/blue/50"
@@ -3417,6 +5177,11 @@
           "name": "color/background/selected/hovered",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-selected-hovered)",
           "values": {
             "light": {
               "alias": "color/blue/100"
@@ -3430,6 +5195,11 @@
           "name": "color/background/selected/pressed",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-selected-pressed)",
           "values": {
             "light": {
               "alias": "color/blue/200"
@@ -3443,6 +5213,11 @@
           "name": "color/background/input",
           "type": "COLOR",
           "description": "入力欄の地（surface.sunken と同値）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-input)",
           "values": {
             "light": {
               "alias": "color/neutral/100"
@@ -3456,6 +5231,11 @@
           "name": "color/background/input/hovered",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-input-hovered)",
           "values": {
             "light": {
               "alias": "color/neutral/200"
@@ -3469,6 +5249,11 @@
           "name": "color/background/blanket",
           "type": "COLOR",
           "description": "モーダル背後の暗幕。neutral.1000 の 40% / 60%",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-blanket)",
           "values": {
             "light": "#00000066",
             "dark": "#00000099"
@@ -3478,6 +5263,11 @@
           "name": "color/background/neutral/subtlest",
           "type": "COLOR",
           "description": "ホバー面・薄いタグ",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-neutral-subtlest)",
           "values": {
             "light": {
               "alias": "color/neutral/100a"
@@ -3491,6 +5281,11 @@
           "name": "color/background/neutral/subtle",
           "type": "COLOR",
           "description": "二次ボタン・チップ",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-neutral-subtle)",
           "values": {
             "light": {
               "alias": "color/neutral/200a"
@@ -3504,6 +5299,11 @@
           "name": "color/background/neutral/subtle/hovered",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-neutral-subtle-hovered)",
           "values": {
             "light": {
               "alias": "color/neutral/300a"
@@ -3517,6 +5317,11 @@
           "name": "color/background/neutral/subtle/pressed",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-neutral-subtle-pressed)",
           "values": {
             "light": {
               "alias": "color/neutral/400a"
@@ -3530,6 +5335,11 @@
           "name": "color/background/neutral/default",
           "type": "COLOR",
           "description": "塗りの二次ボタン",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-neutral-default)",
           "values": {
             "light": {
               "alias": "color/neutral/200"
@@ -3543,6 +5353,11 @@
           "name": "color/background/neutral/default/hovered",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-neutral-default-hovered)",
           "values": {
             "light": {
               "alias": "color/neutral/300"
@@ -3556,6 +5371,11 @@
           "name": "color/background/neutral/default/pressed",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-neutral-default-pressed)",
           "values": {
             "light": {
               "alias": "color/neutral/400"
@@ -3569,6 +5389,11 @@
           "name": "color/background/neutral/bold",
           "type": "COLOR",
           "description": "強い塗り",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-neutral-bold)",
           "values": {
             "light": {
               "alias": "color/neutral/700"
@@ -3582,6 +5407,11 @@
           "name": "color/background/neutral/boldest",
           "type": "COLOR",
           "description": "反転面。inverse の文字を乗せる",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-neutral-boldest)",
           "values": {
             "light": {
               "alias": "color/neutral/950"
@@ -3595,6 +5425,11 @@
           "name": "color/background/brand/subtlest",
           "type": "COLOR",
           "description": "ほのかな色の面",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-brand-subtlest)",
           "values": {
             "light": {
               "alias": "color/blue/50"
@@ -3608,6 +5443,11 @@
           "name": "color/background/brand/subtle",
           "type": "COLOR",
           "description": "薄いタグ・通知の地（文字は .bold）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-brand-subtle)",
           "values": {
             "light": {
               "alias": "color/blue/100"
@@ -3621,6 +5461,11 @@
           "name": "color/background/brand/default",
           "type": "COLOR",
           "description": "色つきの面（文字は text.default）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-brand-default)",
           "values": {
             "light": {
               "alias": "color/blue/200"
@@ -3634,6 +5479,11 @@
           "name": "color/background/brand/bold",
           "type": "COLOR",
           "description": "塗り（白文字。amber / lime は黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-brand-bold)",
           "values": {
             "light": {
               "alias": "color/blue/600"
@@ -3647,6 +5497,11 @@
           "name": "color/background/brand/bold/hovered",
           "type": "COLOR",
           "description": "1 段濃く",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-brand-bold-hovered)",
           "values": {
             "light": {
               "alias": "color/blue/700"
@@ -3660,6 +5515,11 @@
           "name": "color/background/brand/bold/pressed",
           "type": "COLOR",
           "description": "2 段濃く",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-brand-bold-pressed)",
           "values": {
             "light": {
               "alias": "color/blue/800"
@@ -3673,6 +5533,11 @@
           "name": "color/background/brand/boldest",
           "type": "COLOR",
           "description": "最も強い塗り（light 白文字、dark 黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-brand-boldest)",
           "values": {
             "light": {
               "alias": "color/blue/800"
@@ -3686,6 +5551,11 @@
           "name": "color/background/status/success/subtlest",
           "type": "COLOR",
           "description": "ほのかな色の面",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-success-subtlest)",
           "values": {
             "light": {
               "alias": "color/green/50"
@@ -3699,6 +5569,11 @@
           "name": "color/background/status/success/subtle",
           "type": "COLOR",
           "description": "薄いタグ・通知の地（文字は .bold）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-success-subtle)",
           "values": {
             "light": {
               "alias": "color/green/100"
@@ -3712,6 +5587,11 @@
           "name": "color/background/status/success/default",
           "type": "COLOR",
           "description": "色つきの面（文字は text.default）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-success-default)",
           "values": {
             "light": {
               "alias": "color/green/200"
@@ -3725,6 +5605,11 @@
           "name": "color/background/status/success/bold",
           "type": "COLOR",
           "description": "塗り（白文字。amber / lime は黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-success-bold)",
           "values": {
             "light": {
               "alias": "color/green/700"
@@ -3738,6 +5623,11 @@
           "name": "color/background/status/success/bold/hovered",
           "type": "COLOR",
           "description": "1 段濃く",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-success-bold-hovered)",
           "values": {
             "light": {
               "alias": "color/green/800"
@@ -3751,6 +5641,11 @@
           "name": "color/background/status/success/bold/pressed",
           "type": "COLOR",
           "description": "2 段濃く",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-success-bold-pressed)",
           "values": {
             "light": {
               "alias": "color/green/900"
@@ -3764,6 +5659,11 @@
           "name": "color/background/status/success/boldest",
           "type": "COLOR",
           "description": "最も強い塗り（light 白文字、dark 黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-success-boldest)",
           "values": {
             "light": {
               "alias": "color/green/800"
@@ -3777,6 +5677,11 @@
           "name": "color/background/status/warning/subtlest",
           "type": "COLOR",
           "description": "ほのかな色の面",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-warning-subtlest)",
           "values": {
             "light": {
               "alias": "color/amber/50"
@@ -3790,6 +5695,11 @@
           "name": "color/background/status/warning/subtle",
           "type": "COLOR",
           "description": "薄いタグ・通知の地（文字は .bold）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-warning-subtle)",
           "values": {
             "light": {
               "alias": "color/amber/100"
@@ -3803,6 +5713,11 @@
           "name": "color/background/status/warning/default",
           "type": "COLOR",
           "description": "色つきの面（文字は text.default）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-warning-default)",
           "values": {
             "light": {
               "alias": "color/amber/200"
@@ -3816,6 +5731,11 @@
           "name": "color/background/status/warning/bold",
           "type": "COLOR",
           "description": "塗り（白文字。amber / lime は黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-warning-bold)",
           "values": {
             "light": {
               "alias": "color/amber/400"
@@ -3829,6 +5749,11 @@
           "name": "color/background/status/warning/bold/hovered",
           "type": "COLOR",
           "description": "1 段濃く",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-warning-bold-hovered)",
           "values": {
             "light": {
               "alias": "color/amber/500"
@@ -3842,6 +5767,11 @@
           "name": "color/background/status/warning/bold/pressed",
           "type": "COLOR",
           "description": "2 段濃く",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-warning-bold-pressed)",
           "values": {
             "light": {
               "alias": "color/amber/600"
@@ -3855,6 +5785,11 @@
           "name": "color/background/status/warning/boldest",
           "type": "COLOR",
           "description": "最も強い塗り（light 白文字、dark 黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-warning-boldest)",
           "values": {
             "light": {
               "alias": "color/amber/800"
@@ -3868,6 +5803,11 @@
           "name": "color/background/status/error/subtlest",
           "type": "COLOR",
           "description": "ほのかな色の面",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-error-subtlest)",
           "values": {
             "light": {
               "alias": "color/red/50"
@@ -3881,6 +5821,11 @@
           "name": "color/background/status/error/subtle",
           "type": "COLOR",
           "description": "薄いタグ・通知の地（文字は .bold）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-error-subtle)",
           "values": {
             "light": {
               "alias": "color/red/100"
@@ -3894,6 +5839,11 @@
           "name": "color/background/status/error/default",
           "type": "COLOR",
           "description": "色つきの面（文字は text.default）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-error-default)",
           "values": {
             "light": {
               "alias": "color/red/200"
@@ -3907,6 +5857,11 @@
           "name": "color/background/status/error/bold",
           "type": "COLOR",
           "description": "塗り（白文字。amber / lime は黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-error-bold)",
           "values": {
             "light": {
               "alias": "color/red/600"
@@ -3920,6 +5875,11 @@
           "name": "color/background/status/error/bold/hovered",
           "type": "COLOR",
           "description": "1 段濃く",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-error-bold-hovered)",
           "values": {
             "light": {
               "alias": "color/red/700"
@@ -3933,6 +5893,11 @@
           "name": "color/background/status/error/bold/pressed",
           "type": "COLOR",
           "description": "2 段濃く",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-error-bold-pressed)",
           "values": {
             "light": {
               "alias": "color/red/800"
@@ -3946,6 +5911,11 @@
           "name": "color/background/status/error/boldest",
           "type": "COLOR",
           "description": "最も強い塗り（light 白文字、dark 黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-error-boldest)",
           "values": {
             "light": {
               "alias": "color/red/800"
@@ -3959,6 +5929,11 @@
           "name": "color/background/status/info/subtlest",
           "type": "COLOR",
           "description": "ほのかな色の面",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-info-subtlest)",
           "values": {
             "light": {
               "alias": "color/sky/50"
@@ -3972,6 +5947,11 @@
           "name": "color/background/status/info/subtle",
           "type": "COLOR",
           "description": "薄いタグ・通知の地（文字は .bold）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-info-subtle)",
           "values": {
             "light": {
               "alias": "color/sky/100"
@@ -3985,6 +5965,11 @@
           "name": "color/background/status/info/default",
           "type": "COLOR",
           "description": "色つきの面（文字は text.default）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-info-default)",
           "values": {
             "light": {
               "alias": "color/sky/200"
@@ -3998,6 +5983,11 @@
           "name": "color/background/status/info/bold",
           "type": "COLOR",
           "description": "塗り（白文字。amber / lime は黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-info-bold)",
           "values": {
             "light": {
               "alias": "color/sky/700"
@@ -4011,6 +6001,11 @@
           "name": "color/background/status/info/bold/hovered",
           "type": "COLOR",
           "description": "1 段濃く",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-info-bold-hovered)",
           "values": {
             "light": {
               "alias": "color/sky/800"
@@ -4024,6 +6019,11 @@
           "name": "color/background/status/info/bold/pressed",
           "type": "COLOR",
           "description": "2 段濃く",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-info-bold-pressed)",
           "values": {
             "light": {
               "alias": "color/sky/900"
@@ -4037,6 +6037,11 @@
           "name": "color/background/status/info/boldest",
           "type": "COLOR",
           "description": "最も強い塗り（light 白文字、dark 黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-status-info-boldest)",
           "values": {
             "light": {
               "alias": "color/sky/800"
@@ -4050,6 +6055,11 @@
           "name": "color/background/accent/blue/subtlest",
           "type": "COLOR",
           "description": "ほのかな色の面",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-blue-subtlest)",
           "values": {
             "light": {
               "alias": "color/blue/50"
@@ -4063,6 +6073,11 @@
           "name": "color/background/accent/blue/subtle",
           "type": "COLOR",
           "description": "薄いタグ・通知の地（文字は .bold）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-blue-subtle)",
           "values": {
             "light": {
               "alias": "color/blue/100"
@@ -4076,6 +6091,11 @@
           "name": "color/background/accent/blue/default",
           "type": "COLOR",
           "description": "色つきの面（文字は text.default）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-blue-default)",
           "values": {
             "light": {
               "alias": "color/blue/200"
@@ -4089,6 +6109,11 @@
           "name": "color/background/accent/blue/bold",
           "type": "COLOR",
           "description": "塗り（白文字。amber / lime は黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-blue-bold)",
           "values": {
             "light": {
               "alias": "color/blue/600"
@@ -4102,6 +6127,11 @@
           "name": "color/background/accent/blue/boldest",
           "type": "COLOR",
           "description": "最も強い塗り（light 白文字、dark 黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-blue-boldest)",
           "values": {
             "light": {
               "alias": "color/blue/800"
@@ -4115,6 +6145,11 @@
           "name": "color/background/accent/violet/subtlest",
           "type": "COLOR",
           "description": "ほのかな色の面",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-violet-subtlest)",
           "values": {
             "light": {
               "alias": "color/violet/50"
@@ -4128,6 +6163,11 @@
           "name": "color/background/accent/violet/subtle",
           "type": "COLOR",
           "description": "薄いタグ・通知の地（文字は .bold）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-violet-subtle)",
           "values": {
             "light": {
               "alias": "color/violet/100"
@@ -4141,6 +6181,11 @@
           "name": "color/background/accent/violet/default",
           "type": "COLOR",
           "description": "色つきの面（文字は text.default）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-violet-default)",
           "values": {
             "light": {
               "alias": "color/violet/200"
@@ -4154,6 +6199,11 @@
           "name": "color/background/accent/violet/bold",
           "type": "COLOR",
           "description": "塗り（白文字。amber / lime は黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-violet-bold)",
           "values": {
             "light": {
               "alias": "color/violet/600"
@@ -4167,6 +6217,11 @@
           "name": "color/background/accent/violet/boldest",
           "type": "COLOR",
           "description": "最も強い塗り（light 白文字、dark 黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-violet-boldest)",
           "values": {
             "light": {
               "alias": "color/violet/800"
@@ -4180,6 +6235,11 @@
           "name": "color/background/accent/purple/subtlest",
           "type": "COLOR",
           "description": "ほのかな色の面",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-purple-subtlest)",
           "values": {
             "light": {
               "alias": "color/purple/50"
@@ -4193,6 +6253,11 @@
           "name": "color/background/accent/purple/subtle",
           "type": "COLOR",
           "description": "薄いタグ・通知の地（文字は .bold）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-purple-subtle)",
           "values": {
             "light": {
               "alias": "color/purple/100"
@@ -4206,6 +6271,11 @@
           "name": "color/background/accent/purple/default",
           "type": "COLOR",
           "description": "色つきの面（文字は text.default）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-purple-default)",
           "values": {
             "light": {
               "alias": "color/purple/200"
@@ -4219,6 +6289,11 @@
           "name": "color/background/accent/purple/bold",
           "type": "COLOR",
           "description": "塗り（白文字。amber / lime は黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-purple-bold)",
           "values": {
             "light": {
               "alias": "color/purple/600"
@@ -4232,6 +6307,11 @@
           "name": "color/background/accent/purple/boldest",
           "type": "COLOR",
           "description": "最も強い塗り（light 白文字、dark 黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-purple-boldest)",
           "values": {
             "light": {
               "alias": "color/purple/800"
@@ -4245,6 +6325,11 @@
           "name": "color/background/accent/pink/subtlest",
           "type": "COLOR",
           "description": "ほのかな色の面",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-pink-subtlest)",
           "values": {
             "light": {
               "alias": "color/pink/50"
@@ -4258,6 +6343,11 @@
           "name": "color/background/accent/pink/subtle",
           "type": "COLOR",
           "description": "薄いタグ・通知の地（文字は .bold）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-pink-subtle)",
           "values": {
             "light": {
               "alias": "color/pink/100"
@@ -4271,6 +6361,11 @@
           "name": "color/background/accent/pink/default",
           "type": "COLOR",
           "description": "色つきの面（文字は text.default）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-pink-default)",
           "values": {
             "light": {
               "alias": "color/pink/200"
@@ -4284,6 +6379,11 @@
           "name": "color/background/accent/pink/bold",
           "type": "COLOR",
           "description": "塗り（白文字。amber / lime は黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-pink-bold)",
           "values": {
             "light": {
               "alias": "color/pink/600"
@@ -4297,6 +6397,11 @@
           "name": "color/background/accent/pink/boldest",
           "type": "COLOR",
           "description": "最も強い塗り（light 白文字、dark 黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-pink-boldest)",
           "values": {
             "light": {
               "alias": "color/pink/800"
@@ -4310,6 +6415,11 @@
           "name": "color/background/accent/red/subtlest",
           "type": "COLOR",
           "description": "ほのかな色の面",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-red-subtlest)",
           "values": {
             "light": {
               "alias": "color/red/50"
@@ -4323,6 +6433,11 @@
           "name": "color/background/accent/red/subtle",
           "type": "COLOR",
           "description": "薄いタグ・通知の地（文字は .bold）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-red-subtle)",
           "values": {
             "light": {
               "alias": "color/red/100"
@@ -4336,6 +6451,11 @@
           "name": "color/background/accent/red/default",
           "type": "COLOR",
           "description": "色つきの面（文字は text.default）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-red-default)",
           "values": {
             "light": {
               "alias": "color/red/200"
@@ -4349,6 +6469,11 @@
           "name": "color/background/accent/red/bold",
           "type": "COLOR",
           "description": "塗り（白文字。amber / lime は黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-red-bold)",
           "values": {
             "light": {
               "alias": "color/red/600"
@@ -4362,6 +6487,11 @@
           "name": "color/background/accent/red/boldest",
           "type": "COLOR",
           "description": "最も強い塗り（light 白文字、dark 黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-red-boldest)",
           "values": {
             "light": {
               "alias": "color/red/800"
@@ -4375,6 +6505,11 @@
           "name": "color/background/accent/orange/subtlest",
           "type": "COLOR",
           "description": "ほのかな色の面",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-orange-subtlest)",
           "values": {
             "light": {
               "alias": "color/orange/50"
@@ -4388,6 +6523,11 @@
           "name": "color/background/accent/orange/subtle",
           "type": "COLOR",
           "description": "薄いタグ・通知の地（文字は .bold）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-orange-subtle)",
           "values": {
             "light": {
               "alias": "color/orange/100"
@@ -4401,6 +6541,11 @@
           "name": "color/background/accent/orange/default",
           "type": "COLOR",
           "description": "色つきの面（文字は text.default）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-orange-default)",
           "values": {
             "light": {
               "alias": "color/orange/200"
@@ -4414,6 +6559,11 @@
           "name": "color/background/accent/orange/bold",
           "type": "COLOR",
           "description": "塗り（白文字。amber / lime は黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-orange-bold)",
           "values": {
             "light": {
               "alias": "color/orange/700"
@@ -4427,6 +6577,11 @@
           "name": "color/background/accent/orange/boldest",
           "type": "COLOR",
           "description": "最も強い塗り（light 白文字、dark 黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-orange-boldest)",
           "values": {
             "light": {
               "alias": "color/orange/800"
@@ -4440,6 +6595,11 @@
           "name": "color/background/accent/amber/subtlest",
           "type": "COLOR",
           "description": "ほのかな色の面",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-amber-subtlest)",
           "values": {
             "light": {
               "alias": "color/amber/50"
@@ -4453,6 +6613,11 @@
           "name": "color/background/accent/amber/subtle",
           "type": "COLOR",
           "description": "薄いタグ・通知の地（文字は .bold）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-amber-subtle)",
           "values": {
             "light": {
               "alias": "color/amber/100"
@@ -4466,6 +6631,11 @@
           "name": "color/background/accent/amber/default",
           "type": "COLOR",
           "description": "色つきの面（文字は text.default）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-amber-default)",
           "values": {
             "light": {
               "alias": "color/amber/200"
@@ -4479,6 +6649,11 @@
           "name": "color/background/accent/amber/bold",
           "type": "COLOR",
           "description": "塗り（白文字。amber / lime は黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-amber-bold)",
           "values": {
             "light": {
               "alias": "color/amber/400"
@@ -4492,6 +6667,11 @@
           "name": "color/background/accent/amber/boldest",
           "type": "COLOR",
           "description": "最も強い塗り（light 白文字、dark 黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-amber-boldest)",
           "values": {
             "light": {
               "alias": "color/amber/800"
@@ -4505,6 +6685,11 @@
           "name": "color/background/accent/lime/subtlest",
           "type": "COLOR",
           "description": "ほのかな色の面",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-lime-subtlest)",
           "values": {
             "light": {
               "alias": "color/lime/50"
@@ -4518,6 +6703,11 @@
           "name": "color/background/accent/lime/subtle",
           "type": "COLOR",
           "description": "薄いタグ・通知の地（文字は .bold）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-lime-subtle)",
           "values": {
             "light": {
               "alias": "color/lime/100"
@@ -4531,6 +6721,11 @@
           "name": "color/background/accent/lime/default",
           "type": "COLOR",
           "description": "色つきの面（文字は text.default）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-lime-default)",
           "values": {
             "light": {
               "alias": "color/lime/200"
@@ -4544,6 +6739,11 @@
           "name": "color/background/accent/lime/bold",
           "type": "COLOR",
           "description": "塗り（白文字。amber / lime は黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-lime-bold)",
           "values": {
             "light": {
               "alias": "color/lime/400"
@@ -4557,6 +6757,11 @@
           "name": "color/background/accent/lime/boldest",
           "type": "COLOR",
           "description": "最も強い塗り（light 白文字、dark 黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-lime-boldest)",
           "values": {
             "light": {
               "alias": "color/lime/800"
@@ -4570,6 +6775,11 @@
           "name": "color/background/accent/green/subtlest",
           "type": "COLOR",
           "description": "ほのかな色の面",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-green-subtlest)",
           "values": {
             "light": {
               "alias": "color/green/50"
@@ -4583,6 +6793,11 @@
           "name": "color/background/accent/green/subtle",
           "type": "COLOR",
           "description": "薄いタグ・通知の地（文字は .bold）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-green-subtle)",
           "values": {
             "light": {
               "alias": "color/green/100"
@@ -4596,6 +6811,11 @@
           "name": "color/background/accent/green/default",
           "type": "COLOR",
           "description": "色つきの面（文字は text.default）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-green-default)",
           "values": {
             "light": {
               "alias": "color/green/200"
@@ -4609,6 +6829,11 @@
           "name": "color/background/accent/green/bold",
           "type": "COLOR",
           "description": "塗り（白文字。amber / lime は黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-green-bold)",
           "values": {
             "light": {
               "alias": "color/green/700"
@@ -4622,6 +6847,11 @@
           "name": "color/background/accent/green/boldest",
           "type": "COLOR",
           "description": "最も強い塗り（light 白文字、dark 黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-green-boldest)",
           "values": {
             "light": {
               "alias": "color/green/800"
@@ -4635,6 +6865,11 @@
           "name": "color/background/accent/teal/subtlest",
           "type": "COLOR",
           "description": "ほのかな色の面",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-teal-subtlest)",
           "values": {
             "light": {
               "alias": "color/teal/50"
@@ -4648,6 +6883,11 @@
           "name": "color/background/accent/teal/subtle",
           "type": "COLOR",
           "description": "薄いタグ・通知の地（文字は .bold）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-teal-subtle)",
           "values": {
             "light": {
               "alias": "color/teal/100"
@@ -4661,6 +6901,11 @@
           "name": "color/background/accent/teal/default",
           "type": "COLOR",
           "description": "色つきの面（文字は text.default）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-teal-default)",
           "values": {
             "light": {
               "alias": "color/teal/200"
@@ -4674,6 +6919,11 @@
           "name": "color/background/accent/teal/bold",
           "type": "COLOR",
           "description": "塗り（白文字。amber / lime は黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-teal-bold)",
           "values": {
             "light": {
               "alias": "color/teal/700"
@@ -4687,6 +6937,11 @@
           "name": "color/background/accent/teal/boldest",
           "type": "COLOR",
           "description": "最も強い塗り（light 白文字、dark 黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-teal-boldest)",
           "values": {
             "light": {
               "alias": "color/teal/800"
@@ -4700,6 +6955,11 @@
           "name": "color/background/accent/cyan/subtlest",
           "type": "COLOR",
           "description": "ほのかな色の面",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-cyan-subtlest)",
           "values": {
             "light": {
               "alias": "color/cyan/50"
@@ -4713,6 +6973,11 @@
           "name": "color/background/accent/cyan/subtle",
           "type": "COLOR",
           "description": "薄いタグ・通知の地（文字は .bold）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-cyan-subtle)",
           "values": {
             "light": {
               "alias": "color/cyan/100"
@@ -4726,6 +6991,11 @@
           "name": "color/background/accent/cyan/default",
           "type": "COLOR",
           "description": "色つきの面（文字は text.default）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-cyan-default)",
           "values": {
             "light": {
               "alias": "color/cyan/200"
@@ -4739,6 +7009,11 @@
           "name": "color/background/accent/cyan/bold",
           "type": "COLOR",
           "description": "塗り（白文字。amber / lime は黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-cyan-bold)",
           "values": {
             "light": {
               "alias": "color/cyan/700"
@@ -4752,6 +7027,11 @@
           "name": "color/background/accent/cyan/boldest",
           "type": "COLOR",
           "description": "最も強い塗り（light 白文字、dark 黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-cyan-boldest)",
           "values": {
             "light": {
               "alias": "color/cyan/800"
@@ -4765,6 +7045,11 @@
           "name": "color/background/accent/sky/subtlest",
           "type": "COLOR",
           "description": "ほのかな色の面",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-sky-subtlest)",
           "values": {
             "light": {
               "alias": "color/sky/50"
@@ -4778,6 +7063,11 @@
           "name": "color/background/accent/sky/subtle",
           "type": "COLOR",
           "description": "薄いタグ・通知の地（文字は .bold）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-sky-subtle)",
           "values": {
             "light": {
               "alias": "color/sky/100"
@@ -4791,6 +7081,11 @@
           "name": "color/background/accent/sky/default",
           "type": "COLOR",
           "description": "色つきの面（文字は text.default）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-sky-default)",
           "values": {
             "light": {
               "alias": "color/sky/200"
@@ -4804,6 +7099,11 @@
           "name": "color/background/accent/sky/bold",
           "type": "COLOR",
           "description": "塗り（白文字。amber / lime は黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-sky-bold)",
           "values": {
             "light": {
               "alias": "color/sky/700"
@@ -4817,6 +7117,11 @@
           "name": "color/background/accent/sky/boldest",
           "type": "COLOR",
           "description": "最も強い塗り（light 白文字、dark 黒文字）",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--color-background-accent-sky-boldest)",
           "values": {
             "light": {
               "alias": "color/sky/800"
@@ -4830,6 +7135,10 @@
           "name": "color/link/default",
           "type": "COLOR",
           "description": "本文中のリンク",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-link-default)",
           "values": {
             "light": {
               "alias": "color/blue/700"
@@ -4843,6 +7152,10 @@
           "name": "color/link/hovered",
           "type": "COLOR",
           "description": "",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-link-hovered)",
           "values": {
             "light": {
               "alias": "color/blue/800"
@@ -4856,6 +7169,10 @@
           "name": "color/link/visited",
           "type": "COLOR",
           "description": "訪問済み（ブログ本文）",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codeSyntax": "var(--color-link-visited)",
           "values": {
             "light": {
               "alias": "color/purple/700"
@@ -4869,6 +7186,11 @@
           "name": "elevation/surface/default",
           "type": "COLOR",
           "description": "ページ・セクションの地",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--elevation-surface-default)",
           "values": {
             "light": {
               "alias": "color/neutral/50"
@@ -4882,6 +7204,11 @@
           "name": "elevation/surface/raised",
           "type": "COLOR",
           "description": "カード・パネル。light は影で浮かせる",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--elevation-surface-raised)",
           "values": {
             "light": {
               "alias": "color/neutral/0"
@@ -4895,6 +7222,11 @@
           "name": "elevation/surface/overlay",
           "type": "COLOR",
           "description": "モーダル・メニュー・ポップオーバー",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--elevation-surface-overlay)",
           "values": {
             "light": {
               "alias": "color/neutral/0"
@@ -4908,6 +7240,11 @@
           "name": "elevation/surface/sunken",
           "type": "COLOR",
           "description": "入力欄・くぼみ・コードブロックの地。文字は text.default / subtle まで",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "codeSyntax": "var(--elevation-surface-sunken)",
           "values": {
             "light": {
               "alias": "color/neutral/100"
@@ -4915,6 +7252,110 @@
             "dark": {
               "alias": "color/neutral/1000"
             }
+          }
+        },
+        {
+          "name": "elevation/shadow/rest/layer1",
+          "type": "COLOR",
+          "description": "静止したカード、区切りの補助 (layer 1)",
+          "scopes": [
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--elevation-shadow-rest)",
+          "values": {
+            "light": "#0000000A",
+            "dark": "#0000004D"
+          }
+        },
+        {
+          "name": "elevation/shadow/rest/layer2",
+          "type": "COLOR",
+          "description": "静止したカード、区切りの補助 (layer 2)",
+          "scopes": [
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--elevation-shadow-rest)",
+          "values": {
+            "light": "#0000000F",
+            "dark": "#00000033"
+          }
+        },
+        {
+          "name": "elevation/shadow/lifted/layer1",
+          "type": "COLOR",
+          "description": "浮いたカード、ホバーで持ち上がる面、ドロップダウン (layer 1)",
+          "scopes": [
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--elevation-shadow-lifted)",
+          "values": {
+            "light": "#0000000F",
+            "dark": "#00000066"
+          }
+        },
+        {
+          "name": "elevation/shadow/lifted/layer2",
+          "type": "COLOR",
+          "description": "浮いたカード、ホバーで持ち上がる面、ドロップダウン (layer 2)",
+          "scopes": [
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--elevation-shadow-lifted)",
+          "values": {
+            "light": "#0000001F",
+            "dark": "#0000004D"
+          }
+        },
+        {
+          "name": "elevation/shadow/floating/layer1",
+          "type": "COLOR",
+          "description": "ポップオーバー、固定バー、ドラッグ中の要素 (layer 1)",
+          "scopes": [
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--elevation-shadow-floating)",
+          "values": {
+            "light": "#00000014",
+            "dark": "#00000073"
+          }
+        },
+        {
+          "name": "elevation/shadow/floating/layer2",
+          "type": "COLOR",
+          "description": "ポップオーバー、固定バー、ドラッグ中の要素 (layer 2)",
+          "scopes": [
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--elevation-shadow-floating)",
+          "values": {
+            "light": "#00000029",
+            "dark": "#00000073"
+          }
+        },
+        {
+          "name": "elevation/shadow/overlay/layer1",
+          "type": "COLOR",
+          "description": "モーダル、ダイアログ、最上位のオーバーレイ (layer 1)",
+          "scopes": [
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--elevation-shadow-overlay)",
+          "values": {
+            "light": "#00000014",
+            "dark": "#00000080"
+          }
+        },
+        {
+          "name": "elevation/shadow/overlay/layer2",
+          "type": "COLOR",
+          "description": "モーダル、ダイアログ、最上位のオーバーレイ (layer 2)",
+          "scopes": [
+            "EFFECT_COLOR"
+          ],
+          "codeSyntax": "var(--elevation-shadow-overlay)",
+          "values": {
+            "light": "#0000003D",
+            "dark": "#00000099"
           }
         }
       ]
@@ -4940,6 +7381,11 @@
         "value": -2
       },
       "fontWeight": 700,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Bold"
+      },
+      "codeSyntax": "var(--font-display-sm-font-size)",
       "description": "48px / 60px（1.25）· bold · letterSpacing.sm"
     },
     {
@@ -4961,6 +7407,11 @@
         "value": -2
       },
       "fontWeight": 700,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Bold"
+      },
+      "codeSyntax": "var(--font-display-md-font-size)",
       "description": "64px / 80px（1.25）· bold · letterSpacing.sm"
     },
     {
@@ -4982,6 +7433,11 @@
         "value": -2
       },
       "fontWeight": 700,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Bold"
+      },
+      "codeSyntax": "var(--font-display-lg-font-size)",
       "description": "80px / 100px（1.25）· bold · letterSpacing.sm"
     },
     {
@@ -5003,6 +7459,11 @@
         "value": -2
       },
       "fontWeight": 700,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Bold"
+      },
+      "codeSyntax": "var(--font-display-xl-font-size)",
       "description": "96px / 120px（1.25）· bold · letterSpacing.sm"
     },
     {
@@ -5024,6 +7485,11 @@
         "value": -2
       },
       "fontWeight": 700,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Bold"
+      },
+      "codeSyntax": "var(--font-display-xxl-font-size)",
       "description": "128px / 160px（1.25）· bold · letterSpacing.sm"
     },
     {
@@ -5045,6 +7511,11 @@
         "value": 0
       },
       "fontWeight": 600,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Semi Bold"
+      },
+      "codeSyntax": "var(--font-heading-xs-font-size)",
       "description": "16px / 20px（1.25）· semibold · letterSpacing.md"
     },
     {
@@ -5066,6 +7537,11 @@
         "value": 0
       },
       "fontWeight": 600,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Semi Bold"
+      },
+      "codeSyntax": "var(--font-heading-sm-font-size)",
       "description": "18px / 24px（1.33）· semibold · letterSpacing.md"
     },
     {
@@ -5087,6 +7563,11 @@
         "value": 0
       },
       "fontWeight": 600,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Semi Bold"
+      },
+      "codeSyntax": "var(--font-heading-md-font-size)",
       "description": "20px / 28px（1.40）· semibold · letterSpacing.md"
     },
     {
@@ -5108,6 +7589,11 @@
         "value": 0
       },
       "fontWeight": 600,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Semi Bold"
+      },
+      "codeSyntax": "var(--font-heading-lg-font-size)",
       "description": "24px / 32px（1.33）· semibold · letterSpacing.md"
     },
     {
@@ -5129,6 +7615,11 @@
         "value": -2
       },
       "fontWeight": 600,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Semi Bold"
+      },
+      "codeSyntax": "var(--font-heading-xl-font-size)",
       "description": "28px / 36px（1.29）· semibold · letterSpacing.sm"
     },
     {
@@ -5150,6 +7641,11 @@
         "value": -2
       },
       "fontWeight": 600,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Semi Bold"
+      },
+      "codeSyntax": "var(--font-heading-xxl-font-size)",
       "description": "32px / 40px（1.25）· semibold · letterSpacing.sm"
     },
     {
@@ -5171,6 +7667,11 @@
         "value": -2
       },
       "fontWeight": 600,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Semi Bold"
+      },
+      "codeSyntax": "var(--font-heading-xxxl-font-size)",
       "description": "40px / 48px（1.20）· semibold · letterSpacing.sm"
     },
     {
@@ -5192,6 +7693,11 @@
         "value": 0
       },
       "fontWeight": 400,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Regular"
+      },
+      "codeSyntax": "var(--font-body-sm-font-size)",
       "description": "14px / 24px（1.71）· regular · letterSpacing.md"
     },
     {
@@ -5213,6 +7719,11 @@
         "value": 0
       },
       "fontWeight": 400,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Regular"
+      },
+      "codeSyntax": "var(--font-body-md-font-size)",
       "description": "16px / 28px（1.75）· regular · letterSpacing.md"
     },
     {
@@ -5234,6 +7745,11 @@
         "value": 0
       },
       "fontWeight": 400,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Regular"
+      },
+      "codeSyntax": "var(--font-body-lg-font-size)",
       "description": "18px / 28px（1.56）· regular · letterSpacing.md"
     },
     {
@@ -5255,6 +7771,11 @@
         "value": 0
       },
       "fontWeight": 400,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Regular"
+      },
+      "codeSyntax": "var(--font-body-xl-font-size)",
       "description": "20px / 32px（1.60）· regular · letterSpacing.md"
     },
     {
@@ -5276,6 +7797,11 @@
         "value": 2
       },
       "fontWeight": 500,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Medium"
+      },
+      "codeSyntax": "var(--font-label-xs-font-size)",
       "description": "10px / 12px（1.20）· medium · letterSpacing.lg"
     },
     {
@@ -5297,6 +7823,11 @@
         "value": 2
       },
       "fontWeight": 500,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Medium"
+      },
+      "codeSyntax": "var(--font-label-sm-font-size)",
       "description": "12px / 16px（1.33）· medium · letterSpacing.lg"
     },
     {
@@ -5318,6 +7849,11 @@
         "value": 0
       },
       "fontWeight": 500,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Medium"
+      },
+      "codeSyntax": "var(--font-label-md-font-size)",
       "description": "14px / 20px（1.43）· medium · letterSpacing.md"
     },
     {
@@ -5339,6 +7875,11 @@
         "value": 0
       },
       "fontWeight": 500,
+      "figmaFont": {
+        "family": "Inter",
+        "style": "Medium"
+      },
+      "codeSyntax": "var(--font-label-lg-font-size)",
       "description": "16px / 24px（1.50）· medium · letterSpacing.md"
     },
     {
@@ -5360,6 +7901,11 @@
         "value": 0
       },
       "fontWeight": 400,
+      "figmaFont": {
+        "family": "Geist Mono",
+        "style": "Regular"
+      },
+      "codeSyntax": "var(--font-label-mono-xs-font-size)",
       "description": "10px / 12px（1.20）· regular · letterSpacing.md"
     },
     {
@@ -5381,6 +7927,11 @@
         "value": 0
       },
       "fontWeight": 400,
+      "figmaFont": {
+        "family": "Geist Mono",
+        "style": "Regular"
+      },
+      "codeSyntax": "var(--font-label-mono-sm-font-size)",
       "description": "12px / 16px（1.33）· regular · letterSpacing.md"
     },
     {
@@ -5402,6 +7953,11 @@
         "value": 0
       },
       "fontWeight": 400,
+      "figmaFont": {
+        "family": "Geist Mono",
+        "style": "Regular"
+      },
+      "codeSyntax": "var(--font-label-mono-md-font-size)",
       "description": "14px / 20px（1.43）· regular · letterSpacing.md"
     },
     {
@@ -5423,6 +7979,11 @@
         "value": 0
       },
       "fontWeight": 400,
+      "figmaFont": {
+        "family": "Geist Mono",
+        "style": "Regular"
+      },
+      "codeSyntax": "var(--font-label-mono-lg-font-size)",
       "description": "16px / 24px（1.50）· regular · letterSpacing.md"
     }
   ],
@@ -5431,10 +7992,12 @@
       {
         "name": "elevation/shadow/rest",
         "description": "静止したカード、区切りの補助",
+        "codeSyntax": "var(--elevation-shadow-rest)",
         "effects": [
           {
             "type": "DROP_SHADOW",
             "color": "#0000000A",
+            "colorVariable": "elevation/shadow/rest/layer1",
             "offset": {
               "x": 0,
               "y": 1
@@ -5445,6 +8008,7 @@
           {
             "type": "DROP_SHADOW",
             "color": "#0000000F",
+            "colorVariable": "elevation/shadow/rest/layer2",
             "offset": {
               "x": 0,
               "y": 1
@@ -5457,10 +8021,12 @@
       {
         "name": "elevation/shadow/lifted",
         "description": "浮いたカード、ホバーで持ち上がる面、ドロップダウン",
+        "codeSyntax": "var(--elevation-shadow-lifted)",
         "effects": [
           {
             "type": "DROP_SHADOW",
             "color": "#0000000F",
+            "colorVariable": "elevation/shadow/lifted/layer1",
             "offset": {
               "x": 0,
               "y": 2
@@ -5471,6 +8037,7 @@
           {
             "type": "DROP_SHADOW",
             "color": "#0000001F",
+            "colorVariable": "elevation/shadow/lifted/layer2",
             "offset": {
               "x": 0,
               "y": 4
@@ -5483,10 +8050,12 @@
       {
         "name": "elevation/shadow/floating",
         "description": "ポップオーバー、固定バー、ドラッグ中の要素",
+        "codeSyntax": "var(--elevation-shadow-floating)",
         "effects": [
           {
             "type": "DROP_SHADOW",
             "color": "#00000014",
+            "colorVariable": "elevation/shadow/floating/layer1",
             "offset": {
               "x": 0,
               "y": 4
@@ -5497,6 +8066,7 @@
           {
             "type": "DROP_SHADOW",
             "color": "#00000029",
+            "colorVariable": "elevation/shadow/floating/layer2",
             "offset": {
               "x": 0,
               "y": 12
@@ -5509,10 +8079,12 @@
       {
         "name": "elevation/shadow/overlay",
         "description": "モーダル、ダイアログ、最上位のオーバーレイ",
+        "codeSyntax": "var(--elevation-shadow-overlay)",
         "effects": [
           {
             "type": "DROP_SHADOW",
             "color": "#00000014",
+            "colorVariable": "elevation/shadow/overlay/layer1",
             "offset": {
               "x": 0,
               "y": 8
@@ -5523,6 +8095,7 @@
           {
             "type": "DROP_SHADOW",
             "color": "#0000003D",
+            "colorVariable": "elevation/shadow/overlay/layer2",
             "offset": {
               "x": 0,
               "y": 24
@@ -5537,10 +8110,12 @@
       {
         "name": "elevation/shadow/rest",
         "description": "静止したカード、区切りの補助",
+        "codeSyntax": "var(--elevation-shadow-rest)",
         "effects": [
           {
             "type": "DROP_SHADOW",
             "color": "#0000004D",
+            "colorVariable": "elevation/shadow/rest/layer1",
             "offset": {
               "x": 0,
               "y": 1
@@ -5551,6 +8126,7 @@
           {
             "type": "DROP_SHADOW",
             "color": "#00000033",
+            "colorVariable": "elevation/shadow/rest/layer2",
             "offset": {
               "x": 0,
               "y": 1
@@ -5563,10 +8139,12 @@
       {
         "name": "elevation/shadow/lifted",
         "description": "浮いたカード、ホバーで持ち上がる面、ドロップダウン",
+        "codeSyntax": "var(--elevation-shadow-lifted)",
         "effects": [
           {
             "type": "DROP_SHADOW",
             "color": "#00000066",
+            "colorVariable": "elevation/shadow/lifted/layer1",
             "offset": {
               "x": 0,
               "y": 2
@@ -5577,6 +8155,7 @@
           {
             "type": "DROP_SHADOW",
             "color": "#0000004D",
+            "colorVariable": "elevation/shadow/lifted/layer2",
             "offset": {
               "x": 0,
               "y": 4
@@ -5589,10 +8168,12 @@
       {
         "name": "elevation/shadow/floating",
         "description": "ポップオーバー、固定バー、ドラッグ中の要素",
+        "codeSyntax": "var(--elevation-shadow-floating)",
         "effects": [
           {
             "type": "DROP_SHADOW",
             "color": "#00000073",
+            "colorVariable": "elevation/shadow/floating/layer1",
             "offset": {
               "x": 0,
               "y": 4
@@ -5603,6 +8184,7 @@
           {
             "type": "DROP_SHADOW",
             "color": "#00000073",
+            "colorVariable": "elevation/shadow/floating/layer2",
             "offset": {
               "x": 0,
               "y": 12
@@ -5615,10 +8197,12 @@
       {
         "name": "elevation/shadow/overlay",
         "description": "モーダル、ダイアログ、最上位のオーバーレイ",
+        "codeSyntax": "var(--elevation-shadow-overlay)",
         "effects": [
           {
             "type": "DROP_SHADOW",
             "color": "#00000080",
+            "colorVariable": "elevation/shadow/overlay/layer1",
             "offset": {
               "x": 0,
               "y": 8
@@ -5629,6 +8213,7 @@
           {
             "type": "DROP_SHADOW",
             "color": "#00000099",
+            "colorVariable": "elevation/shadow/overlay/layer2",
             "offset": {
               "x": 0,
               "y": 24

@@ -1,6 +1,37 @@
 // Emitters for the non-CSS outputs. Each takes Style Dictionary token arrays
 // (`allTokens` from getPlatformTokens) and returns file contents as a string.
-import { HEADER, ROOT, cleanPath, dotName, figmaName, isUnitValue } from './hooks.js';
+import { HEADER, ROOT, cleanPath, cssName, dotName, figmaName, isUnitValue } from './hooks.js';
+
+/** Figma variable scopes by public name (first match wins). [] = hidden from every picker. */
+const SCOPES = [
+  [/^color\/(text|link)\//, ['TEXT_FILL']],
+  [/^color\/icon\//, ['SHAPE_FILL']],
+  [/^color\/border\//, ['STROKE_COLOR']],
+  [/^(color\/background|elevation\/surface)\//, ['FRAME_FILL', 'SHAPE_FILL']],
+  [/^elevation\/shadow\//, ['EFFECT_COLOR']],
+  [/^color\//, ['ALL_FILLS', 'STROKE_COLOR', 'EFFECT_COLOR']], // primitives
+  [/^dimension\/space\//, ['GAP']],
+  [/^dimension\/(size|breakpoint)\//, ['WIDTH_HEIGHT']],
+  [/^dimension\/radius\/shape\//, []],
+  [/^dimension\/radius\//, ['CORNER_RADIUS']],
+  [/^(dimension\/border|border\/width)\//, ['STROKE_FLOAT']],
+  [/^typography\/size\//, ['FONT_SIZE']],
+  [/^typography\/lineHeight\//, ['LINE_HEIGHT']],
+  [/^typography\/weight\//, ['FONT_WEIGHT']],
+  [/^(typography|font)\/family\//, ['FONT_FAMILY']],
+  [/^opacity\//, ['OPACITY']],
+  [/^layout\/(breakpoint|container)\//, ['WIDTH_HEIGHT']],
+  [/^layout\/(grid\/(gutter|margin)|section)\//, ['GAP']],
+];
+const scopesFor = (name) => SCOPES.find(([re]) => re.test(name))?.[1] ?? [];
+/** Figma font family / style names for the token stacks and weights. */
+const FIGMA_FAMILY = { 'Inter Variable': 'Inter', 'Geist Mono': 'Geist Mono', Lora: 'Lora', 'Noto Sans JP': 'Noto Sans JP' };
+const FIGMA_STYLE = {
+  Inter: { 400: 'Regular', 500: 'Medium', 600: 'Semi Bold', 700: 'Bold' },
+  'Geist Mono': { 400: 'Regular', 500: 'Medium', 600: 'SemiBold', 700: 'Bold' },
+  Lora: { 400: 'Regular', 500: 'Medium', 600: 'SemiBold', 700: 'Bold' },
+  'Noto Sans JP': { 400: 'Regular', 500: 'Medium', 600: 'Bold', 700: 'Bold' },
+};
 
 const setOf = (t) => t.filePath.replace(/^.*tokens\//, '').replace(/\.json$/, '');
 const isDark = (t) => /color\.dark/.test(t.filePath);
@@ -94,20 +125,37 @@ const textStyle = (t) => {
       : { unit: 'PERCENT', value: v.lineHeight * 100 },
     letterSpacing: ls.unit === 'em' ? { unit: 'PERCENT', value: ls.value * 100 } : { unit: 'PIXELS', value: ls.value },
     fontWeight: v.fontWeight,
+    figmaFont: (() => {
+      const family = FIGMA_FAMILY[(Array.isArray(v.fontFamily) ? v.fontFamily : [v.fontFamily])[0]] ?? 'Inter';
+      return { family, style: FIGMA_STYLE[family]?.[v.fontWeight] ?? 'Regular' };
+    })(),
+    codeSyntax: `var(--${cssName(t.path)}-font-size)`,
     description: t.$description ?? '',
   };
 };
 const effectStyle = (t) => ({
   name: figmaName(t.path),
   description: t.$description ?? '',
-  effects: t.$value.map((l) => ({
+  codeSyntax: `var(--${cssName(t.path)})`,
+  effects: t.$value.map((l, i) => ({
     type: l.inset ? 'INNER_SHADOW' : 'DROP_SHADOW',
     color: l.color,
+    colorVariable: `${figmaName(t.path)}/layer${i + 1}`,
     offset: { x: l.offsetX.value, y: l.offsetY.value },
     radius: l.blur.value,
     spread: l.spread.value,
   })),
 });
+/** Shadow layer colors as themed COLOR variables, so one effect style follows light / dark. */
+const shadowLayerVariables = (t, d) =>
+  t.$value.map((l, i) => ({
+    name: `${figmaName(t.path)}/layer${i + 1}`,
+    type: 'COLOR',
+    description: `${t.$description ?? ''} (layer ${i + 1})`.trim(),
+    scopes: ['EFFECT_COLOR'],
+    codeSyntax: `var(--${cssName(t.path)})`,
+    values: { light: l.color, dark: d.$value[i].color },
+  }));
 
 export function figmaJson(lightRaw, darkRaw) {
   const dark = new Map(darkRaw.filter(isDark).map((t) => [dotName(t.path), t]));
@@ -128,8 +176,10 @@ export function figmaJson(lightRaw, darkRaw) {
     const name = figmaName(t.path);
     if (t.$type === 'typography') { textStyles.push(textStyle(t)); continue; }
     if (t.$type === 'shadow') {
+      const d = dark.get(dotName(t.path));
       effectStyles.light.push(effectStyle(t));
-      effectStyles.dark.push(effectStyle(dark.get(dotName(t.path))));
+      effectStyles.dark.push(effectStyle(d));
+      for (const v of shadowLayerVariables(t, d)) { collections.color.variables.push(v); names.add(v.name); }
       continue;
     }
     const conv = toVariable(t);
@@ -137,7 +187,10 @@ export function figmaJson(lightRaw, darkRaw) {
     const set = setOf(t);
     const col = set.startsWith('primitives/') ? collections.primitives
       : set === 'semantic/color.light' ? collections.color : collections.semantic;
-    const variable = { name, type: conv.type, description: t.$description ?? '' };
+    const variable = {
+      name, type: conv.type, description: t.$description ?? '',
+      scopes: scopesFor(name), codeSyntax: `var(--${cssName(t.path)})`,
+    };
     if (conv.unit) variable.unit = conv.unit;
     if (col === collections.color) {
       const d = dark.get(dotName(t.path));
