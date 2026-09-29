@@ -53,6 +53,15 @@ async function importCollection(spec) {
 }
 
 async function importTextStyles(specs) {
+  // Style names differ between Figma's Google Fonts copy ("Semi Bold") and local Inter 4 ("SemiBold"):
+  // pick whichever variant this Figma instance can load.
+  const available = await figma.listAvailableFontsAsync();
+  const has = (family, style) => available.some((f) => f.fontName.family === family && f.fontName.style === style);
+  const resolveStyle = (family, style) => {
+    const variants = [style, style.replace(/([a-z])([A-Z])/g, '$1 $2'), style.replace(/ /g, '')];
+    return variants.find((v) => has(family, v)) ?? style;
+  };
+  for (const s of specs) s.figmaFont = { family: s.figmaFont.family, style: resolveStyle(s.figmaFont.family, s.figmaFont.style) };
   const fonts = new Set(specs.map((s) => JSON.stringify(s.figmaFont)));
   for (const f of fonts) await figma.loadFontAsync(JSON.parse(f));
   const existing = new Map((await figma.getLocalTextStylesAsync()).map((s) => [s.name, s]));
