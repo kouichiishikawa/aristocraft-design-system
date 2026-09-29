@@ -2931,7 +2931,7 @@
           ],
           "codeSyntax": "var(--typography-family-sans)",
           "values": {
-            "value": "Inter Variable"
+            "value": "Inter"
           }
         },
         {
@@ -3494,7 +3494,7 @@
           ],
           "codeSyntax": "var(--font-family-default)",
           "values": {
-            "value": "Inter Variable"
+            "value": "Inter"
           }
         },
         {

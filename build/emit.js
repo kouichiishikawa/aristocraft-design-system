@@ -109,7 +109,10 @@ function toVariable(t) {
         : { skip: `dimension unit "${v?.unit}" has no Figma variable equivalent` };
     case 'duration': return { type: 'FLOAT', value: v.unit === 's' ? v.value * 1000 : v.value, unit: 'ms' };
     case 'string': return { type: 'STRING', value: v };
-    case 'fontFamily': return { type: 'STRING', value: Array.isArray(v) ? v[0] : v };
+    case 'fontFamily': { // Figma family name for the first family in the stack (Inter Variable → Inter)
+      const first = Array.isArray(v) ? v[0] : v;
+      return { type: 'STRING', value: FIGMA_FAMILY[first] ?? first };
+    }
     case 'cubicBezier': return { skip: 'Figma has no easing variable type' };
     default: return { skip: `type ${t.$type} is exported as a style, not a variable` };
   }
