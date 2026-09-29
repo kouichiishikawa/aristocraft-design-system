@@ -31,4 +31,4 @@
 - [x] 工程3: CSS 変数（primitive / semantic light+dark）、TypeScript（入れ子 + d.ts）、フラット JSON
 - [x] 工程4: Figma 向け JSON（collection / mode 形式、color→COLOR、number/dimension→FLOAT、string→STRING）
 - [x] 工程5: 検証（参照切れ・重複・型、コントラスト 276 件）を npm test に束ねる
-- [ ] 工程6: git init → GitHub public repo → Actions（build → test → dist 差分なし）。docs/pf-09-pipeline.md、Notion 完了報告
+- [x] 工程6: git init → GitHub public repo → Actions（build → test → dist 差分なし）。docs/pf-09-pipeline.md、Notion 完了報告
