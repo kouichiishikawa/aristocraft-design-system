@@ -1,0 +1,19 @@
+{
+  "name": "aristocraft-design-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "aristocraft design tokens (DTCG) and build pipeline",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node build/index.js",
+    "test": "node build/validate.js && npm run build && node --test build/dist.test.js",
+    "check:color": "cd docs/reference && python3 semantic_color_build.py"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "style-dictionary": "^5.5.5"
+  }
+}

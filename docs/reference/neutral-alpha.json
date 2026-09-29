@@ -1,0 +1,158 @@
+{
+ "light": {
+  "fg": "neutral.950 #12100D",
+  "bg": "neutral.50 #F8F6F4",
+  "steps": [
+   {
+    "step": 100,
+    "target": "#DEDCD8",
+    "alpha": 0.116,
+    "alpha_pct": 11.6,
+    "result": "#DDDBD9",
+    "err": 1
+   },
+   {
+    "step": 200,
+    "target": "#C5C2BD",
+    "alpha": 0.229,
+    "alpha_pct": 22.9,
+    "result": "#C3C1BF",
+    "err": 2
+   },
+   {
+    "step": 300,
+    "target": "#ACA9A2",
+    "alpha": 0.34,
+    "alpha_pct": 34.0,
+    "result": "#AAA8A5",
+    "err": 3
+   },
+   {
+    "step": 400,
+    "target": "#949089",
+    "alpha": 0.447,
+    "alpha_pct": 44.7,
+    "result": "#918F8D",
+    "err": 4
+   },
+   {
+    "step": 500,
+    "target": "#7C7871",
+    "alpha": 0.551,
+    "alpha_pct": 55.1,
+    "result": "#797775",
+    "err": 4
+   },
+   {
+    "step": 600,
+    "target": "#65615A",
+    "alpha": 0.651,
+    "alpha_pct": 65.1,
+    "result": "#62605E",
+    "err": 4
+   },
+   {
+    "step": 700,
+    "target": "#4F4B45",
+    "alpha": 0.745,
+    "alpha_pct": 74.5,
+    "result": "#4D4B48",
+    "err": 3
+   },
+   {
+    "step": 800,
+    "target": "#393631",
+    "alpha": 0.836,
+    "alpha_pct": 83.6,
+    "result": "#383633",
+    "err": 2
+   },
+   {
+    "step": 900,
+    "target": "#25221E",
+    "alpha": 0.922,
+    "alpha_pct": 92.2,
+    "result": "#24221F",
+    "err": 1
+   }
+  ]
+ },
+ "dark": {
+  "fg": "neutral.50 #F8F6F4",
+  "bg": "neutral.950 #12100D",
+  "steps": [
+   {
+    "step": 900,
+    "target": "#25221E",
+    "alpha": 0.078,
+    "alpha_pct": 7.8,
+    "result": "#24221F",
+    "err": 1
+   },
+   {
+    "step": 800,
+    "target": "#393631",
+    "alpha": 0.164,
+    "alpha_pct": 16.4,
+    "result": "#383633",
+    "err": 2
+   },
+   {
+    "step": 700,
+    "target": "#4F4B45",
+    "alpha": 0.255,
+    "alpha_pct": 25.5,
+    "result": "#4D4B48",
+    "err": 3
+   },
+   {
+    "step": 600,
+    "target": "#65615A",
+    "alpha": 0.349,
+    "alpha_pct": 34.9,
+    "result": "#62605E",
+    "err": 4
+   },
+   {
+    "step": 500,
+    "target": "#7C7871",
+    "alpha": 0.449,
+    "alpha_pct": 44.9,
+    "result": "#797775",
+    "err": 4
+   },
+   {
+    "step": 400,
+    "target": "#949089",
+    "alpha": 0.553,
+    "alpha_pct": 55.3,
+    "result": "#918F8D",
+    "err": 4
+   },
+   {
+    "step": 300,
+    "target": "#ACA9A2",
+    "alpha": 0.66,
+    "alpha_pct": 66.0,
+    "result": "#AAA8A5",
+    "err": 3
+   },
+   {
+    "step": 200,
+    "target": "#C5C2BD",
+    "alpha": 0.771,
+    "alpha_pct": 77.1,
+    "result": "#C3C1BF",
+    "err": 2
+   },
+   {
+    "step": 100,
+    "target": "#DEDCD8",
+    "alpha": 0.884,
+    "alpha_pct": 88.4,
+    "result": "#DDDBD9",
+    "err": 1
+   }
+  ]
+ }
+}

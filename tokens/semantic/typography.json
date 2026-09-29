@@ -1,0 +1,390 @@
+{
+  "font": {
+    "family": {
+      "$description": "和欧混植の実用スタック。欧文グリフは先頭の書体、和文グリフは Noto Sans JP にフォールバックする",
+      "default": {
+        "$type": "fontFamily",
+        "$value": [
+          "Inter Variable",
+          "Inter",
+          "Noto Sans JP",
+          "system-ui",
+          "sans-serif"
+        ],
+        "$description": "{typography.family.sans} + {typography.family.jp}"
+      },
+      "serif": {
+        "$type": "fontFamily",
+        "$value": [
+          "Lora",
+          "Noto Sans JP",
+          "Georgia",
+          "serif"
+        ],
+        "$description": "{typography.family.serif} + {typography.family.jp}。装飾用途（引用・Music など、英語のみ）。semantic の role は持たず、使う部品の component トークンで size / line box を display.* から借りて定義する"
+      },
+      "mono": {
+        "$type": "fontFamily",
+        "$value": [
+          "Geist Mono",
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "monospace"
+        ],
+        "$description": "{typography.family.mono}。数値・コード・トークン名"
+      }
+    },
+    "display": {
+      "$description": "ヒーロー・大見出し。1 画面に 1 つ。詰めた字間、太いウェイト。line box は size × 1.25",
+      "sm": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.1200}",
+          "lineHeight": {
+            "value": 60,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.sm}",
+          "fontWeight": "{typography.weight.bold}"
+        },
+        "$description": "48px / 60px（1.25）· bold · letterSpacing.sm"
+      },
+      "md": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.1600}",
+          "lineHeight": {
+            "value": 80,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.sm}",
+          "fontWeight": "{typography.weight.bold}"
+        },
+        "$description": "64px / 80px（1.25）· bold · letterSpacing.sm"
+      },
+      "lg": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.2000}",
+          "lineHeight": {
+            "value": 100,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.sm}",
+          "fontWeight": "{typography.weight.bold}"
+        },
+        "$description": "80px / 100px（1.25）· bold · letterSpacing.sm"
+      },
+      "xl": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.2400}",
+          "lineHeight": {
+            "value": 120,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.sm}",
+          "fontWeight": "{typography.weight.bold}"
+        },
+        "$description": "96px / 120px（1.25）· bold · letterSpacing.sm"
+      },
+      "xxl": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.3200}",
+          "lineHeight": {
+            "value": 160,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.sm}",
+          "fontWeight": "{typography.weight.bold}"
+        },
+        "$description": "128px / 160px（1.25）· bold · letterSpacing.sm"
+      }
+    },
+    "heading": {
+      "$description": "セクション・記事の見出し。7 段。line box は size × 1.2〜1.4 を 4px に丸める。xl 以上は字間を詰める",
+      "xs": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.400}",
+          "lineHeight": {
+            "value": 20,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.md}",
+          "fontWeight": "{typography.weight.semibold}"
+        },
+        "$description": "16px / 20px（1.25）· semibold · letterSpacing.md"
+      },
+      "sm": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.450}",
+          "lineHeight": {
+            "value": 24,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.md}",
+          "fontWeight": "{typography.weight.semibold}"
+        },
+        "$description": "18px / 24px（1.33）· semibold · letterSpacing.md"
+      },
+      "md": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.500}",
+          "lineHeight": {
+            "value": 28,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.md}",
+          "fontWeight": "{typography.weight.semibold}"
+        },
+        "$description": "20px / 28px（1.40）· semibold · letterSpacing.md"
+      },
+      "lg": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.600}",
+          "lineHeight": {
+            "value": 32,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.md}",
+          "fontWeight": "{typography.weight.semibold}"
+        },
+        "$description": "24px / 32px（1.33）· semibold · letterSpacing.md"
+      },
+      "xl": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.700}",
+          "lineHeight": {
+            "value": 36,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.sm}",
+          "fontWeight": "{typography.weight.semibold}"
+        },
+        "$description": "28px / 36px（1.29）· semibold · letterSpacing.sm"
+      },
+      "xxl": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.800}",
+          "lineHeight": {
+            "value": 40,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.sm}",
+          "fontWeight": "{typography.weight.semibold}"
+        },
+        "$description": "32px / 40px（1.25）· semibold · letterSpacing.sm"
+      },
+      "xxxl": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.1000}",
+          "lineHeight": {
+            "value": 48,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.sm}",
+          "fontWeight": "{typography.weight.semibold}"
+        },
+        "$description": "40px / 48px（1.20）· semibold · letterSpacing.sm"
+      }
+    },
+    "body": {
+      "$description": "本文。4 段。和文で破綻しない行間（size × 1.56〜1.75）を 4px に丸める。欧文のみの段落は component で lineHeight.lg に下げてよい",
+      "sm": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.350}",
+          "lineHeight": {
+            "value": 24,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.md}",
+          "fontWeight": "{typography.weight.regular}"
+        },
+        "$description": "14px / 24px（1.71）· regular · letterSpacing.md"
+      },
+      "md": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.400}",
+          "lineHeight": {
+            "value": 28,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.md}",
+          "fontWeight": "{typography.weight.regular}"
+        },
+        "$description": "16px / 28px（1.75）· regular · letterSpacing.md"
+      },
+      "lg": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.450}",
+          "lineHeight": {
+            "value": 28,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.md}",
+          "fontWeight": "{typography.weight.regular}"
+        },
+        "$description": "18px / 28px（1.56）· regular · letterSpacing.md"
+      },
+      "xl": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.500}",
+          "lineHeight": {
+            "value": 32,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.md}",
+          "fontWeight": "{typography.weight.regular}"
+        },
+        "$description": "20px / 32px（1.60）· regular · letterSpacing.md"
+      }
+    },
+    "label": {
+      "$description": "UI ラベル・キャプション・メタ情報。4 段。medium で視認性を確保。xs / sm は字間を開く。mono 変種あり",
+      "xs": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.250}",
+          "lineHeight": {
+            "value": 12,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.lg}",
+          "fontWeight": "{typography.weight.medium}"
+        },
+        "$description": "10px / 12px（1.20）· medium · letterSpacing.lg"
+      },
+      "sm": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.300}",
+          "lineHeight": {
+            "value": 16,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.lg}",
+          "fontWeight": "{typography.weight.medium}"
+        },
+        "$description": "12px / 16px（1.33）· medium · letterSpacing.lg"
+      },
+      "md": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.350}",
+          "lineHeight": {
+            "value": 20,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.md}",
+          "fontWeight": "{typography.weight.medium}"
+        },
+        "$description": "14px / 20px（1.43）· medium · letterSpacing.md"
+      },
+      "lg": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.default}",
+          "fontSize": "{typography.size.400}",
+          "lineHeight": {
+            "value": 24,
+            "unit": "px"
+          },
+          "letterSpacing": "{typography.letterSpacing.md}",
+          "fontWeight": "{typography.weight.medium}"
+        },
+        "$description": "16px / 24px（1.50）· medium · letterSpacing.md"
+      },
+      "mono": {
+        "$description": "数値・年・トークン名・コード片。Geist Mono、regular、字間 0",
+        "xs": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.mono}",
+            "fontSize": "{typography.size.250}",
+            "lineHeight": {
+              "value": 12,
+              "unit": "px"
+            },
+            "letterSpacing": "{typography.letterSpacing.md}",
+            "fontWeight": "{typography.weight.regular}"
+          },
+          "$description": "10px / 12px（1.20）· regular · letterSpacing.md"
+        },
+        "sm": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.mono}",
+            "fontSize": "{typography.size.300}",
+            "lineHeight": {
+              "value": 16,
+              "unit": "px"
+            },
+            "letterSpacing": "{typography.letterSpacing.md}",
+            "fontWeight": "{typography.weight.regular}"
+          },
+          "$description": "12px / 16px（1.33）· regular · letterSpacing.md"
+        },
+        "md": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.mono}",
+            "fontSize": "{typography.size.350}",
+            "lineHeight": {
+              "value": 20,
+              "unit": "px"
+            },
+            "letterSpacing": "{typography.letterSpacing.md}",
+            "fontWeight": "{typography.weight.regular}"
+          },
+          "$description": "14px / 20px（1.43）· regular · letterSpacing.md"
+        },
+        "lg": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{font.family.mono}",
+            "fontSize": "{typography.size.400}",
+            "lineHeight": {
+              "value": 24,
+              "unit": "px"
+            },
+            "letterSpacing": "{typography.letterSpacing.md}",
+            "fontWeight": "{typography.weight.regular}"
+          },
+          "$description": "16px / 24px（1.50）· regular · letterSpacing.md"
+        }
+      }
+    }
+  }
+}

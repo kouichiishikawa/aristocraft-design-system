@@ -1,0 +1,70 @@
+{
+  "state": {
+    "$description": "工程 14（2026-09-29 提案）。状態の表現に使う組を固定。色は color.*、線幅は border.width.*、動きは motion.transition.* を参照",
+    "focus": {
+      "$description": "focus-visible にのみ適用。outline で描き、box-shadow は使わない（角形状に追従させる）。決して消さない",
+      "width": {
+        "$type": "dimension",
+        "$value": "{border.width.focused}"
+      },
+      "offset": {
+        "$type": "dimension",
+        "$value": "{dimension.space.050}",
+        "$description": "2px。要素の外側に出す"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{color.border.focused}"
+      },
+      "transition": {
+        "$type": "transition",
+        "$value": "{motion.transition.feedback}"
+      }
+    },
+    "hover": {
+      "$description": "pointer: fine のみ。タッチでは適用しない",
+      "transition": {
+        "$type": "transition",
+        "$value": "{motion.transition.feedback}"
+      },
+      "lift": {
+        "$type": "dimension",
+        "$value": "{dimension.space.negative.050}",
+        "$description": "−2px。カードが持ち上がるときの translateY。影は shadow.rest → lifted"
+      }
+    },
+    "pressed": {
+      "transition": {
+        "$type": "transition",
+        "$value": "{motion.transition.feedback}"
+      },
+      "scale": {
+        "$type": "number",
+        "$value": 0.98,
+        "$description": "押下時の縮小。ボタンのみ。沈まないボタンにしない"
+      }
+    },
+    "disabled": {
+      "$description": "hover / pressed / focus を持たない。cursor: not-allowed。色は color.text.disabled / background.disabled / border.disabled",
+      "opacity": {
+        "$type": "number",
+        "$value": "{opacity.40}",
+        "$description": "画像・アイコン・複合部品を無効にするときの不透明度。文字は色で表現し opacity を重ねない"
+      }
+    },
+    "loading": {
+      "opacity": {
+        "$type": "number",
+        "$value": "{opacity.64}",
+        "$description": "読み込み中の面。skeleton は background.neutral.subtlest"
+      }
+    },
+    "target": {
+      "min": {
+        "$type": "dimension",
+        "$value": "{dimension.size.1200}",
+        "$description": "48px。タッチ・クリック対象の最小寸法（WCAG 2.5.8 の 24 を超える）"
+      }
+    }
+  }
+}

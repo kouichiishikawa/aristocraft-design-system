@@ -1,0 +1,334 @@
+{
+ "rest": {
+  "desc": "静止したカード、区切りの補助",
+  "light": [
+   {
+    "color": "#0000000A",
+    "offsetX": {
+     "value": 0,
+     "unit": "px"
+    },
+    "offsetY": {
+     "value": 1,
+     "unit": "px"
+    },
+    "blur": {
+     "value": 2,
+     "unit": "px"
+    },
+    "spread": {
+     "value": 0,
+     "unit": "px"
+    }
+   },
+   {
+    "color": "#0000000F",
+    "offsetX": {
+     "value": 0,
+     "unit": "px"
+    },
+    "offsetY": {
+     "value": 1,
+     "unit": "px"
+    },
+    "blur": {
+     "value": 3,
+     "unit": "px"
+    },
+    "spread": {
+     "value": 0,
+     "unit": "px"
+    }
+   }
+  ],
+  "dark": [
+   {
+    "color": "#0000004D",
+    "offsetX": {
+     "value": 0,
+     "unit": "px"
+    },
+    "offsetY": {
+     "value": 1,
+     "unit": "px"
+    },
+    "blur": {
+     "value": 2,
+     "unit": "px"
+    },
+    "spread": {
+     "value": 0,
+     "unit": "px"
+    }
+   },
+   {
+    "color": "#00000033",
+    "offsetX": {
+     "value": 0,
+     "unit": "px"
+    },
+    "offsetY": {
+     "value": 1,
+     "unit": "px"
+    },
+    "blur": {
+     "value": 3,
+     "unit": "px"
+    },
+    "spread": {
+     "value": 0,
+     "unit": "px"
+    }
+   }
+  ]
+ },
+ "lifted": {
+  "desc": "浮いたカード、ホバーで持ち上がる面、ドロップダウン",
+  "light": [
+   {
+    "color": "#0000000F",
+    "offsetX": {
+     "value": 0,
+     "unit": "px"
+    },
+    "offsetY": {
+     "value": 2,
+     "unit": "px"
+    },
+    "blur": {
+     "value": 4,
+     "unit": "px"
+    },
+    "spread": {
+     "value": 0,
+     "unit": "px"
+    }
+   },
+   {
+    "color": "#0000001F",
+    "offsetX": {
+     "value": 0,
+     "unit": "px"
+    },
+    "offsetY": {
+     "value": 4,
+     "unit": "px"
+    },
+    "blur": {
+     "value": 12,
+     "unit": "px"
+    },
+    "spread": {
+     "value": -2,
+     "unit": "px"
+    }
+   }
+  ],
+  "dark": [
+   {
+    "color": "#00000066",
+    "offsetX": {
+     "value": 0,
+     "unit": "px"
+    },
+    "offsetY": {
+     "value": 2,
+     "unit": "px"
+    },
+    "blur": {
+     "value": 4,
+     "unit": "px"
+    },
+    "spread": {
+     "value": 0,
+     "unit": "px"
+    }
+   },
+   {
+    "color": "#0000004D",
+    "offsetX": {
+     "value": 0,
+     "unit": "px"
+    },
+    "offsetY": {
+     "value": 4,
+     "unit": "px"
+    },
+    "blur": {
+     "value": 12,
+     "unit": "px"
+    },
+    "spread": {
+     "value": -2,
+     "unit": "px"
+    }
+   }
+  ]
+ },
+ "floating": {
+  "desc": "ポップオーバー、固定バー、ドラッグ中の要素",
+  "light": [
+   {
+    "color": "#00000014",
+    "offsetX": {
+     "value": 0,
+     "unit": "px"
+    },
+    "offsetY": {
+     "value": 4,
+     "unit": "px"
+    },
+    "blur": {
+     "value": 8,
+     "unit": "px"
+    },
+    "spread": {
+     "value": 0,
+     "unit": "px"
+    }
+   },
+   {
+    "color": "#00000029",
+    "offsetX": {
+     "value": 0,
+     "unit": "px"
+    },
+    "offsetY": {
+     "value": 12,
+     "unit": "px"
+    },
+    "blur": {
+     "value": 24,
+     "unit": "px"
+    },
+    "spread": {
+     "value": -4,
+     "unit": "px"
+    }
+   }
+  ],
+  "dark": [
+   {
+    "color": "#00000073",
+    "offsetX": {
+     "value": 0,
+     "unit": "px"
+    },
+    "offsetY": {
+     "value": 4,
+     "unit": "px"
+    },
+    "blur": {
+     "value": 8,
+     "unit": "px"
+    },
+    "spread": {
+     "value": 0,
+     "unit": "px"
+    }
+   },
+   {
+    "color": "#00000073",
+    "offsetX": {
+     "value": 0,
+     "unit": "px"
+    },
+    "offsetY": {
+     "value": 12,
+     "unit": "px"
+    },
+    "blur": {
+     "value": 24,
+     "unit": "px"
+    },
+    "spread": {
+     "value": -4,
+     "unit": "px"
+    }
+   }
+  ]
+ },
+ "overlay": {
+  "desc": "モーダル、ダイアログ、最上位のオーバーレイ",
+  "light": [
+   {
+    "color": "#00000014",
+    "offsetX": {
+     "value": 0,
+     "unit": "px"
+    },
+    "offsetY": {
+     "value": 8,
+     "unit": "px"
+    },
+    "blur": {
+     "value": 16,
+     "unit": "px"
+    },
+    "spread": {
+     "value": 0,
+     "unit": "px"
+    }
+   },
+   {
+    "color": "#0000003D",
+    "offsetX": {
+     "value": 0,
+     "unit": "px"
+    },
+    "offsetY": {
+     "value": 24,
+     "unit": "px"
+    },
+    "blur": {
+     "value": 48,
+     "unit": "px"
+    },
+    "spread": {
+     "value": -8,
+     "unit": "px"
+    }
+   }
+  ],
+  "dark": [
+   {
+    "color": "#00000080",
+    "offsetX": {
+     "value": 0,
+     "unit": "px"
+    },
+    "offsetY": {
+     "value": 8,
+     "unit": "px"
+    },
+    "blur": {
+     "value": 16,
+     "unit": "px"
+    },
+    "spread": {
+     "value": 0,
+     "unit": "px"
+    }
+   },
+   {
+    "color": "#00000099",
+    "offsetX": {
+     "value": 0,
+     "unit": "px"
+    },
+    "offsetY": {
+     "value": 24,
+     "unit": "px"
+    },
+    "blur": {
+     "value": 48,
+     "unit": "px"
+    },
+    "spread": {
+     "value": -8,
+     "unit": "px"
+    }
+   }
+  ]
+ }
+}

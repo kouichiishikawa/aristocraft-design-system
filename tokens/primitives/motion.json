@@ -1,0 +1,126 @@
+{
+  "motion": {
+    "$description": "duration は 0 = instant、以降はテンポ記号を速い順（presto → adagio）。easing は Atlassian Design System に準拠",
+    "duration": {
+      "instant": {
+        "$type": "duration",
+        "$value": {
+          "value": 0,
+          "unit": "ms"
+        },
+        "$description": "知覚できる遅延なし。リスト項目のホバー・選択・フォーカス、reduced-motion 時"
+      },
+      "presto": {
+        "$type": "duration",
+        "$value": {
+          "value": 50,
+          "unit": "ms"
+        },
+        "$description": "即時フィードバック。フォーカスリング、選択状態"
+      },
+      "vivace": {
+        "$type": "duration",
+        "$value": {
+          "value": 100,
+          "unit": "ms"
+        },
+        "$description": "控えめな押下、素早い退場。ポップアップの消去"
+      },
+      "allegro": {
+        "$type": "duration",
+        "$value": {
+          "value": 150,
+          "unit": "ms"
+        },
+        "$description": "状態の強調と小さな入場。ボタンのホバー・押下、ポップアップの入場"
+      },
+      "moderato": {
+        "$type": "duration",
+        "$value": {
+          "value": 250,
+          "unit": "ms"
+        },
+        "$description": "中規模の入場。モーダル・フラグの入場"
+      },
+      "andante": {
+        "$type": "duration",
+        "$value": {
+          "value": 400,
+          "unit": "ms"
+        },
+        "$description": "大きな遷移。パネル・ページ遷移・全画面オーバーレイ"
+      },
+      "adagio": {
+        "$type": "duration",
+        "$value": {
+          "value": 600,
+          "unit": "ms"
+        },
+        "$description": "最大。オンボーディング、全画面の演出"
+      }
+    },
+    "easing": {
+      "in": {
+        "practical": {
+          "$type": "cubicBezier",
+          "$value": [
+            0.6,
+            0,
+            0.8,
+            0.6
+          ],
+          "$description": "ゆっくり始まり加速して去る。退場向け。画面から出る要素が道を空けるように感じる"
+        }
+      },
+      "out": {
+        "practical": {
+          "$type": "cubicBezier",
+          "$value": [
+            0.4,
+            1,
+            0.6,
+            1
+          ],
+          "$description": "日常的な入場曲線。bold より控えめ。コンテンツの差し替え、タブ切替、リストの並び替え"
+        },
+        "bold": {
+          "$type": "cubicBezier",
+          "$value": [
+            0,
+            0.4,
+            0,
+            1
+          ],
+          "$description": "素早く到着して減速停止。速い出だしで注意を引き、穏やかな着地で制御感を出す"
+        }
+      },
+      "inout": {
+        "bold": {
+          "$type": "cubicBezier",
+          "$value": [
+            0.4,
+            0,
+            0,
+            1
+          ],
+          "$description": "大胆な in-out。拡大縮小・位置移動に合う。始点と終点の両方を制御する"
+        }
+      },
+      "spring": {
+        "$type": "string",
+        "$value": "linear(0.0, 0.049, 0.164, 0.307, 0.455, 0.591, 0.709, 0.804, 0.879, 0.934, 0.972, 0.997, 1.013, 1.02, 1.023, 1.023, 1.02, 1.017, 1.014, 1.011, 1.008, 1.005, 1.003, 1.002, 1.001)",
+        "$description": "減衰バネ（質量 1、剛性 170、減衰 20、減衰比 0.77、オーバーシュート約 2.3%、整定 630ms）を CSS linear() で 25 点サンプリング。duration には整定時間 630ms 前後を使う。非対応環境は out.bold にフォールバック",
+        "$extensions": {
+          "ac.spring": {
+            "mass": 1.0,
+            "stiffness": 170.0,
+            "damping": 20.0,
+            "dampingRatio": 0.767,
+            "settleMs": 630,
+            "fallback": "{motion.easing.out.bold}"
+          }
+        }
+      }
+    }
+  }
+}

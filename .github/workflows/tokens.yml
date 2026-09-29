@@ -1,0 +1,38 @@
+name: tokens
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install
+        run: npm ci
+
+      # validate tokens/ → build dist/ → test dist/
+      - name: Validate, build, test
+        run: npm test
+
+      # Semantic color is generated from docs/reference; re-run it and confirm 276 contrast checks still pass.
+      - name: Regenerate semantic color (contrast checks)
+        run: npm run check:color
+
+      # Generated files are committed. Any drift means someone edited dist/ or tokens/ by hand.
+      - name: Generated files match the committed ones
+        run: |
+          git status --porcelain
+          git diff --exit-code --stat -- tokens dist docs/reference/semantic-color-map.json docs/reference/semantic-color-checks.json docs/reference/semantic-shadow.json

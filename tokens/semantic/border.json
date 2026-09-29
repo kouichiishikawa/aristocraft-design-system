@@ -1,0 +1,22 @@
+{
+  "border": {
+    "width": {
+      "$description": "工程 12（2026-09-29 確定）。線幅の役割。色は color.border.* と組で使う",
+      "default": {
+        "$type": "dimension",
+        "$value": "{dimension.border.025}",
+        "$description": "1px。境界線、区切り線、入力欄の枠"
+      },
+      "selected": {
+        "$type": "dimension",
+        "$value": "{dimension.border.050}",
+        "$description": "2px。選択タブの下線、選択カードの枠（color.border.selected）"
+      },
+      "focused": {
+        "$type": "dimension",
+        "$value": "{dimension.border.050}",
+        "$description": "2px。フォーカスリング（color.border.focused）。outline-offset は 2px"
+      }
+    }
+  }
+}

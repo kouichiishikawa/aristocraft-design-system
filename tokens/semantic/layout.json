@@ -1,0 +1,177 @@
+{
+  "layout": {
+    "$description": "工程 9（2026-09-29 確定）。A + B の折衷: 格子（列・gutter・margin）はページの骨格を揃える定規、セクション内部の部品は領域数と space で組む。viewport 範囲トークンは持たない",
+    "breakpoint": {
+      "$description": "primitive の別名（min-width）",
+      "xs": {
+        "$type": "dimension",
+        "$value": "{dimension.breakpoint.xs}"
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{dimension.breakpoint.sm}"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{dimension.breakpoint.md}"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{dimension.breakpoint.lg}"
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{dimension.breakpoint.xl}"
+      },
+      "xxl": {
+        "$type": "dimension",
+        "$value": "{dimension.breakpoint.xxl}"
+      }
+    },
+    "grid": {
+      "columns": {
+        "$description": "格子の列数。モバイル 4、タブレット 6、デスクトップ 12",
+        "xs": {
+          "$type": "number",
+          "$value": 4
+        },
+        "sm": {
+          "$type": "number",
+          "$value": 4
+        },
+        "md": {
+          "$type": "number",
+          "$value": 6
+        },
+        "lg": {
+          "$type": "number",
+          "$value": 12
+        },
+        "xl": {
+          "$type": "number",
+          "$value": 12
+        },
+        "xxl": {
+          "$type": "number",
+          "$value": 12
+        }
+      },
+      "gutter": {
+        "$description": "列間。space を参照",
+        "xs": {
+          "$type": "dimension",
+          "$value": "{dimension.space.400}",
+          "$description": "16"
+        },
+        "sm": {
+          "$type": "dimension",
+          "$value": "{dimension.space.400}",
+          "$description": "16"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{dimension.space.600}",
+          "$description": "24"
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": "{dimension.space.800}",
+          "$description": "32"
+        },
+        "xl": {
+          "$type": "dimension",
+          "$value": "{dimension.space.800}",
+          "$description": "32"
+        },
+        "xxl": {
+          "$type": "dimension",
+          "$value": "{dimension.space.800}",
+          "$description": "32"
+        }
+      },
+      "margin": {
+        "$description": "左右余白。space を参照",
+        "xs": {
+          "$type": "dimension",
+          "$value": "{dimension.space.400}",
+          "$description": "16"
+        },
+        "sm": {
+          "$type": "dimension",
+          "$value": "{dimension.space.600}",
+          "$description": "24"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "{dimension.space.800}",
+          "$description": "32"
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": "{dimension.space.1200}",
+          "$description": "48"
+        },
+        "xl": {
+          "$type": "dimension",
+          "$value": "{dimension.space.1600}",
+          "$description": "64"
+        },
+        "xxl": {
+          "$type": "dimension",
+          "$value": "{dimension.space.2000}",
+          "$description": "80"
+        }
+      }
+    },
+    "container": {
+      "$description": "セクション単位で選ぶ最大幅",
+      "content": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1280,
+          "unit": "px"
+        },
+        "$description": "通常のセクション。これより広い画面では中央寄せ"
+      },
+      "prose": {
+        "$type": "dimension",
+        "$value": {
+          "value": 720,
+          "unit": "px"
+        },
+        "$description": "読み物本文。和文 40 字 × 18px"
+      },
+      "full": {
+        "$type": "dimension",
+        "$value": {
+          "value": 100,
+          "unit": "%"
+        },
+        "$description": "上限なし。ヒーロー・写真の帯・ギャラリー。margin も 0。内側の文字は content 幅に戻す（breakout）"
+      }
+    },
+    "section": {
+      "$description": "セクション間の縦余白。この 4 段しか使わない。md 未満では 1 段下げる",
+      "sm": {
+        "$type": "dimension",
+        "$value": "{dimension.space.1200}",
+        "$description": "48"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{dimension.space.1600}",
+        "$description": "64"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{dimension.space.2400}",
+        "$description": "96"
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{dimension.space.3200}",
+        "$description": "128"
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "motion": {
+    "transition": {
+      "$description": "工程 13（2026-09-29 提案）。役割ごとに duration と easing の組を固定。prefers-reduced-motion では duration を instant にし、opacity のクロスフェードだけ残す",
+      "feedback": {
+        "$type": "transition",
+        "$value": {
+          "duration": "{motion.duration.vivace}",
+          "delay": {
+            "value": 0,
+            "unit": "ms"
+          },
+          "timingFunction": "{motion.easing.out.practical}"
+        },
+        "$description": "100ms。ホバー・押下の色変化、リンク、アイコンの反応。原則 3「短く」"
+      },
+      "state": {
+        "$type": "transition",
+        "$value": {
+          "duration": "{motion.duration.allegro}",
+          "delay": {
+            "value": 0,
+            "unit": "ms"
+          },
+          "timingFunction": "{motion.easing.out.practical}"
+        },
+        "$description": "150ms。トグル、チェック、タブの選択など小さな状態変化"
+      },
+      "enter": {
+        "$type": "transition",
+        "$value": {
+          "duration": "{motion.duration.moderato}",
+          "delay": {
+            "value": 0,
+            "unit": "ms"
+          },
+          "timingFunction": "{motion.easing.out.bold}"
+        },
+        "$description": "250ms。ポップオーバー、ドロップダウン、ツールチップ、トーストの入場",
+        "large": {
+          "$type": "transition",
+          "$value": {
+            "duration": "{motion.duration.andante}",
+            "delay": {
+              "value": 0,
+              "unit": "ms"
+            },
+            "timingFunction": "{motion.easing.out.bold}"
+          },
+          "$description": "400ms。モーダル、パネル、ページ遷移の入場"
+        }
+      },
+      "exit": {
+        "$type": "transition",
+        "$value": {
+          "duration": "{motion.duration.allegro}",
+          "delay": {
+            "value": 0,
+            "unit": "ms"
+          },
+          "timingFunction": "{motion.easing.in.practical}"
+        },
+        "$description": "150ms。上記の退場。enter の約 60〜75%",
+        "large": {
+          "$type": "transition",
+          "$value": {
+            "duration": "{motion.duration.moderato}",
+            "delay": {
+              "value": 0,
+              "unit": "ms"
+            },
+            "timingFunction": "{motion.easing.in.practical}"
+          },
+          "$description": "250ms。モーダル・パネルの退場"
+        }
+      },
+      "move": {
+        "$type": "transition",
+        "$value": {
+          "duration": "{motion.duration.moderato}",
+          "delay": {
+            "value": 0,
+            "unit": "ms"
+          },
+          "timingFunction": "{motion.easing.inout.bold}"
+        },
+        "$description": "250ms。位置・サイズの変化。アコーディオン、ドロワー、並び替え、テーマ切替"
+      },
+      "reveal": {
+        "$type": "transition",
+        "$value": {
+          "duration": "{motion.duration.adagio}",
+          "delay": {
+            "value": 0,
+            "unit": "ms"
+          },
+          "timingFunction": "{motion.easing.out.bold}"
+        },
+        "$description": "600ms。スクロールで現れるセクション・ヒーロー。これより長い動きは作らない。移動量は 8〜16px まで"
+      },
+      "spring": {
+        "$type": "transition",
+        "$value": {
+          "duration": "{motion.duration.adagio}",
+          "delay": {
+            "value": 0,
+            "unit": "ms"
+          },
+          "timingFunction": "{motion.easing.spring}"
+        },
+        "$description": "600ms（整定）。アバターのホバー、ドラッグ解放など遊びのある反応。1 画面 1 か所まで"
+      }
+    }
+  }
+}

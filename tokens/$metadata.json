@@ -1,0 +1,25 @@
+{
+  "tokenSetOrder": [
+    "primitives/color",
+    "primitives/dimension",
+    "primitives/typography",
+    "primitives/motion",
+    "primitives/opacity",
+    "semantic/typography",
+    "semantic/color.light",
+    "semantic/color.dark",
+    "semantic/layout",
+    "semantic/border"
+  ],
+  "layers": [
+    "primitives",
+    "semantic",
+    "components"
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "format": "DTCG 2024 draft",
+  "generated": "2026-09-28"
+}

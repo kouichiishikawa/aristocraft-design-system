@@ -1,0 +1,1023 @@
+/**
+ * Generated from tokens/ by `npm run build` (build/index.js).
+ * Do not edit by hand. Edit tokens/**/*.json and rebuild.
+ */
+
+:root {
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f8f6f4;
+  --color-neutral-100: #dedcd8;
+  --color-neutral-200: #c5c2bd;
+  --color-neutral-300: #aca9a2;
+  --color-neutral-400: #949089;
+  --color-neutral-500: #7c7871;
+  --color-neutral-600: #65615a;
+  --color-neutral-700: #4f4b45;
+  --color-neutral-800: #393631;
+  --color-neutral-900: #25221e;
+  --color-neutral-950: #12100d;
+  --color-neutral-1000: #000000;
+  --color-neutral-100a: rgba(18, 16, 13, 0.11764705882352941); /** neutral.950 （light）α 11.6%。neutral.50 上で neutral.100 と一致（合成 #DDDBD9） */
+  --color-neutral-200a: rgba(18, 16, 13, 0.22745098039215686); /** neutral.950 （light）α 22.9%。neutral.50 上で neutral.200 と一致（合成 #C3C1BF） */
+  --color-neutral-300a: rgba(18, 16, 13, 0.3411764705882353); /** neutral.950 （light）α 34.0%。neutral.50 上で neutral.300 と一致（合成 #AAA8A5） */
+  --color-neutral-400a: rgba(18, 16, 13, 0.4470588235294118); /** neutral.950 （light）α 44.7%。neutral.50 上で neutral.400 と一致（合成 #918F8D） */
+  --color-neutral-900a: rgba(248, 246, 244, 0.0784313725490196); /** neutral.50 （dark）α 7.8%。neutral.950 上で neutral.900 と一致（合成 #24221F） */
+  --color-neutral-800a: rgba(248, 246, 244, 0.16470588235294117); /** neutral.50 （dark）α 16.4%。neutral.950 上で neutral.800 と一致（合成 #383633） */
+  --color-neutral-700a: rgba(248, 246, 244, 0.2549019607843137); /** neutral.50 （dark）α 25.5%。neutral.950 上で neutral.700 と一致（合成 #4D4B48） */
+  --color-neutral-600a: rgba(248, 246, 244, 0.34901960784313724); /** neutral.50 （dark）α 34.9%。neutral.950 上で neutral.600 と一致（合成 #62605E） */
+  --color-blue-50: #f0f6fe;
+  --color-blue-100: #cee1fc;
+  --color-blue-200: #adccfa;
+  --color-blue-300: #8cb6f9;
+  --color-blue-400: #6c9ff8;
+  --color-blue-500: #4c87f6;
+  --color-blue-600: #316eee;
+  --color-blue-700: #1c55e0;
+  --color-blue-800: #1b44b9;
+  --color-blue-900: #183594;
+  --color-blue-950: #122670;
+  --color-violet-50: #f6f3fe;
+  --color-violet-100: #e2d9fc;
+  --color-violet-200: #cfbffa;
+  --color-violet-300: #bba5f9;
+  --color-violet-400: #a88af8;
+  --color-violet-500: #956df6;
+  --color-violet-600: #834bf4;
+  --color-violet-700: #6e3bd5;
+  --color-violet-800: #5830b1;
+  --color-violet-900: #44268e;
+  --color-violet-950: #311c6c;
+  --color-purple-50: #f6f4f6;
+  --color-purple-100: #e9dae8;
+  --color-purple-200: #e5b9e5;
+  --color-purple-300: #e492e8;
+  --color-purple-400: #e55df0;
+  --color-purple-500: #d91eec;
+  --color-purple-600: #bd00d2;
+  --color-purple-700: #9d11b2;
+  --color-purple-800: #7d1f8e;
+  --color-purple-900: #5d236b;
+  --color-purple-950: #41204b;
+  --color-pink-50: #f6f4f5;
+  --color-pink-100: #e9dbdf;
+  --color-pink-200: #e5bdca;
+  --color-pink-300: #ea99b7;
+  --color-pink-400: #f26aa6;
+  --color-pink-500: #f41b97;
+  --color-pink-600: #d50385;
+  --color-pink-700: #b21272;
+  --color-pink-800: #8d1e5e;
+  --color-pink-900: #6a214a;
+  --color-pink-950: #4a1f36;
+  --color-red-50: #fef2f0;
+  --color-red-100: #fcd5cf;
+  --color-red-200: #fab6ae;
+  --color-red-300: #fa958c;
+  --color-red-400: #f86e69;
+  --color-red-500: #f53c45;
+  --color-red-600: #d92538;
+  --color-red-700: #b91d31;
+  --color-red-800: #991529;
+  --color-red-900: #7a1021;
+  --color-red-950: #5d0918;
+  --color-orange-50: #fef3ea;
+  --color-orange-100: #fddfc9;
+  --color-orange-200: #fccaa7;
+  --color-orange-300: #fbb482;
+  --color-orange-400: #f99d5a;
+  --color-orange-500: #f6852b;
+  --color-orange-600: #e27826;
+  --color-orange-700: #ac581a;
+  --color-orange-800: #803e0f;
+  --color-orange-900: #662f0a;
+  --color-orange-950: #4e2205;
+  --color-amber-50: #fef5dd;
+  --color-amber-100: #fde8b6;
+  --color-amber-200: #fcda8d;
+  --color-amber-300: #fbcb5d;
+  --color-amber-400: #f6be33;
+  --color-amber-500: #ce9d29;
+  --color-amber-600: #a77d20;
+  --color-amber-700: #886418;
+  --color-amber-800: #6b4d0e;
+  --color-amber-900: #553c0a;
+  --color-amber-950: #402c06;
+  --color-lime-50: #f7f7dc;
+  --color-lime-100: #efefb9;
+  --color-lime-200: #e7e890;
+  --color-lime-300: #dee05f;
+  --color-lime-400: #d4d736;
+  --color-lime-500: #adb22b;
+  --color-lime-600: #888e20;
+  --color-lime-700: #6b7117;
+  --color-lime-800: #52580f;
+  --color-lime-900: #40460a;
+  --color-lime-950: #2e3405;
+  --color-green-50: #f3f6f2;
+  --color-green-100: #cbeac1;
+  --color-green-200: #9ede8a;
+  --color-green-300: #77ce62;
+  --color-green-400: #50bc3b;
+  --color-green-500: #29a818;
+  --color-green-600: #019304;
+  --color-green-700: #107b1a;
+  --color-green-800: #1c6323;
+  --color-green-900: #1f4c24;
+  --color-green-950: #1d3720;
+  --color-teal-50: #e0fdf0;
+  --color-teal-100: #b8f5dc;
+  --color-teal-200: #87edc8;
+  --color-teal-300: #3ce4b6;
+  --color-teal-400: #37d3aa;
+  --color-teal-500: #33c19d;
+  --color-teal-600: #2db091;
+  --color-teal-700: #1f7d68;
+  --color-teal-800: #126150;
+  --color-teal-900: #0e4c3f;
+  --color-teal-950: #07392f;
+  --color-cyan-50: #dbfdfd;
+  --color-cyan-100: #adf4f6;
+  --color-cyan-200: #71ecf0;
+  --color-cyan-300: #3adfe6;
+  --color-cyan-400: #35cdd6;
+  --color-cyan-500: #2fbcc5;
+  --color-cyan-600: #2eabb4;
+  --color-cyan-700: #1d7a82;
+  --color-cyan-800: #155e64;
+  --color-cyan-900: #0d4a50;
+  --color-cyan-950: #09373c;
+  --color-sky-50: #eaf8fe;
+  --color-sky-100: #c8ecfd;
+  --color-sky-200: #a4dffb;
+  --color-sky-300: #7dd2fa;
+  --color-sky-400: #4dc5f9;
+  --color-sky-500: #2eb5ed;
+  --color-sky-600: #29a5da;
+  --color-sky-700: #1b77a0;
+  --color-sky-800: #145a7b;
+  --color-sky-900: #0d4763;
+  --color-sky-950: #06344b;
+  --dimension-space-0: 0px;
+  --dimension-space-100: 4px;
+  --dimension-space-150: 6px;
+  --dimension-space-200: 8px;
+  --dimension-space-300: 12px;
+  --dimension-space-400: 16px;
+  --dimension-space-500: 20px;
+  --dimension-space-600: 24px;
+  --dimension-space-800: 32px;
+  --dimension-space-1000: 40px;
+  --dimension-space-1200: 48px;
+  --dimension-space-1600: 64px;
+  --dimension-space-2000: 80px;
+  --dimension-space-2400: 96px;
+  --dimension-space-3200: 128px;
+  --dimension-space-4000: 160px;
+  --dimension-space-4800: 192px;
+  --dimension-space-6400: 256px;
+  --dimension-space-050: 2px;
+  --dimension-space-negative-100: -4px;
+  --dimension-space-negative-150: -6px;
+  --dimension-space-negative-200: -8px;
+  --dimension-space-negative-300: -12px;
+  --dimension-space-negative-400: -16px;
+  --dimension-space-negative-600: -24px;
+  --dimension-space-negative-800: -32px;
+  --dimension-space-negative-050: -2px;
+  --dimension-size-300: 12px;
+  --dimension-size-400: 16px;
+  --dimension-size-500: 20px;
+  --dimension-size-600: 24px;
+  --dimension-size-800: 32px;
+  --dimension-size-1000: 40px;
+  --dimension-size-1200: 48px; /** コントロールの標準・タッチターゲット（44 は持たず 48 で代替） */
+  --dimension-size-1600: 64px;
+  --dimension-size-2000: 80px;
+  --dimension-size-2400: 96px;
+  --dimension-size-3200: 128px;
+  --dimension-size-6000: 240px;
+  --dimension-size-12000: 480px;
+  --dimension-radius-100: 4px;
+  --dimension-radius-200: 8px;
+  --dimension-radius-300: 12px;
+  --dimension-radius-400: 16px;
+  --dimension-radius-600: 24px;
+  --dimension-radius-800: 32px;
+  --dimension-radius-1200: 48px;
+  --dimension-radius-none: 0px;
+  --dimension-radius-050: 2px;
+  --dimension-radius-full: 9999px; /** 円・ピル */
+  --dimension-radius-shape-default: squircle; /** CSS corner-shape の名前付き値（superellipse(2) = n 4）。Chromium 139+、非対応環境は円弧にフォールバック。Figma は Corner Smoothing 60% */
+  --dimension-radius-shape-round: round; /** 円弧。フォールバック */
+  --dimension-radius-shape-figma-smoothing: 0.6; /** Figma Corner Smoothing 60%（iOS 相当） */
+  --dimension-radius-shape-continuous: superellipse(2.32); /** Apple continuous corner（n≈5）の近似。代替候補 */
+  --dimension-border-0: 0px;
+  --dimension-border-100: 4px;
+  --dimension-border-025: 1px; /** 既定の境界線 */
+  --dimension-border-050: 2px; /** 強調・フォーカスリング */
+  --dimension-border-075: 3px;
+  --dimension-breakpoint-xs: 0px; /** スマホ縦 */
+  --dimension-breakpoint-sm: 480px; /** スマホ横・小型タブレット縦 */
+  --dimension-breakpoint-md: 768px; /** タブレット縦 */
+  --dimension-breakpoint-lg: 1024px; /** タブレット横・ノート PC */
+  --dimension-breakpoint-xl: 1440px; /** デスクトップ */
+  --dimension-breakpoint-xxl: 1768px; /** 大型 */
+  --typography-family-sans: 'Inter Variable', Inter, system-ui, sans-serif; /** 欧文の本文・見出し・UI。可変フォント（opsz 軸あり） */
+  --typography-family-serif: Lora, Georgia, serif; /** 欧文の引用・見出しの対比用。可変フォント */
+  --typography-family-jp: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif; /** 和文。サブセット配信（Google Fonts の unicode-range）を前提 */
+  --typography-family-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace; /** 数値・コード・トークン名 */
+  --typography-size-250: 10px; /** Major Third の下限（16 ÷ 1.25² = 10.24 → 10） */
+  --typography-size-300: 12px; /** 16 ÷ 1.25 = 12.8 → 12（頻用） */
+  --typography-size-350: 14px; /** 頻用のため追加（スケール外） */
+  --typography-size-400: 16px; /** 基準 */
+  --typography-size-450: 18px; /** 頻用のため追加（スケール外） */
+  --typography-size-500: 20px; /** 16 × 1.25 */
+  --typography-size-600: 24px; /** 16 × 1.25² = 25 → 24（頻用） */
+  --typography-size-700: 28px; /** 頻用のため追加（スケール外） */
+  --typography-size-800: 32px; /** 16 × 1.25³ = 31.25 → 32 */
+  --typography-size-1000: 40px; /** 16 × 1.25⁴ = 39.1 → 40 */
+  --typography-size-1200: 48px; /** 16 × 1.25⁵ = 48.8 → 48 */
+  --typography-size-1600: 64px; /** 16 × 1.25⁶ = 61 → 64 */
+  --typography-size-2000: 80px; /** 16 × 1.25⁷ = 76.3 → 80 */
+  --typography-size-2400: 96px; /** 16 × 1.25⁸ = 95.4 → 96 */
+  --typography-size-3200: 128px; /** 16 × 1.25⁹ = 119 → 128（上限） */
+  --typography-line-height-sm: 1.25; /** 見出し・大きな数字 */
+  --typography-line-height-md: 1.375; /** 小見出し・UI ラベル */
+  --typography-line-height-lg: 1.5; /** 本文の基準 */
+  --typography-line-height-xl: 1.625; /** 和文本文・読み物 */
+  --typography-line-height-xxl: 1.75; /** 和文の長文・ゆったりした本文 */
+  --typography-letter-spacing-sm: -0.02em; /** 見出し・大きな数字を締める */
+  --typography-letter-spacing-md: 0em; /** 既定 */
+  --typography-letter-spacing-lg: 0.02em; /** 小さいラベル・大文字を開く */
+  --typography-weight-regular: 400;
+  --typography-weight-medium: 500;
+  --typography-weight-semibold: 600;
+  --typography-weight-bold: 700;
+  --motion-duration-instant: 0ms; /** 知覚できる遅延なし。リスト項目のホバー・選択・フォーカス、reduced-motion 時 */
+  --motion-duration-presto: 50ms; /** 即時フィードバック。フォーカスリング、選択状態 */
+  --motion-duration-vivace: 100ms; /** 控えめな押下、素早い退場。ポップアップの消去 */
+  --motion-duration-allegro: 150ms; /** 状態の強調と小さな入場。ボタンのホバー・押下、ポップアップの入場 */
+  --motion-duration-moderato: 250ms; /** 中規模の入場。モーダル・フラグの入場 */
+  --motion-duration-andante: 400ms; /** 大きな遷移。パネル・ページ遷移・全画面オーバーレイ */
+  --motion-duration-adagio: 600ms; /** 最大。オンボーディング、全画面の演出 */
+  --motion-easing-in-practical: cubic-bezier(0.6, 0, 0.8, 0.6); /** ゆっくり始まり加速して去る。退場向け。画面から出る要素が道を空けるように感じる */
+  --motion-easing-out-practical: cubic-bezier(0.4, 1, 0.6, 1); /** 日常的な入場曲線。bold より控えめ。コンテンツの差し替え、タブ切替、リストの並び替え */
+  --motion-easing-out-bold: cubic-bezier(0, 0.4, 0, 1); /** 素早く到着して減速停止。速い出だしで注意を引き、穏やかな着地で制御感を出す */
+  --motion-easing-inout-bold: cubic-bezier(0.4, 0, 0, 1); /** 大胆な in-out。拡大縮小・位置移動に合う。始点と終点の両方を制御する */
+  --motion-easing-spring: linear(0.0, 0.049, 0.164, 0.307, 0.455, 0.591, 0.709, 0.804, 0.879, 0.934, 0.972, 0.997, 1.013, 1.02, 1.023, 1.023, 1.02, 1.017, 1.014, 1.011, 1.008, 1.005, 1.003, 1.002, 1.001); /** 減衰バネ（質量 1、剛性 170、減衰 20、減衰比 0.77、オーバーシュート約 2.3%、整定 630ms）を CSS linear() で 25 点サンプリング。duration には整定時間 630ms 前後を使う。非対応環境は out.bold にフォールバック */
+  --opacity-0: 0;
+  --opacity-4: 0.04;
+  --opacity-8: 0.08;
+  --opacity-12: 0.12;
+  --opacity-16: 0.16;
+  --opacity-24: 0.24;
+  --opacity-32: 0.32;
+  --opacity-40: 0.4;
+  --opacity-64: 0.64;
+  --opacity-80: 0.8;
+  --opacity-100: 1;
+}
+
+:root {
+  --font-family-default: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 'Inter Variable', Inter, system-ui, sans-serif + 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif */
+  --font-family-serif: Lora, 'Noto Sans JP', Georgia, serif; /** Lora, Georgia, serif + 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif。装飾用途（引用・Music など、英語のみ）。semantic の role は持たず、使う部品の component トークンで size / line box を display.* から借りて定義する */
+  --font-family-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace; /** 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace。数値・コード・トークン名 */
+  --layout-grid-columns-xs: 4;
+  --layout-grid-columns-sm: 4;
+  --layout-grid-columns-md: 6;
+  --layout-grid-columns-lg: 12;
+  --layout-grid-columns-xl: 12;
+  --layout-grid-columns-xxl: 12;
+  --layout-container-content: 1280px; /** 通常のセクション。これより広い画面では中央寄せ */
+  --layout-container-prose: 720px; /** 読み物本文。和文 40 字 × 18px */
+  --layout-container-full: 100%; /** 上限なし。ヒーロー・写真の帯・ギャラリー。margin も 0。内側の文字は content 幅に戻す（breakout） */
+  --font-display-sm-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 48px / 60px（1.25）· bold · letterSpacing.sm */
+  --font-display-sm-font-size: 48px; /** 48px / 60px（1.25）· bold · letterSpacing.sm */
+  --font-display-sm-line-height: 60px; /** 48px / 60px（1.25）· bold · letterSpacing.sm */
+  --font-display-sm-letter-spacing: -0.02em; /** 48px / 60px（1.25）· bold · letterSpacing.sm */
+  --font-display-md-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 64px / 80px（1.25）· bold · letterSpacing.sm */
+  --font-display-md-font-size: 64px; /** 64px / 80px（1.25）· bold · letterSpacing.sm */
+  --font-display-md-line-height: 80px; /** 64px / 80px（1.25）· bold · letterSpacing.sm */
+  --font-display-md-letter-spacing: -0.02em; /** 64px / 80px（1.25）· bold · letterSpacing.sm */
+  --font-display-lg-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 80px / 100px（1.25）· bold · letterSpacing.sm */
+  --font-display-lg-font-size: 80px; /** 80px / 100px（1.25）· bold · letterSpacing.sm */
+  --font-display-lg-line-height: 100px; /** 80px / 100px（1.25）· bold · letterSpacing.sm */
+  --font-display-lg-letter-spacing: -0.02em; /** 80px / 100px（1.25）· bold · letterSpacing.sm */
+  --font-display-xl-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 96px / 120px（1.25）· bold · letterSpacing.sm */
+  --font-display-xl-font-size: 96px; /** 96px / 120px（1.25）· bold · letterSpacing.sm */
+  --font-display-xl-line-height: 120px; /** 96px / 120px（1.25）· bold · letterSpacing.sm */
+  --font-display-xl-letter-spacing: -0.02em; /** 96px / 120px（1.25）· bold · letterSpacing.sm */
+  --font-display-xxl-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 128px / 160px（1.25）· bold · letterSpacing.sm */
+  --font-display-xxl-font-size: 128px; /** 128px / 160px（1.25）· bold · letterSpacing.sm */
+  --font-display-xxl-line-height: 160px; /** 128px / 160px（1.25）· bold · letterSpacing.sm */
+  --font-display-xxl-letter-spacing: -0.02em; /** 128px / 160px（1.25）· bold · letterSpacing.sm */
+  --font-heading-xs-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 16px / 20px（1.25）· semibold · letterSpacing.md */
+  --font-heading-xs-font-size: 16px; /** 16px / 20px（1.25）· semibold · letterSpacing.md */
+  --font-heading-xs-line-height: 20px; /** 16px / 20px（1.25）· semibold · letterSpacing.md */
+  --font-heading-xs-letter-spacing: 0em; /** 16px / 20px（1.25）· semibold · letterSpacing.md */
+  --font-heading-sm-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 18px / 24px（1.33）· semibold · letterSpacing.md */
+  --font-heading-sm-font-size: 18px; /** 18px / 24px（1.33）· semibold · letterSpacing.md */
+  --font-heading-sm-line-height: 24px; /** 18px / 24px（1.33）· semibold · letterSpacing.md */
+  --font-heading-sm-letter-spacing: 0em; /** 18px / 24px（1.33）· semibold · letterSpacing.md */
+  --font-heading-md-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 20px / 28px（1.40）· semibold · letterSpacing.md */
+  --font-heading-md-font-size: 20px; /** 20px / 28px（1.40）· semibold · letterSpacing.md */
+  --font-heading-md-line-height: 28px; /** 20px / 28px（1.40）· semibold · letterSpacing.md */
+  --font-heading-md-letter-spacing: 0em; /** 20px / 28px（1.40）· semibold · letterSpacing.md */
+  --font-heading-lg-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 24px / 32px（1.33）· semibold · letterSpacing.md */
+  --font-heading-lg-font-size: 24px; /** 24px / 32px（1.33）· semibold · letterSpacing.md */
+  --font-heading-lg-line-height: 32px; /** 24px / 32px（1.33）· semibold · letterSpacing.md */
+  --font-heading-lg-letter-spacing: 0em; /** 24px / 32px（1.33）· semibold · letterSpacing.md */
+  --font-heading-xl-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 28px / 36px（1.29）· semibold · letterSpacing.sm */
+  --font-heading-xl-font-size: 28px; /** 28px / 36px（1.29）· semibold · letterSpacing.sm */
+  --font-heading-xl-line-height: 36px; /** 28px / 36px（1.29）· semibold · letterSpacing.sm */
+  --font-heading-xl-letter-spacing: -0.02em; /** 28px / 36px（1.29）· semibold · letterSpacing.sm */
+  --font-heading-xxl-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 32px / 40px（1.25）· semibold · letterSpacing.sm */
+  --font-heading-xxl-font-size: 32px; /** 32px / 40px（1.25）· semibold · letterSpacing.sm */
+  --font-heading-xxl-line-height: 40px; /** 32px / 40px（1.25）· semibold · letterSpacing.sm */
+  --font-heading-xxl-letter-spacing: -0.02em; /** 32px / 40px（1.25）· semibold · letterSpacing.sm */
+  --font-heading-xxxl-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 40px / 48px（1.20）· semibold · letterSpacing.sm */
+  --font-heading-xxxl-font-size: 40px; /** 40px / 48px（1.20）· semibold · letterSpacing.sm */
+  --font-heading-xxxl-line-height: 48px; /** 40px / 48px（1.20）· semibold · letterSpacing.sm */
+  --font-heading-xxxl-letter-spacing: -0.02em; /** 40px / 48px（1.20）· semibold · letterSpacing.sm */
+  --font-body-sm-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 14px / 24px（1.71）· regular · letterSpacing.md */
+  --font-body-sm-font-size: 14px; /** 14px / 24px（1.71）· regular · letterSpacing.md */
+  --font-body-sm-line-height: 24px; /** 14px / 24px（1.71）· regular · letterSpacing.md */
+  --font-body-sm-letter-spacing: 0em; /** 14px / 24px（1.71）· regular · letterSpacing.md */
+  --font-body-md-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 16px / 28px（1.75）· regular · letterSpacing.md */
+  --font-body-md-font-size: 16px; /** 16px / 28px（1.75）· regular · letterSpacing.md */
+  --font-body-md-line-height: 28px; /** 16px / 28px（1.75）· regular · letterSpacing.md */
+  --font-body-md-letter-spacing: 0em; /** 16px / 28px（1.75）· regular · letterSpacing.md */
+  --font-body-lg-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 18px / 28px（1.56）· regular · letterSpacing.md */
+  --font-body-lg-font-size: 18px; /** 18px / 28px（1.56）· regular · letterSpacing.md */
+  --font-body-lg-line-height: 28px; /** 18px / 28px（1.56）· regular · letterSpacing.md */
+  --font-body-lg-letter-spacing: 0em; /** 18px / 28px（1.56）· regular · letterSpacing.md */
+  --font-body-xl-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 20px / 32px（1.60）· regular · letterSpacing.md */
+  --font-body-xl-font-size: 20px; /** 20px / 32px（1.60）· regular · letterSpacing.md */
+  --font-body-xl-line-height: 32px; /** 20px / 32px（1.60）· regular · letterSpacing.md */
+  --font-body-xl-letter-spacing: 0em; /** 20px / 32px（1.60）· regular · letterSpacing.md */
+  --font-label-xs-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 10px / 12px（1.20）· medium · letterSpacing.lg */
+  --font-label-xs-font-size: 10px; /** 10px / 12px（1.20）· medium · letterSpacing.lg */
+  --font-label-xs-line-height: 12px; /** 10px / 12px（1.20）· medium · letterSpacing.lg */
+  --font-label-xs-letter-spacing: 0.02em; /** 10px / 12px（1.20）· medium · letterSpacing.lg */
+  --font-label-sm-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 12px / 16px（1.33）· medium · letterSpacing.lg */
+  --font-label-sm-font-size: 12px; /** 12px / 16px（1.33）· medium · letterSpacing.lg */
+  --font-label-sm-line-height: 16px; /** 12px / 16px（1.33）· medium · letterSpacing.lg */
+  --font-label-sm-letter-spacing: 0.02em; /** 12px / 16px（1.33）· medium · letterSpacing.lg */
+  --font-label-md-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 14px / 20px（1.43）· medium · letterSpacing.md */
+  --font-label-md-font-size: 14px; /** 14px / 20px（1.43）· medium · letterSpacing.md */
+  --font-label-md-line-height: 20px; /** 14px / 20px（1.43）· medium · letterSpacing.md */
+  --font-label-md-letter-spacing: 0em; /** 14px / 20px（1.43）· medium · letterSpacing.md */
+  --font-label-lg-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 16px / 24px（1.50）· medium · letterSpacing.md */
+  --font-label-lg-font-size: 16px; /** 16px / 24px（1.50）· medium · letterSpacing.md */
+  --font-label-lg-line-height: 24px; /** 16px / 24px（1.50）· medium · letterSpacing.md */
+  --font-label-lg-letter-spacing: 0em; /** 16px / 24px（1.50）· medium · letterSpacing.md */
+  --font-label-mono-xs-font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace; /** 10px / 12px（1.20）· regular · letterSpacing.md */
+  --font-label-mono-xs-font-size: 10px; /** 10px / 12px（1.20）· regular · letterSpacing.md */
+  --font-label-mono-xs-line-height: 12px; /** 10px / 12px（1.20）· regular · letterSpacing.md */
+  --font-label-mono-xs-letter-spacing: 0em; /** 10px / 12px（1.20）· regular · letterSpacing.md */
+  --font-label-mono-sm-font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace; /** 12px / 16px（1.33）· regular · letterSpacing.md */
+  --font-label-mono-sm-font-size: 12px; /** 12px / 16px（1.33）· regular · letterSpacing.md */
+  --font-label-mono-sm-line-height: 16px; /** 12px / 16px（1.33）· regular · letterSpacing.md */
+  --font-label-mono-sm-letter-spacing: 0em; /** 12px / 16px（1.33）· regular · letterSpacing.md */
+  --font-label-mono-md-font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace; /** 14px / 20px（1.43）· regular · letterSpacing.md */
+  --font-label-mono-md-font-size: 14px; /** 14px / 20px（1.43）· regular · letterSpacing.md */
+  --font-label-mono-md-line-height: 20px; /** 14px / 20px（1.43）· regular · letterSpacing.md */
+  --font-label-mono-md-letter-spacing: 0em; /** 14px / 20px（1.43）· regular · letterSpacing.md */
+  --font-label-mono-lg-font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace; /** 16px / 24px（1.50）· regular · letterSpacing.md */
+  --font-label-mono-lg-font-size: 16px; /** 16px / 24px（1.50）· regular · letterSpacing.md */
+  --font-label-mono-lg-line-height: 24px; /** 16px / 24px（1.50）· regular · letterSpacing.md */
+  --font-label-mono-lg-letter-spacing: 0em; /** 16px / 24px（1.50）· regular · letterSpacing.md */
+  --layout-breakpoint-xs: var(--dimension-breakpoint-xs);
+  --layout-breakpoint-sm: var(--dimension-breakpoint-sm);
+  --layout-breakpoint-md: var(--dimension-breakpoint-md);
+  --layout-breakpoint-lg: var(--dimension-breakpoint-lg);
+  --layout-breakpoint-xl: var(--dimension-breakpoint-xl);
+  --layout-breakpoint-xxl: var(--dimension-breakpoint-xxl);
+  --layout-grid-gutter-xs: var(--dimension-space-400); /** 16 */
+  --layout-grid-gutter-sm: var(--dimension-space-400); /** 16 */
+  --layout-grid-gutter-md: var(--dimension-space-600); /** 24 */
+  --layout-grid-gutter-lg: var(--dimension-space-800); /** 32 */
+  --layout-grid-gutter-xl: var(--dimension-space-800); /** 32 */
+  --layout-grid-gutter-xxl: var(--dimension-space-800); /** 32 */
+  --layout-grid-margin-xs: var(--dimension-space-400); /** 16 */
+  --layout-grid-margin-sm: var(--dimension-space-600); /** 24 */
+  --layout-grid-margin-md: var(--dimension-space-800); /** 32 */
+  --layout-grid-margin-lg: var(--dimension-space-1200); /** 48 */
+  --layout-grid-margin-xl: var(--dimension-space-1600); /** 64 */
+  --layout-grid-margin-xxl: var(--dimension-space-2000); /** 80 */
+  --layout-section-sm: var(--dimension-space-1200); /** 48 */
+  --layout-section-md: var(--dimension-space-1600); /** 64 */
+  --layout-section-lg: var(--dimension-space-2400); /** 96 */
+  --layout-section-xl: var(--dimension-space-3200); /** 128 */
+  --border-width-default: var(--dimension-border-025); /** 1px。境界線、区切り線、入力欄の枠 */
+  --border-width-selected: var(--dimension-border-050); /** 2px。選択タブの下線、選択カードの枠（color.border.selected） */
+  --border-width-focused: var(--dimension-border-050); /** 2px。フォーカスリング（color.border.focused）。outline-offset は 2px */
+  --font-display-sm-font-weight: var(--typography-weight-bold); /** 48px / 60px（1.25）· bold · letterSpacing.sm */
+  --font-display-md-font-weight: var(--typography-weight-bold); /** 64px / 80px（1.25）· bold · letterSpacing.sm */
+  --font-display-lg-font-weight: var(--typography-weight-bold); /** 80px / 100px（1.25）· bold · letterSpacing.sm */
+  --font-display-xl-font-weight: var(--typography-weight-bold); /** 96px / 120px（1.25）· bold · letterSpacing.sm */
+  --font-display-xxl-font-weight: var(--typography-weight-bold); /** 128px / 160px（1.25）· bold · letterSpacing.sm */
+  --font-heading-xs-font-weight: var(--typography-weight-semibold); /** 16px / 20px（1.25）· semibold · letterSpacing.md */
+  --font-heading-sm-font-weight: var(--typography-weight-semibold); /** 18px / 24px（1.33）· semibold · letterSpacing.md */
+  --font-heading-md-font-weight: var(--typography-weight-semibold); /** 20px / 28px（1.40）· semibold · letterSpacing.md */
+  --font-heading-lg-font-weight: var(--typography-weight-semibold); /** 24px / 32px（1.33）· semibold · letterSpacing.md */
+  --font-heading-xl-font-weight: var(--typography-weight-semibold); /** 28px / 36px（1.29）· semibold · letterSpacing.sm */
+  --font-heading-xxl-font-weight: var(--typography-weight-semibold); /** 32px / 40px（1.25）· semibold · letterSpacing.sm */
+  --font-heading-xxxl-font-weight: var(--typography-weight-semibold); /** 40px / 48px（1.20）· semibold · letterSpacing.sm */
+  --font-body-sm-font-weight: var(--typography-weight-regular); /** 14px / 24px（1.71）· regular · letterSpacing.md */
+  --font-body-md-font-weight: var(--typography-weight-regular); /** 16px / 28px（1.75）· regular · letterSpacing.md */
+  --font-body-lg-font-weight: var(--typography-weight-regular); /** 18px / 28px（1.56）· regular · letterSpacing.md */
+  --font-body-xl-font-weight: var(--typography-weight-regular); /** 20px / 32px（1.60）· regular · letterSpacing.md */
+  --font-label-xs-font-weight: var(--typography-weight-medium); /** 10px / 12px（1.20）· medium · letterSpacing.lg */
+  --font-label-sm-font-weight: var(--typography-weight-medium); /** 12px / 16px（1.33）· medium · letterSpacing.lg */
+  --font-label-md-font-weight: var(--typography-weight-medium); /** 14px / 20px（1.43）· medium · letterSpacing.md */
+  --font-label-lg-font-weight: var(--typography-weight-medium); /** 16px / 24px（1.50）· medium · letterSpacing.md */
+  --font-label-mono-xs-font-weight: var(--typography-weight-regular); /** 10px / 12px（1.20）· regular · letterSpacing.md */
+  --font-label-mono-sm-font-weight: var(--typography-weight-regular); /** 12px / 16px（1.33）· regular · letterSpacing.md */
+  --font-label-mono-md-font-weight: var(--typography-weight-regular); /** 14px / 20px（1.43）· regular · letterSpacing.md */
+  --font-label-mono-lg-font-weight: var(--typography-weight-regular); /** 16px / 24px（1.50）· regular · letterSpacing.md */
+}
+
+:root {
+  --color-background-blanket: rgba(0, 0, 0, 0.4); /** モーダル背後の暗幕。neutral.1000 の 40% / 60% */
+  --elevation-shadow-rest: 0px 1px 2px 0px #0000000A, 0px 1px 3px 0px #0000000F; /** 静止したカード、区切りの補助 */
+  --elevation-shadow-lifted: 0px 2px 4px 0px #0000000F, 0px 4px 12px -2px #0000001F; /** 浮いたカード、ホバーで持ち上がる面、ドロップダウン */
+  --elevation-shadow-floating: 0px 4px 8px 0px #00000014, 0px 12px 24px -4px #00000029; /** ポップオーバー、固定バー、ドラッグ中の要素 */
+  --elevation-shadow-overlay: 0px 8px 16px 0px #00000014, 0px 24px 48px -8px #0000003D; /** モーダル、ダイアログ、最上位のオーバーレイ */
+  --color-text-default: var(--color-neutral-950); /** 本文・見出し */
+  --color-text-subtle: var(--color-neutral-700); /** 副次テキスト */
+  --color-text-subtlest: var(--color-neutral-600); /** キャプション・メタ */
+  --color-text-disabled: var(--color-neutral-400); /** 無効（コントラスト要件の対象外） */
+  --color-text-inverse: var(--color-neutral-50); /** 反転面の上 */
+  --color-text-brand: var(--color-blue-700); /** ブランド色の文字・リンク */
+  --color-text-brand-bold: var(--color-blue-800); /** brand.subtle の面に乗せる文字 */
+  --color-text-selected: var(--color-blue-700); /** 選択状態の文字 */
+  --color-text-static-white: var(--color-neutral-0); /** テーマに依存しない白。bold 塗り・写真・スクリムの上 */
+  --color-text-static-black: var(--color-neutral-1000); /** テーマに依存しない黒。amber / lime の bold 塗り・明るい写真の上 */
+  --color-text-status-success: var(--color-green-700);
+  --color-text-status-success-bold: var(--color-green-800); /** success.subtle の面に乗せる文字 */
+  --color-text-status-warning: var(--color-amber-700);
+  --color-text-status-warning-bold: var(--color-amber-800); /** warning.subtle の面に乗せる文字 */
+  --color-text-status-error: var(--color-red-700);
+  --color-text-status-error-bold: var(--color-red-800); /** error.subtle の面に乗せる文字 */
+  --color-text-status-info: var(--color-sky-700);
+  --color-text-status-info-bold: var(--color-sky-800); /** info.subtle の面に乗せる文字 */
+  --color-text-accent-blue: var(--color-blue-700); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-blue-bold: var(--color-blue-800); /** accent.blue.subtle の面に乗せる文字 */
+  --color-text-accent-violet: var(--color-violet-700); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-violet-bold: var(--color-violet-800); /** accent.violet.subtle の面に乗せる文字 */
+  --color-text-accent-purple: var(--color-purple-700); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-purple-bold: var(--color-purple-800); /** accent.purple.subtle の面に乗せる文字 */
+  --color-text-accent-pink: var(--color-pink-700); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-pink-bold: var(--color-pink-800); /** accent.pink.subtle の面に乗せる文字 */
+  --color-text-accent-red: var(--color-red-700); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-red-bold: var(--color-red-800); /** accent.red.subtle の面に乗せる文字 */
+  --color-text-accent-orange: var(--color-orange-700); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-orange-bold: var(--color-orange-800); /** accent.orange.subtle の面に乗せる文字 */
+  --color-text-accent-amber: var(--color-amber-700); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-amber-bold: var(--color-amber-800); /** accent.amber.subtle の面に乗せる文字 */
+  --color-text-accent-lime: var(--color-lime-700); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-lime-bold: var(--color-lime-800); /** accent.lime.subtle の面に乗せる文字 */
+  --color-text-accent-green: var(--color-green-700); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-green-bold: var(--color-green-800); /** accent.green.subtle の面に乗せる文字 */
+  --color-text-accent-teal: var(--color-teal-700); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-teal-bold: var(--color-teal-800); /** accent.teal.subtle の面に乗せる文字 */
+  --color-text-accent-cyan: var(--color-cyan-700); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-cyan-bold: var(--color-cyan-800); /** accent.cyan.subtle の面に乗せる文字 */
+  --color-text-accent-sky: var(--color-sky-700); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-sky-bold: var(--color-sky-800); /** accent.sky.subtle の面に乗せる文字 */
+  --color-icon-default: var(--color-neutral-900);
+  --color-icon-subtle: var(--color-neutral-700);
+  --color-icon-subtlest: var(--color-neutral-600);
+  --color-icon-disabled: var(--color-neutral-400);
+  --color-icon-inverse: var(--color-neutral-50);
+  --color-icon-brand: var(--color-blue-600);
+  --color-icon-status-success: var(--color-green-700); /** 状態アイコン */
+  --color-icon-status-warning: var(--color-amber-700); /** 状態アイコン */
+  --color-icon-status-error: var(--color-red-700); /** 状態アイコン */
+  --color-icon-status-info: var(--color-sky-700); /** 状態アイコン */
+  --color-icon-static-white: var(--color-neutral-0); /** テーマに依存しない白。bold 塗り・写真・スクリムの上 */
+  --color-icon-static-black: var(--color-neutral-1000); /** テーマに依存しない黒。amber / lime の bold 塗り・明るい写真の上 */
+  --color-border-subtlest: var(--color-neutral-100a); /** 装飾的な区切り（3:1 の要件なし） */
+  --color-border-subtle: var(--color-neutral-200a); /** カードの枠（装飾） */
+  --color-border-default: var(--color-neutral-300a); /** 既定の境界線（装飾） */
+  --color-border-bold: var(--color-neutral-500); /** 入力欄など機能的な境界（3:1） */
+  --color-border-focused: var(--color-blue-600); /** フォーカスリング */
+  --color-border-inverse: var(--color-neutral-50); /** 反転面の上 */
+  --color-border-brand: var(--color-blue-600);
+  --color-border-disabled: var(--color-neutral-200a); /** 無効な入力欄の枠 */
+  --color-border-selected: var(--color-blue-600); /** 選択タブの下線など */
+  --color-border-static-white: var(--color-neutral-0); /** テーマに依存しない白。bold 塗り・写真・スクリムの上 */
+  --color-border-static-black: var(--color-neutral-1000); /** テーマに依存しない黒。amber / lime の bold 塗り・明るい写真の上 */
+  --color-border-status-success: var(--color-green-600);
+  --color-border-status-warning: var(--color-amber-600);
+  --color-border-status-error: var(--color-red-600);
+  --color-border-status-info: var(--color-sky-600);
+  --color-background-disabled: var(--color-neutral-100a); /** 無効なボタン・入力欄の地 */
+  --color-background-selected: var(--color-blue-50); /** ナビの現在地、タブ、選択行 */
+  --color-background-selected-hovered: var(--color-blue-100);
+  --color-background-selected-pressed: var(--color-blue-200);
+  --color-background-input: var(--color-neutral-100); /** 入力欄の地（surface.sunken と同値） */
+  --color-background-input-hovered: var(--color-neutral-200);
+  --color-background-neutral-subtlest: var(--color-neutral-100a); /** ホバー面・薄いタグ */
+  --color-background-neutral-subtle: var(--color-neutral-200a); /** 二次ボタン・チップ */
+  --color-background-neutral-subtle-hovered: var(--color-neutral-300a);
+  --color-background-neutral-subtle-pressed: var(--color-neutral-400a);
+  --color-background-neutral-default: var(--color-neutral-200); /** 塗りの二次ボタン */
+  --color-background-neutral-default-hovered: var(--color-neutral-300);
+  --color-background-neutral-default-pressed: var(--color-neutral-400);
+  --color-background-neutral-bold: var(--color-neutral-700); /** 強い塗り */
+  --color-background-neutral-boldest: var(--color-neutral-950); /** 反転面。inverse の文字を乗せる */
+  --color-background-brand-subtlest: var(--color-blue-50); /** ほのかな色の面 */
+  --color-background-brand-subtle: var(--color-blue-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-brand-default: var(--color-blue-200); /** 色つきの面（文字は text.default） */
+  --color-background-brand-bold: var(--color-blue-600); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-brand-bold-hovered: var(--color-blue-700); /** 1 段濃く */
+  --color-background-brand-bold-pressed: var(--color-blue-800); /** 2 段濃く */
+  --color-background-brand-boldest: var(--color-blue-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-status-success-subtlest: var(--color-green-50); /** ほのかな色の面 */
+  --color-background-status-success-subtle: var(--color-green-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-status-success-default: var(--color-green-200); /** 色つきの面（文字は text.default） */
+  --color-background-status-success-bold: var(--color-green-700); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-status-success-bold-hovered: var(--color-green-800); /** 1 段濃く */
+  --color-background-status-success-bold-pressed: var(--color-green-900); /** 2 段濃く */
+  --color-background-status-success-boldest: var(--color-green-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-status-warning-subtlest: var(--color-amber-50); /** ほのかな色の面 */
+  --color-background-status-warning-subtle: var(--color-amber-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-status-warning-default: var(--color-amber-200); /** 色つきの面（文字は text.default） */
+  --color-background-status-warning-bold: var(--color-amber-400); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-status-warning-bold-hovered: var(--color-amber-500); /** 1 段濃く */
+  --color-background-status-warning-bold-pressed: var(--color-amber-600); /** 2 段濃く */
+  --color-background-status-warning-boldest: var(--color-amber-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-status-error-subtlest: var(--color-red-50); /** ほのかな色の面 */
+  --color-background-status-error-subtle: var(--color-red-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-status-error-default: var(--color-red-200); /** 色つきの面（文字は text.default） */
+  --color-background-status-error-bold: var(--color-red-600); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-status-error-bold-hovered: var(--color-red-700); /** 1 段濃く */
+  --color-background-status-error-bold-pressed: var(--color-red-800); /** 2 段濃く */
+  --color-background-status-error-boldest: var(--color-red-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-status-info-subtlest: var(--color-sky-50); /** ほのかな色の面 */
+  --color-background-status-info-subtle: var(--color-sky-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-status-info-default: var(--color-sky-200); /** 色つきの面（文字は text.default） */
+  --color-background-status-info-bold: var(--color-sky-700); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-status-info-bold-hovered: var(--color-sky-800); /** 1 段濃く */
+  --color-background-status-info-bold-pressed: var(--color-sky-900); /** 2 段濃く */
+  --color-background-status-info-boldest: var(--color-sky-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-blue-subtlest: var(--color-blue-50); /** ほのかな色の面 */
+  --color-background-accent-blue-subtle: var(--color-blue-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-blue-default: var(--color-blue-200); /** 色つきの面（文字は text.default） */
+  --color-background-accent-blue-bold: var(--color-blue-600); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-blue-boldest: var(--color-blue-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-violet-subtlest: var(--color-violet-50); /** ほのかな色の面 */
+  --color-background-accent-violet-subtle: var(--color-violet-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-violet-default: var(--color-violet-200); /** 色つきの面（文字は text.default） */
+  --color-background-accent-violet-bold: var(--color-violet-600); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-violet-boldest: var(--color-violet-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-purple-subtlest: var(--color-purple-50); /** ほのかな色の面 */
+  --color-background-accent-purple-subtle: var(--color-purple-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-purple-default: var(--color-purple-200); /** 色つきの面（文字は text.default） */
+  --color-background-accent-purple-bold: var(--color-purple-600); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-purple-boldest: var(--color-purple-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-pink-subtlest: var(--color-pink-50); /** ほのかな色の面 */
+  --color-background-accent-pink-subtle: var(--color-pink-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-pink-default: var(--color-pink-200); /** 色つきの面（文字は text.default） */
+  --color-background-accent-pink-bold: var(--color-pink-600); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-pink-boldest: var(--color-pink-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-red-subtlest: var(--color-red-50); /** ほのかな色の面 */
+  --color-background-accent-red-subtle: var(--color-red-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-red-default: var(--color-red-200); /** 色つきの面（文字は text.default） */
+  --color-background-accent-red-bold: var(--color-red-600); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-red-boldest: var(--color-red-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-orange-subtlest: var(--color-orange-50); /** ほのかな色の面 */
+  --color-background-accent-orange-subtle: var(--color-orange-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-orange-default: var(--color-orange-200); /** 色つきの面（文字は text.default） */
+  --color-background-accent-orange-bold: var(--color-orange-700); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-orange-boldest: var(--color-orange-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-amber-subtlest: var(--color-amber-50); /** ほのかな色の面 */
+  --color-background-accent-amber-subtle: var(--color-amber-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-amber-default: var(--color-amber-200); /** 色つきの面（文字は text.default） */
+  --color-background-accent-amber-bold: var(--color-amber-400); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-amber-boldest: var(--color-amber-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-lime-subtlest: var(--color-lime-50); /** ほのかな色の面 */
+  --color-background-accent-lime-subtle: var(--color-lime-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-lime-default: var(--color-lime-200); /** 色つきの面（文字は text.default） */
+  --color-background-accent-lime-bold: var(--color-lime-400); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-lime-boldest: var(--color-lime-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-green-subtlest: var(--color-green-50); /** ほのかな色の面 */
+  --color-background-accent-green-subtle: var(--color-green-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-green-default: var(--color-green-200); /** 色つきの面（文字は text.default） */
+  --color-background-accent-green-bold: var(--color-green-700); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-green-boldest: var(--color-green-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-teal-subtlest: var(--color-teal-50); /** ほのかな色の面 */
+  --color-background-accent-teal-subtle: var(--color-teal-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-teal-default: var(--color-teal-200); /** 色つきの面（文字は text.default） */
+  --color-background-accent-teal-bold: var(--color-teal-700); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-teal-boldest: var(--color-teal-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-cyan-subtlest: var(--color-cyan-50); /** ほのかな色の面 */
+  --color-background-accent-cyan-subtle: var(--color-cyan-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-cyan-default: var(--color-cyan-200); /** 色つきの面（文字は text.default） */
+  --color-background-accent-cyan-bold: var(--color-cyan-700); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-cyan-boldest: var(--color-cyan-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-sky-subtlest: var(--color-sky-50); /** ほのかな色の面 */
+  --color-background-accent-sky-subtle: var(--color-sky-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-sky-default: var(--color-sky-200); /** 色つきの面（文字は text.default） */
+  --color-background-accent-sky-bold: var(--color-sky-700); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-sky-boldest: var(--color-sky-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-link-default: var(--color-blue-700); /** 本文中のリンク */
+  --color-link-hovered: var(--color-blue-800);
+  --color-link-visited: var(--color-purple-700); /** 訪問済み（ブログ本文） */
+  --elevation-surface-default: var(--color-neutral-50); /** ページ・セクションの地 */
+  --elevation-surface-raised: var(--color-neutral-0); /** カード・パネル。light は影で浮かせる */
+  --elevation-surface-overlay: var(--color-neutral-0); /** モーダル・メニュー・ポップオーバー */
+  --elevation-surface-sunken: var(--color-neutral-100); /** 入力欄・くぼみ・コードブロックの地。文字は text.default / subtle まで */
+}
+
+[data-theme="dark"] {
+  --color-background-blanket: rgba(0, 0, 0, 0.6); /** モーダル背後の暗幕。neutral.1000 の 40% / 60% */
+  --elevation-shadow-rest: 0px 1px 2px 0px #0000004D, 0px 1px 3px 0px #00000033; /** 静止したカード、区切りの補助 */
+  --elevation-shadow-lifted: 0px 2px 4px 0px #00000066, 0px 4px 12px -2px #0000004D; /** 浮いたカード、ホバーで持ち上がる面、ドロップダウン */
+  --elevation-shadow-floating: 0px 4px 8px 0px #00000073, 0px 12px 24px -4px #00000073; /** ポップオーバー、固定バー、ドラッグ中の要素 */
+  --elevation-shadow-overlay: 0px 8px 16px 0px #00000080, 0px 24px 48px -8px #00000099; /** モーダル、ダイアログ、最上位のオーバーレイ */
+  --color-text-default: var(--color-neutral-50); /** 本文・見出し */
+  --color-text-subtle: var(--color-neutral-200); /** 副次テキスト */
+  --color-text-subtlest: var(--color-neutral-300); /** キャプション・メタ */
+  --color-text-disabled: var(--color-neutral-500); /** 無効（コントラスト要件の対象外） */
+  --color-text-inverse: var(--color-neutral-950); /** 反転面の上 */
+  --color-text-brand: var(--color-blue-400); /** ブランド色の文字・リンク */
+  --color-text-brand-bold: var(--color-blue-300); /** brand.subtle の面に乗せる文字 */
+  --color-text-selected: var(--color-blue-400); /** 選択状態の文字 */
+  --color-text-static-white: var(--color-neutral-0); /** テーマに依存しない白。bold 塗り・写真・スクリムの上 */
+  --color-text-static-black: var(--color-neutral-1000); /** テーマに依存しない黒。amber / lime の bold 塗り・明るい写真の上 */
+  --color-text-status-success: var(--color-green-400);
+  --color-text-status-success-bold: var(--color-green-300); /** success.subtle の面に乗せる文字 */
+  --color-text-status-warning: var(--color-amber-400);
+  --color-text-status-warning-bold: var(--color-amber-300); /** warning.subtle の面に乗せる文字 */
+  --color-text-status-error: var(--color-red-400);
+  --color-text-status-error-bold: var(--color-red-300); /** error.subtle の面に乗せる文字 */
+  --color-text-status-info: var(--color-sky-400);
+  --color-text-status-info-bold: var(--color-sky-300); /** info.subtle の面に乗せる文字 */
+  --color-text-accent-blue: var(--color-blue-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-blue-bold: var(--color-blue-300); /** accent.blue.subtle の面に乗せる文字 */
+  --color-text-accent-violet: var(--color-violet-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-violet-bold: var(--color-violet-300); /** accent.violet.subtle の面に乗せる文字 */
+  --color-text-accent-purple: var(--color-purple-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-purple-bold: var(--color-purple-300); /** accent.purple.subtle の面に乗せる文字 */
+  --color-text-accent-pink: var(--color-pink-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-pink-bold: var(--color-pink-300); /** accent.pink.subtle の面に乗せる文字 */
+  --color-text-accent-red: var(--color-red-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-red-bold: var(--color-red-300); /** accent.red.subtle の面に乗せる文字 */
+  --color-text-accent-orange: var(--color-orange-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-orange-bold: var(--color-orange-300); /** accent.orange.subtle の面に乗せる文字 */
+  --color-text-accent-amber: var(--color-amber-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-amber-bold: var(--color-amber-300); /** accent.amber.subtle の面に乗せる文字 */
+  --color-text-accent-lime: var(--color-lime-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-lime-bold: var(--color-lime-300); /** accent.lime.subtle の面に乗せる文字 */
+  --color-text-accent-green: var(--color-green-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-green-bold: var(--color-green-300); /** accent.green.subtle の面に乗せる文字 */
+  --color-text-accent-teal: var(--color-teal-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-teal-bold: var(--color-teal-300); /** accent.teal.subtle の面に乗せる文字 */
+  --color-text-accent-cyan: var(--color-cyan-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-cyan-bold: var(--color-cyan-300); /** accent.cyan.subtle の面に乗せる文字 */
+  --color-text-accent-sky: var(--color-sky-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+  --color-text-accent-sky-bold: var(--color-sky-300); /** accent.sky.subtle の面に乗せる文字 */
+  --color-icon-default: var(--color-neutral-100);
+  --color-icon-subtle: var(--color-neutral-200);
+  --color-icon-subtlest: var(--color-neutral-300);
+  --color-icon-disabled: var(--color-neutral-500);
+  --color-icon-inverse: var(--color-neutral-950);
+  --color-icon-brand: var(--color-blue-400);
+  --color-icon-status-success: var(--color-green-400); /** 状態アイコン */
+  --color-icon-status-warning: var(--color-amber-400); /** 状態アイコン */
+  --color-icon-status-error: var(--color-red-400); /** 状態アイコン */
+  --color-icon-status-info: var(--color-sky-400); /** 状態アイコン */
+  --color-icon-static-white: var(--color-neutral-0); /** テーマに依存しない白。bold 塗り・写真・スクリムの上 */
+  --color-icon-static-black: var(--color-neutral-1000); /** テーマに依存しない黒。amber / lime の bold 塗り・明るい写真の上 */
+  --color-border-subtlest: var(--color-neutral-900a); /** 装飾的な区切り（3:1 の要件なし） */
+  --color-border-subtle: var(--color-neutral-800a); /** カードの枠（装飾） */
+  --color-border-default: var(--color-neutral-700a); /** 既定の境界線（装飾） */
+  --color-border-bold: var(--color-neutral-400); /** 入力欄など機能的な境界（3:1） */
+  --color-border-focused: var(--color-blue-400); /** フォーカスリング */
+  --color-border-inverse: var(--color-neutral-950); /** 反転面の上 */
+  --color-border-brand: var(--color-blue-500);
+  --color-border-disabled: var(--color-neutral-800a); /** 無効な入力欄の枠 */
+  --color-border-selected: var(--color-blue-400); /** 選択タブの下線など */
+  --color-border-static-white: var(--color-neutral-0); /** テーマに依存しない白。bold 塗り・写真・スクリムの上 */
+  --color-border-static-black: var(--color-neutral-1000); /** テーマに依存しない黒。amber / lime の bold 塗り・明るい写真の上 */
+  --color-border-status-success: var(--color-green-500);
+  --color-border-status-warning: var(--color-amber-500);
+  --color-border-status-error: var(--color-red-500);
+  --color-border-status-info: var(--color-sky-500);
+  --color-background-disabled: var(--color-neutral-900a); /** 無効なボタン・入力欄の地 */
+  --color-background-selected: var(--color-blue-950); /** ナビの現在地、タブ、選択行 */
+  --color-background-selected-hovered: var(--color-blue-900);
+  --color-background-selected-pressed: var(--color-blue-800);
+  --color-background-input: var(--color-neutral-1000); /** 入力欄の地（surface.sunken と同値） */
+  --color-background-input-hovered: var(--color-neutral-900);
+  --color-background-neutral-subtlest: var(--color-neutral-900a); /** ホバー面・薄いタグ */
+  --color-background-neutral-subtle: var(--color-neutral-800a); /** 二次ボタン・チップ */
+  --color-background-neutral-subtle-hovered: var(--color-neutral-700a);
+  --color-background-neutral-subtle-pressed: var(--color-neutral-600a);
+  --color-background-neutral-default: var(--color-neutral-800); /** 塗りの二次ボタン */
+  --color-background-neutral-default-hovered: var(--color-neutral-700);
+  --color-background-neutral-default-pressed: var(--color-neutral-600);
+  --color-background-neutral-bold: var(--color-neutral-300); /** 強い塗り */
+  --color-background-neutral-boldest: var(--color-neutral-50); /** 反転面。inverse の文字を乗せる */
+  --color-background-brand-subtlest: var(--color-blue-950); /** ほのかな色の面 */
+  --color-background-brand-subtle: var(--color-blue-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-brand-default: var(--color-blue-800); /** 色つきの面（文字は text.default） */
+  --color-background-brand-bold: var(--color-blue-600); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-brand-bold-hovered: var(--color-blue-700); /** 1 段濃く */
+  --color-background-brand-bold-pressed: var(--color-blue-800); /** 2 段濃く */
+  --color-background-brand-boldest: var(--color-blue-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-status-success-subtlest: var(--color-green-950); /** ほのかな色の面 */
+  --color-background-status-success-subtle: var(--color-green-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-status-success-default: var(--color-green-800); /** 色つきの面（文字は text.default） */
+  --color-background-status-success-bold: var(--color-green-700); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-status-success-bold-hovered: var(--color-green-800); /** 1 段濃く */
+  --color-background-status-success-bold-pressed: var(--color-green-900); /** 2 段濃く */
+  --color-background-status-success-boldest: var(--color-green-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-status-warning-subtlest: var(--color-amber-950); /** ほのかな色の面 */
+  --color-background-status-warning-subtle: var(--color-amber-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-status-warning-default: var(--color-amber-800); /** 色つきの面（文字は text.default） */
+  --color-background-status-warning-bold: var(--color-amber-400); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-status-warning-bold-hovered: var(--color-amber-500); /** 1 段濃く */
+  --color-background-status-warning-bold-pressed: var(--color-amber-600); /** 2 段濃く */
+  --color-background-status-warning-boldest: var(--color-amber-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-status-error-subtlest: var(--color-red-950); /** ほのかな色の面 */
+  --color-background-status-error-subtle: var(--color-red-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-status-error-default: var(--color-red-800); /** 色つきの面（文字は text.default） */
+  --color-background-status-error-bold: var(--color-red-600); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-status-error-bold-hovered: var(--color-red-700); /** 1 段濃く */
+  --color-background-status-error-bold-pressed: var(--color-red-800); /** 2 段濃く */
+  --color-background-status-error-boldest: var(--color-red-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-status-info-subtlest: var(--color-sky-950); /** ほのかな色の面 */
+  --color-background-status-info-subtle: var(--color-sky-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-status-info-default: var(--color-sky-800); /** 色つきの面（文字は text.default） */
+  --color-background-status-info-bold: var(--color-sky-700); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-status-info-bold-hovered: var(--color-sky-800); /** 1 段濃く */
+  --color-background-status-info-bold-pressed: var(--color-sky-900); /** 2 段濃く */
+  --color-background-status-info-boldest: var(--color-sky-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-blue-subtlest: var(--color-blue-950); /** ほのかな色の面 */
+  --color-background-accent-blue-subtle: var(--color-blue-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-blue-default: var(--color-blue-800); /** 色つきの面（文字は text.default） */
+  --color-background-accent-blue-bold: var(--color-blue-600); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-blue-boldest: var(--color-blue-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-violet-subtlest: var(--color-violet-950); /** ほのかな色の面 */
+  --color-background-accent-violet-subtle: var(--color-violet-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-violet-default: var(--color-violet-800); /** 色つきの面（文字は text.default） */
+  --color-background-accent-violet-bold: var(--color-violet-600); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-violet-boldest: var(--color-violet-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-purple-subtlest: var(--color-purple-950); /** ほのかな色の面 */
+  --color-background-accent-purple-subtle: var(--color-purple-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-purple-default: var(--color-purple-800); /** 色つきの面（文字は text.default） */
+  --color-background-accent-purple-bold: var(--color-purple-600); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-purple-boldest: var(--color-purple-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-pink-subtlest: var(--color-pink-950); /** ほのかな色の面 */
+  --color-background-accent-pink-subtle: var(--color-pink-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-pink-default: var(--color-pink-800); /** 色つきの面（文字は text.default） */
+  --color-background-accent-pink-bold: var(--color-pink-600); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-pink-boldest: var(--color-pink-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-red-subtlest: var(--color-red-950); /** ほのかな色の面 */
+  --color-background-accent-red-subtle: var(--color-red-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-red-default: var(--color-red-800); /** 色つきの面（文字は text.default） */
+  --color-background-accent-red-bold: var(--color-red-600); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-red-boldest: var(--color-red-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-orange-subtlest: var(--color-orange-950); /** ほのかな色の面 */
+  --color-background-accent-orange-subtle: var(--color-orange-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-orange-default: var(--color-orange-800); /** 色つきの面（文字は text.default） */
+  --color-background-accent-orange-bold: var(--color-orange-700); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-orange-boldest: var(--color-orange-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-amber-subtlest: var(--color-amber-950); /** ほのかな色の面 */
+  --color-background-accent-amber-subtle: var(--color-amber-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-amber-default: var(--color-amber-800); /** 色つきの面（文字は text.default） */
+  --color-background-accent-amber-bold: var(--color-amber-400); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-amber-boldest: var(--color-amber-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-lime-subtlest: var(--color-lime-950); /** ほのかな色の面 */
+  --color-background-accent-lime-subtle: var(--color-lime-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-lime-default: var(--color-lime-800); /** 色つきの面（文字は text.default） */
+  --color-background-accent-lime-bold: var(--color-lime-400); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-lime-boldest: var(--color-lime-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-green-subtlest: var(--color-green-950); /** ほのかな色の面 */
+  --color-background-accent-green-subtle: var(--color-green-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-green-default: var(--color-green-800); /** 色つきの面（文字は text.default） */
+  --color-background-accent-green-bold: var(--color-green-700); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-green-boldest: var(--color-green-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-teal-subtlest: var(--color-teal-950); /** ほのかな色の面 */
+  --color-background-accent-teal-subtle: var(--color-teal-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-teal-default: var(--color-teal-800); /** 色つきの面（文字は text.default） */
+  --color-background-accent-teal-bold: var(--color-teal-700); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-teal-boldest: var(--color-teal-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-cyan-subtlest: var(--color-cyan-950); /** ほのかな色の面 */
+  --color-background-accent-cyan-subtle: var(--color-cyan-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-cyan-default: var(--color-cyan-800); /** 色つきの面（文字は text.default） */
+  --color-background-accent-cyan-bold: var(--color-cyan-700); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-cyan-boldest: var(--color-cyan-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-background-accent-sky-subtlest: var(--color-sky-950); /** ほのかな色の面 */
+  --color-background-accent-sky-subtle: var(--color-sky-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --color-background-accent-sky-default: var(--color-sky-800); /** 色つきの面（文字は text.default） */
+  --color-background-accent-sky-bold: var(--color-sky-700); /** 塗り（白文字。amber / lime は黒文字） */
+  --color-background-accent-sky-boldest: var(--color-sky-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+  --color-link-default: var(--color-blue-400); /** 本文中のリンク */
+  --color-link-hovered: var(--color-blue-300);
+  --color-link-visited: var(--color-purple-400); /** 訪問済み（ブログ本文） */
+  --elevation-surface-default: var(--color-neutral-950); /** ページ・セクションの地 */
+  --elevation-surface-raised: var(--color-neutral-900); /** カード・パネル。light は影で浮かせる */
+  --elevation-surface-overlay: var(--color-neutral-800); /** モーダル・メニュー・ポップオーバー */
+  --elevation-surface-sunken: var(--color-neutral-1000); /** 入力欄・くぼみ・コードブロックの地。文字は text.default / subtle まで */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-background-blanket: rgba(0, 0, 0, 0.6); /** モーダル背後の暗幕。neutral.1000 の 40% / 60% */
+    --elevation-shadow-rest: 0px 1px 2px 0px #0000004D, 0px 1px 3px 0px #00000033; /** 静止したカード、区切りの補助 */
+    --elevation-shadow-lifted: 0px 2px 4px 0px #00000066, 0px 4px 12px -2px #0000004D; /** 浮いたカード、ホバーで持ち上がる面、ドロップダウン */
+    --elevation-shadow-floating: 0px 4px 8px 0px #00000073, 0px 12px 24px -4px #00000073; /** ポップオーバー、固定バー、ドラッグ中の要素 */
+    --elevation-shadow-overlay: 0px 8px 16px 0px #00000080, 0px 24px 48px -8px #00000099; /** モーダル、ダイアログ、最上位のオーバーレイ */
+    --color-text-default: var(--color-neutral-50); /** 本文・見出し */
+    --color-text-subtle: var(--color-neutral-200); /** 副次テキスト */
+    --color-text-subtlest: var(--color-neutral-300); /** キャプション・メタ */
+    --color-text-disabled: var(--color-neutral-500); /** 無効（コントラスト要件の対象外） */
+    --color-text-inverse: var(--color-neutral-950); /** 反転面の上 */
+    --color-text-brand: var(--color-blue-400); /** ブランド色の文字・リンク */
+    --color-text-brand-bold: var(--color-blue-300); /** brand.subtle の面に乗せる文字 */
+    --color-text-selected: var(--color-blue-400); /** 選択状態の文字 */
+    --color-text-static-white: var(--color-neutral-0); /** テーマに依存しない白。bold 塗り・写真・スクリムの上 */
+    --color-text-static-black: var(--color-neutral-1000); /** テーマに依存しない黒。amber / lime の bold 塗り・明るい写真の上 */
+    --color-text-status-success: var(--color-green-400);
+    --color-text-status-success-bold: var(--color-green-300); /** success.subtle の面に乗せる文字 */
+    --color-text-status-warning: var(--color-amber-400);
+    --color-text-status-warning-bold: var(--color-amber-300); /** warning.subtle の面に乗せる文字 */
+    --color-text-status-error: var(--color-red-400);
+    --color-text-status-error-bold: var(--color-red-300); /** error.subtle の面に乗せる文字 */
+    --color-text-status-info: var(--color-sky-400);
+    --color-text-status-info-bold: var(--color-sky-300); /** info.subtle の面に乗せる文字 */
+    --color-text-accent-blue: var(--color-blue-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+    --color-text-accent-blue-bold: var(--color-blue-300); /** accent.blue.subtle の面に乗せる文字 */
+    --color-text-accent-violet: var(--color-violet-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+    --color-text-accent-violet-bold: var(--color-violet-300); /** accent.violet.subtle の面に乗せる文字 */
+    --color-text-accent-purple: var(--color-purple-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+    --color-text-accent-purple-bold: var(--color-purple-300); /** accent.purple.subtle の面に乗せる文字 */
+    --color-text-accent-pink: var(--color-pink-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+    --color-text-accent-pink-bold: var(--color-pink-300); /** accent.pink.subtle の面に乗せる文字 */
+    --color-text-accent-red: var(--color-red-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+    --color-text-accent-red-bold: var(--color-red-300); /** accent.red.subtle の面に乗せる文字 */
+    --color-text-accent-orange: var(--color-orange-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+    --color-text-accent-orange-bold: var(--color-orange-300); /** accent.orange.subtle の面に乗せる文字 */
+    --color-text-accent-amber: var(--color-amber-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+    --color-text-accent-amber-bold: var(--color-amber-300); /** accent.amber.subtle の面に乗せる文字 */
+    --color-text-accent-lime: var(--color-lime-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+    --color-text-accent-lime-bold: var(--color-lime-300); /** accent.lime.subtle の面に乗せる文字 */
+    --color-text-accent-green: var(--color-green-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+    --color-text-accent-green-bold: var(--color-green-300); /** accent.green.subtle の面に乗せる文字 */
+    --color-text-accent-teal: var(--color-teal-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+    --color-text-accent-teal-bold: var(--color-teal-300); /** accent.teal.subtle の面に乗せる文字 */
+    --color-text-accent-cyan: var(--color-cyan-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+    --color-text-accent-cyan-bold: var(--color-cyan-300); /** accent.cyan.subtle の面に乗せる文字 */
+    --color-text-accent-sky: var(--color-sky-400); /** 意味を持たない色の文字（neutral 面・subtlest 面） */
+    --color-text-accent-sky-bold: var(--color-sky-300); /** accent.sky.subtle の面に乗せる文字 */
+    --color-icon-default: var(--color-neutral-100);
+    --color-icon-subtle: var(--color-neutral-200);
+    --color-icon-subtlest: var(--color-neutral-300);
+    --color-icon-disabled: var(--color-neutral-500);
+    --color-icon-inverse: var(--color-neutral-950);
+    --color-icon-brand: var(--color-blue-400);
+    --color-icon-status-success: var(--color-green-400); /** 状態アイコン */
+    --color-icon-status-warning: var(--color-amber-400); /** 状態アイコン */
+    --color-icon-status-error: var(--color-red-400); /** 状態アイコン */
+    --color-icon-status-info: var(--color-sky-400); /** 状態アイコン */
+    --color-icon-static-white: var(--color-neutral-0); /** テーマに依存しない白。bold 塗り・写真・スクリムの上 */
+    --color-icon-static-black: var(--color-neutral-1000); /** テーマに依存しない黒。amber / lime の bold 塗り・明るい写真の上 */
+    --color-border-subtlest: var(--color-neutral-900a); /** 装飾的な区切り（3:1 の要件なし） */
+    --color-border-subtle: var(--color-neutral-800a); /** カードの枠（装飾） */
+    --color-border-default: var(--color-neutral-700a); /** 既定の境界線（装飾） */
+    --color-border-bold: var(--color-neutral-400); /** 入力欄など機能的な境界（3:1） */
+    --color-border-focused: var(--color-blue-400); /** フォーカスリング */
+    --color-border-inverse: var(--color-neutral-950); /** 反転面の上 */
+    --color-border-brand: var(--color-blue-500);
+    --color-border-disabled: var(--color-neutral-800a); /** 無効な入力欄の枠 */
+    --color-border-selected: var(--color-blue-400); /** 選択タブの下線など */
+    --color-border-static-white: var(--color-neutral-0); /** テーマに依存しない白。bold 塗り・写真・スクリムの上 */
+    --color-border-static-black: var(--color-neutral-1000); /** テーマに依存しない黒。amber / lime の bold 塗り・明るい写真の上 */
+    --color-border-status-success: var(--color-green-500);
+    --color-border-status-warning: var(--color-amber-500);
+    --color-border-status-error: var(--color-red-500);
+    --color-border-status-info: var(--color-sky-500);
+    --color-background-disabled: var(--color-neutral-900a); /** 無効なボタン・入力欄の地 */
+    --color-background-selected: var(--color-blue-950); /** ナビの現在地、タブ、選択行 */
+    --color-background-selected-hovered: var(--color-blue-900);
+    --color-background-selected-pressed: var(--color-blue-800);
+    --color-background-input: var(--color-neutral-1000); /** 入力欄の地（surface.sunken と同値） */
+    --color-background-input-hovered: var(--color-neutral-900);
+    --color-background-neutral-subtlest: var(--color-neutral-900a); /** ホバー面・薄いタグ */
+    --color-background-neutral-subtle: var(--color-neutral-800a); /** 二次ボタン・チップ */
+    --color-background-neutral-subtle-hovered: var(--color-neutral-700a);
+    --color-background-neutral-subtle-pressed: var(--color-neutral-600a);
+    --color-background-neutral-default: var(--color-neutral-800); /** 塗りの二次ボタン */
+    --color-background-neutral-default-hovered: var(--color-neutral-700);
+    --color-background-neutral-default-pressed: var(--color-neutral-600);
+    --color-background-neutral-bold: var(--color-neutral-300); /** 強い塗り */
+    --color-background-neutral-boldest: var(--color-neutral-50); /** 反転面。inverse の文字を乗せる */
+    --color-background-brand-subtlest: var(--color-blue-950); /** ほのかな色の面 */
+    --color-background-brand-subtle: var(--color-blue-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --color-background-brand-default: var(--color-blue-800); /** 色つきの面（文字は text.default） */
+    --color-background-brand-bold: var(--color-blue-600); /** 塗り（白文字。amber / lime は黒文字） */
+    --color-background-brand-bold-hovered: var(--color-blue-700); /** 1 段濃く */
+    --color-background-brand-bold-pressed: var(--color-blue-800); /** 2 段濃く */
+    --color-background-brand-boldest: var(--color-blue-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+    --color-background-status-success-subtlest: var(--color-green-950); /** ほのかな色の面 */
+    --color-background-status-success-subtle: var(--color-green-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --color-background-status-success-default: var(--color-green-800); /** 色つきの面（文字は text.default） */
+    --color-background-status-success-bold: var(--color-green-700); /** 塗り（白文字。amber / lime は黒文字） */
+    --color-background-status-success-bold-hovered: var(--color-green-800); /** 1 段濃く */
+    --color-background-status-success-bold-pressed: var(--color-green-900); /** 2 段濃く */
+    --color-background-status-success-boldest: var(--color-green-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+    --color-background-status-warning-subtlest: var(--color-amber-950); /** ほのかな色の面 */
+    --color-background-status-warning-subtle: var(--color-amber-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --color-background-status-warning-default: var(--color-amber-800); /** 色つきの面（文字は text.default） */
+    --color-background-status-warning-bold: var(--color-amber-400); /** 塗り（白文字。amber / lime は黒文字） */
+    --color-background-status-warning-bold-hovered: var(--color-amber-500); /** 1 段濃く */
+    --color-background-status-warning-bold-pressed: var(--color-amber-600); /** 2 段濃く */
+    --color-background-status-warning-boldest: var(--color-amber-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+    --color-background-status-error-subtlest: var(--color-red-950); /** ほのかな色の面 */
+    --color-background-status-error-subtle: var(--color-red-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --color-background-status-error-default: var(--color-red-800); /** 色つきの面（文字は text.default） */
+    --color-background-status-error-bold: var(--color-red-600); /** 塗り（白文字。amber / lime は黒文字） */
+    --color-background-status-error-bold-hovered: var(--color-red-700); /** 1 段濃く */
+    --color-background-status-error-bold-pressed: var(--color-red-800); /** 2 段濃く */
+    --color-background-status-error-boldest: var(--color-red-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+    --color-background-status-info-subtlest: var(--color-sky-950); /** ほのかな色の面 */
+    --color-background-status-info-subtle: var(--color-sky-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --color-background-status-info-default: var(--color-sky-800); /** 色つきの面（文字は text.default） */
+    --color-background-status-info-bold: var(--color-sky-700); /** 塗り（白文字。amber / lime は黒文字） */
+    --color-background-status-info-bold-hovered: var(--color-sky-800); /** 1 段濃く */
+    --color-background-status-info-bold-pressed: var(--color-sky-900); /** 2 段濃く */
+    --color-background-status-info-boldest: var(--color-sky-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+    --color-background-accent-blue-subtlest: var(--color-blue-950); /** ほのかな色の面 */
+    --color-background-accent-blue-subtle: var(--color-blue-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --color-background-accent-blue-default: var(--color-blue-800); /** 色つきの面（文字は text.default） */
+    --color-background-accent-blue-bold: var(--color-blue-600); /** 塗り（白文字。amber / lime は黒文字） */
+    --color-background-accent-blue-boldest: var(--color-blue-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+    --color-background-accent-violet-subtlest: var(--color-violet-950); /** ほのかな色の面 */
+    --color-background-accent-violet-subtle: var(--color-violet-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --color-background-accent-violet-default: var(--color-violet-800); /** 色つきの面（文字は text.default） */
+    --color-background-accent-violet-bold: var(--color-violet-600); /** 塗り（白文字。amber / lime は黒文字） */
+    --color-background-accent-violet-boldest: var(--color-violet-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+    --color-background-accent-purple-subtlest: var(--color-purple-950); /** ほのかな色の面 */
+    --color-background-accent-purple-subtle: var(--color-purple-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --color-background-accent-purple-default: var(--color-purple-800); /** 色つきの面（文字は text.default） */
+    --color-background-accent-purple-bold: var(--color-purple-600); /** 塗り（白文字。amber / lime は黒文字） */
+    --color-background-accent-purple-boldest: var(--color-purple-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+    --color-background-accent-pink-subtlest: var(--color-pink-950); /** ほのかな色の面 */
+    --color-background-accent-pink-subtle: var(--color-pink-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --color-background-accent-pink-default: var(--color-pink-800); /** 色つきの面（文字は text.default） */
+    --color-background-accent-pink-bold: var(--color-pink-600); /** 塗り（白文字。amber / lime は黒文字） */
+    --color-background-accent-pink-boldest: var(--color-pink-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+    --color-background-accent-red-subtlest: var(--color-red-950); /** ほのかな色の面 */
+    --color-background-accent-red-subtle: var(--color-red-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --color-background-accent-red-default: var(--color-red-800); /** 色つきの面（文字は text.default） */
+    --color-background-accent-red-bold: var(--color-red-600); /** 塗り（白文字。amber / lime は黒文字） */
+    --color-background-accent-red-boldest: var(--color-red-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+    --color-background-accent-orange-subtlest: var(--color-orange-950); /** ほのかな色の面 */
+    --color-background-accent-orange-subtle: var(--color-orange-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --color-background-accent-orange-default: var(--color-orange-800); /** 色つきの面（文字は text.default） */
+    --color-background-accent-orange-bold: var(--color-orange-700); /** 塗り（白文字。amber / lime は黒文字） */
+    --color-background-accent-orange-boldest: var(--color-orange-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+    --color-background-accent-amber-subtlest: var(--color-amber-950); /** ほのかな色の面 */
+    --color-background-accent-amber-subtle: var(--color-amber-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --color-background-accent-amber-default: var(--color-amber-800); /** 色つきの面（文字は text.default） */
+    --color-background-accent-amber-bold: var(--color-amber-400); /** 塗り（白文字。amber / lime は黒文字） */
+    --color-background-accent-amber-boldest: var(--color-amber-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+    --color-background-accent-lime-subtlest: var(--color-lime-950); /** ほのかな色の面 */
+    --color-background-accent-lime-subtle: var(--color-lime-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --color-background-accent-lime-default: var(--color-lime-800); /** 色つきの面（文字は text.default） */
+    --color-background-accent-lime-bold: var(--color-lime-400); /** 塗り（白文字。amber / lime は黒文字） */
+    --color-background-accent-lime-boldest: var(--color-lime-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+    --color-background-accent-green-subtlest: var(--color-green-950); /** ほのかな色の面 */
+    --color-background-accent-green-subtle: var(--color-green-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --color-background-accent-green-default: var(--color-green-800); /** 色つきの面（文字は text.default） */
+    --color-background-accent-green-bold: var(--color-green-700); /** 塗り（白文字。amber / lime は黒文字） */
+    --color-background-accent-green-boldest: var(--color-green-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+    --color-background-accent-teal-subtlest: var(--color-teal-950); /** ほのかな色の面 */
+    --color-background-accent-teal-subtle: var(--color-teal-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --color-background-accent-teal-default: var(--color-teal-800); /** 色つきの面（文字は text.default） */
+    --color-background-accent-teal-bold: var(--color-teal-700); /** 塗り（白文字。amber / lime は黒文字） */
+    --color-background-accent-teal-boldest: var(--color-teal-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+    --color-background-accent-cyan-subtlest: var(--color-cyan-950); /** ほのかな色の面 */
+    --color-background-accent-cyan-subtle: var(--color-cyan-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --color-background-accent-cyan-default: var(--color-cyan-800); /** 色つきの面（文字は text.default） */
+    --color-background-accent-cyan-bold: var(--color-cyan-700); /** 塗り（白文字。amber / lime は黒文字） */
+    --color-background-accent-cyan-boldest: var(--color-cyan-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+    --color-background-accent-sky-subtlest: var(--color-sky-950); /** ほのかな色の面 */
+    --color-background-accent-sky-subtle: var(--color-sky-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --color-background-accent-sky-default: var(--color-sky-800); /** 色つきの面（文字は text.default） */
+    --color-background-accent-sky-bold: var(--color-sky-700); /** 塗り（白文字。amber / lime は黒文字） */
+    --color-background-accent-sky-boldest: var(--color-sky-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
+    --color-link-default: var(--color-blue-400); /** 本文中のリンク */
+    --color-link-hovered: var(--color-blue-300);
+    --color-link-visited: var(--color-purple-400); /** 訪問済み（ブログ本文） */
+    --elevation-surface-default: var(--color-neutral-950); /** ページ・セクションの地 */
+    --elevation-surface-raised: var(--color-neutral-900); /** カード・パネル。light は影で浮かせる */
+    --elevation-surface-overlay: var(--color-neutral-800); /** モーダル・メニュー・ポップオーバー */
+    --elevation-surface-sunken: var(--color-neutral-1000); /** 入力欄・くぼみ・コードブロックの地。文字は text.default / subtle まで */
+  }
+}

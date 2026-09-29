@@ -1,0 +1,279 @@
+/**
+ * Generated from tokens/ by `npm run build` (build/index.js).
+ * Do not edit by hand. Edit tokens/**/*.json and rebuild.
+ */
+
+:root {
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f8f6f4;
+  --color-neutral-100: #dedcd8;
+  --color-neutral-200: #c5c2bd;
+  --color-neutral-300: #aca9a2;
+  --color-neutral-400: #949089;
+  --color-neutral-500: #7c7871;
+  --color-neutral-600: #65615a;
+  --color-neutral-700: #4f4b45;
+  --color-neutral-800: #393631;
+  --color-neutral-900: #25221e;
+  --color-neutral-950: #12100d;
+  --color-neutral-1000: #000000;
+  --color-neutral-100a: rgba(18, 16, 13, 0.11764705882352941); /** neutral.950 （light）α 11.6%。neutral.50 上で neutral.100 と一致（合成 #DDDBD9） */
+  --color-neutral-200a: rgba(18, 16, 13, 0.22745098039215686); /** neutral.950 （light）α 22.9%。neutral.50 上で neutral.200 と一致（合成 #C3C1BF） */
+  --color-neutral-300a: rgba(18, 16, 13, 0.3411764705882353); /** neutral.950 （light）α 34.0%。neutral.50 上で neutral.300 と一致（合成 #AAA8A5） */
+  --color-neutral-400a: rgba(18, 16, 13, 0.4470588235294118); /** neutral.950 （light）α 44.7%。neutral.50 上で neutral.400 と一致（合成 #918F8D） */
+  --color-neutral-900a: rgba(248, 246, 244, 0.0784313725490196); /** neutral.50 （dark）α 7.8%。neutral.950 上で neutral.900 と一致（合成 #24221F） */
+  --color-neutral-800a: rgba(248, 246, 244, 0.16470588235294117); /** neutral.50 （dark）α 16.4%。neutral.950 上で neutral.800 と一致（合成 #383633） */
+  --color-neutral-700a: rgba(248, 246, 244, 0.2549019607843137); /** neutral.50 （dark）α 25.5%。neutral.950 上で neutral.700 と一致（合成 #4D4B48） */
+  --color-neutral-600a: rgba(248, 246, 244, 0.34901960784313724); /** neutral.50 （dark）α 34.9%。neutral.950 上で neutral.600 と一致（合成 #62605E） */
+  --color-blue-50: #f0f6fe;
+  --color-blue-100: #cee1fc;
+  --color-blue-200: #adccfa;
+  --color-blue-300: #8cb6f9;
+  --color-blue-400: #6c9ff8;
+  --color-blue-500: #4c87f6;
+  --color-blue-600: #316eee;
+  --color-blue-700: #1c55e0;
+  --color-blue-800: #1b44b9;
+  --color-blue-900: #183594;
+  --color-blue-950: #122670;
+  --color-violet-50: #f6f3fe;
+  --color-violet-100: #e2d9fc;
+  --color-violet-200: #cfbffa;
+  --color-violet-300: #bba5f9;
+  --color-violet-400: #a88af8;
+  --color-violet-500: #956df6;
+  --color-violet-600: #834bf4;
+  --color-violet-700: #6e3bd5;
+  --color-violet-800: #5830b1;
+  --color-violet-900: #44268e;
+  --color-violet-950: #311c6c;
+  --color-purple-50: #f6f4f6;
+  --color-purple-100: #e9dae8;
+  --color-purple-200: #e5b9e5;
+  --color-purple-300: #e492e8;
+  --color-purple-400: #e55df0;
+  --color-purple-500: #d91eec;
+  --color-purple-600: #bd00d2;
+  --color-purple-700: #9d11b2;
+  --color-purple-800: #7d1f8e;
+  --color-purple-900: #5d236b;
+  --color-purple-950: #41204b;
+  --color-pink-50: #f6f4f5;
+  --color-pink-100: #e9dbdf;
+  --color-pink-200: #e5bdca;
+  --color-pink-300: #ea99b7;
+  --color-pink-400: #f26aa6;
+  --color-pink-500: #f41b97;
+  --color-pink-600: #d50385;
+  --color-pink-700: #b21272;
+  --color-pink-800: #8d1e5e;
+  --color-pink-900: #6a214a;
+  --color-pink-950: #4a1f36;
+  --color-red-50: #fef2f0;
+  --color-red-100: #fcd5cf;
+  --color-red-200: #fab6ae;
+  --color-red-300: #fa958c;
+  --color-red-400: #f86e69;
+  --color-red-500: #f53c45;
+  --color-red-600: #d92538;
+  --color-red-700: #b91d31;
+  --color-red-800: #991529;
+  --color-red-900: #7a1021;
+  --color-red-950: #5d0918;
+  --color-orange-50: #fef3ea;
+  --color-orange-100: #fddfc9;
+  --color-orange-200: #fccaa7;
+  --color-orange-300: #fbb482;
+  --color-orange-400: #f99d5a;
+  --color-orange-500: #f6852b;
+  --color-orange-600: #e27826;
+  --color-orange-700: #ac581a;
+  --color-orange-800: #803e0f;
+  --color-orange-900: #662f0a;
+  --color-orange-950: #4e2205;
+  --color-amber-50: #fef5dd;
+  --color-amber-100: #fde8b6;
+  --color-amber-200: #fcda8d;
+  --color-amber-300: #fbcb5d;
+  --color-amber-400: #f6be33;
+  --color-amber-500: #ce9d29;
+  --color-amber-600: #a77d20;
+  --color-amber-700: #886418;
+  --color-amber-800: #6b4d0e;
+  --color-amber-900: #553c0a;
+  --color-amber-950: #402c06;
+  --color-lime-50: #f7f7dc;
+  --color-lime-100: #efefb9;
+  --color-lime-200: #e7e890;
+  --color-lime-300: #dee05f;
+  --color-lime-400: #d4d736;
+  --color-lime-500: #adb22b;
+  --color-lime-600: #888e20;
+  --color-lime-700: #6b7117;
+  --color-lime-800: #52580f;
+  --color-lime-900: #40460a;
+  --color-lime-950: #2e3405;
+  --color-green-50: #f3f6f2;
+  --color-green-100: #cbeac1;
+  --color-green-200: #9ede8a;
+  --color-green-300: #77ce62;
+  --color-green-400: #50bc3b;
+  --color-green-500: #29a818;
+  --color-green-600: #019304;
+  --color-green-700: #107b1a;
+  --color-green-800: #1c6323;
+  --color-green-900: #1f4c24;
+  --color-green-950: #1d3720;
+  --color-teal-50: #e0fdf0;
+  --color-teal-100: #b8f5dc;
+  --color-teal-200: #87edc8;
+  --color-teal-300: #3ce4b6;
+  --color-teal-400: #37d3aa;
+  --color-teal-500: #33c19d;
+  --color-teal-600: #2db091;
+  --color-teal-700: #1f7d68;
+  --color-teal-800: #126150;
+  --color-teal-900: #0e4c3f;
+  --color-teal-950: #07392f;
+  --color-cyan-50: #dbfdfd;
+  --color-cyan-100: #adf4f6;
+  --color-cyan-200: #71ecf0;
+  --color-cyan-300: #3adfe6;
+  --color-cyan-400: #35cdd6;
+  --color-cyan-500: #2fbcc5;
+  --color-cyan-600: #2eabb4;
+  --color-cyan-700: #1d7a82;
+  --color-cyan-800: #155e64;
+  --color-cyan-900: #0d4a50;
+  --color-cyan-950: #09373c;
+  --color-sky-50: #eaf8fe;
+  --color-sky-100: #c8ecfd;
+  --color-sky-200: #a4dffb;
+  --color-sky-300: #7dd2fa;
+  --color-sky-400: #4dc5f9;
+  --color-sky-500: #2eb5ed;
+  --color-sky-600: #29a5da;
+  --color-sky-700: #1b77a0;
+  --color-sky-800: #145a7b;
+  --color-sky-900: #0d4763;
+  --color-sky-950: #06344b;
+  --dimension-space-0: 0px;
+  --dimension-space-100: 4px;
+  --dimension-space-150: 6px;
+  --dimension-space-200: 8px;
+  --dimension-space-300: 12px;
+  --dimension-space-400: 16px;
+  --dimension-space-500: 20px;
+  --dimension-space-600: 24px;
+  --dimension-space-800: 32px;
+  --dimension-space-1000: 40px;
+  --dimension-space-1200: 48px;
+  --dimension-space-1600: 64px;
+  --dimension-space-2000: 80px;
+  --dimension-space-2400: 96px;
+  --dimension-space-3200: 128px;
+  --dimension-space-4000: 160px;
+  --dimension-space-4800: 192px;
+  --dimension-space-6400: 256px;
+  --dimension-space-050: 2px;
+  --dimension-space-negative-100: -4px;
+  --dimension-space-negative-150: -6px;
+  --dimension-space-negative-200: -8px;
+  --dimension-space-negative-300: -12px;
+  --dimension-space-negative-400: -16px;
+  --dimension-space-negative-600: -24px;
+  --dimension-space-negative-800: -32px;
+  --dimension-space-negative-050: -2px;
+  --dimension-size-300: 12px;
+  --dimension-size-400: 16px;
+  --dimension-size-500: 20px;
+  --dimension-size-600: 24px;
+  --dimension-size-800: 32px;
+  --dimension-size-1000: 40px;
+  --dimension-size-1200: 48px; /** コントロールの標準・タッチターゲット（44 は持たず 48 で代替） */
+  --dimension-size-1600: 64px;
+  --dimension-size-2000: 80px;
+  --dimension-size-2400: 96px;
+  --dimension-size-3200: 128px;
+  --dimension-size-6000: 240px;
+  --dimension-size-12000: 480px;
+  --dimension-radius-100: 4px;
+  --dimension-radius-200: 8px;
+  --dimension-radius-300: 12px;
+  --dimension-radius-400: 16px;
+  --dimension-radius-600: 24px;
+  --dimension-radius-800: 32px;
+  --dimension-radius-1200: 48px;
+  --dimension-radius-none: 0px;
+  --dimension-radius-050: 2px;
+  --dimension-radius-full: 9999px; /** 円・ピル */
+  --dimension-radius-shape-default: squircle; /** CSS corner-shape の名前付き値（superellipse(2) = n 4）。Chromium 139+、非対応環境は円弧にフォールバック。Figma は Corner Smoothing 60% */
+  --dimension-radius-shape-round: round; /** 円弧。フォールバック */
+  --dimension-radius-shape-figma-smoothing: 0.6; /** Figma Corner Smoothing 60%（iOS 相当） */
+  --dimension-radius-shape-continuous: superellipse(2.32); /** Apple continuous corner（n≈5）の近似。代替候補 */
+  --dimension-border-0: 0px;
+  --dimension-border-100: 4px;
+  --dimension-border-025: 1px; /** 既定の境界線 */
+  --dimension-border-050: 2px; /** 強調・フォーカスリング */
+  --dimension-border-075: 3px;
+  --dimension-breakpoint-xs: 0px; /** スマホ縦 */
+  --dimension-breakpoint-sm: 480px; /** スマホ横・小型タブレット縦 */
+  --dimension-breakpoint-md: 768px; /** タブレット縦 */
+  --dimension-breakpoint-lg: 1024px; /** タブレット横・ノート PC */
+  --dimension-breakpoint-xl: 1440px; /** デスクトップ */
+  --dimension-breakpoint-xxl: 1768px; /** 大型 */
+  --typography-family-sans: 'Inter Variable', Inter, system-ui, sans-serif; /** 欧文の本文・見出し・UI。可変フォント（opsz 軸あり） */
+  --typography-family-serif: Lora, Georgia, serif; /** 欧文の引用・見出しの対比用。可変フォント */
+  --typography-family-jp: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif; /** 和文。サブセット配信（Google Fonts の unicode-range）を前提 */
+  --typography-family-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace; /** 数値・コード・トークン名 */
+  --typography-size-250: 10px; /** Major Third の下限（16 ÷ 1.25² = 10.24 → 10） */
+  --typography-size-300: 12px; /** 16 ÷ 1.25 = 12.8 → 12（頻用） */
+  --typography-size-350: 14px; /** 頻用のため追加（スケール外） */
+  --typography-size-400: 16px; /** 基準 */
+  --typography-size-450: 18px; /** 頻用のため追加（スケール外） */
+  --typography-size-500: 20px; /** 16 × 1.25 */
+  --typography-size-600: 24px; /** 16 × 1.25² = 25 → 24（頻用） */
+  --typography-size-700: 28px; /** 頻用のため追加（スケール外） */
+  --typography-size-800: 32px; /** 16 × 1.25³ = 31.25 → 32 */
+  --typography-size-1000: 40px; /** 16 × 1.25⁴ = 39.1 → 40 */
+  --typography-size-1200: 48px; /** 16 × 1.25⁵ = 48.8 → 48 */
+  --typography-size-1600: 64px; /** 16 × 1.25⁶ = 61 → 64 */
+  --typography-size-2000: 80px; /** 16 × 1.25⁷ = 76.3 → 80 */
+  --typography-size-2400: 96px; /** 16 × 1.25⁸ = 95.4 → 96 */
+  --typography-size-3200: 128px; /** 16 × 1.25⁹ = 119 → 128（上限） */
+  --typography-line-height-sm: 1.25; /** 見出し・大きな数字 */
+  --typography-line-height-md: 1.375; /** 小見出し・UI ラベル */
+  --typography-line-height-lg: 1.5; /** 本文の基準 */
+  --typography-line-height-xl: 1.625; /** 和文本文・読み物 */
+  --typography-line-height-xxl: 1.75; /** 和文の長文・ゆったりした本文 */
+  --typography-letter-spacing-sm: -0.02em; /** 見出し・大きな数字を締める */
+  --typography-letter-spacing-md: 0em; /** 既定 */
+  --typography-letter-spacing-lg: 0.02em; /** 小さいラベル・大文字を開く */
+  --typography-weight-regular: 400;
+  --typography-weight-medium: 500;
+  --typography-weight-semibold: 600;
+  --typography-weight-bold: 700;
+  --motion-duration-instant: 0ms; /** 知覚できる遅延なし。リスト項目のホバー・選択・フォーカス、reduced-motion 時 */
+  --motion-duration-presto: 50ms; /** 即時フィードバック。フォーカスリング、選択状態 */
+  --motion-duration-vivace: 100ms; /** 控えめな押下、素早い退場。ポップアップの消去 */
+  --motion-duration-allegro: 150ms; /** 状態の強調と小さな入場。ボタンのホバー・押下、ポップアップの入場 */
+  --motion-duration-moderato: 250ms; /** 中規模の入場。モーダル・フラグの入場 */
+  --motion-duration-andante: 400ms; /** 大きな遷移。パネル・ページ遷移・全画面オーバーレイ */
+  --motion-duration-adagio: 600ms; /** 最大。オンボーディング、全画面の演出 */
+  --motion-easing-in-practical: cubic-bezier(0.6, 0, 0.8, 0.6); /** ゆっくり始まり加速して去る。退場向け。画面から出る要素が道を空けるように感じる */
+  --motion-easing-out-practical: cubic-bezier(0.4, 1, 0.6, 1); /** 日常的な入場曲線。bold より控えめ。コンテンツの差し替え、タブ切替、リストの並び替え */
+  --motion-easing-out-bold: cubic-bezier(0, 0.4, 0, 1); /** 素早く到着して減速停止。速い出だしで注意を引き、穏やかな着地で制御感を出す */
+  --motion-easing-inout-bold: cubic-bezier(0.4, 0, 0, 1); /** 大胆な in-out。拡大縮小・位置移動に合う。始点と終点の両方を制御する */
+  --motion-easing-spring: linear(0.0, 0.049, 0.164, 0.307, 0.455, 0.591, 0.709, 0.804, 0.879, 0.934, 0.972, 0.997, 1.013, 1.02, 1.023, 1.023, 1.02, 1.017, 1.014, 1.011, 1.008, 1.005, 1.003, 1.002, 1.001); /** 減衰バネ（質量 1、剛性 170、減衰 20、減衰比 0.77、オーバーシュート約 2.3%、整定 630ms）を CSS linear() で 25 点サンプリング。duration には整定時間 630ms 前後を使う。非対応環境は out.bold にフォールバック */
+  --opacity-0: 0;
+  --opacity-4: 0.04;
+  --opacity-8: 0.08;
+  --opacity-12: 0.12;
+  --opacity-16: 0.16;
+  --opacity-24: 0.24;
+  --opacity-32: 0.32;
+  --opacity-40: 0.4;
+  --opacity-64: 0.64;
+  --opacity-80: 0.8;
+  --opacity-100: 1;
+}

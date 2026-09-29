@@ -1,0 +1,482 @@
+{
+  "dimension": {
+    "space": {
+      "$description": "4px = 100（Polaris 式）。名前は 4px に対する百分率。1px（025）は持たない（border を使う）。出力は rem（16px = 1rem）。負の値は space.negative.*。用途の帯: 050〜200 = 微調整・アイコン間、300〜600 = 部品の padding と要素間、800〜1600 = ブロック間、2000〜 = セクション間（layout.section を使う）",
+      "0": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      },
+      "050": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        }
+      },
+      "100": {
+        "$type": "dimension",
+        "$value": {
+          "value": 4,
+          "unit": "px"
+        }
+      },
+      "150": {
+        "$type": "dimension",
+        "$value": {
+          "value": 6,
+          "unit": "px"
+        }
+      },
+      "200": {
+        "$type": "dimension",
+        "$value": {
+          "value": 8,
+          "unit": "px"
+        }
+      },
+      "300": {
+        "$type": "dimension",
+        "$value": {
+          "value": 12,
+          "unit": "px"
+        }
+      },
+      "400": {
+        "$type": "dimension",
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        }
+      },
+      "500": {
+        "$type": "dimension",
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        }
+      },
+      "600": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        }
+      },
+      "800": {
+        "$type": "dimension",
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        }
+      },
+      "1000": {
+        "$type": "dimension",
+        "$value": {
+          "value": 40,
+          "unit": "px"
+        }
+      },
+      "1200": {
+        "$type": "dimension",
+        "$value": {
+          "value": 48,
+          "unit": "px"
+        }
+      },
+      "1600": {
+        "$type": "dimension",
+        "$value": {
+          "value": 64,
+          "unit": "px"
+        }
+      },
+      "2000": {
+        "$type": "dimension",
+        "$value": {
+          "value": 80,
+          "unit": "px"
+        }
+      },
+      "2400": {
+        "$type": "dimension",
+        "$value": {
+          "value": 96,
+          "unit": "px"
+        }
+      },
+      "3200": {
+        "$type": "dimension",
+        "$value": {
+          "value": 128,
+          "unit": "px"
+        }
+      },
+      "4000": {
+        "$type": "dimension",
+        "$value": {
+          "value": 160,
+          "unit": "px"
+        }
+      },
+      "4800": {
+        "$type": "dimension",
+        "$value": {
+          "value": 192,
+          "unit": "px"
+        }
+      },
+      "6400": {
+        "$type": "dimension",
+        "$value": {
+          "value": 256,
+          "unit": "px"
+        }
+      },
+      "negative": {
+        "$description": "負の余白。−2〜−32px のみ。用途は bleed（親の inset と同じ段の負値）、overlap（−4 / −8）、optical nudge（−2 / −4）に限定",
+        "050": {
+          "$type": "dimension",
+          "$value": {
+            "value": -2,
+            "unit": "px"
+          }
+        },
+        "100": {
+          "$type": "dimension",
+          "$value": {
+            "value": -4,
+            "unit": "px"
+          }
+        },
+        "150": {
+          "$type": "dimension",
+          "$value": {
+            "value": -6,
+            "unit": "px"
+          }
+        },
+        "200": {
+          "$type": "dimension",
+          "$value": {
+            "value": -8,
+            "unit": "px"
+          }
+        },
+        "300": {
+          "$type": "dimension",
+          "$value": {
+            "value": -12,
+            "unit": "px"
+          }
+        },
+        "400": {
+          "$type": "dimension",
+          "$value": {
+            "value": -16,
+            "unit": "px"
+          }
+        },
+        "600": {
+          "$type": "dimension",
+          "$value": {
+            "value": -24,
+            "unit": "px"
+          }
+        },
+        "800": {
+          "$type": "dimension",
+          "$value": {
+            "value": -32,
+            "unit": "px"
+          }
+        }
+      }
+    },
+    "size": {
+      "$description": "4px = 100。幅・高さ・アイコン・コントロールの寸法。12〜24 はアイコン、32〜48 はコントロール（タッチは 48）、64〜480 はメディア・カード・カラム幅",
+      "300": {
+        "$type": "dimension",
+        "$value": {
+          "value": 12,
+          "unit": "px"
+        }
+      },
+      "400": {
+        "$type": "dimension",
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        }
+      },
+      "500": {
+        "$type": "dimension",
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        }
+      },
+      "600": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        }
+      },
+      "800": {
+        "$type": "dimension",
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        }
+      },
+      "1000": {
+        "$type": "dimension",
+        "$value": {
+          "value": 40,
+          "unit": "px"
+        }
+      },
+      "1200": {
+        "$type": "dimension",
+        "$value": {
+          "value": 48,
+          "unit": "px"
+        },
+        "$description": "コントロールの標準・タッチターゲット（44 は持たず 48 で代替）"
+      },
+      "1600": {
+        "$type": "dimension",
+        "$value": {
+          "value": 64,
+          "unit": "px"
+        }
+      },
+      "2000": {
+        "$type": "dimension",
+        "$value": {
+          "value": 80,
+          "unit": "px"
+        }
+      },
+      "2400": {
+        "$type": "dimension",
+        "$value": {
+          "value": 96,
+          "unit": "px"
+        }
+      },
+      "3200": {
+        "$type": "dimension",
+        "$value": {
+          "value": 128,
+          "unit": "px"
+        }
+      },
+      "6000": {
+        "$type": "dimension",
+        "$value": {
+          "value": 240,
+          "unit": "px"
+        }
+      },
+      "12000": {
+        "$type": "dimension",
+        "$value": {
+          "value": 480,
+          "unit": "px"
+        }
+      }
+    },
+    "radius": {
+      "$description": "4px = 100。両端は none / full。既定の角形状は continuous（shape 参照）",
+      "none": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      },
+      "050": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        }
+      },
+      "100": {
+        "$type": "dimension",
+        "$value": {
+          "value": 4,
+          "unit": "px"
+        }
+      },
+      "200": {
+        "$type": "dimension",
+        "$value": {
+          "value": 8,
+          "unit": "px"
+        }
+      },
+      "300": {
+        "$type": "dimension",
+        "$value": {
+          "value": 12,
+          "unit": "px"
+        }
+      },
+      "400": {
+        "$type": "dimension",
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        }
+      },
+      "600": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        }
+      },
+      "800": {
+        "$type": "dimension",
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        }
+      },
+      "1200": {
+        "$type": "dimension",
+        "$value": {
+          "value": 48,
+          "unit": "px"
+        }
+      },
+      "full": {
+        "$type": "dimension",
+        "$value": {
+          "value": 9999,
+          "unit": "px"
+        },
+        "$description": "円・ピル"
+      },
+      "shape": {
+        "$description": "角の形状。DTCG に型がないため string。CSS の corner-shape は Chromium 139+ のみ、非対応環境は円弧に自動フォールバック",
+        "default": {
+          "$type": "string",
+          "$value": "squircle",
+          "$description": "CSS corner-shape の名前付き値（superellipse(2) = n 4）。Chromium 139+、非対応環境は円弧にフォールバック。Figma は Corner Smoothing 60%"
+        },
+        "round": {
+          "$type": "string",
+          "$value": "round",
+          "$description": "円弧。フォールバック"
+        },
+        "figmaSmoothing": {
+          "$type": "number",
+          "$value": 0.6,
+          "$description": "Figma Corner Smoothing 60%（iOS 相当）"
+        },
+        "continuous": {
+          "$type": "string",
+          "$value": "superellipse(2.32)",
+          "$description": "Apple continuous corner（n≈5）の近似。代替候補"
+        }
+      }
+    },
+    "border": {
+      "$description": "4px = 100（Polaris 式: 025 = 1px、050 = 2px、100 = 4px）。役割名は semantic 層で付ける",
+      "0": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      },
+      "025": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1,
+          "unit": "px"
+        },
+        "$description": "既定の境界線"
+      },
+      "050": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        },
+        "$description": "強調・フォーカスリング"
+      },
+      "075": {
+        "$type": "dimension",
+        "$value": {
+          "value": 3,
+          "unit": "px"
+        }
+      },
+      "100": {
+        "$type": "dimension",
+        "$value": {
+          "value": 4,
+          "unit": "px"
+        }
+      }
+    },
+    "breakpoint": {
+      "$description": "min-width。Atlassian と同じ 6 段。xs は 0（480 未満の基準範囲）",
+      "xs": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        },
+        "$description": "スマホ縦"
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": {
+          "value": 480,
+          "unit": "px"
+        },
+        "$description": "スマホ横・小型タブレット縦"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": {
+          "value": 768,
+          "unit": "px"
+        },
+        "$description": "タブレット縦"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1024,
+          "unit": "px"
+        },
+        "$description": "タブレット横・ノート PC"
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1440,
+          "unit": "px"
+        },
+        "$description": "デスクトップ"
+      },
+      "xxl": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1768,
+          "unit": "px"
+        },
+        "$description": "大型"
+      }
+    }
+  }
+}

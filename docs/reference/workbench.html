@@ -1,0 +1,422 @@
+<title>Aristocraft トークン作業台</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:opsz,wght@14..32,400..700&family=Noto+Sans+JP:wght@400..700&family=Lora:wght@400..700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f4f4f2;--bg2:#ffffff;--ink:#17181a;--ink2:#5c5f64;--line:#d8d8d4;--line2:#e9e9e6;
+  --ok:#1f7a3a;--ng:#b4231f;--warn:#9a6b00;--ok-bg:#e6f4ea;--ng-bg:#fbe8e7;--warn-bg:#fbf1d8;
+  --key:#316EEE;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141517;--bg2:#1c1d20;--ink:#ebebe9;--ink2:#a3a5a9;--line:#2f3135;--line2:#242528;
+    --ok:#7fd49a;--ng:#ff8c86;--warn:#f2c65a;--ok-bg:#16301f;--ng-bg:#3a1c1b;--warn-bg:#3a2f12;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141517;--bg2:#1c1d20;--ink:#ebebe9;--ink2:#a3a5a9;--line:#2f3135;--line2:#242528;
+  --ok:#7fd49a;--ng:#ff8c86;--warn:#f2c65a;--ok-bg:#16301f;--ng-bg:#3a1c1b;--warn-bg:#3a2f12;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;font-size:14.5px;line-height:1.75;padding-inline:clamp(16px,4vw,48px);padding-block:36px 80px}
+.wrap{max-width:1120px;margin:0 auto}
+.mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,monospace}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+h1{font-size:clamp(24px,3.4vw,34px);line-height:1.2;margin:6px 0 8px;letter-spacing:-.01em}
+h2{font-size:19px;margin:0 0 4px}
+h3{font-size:14px;margin:0 0 6px}
+p{margin:0 0 8px}
+.lead{color:var(--ink2);max-width:66ch}
+.num{font-variant-numeric:tabular-nums}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin:20px 0 0}
+.step{border:1px solid var(--line);border-radius:4px;padding:6px 9px;font-size:12px;line-height:1.4;background:var(--bg2);color:var(--ink2)}
+.step b{display:block;font-size:11px;letter-spacing:.06em;color:var(--ink2)}
+.step.cur{border-color:var(--key);color:var(--ink)}
+.step.cur b{color:var(--key)}
+.step.done{opacity:.7}
+.step.done b::after{content:" ✓"}
+
+section{margin-top:44px;padding-top:22px;border-top:1px solid var(--line)}
+.sec-head{display:flex;flex-wrap:wrap;gap:6px 20px;align-items:baseline;margin-bottom:16px}
+.sec-head p{color:var(--ink2);margin:0;max-width:66ch}
+
+/* key card */
+.keycard{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:start;border:1px solid var(--line);border-radius:6px;background:var(--bg2);padding:18px 20px}
+.keysw{height:120px;border-radius:4px;background:var(--key)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:2px 16px;font-size:13.5px}
+.kv dt{color:var(--ink2)} .kv dd{margin:0}
+@media (max-width:520px){.keycard{grid-template-columns:1fr}.keysw{height:64px}}
+
+/* preview panels */
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+@media (max-width:760px){.panels{grid-template-columns:1fr}}
+.panel{border-radius:6px;padding:22px 22px 18px;border:1px solid var(--line)}
+.panel .tag{font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin-bottom:10px}
+.panel h3{font-size:24px;line-height:1.2;letter-spacing:-.01em;margin:0 0 8px}
+.panel h3 em{font-style:normal;color:var(--key)}
+.panel p{font-size:14.5px;line-height:1.8;max-width:42ch}
+.panel a.lnk{color:var(--key);text-decoration:underline;text-underline-offset:3px}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.btn{display:inline-block;padding:9px 16px;border-radius:4px;font-size:14px;font-weight:600;text-decoration:none;line-height:1.3}
+.btn.pri{background:var(--key);color:#fff}
+.btn.sec{border:1.5px solid var(--key);color:var(--key)}
+.cap{font-size:12px;color:var(--key);margin-top:12px}
+.p-white{background:#ffffff;color:#17181a}
+.p-off{background:#f5f4f2;color:#17181a}
+.p-dark{background:#14120e;color:#f5f4f2}
+.p-black{background:#000000;color:#f5f4f2}
+.p-dark .btn.pri,.p-black .btn.pri{color:#fff}
+
+/* contrast table */
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:8px}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--line2)}
+th{font-size:12px;color:var(--ink2);letter-spacing:.03em;font-weight:600}
+.tbl-wrap{overflow-x:auto}
+.b{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;font-weight:600;letter-spacing:.02em}
+.b.ok{background:var(--ok-bg);color:var(--ok)} .b.ng{background:var(--ng-bg);color:var(--ng)} .b.wn{background:var(--warn-bg);color:var(--warn)}
+.chip{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-1px;margin-right:6px;border:1px solid var(--line)}
+
+/* scale strip */
+.scale{display:grid;grid-template-columns:repeat(11,1fr);gap:4px;margin:4px 0 14px}
+.sc{height:72px;border-radius:3px;padding:6px 7px;display:flex;flex-direction:column;justify-content:space-between;font-size:11px;line-height:1.2}
+.sc b{font-size:12px}
+.sc span{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.02em;opacity:.85}
+.sc.key,.sc[data-key]{outline:2px solid var(--ink);outline-offset:2px}
+.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}.gi .gsw{height:64px;border-radius:4px;position:relative;overflow:hidden}.gi .gsw2{position:absolute;inset:0}.gi .gn{font-size:11.5px;margin-top:6px}.gi .gd{font-size:11.5px;color:var(--ink2);line-height:1.5}
+.ts{padding:14px 0;border-bottom:1px solid var(--line2)}.ts .tsm{font-size:11px;color:var(--ink2);margin-bottom:6px}.ts p{max-width:40ch;overflow-wrap:anywhere}
+.scale.s13{grid-template-columns:repeat(13,1fr)}.scale.s9{grid-template-columns:repeat(9,1fr)}.abg{padding:12px 14px 6px;border-radius:6px}.lbl{font-size:11px;color:var(--ink2);margin:6px 0 -2px}.scale.s12{grid-template-columns:repeat(12,1fr)}.scale.s12 .sc{height:84px;padding:5px 6px}.scale.s12 .sc span{font-size:9px;line-height:1.35}
+@media (max-width:640px){.scale{grid-template-columns:repeat(6,1fr)}.sc{height:56px}.scale.s12{grid-template-columns:repeat(4,1fr)}}
+/* verdict */
+.verdict{border-left:3px solid var(--key);padding:12px 16px;background:var(--bg2);border-radius:0 6px 6px 0;margin-top:20px}
+.verdict h3{font-size:15px}
+.verdict ul{margin:6px 0 0;padding-left:18px}
+.verdict li{margin-bottom:4px}
+.foot{margin-top:40px;color:var(--ink2);font-size:12.5px}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">aristocraft-design-system · PF-08 · 2026-09-28</div>
+  <h1>トークン作業台</h1>
+  <p class="lead">PF-08 は 2026-09-29 に完了。全工程の決定と 715 トークンの一覧は docs/pf-08-summary.md。正本は tokens/（DTCG）。次は PF-09 で CSS 変数・Figma への変換を通す。</p>
+
+  <div class="steps">
+    <div class="step done"><b>工程 1</b>キーカラー設定</div>
+    <div class="step done"><b>工程 2</b>キーカラーのスケール</div>
+    <div class="step done"><b>工程 3</b>ニュートラル</div>
+    <div class="step done"><b>工程 4</b>サブカラーのスケール</div>
+    <div class="step done"><b>工程 5</b>neutral のアルファ</div>
+    <div class="step" style="opacity:.55"><b>工程 6</b>グラデーション（保留）</div>
+    <div class="step done"><b>工程 0</b>プリミティブ</div>
+    <div class="step done"><b>工程 7</b>セマンティック割当</div>
+    <div class="step done"><b>工程 8</b>フォント決定</div>
+    <div class="step done"><b>工程 9</b>レイアウト</div>
+    <div class="step"><b>工程 10</b>タイプスケール</div>
+    <div class="step done"><b>工程 11</b>スペーシング</div>
+    <div class="step done"><b>工程 12</b>角丸・線・影</div>
+    <div class="step done"><b>工程 13</b>モーション（規則）</div>
+    <div class="step done"><b>工程 14</b>状態（規則）</div>
+    <div class="step done"><b>工程 15</b>ユーティリティ（なし）</div>
+  </div>
+
+  <section>
+    <div class="sec-head"><h2>工程 1 · キーカラー</h2><p>#316EEE で固定。文字とボタンに当てた状態を、白・オフホワイト・暖色黒・純黒の 4 地色で確認します。地色は工程 3 で確定するため、ここでは現行サイトの値を仮置きしています。</p></div>
+
+    <div class="keycard">
+      <div class="keysw"></div>
+      <dl class="kv">
+        <dt>Hex</dt><dd class="mono">#316EEE</dd>
+        <dt>sRGB</dt><dd class="mono num">49 · 110 · 238</dd>
+        <dt>OKLCH</dt><dd class="mono num">L 0.573 · C 0.204 · H 262.6°</dd>
+        <dt>出自</dt><dd>現行サイト kouichiishikawa.framer.website の見出し・リンク色</dd>
+        <dt>役割（予定）</dt><dd>primitive の blue 中心段。semantic では accent / interactive の基準色</dd>
+      </dl>
+    </div>
+
+    <div class="panels">
+      <div class="panel p-white">
+        <div class="tag">Light · #FFFFFF</div>
+        <h3>仕組みをつくり、<em>細部まで</em>仕上げる。</h3>
+        <p>仮説を立て、実装し、検証する。意図どおりに人が動いたときが、いちばんの手応えです。<a class="lnk" href="#">Interstellar の事例を見る</a></p>
+        <div class="btns"><a class="btn pri" href="#">仕事の相談をする</a><a class="btn sec" href="#">Works を見る</a></div>
+        <div class="cap num">2023–2024 · Design System · 設計時間 −50%</div>
+      </div>
+      <div class="panel p-dark">
+        <div class="tag">Dark · #14120E（仮）</div>
+        <h3>仕組みをつくり、<em>細部まで</em>仕上げる。</h3>
+        <p>仮説を立て、実装し、検証する。意図どおりに人が動いたときが、いちばんの手応えです。<a class="lnk" href="#">Interstellar の事例を見る</a></p>
+        <div class="btns"><a class="btn pri" href="#">仕事の相談をする</a><a class="btn sec" href="#">Works を見る</a></div>
+        <div class="cap num">2023–2024 · Design System · 設計時間 −50%</div>
+      </div>
+      <div class="panel p-off">
+        <div class="tag">Light · #F5F4F2（仮）</div>
+        <h3>仕組みをつくり、<em>細部まで</em>仕上げる。</h3>
+        <p>仮説を立て、実装し、検証する。<a class="lnk" href="#">Interstellar の事例を見る</a></p>
+        <div class="btns"><a class="btn pri" href="#">仕事の相談をする</a><a class="btn sec" href="#">Works を見る</a></div>
+      </div>
+      <div class="panel p-black">
+        <div class="tag">Dark · #000000</div>
+        <h3>仕組みをつくり、<em>細部まで</em>仕上げる。</h3>
+        <p>仮説を立て、実装し、検証する。<a class="lnk" href="#">Interstellar の事例を見る</a></p>
+        <div class="btns"><a class="btn pri" href="#">仕事の相談をする</a><a class="btn sec" href="#">Works を見る</a></div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:22px">コントラスト（WCAG 2.2）</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>用途</th><th>前景</th><th>背景</th><th>比</th><th>本文 4.5:1</th><th>大文字・UI 3:1</th></tr>
+      <tr><td>文字・リンク</td><td><span class="chip" style="background:#316EEE"></span>#316EEE</td><td><span class="chip" style="background:#fff"></span>#FFFFFF</td><td class="mono num">4.57</td><td><span class="b ok">AA</span></td><td><span class="b ok">AA</span></td></tr>
+      <tr><td>文字・リンク</td><td><span class="chip" style="background:#316EEE"></span>#316EEE</td><td><span class="chip" style="background:#F5F4F2"></span>#F5F4F2</td><td class="mono num">4.16</td><td><span class="b ng">不足</span></td><td><span class="b ok">AA</span></td></tr>
+      <tr><td>文字・リンク</td><td><span class="chip" style="background:#316EEE"></span>#316EEE</td><td><span class="chip" style="background:#14120E"></span>#14120E</td><td class="mono num">4.09</td><td><span class="b ng">不足</span></td><td><span class="b ok">AA</span></td></tr>
+      <tr><td>文字・リンク</td><td><span class="chip" style="background:#316EEE"></span>#316EEE</td><td><span class="chip" style="background:#000"></span>#000000</td><td class="mono num">4.60</td><td><span class="b ok">AA</span></td><td><span class="b ok">AA</span></td></tr>
+      <tr><td>文字・リンク</td><td><span class="chip" style="background:#316EEE"></span>#316EEE</td><td><span class="chip" style="background:#1E1B16"></span>#1E1B16（暗いカード面）</td><td class="mono num">3.76</td><td><span class="b ng">不足</span></td><td><span class="b ok">AA</span></td></tr>
+      <tr><td>ボタン文字</td><td><span class="chip" style="background:#fff"></span>#FFFFFF</td><td><span class="chip" style="background:#316EEE"></span>#316EEE</td><td class="mono num">4.57</td><td><span class="b ok">AA</span></td><td><span class="b ok">AA</span></td></tr>
+      <tr><td>ボタン文字（暗）</td><td><span class="chip" style="background:#14120E"></span>#14120E</td><td><span class="chip" style="background:#316EEE"></span>#316EEE</td><td class="mono num">4.09</td><td><span class="b ng">不足</span></td><td><span class="b ok">AA</span></td></tr>
+      <tr><td>ボタン面・枠線</td><td><span class="chip" style="background:#316EEE"></span>#316EEE</td><td>白 / 暖色黒</td><td class="mono num">4.57 / 4.09</td><td>—</td><td><span class="b ok">AA</span></td></tr>
+    </table></div>
+
+    <div class="verdict">
+      <h3>判定: キーカラーは #316EEE のまま固定。調整は不要、ただし単独では足りない場面がある</h3>
+      <ul>
+        <li><b>そのまま使える</b>: 塗りのボタン（白文字）、枠線、アイコン、大見出しの強調、純白・純黒の上の文字。</li>
+        <li><b>そのままでは足りない</b>: オフホワイトや暗い地の上の本文サイズのリンク（4.16 / 4.09 / 3.76）。これはキーカラーを変える理由ではなく、工程 2 のスケールで「ライト用の 1 段暗い青」「ダーク用の 1〜2 段明るい青」を用意して解決する。</li>
+        <li><b>色相の所感</b>: OKLCH H 262.6° は参照 DB で 2 番目に多い「青」の中心。差別化は色相ではなく、原則 1 のとおり使用面積と場所で出す。</li>
+        <li><b>暗い地でのボタン文字</b>: 白文字（4.57）を使う。暗色文字（4.09）は不可。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>工程 2 · キーカラーのスケール</h2><p>50〜950 の 11 段。OKLCH で L を等間隔（0.970 → 0.309、幅 0.066）。H は 600 で 262.6°、明るい段は最大 −6°（シアン寄り）、暗い段は最大 +4° のドリフト。C は色域上限の 92% と絶対上限の小さい方。600 は #316EEE そのもの。下の表は改善前の値で、差は 700 以降の C がわずかに上がった程度。</p></div>
+
+    <div class="scale"><div class="sc" style="background:#F0F6FE;color:#12100D"><b>50</b><span>F0F6FE</span></div><div class="sc" style="background:#CEE1FC;color:#12100D"><b>100</b><span>CEE1FC</span></div><div class="sc" style="background:#ADCCFA;color:#12100D"><b>200</b><span>ADCCFA</span></div><div class="sc" style="background:#8CB6F9;color:#12100D"><b>300</b><span>8CB6F9</span></div><div class="sc" style="background:#6C9FF8;color:#12100D"><b>400</b><span>6C9FF8</span></div><div class="sc" style="background:#4C87F6;color:#12100D"><b>500</b><span>4C87F6</span></div><div class="sc" style="background:#316EEE;color:#fff" data-key><b>600</b><span>316EEE</span></div><div class="sc" style="background:#1C55E0;color:#fff"><b>700</b><span>1C55E0</span></div><div class="sc" style="background:#1B44B9;color:#fff"><b>800</b><span>1B44B9</span></div><div class="sc" style="background:#183594;color:#fff"><b>900</b><span>183594</span></div><div class="sc" style="background:#122670;color:#fff"><b>950</b><span>122670</span></div></div>
+      <div class="sc" style="background:#CFE0FE;color:#0E2B67"><b>100</b><span>CFE0FE</span></div>
+      <div class="sc" style="background:#AFCAFE;color:#0E2B67"><b>200</b><span>AFCAFE</span></div>
+      <div class="sc" style="background:#8EB4FE;color:#0E2B67"><b>300</b><span>8EB4FE</span></div>
+      <div class="sc" style="background:#6C9DFE;color:#0E2B67"><b>400</b><span>6C9DFE</span></div>
+      <div class="sc" style="background:#4985FF;color:#0E2B67"><b>500</b><span>4985FF</span></div>
+      <div class="sc key" style="background:#316EEE;color:#fff"><b>600</b><span>316EEE</span></div>
+      <div class="sc" style="background:#205AD4;color:#fff"><b>700</b><span>205AD4</span></div>
+      <div class="sc" style="background:#1548B4;color:#fff"><b>800</b><span>1548B4</span></div>
+      <div class="sc" style="background:#0F3890;color:#fff"><b>900</b><span>0F3890</span></div>
+      <div class="sc" style="background:#0E2B67;color:#fff"><b>950</b><span>0E2B67</span></div>
+    </div>
+
+    <div class="tbl-wrap"><table>
+      <tr><th>段</th><th>Hex</th><th>L</th><th>C</th><th>文字 on #FFF</th><th>文字 on #F5F4F2</th><th>文字 on #14120E</th><th>白文字 on 段</th></tr>
+      <tr><td>50</td><td class="mono">#F1F5FE</td><td class="mono num">0.970</td><td class="mono num">0.013</td><td class="mono num">1.09</td><td class="mono num">1.01</td><td class="mono num">17.13 <span class="b ok">AAA</span></td><td class="mono num">1.09</td></tr>
+      <tr><td>100</td><td class="mono">#CFE0FE</td><td class="mono num">0.904</td><td class="mono num">0.045</td><td class="mono num">1.33</td><td class="mono num">1.21</td><td class="mono num">14.03 <span class="b ok">AAA</span></td><td class="mono num">1.33</td></tr>
+      <tr><td>200</td><td class="mono">#AFCAFE</td><td class="mono num">0.838</td><td class="mono num">0.079</td><td class="mono num">1.65</td><td class="mono num">1.50</td><td class="mono num">11.31 <span class="b ok">AAA</span></td><td class="mono num">1.65</td></tr>
+      <tr><td>300</td><td class="mono">#8EB4FE</td><td class="mono num">0.772</td><td class="mono num">0.114</td><td class="mono num">2.08</td><td class="mono num">1.89</td><td class="mono num">9.01 <span class="b ok">AAA</span></td><td class="mono num">2.08</td></tr>
+      <tr><td>400</td><td class="mono">#6C9DFE</td><td class="mono num">0.706</td><td class="mono num">0.152</td><td class="mono num">2.66</td><td class="mono num">2.42</td><td class="mono num">7.03 <span class="b ok">AAA</span></td><td class="mono num">2.66</td></tr>
+      <tr><td>500</td><td class="mono">#4985FF</td><td class="mono num">0.640</td><td class="mono num">0.193</td><td class="mono num">3.45 <span class="b wn">UI</span></td><td class="mono num">3.14 <span class="b wn">UI</span></td><td class="mono num">5.42 <span class="b ok">AA</span></td><td class="mono num">3.45 <span class="b wn">UI</span></td></tr>
+      <tr><td><b>600</b></td><td class="mono">#316EEE</td><td class="mono num">0.573</td><td class="mono num">0.204</td><td class="mono num">4.57 <span class="b ok">AA</span></td><td class="mono num">4.16 <span class="b wn">UI</span></td><td class="mono num">4.09 <span class="b wn">UI</span></td><td class="mono num">4.57 <span class="b ok">AA</span></td></tr>
+      <tr><td>700</td><td class="mono">#205AD4</td><td class="mono num">0.507</td><td class="mono num">0.198</td><td class="mono num">6.04 <span class="b ok">AA</span></td><td class="mono num">5.50 <span class="b ok">AA</span></td><td class="mono num">3.10 <span class="b wn">UI</span></td><td class="mono num">6.04 <span class="b ok">AA</span></td></tr>
+      <tr><td>800</td><td class="mono">#1548B4</td><td class="mono num">0.441</td><td class="mono num">0.181</td><td class="mono num">8.02 <span class="b ok">AAA</span></td><td class="mono num">7.30 <span class="b ok">AAA</span></td><td class="mono num">2.33</td><td class="mono num">8.02 <span class="b ok">AAA</span></td></tr>
+      <tr><td>900</td><td class="mono">#0F3890</td><td class="mono num">0.375</td><td class="mono num">0.152</td><td class="mono num">10.56 <span class="b ok">AAA</span></td><td class="mono num">9.61 <span class="b ok">AAA</span></td><td class="mono num">1.77</td><td class="mono num">10.56 <span class="b ok">AAA</span></td></tr>
+      <tr><td>950</td><td class="mono">#0E2B67</td><td class="mono num">0.309</td><td class="mono num">0.112</td><td class="mono num">13.46 <span class="b ok">AAA</span></td><td class="mono num">12.25 <span class="b ok">AAA</span></td><td class="mono num">1.39</td><td class="mono num">13.46 <span class="b ok">AAA</span></td></tr>
+    </table></div>
+    <p style="font-size:12.5px;color:var(--ink2);margin-top:6px">バッジ: AA = 本文 4.5 以上、AAA = 7 以上、UI = 3 以上 4.5 未満（大文字・アイコン・枠線には可、本文には不可）。空欄は 3 未満。</p>
+
+    <h3 style="margin-top:18px">APCA（Lc、参考値）</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>段</th><th>文字 on #FFF</th><th>文字 on #F5F4F2</th><th>文字 on #14120E</th><th>白文字 on 段</th></tr>
+      <tr><td>200</td><td class="mono num">28.8</td><td class="mono num">22.3</td><td class="mono num">−73.4 <span class="b wn">大文字</span></td><td class="mono num">−32.5</td></tr>
+      <tr><td>300</td><td class="mono num">40.5</td><td class="mono num">34.0</td><td class="mono num">−61.2 <span class="b wn">大文字</span></td><td class="mono num">−45.1</td></tr>
+      <tr><td>400</td><td class="mono num">51.6</td><td class="mono num">45.0</td><td class="mono num">−49.7 <span class="b wn">UI</span></td><td class="mono num">−56.7</td></tr>
+      <tr><td>500</td><td class="mono num">61.6 <span class="b wn">大文字</span></td><td class="mono num">55.1</td><td class="mono num">−39.5</td><td class="mono num">−67.1 <span class="b wn">大文字</span></td></tr>
+      <tr><td><b>600</b></td><td class="mono num">71.1 <span class="b wn">大文字</span></td><td class="mono num">64.6 <span class="b wn">大文字</span></td><td class="mono num">−29.9</td><td class="mono num">−76.6 <span class="b ok">本文</span></td></tr>
+      <tr><td>700</td><td class="mono num">79.5 <span class="b ok">本文</span></td><td class="mono num">73.0 <span class="b wn">大文字</span></td><td class="mono num">−21.7</td><td class="mono num">−84.7 <span class="b ok">本文</span></td></tr>
+      <tr><td>800</td><td class="mono num">87.0 <span class="b ok">本文</span></td><td class="mono num">80.5 <span class="b ok">本文</span></td><td class="mono num">−14.5</td><td class="mono num">−91.8 <span class="b ok">本文</span></td></tr>
+    </table></div>
+    <p style="font-size:12.5px;color:var(--ink2);margin-top:6px">APCA の目安: |Lc| 75 以上 = 本文、60 以上 = 大きめの文字（24px 相当）、45 以上 = 見出し・UI ラベル、30 以上 = 非文字。判定の正は PF-01 で決めた WCAG 2.2 AA とし、APCA は補助にする。APCA では暗い地の青文字が WCAG より厳しく、400 は UI ラベル止まり、本文リンクには 200〜300 が要る。ライトの 700 は両方式で本文可。</p>
+
+    <div class="panels" style="margin-top:20px">
+      <div class="panel p-white">
+        <div class="tag">Light · 700 を文字、600 をボタン地に</div>
+        <h3>仕組みをつくり、<em style="color:#205AD4">細部まで</em>仕上げる。</h3>
+        <p>本文中のリンクは <a class="lnk" style="color:#205AD4" href="#">700 #205AD4</a>（6.04）。ボタンは 600 に白文字。薄い面は 50〜100。</p>
+        <div class="btns"><a class="btn pri" href="#">仕事の相談をする</a><a class="btn sec" style="border-color:#205AD4;color:#205AD4" href="#">Works を見る</a></div>
+        <div class="cap num" style="color:#205AD4">2023–2024 · Design System · 設計時間 −50%</div>
+      </div>
+      <div class="panel p-dark">
+        <div class="tag">Dark · 400 を文字、600 をボタン地に</div>
+        <h3>仕組みをつくり、<em style="color:#6C9DFE">細部まで</em>仕上げる。</h3>
+        <p>本文中のリンクは <a class="lnk" style="color:#6C9DFE" href="#">400 #6C9DFE</a>（7.03）。500 でも 5.42 で AA。ボタンは 600 に白文字のまま（4.57）。</p>
+        <div class="btns"><a class="btn pri" href="#">仕事の相談をする</a><a class="btn sec" style="border-color:#6C9DFE;color:#6C9DFE" href="#">Works を見る</a></div>
+        <div class="cap num" style="color:#6C9DFE">2023–2024 · Design System · 設計時間 −50%</div>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <h3>提案: この 11 段を blue スケールとして確定</h3>
+      <ul>
+        <li><b>ライトの文字</b>は 700、<b>ダークの文字</b>は 400（AAA）または 500（AA）。600 は両テーマの塗りボタン地。役割への割当は工程 7 で正式に決める。</li>
+        <li><b>C の絞り</b>: 50〜300 は 0.013〜0.114 まで落として白地で濁らない。900〜950 は 0.15〜0.11 で黒に沈みすぎない。</li>
+        <li><b>L の幅 0.066</b> は 11 段で 0.97〜0.31 を覆う。950 をもう一段暗く（0.25）したい場合は幅 0.072 になり、キー 600 の位置は変わらない。</li>
+        <li>H を固定したため、薄い段が僅かに紫寄りに見える可能性がある。気になれば 50〜200 だけ H を +4〜6° シフトする（工程 2 の別案）。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>工程 3 · ニュートラル（neutral、旧 gray）</h2><p>H 82.6°（青の補色）。50 がライトの地色、950 がダークの地色。純白と純黒は 0 / 1000 として両端に含める（本人指示で別トークンから変更）。</p></div>
+    <div class="scale s13"><div class="sc" style="background:#FFFFFF;color:#12100D"><b>0</b><span>FFFFFF</span></div><div class="sc" style="background:#F8F6F4;color:#12100D"><b>50</b><span>F8F6F4</span></div><div class="sc" style="background:#DEDCD8;color:#12100D"><b>100</b><span>DEDCD8</span></div><div class="sc" style="background:#C5C2BD;color:#12100D"><b>200</b><span>C5C2BD</span></div><div class="sc" style="background:#ACA9A2;color:#12100D"><b>300</b><span>ACA9A2</span></div><div class="sc" style="background:#949089;color:#12100D"><b>400</b><span>949089</span></div><div class="sc" style="background:#7C7871;color:#fff"><b>500</b><span>7C7871</span></div><div class="sc" style="background:#65615A;color:#fff"><b>600</b><span>65615A</span></div><div class="sc" style="background:#4F4B45;color:#fff"><b>700</b><span>4F4B45</span></div><div class="sc" style="background:#393631;color:#fff"><b>800</b><span>393631</span></div><div class="sc" style="background:#25221E;color:#fff"><b>900</b><span>25221E</span></div><div class="sc" style="background:#12100D;color:#fff"><b>950</b><span>12100D</span></div><div class="sc" style="background:#000000;color:#fff"><b>1000</b><span>000000</span></div></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>工程 4 · サブカラー（確定）</h2><p>12 色相、30° 刻み。方式は色相別（hybrid / vivid / peak@400）。色相ドリフト（明るい段 +6° まで黄方向、暗い段 +4° まで青方向）と 700 の段差緩和を適用。正本 docs/reference/palette.json、生成 palette_build.py。</p></div>
+    <h3 style="margin-top:12px">blue <small style="font-weight:400;color:var(--ink2)">青 · H 262.6° · hybrid</small></h3><div class="scale"><div class="sc" style="background:#F0F6FE;color:#12100D"><b>50</b><span>F0F6FE</span></div><div class="sc" style="background:#CEE1FC;color:#12100D"><b>100</b><span>CEE1FC</span></div><div class="sc" style="background:#ADCCFA;color:#12100D"><b>200</b><span>ADCCFA</span></div><div class="sc" style="background:#8CB6F9;color:#12100D"><b>300</b><span>8CB6F9</span></div><div class="sc" style="background:#6C9FF8;color:#12100D"><b>400</b><span>6C9FF8</span></div><div class="sc" style="background:#4C87F6;color:#12100D"><b>500</b><span>4C87F6</span></div><div class="sc" style="background:#316EEE;color:#fff" data-key><b>600</b><span>316EEE</span></div><div class="sc" style="background:#1C55E0;color:#fff"><b>700</b><span>1C55E0</span></div><div class="sc" style="background:#1B44B9;color:#fff"><b>800</b><span>1B44B9</span></div><div class="sc" style="background:#183594;color:#fff"><b>900</b><span>183594</span></div><div class="sc" style="background:#122670;color:#fff"><b>950</b><span>122670</span></div></div><h3 style="margin-top:12px">violet <small style="font-weight:400;color:var(--ink2)">菫 · H 292.6° · hybrid</small></h3><div class="scale"><div class="sc" style="background:#F6F3FE;color:#12100D"><b>50</b><span>F6F3FE</span></div><div class="sc" style="background:#E2D9FC;color:#12100D"><b>100</b><span>E2D9FC</span></div><div class="sc" style="background:#CFBFFA;color:#12100D"><b>200</b><span>CFBFFA</span></div><div class="sc" style="background:#BBA5F9;color:#12100D"><b>300</b><span>BBA5F9</span></div><div class="sc" style="background:#A88AF8;color:#12100D"><b>400</b><span>A88AF8</span></div><div class="sc" style="background:#956DF6;color:#12100D"><b>500</b><span>956DF6</span></div><div class="sc" style="background:#834BF4;color:#fff"><b>600</b><span>834BF4</span></div><div class="sc" style="background:#6E3BD5;color:#fff"><b>700</b><span>6E3BD5</span></div><div class="sc" style="background:#5830B1;color:#fff"><b>800</b><span>5830B1</span></div><div class="sc" style="background:#44268E;color:#fff"><b>900</b><span>44268E</span></div><div class="sc" style="background:#311C6C;color:#fff"><b>950</b><span>311C6C</span></div></div><h3 style="margin-top:12px">purple <small style="font-weight:400;color:var(--ink2)">紫 · H 322.6° · vivid</small></h3><div class="scale"><div class="sc" style="background:#F6F4F6;color:#12100D"><b>50</b><span>F6F4F6</span></div><div class="sc" style="background:#E9DAE8;color:#12100D"><b>100</b><span>E9DAE8</span></div><div class="sc" style="background:#E5B9E5;color:#12100D"><b>200</b><span>E5B9E5</span></div><div class="sc" style="background:#E492E8;color:#12100D"><b>300</b><span>E492E8</span></div><div class="sc" style="background:#E55DF0;color:#12100D"><b>400</b><span>E55DF0</span></div><div class="sc" style="background:#D91EEC;color:#12100D"><b>500</b><span>D91EEC</span></div><div class="sc" style="background:#BD00D2;color:#fff"><b>600</b><span>BD00D2</span></div><div class="sc" style="background:#9D11B2;color:#fff"><b>700</b><span>9D11B2</span></div><div class="sc" style="background:#7D1F8E;color:#fff"><b>800</b><span>7D1F8E</span></div><div class="sc" style="background:#5D236B;color:#fff"><b>900</b><span>5D236B</span></div><div class="sc" style="background:#41204B;color:#fff"><b>950</b><span>41204B</span></div></div><h3 style="margin-top:12px">pink <small style="font-weight:400;color:var(--ink2)">桃 · H 352.6° · vivid</small></h3><div class="scale"><div class="sc" style="background:#F6F4F5;color:#12100D"><b>50</b><span>F6F4F5</span></div><div class="sc" style="background:#E9DBDF;color:#12100D"><b>100</b><span>E9DBDF</span></div><div class="sc" style="background:#E5BDCA;color:#12100D"><b>200</b><span>E5BDCA</span></div><div class="sc" style="background:#EA99B7;color:#12100D"><b>300</b><span>EA99B7</span></div><div class="sc" style="background:#F26AA6;color:#12100D"><b>400</b><span>F26AA6</span></div><div class="sc" style="background:#F41B97;color:#12100D"><b>500</b><span>F41B97</span></div><div class="sc" style="background:#D50385;color:#fff"><b>600</b><span>D50385</span></div><div class="sc" style="background:#B21272;color:#fff"><b>700</b><span>B21272</span></div><div class="sc" style="background:#8D1E5E;color:#fff"><b>800</b><span>8D1E5E</span></div><div class="sc" style="background:#6A214A;color:#fff"><b>900</b><span>6A214A</span></div><div class="sc" style="background:#4A1F36;color:#fff"><b>950</b><span>4A1F36</span></div></div><h3 style="margin-top:12px">red <small style="font-weight:400;color:var(--ink2)">赤 · H 22.6° · hybrid</small></h3><div class="scale"><div class="sc" style="background:#FEF2F0;color:#12100D"><b>50</b><span>FEF2F0</span></div><div class="sc" style="background:#FCD5CF;color:#12100D"><b>100</b><span>FCD5CF</span></div><div class="sc" style="background:#FAB6AE;color:#12100D"><b>200</b><span>FAB6AE</span></div><div class="sc" style="background:#FA958C;color:#12100D"><b>300</b><span>FA958C</span></div><div class="sc" style="background:#F86E69;color:#12100D"><b>400</b><span>F86E69</span></div><div class="sc" style="background:#F53C45;color:#12100D"><b>500</b><span>F53C45</span></div><div class="sc" style="background:#D92538;color:#fff"><b>600</b><span>D92538</span></div><div class="sc" style="background:#B91D31;color:#fff"><b>700</b><span>B91D31</span></div><div class="sc" style="background:#991529;color:#fff"><b>800</b><span>991529</span></div><div class="sc" style="background:#7A1021;color:#fff"><b>900</b><span>7A1021</span></div><div class="sc" style="background:#5D0918;color:#fff"><b>950</b><span>5D0918</span></div></div><h3 style="margin-top:12px">orange <small style="font-weight:400;color:var(--ink2)">橙 · H 52.6° · hybrid</small></h3><div class="scale"><div class="sc" style="background:#FEF3EA;color:#12100D"><b>50</b><span>FEF3EA</span></div><div class="sc" style="background:#FDDFC9;color:#12100D"><b>100</b><span>FDDFC9</span></div><div class="sc" style="background:#FCCAA7;color:#12100D"><b>200</b><span>FCCAA7</span></div><div class="sc" style="background:#FBB482;color:#12100D"><b>300</b><span>FBB482</span></div><div class="sc" style="background:#F99D5A;color:#12100D"><b>400</b><span>F99D5A</span></div><div class="sc" style="background:#F6852B;color:#12100D"><b>500</b><span>F6852B</span></div><div class="sc" style="background:#E27826;color:#12100D"><b>600</b><span>E27826</span></div><div class="sc" style="background:#AC581A;color:#fff"><b>700</b><span>AC581A</span></div><div class="sc" style="background:#803E0F;color:#fff"><b>800</b><span>803E0F</span></div><div class="sc" style="background:#662F0A;color:#fff"><b>900</b><span>662F0A</span></div><div class="sc" style="background:#4E2205;color:#fff"><b>950</b><span>4E2205</span></div></div><h3 style="margin-top:12px">amber <small style="font-weight:400;color:var(--ink2)">琥珀 · H 82.6° · peak@400</small></h3><div class="scale"><div class="sc" style="background:#FEF5DD;color:#12100D"><b>50</b><span>FEF5DD</span></div><div class="sc" style="background:#FDE8B6;color:#12100D"><b>100</b><span>FDE8B6</span></div><div class="sc" style="background:#FCDA8D;color:#12100D"><b>200</b><span>FCDA8D</span></div><div class="sc" style="background:#FBCB5D;color:#12100D"><b>300</b><span>FBCB5D</span></div><div class="sc" style="background:#F6BE33;color:#12100D"><b>400</b><span>F6BE33</span></div><div class="sc" style="background:#CE9D29;color:#12100D"><b>500</b><span>CE9D29</span></div><div class="sc" style="background:#A77D20;color:#fff"><b>600</b><span>A77D20</span></div><div class="sc" style="background:#886418;color:#fff"><b>700</b><span>886418</span></div><div class="sc" style="background:#6B4D0E;color:#fff"><b>800</b><span>6B4D0E</span></div><div class="sc" style="background:#553C0A;color:#fff"><b>900</b><span>553C0A</span></div><div class="sc" style="background:#402C06;color:#fff"><b>950</b><span>402C06</span></div></div><h3 style="margin-top:12px">lime <small style="font-weight:400;color:var(--ink2)">黄緑 · H 112.6° · peak@400</small></h3><div class="scale"><div class="sc" style="background:#F7F7DC;color:#12100D"><b>50</b><span>F7F7DC</span></div><div class="sc" style="background:#EFEFB9;color:#12100D"><b>100</b><span>EFEFB9</span></div><div class="sc" style="background:#E7E890;color:#12100D"><b>200</b><span>E7E890</span></div><div class="sc" style="background:#DEE05F;color:#12100D"><b>300</b><span>DEE05F</span></div><div class="sc" style="background:#D4D736;color:#12100D"><b>400</b><span>D4D736</span></div><div class="sc" style="background:#ADB22B;color:#12100D"><b>500</b><span>ADB22B</span></div><div class="sc" style="background:#888E20;color:#12100D"><b>600</b><span>888E20</span></div><div class="sc" style="background:#6B7117;color:#fff"><b>700</b><span>6B7117</span></div><div class="sc" style="background:#52580F;color:#fff"><b>800</b><span>52580F</span></div><div class="sc" style="background:#40460A;color:#fff"><b>900</b><span>40460A</span></div><div class="sc" style="background:#2E3405;color:#fff"><b>950</b><span>2E3405</span></div></div><h3 style="margin-top:12px">green <small style="font-weight:400;color:var(--ink2)">緑 · H 142.6° · vivid</small></h3><div class="scale"><div class="sc" style="background:#F3F6F2;color:#12100D"><b>50</b><span>F3F6F2</span></div><div class="sc" style="background:#CBEAC1;color:#12100D"><b>100</b><span>CBEAC1</span></div><div class="sc" style="background:#9EDE8A;color:#12100D"><b>200</b><span>9EDE8A</span></div><div class="sc" style="background:#77CE62;color:#12100D"><b>300</b><span>77CE62</span></div><div class="sc" style="background:#50BC3B;color:#12100D"><b>400</b><span>50BC3B</span></div><div class="sc" style="background:#29A818;color:#12100D"><b>500</b><span>29A818</span></div><div class="sc" style="background:#019304;color:#fff"><b>600</b><span>019304</span></div><div class="sc" style="background:#107B1A;color:#fff"><b>700</b><span>107B1A</span></div><div class="sc" style="background:#1C6323;color:#fff"><b>800</b><span>1C6323</span></div><div class="sc" style="background:#1F4C24;color:#fff"><b>900</b><span>1F4C24</span></div><div class="sc" style="background:#1D3720;color:#fff"><b>950</b><span>1D3720</span></div></div><h3 style="margin-top:12px">teal <small style="font-weight:400;color:var(--ink2)">青緑 · H 172.6° · hybrid</small></h3><div class="scale"><div class="sc" style="background:#E0FDF0;color:#12100D"><b>50</b><span>E0FDF0</span></div><div class="sc" style="background:#B8F5DC;color:#12100D"><b>100</b><span>B8F5DC</span></div><div class="sc" style="background:#87EDC8;color:#12100D"><b>200</b><span>87EDC8</span></div><div class="sc" style="background:#3CE4B6;color:#12100D"><b>300</b><span>3CE4B6</span></div><div class="sc" style="background:#37D3AA;color:#12100D"><b>400</b><span>37D3AA</span></div><div class="sc" style="background:#33C19D;color:#12100D"><b>500</b><span>33C19D</span></div><div class="sc" style="background:#2DB091;color:#12100D"><b>600</b><span>2DB091</span></div><div class="sc" style="background:#1F7D68;color:#fff"><b>700</b><span>1F7D68</span></div><div class="sc" style="background:#126150;color:#fff"><b>800</b><span>126150</span></div><div class="sc" style="background:#0E4C3F;color:#fff"><b>900</b><span>0E4C3F</span></div><div class="sc" style="background:#07392F;color:#fff"><b>950</b><span>07392F</span></div></div><h3 style="margin-top:12px">cyan <small style="font-weight:400;color:var(--ink2)">水色 · H 202.6° · hybrid</small></h3><div class="scale"><div class="sc" style="background:#DBFDFD;color:#12100D"><b>50</b><span>DBFDFD</span></div><div class="sc" style="background:#ADF4F6;color:#12100D"><b>100</b><span>ADF4F6</span></div><div class="sc" style="background:#71ECF0;color:#12100D"><b>200</b><span>71ECF0</span></div><div class="sc" style="background:#3ADFE6;color:#12100D"><b>300</b><span>3ADFE6</span></div><div class="sc" style="background:#35CDD6;color:#12100D"><b>400</b><span>35CDD6</span></div><div class="sc" style="background:#2FBCC5;color:#12100D"><b>500</b><span>2FBCC5</span></div><div class="sc" style="background:#2EABB4;color:#12100D"><b>600</b><span>2EABB4</span></div><div class="sc" style="background:#1D7A82;color:#fff"><b>700</b><span>1D7A82</span></div><div class="sc" style="background:#155E64;color:#fff"><b>800</b><span>155E64</span></div><div class="sc" style="background:#0D4A50;color:#fff"><b>900</b><span>0D4A50</span></div><div class="sc" style="background:#09373C;color:#fff"><b>950</b><span>09373C</span></div></div><h3 style="margin-top:12px">sky <small style="font-weight:400;color:var(--ink2)">空色 · H 232.6° · hybrid</small></h3><div class="scale"><div class="sc" style="background:#EAF8FE;color:#12100D"><b>50</b><span>EAF8FE</span></div><div class="sc" style="background:#C8ECFD;color:#12100D"><b>100</b><span>C8ECFD</span></div><div class="sc" style="background:#A4DFFB;color:#12100D"><b>200</b><span>A4DFFB</span></div><div class="sc" style="background:#7DD2FA;color:#12100D"><b>300</b><span>7DD2FA</span></div><div class="sc" style="background:#4DC5F9;color:#12100D"><b>400</b><span>4DC5F9</span></div><div class="sc" style="background:#2EB5ED;color:#12100D"><b>500</b><span>2EB5ED</span></div><div class="sc" style="background:#29A5DA;color:#12100D"><b>600</b><span>29A5DA</span></div><div class="sc" style="background:#1B77A0;color:#fff"><b>700</b><span>1B77A0</span></div><div class="sc" style="background:#145A7B;color:#fff"><b>800</b><span>145A7B</span></div><div class="sc" style="background:#0D4763;color:#fff"><b>900</b><span>0D4763</span></div><div class="sc" style="background:#06344B;color:#fff"><b>950</b><span>06344B</span></div></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>工程 5 · neutral のアルファ（確定）</h2><p>ライト用は neutral.950 #12100D を gray.50 #F8F6F4 の上に、ダーク用は gray.50 を gray.950 の上に置き、不透明の各段と同じ見た目になる α をブラウザの合成規則（sRGB 値の線形補間）で求めた。本人指定の範囲はライト 100〜400、ダーク 900〜600。残りの段も同じ規則で求めてあり、必要なら追加できる。上段が不透明、下段がアルファ。</p></div>
+    <h3>Light · gray.alpha.light</h3>
+    <div class="abg" style="background:#F8F6F4"><div class="lbl" style="color:#4F4B45">不透明 gray</div><div class="scale s9"><div class="sc" style="background:#DEDCD8;color:#12100D"><b>100</b><span>DEDCD8</span></div><div class="sc" style="background:#C5C2BD;color:#12100D"><b>200</b><span>C5C2BD</span></div><div class="sc" style="background:#ACA9A2;color:#12100D"><b>300</b><span>ACA9A2</span></div><div class="sc" style="background:#949089;color:#12100D"><b>400</b><span>949089</span></div><div class="sc" style="background:#7C7871;color:#fff"><b>500</b><span>7C7871</span></div><div class="sc" style="background:#65615A;color:#fff"><b>600</b><span>65615A</span></div><div class="sc" style="background:#4F4B45;color:#fff"><b>700</b><span>4F4B45</span></div><div class="sc" style="background:#393631;color:#fff"><b>800</b><span>393631</span></div><div class="sc" style="background:#25221E;color:#fff"><b>900</b><span>25221E</span></div></div><div class="lbl" style="color:#4F4B45">gray.950 のアルファ（gray.50 の上）</div><div class="scale s9"><div class="sc" style="background:rgba(18,16,13,0.116);color:#12100D"><b>11.6%</b><span>DDDBD9</span></div><div class="sc" style="background:rgba(18,16,13,0.229);color:#12100D"><b>22.9%</b><span>C3C1BF</span></div><div class="sc" style="background:rgba(18,16,13,0.34);color:#12100D"><b>34.0%</b><span>AAA8A5</span></div><div class="sc" style="background:rgba(18,16,13,0.447);color:#12100D"><b>44.7%</b><span>918F8D</span></div><div class="sc" style="background:rgba(18,16,13,0.551);color:#fff"><b>55.1%</b><span>797775</span></div><div class="sc" style="background:rgba(18,16,13,0.651);color:#fff"><b>65.1%</b><span>62605E</span></div><div class="sc" style="background:rgba(18,16,13,0.745);color:#fff"><b>74.5%</b><span>4D4B48</span></div><div class="sc" style="background:rgba(18,16,13,0.836);color:#fff"><b>83.6%</b><span>383633</span></div><div class="sc" style="background:rgba(18,16,13,0.922);color:#fff"><b>92.2%</b><span>24221F</span></div></div></div>
+    <h3 style="margin-top:14px">Dark · gray.alpha.dark</h3>
+    <div class="abg" style="background:#12100D"><div class="lbl" style="color:#ACA9A2">不透明 gray</div><div class="scale s9"><div class="sc" style="background:#25221E;color:#12100D"><b>900</b><span>25221E</span></div><div class="sc" style="background:#393631;color:#12100D"><b>800</b><span>393631</span></div><div class="sc" style="background:#4F4B45;color:#12100D"><b>700</b><span>4F4B45</span></div><div class="sc" style="background:#65615A;color:#12100D"><b>600</b><span>65615A</span></div><div class="sc" style="background:#7C7871;color:#12100D"><b>500</b><span>7C7871</span></div><div class="sc" style="background:#949089;color:#fff"><b>400</b><span>949089</span></div><div class="sc" style="background:#ACA9A2;color:#fff"><b>300</b><span>ACA9A2</span></div><div class="sc" style="background:#C5C2BD;color:#fff"><b>200</b><span>C5C2BD</span></div><div class="sc" style="background:#DEDCD8;color:#fff"><b>100</b><span>DEDCD8</span></div></div><div class="lbl" style="color:#ACA9A2">gray.50 のアルファ（gray.950 の上）</div><div class="scale s9"><div class="sc" style="background:rgba(248,246,244,0.078);color:#12100D"><b>7.8%</b><span>24221F</span></div><div class="sc" style="background:rgba(248,246,244,0.164);color:#12100D"><b>16.4%</b><span>383633</span></div><div class="sc" style="background:rgba(248,246,244,0.255);color:#12100D"><b>25.5%</b><span>4D4B48</span></div><div class="sc" style="background:rgba(248,246,244,0.349);color:#12100D"><b>34.9%</b><span>62605E</span></div><div class="sc" style="background:rgba(248,246,244,0.449);color:#12100D"><b>44.9%</b><span>797775</span></div><div class="sc" style="background:rgba(248,246,244,0.553);color:#fff"><b>55.3%</b><span>918F8D</span></div><div class="sc" style="background:rgba(248,246,244,0.66);color:#fff"><b>66.0%</b><span>AAA8A5</span></div><div class="sc" style="background:rgba(248,246,244,0.771);color:#fff"><b>77.1%</b><span>C3C1BF</span></div><div class="sc" style="background:rgba(248,246,244,0.884);color:#fff"><b>88.4%</b><span>DDDBD9</span></div></div></div>
+    <p style="font-size:12.5px;color:var(--ink2);margin-top:8px">合成結果と不透明の差は各チャンネル最大 4/255（中間段で最大）。gray の C が段ごとに変わるため直線補間から僅かにずれるが、視認できる差ではない。指定範囲の値: light 100 = 11.6%、200 = 22.9%、300 = 34.0%、400 = 44.7% / dark 900 = 7.8%、800 = 16.4%、700 = 25.5%、600 = 34.9%。</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>工程 6 · グラデーション（保留・後日定義）</h2><p>本人判断で後回し。以下は下書きとして残す。規則案: 2 色を OKLCH で補間（CSS は <span class="mono">linear-gradient(in oklch, …)</span> を正、非対応環境は 5 停止点の hex）。色相差は 30° 以内、同じ段番号同士を結ぶ。文字への background-clip は使わない（原則 2）。スクリムは gray.950 / gray.50 のアルファで、下端の濃度は白文字・黒文字が AA を満たす値。用途は 4 系統。</p></div>
+    <h3 style="margin-top:16px">A · 地（セクション背景）</h3><div class="ggrid"><div class="gi"><div class="gsw" style="background:linear-gradient(180deg, #F5F7F9, #F4F6FA, #F2F6FB, #F1F6FD, #F0F6FE)"><div class="gsw2" style="background:linear-gradient(180deg, #F5F7F9, #F4F6FA, #F2F6FB, #F1F6FD, #F0F6FE)"></div></div><div class="gn mono">surface.light.key</div><div class="gd">ライトのセクション地。gray.50 → blue.50</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(180deg, #F7F6F4, #F9F6EE, #FBF6E9, #FCF5E3, #FEF5DD)"><div class="gsw2" style="background:linear-gradient(180deg, #F7F6F4, #F9F6EE, #FBF6E9, #FCF5E3, #FEF5DD)"></div></div><div class="gn mono">surface.light.warm</div><div class="gd">ライトの暖かい地。gray.50 → amber.50（補色側）</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(180deg, #0F1013, #101729, #101D40, #112257, #122670)"><div class="gsw2" style="background:linear-gradient(180deg, #0F1013, #101729, #101D40, #112257, #122670)"></div></div><div class="gn mono">surface.dark.key</div><div class="gd">ダークのセクション地。gray.950 → blue.950</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(180deg, #12100D, #1D170D, #281E0D, #34250A, #402C06)"><div class="gsw2" style="background:linear-gradient(180deg, #12100D, #1D170D, #281E0D, #34250A, #402C06)"></div></div><div class="gn mono">surface.dark.warm</div><div class="gd">ダークの暖かい地。gray.950 → amber.950</div></div></div><h3 style="margin-top:16px">B · 装飾・アクセント（隣接色相 30°、同じ段）</h3><div class="ggrid"><div class="gi"><div class="gsw" style="background:linear-gradient(135deg, #29A5DA, #0D9AE0, #048DE6, #1B7EEB, #316EEE)"><div class="gsw2" style="background:linear-gradient(135deg, #29A5DA, #0D9AE0, #048DE6, #1B7EEB, #316EEE)"></div></div><div class="gn mono">accent.key</div><div class="gd">sky.600 → blue.600（30°）</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(135deg, #316EEE, #4B66F3, #605EF6, #7255F6, #834BF4)"><div class="gsw2" style="background:linear-gradient(135deg, #316EEE, #4B66F3, #605EF6, #7255F6, #834BF4)"></div></div><div class="gn mono">accent.key.deep</div><div class="gd">blue.600 → violet.600（30°）</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(135deg, #956DF6, #A561F9, #B651F9, #C83EF5, #D91EEC)"><div class="gsw2" style="background:linear-gradient(135deg, #956DF6, #A561F9, #B651F9, #C83EF5, #D91EEC)"></div></div><div class="gn mono">accent.violet</div><div class="gd">violet.500 → purple.500（30°）</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(135deg, #D91EEC, #E21AD7, #EA18C1, #F018AC, #F41B97)"><div class="gsw2" style="background:linear-gradient(135deg, #D91EEC, #E21AD7, #EA18C1, #F018AC, #F41B97)"></div></div><div class="gn mono">accent.pink</div><div class="gd">purple.500 → pink.500（30°）</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(135deg, #F41B97, #F72182, #F8296E, #F7325A, #F53C45)"><div class="gsw2" style="background:linear-gradient(135deg, #F41B97, #F72182, #F8296E, #F7325A, #F53C45)"></div></div><div class="gn mono">accent.red</div><div class="gd">pink.500 → red.500（30°）</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(135deg, #F53C45, #F85139, #F8642E, #F87529, #F6852B)"><div class="gsw2" style="background:linear-gradient(135deg, #F53C45, #F85139, #F8642E, #F87529, #F6852B)"></div></div><div class="gn mono">accent.orange</div><div class="gd">red.500 → orange.500（30°）</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(135deg, #F99D5A, #FBA44F, #FBAC45, #F9B53B, #F6BE33)"><div class="gsw2" style="background:linear-gradient(135deg, #F99D5A, #FBA44F, #FBAC45, #F9B53B, #F6BE33)"></div></div><div class="gn mono">accent.amber</div><div class="gd">orange.400 → amber.400（30°）</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(135deg, #F6BE33, #F0C42D, #E8CA2B, #DFD12E, #D4D736)"><div class="gsw2" style="background:linear-gradient(135deg, #F6BE33, #F0C42D, #E8CA2B, #DFD12E, #D4D736)"></div></div><div class="gn mono">accent.lime</div><div class="gd">amber.400 → lime.400（30°）</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(135deg, #ADB22B, #97AF15, #7EAD01, #5DAB04, #29A818)"><div class="gsw2" style="background:linear-gradient(135deg, #ADB22B, #97AF15, #7EAD01, #5DAB04, #29A818)"></div></div><div class="gn mono">accent.green</div><div class="gd">lime.500 → green.500（30°）</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(135deg, #29A818, #06B04D, #00B66E, #12BC87, #33C19D)"><div class="gsw2" style="background:linear-gradient(135deg, #29A818, #06B04D, #00B66E, #12BC87, #33C19D)"></div></div><div class="gn mono">accent.teal</div><div class="gd">green.500 → teal.500（30°）</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(135deg, #33C19D, #28C0A9, #23BFB3, #26BEBD, #2FBCC5)"><div class="gsw2" style="background:linear-gradient(135deg, #33C19D, #28C0A9, #23BFB3, #26BEBD, #2FBCC5)"></div></div><div class="gn mono">accent.cyan</div><div class="gd">teal.500 → cyan.500（30°）</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(135deg, #2FBCC5, #23BBCF, #1DBADA, #22B8E4, #2EB5ED)"><div class="gsw2" style="background:linear-gradient(135deg, #2FBCC5, #23BBCF, #1DBADA, #22B8E4, #2EB5ED)"></div></div><div class="gn mono">accent.sky</div><div class="gd">cyan.500 → sky.500（30°）</div></div></div><h3 style="margin-top:16px">C · 画像の上のスクリム</h3><div class="ggrid"><div class="gi"><div class="gsw" style="background:linear-gradient(180deg, rgba(18,16,13,0), rgba(18,16,13,0.72));background-image:url(data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%2716%27 height=%2716%27><rect width=%278%27 height=%278%27 fill=%27%23ccc%27/><rect x=%278%27 y=%278%27 width=%278%27 height=%278%27 fill=%27%23ccc%27/></svg>)"><div class="gsw2" style="background:linear-gradient(180deg, rgba(18,16,13,0), rgba(18,16,13,0.72))"></div></div><div class="gn mono">scrim.dark</div><div class="gd">画像の上の暗転。下端で gray.950 の 72%。白文字を乗せる</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(180deg, rgba(248,246,244,0), rgba(248,246,244,0.8));background-image:url(data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%2716%27 height=%2716%27><rect width=%278%27 height=%278%27 fill=%27%23ccc%27/><rect x=%278%27 y=%278%27 width=%278%27 height=%278%27 fill=%27%23ccc%27/></svg>)"><div class="gsw2" style="background:linear-gradient(180deg, rgba(248,246,244,0), rgba(248,246,244,0.8))"></div></div><div class="gn mono">scrim.light</div><div class="gd">画像の上の明転。下端で gray.50 の 80%。黒文字を乗せる</div></div></div><h3 style="margin-top:16px">D · UI 部品の塗り（同一色相）</h3><div class="ggrid"><div class="gi"><div class="gsw" style="background:linear-gradient(180deg, #4C87F6, #3F7BF1, #336FEB, #2762E6, #1C55E0)"><div class="gsw2" style="background:linear-gradient(180deg, #4C87F6, #3F7BF1, #336FEB, #2762E6, #1C55E0)"></div></div><div class="gn mono">ui.primary</div><div class="gd">塗りボタン。blue.500 → blue.700。白文字は下端で 6.08、上端で 3.45</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(180deg, #316EEE, #2B63E1, #2659D3, #204EC6, #1B44B9)"><div class="gsw2" style="background:linear-gradient(180deg, #316EEE, #2B63E1, #2659D3, #204EC6, #1B44B9)"></div></div><div class="gn mono">ui.primary.hover</div><div class="gd">ホバー時。1 段ずつ濃く</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(180deg, #FFFFFF, #F7F6F5, #EEEDEB, #E6E5E2, #DEDCD8)"><div class="gsw2" style="background:linear-gradient(180deg, #FFFFFF, #F7F6F5, #EEEDEB, #E6E5E2, #DEDCD8)"></div></div><div class="gn mono">ui.neutral.light</div><div class="gd">ライトの二次ボタン・カード</div></div><div class="gi"><div class="gsw" style="background:linear-gradient(180deg, #393631, #34312C, #2F2C27, #2A2723, #25221E)"><div class="gsw2" style="background:linear-gradient(180deg, #393631, #34312C, #2F2C27, #2A2723, #25221E)"></div></div><div class="gn mono">ui.neutral.dark</div><div class="gd">ダークの二次ボタン・カード</div></div></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>工程 0 · プリミティブトークン設計（確定）</h2><p>色は確定（アルファ {step}a、色相角順）。dimension は 2026-09-28 に 4px = 100 の Polaris 式へ再設計。gray は neutral に改名。工程 1〜5 の確定値から DTCG 形式の <span class="mono">tokens/primitives/color.json</span> を生成済み（145 色 + アルファ 8）。詳細は docs/pf-08-primitive-tokens.md。</p></div>
+    <div class="tbl-wrap"><table>
+      <tr><th>項目</th><th>規則</th><th>例</th></tr>
+      <tr><td>パス</td><td class="mono">color.{family}.{step}</td><td class="mono">color.blue.600</td></tr>
+      <tr><td>family</td><td>12 色相 + neutral</td><td class="mono">blue … sky, neutral</td></tr>
+      <tr><td>step</td><td>50〜950 の 11 段。neutral のみ 0 と 1000</td><td class="mono">color.neutral.0 = #FFFFFF</td></tr>
+      <tr><td>アルファ</td><td class="mono">color.neutral.{一致する不透明段}a（100a〜400a = light、600a〜900a = dark）</td><td class="mono">color.neutral.200a</td></tr>
+      <tr><td>$value</td><td>sRGB hex（アルファは 8 桁）。$extensions に oklch と生成方式を併記</td><td class="mono">"#316EEE" + ac.oklch {l .573, c .204, h 262.6}</td></tr>
+      <tr><td>出力</td><td>CSS <span class="mono">--color-blue-600</span> / Figma <span class="mono">color/blue/600</span>。接頭辞なし</td><td></td></tr>
+      <tr><td>ファイル</td><td class="mono">tokens/primitives/color.json（+ dimension / typography / duration … は後続工程）</td><td></td></tr>
+    </table></div>
+    <h3 style="margin-top:16px">色以外のプリミティブ（提案、tokens/primitives/*.json に生成済み）</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>ファイル</th><th>グループ</th><th>値</th></tr>
+      <tr><td rowspan="5" class="mono">dimension.json</td><td class="mono">space.{0,025…3200}</td><td>8px = 100。0 2 4 6 8 12 16 20 24 32 40 48 64 80 96 128 160 192 256</td></tr>
+      <tr><td class="mono">size.{300…12000}</td><td>12 16 20 24 32 40 48 64 80 96 128 240 480（44 は 48 で代替）</td></tr>
+      <tr><td class="mono">radius.{none,050,100,200,300,400,600,800,1200,full}</td><td>0 2 4 8 12 16 24 32 48 9999 · shape.default = squircle（continuous = superellipse(2.32) を代替）、Figma smoothing 60%</td></tr>
+      <tr><td class="mono">border.{0,025,050,075,100}</td><td>0 1 2 3 4 px（役割名は semantic）</td></tr>
+      <tr><td class="mono">breakpoint.{xs…xxl}</td><td>0 480 768 1024 1440 1768（Atlassian と同じ）</td></tr>
+      <tr><td rowspan="5" class="mono">typography.json</td><td class="mono">family.{sans,serif,jp,mono}</td><td>Inter Variable · Lora · Noto Sans JP · Geist Mono（すべて OFL）</td></tr>
+      <tr><td class="mono">size.{250…3200}</td><td>10 12 14 16 18 20 24 28 32 40 48 64 80 96 128（Major Third 基準、4px の倍数に丸め）</td></tr>
+      <tr><td class="mono">lineHeight.{sm,md,lg,xl,xxl}</td><td>1.25 1.375 1.5 1.625 1.75（semantic では line box を 4px 倍数の px で確定）</td></tr>
+      <tr><td class="mono">letterSpacing.{sm,md,lg}</td><td>−0.02 0 +0.02 em</td></tr>
+      <tr><td class="mono">weight.{regular,medium,semibold,bold}</td><td>400 500 600 700</td></tr>
+      <tr><td rowspan="2" class="mono">motion.json</td><td class="mono">duration.{instant,presto,vivace,allegro,moderato,andante,adagio}</td><td>0 50 100 150 250 400 600 ms（instant + テンポ記号）</td></tr>
+      <tr><td class="mono">easing.{in.practical, out.practical, out.bold, inout.bold, spring}</td><td>Atlassian の 4 曲線 + 減衰バネ linear()（整定 630ms、フォールバック out.bold）</td></tr>
+      <tr><td class="mono">opacity.json</td><td class="mono">opacity.{0…100}</td><td>0 4 8 12 16 24 32 40 64 80 100 %</td></tr>
+    </table></div>
+    <div class="verdict"><h3>決めること</h3><ul>
+                  <li>breakpoint は 5 段でよいか。</li>
+      <li>shadow は影専用のアルファ値を工程 12 で決めてから追加。gradient は保留のまま。</li>
+    </ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>工程 7a · Semantic Typography（提案）</h2><p>display 5 / heading 7 / body 4 / label 4 + label.mono 4。line box は size × 倍率を 4px の倍数に丸めた px（背景の罫線）。書体は Inter + Noto Sans JP、mono は Geist Mono。正本 tokens/semantic/typography.json、根拠 docs/pf-08-semantic-typography.md。</p></div>
+    <div class="ts"><div class="tsm mono">display.sm · 48/60 · bold · −0.02em</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:48px;line-height:60px;letter-spacing:-0.02em;font-weight:700;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 60px">仕組みをつくり、細部まで仕上げる。</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:48px;line-height:60px;letter-spacing:-0.02em;font-weight:700;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 60px">Systems, finished by hand.</p></div><div class="ts"><div class="tsm mono">display.md · 64/80 · bold · −0.02em</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:64px;line-height:80px;letter-spacing:-0.02em;font-weight:700;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 80px">仕組みをつくり、細部まで仕上げる。</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:64px;line-height:80px;letter-spacing:-0.02em;font-weight:700;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 80px">Systems, finished by hand.</p></div><div class="ts"><div class="tsm mono">display.lg · 80/100 · bold · −0.02em</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:80px;line-height:100px;letter-spacing:-0.02em;font-weight:700;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 100px">仕組みをつくり、細部まで仕上げる。</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:80px;line-height:100px;letter-spacing:-0.02em;font-weight:700;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 100px">Systems, finished by hand.</p></div><div class="ts"><div class="tsm mono">display.xl · 96/120 · bold · −0.02em</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:96px;line-height:120px;letter-spacing:-0.02em;font-weight:700;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 120px">仕組みをつくり、細部まで仕上げる。</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:96px;line-height:120px;letter-spacing:-0.02em;font-weight:700;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 120px">Systems, finished by hand.</p></div><div class="ts"><div class="tsm mono">display.xxl · 128/160 · bold · −0.02em</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:128px;line-height:160px;letter-spacing:-0.02em;font-weight:700;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 160px">仕組みをつくり、細部まで仕上げる。</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:128px;line-height:160px;letter-spacing:-0.02em;font-weight:700;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 160px">Systems, finished by hand.</p></div><div class="ts"><div class="tsm mono">heading.xs · 16/20 · semibold · 0</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:16px;line-height:20px;letter-spacing:0;font-weight:600;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 20px">デザインシステムで意思決定を前に進める</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:16px;line-height:20px;letter-spacing:0;font-weight:600;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 20px">Design as infrastructure</p></div><div class="ts"><div class="tsm mono">heading.sm · 18/24 · semibold · 0</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:18px;line-height:24px;letter-spacing:0;font-weight:600;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 24px">デザインシステムで意思決定を前に進める</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:18px;line-height:24px;letter-spacing:0;font-weight:600;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 24px">Design as infrastructure</p></div><div class="ts"><div class="tsm mono">heading.md · 20/28 · semibold · 0</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:20px;line-height:28px;letter-spacing:0;font-weight:600;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 28px">デザインシステムで意思決定を前に進める</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:20px;line-height:28px;letter-spacing:0;font-weight:600;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 28px">Design as infrastructure</p></div><div class="ts"><div class="tsm mono">heading.lg · 24/32 · semibold · 0</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:24px;line-height:32px;letter-spacing:0;font-weight:600;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 32px">デザインシステムで意思決定を前に進める</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:24px;line-height:32px;letter-spacing:0;font-weight:600;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 32px">Design as infrastructure</p></div><div class="ts"><div class="tsm mono">heading.xl · 28/36 · semibold · −0.02em</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:28px;line-height:36px;letter-spacing:-0.02em;font-weight:600;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 36px">デザインシステムで意思決定を前に進める</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:28px;line-height:36px;letter-spacing:-0.02em;font-weight:600;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 36px">Design as infrastructure</p></div><div class="ts"><div class="tsm mono">heading.xxl · 32/40 · semibold · −0.02em</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:32px;line-height:40px;letter-spacing:-0.02em;font-weight:600;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 40px">デザインシステムで意思決定を前に進める</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:32px;line-height:40px;letter-spacing:-0.02em;font-weight:600;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 40px">Design as infrastructure</p></div><div class="ts"><div class="tsm mono">heading.xxxl · 40/48 · semibold · −0.02em</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:40px;line-height:48px;letter-spacing:-0.02em;font-weight:600;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 48px">デザインシステムで意思決定を前に進める</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:40px;line-height:48px;letter-spacing:-0.02em;font-weight:600;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 48px">Design as infrastructure</p></div><div class="ts"><div class="tsm mono">body.sm · 14/24 · regular · 0</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:14px;line-height:24px;letter-spacing:0;font-weight:400;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 24px">仮説を立て、実装し、検証する。意図どおりに人が動いたときが、いちばんの手応えです。</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:14px;line-height:24px;letter-spacing:0;font-weight:400;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 24px">Form a hypothesis, ship it, and watch what people actually do.</p></div><div class="ts"><div class="tsm mono">body.md · 16/28 · regular · 0</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:16px;line-height:28px;letter-spacing:0;font-weight:400;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 28px">仮説を立て、実装し、検証する。意図どおりに人が動いたときが、いちばんの手応えです。</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:16px;line-height:28px;letter-spacing:0;font-weight:400;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 28px">Form a hypothesis, ship it, and watch what people actually do.</p></div><div class="ts"><div class="tsm mono">body.lg · 18/28 · regular · 0</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:18px;line-height:28px;letter-spacing:0;font-weight:400;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 28px">仮説を立て、実装し、検証する。意図どおりに人が動いたときが、いちばんの手応えです。</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:18px;line-height:28px;letter-spacing:0;font-weight:400;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 28px">Form a hypothesis, ship it, and watch what people actually do.</p></div><div class="ts"><div class="tsm mono">body.xl · 20/32 · regular · 0</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:20px;line-height:32px;letter-spacing:0;font-weight:400;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 32px">仮説を立て、実装し、検証する。意図どおりに人が動いたときが、いちばんの手応えです。</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:20px;line-height:32px;letter-spacing:0;font-weight:400;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 32px">Form a hypothesis, ship it, and watch what people actually do.</p></div><div class="ts"><div class="tsm mono">label.xs · 10/12 · medium · +0.02em</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:10px;line-height:12px;letter-spacing:+0.02em;font-weight:500;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 12px">2023–2024 · Design System · 設計時間 −50%</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:10px;line-height:12px;letter-spacing:+0.02em;font-weight:500;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 12px">Case study · Interstellar</p></div><div class="ts"><div class="tsm mono">label.sm · 12/16 · medium · +0.02em</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:12px;line-height:16px;letter-spacing:+0.02em;font-weight:500;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 16px">2023–2024 · Design System · 設計時間 −50%</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:12px;line-height:16px;letter-spacing:+0.02em;font-weight:500;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 16px">Case study · Interstellar</p></div><div class="ts"><div class="tsm mono">label.md · 14/20 · medium · 0</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:14px;line-height:20px;letter-spacing:0;font-weight:500;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 20px">2023–2024 · Design System · 設計時間 −50%</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:14px;line-height:20px;letter-spacing:0;font-weight:500;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 20px">Case study · Interstellar</p></div><div class="ts"><div class="tsm mono">label.lg · 16/24 · medium · 0</div><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:16px;line-height:24px;letter-spacing:0;font-weight:500;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 24px">2023–2024 · Design System · 設計時間 −50%</p><p style="font-family:'Inter','Noto Sans JP',system-ui,sans-serif;font-size:16px;line-height:24px;letter-spacing:0;font-weight:500;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 24px">Case study · Interstellar</p></div><div class="ts"><div class="tsm mono">label.mono.xs · 10/12 · regular · 0</div><p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:10px;line-height:12px;letter-spacing:0;font-weight:400;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 12px">color.blue.600 = #316EEE · 2023–2024</p><p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:10px;line-height:12px;letter-spacing:0;font-weight:400;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 12px">oklch(0.573 0.204 262.6)</p></div><div class="ts"><div class="tsm mono">label.mono.sm · 12/16 · regular · 0</div><p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;line-height:16px;letter-spacing:0;font-weight:400;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 16px">color.blue.600 = #316EEE · 2023–2024</p><p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;line-height:16px;letter-spacing:0;font-weight:400;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 16px">oklch(0.573 0.204 262.6)</p></div><div class="ts"><div class="tsm mono">label.mono.md · 14/20 · regular · 0</div><p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:14px;line-height:20px;letter-spacing:0;font-weight:400;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 20px">color.blue.600 = #316EEE · 2023–2024</p><p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:14px;line-height:20px;letter-spacing:0;font-weight:400;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 20px">oklch(0.573 0.204 262.6)</p></div><div class="ts"><div class="tsm mono">label.mono.lg · 16/24 · regular · 0</div><p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 24px">color.blue.600 = #316EEE · 2023–2024</p><p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:16px;line-height:24px;letter-spacing:0;font-weight:400;margin:0;background:linear-gradient(transparent calc(100% - 1px),var(--line) 0) 0 0/100% 24px">oklch(0.573 0.204 262.6)</p></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>工程 7b · Semantic Color（提案）</h2><p>A（Atlassian 型）。surface 4 種（状態なし）+ shadow 4 段（rest / lifted / floating / overlay）、emphasis 5 段、hovered / pressed、inverse と static、brand（blue）+ status 4 + accent 12 色相。187 + 4 トークン × 2 テーマ、276 の組み合わせでコントラスト検証済み（全合格）。対応表と規則は docs/pf-08-semantic-color.md。</p></div>
+    <div class="panels"><div style="background:#F8F6F4;color:#12100D;padding:20px;border-radius:8px;border:1px solid rgba(18,16,13,0.229)">
+      <div class="tag" style="opacity:.6;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px">light · surface.default neutral.50</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div style="background:#FFFFFF;box-shadow:0 2px 4px #0000000F, 0 4px 12px -2px #0000001F;border-radius:8px;padding:14px"><div style="font-weight:600">raised + shadow.lifted</div><div style="color:#4F4B45;font-size:13px">text.subtle · neutral.700</div><div style="color:#65615A;font-size:12px">text.subtlest · neutral.600</div><a style="color:#1C55E0;font-size:13px;text-decoration:underline" href="#">text.accent blue.700</a></div>
+        <div style="background:#FFFFFF;box-shadow:0 8px 16px #00000014, 0 24px 48px -8px #0000003D;border-radius:8px;padding:14px"><div style="font-weight:600">overlay + shadow.overlay</div><div style="color:#4F4B45;font-size:13px">メニュー・モーダル</div><div style="margin-top:8px;height:32px;background:#DEDCD8;border:1px solid #7C7871;border-radius:6px;padding:0 10px;line-height:32px;font-size:13px;color:#4F4B45">sunken + border.bold（入力欄）</div></div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;align-items:center">
+        <a style="background:#316EEE;color:#fff;padding:8px 14px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none" href="#">brand.bold</a>
+        <a style="background:#1C55E0;color:#fff;padding:8px 14px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none" href="#">hovered</a>
+        <a style="background:rgba(18,16,13,0.229);color:#12100D;padding:8px 14px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none" href="#">neutral.subtle</a>
+        <a style="background:#CEE1FC;color:#1B44B9;padding:8px 14px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none" href="#">brand.subtle + text.brand.bold</a>
+        <span style="display:inline-block;width:36px;height:36px;border-radius:6px;background:#FFFFFF;box-shadow:0 0 0 2px #316EEE"></span>
+        <span style="background:#12100D;color:#F8F6F4;padding:8px 14px;border-radius:6px;font-size:13px">neutral.boldest + text.inverse</span>
+      </div>
+      <div style="margin-top:12px;line-height:2"><span style="background:#CBEAC1;color:#1C6323;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">success</span> <span style="background:#FDE8B6;color:#6B4D0E;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">warning</span> <span style="background:#FCD5CF;color:#991529;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">error</span> <span style="background:#C8ECFD;color:#145A7B;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">info</span> <span style="background:#E2D9FC;color:#5830B1;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">violet</span> <span style="background:#E9DAE8;color:#7D1F8E;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">purple</span> <span style="background:#E9DBDF;color:#8D1E5E;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">pink</span> <span style="background:#FDDFC9;color:#803E0F;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">orange</span> <span style="background:#EFEFB9;color:#52580F;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">lime</span> <span style="background:#B8F5DC;color:#126150;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">teal</span> <span style="background:#ADF4F6;color:#155E64;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">cyan</span> </div>
+      <div style="margin-top:10px;border-top:1px solid rgba(18,16,13,0.34);padding-top:8px;font-size:12px;color:#65615A">border.default（装飾）· border.subtle はカードの枠</div>
+    </div><div style="background:#12100D;color:#F8F6F4;padding:20px;border-radius:8px;border:1px solid rgba(248,246,244,0.164)">
+      <div class="tag" style="opacity:.6;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px">dark · surface.default neutral.950</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div style="background:#25221E;box-shadow:0 2px 4px #00000066, 0 4px 12px -2px #0000004D;border-radius:8px;padding:14px"><div style="font-weight:600">raised + shadow.lifted</div><div style="color:#C5C2BD;font-size:13px">text.subtle · neutral.200</div><div style="color:#ACA9A2;font-size:12px">text.subtlest · neutral.300</div><a style="color:#6C9FF8;font-size:13px;text-decoration:underline" href="#">text.accent blue.400</a></div>
+        <div style="background:#393631;box-shadow:0 8px 16px #00000080, 0 24px 48px -8px #00000099;border-radius:8px;padding:14px"><div style="font-weight:600">overlay + shadow.overlay</div><div style="color:#C5C2BD;font-size:13px">メニュー・モーダル</div><div style="margin-top:8px;height:32px;background:#000000;border:1px solid #949089;border-radius:6px;padding:0 10px;line-height:32px;font-size:13px;color:#C5C2BD">sunken + border.bold（入力欄）</div></div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;align-items:center">
+        <a style="background:#316EEE;color:#fff;padding:8px 14px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none" href="#">brand.bold</a>
+        <a style="background:#1C55E0;color:#fff;padding:8px 14px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none" href="#">hovered</a>
+        <a style="background:rgba(248,246,244,0.164);color:#F8F6F4;padding:8px 14px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none" href="#">neutral.subtle</a>
+        <a style="background:#183594;color:#8CB6F9;padding:8px 14px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none" href="#">brand.subtle + text.brand.bold</a>
+        <span style="display:inline-block;width:36px;height:36px;border-radius:6px;background:#25221E;box-shadow:0 0 0 2px #6C9FF8"></span>
+        <span style="background:#F8F6F4;color:#12100D;padding:8px 14px;border-radius:6px;font-size:13px">neutral.boldest + text.inverse</span>
+      </div>
+      <div style="margin-top:12px;line-height:2"><span style="background:#1F4C24;color:#77CE62;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">success</span> <span style="background:#553C0A;color:#FBCB5D;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">warning</span> <span style="background:#7A1021;color:#FA958C;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">error</span> <span style="background:#0D4763;color:#7DD2FA;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">info</span> <span style="background:#44268E;color:#BBA5F9;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">violet</span> <span style="background:#5D236B;color:#E492E8;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">purple</span> <span style="background:#6A214A;color:#EA99B7;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">pink</span> <span style="background:#662F0A;color:#FBB482;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">orange</span> <span style="background:#40460A;color:#DEE05F;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">lime</span> <span style="background:#0E4C3F;color:#3CE4B6;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">teal</span> <span style="background:#0D4A50;color:#3ADFE6;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:500">cyan</span> </div>
+      <div style="margin-top:10px;border-top:1px solid rgba(248,246,244,0.255);padding-top:8px;font-size:12px;color:#ACA9A2">border.default（装飾）· border.subtle はカードの枠</div>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>工程 9 · Layout（確定）+ 工程 11 · Spacing</h2><p>A + B の折衷。breakpoint は Atlassian と同じ 6 段。格子（列・gutter・margin）はページの骨格を揃える定規、セクション内部は領域数と space で組む。Nested Grid は規則のみ（入れ子 1 段まで）。正本 tokens/semantic/layout.json、根拠 docs/pf-08-layout.md。</p></div>
+    <div class="tbl-wrap"><table>
+      <tr><th></th><th>xs 0</th><th>sm 480</th><th>md 768</th><th>lg 1024</th><th>xl 1440</th><th>xxl 1768</th></tr>
+      <tr><td>columns</td><td>4</td><td>4</td><td>6</td><td>12</td><td>12</td><td>12</td></tr>
+      <tr><td>gutter</td><td>16</td><td>16</td><td>24</td><td>32</td><td>32</td><td>32</td></tr>
+      <tr><td>margin</td><td>16</td><td>24</td><td>32</td><td>48</td><td>64</td><td>80</td></tr>
+    </table></div>
+    <div class="tbl-wrap"><table style="margin-top:12px">
+      <tr><th>container</th><th>値</th><th>用途</th></tr>
+      <tr><td class="mono">layout.container.content</td><td>1280</td><td>通常のセクション。広い画面では中央寄せ</td></tr>
+      <tr><td class="mono">layout.container.prose</td><td>720</td><td>読み物本文。和文 40 字 × 18px</td></tr>
+      <tr><td class="mono">layout.container.full</td><td>上限なし</td><td>ヒーロー・写真の帯。内側は content に戻す（breakout）</td></tr>
+    </table></div>
+    <div class="tbl-wrap"><table style="margin-top:12px">
+      <tr><th>section（縦余白）</th><th>値</th><th>md 未満</th><th>用途</th></tr>
+      <tr><td class="mono">layout.section.sm</td><td>48</td><td>32</td><td>同じ話題の小区切り</td></tr>
+      <tr><td class="mono">layout.section.md</td><td>64</td><td>48</td><td>標準のセクション間</td></tr>
+      <tr><td class="mono">layout.section.lg</td><td>96</td><td>64</td><td>大きな話題の切替</td></tr>
+      <tr><td class="mono">layout.section.xl</td><td>128</td><td>96</td><td>ヒーロー直後、ページ末尾</td></tr>
+    </table></div>
+    <p style="font-size:12.5px;color:var(--ink2);margin-top:8px">spacing は A+ 方式: inset / gap の semantic は持たず primitive を直接使う（用途の帯は設計書）。負の値は primitive に −2〜−32。決定の経緯は docs/pf-08-spacing.md。</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>工程 12 · 角丸・線・影（確定）</h2><p>radius の semantic は持たず「入れ子の角丸 = 外側 − padding」などの規則で扱う。border.width は default / selected / focused の 3 つ。shadow は工程 7b の 4 段のまま。根拠 docs/pf-08-radius-border-shadow.md。</p></div>
+    <div class="tbl-wrap"><table>
+      <tr><th>トークン</th><th>参照</th><th>値</th><th>用途</th></tr>
+      <tr><td class="mono">border.width.default</td><td class="mono">dimension.border.025</td><td>1</td><td>境界線、区切り線、入力欄の枠</td></tr>
+      <tr><td class="mono">border.width.selected</td><td class="mono">dimension.border.050</td><td>2</td><td>選択タブの下線、選択カードの枠</td></tr>
+      <tr><td class="mono">border.width.focused</td><td class="mono">dimension.border.050</td><td>2</td><td>フォーカスリング（outline-offset 2）</td></tr>
+    </table></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>工程 13 · Motion 役割 + 工程 14 · 状態（確定: トークンなし、規則のみ）</h2><p>主要システムに前例がないため semantic トークンは持たない。duration × easing の組は部品を作る段階で component トークンに置く。状態はフォーカス（color.border.focused + border.width.focused）など既存トークンの組み合わせと規則で扱う。根拠 docs/pf-08-motion-state.md。</p></div>
+    <div class="tbl-wrap"><table>
+      <tr><th>役割（規則）</th><th>duration</th><th>easing</th><th>用途</th></tr>
+      <tr><td class="mono">feedback</td><td>vivace 100</td><td>out.practical</td><td>ホバー・押下の色変化</td></tr>
+      <tr><td class="mono">state</td><td>allegro 150</td><td>out.practical</td><td>トグル、チェック、タブ</td></tr>
+      <tr><td class="mono">enter / exit</td><td>moderato 250 / allegro 150</td><td>out.bold / in.practical</td><td>ポップオーバー、ドロップダウン、トースト</td></tr>
+      <tr><td class="mono">enter.large / exit.large</td><td>andante 400 / moderato 250</td><td>out.bold / in.practical</td><td>モーダル、パネル、ページ遷移</td></tr>
+      <tr><td class="mono">move</td><td>moderato 250</td><td>inout.bold</td><td>位置・サイズの変化</td></tr>
+      <tr><td class="mono">reveal</td><td>adagio 600</td><td>out.bold</td><td>スクロール出現（移動 8〜16px）</td></tr>
+      <tr><td class="mono">spring</td><td>adagio 600</td><td>spring</td><td>遊びのある反応、1 画面 1 か所</td></tr>
+    </table></div>
+    <div class="tbl-wrap"><table style="margin-top:12px">
+      <tr><th>状態</th><th>見た目</th><th>動き</th><th>規則</th></tr>
+      <tr><td>hover</td><td>*.hovered、カードは −2px + shadow.lifted</td><td>feedback</td><td>hover: hover のみ</td></tr>
+      <tr><td>pressed</td><td>*.pressed、ボタンは scale 0.98</td><td>feedback</td><td>沈まないボタンにしない</td></tr>
+      <tr><td>focus-visible</td><td>outline 2px border.focused、offset 2</td><td>feedback</td><td>決して消さない。outline を使う</td></tr>
+      <tr><td>selected</td><td>background.selected + border.selected 2px</td><td>state</td><td>ナビ、タブ、選択行</td></tr>
+      <tr><td>disabled</td><td>*.disabled、画像は opacity.40</td><td>なし</td><td>hover / focus なし、not-allowed</td></tr>
+      <tr><td>loading</td><td>opacity.64、skeleton = neutral.subtlest</td><td>なし</td><td>高さを確保</td></tr>
+      <tr><td>target</td><td>最小 48 × 48</td><td>—</td><td>文字リンクは padding で確保</td></tr>
+    </table></div>
+  </section>
+
+  <p class="foot">WCAG 2.2 の相対輝度式と APCA 0.0.98G の Lc を docs/reference/color.py で算出。スケール生成は scale.py（blue）、gray.py（gray）。</p>
+</div>

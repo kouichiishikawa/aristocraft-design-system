@@ -1,0 +1,164 @@
+/**
+ * Generated from tokens/ by `npm run build` (build/index.js).
+ * Do not edit by hand. Edit tokens/**/*.json and rebuild.
+ */
+
+:root {
+  --font-family-default: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 'Inter Variable', Inter, system-ui, sans-serif + 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif */
+  --font-family-serif: Lora, 'Noto Sans JP', Georgia, serif; /** Lora, Georgia, serif + 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif。装飾用途（引用・Music など、英語のみ）。semantic の role は持たず、使う部品の component トークンで size / line box を display.* から借りて定義する */
+  --font-family-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace; /** 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace。数値・コード・トークン名 */
+  --layout-grid-columns-xs: 4;
+  --layout-grid-columns-sm: 4;
+  --layout-grid-columns-md: 6;
+  --layout-grid-columns-lg: 12;
+  --layout-grid-columns-xl: 12;
+  --layout-grid-columns-xxl: 12;
+  --layout-container-content: 1280px; /** 通常のセクション。これより広い画面では中央寄せ */
+  --layout-container-prose: 720px; /** 読み物本文。和文 40 字 × 18px */
+  --layout-container-full: 100%; /** 上限なし。ヒーロー・写真の帯・ギャラリー。margin も 0。内側の文字は content 幅に戻す（breakout） */
+  --font-display-sm-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 48px / 60px（1.25）· bold · letterSpacing.sm */
+  --font-display-sm-font-size: 48px; /** 48px / 60px（1.25）· bold · letterSpacing.sm */
+  --font-display-sm-line-height: 60px; /** 48px / 60px（1.25）· bold · letterSpacing.sm */
+  --font-display-sm-letter-spacing: -0.02em; /** 48px / 60px（1.25）· bold · letterSpacing.sm */
+  --font-display-md-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 64px / 80px（1.25）· bold · letterSpacing.sm */
+  --font-display-md-font-size: 64px; /** 64px / 80px（1.25）· bold · letterSpacing.sm */
+  --font-display-md-line-height: 80px; /** 64px / 80px（1.25）· bold · letterSpacing.sm */
+  --font-display-md-letter-spacing: -0.02em; /** 64px / 80px（1.25）· bold · letterSpacing.sm */
+  --font-display-lg-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 80px / 100px（1.25）· bold · letterSpacing.sm */
+  --font-display-lg-font-size: 80px; /** 80px / 100px（1.25）· bold · letterSpacing.sm */
+  --font-display-lg-line-height: 100px; /** 80px / 100px（1.25）· bold · letterSpacing.sm */
+  --font-display-lg-letter-spacing: -0.02em; /** 80px / 100px（1.25）· bold · letterSpacing.sm */
+  --font-display-xl-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 96px / 120px（1.25）· bold · letterSpacing.sm */
+  --font-display-xl-font-size: 96px; /** 96px / 120px（1.25）· bold · letterSpacing.sm */
+  --font-display-xl-line-height: 120px; /** 96px / 120px（1.25）· bold · letterSpacing.sm */
+  --font-display-xl-letter-spacing: -0.02em; /** 96px / 120px（1.25）· bold · letterSpacing.sm */
+  --font-display-xxl-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 128px / 160px（1.25）· bold · letterSpacing.sm */
+  --font-display-xxl-font-size: 128px; /** 128px / 160px（1.25）· bold · letterSpacing.sm */
+  --font-display-xxl-line-height: 160px; /** 128px / 160px（1.25）· bold · letterSpacing.sm */
+  --font-display-xxl-letter-spacing: -0.02em; /** 128px / 160px（1.25）· bold · letterSpacing.sm */
+  --font-heading-xs-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 16px / 20px（1.25）· semibold · letterSpacing.md */
+  --font-heading-xs-font-size: 16px; /** 16px / 20px（1.25）· semibold · letterSpacing.md */
+  --font-heading-xs-line-height: 20px; /** 16px / 20px（1.25）· semibold · letterSpacing.md */
+  --font-heading-xs-letter-spacing: 0em; /** 16px / 20px（1.25）· semibold · letterSpacing.md */
+  --font-heading-sm-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 18px / 24px（1.33）· semibold · letterSpacing.md */
+  --font-heading-sm-font-size: 18px; /** 18px / 24px（1.33）· semibold · letterSpacing.md */
+  --font-heading-sm-line-height: 24px; /** 18px / 24px（1.33）· semibold · letterSpacing.md */
+  --font-heading-sm-letter-spacing: 0em; /** 18px / 24px（1.33）· semibold · letterSpacing.md */
+  --font-heading-md-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 20px / 28px（1.40）· semibold · letterSpacing.md */
+  --font-heading-md-font-size: 20px; /** 20px / 28px（1.40）· semibold · letterSpacing.md */
+  --font-heading-md-line-height: 28px; /** 20px / 28px（1.40）· semibold · letterSpacing.md */
+  --font-heading-md-letter-spacing: 0em; /** 20px / 28px（1.40）· semibold · letterSpacing.md */
+  --font-heading-lg-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 24px / 32px（1.33）· semibold · letterSpacing.md */
+  --font-heading-lg-font-size: 24px; /** 24px / 32px（1.33）· semibold · letterSpacing.md */
+  --font-heading-lg-line-height: 32px; /** 24px / 32px（1.33）· semibold · letterSpacing.md */
+  --font-heading-lg-letter-spacing: 0em; /** 24px / 32px（1.33）· semibold · letterSpacing.md */
+  --font-heading-xl-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 28px / 36px（1.29）· semibold · letterSpacing.sm */
+  --font-heading-xl-font-size: 28px; /** 28px / 36px（1.29）· semibold · letterSpacing.sm */
+  --font-heading-xl-line-height: 36px; /** 28px / 36px（1.29）· semibold · letterSpacing.sm */
+  --font-heading-xl-letter-spacing: -0.02em; /** 28px / 36px（1.29）· semibold · letterSpacing.sm */
+  --font-heading-xxl-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 32px / 40px（1.25）· semibold · letterSpacing.sm */
+  --font-heading-xxl-font-size: 32px; /** 32px / 40px（1.25）· semibold · letterSpacing.sm */
+  --font-heading-xxl-line-height: 40px; /** 32px / 40px（1.25）· semibold · letterSpacing.sm */
+  --font-heading-xxl-letter-spacing: -0.02em; /** 32px / 40px（1.25）· semibold · letterSpacing.sm */
+  --font-heading-xxxl-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 40px / 48px（1.20）· semibold · letterSpacing.sm */
+  --font-heading-xxxl-font-size: 40px; /** 40px / 48px（1.20）· semibold · letterSpacing.sm */
+  --font-heading-xxxl-line-height: 48px; /** 40px / 48px（1.20）· semibold · letterSpacing.sm */
+  --font-heading-xxxl-letter-spacing: -0.02em; /** 40px / 48px（1.20）· semibold · letterSpacing.sm */
+  --font-body-sm-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 14px / 24px（1.71）· regular · letterSpacing.md */
+  --font-body-sm-font-size: 14px; /** 14px / 24px（1.71）· regular · letterSpacing.md */
+  --font-body-sm-line-height: 24px; /** 14px / 24px（1.71）· regular · letterSpacing.md */
+  --font-body-sm-letter-spacing: 0em; /** 14px / 24px（1.71）· regular · letterSpacing.md */
+  --font-body-md-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 16px / 28px（1.75）· regular · letterSpacing.md */
+  --font-body-md-font-size: 16px; /** 16px / 28px（1.75）· regular · letterSpacing.md */
+  --font-body-md-line-height: 28px; /** 16px / 28px（1.75）· regular · letterSpacing.md */
+  --font-body-md-letter-spacing: 0em; /** 16px / 28px（1.75）· regular · letterSpacing.md */
+  --font-body-lg-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 18px / 28px（1.56）· regular · letterSpacing.md */
+  --font-body-lg-font-size: 18px; /** 18px / 28px（1.56）· regular · letterSpacing.md */
+  --font-body-lg-line-height: 28px; /** 18px / 28px（1.56）· regular · letterSpacing.md */
+  --font-body-lg-letter-spacing: 0em; /** 18px / 28px（1.56）· regular · letterSpacing.md */
+  --font-body-xl-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 20px / 32px（1.60）· regular · letterSpacing.md */
+  --font-body-xl-font-size: 20px; /** 20px / 32px（1.60）· regular · letterSpacing.md */
+  --font-body-xl-line-height: 32px; /** 20px / 32px（1.60）· regular · letterSpacing.md */
+  --font-body-xl-letter-spacing: 0em; /** 20px / 32px（1.60）· regular · letterSpacing.md */
+  --font-label-xs-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 10px / 12px（1.20）· medium · letterSpacing.lg */
+  --font-label-xs-font-size: 10px; /** 10px / 12px（1.20）· medium · letterSpacing.lg */
+  --font-label-xs-line-height: 12px; /** 10px / 12px（1.20）· medium · letterSpacing.lg */
+  --font-label-xs-letter-spacing: 0.02em; /** 10px / 12px（1.20）· medium · letterSpacing.lg */
+  --font-label-sm-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 12px / 16px（1.33）· medium · letterSpacing.lg */
+  --font-label-sm-font-size: 12px; /** 12px / 16px（1.33）· medium · letterSpacing.lg */
+  --font-label-sm-line-height: 16px; /** 12px / 16px（1.33）· medium · letterSpacing.lg */
+  --font-label-sm-letter-spacing: 0.02em; /** 12px / 16px（1.33）· medium · letterSpacing.lg */
+  --font-label-md-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 14px / 20px（1.43）· medium · letterSpacing.md */
+  --font-label-md-font-size: 14px; /** 14px / 20px（1.43）· medium · letterSpacing.md */
+  --font-label-md-line-height: 20px; /** 14px / 20px（1.43）· medium · letterSpacing.md */
+  --font-label-md-letter-spacing: 0em; /** 14px / 20px（1.43）· medium · letterSpacing.md */
+  --font-label-lg-font-family: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 16px / 24px（1.50）· medium · letterSpacing.md */
+  --font-label-lg-font-size: 16px; /** 16px / 24px（1.50）· medium · letterSpacing.md */
+  --font-label-lg-line-height: 24px; /** 16px / 24px（1.50）· medium · letterSpacing.md */
+  --font-label-lg-letter-spacing: 0em; /** 16px / 24px（1.50）· medium · letterSpacing.md */
+  --font-label-mono-xs-font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace; /** 10px / 12px（1.20）· regular · letterSpacing.md */
+  --font-label-mono-xs-font-size: 10px; /** 10px / 12px（1.20）· regular · letterSpacing.md */
+  --font-label-mono-xs-line-height: 12px; /** 10px / 12px（1.20）· regular · letterSpacing.md */
+  --font-label-mono-xs-letter-spacing: 0em; /** 10px / 12px（1.20）· regular · letterSpacing.md */
+  --font-label-mono-sm-font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace; /** 12px / 16px（1.33）· regular · letterSpacing.md */
+  --font-label-mono-sm-font-size: 12px; /** 12px / 16px（1.33）· regular · letterSpacing.md */
+  --font-label-mono-sm-line-height: 16px; /** 12px / 16px（1.33）· regular · letterSpacing.md */
+  --font-label-mono-sm-letter-spacing: 0em; /** 12px / 16px（1.33）· regular · letterSpacing.md */
+  --font-label-mono-md-font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace; /** 14px / 20px（1.43）· regular · letterSpacing.md */
+  --font-label-mono-md-font-size: 14px; /** 14px / 20px（1.43）· regular · letterSpacing.md */
+  --font-label-mono-md-line-height: 20px; /** 14px / 20px（1.43）· regular · letterSpacing.md */
+  --font-label-mono-md-letter-spacing: 0em; /** 14px / 20px（1.43）· regular · letterSpacing.md */
+  --font-label-mono-lg-font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace; /** 16px / 24px（1.50）· regular · letterSpacing.md */
+  --font-label-mono-lg-font-size: 16px; /** 16px / 24px（1.50）· regular · letterSpacing.md */
+  --font-label-mono-lg-line-height: 24px; /** 16px / 24px（1.50）· regular · letterSpacing.md */
+  --font-label-mono-lg-letter-spacing: 0em; /** 16px / 24px（1.50）· regular · letterSpacing.md */
+  --layout-breakpoint-xs: var(--dimension-breakpoint-xs);
+  --layout-breakpoint-sm: var(--dimension-breakpoint-sm);
+  --layout-breakpoint-md: var(--dimension-breakpoint-md);
+  --layout-breakpoint-lg: var(--dimension-breakpoint-lg);
+  --layout-breakpoint-xl: var(--dimension-breakpoint-xl);
+  --layout-breakpoint-xxl: var(--dimension-breakpoint-xxl);
+  --layout-grid-gutter-xs: var(--dimension-space-400); /** 16 */
+  --layout-grid-gutter-sm: var(--dimension-space-400); /** 16 */
+  --layout-grid-gutter-md: var(--dimension-space-600); /** 24 */
+  --layout-grid-gutter-lg: var(--dimension-space-800); /** 32 */
+  --layout-grid-gutter-xl: var(--dimension-space-800); /** 32 */
+  --layout-grid-gutter-xxl: var(--dimension-space-800); /** 32 */
+  --layout-grid-margin-xs: var(--dimension-space-400); /** 16 */
+  --layout-grid-margin-sm: var(--dimension-space-600); /** 24 */
+  --layout-grid-margin-md: var(--dimension-space-800); /** 32 */
+  --layout-grid-margin-lg: var(--dimension-space-1200); /** 48 */
+  --layout-grid-margin-xl: var(--dimension-space-1600); /** 64 */
+  --layout-grid-margin-xxl: var(--dimension-space-2000); /** 80 */
+  --layout-section-sm: var(--dimension-space-1200); /** 48 */
+  --layout-section-md: var(--dimension-space-1600); /** 64 */
+  --layout-section-lg: var(--dimension-space-2400); /** 96 */
+  --layout-section-xl: var(--dimension-space-3200); /** 128 */
+  --border-width-default: var(--dimension-border-025); /** 1px。境界線、区切り線、入力欄の枠 */
+  --border-width-selected: var(--dimension-border-050); /** 2px。選択タブの下線、選択カードの枠（color.border.selected） */
+  --border-width-focused: var(--dimension-border-050); /** 2px。フォーカスリング（color.border.focused）。outline-offset は 2px */
+  --font-display-sm-font-weight: var(--typography-weight-bold); /** 48px / 60px（1.25）· bold · letterSpacing.sm */
+  --font-display-md-font-weight: var(--typography-weight-bold); /** 64px / 80px（1.25）· bold · letterSpacing.sm */
+  --font-display-lg-font-weight: var(--typography-weight-bold); /** 80px / 100px（1.25）· bold · letterSpacing.sm */
+  --font-display-xl-font-weight: var(--typography-weight-bold); /** 96px / 120px（1.25）· bold · letterSpacing.sm */
+  --font-display-xxl-font-weight: var(--typography-weight-bold); /** 128px / 160px（1.25）· bold · letterSpacing.sm */
+  --font-heading-xs-font-weight: var(--typography-weight-semibold); /** 16px / 20px（1.25）· semibold · letterSpacing.md */
+  --font-heading-sm-font-weight: var(--typography-weight-semibold); /** 18px / 24px（1.33）· semibold · letterSpacing.md */
+  --font-heading-md-font-weight: var(--typography-weight-semibold); /** 20px / 28px（1.40）· semibold · letterSpacing.md */
+  --font-heading-lg-font-weight: var(--typography-weight-semibold); /** 24px / 32px（1.33）· semibold · letterSpacing.md */
+  --font-heading-xl-font-weight: var(--typography-weight-semibold); /** 28px / 36px（1.29）· semibold · letterSpacing.sm */
+  --font-heading-xxl-font-weight: var(--typography-weight-semibold); /** 32px / 40px（1.25）· semibold · letterSpacing.sm */
+  --font-heading-xxxl-font-weight: var(--typography-weight-semibold); /** 40px / 48px（1.20）· semibold · letterSpacing.sm */
+  --font-body-sm-font-weight: var(--typography-weight-regular); /** 14px / 24px（1.71）· regular · letterSpacing.md */
+  --font-body-md-font-weight: var(--typography-weight-regular); /** 16px / 28px（1.75）· regular · letterSpacing.md */
+  --font-body-lg-font-weight: var(--typography-weight-regular); /** 18px / 28px（1.56）· regular · letterSpacing.md */
+  --font-body-xl-font-weight: var(--typography-weight-regular); /** 20px / 32px（1.60）· regular · letterSpacing.md */
+  --font-label-xs-font-weight: var(--typography-weight-medium); /** 10px / 12px（1.20）· medium · letterSpacing.lg */
+  --font-label-sm-font-weight: var(--typography-weight-medium); /** 12px / 16px（1.33）· medium · letterSpacing.lg */
+  --font-label-md-font-weight: var(--typography-weight-medium); /** 14px / 20px（1.43）· medium · letterSpacing.md */
+  --font-label-lg-font-weight: var(--typography-weight-medium); /** 16px / 24px（1.50）· medium · letterSpacing.md */
+  --font-label-mono-xs-font-weight: var(--typography-weight-regular); /** 10px / 12px（1.20）· regular · letterSpacing.md */
+  --font-label-mono-sm-font-weight: var(--typography-weight-regular); /** 12px / 16px（1.33）· regular · letterSpacing.md */
+  --font-label-mono-md-font-weight: var(--typography-weight-regular); /** 14px / 20px（1.43）· regular · letterSpacing.md */
+  --font-label-mono-lg-font-weight: var(--typography-weight-regular); /** 16px / 24px（1.50）· regular · letterSpacing.md */
+}

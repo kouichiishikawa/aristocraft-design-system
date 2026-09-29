@@ -1,0 +1,49 @@
+{
+  "opacity": {
+    "$description": "不透明度（%）。名前 = 百分率。色のアルファ（color.neutral.{step}a）とは別に、要素全体を薄くする用途",
+    "0": {
+      "$type": "number",
+      "$value": 0.0
+    },
+    "4": {
+      "$type": "number",
+      "$value": 0.04
+    },
+    "8": {
+      "$type": "number",
+      "$value": 0.08
+    },
+    "12": {
+      "$type": "number",
+      "$value": 0.12
+    },
+    "16": {
+      "$type": "number",
+      "$value": 0.16
+    },
+    "24": {
+      "$type": "number",
+      "$value": 0.24
+    },
+    "32": {
+      "$type": "number",
+      "$value": 0.32
+    },
+    "40": {
+      "$type": "number",
+      "$value": 0.4
+    },
+    "64": {
+      "$type": "number",
+      "$value": 0.64
+    },
+    "80": {
+      "$type": "number",
+      "$value": 0.8
+    },
+    "100": {
+      "$type": "number",
+      "$value": 1.0
+    }
+  }
+}

@@ -1,0 +1,376 @@
+[
+ {
+  "cat": "surface",
+  "name": "surface.light.key",
+  "a": "#F8F6F4",
+  "b": "#F0F6FE",
+  "angle": "180deg",
+  "stops": [
+   "#F5F7F9",
+   "#F4F6FA",
+   "#F2F6FB",
+   "#F1F6FD",
+   "#F0F6FE"
+  ],
+  "note": "ライトのセクション地。gray.50 → blue.50",
+  "css": "linear-gradient(in oklch 180deg, #F8F6F4, #F0F6FE)",
+  "css_fallback": "linear-gradient(180deg, #F5F7F9, #F4F6FA, #F2F6FB, #F1F6FD, #F0F6FE)"
+ },
+ {
+  "cat": "surface",
+  "name": "surface.light.warm",
+  "a": "#F8F6F4",
+  "b": "#FEF5DD",
+  "angle": "180deg",
+  "stops": [
+   "#F7F6F4",
+   "#F9F6EE",
+   "#FBF6E9",
+   "#FCF5E3",
+   "#FEF5DD"
+  ],
+  "note": "ライトの暖かい地。gray.50 → amber.50（補色側）",
+  "css": "linear-gradient(in oklch 180deg, #F8F6F4, #FEF5DD)",
+  "css_fallback": "linear-gradient(180deg, #F7F6F4, #F9F6EE, #FBF6E9, #FCF5E3, #FEF5DD)"
+ },
+ {
+  "cat": "surface",
+  "name": "surface.dark.key",
+  "a": "#12100D",
+  "b": "#122670",
+  "angle": "180deg",
+  "stops": [
+   "#0F1013",
+   "#101729",
+   "#101D40",
+   "#112257",
+   "#122670"
+  ],
+  "note": "ダークのセクション地。gray.950 → blue.950",
+  "css": "linear-gradient(in oklch 180deg, #12100D, #122670)",
+  "css_fallback": "linear-gradient(180deg, #0F1013, #101729, #101D40, #112257, #122670)"
+ },
+ {
+  "cat": "surface",
+  "name": "surface.dark.warm",
+  "a": "#12100D",
+  "b": "#402C06",
+  "angle": "180deg",
+  "stops": [
+   "#12100D",
+   "#1D170D",
+   "#281E0D",
+   "#34250A",
+   "#402C06"
+  ],
+  "note": "ダークの暖かい地。gray.950 → amber.950",
+  "css": "linear-gradient(in oklch 180deg, #12100D, #402C06)",
+  "css_fallback": "linear-gradient(180deg, #12100D, #1D170D, #281E0D, #34250A, #402C06)"
+ },
+ {
+  "cat": "accent",
+  "name": "accent.key",
+  "a": "#29A5DA",
+  "b": "#316EEE",
+  "angle": "135deg",
+  "stops": [
+   "#29A5DA",
+   "#0D9AE0",
+   "#048DE6",
+   "#1B7EEB",
+   "#316EEE"
+  ],
+  "note": "sky.600 → blue.600（30°）",
+  "css": "linear-gradient(in oklch 135deg, #29A5DA, #316EEE)",
+  "css_fallback": "linear-gradient(135deg, #29A5DA, #0D9AE0, #048DE6, #1B7EEB, #316EEE)"
+ },
+ {
+  "cat": "accent",
+  "name": "accent.key.deep",
+  "a": "#316EEE",
+  "b": "#834BF4",
+  "angle": "135deg",
+  "stops": [
+   "#316EEE",
+   "#4B66F3",
+   "#605EF6",
+   "#7255F6",
+   "#834BF4"
+  ],
+  "note": "blue.600 → violet.600（30°）",
+  "css": "linear-gradient(in oklch 135deg, #316EEE, #834BF4)",
+  "css_fallback": "linear-gradient(135deg, #316EEE, #4B66F3, #605EF6, #7255F6, #834BF4)"
+ },
+ {
+  "cat": "accent",
+  "name": "accent.violet",
+  "a": "#956DF6",
+  "b": "#D91EEC",
+  "angle": "135deg",
+  "stops": [
+   "#956DF6",
+   "#A561F9",
+   "#B651F9",
+   "#C83EF5",
+   "#D91EEC"
+  ],
+  "note": "violet.500 → purple.500（30°）",
+  "css": "linear-gradient(in oklch 135deg, #956DF6, #D91EEC)",
+  "css_fallback": "linear-gradient(135deg, #956DF6, #A561F9, #B651F9, #C83EF5, #D91EEC)"
+ },
+ {
+  "cat": "accent",
+  "name": "accent.pink",
+  "a": "#D91EEC",
+  "b": "#F41B97",
+  "angle": "135deg",
+  "stops": [
+   "#D91EEC",
+   "#E21AD7",
+   "#EA18C1",
+   "#F018AC",
+   "#F41B97"
+  ],
+  "note": "purple.500 → pink.500（30°）",
+  "css": "linear-gradient(in oklch 135deg, #D91EEC, #F41B97)",
+  "css_fallback": "linear-gradient(135deg, #D91EEC, #E21AD7, #EA18C1, #F018AC, #F41B97)"
+ },
+ {
+  "cat": "accent",
+  "name": "accent.red",
+  "a": "#F41B97",
+  "b": "#F53C45",
+  "angle": "135deg",
+  "stops": [
+   "#F41B97",
+   "#F72182",
+   "#F8296E",
+   "#F7325A",
+   "#F53C45"
+  ],
+  "note": "pink.500 → red.500（30°）",
+  "css": "linear-gradient(in oklch 135deg, #F41B97, #F53C45)",
+  "css_fallback": "linear-gradient(135deg, #F41B97, #F72182, #F8296E, #F7325A, #F53C45)"
+ },
+ {
+  "cat": "accent",
+  "name": "accent.orange",
+  "a": "#F53C45",
+  "b": "#F6852B",
+  "angle": "135deg",
+  "stops": [
+   "#F53C45",
+   "#F85139",
+   "#F8642E",
+   "#F87529",
+   "#F6852B"
+  ],
+  "note": "red.500 → orange.500（30°）",
+  "css": "linear-gradient(in oklch 135deg, #F53C45, #F6852B)",
+  "css_fallback": "linear-gradient(135deg, #F53C45, #F85139, #F8642E, #F87529, #F6852B)"
+ },
+ {
+  "cat": "accent",
+  "name": "accent.amber",
+  "a": "#F99D5A",
+  "b": "#F6BE33",
+  "angle": "135deg",
+  "stops": [
+   "#F99D5A",
+   "#FBA44F",
+   "#FBAC45",
+   "#F9B53B",
+   "#F6BE33"
+  ],
+  "note": "orange.400 → amber.400（30°）",
+  "css": "linear-gradient(in oklch 135deg, #F99D5A, #F6BE33)",
+  "css_fallback": "linear-gradient(135deg, #F99D5A, #FBA44F, #FBAC45, #F9B53B, #F6BE33)"
+ },
+ {
+  "cat": "accent",
+  "name": "accent.lime",
+  "a": "#F6BE33",
+  "b": "#D4D736",
+  "angle": "135deg",
+  "stops": [
+   "#F6BE33",
+   "#F0C42D",
+   "#E8CA2B",
+   "#DFD12E",
+   "#D4D736"
+  ],
+  "note": "amber.400 → lime.400（30°）",
+  "css": "linear-gradient(in oklch 135deg, #F6BE33, #D4D736)",
+  "css_fallback": "linear-gradient(135deg, #F6BE33, #F0C42D, #E8CA2B, #DFD12E, #D4D736)"
+ },
+ {
+  "cat": "accent",
+  "name": "accent.green",
+  "a": "#ADB22B",
+  "b": "#29A818",
+  "angle": "135deg",
+  "stops": [
+   "#ADB22B",
+   "#97AF15",
+   "#7EAD01",
+   "#5DAB04",
+   "#29A818"
+  ],
+  "note": "lime.500 → green.500（30°）",
+  "css": "linear-gradient(in oklch 135deg, #ADB22B, #29A818)",
+  "css_fallback": "linear-gradient(135deg, #ADB22B, #97AF15, #7EAD01, #5DAB04, #29A818)"
+ },
+ {
+  "cat": "accent",
+  "name": "accent.teal",
+  "a": "#29A818",
+  "b": "#33C19D",
+  "angle": "135deg",
+  "stops": [
+   "#29A818",
+   "#06B04D",
+   "#00B66E",
+   "#12BC87",
+   "#33C19D"
+  ],
+  "note": "green.500 → teal.500（30°）",
+  "css": "linear-gradient(in oklch 135deg, #29A818, #33C19D)",
+  "css_fallback": "linear-gradient(135deg, #29A818, #06B04D, #00B66E, #12BC87, #33C19D)"
+ },
+ {
+  "cat": "accent",
+  "name": "accent.cyan",
+  "a": "#33C19D",
+  "b": "#2FBCC5",
+  "angle": "135deg",
+  "stops": [
+   "#33C19D",
+   "#28C0A9",
+   "#23BFB3",
+   "#26BEBD",
+   "#2FBCC5"
+  ],
+  "note": "teal.500 → cyan.500（30°）",
+  "css": "linear-gradient(in oklch 135deg, #33C19D, #2FBCC5)",
+  "css_fallback": "linear-gradient(135deg, #33C19D, #28C0A9, #23BFB3, #26BEBD, #2FBCC5)"
+ },
+ {
+  "cat": "accent",
+  "name": "accent.sky",
+  "a": "#2FBCC5",
+  "b": "#2EB5ED",
+  "angle": "135deg",
+  "stops": [
+   "#2FBCC5",
+   "#23BBCF",
+   "#1DBADA",
+   "#22B8E4",
+   "#2EB5ED"
+  ],
+  "note": "cyan.500 → sky.500（30°）",
+  "css": "linear-gradient(in oklch 135deg, #2FBCC5, #2EB5ED)",
+  "css_fallback": "linear-gradient(135deg, #2FBCC5, #23BBCF, #1DBADA, #22B8E4, #2EB5ED)"
+ },
+ {
+  "cat": "scrim",
+  "name": "scrim.dark",
+  "a": "rgba(18,16,13,0)",
+  "b": "rgba(18,16,13,0.72)",
+  "angle": "180deg",
+  "stops": [
+   "rgba(18,16,13,0)",
+   "rgba(18,16,13,0.18)",
+   "rgba(18,16,13,0.36)",
+   "rgba(18,16,13,0.54)",
+   "rgba(18,16,13,0.72)"
+  ],
+  "note": "画像の上の暗転。下端で gray.950 の 72%。白文字を乗せる",
+  "css": "linear-gradient(180deg, rgba(18,16,13,0) 0%, rgba(18,16,13,0.72) 100%)",
+  "css_fallback": "linear-gradient(180deg, rgba(18,16,13,0), rgba(18,16,13,0.72))"
+ },
+ {
+  "cat": "scrim",
+  "name": "scrim.light",
+  "a": "rgba(248,246,244,0)",
+  "b": "rgba(248,246,244,0.80)",
+  "angle": "180deg",
+  "stops": [
+   "rgba(248,246,244,0)",
+   "rgba(248,246,244,0.2)",
+   "rgba(248,246,244,0.4)",
+   "rgba(248,246,244,0.6)",
+   "rgba(248,246,244,0.8)"
+  ],
+  "note": "画像の上の明転。下端で gray.50 の 80%。黒文字を乗せる",
+  "css": "linear-gradient(180deg, rgba(248,246,244,0) 0%, rgba(248,246,244,0.80) 100%)",
+  "css_fallback": "linear-gradient(180deg, rgba(248,246,244,0), rgba(248,246,244,0.8))"
+ },
+ {
+  "cat": "ui",
+  "name": "ui.primary",
+  "a": "#4C87F6",
+  "b": "#1C55E0",
+  "angle": "180deg",
+  "stops": [
+   "#4C87F6",
+   "#3F7BF1",
+   "#336FEB",
+   "#2762E6",
+   "#1C55E0"
+  ],
+  "note": "塗りボタン。blue.500 → blue.700。白文字は下端で 6.08、上端で 3.45",
+  "css": "linear-gradient(in oklch 180deg, #4C87F6, #1C55E0)",
+  "css_fallback": "linear-gradient(180deg, #4C87F6, #3F7BF1, #336FEB, #2762E6, #1C55E0)"
+ },
+ {
+  "cat": "ui",
+  "name": "ui.primary.hover",
+  "a": "#316EEE",
+  "b": "#1B44B9",
+  "angle": "180deg",
+  "stops": [
+   "#316EEE",
+   "#2B63E1",
+   "#2659D3",
+   "#204EC6",
+   "#1B44B9"
+  ],
+  "note": "ホバー時。1 段ずつ濃く",
+  "css": "linear-gradient(in oklch 180deg, #316EEE, #1B44B9)",
+  "css_fallback": "linear-gradient(180deg, #316EEE, #2B63E1, #2659D3, #204EC6, #1B44B9)"
+ },
+ {
+  "cat": "ui",
+  "name": "ui.neutral.light",
+  "a": "#FFFFFF",
+  "b": "#DEDCD8",
+  "angle": "180deg",
+  "stops": [
+   "#FFFFFF",
+   "#F7F6F5",
+   "#EEEDEB",
+   "#E6E5E2",
+   "#DEDCD8"
+  ],
+  "note": "ライトの二次ボタン・カード",
+  "css": "linear-gradient(in oklch 180deg, #FFFFFF, #DEDCD8)",
+  "css_fallback": "linear-gradient(180deg, #FFFFFF, #F7F6F5, #EEEDEB, #E6E5E2, #DEDCD8)"
+ },
+ {
+  "cat": "ui",
+  "name": "ui.neutral.dark",
+  "a": "#393631",
+  "b": "#25221E",
+  "angle": "180deg",
+  "stops": [
+   "#393631",
+   "#34312C",
+   "#2F2C27",
+   "#2A2723",
+   "#25221E"
+  ],
+  "note": "ダークの二次ボタン・カード",
+  "css": "linear-gradient(in oklch 180deg, #393631, #25221E)",
+  "css_fallback": "linear-gradient(180deg, #393631, #34312C, #2F2C27, #2A2723, #25221E)"
+ }
+]
