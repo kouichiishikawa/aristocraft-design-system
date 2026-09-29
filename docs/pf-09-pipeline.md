@@ -48,8 +48,8 @@
 1. `build/validate.js`: `$metadata.json` の一覧とディスクの一致、キー文字、`$type` の存在と値の形（10 型）、token 兼 group の禁止、重複名（light / dark は同一集合であること）、参照解決
 2. Style Dictionary: 未解決参照はビルド失敗
 3. `build/dist.test.js`（node:test 6 件）: 出力に `[object Object]` / 未解決参照 / `-root` が無い、`var()` の参照先が全て定義済み、本数（272 / 191 / 382）、flat 524 件、Figma の alias 解決と「全トークンが変数か Style か skip のどれか」、TS が読み込めて値が一致
-4. `docs/reference/semantic_color_build.py`: コントラスト 276 件（CI で再実行）
-5. CI（`.github/workflows/tokens.yml`）: Node 24 + Python 3.12 のクリーン環境で 1〜4 を実行し、`tokens/` `dist/` に差分が無いことを確認
+4. `docs/reference/semantic_color_check.py`: コミット済み JSON を読んでコントラスト 276 件（PF-05 で生成器から分離。生成器 `semantic_color_build.py` は再設計時のみ）
+5. CI（`.github/workflows/ci.yml`）: Node 24 + Python 3.12 のクリーン環境で 1〜4 を実行し、`dist/` に差分が無いことを確認
 
 ## 既知の制約
 

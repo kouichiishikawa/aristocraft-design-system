@@ -47,3 +47,11 @@
 **Rule**: `npm view <pkg> peerDependencies` で範囲を見てから版を決める。`npm approve-scripts` の一覧を確認する。tsdown で CSS を扱うには `@tsdown/css`、`'use client'` は banner で付ける
 **Verification**: `npm install` が警告なしで終わり、`npm test` が通ること
 **Applies to**: all projects
+
+### [2026-09-29] [workflow] 生成器が正本を上書きする構成は、正本を 1 つに戻す
+
+**Mistake**: semantic color だけ Python 生成器が正本で、JSON を直接直すと CI の差分検査で落ちる構成になっていた
+**Root cause**: PF-08 で設計と生成を同じスクリプトにまとめ、CI にそのまま載せた
+**Rule**: 正本は tokens JSON の 1 系統。生成器は再設計用、CI は JSON を読む検査だけにする（semantic_color_check.py）
+**Verification**: JSON を 1 行変えた PR が検査だけで通ること（PR #1）
+**Applies to**: all projects

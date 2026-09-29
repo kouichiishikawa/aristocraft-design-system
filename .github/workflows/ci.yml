@@ -30,12 +30,12 @@ jobs:
       - name: Validate, build, test (all workspaces)
         run: npm test
 
-      # Semantic color is generated from docs/reference; re-run it and confirm 276 contrast checks still pass.
-      - name: Regenerate semantic color (contrast checks)
+      # 276 WCAG contrast checks against the committed semantic color JSON (the source of truth).
+      - name: Contrast checks (semantic color)
         run: npm run check:color
 
       # Generated files are committed. Any drift means someone edited dist/ or tokens/ by hand.
       - name: Generated files match the committed ones
         run: |
           git status --porcelain
-          git diff --exit-code --stat -- packages/tokens/tokens packages/tokens/dist docs/reference/semantic-color-map.json docs/reference/semantic-color-checks.json docs/reference/semantic-shadow.json
+          git diff --exit-code --stat -- packages/tokens/dist docs/reference/semantic-color-checks.json

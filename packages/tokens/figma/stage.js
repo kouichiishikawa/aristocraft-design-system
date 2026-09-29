@@ -5,7 +5,8 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const stage = process.argv[2];
-const [part, parts] = (process.argv[3] ?? '1/1').split('/').map(Number);
+const only = process.argv.includes('--only') ? process.argv[process.argv.indexOf('--only') + 1] : null;
+const [part, parts] = (process.argv[3] && !process.argv[3].startsWith('--') ? process.argv[3] : '1/1').split('/').map(Number);
 const all = JSON.parse(fs.readFileSync(path.join(ROOT, 'dist/figma/variables.json'), 'utf8'));
 const template = fs.readFileSync(path.join(ROOT, 'figma/import.js'), 'utf8');
 
@@ -20,7 +21,9 @@ else {
   // codeSyntax is derivable from the name (see css() in import.js) except for the shadow layer
   // colours, which point at the composite CSS shadow token; keep only the non-derivable ones.
   const derived = (name) => `var(--ac-${name.split('/').map((x) => x.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()).join('-')})`;
-  const vars = col.variables.map(({ codeSyntax, ...v }) => (codeSyntax === derived(v.name) ? v : { ...v, codeSyntax }));
+  const vars = col.variables
+    .filter((v) => !only || v.name.startsWith(only)) // `--only color/background/brand` = re-sync one group
+    .map(({ codeSyntax, ...v }) => (codeSyntax === derived(v.name) ? v : { ...v, codeSyntax }));
   const size = Math.ceil(vars.length / parts);
   data = { collections: [{ ...col, variables: vars.slice((part - 1) * size, part * size) }] };
 }
