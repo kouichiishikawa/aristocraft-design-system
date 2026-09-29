@@ -6,8 +6,8 @@
 |---|---|
 | 基本セット | **Lucide**（`lucide-react` 1.48、ISC）。24px グリッド、2px ストローク、丸端 |
 | アニメーション | **animateicons.in の Lucide 版**（`@animateicons/react`、MIT、Motion で動く。Lucide 全体ではなく 669 個の部分集合）を、動きが必要な部品にだけ個別採用する。採用したものは `packages/ui/icons.json` の `animated` に理由つきで列挙 |
-| ブランドロゴ | **Simple Icons**（`simple-icons` 16.33、CC0）。Lucide はブランドロゴを持たない方針を明文化している。CC0 はコードに対してで、各社の商標ガイドラインは別（`guidelines` フィールドを確認） |
-| サイズ | `dimension.size` の 300 / 400 / 500 / 600 = 12 / 16 / 20 / 24px（`sm` / `md` / `lg` / `xl`）。ストローク幅は Lucide 既定どおりサイズに比例して縮む |
+| ブランドロゴ | **Simple Icons**（`simple-icons` 16.33、CC0）。Lucide はブランドロゴを持たない方針を明文化している。CC0 はコードに対してで、各社の商標ガイドラインは別（`guidelines` フィールドを確認）。**例外: LinkedIn** は Simple Icons から削除済み（本家の要請）で公式配布は PNG のみのため、Font Awesome Free 6 の `linkedin`（CC BY 4.0）を `packages/ui/icons/brand/linkedin.json` に置いて使う |
+| サイズ | `dimension.size` の 300 / 400 / 500 / 600 = 12 / 16 / 20 / 24px（`sm` / `md` / `lg` / `xl`）。ストローク幅は Lucide 既定どおりサイズに比例して縮む。**ブランドロゴは 24 の枠に対して 20/24**（viewBox `-2.4 -2.4 28.8 28.8`）で描き、線画の Lucide と光学的に揃える |
 | 色 | `currentColor`。親の `color` を `--ac-color-icon-*` で指定する。Figma は `color/icon/default` に束縛 |
 | 採用一覧 | `packages/ui/icons.json` が正本。コードと Figma の両方をここから生成する |
 
@@ -30,10 +30,12 @@ import { BrandIcon, Icon } from '@aristocraft/ui';
 | 要素 | 内容 |
 |---|---|
 | `icon/<name>` × 71 | Lucide の SVG から生成した 24×24 のコンポーネント。ストロークは**アウトライン化して 1 つの塗りベクター `glyph`** にし（Figma のストロークは縮小しても線幅が変わらないため）、塗りを `color/icon/default` に束縛。制約は Scale なのでどのサイズでも線幅が比例する |
-| `brand/<name>` × 9 | Simple Icons。塗りを `color/icon/default` に束縛。description にブランド色の hex |
+| `brand/<name>` × 10 | Simple Icons（LinkedIn は Font Awesome）。glyph は 20/24 に縮めて中央配置、塗りを `color/icon/default` に束縛。description にブランド色の hex と出典 |
 | `Icon`（コンポーネントセット） | variant `size` = sm / md / lg / xl。幅高さは `dimension/size/300〜600` に束縛。`glyph` は instance swap（候補 = icon/* と brand/*） |
 
 使い方: `Icon` を置いて size を選び、`glyph` で差し替える。色は glyph 内のベクターの束縛を `color/icon/*` の別変数に変える。
+
+ページは 1 つの auto-layout フレーム `Library`（見出し → Icon component と Preview → icons.json のグループごとのセクション → brand）。各セルは主コンポーネントと名前ラベル（`font/label/mono/xs`）。レイアウトは `figma/icons-stage.js` とは別に手で組んだので、アイコンを追加したら該当グループのグリッドへ入れる。
 
 ## 追加・更新の手順
 
