@@ -96,7 +96,7 @@ if __name__=='__main__':
             if path in parents: node.setdefault(path.split('.')[-1],{})['$root']=tok
             else: node[path.split('.')[-1]]=tok
         out['elevation']['shadow']={"$description":"4 段。surface の階層とは独立に、部品側で強さを選ぶ",**{k:{"$type":"shadow","$value":layers(v[mode]),"$description":v['desc']} for k,v in SH.items()}}
-        json.dump(out,open(f'../../tokens/semantic/color.{mode}.json','w'),indent=2,ensure_ascii=False)
+        json.dump(out,open(f'../../packages/tokens/tokens/semantic/color.{mode}.json','w'),indent=2,ensure_ascii=False)
     # checks
     checks=[]
     def chk(mode,label,fg,bg,need):

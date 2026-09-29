@@ -10,7 +10,7 @@ const STAGE = '__STAGE__'; // primitives | semantic | color | text | effects | v
 const data = __DATA__;
 
 // CSS custom property name from the Figma name (same rule as build/hooks.js cssName).
-const css = (name) => `var(--${name.split('/').map((x) => x.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()).join('-')})`;
+const css = (name) => `var(--ac-${name.split('/').map((x) => x.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()).join('-')})`;
 const hex = (h) => {
   const n = h.replace('#', '');
   const p = (i) => parseInt(n.slice(i, i + 2), 16) / 255;

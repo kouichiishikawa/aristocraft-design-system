@@ -15,7 +15,9 @@ export const cleanPath = (path) => path.filter((p) => p !== ROOT);
 
 /** `lineHeight` -> `line-height`; `050`, `100a`, `xxl` stay as they are. */
 const kebabSegment = (s) => s.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
-export const cssName = (path) => cleanPath(path).map(kebabSegment).join('-');
+/** CSS custom property prefix (PF-04 decision, 2026-09-29): keeps the library's variables out of Tailwind/shadcn namespaces. */
+export const CSS_PREFIX = 'ac';
+export const cssName = (path) => [CSS_PREFIX, ...cleanPath(path).map(kebabSegment)].join('-');
 export const dotName = (path) => cleanPath(path).join('.');
 export const figmaName = (path) => cleanPath(path).join('/');
 

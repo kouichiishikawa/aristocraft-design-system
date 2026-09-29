@@ -1,0 +1,26 @@
+{
+  "name": "@aristocraft/tokens",
+  "version": "0.1.0",
+  "private": true,
+  "description": "aristocraft design tokens (DTCG source, Style Dictionary build: CSS / TS / JSON / Figma)",
+  "type": "module",
+  "scripts": {
+    "build": "node build/index.js",
+    "test": "node build/validate.js && npm run build && node --test build/dist.test.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "style-dictionary": "^5.5.5"
+  },
+  "files": [
+    "dist",
+    "tokens"
+  ],
+  "exports": {
+    ".": "./dist/ts/tokens.ts",
+    "./css": "./dist/css/tokens.css",
+    "./css/*": "./dist/css/*",
+    "./json": "./dist/json/tokens.json",
+    "./figma": "./dist/figma/variables.json"
+  }
+}

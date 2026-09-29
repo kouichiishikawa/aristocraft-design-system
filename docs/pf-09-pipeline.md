@@ -12,7 +12,7 @@
 |---|---|---|
 | ツール | Style Dictionary 5.5（ESM、`usesDtcg` 自動判定） | 計画どおり。Terrazzo 2 の方が DTCG 準拠は上だが採用実績と情報量で SD |
 | token 兼 group（52 件） | DTCG 2025.10 の `$root` に書き換え | 公開名を変えない。`semantic_color_build.py` が自動で `$root` を出す |
-| CSS 変数の接頭辞 | なし（`--color-text-brand`） | Tailwind v4 の `@theme` にそのまま流せる。衝突は名前空間（color / dimension / font …）で回避 |
+| CSS 変数の接頭辞 | `ac`（`--ac-color-text-brand`）。2026-09-29 の PF-04 で「なし」から変更 | 部品は CSS Modules + `var()` で出荷する（Tailwind に依存しない）と決めたため、利用側の Tailwind / shadcn の `--color-*` と衝突しない接頭辞を優先 |
 | 名前の変換 | kebab（`lineHeight` → `line-height`、`050` はそのまま）、`$root` は落とす | SD 5.5 は `$root` を名前に漏らす（issue #1757）ので自前の name transform |
 | TypeScript の入れ子 | `$root` は `DEFAULT` キー（`color.light.color.text.brand.DEFAULT`） | 入れ子オブジェクトは値と子を同時に持てない。Tailwind の慣習に合わせた |
 | typography の CSS | `font` 短縮形ではなくプロパティごとに展開（`--font-heading-md-font-size` など 5 本） | 短縮形は letter-spacing を持てない（SD が警告して落とす） |
@@ -62,4 +62,4 @@
 
 - PF-10: `dist/figma/variables.json` を `use_figma` で hicard ワークスペースの Professional ファイルに投入（collections → variables → alias → text / effect styles の順に小分けで）
 - PF-05: Button 1 部品で tokens → CSS → Storybook → Figma の往復を検証
-- 接頭辞を後から付ける場合は `build/hooks.js` の `cssName` 1 か所
+- 接頭辞は `build/hooks.js` の `CSS_PREFIX`（現在 `ac`）

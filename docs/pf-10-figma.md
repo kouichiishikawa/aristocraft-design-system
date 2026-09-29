@@ -15,18 +15,18 @@
 | Text Styles | font/display 5・heading 7・body 4・label 4・label/mono 4 | 24 |
 | Effect Styles | elevation/shadow rest / lifted / floating / overlay。各 2 層、色は `elevation/shadow/*/layerN` 変数に束縛 | 4 |
 
-検証: 496 変数、重複なし。`color/text/brand` は light で blue/700 (#1C55E0)、dark で blue/400 (#6C9FF8) に解決。全変数に WEB code syntax（`var(--…)`）を設定。
+検証: 496 変数、重複なし。`color/text/brand` は light で blue/700 (#1C55E0)、dark で blue/400 (#6C9FF8) に解決。全変数に WEB code syntax（`var(--ac-…)`）を設定。
 
 ## トークン名と Figma 名の対応
 
 | tokens/（公開名） | Figma | CSS |
 |---|---|---|
-| `color.text.brand` | `color/text/brand`（color） | `--color-text-brand` |
-| `color.text.brand.bold` | `color/text/brand/bold` | `--color-text-brand-bold` |
-| `dimension.space.100` | `dimension/space/100`（primitives） | `--dimension-space-100` |
-| `typography.lineHeight.md` | `typography/lineHeight/md` | `--typography-line-height-md` |
-| `font.heading.md`（typography 複合） | Text Style `font/heading/md` | `--font-heading-md-*`（5 本） |
-| `elevation.shadow.rest`（shadow 複合） | Effect Style `elevation/shadow/rest` + 色変数 `elevation/shadow/rest/layer1,2` | `--elevation-shadow-rest` |
+| `color.text.brand` | `color/text/brand`（color） | `--ac-color-text-brand` |
+| `color.text.brand.bold` | `color/text/brand/bold` | `--ac-color-text-brand-bold` |
+| `dimension.space.100` | `dimension/space/100`（primitives） | `--ac-dimension-space-100` |
+| `typography.lineHeight.md` | `typography/lineHeight/md` | `--ac-typography-line-height-md` |
+| `font.heading.md`（typography 複合） | Text Style `font/heading/md` | `--ac-font-heading-md-*`（5 本） |
+| `elevation.shadow.rest`（shadow 複合） | Effect Style `elevation/shadow/rest` + 色変数 `elevation/shadow/rest/layer1,2` | `--ac-elevation-shadow-rest` |
 
 規則: `.` → `/`。`$root` は名前に出ない。変数の description はトークンの `$description`。Text Style の description に CSS の font-family スタックと変数名を記載。
 

@@ -35,4 +35,4 @@ jobs:
       - name: Generated files match the committed ones
         run: |
           git status --porcelain
-          git diff --exit-code --stat -- tokens dist docs/reference/semantic-color-map.json docs/reference/semantic-color-checks.json docs/reference/semantic-shadow.json
+          git diff --exit-code --stat -- packages/tokens/tokens packages/tokens/dist docs/reference/semantic-color-map.json docs/reference/semantic-color-checks.json docs/reference/semantic-shadow.json

@@ -2,3 +2,8 @@ node_modules/
 .DS_Store
 docs/reference/__pycache__/
 .claude/
+storybook-static/
+.next/
+examples/*/dist/
+packages/ui/dist/
+*.tsbuildinfo

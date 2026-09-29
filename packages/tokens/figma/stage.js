@@ -19,7 +19,7 @@ else {
   // Strip what the plugin can derive (codeSyntax) and slice into parts to stay under the 50k-char limit.
   // codeSyntax is derivable from the name (see css() in import.js) except for the shadow layer
   // colours, which point at the composite CSS shadow token; keep only the non-derivable ones.
-  const derived = (name) => `var(--${name.split('/').map((x) => x.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()).join('-')})`;
+  const derived = (name) => `var(--ac-${name.split('/').map((x) => x.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()).join('-')})`;
   const vars = col.variables.map(({ codeSyntax, ...v }) => (codeSyntax === derived(v.name) ? v : { ...v, codeSyntax }));
   const size = Math.ceil(vars.length / parts);
   data = { collections: [{ ...col, variables: vars.slice((part - 1) * size, part * size) }] };

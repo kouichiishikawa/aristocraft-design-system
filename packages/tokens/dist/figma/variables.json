@@ -17,7 +17,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-0)",
+          "codeSyntax": "var(--ac-color-neutral-0)",
           "values": {
             "value": "#FFFFFF"
           }
@@ -31,7 +31,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-50)",
+          "codeSyntax": "var(--ac-color-neutral-50)",
           "values": {
             "value": "#F8F6F4"
           }
@@ -45,7 +45,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-100)",
+          "codeSyntax": "var(--ac-color-neutral-100)",
           "values": {
             "value": "#DEDCD8"
           }
@@ -59,7 +59,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-200)",
+          "codeSyntax": "var(--ac-color-neutral-200)",
           "values": {
             "value": "#C5C2BD"
           }
@@ -73,7 +73,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-300)",
+          "codeSyntax": "var(--ac-color-neutral-300)",
           "values": {
             "value": "#ACA9A2"
           }
@@ -87,7 +87,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-400)",
+          "codeSyntax": "var(--ac-color-neutral-400)",
           "values": {
             "value": "#949089"
           }
@@ -101,7 +101,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-500)",
+          "codeSyntax": "var(--ac-color-neutral-500)",
           "values": {
             "value": "#7C7871"
           }
@@ -115,7 +115,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-600)",
+          "codeSyntax": "var(--ac-color-neutral-600)",
           "values": {
             "value": "#65615A"
           }
@@ -129,7 +129,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-700)",
+          "codeSyntax": "var(--ac-color-neutral-700)",
           "values": {
             "value": "#4F4B45"
           }
@@ -143,7 +143,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-800)",
+          "codeSyntax": "var(--ac-color-neutral-800)",
           "values": {
             "value": "#393631"
           }
@@ -157,7 +157,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-900)",
+          "codeSyntax": "var(--ac-color-neutral-900)",
           "values": {
             "value": "#25221E"
           }
@@ -171,7 +171,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-950)",
+          "codeSyntax": "var(--ac-color-neutral-950)",
           "values": {
             "value": "#12100D"
           }
@@ -185,7 +185,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-1000)",
+          "codeSyntax": "var(--ac-color-neutral-1000)",
           "values": {
             "value": "#000000"
           }
@@ -199,7 +199,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-100a)",
+          "codeSyntax": "var(--ac-color-neutral-100a)",
           "values": {
             "value": "#12100D1E"
           }
@@ -213,7 +213,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-200a)",
+          "codeSyntax": "var(--ac-color-neutral-200a)",
           "values": {
             "value": "#12100D3A"
           }
@@ -227,7 +227,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-300a)",
+          "codeSyntax": "var(--ac-color-neutral-300a)",
           "values": {
             "value": "#12100D57"
           }
@@ -241,7 +241,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-400a)",
+          "codeSyntax": "var(--ac-color-neutral-400a)",
           "values": {
             "value": "#12100D72"
           }
@@ -255,7 +255,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-900a)",
+          "codeSyntax": "var(--ac-color-neutral-900a)",
           "values": {
             "value": "#F8F6F414"
           }
@@ -269,7 +269,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-800a)",
+          "codeSyntax": "var(--ac-color-neutral-800a)",
           "values": {
             "value": "#F8F6F42A"
           }
@@ -283,7 +283,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-700a)",
+          "codeSyntax": "var(--ac-color-neutral-700a)",
           "values": {
             "value": "#F8F6F441"
           }
@@ -297,7 +297,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-neutral-600a)",
+          "codeSyntax": "var(--ac-color-neutral-600a)",
           "values": {
             "value": "#F8F6F459"
           }
@@ -311,7 +311,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-blue-50)",
+          "codeSyntax": "var(--ac-color-blue-50)",
           "values": {
             "value": "#F0F6FE"
           }
@@ -325,7 +325,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-blue-100)",
+          "codeSyntax": "var(--ac-color-blue-100)",
           "values": {
             "value": "#CEE1FC"
           }
@@ -339,7 +339,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-blue-200)",
+          "codeSyntax": "var(--ac-color-blue-200)",
           "values": {
             "value": "#ADCCFA"
           }
@@ -353,7 +353,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-blue-300)",
+          "codeSyntax": "var(--ac-color-blue-300)",
           "values": {
             "value": "#8CB6F9"
           }
@@ -367,7 +367,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-blue-400)",
+          "codeSyntax": "var(--ac-color-blue-400)",
           "values": {
             "value": "#6C9FF8"
           }
@@ -381,7 +381,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-blue-500)",
+          "codeSyntax": "var(--ac-color-blue-500)",
           "values": {
             "value": "#4C87F6"
           }
@@ -395,7 +395,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-blue-600)",
+          "codeSyntax": "var(--ac-color-blue-600)",
           "values": {
             "value": "#316EEE"
           }
@@ -409,7 +409,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-blue-700)",
+          "codeSyntax": "var(--ac-color-blue-700)",
           "values": {
             "value": "#1C55E0"
           }
@@ -423,7 +423,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-blue-800)",
+          "codeSyntax": "var(--ac-color-blue-800)",
           "values": {
             "value": "#1B44B9"
           }
@@ -437,7 +437,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-blue-900)",
+          "codeSyntax": "var(--ac-color-blue-900)",
           "values": {
             "value": "#183594"
           }
@@ -451,7 +451,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-blue-950)",
+          "codeSyntax": "var(--ac-color-blue-950)",
           "values": {
             "value": "#122670"
           }
@@ -465,7 +465,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-violet-50)",
+          "codeSyntax": "var(--ac-color-violet-50)",
           "values": {
             "value": "#F6F3FE"
           }
@@ -479,7 +479,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-violet-100)",
+          "codeSyntax": "var(--ac-color-violet-100)",
           "values": {
             "value": "#E2D9FC"
           }
@@ -493,7 +493,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-violet-200)",
+          "codeSyntax": "var(--ac-color-violet-200)",
           "values": {
             "value": "#CFBFFA"
           }
@@ -507,7 +507,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-violet-300)",
+          "codeSyntax": "var(--ac-color-violet-300)",
           "values": {
             "value": "#BBA5F9"
           }
@@ -521,7 +521,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-violet-400)",
+          "codeSyntax": "var(--ac-color-violet-400)",
           "values": {
             "value": "#A88AF8"
           }
@@ -535,7 +535,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-violet-500)",
+          "codeSyntax": "var(--ac-color-violet-500)",
           "values": {
             "value": "#956DF6"
           }
@@ -549,7 +549,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-violet-600)",
+          "codeSyntax": "var(--ac-color-violet-600)",
           "values": {
             "value": "#834BF4"
           }
@@ -563,7 +563,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-violet-700)",
+          "codeSyntax": "var(--ac-color-violet-700)",
           "values": {
             "value": "#6E3BD5"
           }
@@ -577,7 +577,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-violet-800)",
+          "codeSyntax": "var(--ac-color-violet-800)",
           "values": {
             "value": "#5830B1"
           }
@@ -591,7 +591,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-violet-900)",
+          "codeSyntax": "var(--ac-color-violet-900)",
           "values": {
             "value": "#44268E"
           }
@@ -605,7 +605,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-violet-950)",
+          "codeSyntax": "var(--ac-color-violet-950)",
           "values": {
             "value": "#311C6C"
           }
@@ -619,7 +619,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-purple-50)",
+          "codeSyntax": "var(--ac-color-purple-50)",
           "values": {
             "value": "#F6F4F6"
           }
@@ -633,7 +633,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-purple-100)",
+          "codeSyntax": "var(--ac-color-purple-100)",
           "values": {
             "value": "#E9DAE8"
           }
@@ -647,7 +647,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-purple-200)",
+          "codeSyntax": "var(--ac-color-purple-200)",
           "values": {
             "value": "#E5B9E5"
           }
@@ -661,7 +661,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-purple-300)",
+          "codeSyntax": "var(--ac-color-purple-300)",
           "values": {
             "value": "#E492E8"
           }
@@ -675,7 +675,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-purple-400)",
+          "codeSyntax": "var(--ac-color-purple-400)",
           "values": {
             "value": "#E55DF0"
           }
@@ -689,7 +689,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-purple-500)",
+          "codeSyntax": "var(--ac-color-purple-500)",
           "values": {
             "value": "#D91EEC"
           }
@@ -703,7 +703,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-purple-600)",
+          "codeSyntax": "var(--ac-color-purple-600)",
           "values": {
             "value": "#BD00D2"
           }
@@ -717,7 +717,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-purple-700)",
+          "codeSyntax": "var(--ac-color-purple-700)",
           "values": {
             "value": "#9D11B2"
           }
@@ -731,7 +731,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-purple-800)",
+          "codeSyntax": "var(--ac-color-purple-800)",
           "values": {
             "value": "#7D1F8E"
           }
@@ -745,7 +745,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-purple-900)",
+          "codeSyntax": "var(--ac-color-purple-900)",
           "values": {
             "value": "#5D236B"
           }
@@ -759,7 +759,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-purple-950)",
+          "codeSyntax": "var(--ac-color-purple-950)",
           "values": {
             "value": "#41204B"
           }
@@ -773,7 +773,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-pink-50)",
+          "codeSyntax": "var(--ac-color-pink-50)",
           "values": {
             "value": "#F6F4F5"
           }
@@ -787,7 +787,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-pink-100)",
+          "codeSyntax": "var(--ac-color-pink-100)",
           "values": {
             "value": "#E9DBDF"
           }
@@ -801,7 +801,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-pink-200)",
+          "codeSyntax": "var(--ac-color-pink-200)",
           "values": {
             "value": "#E5BDCA"
           }
@@ -815,7 +815,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-pink-300)",
+          "codeSyntax": "var(--ac-color-pink-300)",
           "values": {
             "value": "#EA99B7"
           }
@@ -829,7 +829,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-pink-400)",
+          "codeSyntax": "var(--ac-color-pink-400)",
           "values": {
             "value": "#F26AA6"
           }
@@ -843,7 +843,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-pink-500)",
+          "codeSyntax": "var(--ac-color-pink-500)",
           "values": {
             "value": "#F41B97"
           }
@@ -857,7 +857,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-pink-600)",
+          "codeSyntax": "var(--ac-color-pink-600)",
           "values": {
             "value": "#D50385"
           }
@@ -871,7 +871,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-pink-700)",
+          "codeSyntax": "var(--ac-color-pink-700)",
           "values": {
             "value": "#B21272"
           }
@@ -885,7 +885,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-pink-800)",
+          "codeSyntax": "var(--ac-color-pink-800)",
           "values": {
             "value": "#8D1E5E"
           }
@@ -899,7 +899,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-pink-900)",
+          "codeSyntax": "var(--ac-color-pink-900)",
           "values": {
             "value": "#6A214A"
           }
@@ -913,7 +913,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-pink-950)",
+          "codeSyntax": "var(--ac-color-pink-950)",
           "values": {
             "value": "#4A1F36"
           }
@@ -927,7 +927,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-red-50)",
+          "codeSyntax": "var(--ac-color-red-50)",
           "values": {
             "value": "#FEF2F0"
           }
@@ -941,7 +941,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-red-100)",
+          "codeSyntax": "var(--ac-color-red-100)",
           "values": {
             "value": "#FCD5CF"
           }
@@ -955,7 +955,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-red-200)",
+          "codeSyntax": "var(--ac-color-red-200)",
           "values": {
             "value": "#FAB6AE"
           }
@@ -969,7 +969,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-red-300)",
+          "codeSyntax": "var(--ac-color-red-300)",
           "values": {
             "value": "#FA958C"
           }
@@ -983,7 +983,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-red-400)",
+          "codeSyntax": "var(--ac-color-red-400)",
           "values": {
             "value": "#F86E69"
           }
@@ -997,7 +997,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-red-500)",
+          "codeSyntax": "var(--ac-color-red-500)",
           "values": {
             "value": "#F53C45"
           }
@@ -1011,7 +1011,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-red-600)",
+          "codeSyntax": "var(--ac-color-red-600)",
           "values": {
             "value": "#D92538"
           }
@@ -1025,7 +1025,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-red-700)",
+          "codeSyntax": "var(--ac-color-red-700)",
           "values": {
             "value": "#B91D31"
           }
@@ -1039,7 +1039,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-red-800)",
+          "codeSyntax": "var(--ac-color-red-800)",
           "values": {
             "value": "#991529"
           }
@@ -1053,7 +1053,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-red-900)",
+          "codeSyntax": "var(--ac-color-red-900)",
           "values": {
             "value": "#7A1021"
           }
@@ -1067,7 +1067,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-red-950)",
+          "codeSyntax": "var(--ac-color-red-950)",
           "values": {
             "value": "#5D0918"
           }
@@ -1081,7 +1081,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-orange-50)",
+          "codeSyntax": "var(--ac-color-orange-50)",
           "values": {
             "value": "#FEF3EA"
           }
@@ -1095,7 +1095,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-orange-100)",
+          "codeSyntax": "var(--ac-color-orange-100)",
           "values": {
             "value": "#FDDFC9"
           }
@@ -1109,7 +1109,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-orange-200)",
+          "codeSyntax": "var(--ac-color-orange-200)",
           "values": {
             "value": "#FCCAA7"
           }
@@ -1123,7 +1123,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-orange-300)",
+          "codeSyntax": "var(--ac-color-orange-300)",
           "values": {
             "value": "#FBB482"
           }
@@ -1137,7 +1137,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-orange-400)",
+          "codeSyntax": "var(--ac-color-orange-400)",
           "values": {
             "value": "#F99D5A"
           }
@@ -1151,7 +1151,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-orange-500)",
+          "codeSyntax": "var(--ac-color-orange-500)",
           "values": {
             "value": "#F6852B"
           }
@@ -1165,7 +1165,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-orange-600)",
+          "codeSyntax": "var(--ac-color-orange-600)",
           "values": {
             "value": "#E27826"
           }
@@ -1179,7 +1179,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-orange-700)",
+          "codeSyntax": "var(--ac-color-orange-700)",
           "values": {
             "value": "#AC581A"
           }
@@ -1193,7 +1193,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-orange-800)",
+          "codeSyntax": "var(--ac-color-orange-800)",
           "values": {
             "value": "#803E0F"
           }
@@ -1207,7 +1207,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-orange-900)",
+          "codeSyntax": "var(--ac-color-orange-900)",
           "values": {
             "value": "#662F0A"
           }
@@ -1221,7 +1221,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-orange-950)",
+          "codeSyntax": "var(--ac-color-orange-950)",
           "values": {
             "value": "#4E2205"
           }
@@ -1235,7 +1235,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-amber-50)",
+          "codeSyntax": "var(--ac-color-amber-50)",
           "values": {
             "value": "#FEF5DD"
           }
@@ -1249,7 +1249,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-amber-100)",
+          "codeSyntax": "var(--ac-color-amber-100)",
           "values": {
             "value": "#FDE8B6"
           }
@@ -1263,7 +1263,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-amber-200)",
+          "codeSyntax": "var(--ac-color-amber-200)",
           "values": {
             "value": "#FCDA8D"
           }
@@ -1277,7 +1277,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-amber-300)",
+          "codeSyntax": "var(--ac-color-amber-300)",
           "values": {
             "value": "#FBCB5D"
           }
@@ -1291,7 +1291,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-amber-400)",
+          "codeSyntax": "var(--ac-color-amber-400)",
           "values": {
             "value": "#F6BE33"
           }
@@ -1305,7 +1305,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-amber-500)",
+          "codeSyntax": "var(--ac-color-amber-500)",
           "values": {
             "value": "#CE9D29"
           }
@@ -1319,7 +1319,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-amber-600)",
+          "codeSyntax": "var(--ac-color-amber-600)",
           "values": {
             "value": "#A77D20"
           }
@@ -1333,7 +1333,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-amber-700)",
+          "codeSyntax": "var(--ac-color-amber-700)",
           "values": {
             "value": "#886418"
           }
@@ -1347,7 +1347,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-amber-800)",
+          "codeSyntax": "var(--ac-color-amber-800)",
           "values": {
             "value": "#6B4D0E"
           }
@@ -1361,7 +1361,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-amber-900)",
+          "codeSyntax": "var(--ac-color-amber-900)",
           "values": {
             "value": "#553C0A"
           }
@@ -1375,7 +1375,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-amber-950)",
+          "codeSyntax": "var(--ac-color-amber-950)",
           "values": {
             "value": "#402C06"
           }
@@ -1389,7 +1389,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-lime-50)",
+          "codeSyntax": "var(--ac-color-lime-50)",
           "values": {
             "value": "#F7F7DC"
           }
@@ -1403,7 +1403,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-lime-100)",
+          "codeSyntax": "var(--ac-color-lime-100)",
           "values": {
             "value": "#EFEFB9"
           }
@@ -1417,7 +1417,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-lime-200)",
+          "codeSyntax": "var(--ac-color-lime-200)",
           "values": {
             "value": "#E7E890"
           }
@@ -1431,7 +1431,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-lime-300)",
+          "codeSyntax": "var(--ac-color-lime-300)",
           "values": {
             "value": "#DEE05F"
           }
@@ -1445,7 +1445,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-lime-400)",
+          "codeSyntax": "var(--ac-color-lime-400)",
           "values": {
             "value": "#D4D736"
           }
@@ -1459,7 +1459,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-lime-500)",
+          "codeSyntax": "var(--ac-color-lime-500)",
           "values": {
             "value": "#ADB22B"
           }
@@ -1473,7 +1473,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-lime-600)",
+          "codeSyntax": "var(--ac-color-lime-600)",
           "values": {
             "value": "#888E20"
           }
@@ -1487,7 +1487,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-lime-700)",
+          "codeSyntax": "var(--ac-color-lime-700)",
           "values": {
             "value": "#6B7117"
           }
@@ -1501,7 +1501,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-lime-800)",
+          "codeSyntax": "var(--ac-color-lime-800)",
           "values": {
             "value": "#52580F"
           }
@@ -1515,7 +1515,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-lime-900)",
+          "codeSyntax": "var(--ac-color-lime-900)",
           "values": {
             "value": "#40460A"
           }
@@ -1529,7 +1529,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-lime-950)",
+          "codeSyntax": "var(--ac-color-lime-950)",
           "values": {
             "value": "#2E3405"
           }
@@ -1543,7 +1543,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-green-50)",
+          "codeSyntax": "var(--ac-color-green-50)",
           "values": {
             "value": "#F3F6F2"
           }
@@ -1557,7 +1557,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-green-100)",
+          "codeSyntax": "var(--ac-color-green-100)",
           "values": {
             "value": "#CBEAC1"
           }
@@ -1571,7 +1571,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-green-200)",
+          "codeSyntax": "var(--ac-color-green-200)",
           "values": {
             "value": "#9EDE8A"
           }
@@ -1585,7 +1585,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-green-300)",
+          "codeSyntax": "var(--ac-color-green-300)",
           "values": {
             "value": "#77CE62"
           }
@@ -1599,7 +1599,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-green-400)",
+          "codeSyntax": "var(--ac-color-green-400)",
           "values": {
             "value": "#50BC3B"
           }
@@ -1613,7 +1613,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-green-500)",
+          "codeSyntax": "var(--ac-color-green-500)",
           "values": {
             "value": "#29A818"
           }
@@ -1627,7 +1627,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-green-600)",
+          "codeSyntax": "var(--ac-color-green-600)",
           "values": {
             "value": "#019304"
           }
@@ -1641,7 +1641,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-green-700)",
+          "codeSyntax": "var(--ac-color-green-700)",
           "values": {
             "value": "#107B1A"
           }
@@ -1655,7 +1655,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-green-800)",
+          "codeSyntax": "var(--ac-color-green-800)",
           "values": {
             "value": "#1C6323"
           }
@@ -1669,7 +1669,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-green-900)",
+          "codeSyntax": "var(--ac-color-green-900)",
           "values": {
             "value": "#1F4C24"
           }
@@ -1683,7 +1683,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-green-950)",
+          "codeSyntax": "var(--ac-color-green-950)",
           "values": {
             "value": "#1D3720"
           }
@@ -1697,7 +1697,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-teal-50)",
+          "codeSyntax": "var(--ac-color-teal-50)",
           "values": {
             "value": "#E0FDF0"
           }
@@ -1711,7 +1711,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-teal-100)",
+          "codeSyntax": "var(--ac-color-teal-100)",
           "values": {
             "value": "#B8F5DC"
           }
@@ -1725,7 +1725,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-teal-200)",
+          "codeSyntax": "var(--ac-color-teal-200)",
           "values": {
             "value": "#87EDC8"
           }
@@ -1739,7 +1739,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-teal-300)",
+          "codeSyntax": "var(--ac-color-teal-300)",
           "values": {
             "value": "#3CE4B6"
           }
@@ -1753,7 +1753,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-teal-400)",
+          "codeSyntax": "var(--ac-color-teal-400)",
           "values": {
             "value": "#37D3AA"
           }
@@ -1767,7 +1767,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-teal-500)",
+          "codeSyntax": "var(--ac-color-teal-500)",
           "values": {
             "value": "#33C19D"
           }
@@ -1781,7 +1781,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-teal-600)",
+          "codeSyntax": "var(--ac-color-teal-600)",
           "values": {
             "value": "#2DB091"
           }
@@ -1795,7 +1795,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-teal-700)",
+          "codeSyntax": "var(--ac-color-teal-700)",
           "values": {
             "value": "#1F7D68"
           }
@@ -1809,7 +1809,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-teal-800)",
+          "codeSyntax": "var(--ac-color-teal-800)",
           "values": {
             "value": "#126150"
           }
@@ -1823,7 +1823,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-teal-900)",
+          "codeSyntax": "var(--ac-color-teal-900)",
           "values": {
             "value": "#0E4C3F"
           }
@@ -1837,7 +1837,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-teal-950)",
+          "codeSyntax": "var(--ac-color-teal-950)",
           "values": {
             "value": "#07392F"
           }
@@ -1851,7 +1851,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-cyan-50)",
+          "codeSyntax": "var(--ac-color-cyan-50)",
           "values": {
             "value": "#DBFDFD"
           }
@@ -1865,7 +1865,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-cyan-100)",
+          "codeSyntax": "var(--ac-color-cyan-100)",
           "values": {
             "value": "#ADF4F6"
           }
@@ -1879,7 +1879,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-cyan-200)",
+          "codeSyntax": "var(--ac-color-cyan-200)",
           "values": {
             "value": "#71ECF0"
           }
@@ -1893,7 +1893,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-cyan-300)",
+          "codeSyntax": "var(--ac-color-cyan-300)",
           "values": {
             "value": "#3ADFE6"
           }
@@ -1907,7 +1907,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-cyan-400)",
+          "codeSyntax": "var(--ac-color-cyan-400)",
           "values": {
             "value": "#35CDD6"
           }
@@ -1921,7 +1921,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-cyan-500)",
+          "codeSyntax": "var(--ac-color-cyan-500)",
           "values": {
             "value": "#2FBCC5"
           }
@@ -1935,7 +1935,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-cyan-600)",
+          "codeSyntax": "var(--ac-color-cyan-600)",
           "values": {
             "value": "#2EABB4"
           }
@@ -1949,7 +1949,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-cyan-700)",
+          "codeSyntax": "var(--ac-color-cyan-700)",
           "values": {
             "value": "#1D7A82"
           }
@@ -1963,7 +1963,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-cyan-800)",
+          "codeSyntax": "var(--ac-color-cyan-800)",
           "values": {
             "value": "#155E64"
           }
@@ -1977,7 +1977,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-cyan-900)",
+          "codeSyntax": "var(--ac-color-cyan-900)",
           "values": {
             "value": "#0D4A50"
           }
@@ -1991,7 +1991,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-cyan-950)",
+          "codeSyntax": "var(--ac-color-cyan-950)",
           "values": {
             "value": "#09373C"
           }
@@ -2005,7 +2005,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-sky-50)",
+          "codeSyntax": "var(--ac-color-sky-50)",
           "values": {
             "value": "#EAF8FE"
           }
@@ -2019,7 +2019,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-sky-100)",
+          "codeSyntax": "var(--ac-color-sky-100)",
           "values": {
             "value": "#C8ECFD"
           }
@@ -2033,7 +2033,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-sky-200)",
+          "codeSyntax": "var(--ac-color-sky-200)",
           "values": {
             "value": "#A4DFFB"
           }
@@ -2047,7 +2047,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-sky-300)",
+          "codeSyntax": "var(--ac-color-sky-300)",
           "values": {
             "value": "#7DD2FA"
           }
@@ -2061,7 +2061,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-sky-400)",
+          "codeSyntax": "var(--ac-color-sky-400)",
           "values": {
             "value": "#4DC5F9"
           }
@@ -2075,7 +2075,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-sky-500)",
+          "codeSyntax": "var(--ac-color-sky-500)",
           "values": {
             "value": "#2EB5ED"
           }
@@ -2089,7 +2089,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-sky-600)",
+          "codeSyntax": "var(--ac-color-sky-600)",
           "values": {
             "value": "#29A5DA"
           }
@@ -2103,7 +2103,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-sky-700)",
+          "codeSyntax": "var(--ac-color-sky-700)",
           "values": {
             "value": "#1B77A0"
           }
@@ -2117,7 +2117,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-sky-800)",
+          "codeSyntax": "var(--ac-color-sky-800)",
           "values": {
             "value": "#145A7B"
           }
@@ -2131,7 +2131,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-sky-900)",
+          "codeSyntax": "var(--ac-color-sky-900)",
           "values": {
             "value": "#0D4763"
           }
@@ -2145,7 +2145,7 @@
             "STROKE_COLOR",
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--color-sky-950)",
+          "codeSyntax": "var(--ac-color-sky-950)",
           "values": {
             "value": "#06344B"
           }
@@ -2157,7 +2157,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-0)",
+          "codeSyntax": "var(--ac-dimension-space-0)",
           "values": {
             "value": 0
           }
@@ -2169,7 +2169,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-100)",
+          "codeSyntax": "var(--ac-dimension-space-100)",
           "values": {
             "value": 4
           }
@@ -2181,7 +2181,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-150)",
+          "codeSyntax": "var(--ac-dimension-space-150)",
           "values": {
             "value": 6
           }
@@ -2193,7 +2193,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-200)",
+          "codeSyntax": "var(--ac-dimension-space-200)",
           "values": {
             "value": 8
           }
@@ -2205,7 +2205,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-300)",
+          "codeSyntax": "var(--ac-dimension-space-300)",
           "values": {
             "value": 12
           }
@@ -2217,7 +2217,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-400)",
+          "codeSyntax": "var(--ac-dimension-space-400)",
           "values": {
             "value": 16
           }
@@ -2229,7 +2229,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-500)",
+          "codeSyntax": "var(--ac-dimension-space-500)",
           "values": {
             "value": 20
           }
@@ -2241,7 +2241,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-600)",
+          "codeSyntax": "var(--ac-dimension-space-600)",
           "values": {
             "value": 24
           }
@@ -2253,7 +2253,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-800)",
+          "codeSyntax": "var(--ac-dimension-space-800)",
           "values": {
             "value": 32
           }
@@ -2265,7 +2265,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-1000)",
+          "codeSyntax": "var(--ac-dimension-space-1000)",
           "values": {
             "value": 40
           }
@@ -2277,7 +2277,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-1200)",
+          "codeSyntax": "var(--ac-dimension-space-1200)",
           "values": {
             "value": 48
           }
@@ -2289,7 +2289,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-1600)",
+          "codeSyntax": "var(--ac-dimension-space-1600)",
           "values": {
             "value": 64
           }
@@ -2301,7 +2301,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-2000)",
+          "codeSyntax": "var(--ac-dimension-space-2000)",
           "values": {
             "value": 80
           }
@@ -2313,7 +2313,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-2400)",
+          "codeSyntax": "var(--ac-dimension-space-2400)",
           "values": {
             "value": 96
           }
@@ -2325,7 +2325,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-3200)",
+          "codeSyntax": "var(--ac-dimension-space-3200)",
           "values": {
             "value": 128
           }
@@ -2337,7 +2337,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-4000)",
+          "codeSyntax": "var(--ac-dimension-space-4000)",
           "values": {
             "value": 160
           }
@@ -2349,7 +2349,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-4800)",
+          "codeSyntax": "var(--ac-dimension-space-4800)",
           "values": {
             "value": 192
           }
@@ -2361,7 +2361,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-6400)",
+          "codeSyntax": "var(--ac-dimension-space-6400)",
           "values": {
             "value": 256
           }
@@ -2373,7 +2373,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-050)",
+          "codeSyntax": "var(--ac-dimension-space-050)",
           "values": {
             "value": 2
           }
@@ -2385,7 +2385,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-negative-100)",
+          "codeSyntax": "var(--ac-dimension-space-negative-100)",
           "values": {
             "value": -4
           }
@@ -2397,7 +2397,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-negative-150)",
+          "codeSyntax": "var(--ac-dimension-space-negative-150)",
           "values": {
             "value": -6
           }
@@ -2409,7 +2409,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-negative-200)",
+          "codeSyntax": "var(--ac-dimension-space-negative-200)",
           "values": {
             "value": -8
           }
@@ -2421,7 +2421,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-negative-300)",
+          "codeSyntax": "var(--ac-dimension-space-negative-300)",
           "values": {
             "value": -12
           }
@@ -2433,7 +2433,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-negative-400)",
+          "codeSyntax": "var(--ac-dimension-space-negative-400)",
           "values": {
             "value": -16
           }
@@ -2445,7 +2445,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-negative-600)",
+          "codeSyntax": "var(--ac-dimension-space-negative-600)",
           "values": {
             "value": -24
           }
@@ -2457,7 +2457,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-negative-800)",
+          "codeSyntax": "var(--ac-dimension-space-negative-800)",
           "values": {
             "value": -32
           }
@@ -2469,7 +2469,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--dimension-space-negative-050)",
+          "codeSyntax": "var(--ac-dimension-space-negative-050)",
           "values": {
             "value": -2
           }
@@ -2481,7 +2481,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-size-300)",
+          "codeSyntax": "var(--ac-dimension-size-300)",
           "values": {
             "value": 12
           }
@@ -2493,7 +2493,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-size-400)",
+          "codeSyntax": "var(--ac-dimension-size-400)",
           "values": {
             "value": 16
           }
@@ -2505,7 +2505,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-size-500)",
+          "codeSyntax": "var(--ac-dimension-size-500)",
           "values": {
             "value": 20
           }
@@ -2517,7 +2517,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-size-600)",
+          "codeSyntax": "var(--ac-dimension-size-600)",
           "values": {
             "value": 24
           }
@@ -2529,7 +2529,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-size-800)",
+          "codeSyntax": "var(--ac-dimension-size-800)",
           "values": {
             "value": 32
           }
@@ -2541,7 +2541,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-size-1000)",
+          "codeSyntax": "var(--ac-dimension-size-1000)",
           "values": {
             "value": 40
           }
@@ -2553,7 +2553,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-size-1200)",
+          "codeSyntax": "var(--ac-dimension-size-1200)",
           "values": {
             "value": 48
           }
@@ -2565,7 +2565,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-size-1600)",
+          "codeSyntax": "var(--ac-dimension-size-1600)",
           "values": {
             "value": 64
           }
@@ -2577,7 +2577,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-size-2000)",
+          "codeSyntax": "var(--ac-dimension-size-2000)",
           "values": {
             "value": 80
           }
@@ -2589,7 +2589,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-size-2400)",
+          "codeSyntax": "var(--ac-dimension-size-2400)",
           "values": {
             "value": 96
           }
@@ -2601,7 +2601,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-size-3200)",
+          "codeSyntax": "var(--ac-dimension-size-3200)",
           "values": {
             "value": 128
           }
@@ -2613,7 +2613,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-size-6000)",
+          "codeSyntax": "var(--ac-dimension-size-6000)",
           "values": {
             "value": 240
           }
@@ -2625,7 +2625,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-size-12000)",
+          "codeSyntax": "var(--ac-dimension-size-12000)",
           "values": {
             "value": 480
           }
@@ -2637,7 +2637,7 @@
           "scopes": [
             "CORNER_RADIUS"
           ],
-          "codeSyntax": "var(--dimension-radius-100)",
+          "codeSyntax": "var(--ac-dimension-radius-100)",
           "values": {
             "value": 4
           }
@@ -2649,7 +2649,7 @@
           "scopes": [
             "CORNER_RADIUS"
           ],
-          "codeSyntax": "var(--dimension-radius-200)",
+          "codeSyntax": "var(--ac-dimension-radius-200)",
           "values": {
             "value": 8
           }
@@ -2661,7 +2661,7 @@
           "scopes": [
             "CORNER_RADIUS"
           ],
-          "codeSyntax": "var(--dimension-radius-300)",
+          "codeSyntax": "var(--ac-dimension-radius-300)",
           "values": {
             "value": 12
           }
@@ -2673,7 +2673,7 @@
           "scopes": [
             "CORNER_RADIUS"
           ],
-          "codeSyntax": "var(--dimension-radius-400)",
+          "codeSyntax": "var(--ac-dimension-radius-400)",
           "values": {
             "value": 16
           }
@@ -2685,7 +2685,7 @@
           "scopes": [
             "CORNER_RADIUS"
           ],
-          "codeSyntax": "var(--dimension-radius-600)",
+          "codeSyntax": "var(--ac-dimension-radius-600)",
           "values": {
             "value": 24
           }
@@ -2697,7 +2697,7 @@
           "scopes": [
             "CORNER_RADIUS"
           ],
-          "codeSyntax": "var(--dimension-radius-800)",
+          "codeSyntax": "var(--ac-dimension-radius-800)",
           "values": {
             "value": 32
           }
@@ -2709,7 +2709,7 @@
           "scopes": [
             "CORNER_RADIUS"
           ],
-          "codeSyntax": "var(--dimension-radius-1200)",
+          "codeSyntax": "var(--ac-dimension-radius-1200)",
           "values": {
             "value": 48
           }
@@ -2721,7 +2721,7 @@
           "scopes": [
             "CORNER_RADIUS"
           ],
-          "codeSyntax": "var(--dimension-radius-none)",
+          "codeSyntax": "var(--ac-dimension-radius-none)",
           "values": {
             "value": 0
           }
@@ -2733,7 +2733,7 @@
           "scopes": [
             "CORNER_RADIUS"
           ],
-          "codeSyntax": "var(--dimension-radius-050)",
+          "codeSyntax": "var(--ac-dimension-radius-050)",
           "values": {
             "value": 2
           }
@@ -2745,7 +2745,7 @@
           "scopes": [
             "CORNER_RADIUS"
           ],
-          "codeSyntax": "var(--dimension-radius-full)",
+          "codeSyntax": "var(--ac-dimension-radius-full)",
           "values": {
             "value": 9999
           }
@@ -2755,7 +2755,7 @@
           "type": "STRING",
           "description": "CSS corner-shape の名前付き値（superellipse(2) = n 4）。Chromium 139+、非対応環境は円弧にフォールバック。Figma は Corner Smoothing 60%",
           "scopes": [],
-          "codeSyntax": "var(--dimension-radius-shape-default)",
+          "codeSyntax": "var(--ac-dimension-radius-shape-default)",
           "values": {
             "value": "squircle"
           }
@@ -2765,7 +2765,7 @@
           "type": "STRING",
           "description": "円弧。フォールバック",
           "scopes": [],
-          "codeSyntax": "var(--dimension-radius-shape-round)",
+          "codeSyntax": "var(--ac-dimension-radius-shape-round)",
           "values": {
             "value": "round"
           }
@@ -2775,7 +2775,7 @@
           "type": "FLOAT",
           "description": "Figma Corner Smoothing 60%（iOS 相当）",
           "scopes": [],
-          "codeSyntax": "var(--dimension-radius-shape-figma-smoothing)",
+          "codeSyntax": "var(--ac-dimension-radius-shape-figma-smoothing)",
           "values": {
             "value": 0.6
           }
@@ -2785,7 +2785,7 @@
           "type": "STRING",
           "description": "Apple continuous corner（n≈5）の近似。代替候補",
           "scopes": [],
-          "codeSyntax": "var(--dimension-radius-shape-continuous)",
+          "codeSyntax": "var(--ac-dimension-radius-shape-continuous)",
           "values": {
             "value": "superellipse(2.32)"
           }
@@ -2797,7 +2797,7 @@
           "scopes": [
             "STROKE_FLOAT"
           ],
-          "codeSyntax": "var(--dimension-border-0)",
+          "codeSyntax": "var(--ac-dimension-border-0)",
           "values": {
             "value": 0
           }
@@ -2809,7 +2809,7 @@
           "scopes": [
             "STROKE_FLOAT"
           ],
-          "codeSyntax": "var(--dimension-border-100)",
+          "codeSyntax": "var(--ac-dimension-border-100)",
           "values": {
             "value": 4
           }
@@ -2821,7 +2821,7 @@
           "scopes": [
             "STROKE_FLOAT"
           ],
-          "codeSyntax": "var(--dimension-border-025)",
+          "codeSyntax": "var(--ac-dimension-border-025)",
           "values": {
             "value": 1
           }
@@ -2833,7 +2833,7 @@
           "scopes": [
             "STROKE_FLOAT"
           ],
-          "codeSyntax": "var(--dimension-border-050)",
+          "codeSyntax": "var(--ac-dimension-border-050)",
           "values": {
             "value": 2
           }
@@ -2845,7 +2845,7 @@
           "scopes": [
             "STROKE_FLOAT"
           ],
-          "codeSyntax": "var(--dimension-border-075)",
+          "codeSyntax": "var(--ac-dimension-border-075)",
           "values": {
             "value": 3
           }
@@ -2857,7 +2857,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-breakpoint-xs)",
+          "codeSyntax": "var(--ac-dimension-breakpoint-xs)",
           "values": {
             "value": 0
           }
@@ -2869,7 +2869,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-breakpoint-sm)",
+          "codeSyntax": "var(--ac-dimension-breakpoint-sm)",
           "values": {
             "value": 480
           }
@@ -2881,7 +2881,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-breakpoint-md)",
+          "codeSyntax": "var(--ac-dimension-breakpoint-md)",
           "values": {
             "value": 768
           }
@@ -2893,7 +2893,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-breakpoint-lg)",
+          "codeSyntax": "var(--ac-dimension-breakpoint-lg)",
           "values": {
             "value": 1024
           }
@@ -2905,7 +2905,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-breakpoint-xl)",
+          "codeSyntax": "var(--ac-dimension-breakpoint-xl)",
           "values": {
             "value": 1440
           }
@@ -2917,7 +2917,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--dimension-breakpoint-xxl)",
+          "codeSyntax": "var(--ac-dimension-breakpoint-xxl)",
           "values": {
             "value": 1768
           }
@@ -2929,7 +2929,7 @@
           "scopes": [
             "FONT_FAMILY"
           ],
-          "codeSyntax": "var(--typography-family-sans)",
+          "codeSyntax": "var(--ac-typography-family-sans)",
           "values": {
             "value": "Inter"
           }
@@ -2941,7 +2941,7 @@
           "scopes": [
             "FONT_FAMILY"
           ],
-          "codeSyntax": "var(--typography-family-serif)",
+          "codeSyntax": "var(--ac-typography-family-serif)",
           "values": {
             "value": "Lora"
           }
@@ -2953,7 +2953,7 @@
           "scopes": [
             "FONT_FAMILY"
           ],
-          "codeSyntax": "var(--typography-family-jp)",
+          "codeSyntax": "var(--ac-typography-family-jp)",
           "values": {
             "value": "Noto Sans JP"
           }
@@ -2965,7 +2965,7 @@
           "scopes": [
             "FONT_FAMILY"
           ],
-          "codeSyntax": "var(--typography-family-mono)",
+          "codeSyntax": "var(--ac-typography-family-mono)",
           "values": {
             "value": "Geist Mono"
           }
@@ -2977,7 +2977,7 @@
           "scopes": [
             "FONT_SIZE"
           ],
-          "codeSyntax": "var(--typography-size-250)",
+          "codeSyntax": "var(--ac-typography-size-250)",
           "values": {
             "value": 10
           }
@@ -2989,7 +2989,7 @@
           "scopes": [
             "FONT_SIZE"
           ],
-          "codeSyntax": "var(--typography-size-300)",
+          "codeSyntax": "var(--ac-typography-size-300)",
           "values": {
             "value": 12
           }
@@ -3001,7 +3001,7 @@
           "scopes": [
             "FONT_SIZE"
           ],
-          "codeSyntax": "var(--typography-size-350)",
+          "codeSyntax": "var(--ac-typography-size-350)",
           "values": {
             "value": 14
           }
@@ -3013,7 +3013,7 @@
           "scopes": [
             "FONT_SIZE"
           ],
-          "codeSyntax": "var(--typography-size-400)",
+          "codeSyntax": "var(--ac-typography-size-400)",
           "values": {
             "value": 16
           }
@@ -3025,7 +3025,7 @@
           "scopes": [
             "FONT_SIZE"
           ],
-          "codeSyntax": "var(--typography-size-450)",
+          "codeSyntax": "var(--ac-typography-size-450)",
           "values": {
             "value": 18
           }
@@ -3037,7 +3037,7 @@
           "scopes": [
             "FONT_SIZE"
           ],
-          "codeSyntax": "var(--typography-size-500)",
+          "codeSyntax": "var(--ac-typography-size-500)",
           "values": {
             "value": 20
           }
@@ -3049,7 +3049,7 @@
           "scopes": [
             "FONT_SIZE"
           ],
-          "codeSyntax": "var(--typography-size-600)",
+          "codeSyntax": "var(--ac-typography-size-600)",
           "values": {
             "value": 24
           }
@@ -3061,7 +3061,7 @@
           "scopes": [
             "FONT_SIZE"
           ],
-          "codeSyntax": "var(--typography-size-700)",
+          "codeSyntax": "var(--ac-typography-size-700)",
           "values": {
             "value": 28
           }
@@ -3073,7 +3073,7 @@
           "scopes": [
             "FONT_SIZE"
           ],
-          "codeSyntax": "var(--typography-size-800)",
+          "codeSyntax": "var(--ac-typography-size-800)",
           "values": {
             "value": 32
           }
@@ -3085,7 +3085,7 @@
           "scopes": [
             "FONT_SIZE"
           ],
-          "codeSyntax": "var(--typography-size-1000)",
+          "codeSyntax": "var(--ac-typography-size-1000)",
           "values": {
             "value": 40
           }
@@ -3097,7 +3097,7 @@
           "scopes": [
             "FONT_SIZE"
           ],
-          "codeSyntax": "var(--typography-size-1200)",
+          "codeSyntax": "var(--ac-typography-size-1200)",
           "values": {
             "value": 48
           }
@@ -3109,7 +3109,7 @@
           "scopes": [
             "FONT_SIZE"
           ],
-          "codeSyntax": "var(--typography-size-1600)",
+          "codeSyntax": "var(--ac-typography-size-1600)",
           "values": {
             "value": 64
           }
@@ -3121,7 +3121,7 @@
           "scopes": [
             "FONT_SIZE"
           ],
-          "codeSyntax": "var(--typography-size-2000)",
+          "codeSyntax": "var(--ac-typography-size-2000)",
           "values": {
             "value": 80
           }
@@ -3133,7 +3133,7 @@
           "scopes": [
             "FONT_SIZE"
           ],
-          "codeSyntax": "var(--typography-size-2400)",
+          "codeSyntax": "var(--ac-typography-size-2400)",
           "values": {
             "value": 96
           }
@@ -3145,7 +3145,7 @@
           "scopes": [
             "FONT_SIZE"
           ],
-          "codeSyntax": "var(--typography-size-3200)",
+          "codeSyntax": "var(--ac-typography-size-3200)",
           "values": {
             "value": 128
           }
@@ -3157,7 +3157,7 @@
           "scopes": [
             "LINE_HEIGHT"
           ],
-          "codeSyntax": "var(--typography-line-height-sm)",
+          "codeSyntax": "var(--ac-typography-line-height-sm)",
           "values": {
             "value": 1.25
           }
@@ -3169,7 +3169,7 @@
           "scopes": [
             "LINE_HEIGHT"
           ],
-          "codeSyntax": "var(--typography-line-height-md)",
+          "codeSyntax": "var(--ac-typography-line-height-md)",
           "values": {
             "value": 1.375
           }
@@ -3181,7 +3181,7 @@
           "scopes": [
             "LINE_HEIGHT"
           ],
-          "codeSyntax": "var(--typography-line-height-lg)",
+          "codeSyntax": "var(--ac-typography-line-height-lg)",
           "values": {
             "value": 1.5
           }
@@ -3193,7 +3193,7 @@
           "scopes": [
             "LINE_HEIGHT"
           ],
-          "codeSyntax": "var(--typography-line-height-xl)",
+          "codeSyntax": "var(--ac-typography-line-height-xl)",
           "values": {
             "value": 1.625
           }
@@ -3205,7 +3205,7 @@
           "scopes": [
             "LINE_HEIGHT"
           ],
-          "codeSyntax": "var(--typography-line-height-xxl)",
+          "codeSyntax": "var(--ac-typography-line-height-xxl)",
           "values": {
             "value": 1.75
           }
@@ -3217,7 +3217,7 @@
           "scopes": [
             "FONT_WEIGHT"
           ],
-          "codeSyntax": "var(--typography-weight-regular)",
+          "codeSyntax": "var(--ac-typography-weight-regular)",
           "values": {
             "value": 400
           }
@@ -3229,7 +3229,7 @@
           "scopes": [
             "FONT_WEIGHT"
           ],
-          "codeSyntax": "var(--typography-weight-medium)",
+          "codeSyntax": "var(--ac-typography-weight-medium)",
           "values": {
             "value": 500
           }
@@ -3241,7 +3241,7 @@
           "scopes": [
             "FONT_WEIGHT"
           ],
-          "codeSyntax": "var(--typography-weight-semibold)",
+          "codeSyntax": "var(--ac-typography-weight-semibold)",
           "values": {
             "value": 600
           }
@@ -3253,7 +3253,7 @@
           "scopes": [
             "FONT_WEIGHT"
           ],
-          "codeSyntax": "var(--typography-weight-bold)",
+          "codeSyntax": "var(--ac-typography-weight-bold)",
           "values": {
             "value": 700
           }
@@ -3263,7 +3263,7 @@
           "type": "FLOAT",
           "description": "知覚できる遅延なし。リスト項目のホバー・選択・フォーカス、reduced-motion 時",
           "scopes": [],
-          "codeSyntax": "var(--motion-duration-instant)",
+          "codeSyntax": "var(--ac-motion-duration-instant)",
           "unit": "ms",
           "values": {
             "value": 0
@@ -3274,7 +3274,7 @@
           "type": "FLOAT",
           "description": "即時フィードバック。フォーカスリング、選択状態",
           "scopes": [],
-          "codeSyntax": "var(--motion-duration-presto)",
+          "codeSyntax": "var(--ac-motion-duration-presto)",
           "unit": "ms",
           "values": {
             "value": 50
@@ -3285,7 +3285,7 @@
           "type": "FLOAT",
           "description": "控えめな押下、素早い退場。ポップアップの消去",
           "scopes": [],
-          "codeSyntax": "var(--motion-duration-vivace)",
+          "codeSyntax": "var(--ac-motion-duration-vivace)",
           "unit": "ms",
           "values": {
             "value": 100
@@ -3296,7 +3296,7 @@
           "type": "FLOAT",
           "description": "状態の強調と小さな入場。ボタンのホバー・押下、ポップアップの入場",
           "scopes": [],
-          "codeSyntax": "var(--motion-duration-allegro)",
+          "codeSyntax": "var(--ac-motion-duration-allegro)",
           "unit": "ms",
           "values": {
             "value": 150
@@ -3307,7 +3307,7 @@
           "type": "FLOAT",
           "description": "中規模の入場。モーダル・フラグの入場",
           "scopes": [],
-          "codeSyntax": "var(--motion-duration-moderato)",
+          "codeSyntax": "var(--ac-motion-duration-moderato)",
           "unit": "ms",
           "values": {
             "value": 250
@@ -3318,7 +3318,7 @@
           "type": "FLOAT",
           "description": "大きな遷移。パネル・ページ遷移・全画面オーバーレイ",
           "scopes": [],
-          "codeSyntax": "var(--motion-duration-andante)",
+          "codeSyntax": "var(--ac-motion-duration-andante)",
           "unit": "ms",
           "values": {
             "value": 400
@@ -3329,7 +3329,7 @@
           "type": "FLOAT",
           "description": "最大。オンボーディング、全画面の演出",
           "scopes": [],
-          "codeSyntax": "var(--motion-duration-adagio)",
+          "codeSyntax": "var(--ac-motion-duration-adagio)",
           "unit": "ms",
           "values": {
             "value": 600
@@ -3340,7 +3340,7 @@
           "type": "STRING",
           "description": "減衰バネ（質量 1、剛性 170、減衰 20、減衰比 0.77、オーバーシュート約 2.3%、整定 630ms）を CSS linear() で 25 点サンプリング。duration には整定時間 630ms 前後を使う。非対応環境は out.bold にフォールバック",
           "scopes": [],
-          "codeSyntax": "var(--motion-easing-spring)",
+          "codeSyntax": "var(--ac-motion-easing-spring)",
           "values": {
             "value": "linear(0.0, 0.049, 0.164, 0.307, 0.455, 0.591, 0.709, 0.804, 0.879, 0.934, 0.972, 0.997, 1.013, 1.02, 1.023, 1.023, 1.02, 1.017, 1.014, 1.011, 1.008, 1.005, 1.003, 1.002, 1.001)"
           }
@@ -3352,7 +3352,7 @@
           "scopes": [
             "OPACITY"
           ],
-          "codeSyntax": "var(--opacity-0)",
+          "codeSyntax": "var(--ac-opacity-0)",
           "values": {
             "value": 0
           }
@@ -3364,7 +3364,7 @@
           "scopes": [
             "OPACITY"
           ],
-          "codeSyntax": "var(--opacity-4)",
+          "codeSyntax": "var(--ac-opacity-4)",
           "values": {
             "value": 0.04
           }
@@ -3376,7 +3376,7 @@
           "scopes": [
             "OPACITY"
           ],
-          "codeSyntax": "var(--opacity-8)",
+          "codeSyntax": "var(--ac-opacity-8)",
           "values": {
             "value": 0.08
           }
@@ -3388,7 +3388,7 @@
           "scopes": [
             "OPACITY"
           ],
-          "codeSyntax": "var(--opacity-12)",
+          "codeSyntax": "var(--ac-opacity-12)",
           "values": {
             "value": 0.12
           }
@@ -3400,7 +3400,7 @@
           "scopes": [
             "OPACITY"
           ],
-          "codeSyntax": "var(--opacity-16)",
+          "codeSyntax": "var(--ac-opacity-16)",
           "values": {
             "value": 0.16
           }
@@ -3412,7 +3412,7 @@
           "scopes": [
             "OPACITY"
           ],
-          "codeSyntax": "var(--opacity-24)",
+          "codeSyntax": "var(--ac-opacity-24)",
           "values": {
             "value": 0.24
           }
@@ -3424,7 +3424,7 @@
           "scopes": [
             "OPACITY"
           ],
-          "codeSyntax": "var(--opacity-32)",
+          "codeSyntax": "var(--ac-opacity-32)",
           "values": {
             "value": 0.32
           }
@@ -3436,7 +3436,7 @@
           "scopes": [
             "OPACITY"
           ],
-          "codeSyntax": "var(--opacity-40)",
+          "codeSyntax": "var(--ac-opacity-40)",
           "values": {
             "value": 0.4
           }
@@ -3448,7 +3448,7 @@
           "scopes": [
             "OPACITY"
           ],
-          "codeSyntax": "var(--opacity-64)",
+          "codeSyntax": "var(--ac-opacity-64)",
           "values": {
             "value": 0.64
           }
@@ -3460,7 +3460,7 @@
           "scopes": [
             "OPACITY"
           ],
-          "codeSyntax": "var(--opacity-80)",
+          "codeSyntax": "var(--ac-opacity-80)",
           "values": {
             "value": 0.8
           }
@@ -3472,7 +3472,7 @@
           "scopes": [
             "OPACITY"
           ],
-          "codeSyntax": "var(--opacity-100)",
+          "codeSyntax": "var(--ac-opacity-100)",
           "values": {
             "value": 1
           }
@@ -3492,7 +3492,7 @@
           "scopes": [
             "FONT_FAMILY"
           ],
-          "codeSyntax": "var(--font-family-default)",
+          "codeSyntax": "var(--ac-font-family-default)",
           "values": {
             "value": "Inter"
           }
@@ -3504,7 +3504,7 @@
           "scopes": [
             "FONT_FAMILY"
           ],
-          "codeSyntax": "var(--font-family-serif)",
+          "codeSyntax": "var(--ac-font-family-serif)",
           "values": {
             "value": "Lora"
           }
@@ -3516,7 +3516,7 @@
           "scopes": [
             "FONT_FAMILY"
           ],
-          "codeSyntax": "var(--font-family-mono)",
+          "codeSyntax": "var(--ac-font-family-mono)",
           "values": {
             "value": "Geist Mono"
           }
@@ -3528,7 +3528,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--layout-breakpoint-xs)",
+          "codeSyntax": "var(--ac-layout-breakpoint-xs)",
           "values": {
             "value": {
               "alias": "dimension/breakpoint/xs"
@@ -3542,7 +3542,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--layout-breakpoint-sm)",
+          "codeSyntax": "var(--ac-layout-breakpoint-sm)",
           "values": {
             "value": {
               "alias": "dimension/breakpoint/sm"
@@ -3556,7 +3556,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--layout-breakpoint-md)",
+          "codeSyntax": "var(--ac-layout-breakpoint-md)",
           "values": {
             "value": {
               "alias": "dimension/breakpoint/md"
@@ -3570,7 +3570,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--layout-breakpoint-lg)",
+          "codeSyntax": "var(--ac-layout-breakpoint-lg)",
           "values": {
             "value": {
               "alias": "dimension/breakpoint/lg"
@@ -3584,7 +3584,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--layout-breakpoint-xl)",
+          "codeSyntax": "var(--ac-layout-breakpoint-xl)",
           "values": {
             "value": {
               "alias": "dimension/breakpoint/xl"
@@ -3598,7 +3598,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--layout-breakpoint-xxl)",
+          "codeSyntax": "var(--ac-layout-breakpoint-xxl)",
           "values": {
             "value": {
               "alias": "dimension/breakpoint/xxl"
@@ -3610,7 +3610,7 @@
           "type": "FLOAT",
           "description": "",
           "scopes": [],
-          "codeSyntax": "var(--layout-grid-columns-xs)",
+          "codeSyntax": "var(--ac-layout-grid-columns-xs)",
           "values": {
             "value": 4
           }
@@ -3620,7 +3620,7 @@
           "type": "FLOAT",
           "description": "",
           "scopes": [],
-          "codeSyntax": "var(--layout-grid-columns-sm)",
+          "codeSyntax": "var(--ac-layout-grid-columns-sm)",
           "values": {
             "value": 4
           }
@@ -3630,7 +3630,7 @@
           "type": "FLOAT",
           "description": "",
           "scopes": [],
-          "codeSyntax": "var(--layout-grid-columns-md)",
+          "codeSyntax": "var(--ac-layout-grid-columns-md)",
           "values": {
             "value": 6
           }
@@ -3640,7 +3640,7 @@
           "type": "FLOAT",
           "description": "",
           "scopes": [],
-          "codeSyntax": "var(--layout-grid-columns-lg)",
+          "codeSyntax": "var(--ac-layout-grid-columns-lg)",
           "values": {
             "value": 12
           }
@@ -3650,7 +3650,7 @@
           "type": "FLOAT",
           "description": "",
           "scopes": [],
-          "codeSyntax": "var(--layout-grid-columns-xl)",
+          "codeSyntax": "var(--ac-layout-grid-columns-xl)",
           "values": {
             "value": 12
           }
@@ -3660,7 +3660,7 @@
           "type": "FLOAT",
           "description": "",
           "scopes": [],
-          "codeSyntax": "var(--layout-grid-columns-xxl)",
+          "codeSyntax": "var(--ac-layout-grid-columns-xxl)",
           "values": {
             "value": 12
           }
@@ -3672,7 +3672,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--layout-grid-gutter-xs)",
+          "codeSyntax": "var(--ac-layout-grid-gutter-xs)",
           "values": {
             "value": {
               "alias": "dimension/space/400"
@@ -3686,7 +3686,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--layout-grid-gutter-sm)",
+          "codeSyntax": "var(--ac-layout-grid-gutter-sm)",
           "values": {
             "value": {
               "alias": "dimension/space/400"
@@ -3700,7 +3700,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--layout-grid-gutter-md)",
+          "codeSyntax": "var(--ac-layout-grid-gutter-md)",
           "values": {
             "value": {
               "alias": "dimension/space/600"
@@ -3714,7 +3714,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--layout-grid-gutter-lg)",
+          "codeSyntax": "var(--ac-layout-grid-gutter-lg)",
           "values": {
             "value": {
               "alias": "dimension/space/800"
@@ -3728,7 +3728,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--layout-grid-gutter-xl)",
+          "codeSyntax": "var(--ac-layout-grid-gutter-xl)",
           "values": {
             "value": {
               "alias": "dimension/space/800"
@@ -3742,7 +3742,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--layout-grid-gutter-xxl)",
+          "codeSyntax": "var(--ac-layout-grid-gutter-xxl)",
           "values": {
             "value": {
               "alias": "dimension/space/800"
@@ -3756,7 +3756,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--layout-grid-margin-xs)",
+          "codeSyntax": "var(--ac-layout-grid-margin-xs)",
           "values": {
             "value": {
               "alias": "dimension/space/400"
@@ -3770,7 +3770,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--layout-grid-margin-sm)",
+          "codeSyntax": "var(--ac-layout-grid-margin-sm)",
           "values": {
             "value": {
               "alias": "dimension/space/600"
@@ -3784,7 +3784,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--layout-grid-margin-md)",
+          "codeSyntax": "var(--ac-layout-grid-margin-md)",
           "values": {
             "value": {
               "alias": "dimension/space/800"
@@ -3798,7 +3798,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--layout-grid-margin-lg)",
+          "codeSyntax": "var(--ac-layout-grid-margin-lg)",
           "values": {
             "value": {
               "alias": "dimension/space/1200"
@@ -3812,7 +3812,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--layout-grid-margin-xl)",
+          "codeSyntax": "var(--ac-layout-grid-margin-xl)",
           "values": {
             "value": {
               "alias": "dimension/space/1600"
@@ -3826,7 +3826,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--layout-grid-margin-xxl)",
+          "codeSyntax": "var(--ac-layout-grid-margin-xxl)",
           "values": {
             "value": {
               "alias": "dimension/space/2000"
@@ -3840,7 +3840,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--layout-container-content)",
+          "codeSyntax": "var(--ac-layout-container-content)",
           "values": {
             "value": 1280
           }
@@ -3852,7 +3852,7 @@
           "scopes": [
             "WIDTH_HEIGHT"
           ],
-          "codeSyntax": "var(--layout-container-prose)",
+          "codeSyntax": "var(--ac-layout-container-prose)",
           "values": {
             "value": 720
           }
@@ -3864,7 +3864,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--layout-section-sm)",
+          "codeSyntax": "var(--ac-layout-section-sm)",
           "values": {
             "value": {
               "alias": "dimension/space/1200"
@@ -3878,7 +3878,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--layout-section-md)",
+          "codeSyntax": "var(--ac-layout-section-md)",
           "values": {
             "value": {
               "alias": "dimension/space/1600"
@@ -3892,7 +3892,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--layout-section-lg)",
+          "codeSyntax": "var(--ac-layout-section-lg)",
           "values": {
             "value": {
               "alias": "dimension/space/2400"
@@ -3906,7 +3906,7 @@
           "scopes": [
             "GAP"
           ],
-          "codeSyntax": "var(--layout-section-xl)",
+          "codeSyntax": "var(--ac-layout-section-xl)",
           "values": {
             "value": {
               "alias": "dimension/space/3200"
@@ -3920,7 +3920,7 @@
           "scopes": [
             "STROKE_FLOAT"
           ],
-          "codeSyntax": "var(--border-width-default)",
+          "codeSyntax": "var(--ac-border-width-default)",
           "values": {
             "value": {
               "alias": "dimension/border/025"
@@ -3934,7 +3934,7 @@
           "scopes": [
             "STROKE_FLOAT"
           ],
-          "codeSyntax": "var(--border-width-selected)",
+          "codeSyntax": "var(--ac-border-width-selected)",
           "values": {
             "value": {
               "alias": "dimension/border/050"
@@ -3948,7 +3948,7 @@
           "scopes": [
             "STROKE_FLOAT"
           ],
-          "codeSyntax": "var(--border-width-focused)",
+          "codeSyntax": "var(--ac-border-width-focused)",
           "values": {
             "value": {
               "alias": "dimension/border/050"
@@ -3971,7 +3971,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-default)",
+          "codeSyntax": "var(--ac-color-text-default)",
           "values": {
             "light": {
               "alias": "color/neutral/950"
@@ -3988,7 +3988,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-subtle)",
+          "codeSyntax": "var(--ac-color-text-subtle)",
           "values": {
             "light": {
               "alias": "color/neutral/700"
@@ -4005,7 +4005,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-subtlest)",
+          "codeSyntax": "var(--ac-color-text-subtlest)",
           "values": {
             "light": {
               "alias": "color/neutral/600"
@@ -4022,7 +4022,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-disabled)",
+          "codeSyntax": "var(--ac-color-text-disabled)",
           "values": {
             "light": {
               "alias": "color/neutral/400"
@@ -4039,7 +4039,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-inverse)",
+          "codeSyntax": "var(--ac-color-text-inverse)",
           "values": {
             "light": {
               "alias": "color/neutral/50"
@@ -4056,7 +4056,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-brand)",
+          "codeSyntax": "var(--ac-color-text-brand)",
           "values": {
             "light": {
               "alias": "color/blue/700"
@@ -4073,7 +4073,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-brand-bold)",
+          "codeSyntax": "var(--ac-color-text-brand-bold)",
           "values": {
             "light": {
               "alias": "color/blue/800"
@@ -4090,7 +4090,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-selected)",
+          "codeSyntax": "var(--ac-color-text-selected)",
           "values": {
             "light": {
               "alias": "color/blue/700"
@@ -4107,7 +4107,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-static-white)",
+          "codeSyntax": "var(--ac-color-text-static-white)",
           "values": {
             "light": {
               "alias": "color/neutral/0"
@@ -4124,7 +4124,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-static-black)",
+          "codeSyntax": "var(--ac-color-text-static-black)",
           "values": {
             "light": {
               "alias": "color/neutral/1000"
@@ -4141,7 +4141,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-status-success)",
+          "codeSyntax": "var(--ac-color-text-status-success)",
           "values": {
             "light": {
               "alias": "color/green/700"
@@ -4158,7 +4158,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-status-success-bold)",
+          "codeSyntax": "var(--ac-color-text-status-success-bold)",
           "values": {
             "light": {
               "alias": "color/green/800"
@@ -4175,7 +4175,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-status-warning)",
+          "codeSyntax": "var(--ac-color-text-status-warning)",
           "values": {
             "light": {
               "alias": "color/amber/700"
@@ -4192,7 +4192,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-status-warning-bold)",
+          "codeSyntax": "var(--ac-color-text-status-warning-bold)",
           "values": {
             "light": {
               "alias": "color/amber/800"
@@ -4209,7 +4209,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-status-error)",
+          "codeSyntax": "var(--ac-color-text-status-error)",
           "values": {
             "light": {
               "alias": "color/red/700"
@@ -4226,7 +4226,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-status-error-bold)",
+          "codeSyntax": "var(--ac-color-text-status-error-bold)",
           "values": {
             "light": {
               "alias": "color/red/800"
@@ -4243,7 +4243,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-status-info)",
+          "codeSyntax": "var(--ac-color-text-status-info)",
           "values": {
             "light": {
               "alias": "color/sky/700"
@@ -4260,7 +4260,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-status-info-bold)",
+          "codeSyntax": "var(--ac-color-text-status-info-bold)",
           "values": {
             "light": {
               "alias": "color/sky/800"
@@ -4277,7 +4277,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-blue)",
+          "codeSyntax": "var(--ac-color-text-accent-blue)",
           "values": {
             "light": {
               "alias": "color/blue/700"
@@ -4294,7 +4294,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-blue-bold)",
+          "codeSyntax": "var(--ac-color-text-accent-blue-bold)",
           "values": {
             "light": {
               "alias": "color/blue/800"
@@ -4311,7 +4311,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-violet)",
+          "codeSyntax": "var(--ac-color-text-accent-violet)",
           "values": {
             "light": {
               "alias": "color/violet/700"
@@ -4328,7 +4328,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-violet-bold)",
+          "codeSyntax": "var(--ac-color-text-accent-violet-bold)",
           "values": {
             "light": {
               "alias": "color/violet/800"
@@ -4345,7 +4345,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-purple)",
+          "codeSyntax": "var(--ac-color-text-accent-purple)",
           "values": {
             "light": {
               "alias": "color/purple/700"
@@ -4362,7 +4362,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-purple-bold)",
+          "codeSyntax": "var(--ac-color-text-accent-purple-bold)",
           "values": {
             "light": {
               "alias": "color/purple/800"
@@ -4379,7 +4379,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-pink)",
+          "codeSyntax": "var(--ac-color-text-accent-pink)",
           "values": {
             "light": {
               "alias": "color/pink/700"
@@ -4396,7 +4396,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-pink-bold)",
+          "codeSyntax": "var(--ac-color-text-accent-pink-bold)",
           "values": {
             "light": {
               "alias": "color/pink/800"
@@ -4413,7 +4413,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-red)",
+          "codeSyntax": "var(--ac-color-text-accent-red)",
           "values": {
             "light": {
               "alias": "color/red/700"
@@ -4430,7 +4430,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-red-bold)",
+          "codeSyntax": "var(--ac-color-text-accent-red-bold)",
           "values": {
             "light": {
               "alias": "color/red/800"
@@ -4447,7 +4447,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-orange)",
+          "codeSyntax": "var(--ac-color-text-accent-orange)",
           "values": {
             "light": {
               "alias": "color/orange/700"
@@ -4464,7 +4464,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-orange-bold)",
+          "codeSyntax": "var(--ac-color-text-accent-orange-bold)",
           "values": {
             "light": {
               "alias": "color/orange/800"
@@ -4481,7 +4481,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-amber)",
+          "codeSyntax": "var(--ac-color-text-accent-amber)",
           "values": {
             "light": {
               "alias": "color/amber/700"
@@ -4498,7 +4498,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-amber-bold)",
+          "codeSyntax": "var(--ac-color-text-accent-amber-bold)",
           "values": {
             "light": {
               "alias": "color/amber/800"
@@ -4515,7 +4515,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-lime)",
+          "codeSyntax": "var(--ac-color-text-accent-lime)",
           "values": {
             "light": {
               "alias": "color/lime/700"
@@ -4532,7 +4532,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-lime-bold)",
+          "codeSyntax": "var(--ac-color-text-accent-lime-bold)",
           "values": {
             "light": {
               "alias": "color/lime/800"
@@ -4549,7 +4549,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-green)",
+          "codeSyntax": "var(--ac-color-text-accent-green)",
           "values": {
             "light": {
               "alias": "color/green/700"
@@ -4566,7 +4566,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-green-bold)",
+          "codeSyntax": "var(--ac-color-text-accent-green-bold)",
           "values": {
             "light": {
               "alias": "color/green/800"
@@ -4583,7 +4583,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-teal)",
+          "codeSyntax": "var(--ac-color-text-accent-teal)",
           "values": {
             "light": {
               "alias": "color/teal/700"
@@ -4600,7 +4600,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-teal-bold)",
+          "codeSyntax": "var(--ac-color-text-accent-teal-bold)",
           "values": {
             "light": {
               "alias": "color/teal/800"
@@ -4617,7 +4617,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-cyan)",
+          "codeSyntax": "var(--ac-color-text-accent-cyan)",
           "values": {
             "light": {
               "alias": "color/cyan/700"
@@ -4634,7 +4634,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-cyan-bold)",
+          "codeSyntax": "var(--ac-color-text-accent-cyan-bold)",
           "values": {
             "light": {
               "alias": "color/cyan/800"
@@ -4651,7 +4651,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-sky)",
+          "codeSyntax": "var(--ac-color-text-accent-sky)",
           "values": {
             "light": {
               "alias": "color/sky/700"
@@ -4668,7 +4668,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-text-accent-sky-bold)",
+          "codeSyntax": "var(--ac-color-text-accent-sky-bold)",
           "values": {
             "light": {
               "alias": "color/sky/800"
@@ -4685,7 +4685,7 @@
           "scopes": [
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-icon-default)",
+          "codeSyntax": "var(--ac-color-icon-default)",
           "values": {
             "light": {
               "alias": "color/neutral/900"
@@ -4702,7 +4702,7 @@
           "scopes": [
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-icon-subtle)",
+          "codeSyntax": "var(--ac-color-icon-subtle)",
           "values": {
             "light": {
               "alias": "color/neutral/700"
@@ -4719,7 +4719,7 @@
           "scopes": [
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-icon-subtlest)",
+          "codeSyntax": "var(--ac-color-icon-subtlest)",
           "values": {
             "light": {
               "alias": "color/neutral/600"
@@ -4736,7 +4736,7 @@
           "scopes": [
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-icon-disabled)",
+          "codeSyntax": "var(--ac-color-icon-disabled)",
           "values": {
             "light": {
               "alias": "color/neutral/400"
@@ -4753,7 +4753,7 @@
           "scopes": [
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-icon-inverse)",
+          "codeSyntax": "var(--ac-color-icon-inverse)",
           "values": {
             "light": {
               "alias": "color/neutral/50"
@@ -4770,7 +4770,7 @@
           "scopes": [
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-icon-brand)",
+          "codeSyntax": "var(--ac-color-icon-brand)",
           "values": {
             "light": {
               "alias": "color/blue/600"
@@ -4787,7 +4787,7 @@
           "scopes": [
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-icon-status-success)",
+          "codeSyntax": "var(--ac-color-icon-status-success)",
           "values": {
             "light": {
               "alias": "color/green/700"
@@ -4804,7 +4804,7 @@
           "scopes": [
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-icon-status-warning)",
+          "codeSyntax": "var(--ac-color-icon-status-warning)",
           "values": {
             "light": {
               "alias": "color/amber/700"
@@ -4821,7 +4821,7 @@
           "scopes": [
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-icon-status-error)",
+          "codeSyntax": "var(--ac-color-icon-status-error)",
           "values": {
             "light": {
               "alias": "color/red/700"
@@ -4838,7 +4838,7 @@
           "scopes": [
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-icon-status-info)",
+          "codeSyntax": "var(--ac-color-icon-status-info)",
           "values": {
             "light": {
               "alias": "color/sky/700"
@@ -4855,7 +4855,7 @@
           "scopes": [
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-icon-static-white)",
+          "codeSyntax": "var(--ac-color-icon-static-white)",
           "values": {
             "light": {
               "alias": "color/neutral/0"
@@ -4872,7 +4872,7 @@
           "scopes": [
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-icon-static-black)",
+          "codeSyntax": "var(--ac-color-icon-static-black)",
           "values": {
             "light": {
               "alias": "color/neutral/1000"
@@ -4889,7 +4889,7 @@
           "scopes": [
             "STROKE_COLOR"
           ],
-          "codeSyntax": "var(--color-border-subtlest)",
+          "codeSyntax": "var(--ac-color-border-subtlest)",
           "values": {
             "light": {
               "alias": "color/neutral/100a"
@@ -4906,7 +4906,7 @@
           "scopes": [
             "STROKE_COLOR"
           ],
-          "codeSyntax": "var(--color-border-subtle)",
+          "codeSyntax": "var(--ac-color-border-subtle)",
           "values": {
             "light": {
               "alias": "color/neutral/200a"
@@ -4923,7 +4923,7 @@
           "scopes": [
             "STROKE_COLOR"
           ],
-          "codeSyntax": "var(--color-border-default)",
+          "codeSyntax": "var(--ac-color-border-default)",
           "values": {
             "light": {
               "alias": "color/neutral/300a"
@@ -4940,7 +4940,7 @@
           "scopes": [
             "STROKE_COLOR"
           ],
-          "codeSyntax": "var(--color-border-bold)",
+          "codeSyntax": "var(--ac-color-border-bold)",
           "values": {
             "light": {
               "alias": "color/neutral/500"
@@ -4957,7 +4957,7 @@
           "scopes": [
             "STROKE_COLOR"
           ],
-          "codeSyntax": "var(--color-border-focused)",
+          "codeSyntax": "var(--ac-color-border-focused)",
           "values": {
             "light": {
               "alias": "color/blue/600"
@@ -4974,7 +4974,7 @@
           "scopes": [
             "STROKE_COLOR"
           ],
-          "codeSyntax": "var(--color-border-inverse)",
+          "codeSyntax": "var(--ac-color-border-inverse)",
           "values": {
             "light": {
               "alias": "color/neutral/50"
@@ -4991,7 +4991,7 @@
           "scopes": [
             "STROKE_COLOR"
           ],
-          "codeSyntax": "var(--color-border-brand)",
+          "codeSyntax": "var(--ac-color-border-brand)",
           "values": {
             "light": {
               "alias": "color/blue/600"
@@ -5008,7 +5008,7 @@
           "scopes": [
             "STROKE_COLOR"
           ],
-          "codeSyntax": "var(--color-border-disabled)",
+          "codeSyntax": "var(--ac-color-border-disabled)",
           "values": {
             "light": {
               "alias": "color/neutral/200a"
@@ -5025,7 +5025,7 @@
           "scopes": [
             "STROKE_COLOR"
           ],
-          "codeSyntax": "var(--color-border-selected)",
+          "codeSyntax": "var(--ac-color-border-selected)",
           "values": {
             "light": {
               "alias": "color/blue/600"
@@ -5042,7 +5042,7 @@
           "scopes": [
             "STROKE_COLOR"
           ],
-          "codeSyntax": "var(--color-border-static-white)",
+          "codeSyntax": "var(--ac-color-border-static-white)",
           "values": {
             "light": {
               "alias": "color/neutral/0"
@@ -5059,7 +5059,7 @@
           "scopes": [
             "STROKE_COLOR"
           ],
-          "codeSyntax": "var(--color-border-static-black)",
+          "codeSyntax": "var(--ac-color-border-static-black)",
           "values": {
             "light": {
               "alias": "color/neutral/1000"
@@ -5076,7 +5076,7 @@
           "scopes": [
             "STROKE_COLOR"
           ],
-          "codeSyntax": "var(--color-border-status-success)",
+          "codeSyntax": "var(--ac-color-border-status-success)",
           "values": {
             "light": {
               "alias": "color/green/600"
@@ -5093,7 +5093,7 @@
           "scopes": [
             "STROKE_COLOR"
           ],
-          "codeSyntax": "var(--color-border-status-warning)",
+          "codeSyntax": "var(--ac-color-border-status-warning)",
           "values": {
             "light": {
               "alias": "color/amber/600"
@@ -5110,7 +5110,7 @@
           "scopes": [
             "STROKE_COLOR"
           ],
-          "codeSyntax": "var(--color-border-status-error)",
+          "codeSyntax": "var(--ac-color-border-status-error)",
           "values": {
             "light": {
               "alias": "color/red/600"
@@ -5127,7 +5127,7 @@
           "scopes": [
             "STROKE_COLOR"
           ],
-          "codeSyntax": "var(--color-border-status-info)",
+          "codeSyntax": "var(--ac-color-border-status-info)",
           "values": {
             "light": {
               "alias": "color/sky/600"
@@ -5145,7 +5145,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-disabled)",
+          "codeSyntax": "var(--ac-color-background-disabled)",
           "values": {
             "light": {
               "alias": "color/neutral/100a"
@@ -5163,7 +5163,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-selected)",
+          "codeSyntax": "var(--ac-color-background-selected)",
           "values": {
             "light": {
               "alias": "color/blue/50"
@@ -5181,7 +5181,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-selected-hovered)",
+          "codeSyntax": "var(--ac-color-background-selected-hovered)",
           "values": {
             "light": {
               "alias": "color/blue/100"
@@ -5199,7 +5199,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-selected-pressed)",
+          "codeSyntax": "var(--ac-color-background-selected-pressed)",
           "values": {
             "light": {
               "alias": "color/blue/200"
@@ -5217,7 +5217,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-input)",
+          "codeSyntax": "var(--ac-color-background-input)",
           "values": {
             "light": {
               "alias": "color/neutral/100"
@@ -5235,7 +5235,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-input-hovered)",
+          "codeSyntax": "var(--ac-color-background-input-hovered)",
           "values": {
             "light": {
               "alias": "color/neutral/200"
@@ -5253,7 +5253,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-blanket)",
+          "codeSyntax": "var(--ac-color-background-blanket)",
           "values": {
             "light": "#00000066",
             "dark": "#00000099"
@@ -5267,7 +5267,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-neutral-subtlest)",
+          "codeSyntax": "var(--ac-color-background-neutral-subtlest)",
           "values": {
             "light": {
               "alias": "color/neutral/100a"
@@ -5285,7 +5285,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-neutral-subtle)",
+          "codeSyntax": "var(--ac-color-background-neutral-subtle)",
           "values": {
             "light": {
               "alias": "color/neutral/200a"
@@ -5303,7 +5303,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-neutral-subtle-hovered)",
+          "codeSyntax": "var(--ac-color-background-neutral-subtle-hovered)",
           "values": {
             "light": {
               "alias": "color/neutral/300a"
@@ -5321,7 +5321,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-neutral-subtle-pressed)",
+          "codeSyntax": "var(--ac-color-background-neutral-subtle-pressed)",
           "values": {
             "light": {
               "alias": "color/neutral/400a"
@@ -5339,7 +5339,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-neutral-default)",
+          "codeSyntax": "var(--ac-color-background-neutral-default)",
           "values": {
             "light": {
               "alias": "color/neutral/200"
@@ -5357,7 +5357,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-neutral-default-hovered)",
+          "codeSyntax": "var(--ac-color-background-neutral-default-hovered)",
           "values": {
             "light": {
               "alias": "color/neutral/300"
@@ -5375,7 +5375,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-neutral-default-pressed)",
+          "codeSyntax": "var(--ac-color-background-neutral-default-pressed)",
           "values": {
             "light": {
               "alias": "color/neutral/400"
@@ -5393,7 +5393,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-neutral-bold)",
+          "codeSyntax": "var(--ac-color-background-neutral-bold)",
           "values": {
             "light": {
               "alias": "color/neutral/700"
@@ -5411,7 +5411,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-neutral-boldest)",
+          "codeSyntax": "var(--ac-color-background-neutral-boldest)",
           "values": {
             "light": {
               "alias": "color/neutral/950"
@@ -5429,7 +5429,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-brand-subtlest)",
+          "codeSyntax": "var(--ac-color-background-brand-subtlest)",
           "values": {
             "light": {
               "alias": "color/blue/50"
@@ -5447,7 +5447,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-brand-subtle)",
+          "codeSyntax": "var(--ac-color-background-brand-subtle)",
           "values": {
             "light": {
               "alias": "color/blue/100"
@@ -5465,7 +5465,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-brand-default)",
+          "codeSyntax": "var(--ac-color-background-brand-default)",
           "values": {
             "light": {
               "alias": "color/blue/200"
@@ -5483,7 +5483,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-brand-bold)",
+          "codeSyntax": "var(--ac-color-background-brand-bold)",
           "values": {
             "light": {
               "alias": "color/blue/600"
@@ -5501,7 +5501,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-brand-bold-hovered)",
+          "codeSyntax": "var(--ac-color-background-brand-bold-hovered)",
           "values": {
             "light": {
               "alias": "color/blue/700"
@@ -5519,7 +5519,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-brand-bold-pressed)",
+          "codeSyntax": "var(--ac-color-background-brand-bold-pressed)",
           "values": {
             "light": {
               "alias": "color/blue/800"
@@ -5537,7 +5537,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-brand-boldest)",
+          "codeSyntax": "var(--ac-color-background-brand-boldest)",
           "values": {
             "light": {
               "alias": "color/blue/800"
@@ -5555,7 +5555,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-success-subtlest)",
+          "codeSyntax": "var(--ac-color-background-status-success-subtlest)",
           "values": {
             "light": {
               "alias": "color/green/50"
@@ -5573,7 +5573,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-success-subtle)",
+          "codeSyntax": "var(--ac-color-background-status-success-subtle)",
           "values": {
             "light": {
               "alias": "color/green/100"
@@ -5591,7 +5591,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-success-default)",
+          "codeSyntax": "var(--ac-color-background-status-success-default)",
           "values": {
             "light": {
               "alias": "color/green/200"
@@ -5609,7 +5609,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-success-bold)",
+          "codeSyntax": "var(--ac-color-background-status-success-bold)",
           "values": {
             "light": {
               "alias": "color/green/700"
@@ -5627,7 +5627,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-success-bold-hovered)",
+          "codeSyntax": "var(--ac-color-background-status-success-bold-hovered)",
           "values": {
             "light": {
               "alias": "color/green/800"
@@ -5645,7 +5645,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-success-bold-pressed)",
+          "codeSyntax": "var(--ac-color-background-status-success-bold-pressed)",
           "values": {
             "light": {
               "alias": "color/green/900"
@@ -5663,7 +5663,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-success-boldest)",
+          "codeSyntax": "var(--ac-color-background-status-success-boldest)",
           "values": {
             "light": {
               "alias": "color/green/800"
@@ -5681,7 +5681,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-warning-subtlest)",
+          "codeSyntax": "var(--ac-color-background-status-warning-subtlest)",
           "values": {
             "light": {
               "alias": "color/amber/50"
@@ -5699,7 +5699,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-warning-subtle)",
+          "codeSyntax": "var(--ac-color-background-status-warning-subtle)",
           "values": {
             "light": {
               "alias": "color/amber/100"
@@ -5717,7 +5717,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-warning-default)",
+          "codeSyntax": "var(--ac-color-background-status-warning-default)",
           "values": {
             "light": {
               "alias": "color/amber/200"
@@ -5735,7 +5735,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-warning-bold)",
+          "codeSyntax": "var(--ac-color-background-status-warning-bold)",
           "values": {
             "light": {
               "alias": "color/amber/400"
@@ -5753,7 +5753,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-warning-bold-hovered)",
+          "codeSyntax": "var(--ac-color-background-status-warning-bold-hovered)",
           "values": {
             "light": {
               "alias": "color/amber/500"
@@ -5771,7 +5771,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-warning-bold-pressed)",
+          "codeSyntax": "var(--ac-color-background-status-warning-bold-pressed)",
           "values": {
             "light": {
               "alias": "color/amber/600"
@@ -5789,7 +5789,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-warning-boldest)",
+          "codeSyntax": "var(--ac-color-background-status-warning-boldest)",
           "values": {
             "light": {
               "alias": "color/amber/800"
@@ -5807,7 +5807,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-error-subtlest)",
+          "codeSyntax": "var(--ac-color-background-status-error-subtlest)",
           "values": {
             "light": {
               "alias": "color/red/50"
@@ -5825,7 +5825,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-error-subtle)",
+          "codeSyntax": "var(--ac-color-background-status-error-subtle)",
           "values": {
             "light": {
               "alias": "color/red/100"
@@ -5843,7 +5843,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-error-default)",
+          "codeSyntax": "var(--ac-color-background-status-error-default)",
           "values": {
             "light": {
               "alias": "color/red/200"
@@ -5861,7 +5861,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-error-bold)",
+          "codeSyntax": "var(--ac-color-background-status-error-bold)",
           "values": {
             "light": {
               "alias": "color/red/600"
@@ -5879,7 +5879,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-error-bold-hovered)",
+          "codeSyntax": "var(--ac-color-background-status-error-bold-hovered)",
           "values": {
             "light": {
               "alias": "color/red/700"
@@ -5897,7 +5897,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-error-bold-pressed)",
+          "codeSyntax": "var(--ac-color-background-status-error-bold-pressed)",
           "values": {
             "light": {
               "alias": "color/red/800"
@@ -5915,7 +5915,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-error-boldest)",
+          "codeSyntax": "var(--ac-color-background-status-error-boldest)",
           "values": {
             "light": {
               "alias": "color/red/800"
@@ -5933,7 +5933,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-info-subtlest)",
+          "codeSyntax": "var(--ac-color-background-status-info-subtlest)",
           "values": {
             "light": {
               "alias": "color/sky/50"
@@ -5951,7 +5951,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-info-subtle)",
+          "codeSyntax": "var(--ac-color-background-status-info-subtle)",
           "values": {
             "light": {
               "alias": "color/sky/100"
@@ -5969,7 +5969,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-info-default)",
+          "codeSyntax": "var(--ac-color-background-status-info-default)",
           "values": {
             "light": {
               "alias": "color/sky/200"
@@ -5987,7 +5987,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-info-bold)",
+          "codeSyntax": "var(--ac-color-background-status-info-bold)",
           "values": {
             "light": {
               "alias": "color/sky/700"
@@ -6005,7 +6005,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-info-bold-hovered)",
+          "codeSyntax": "var(--ac-color-background-status-info-bold-hovered)",
           "values": {
             "light": {
               "alias": "color/sky/800"
@@ -6023,7 +6023,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-info-bold-pressed)",
+          "codeSyntax": "var(--ac-color-background-status-info-bold-pressed)",
           "values": {
             "light": {
               "alias": "color/sky/900"
@@ -6041,7 +6041,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-status-info-boldest)",
+          "codeSyntax": "var(--ac-color-background-status-info-boldest)",
           "values": {
             "light": {
               "alias": "color/sky/800"
@@ -6059,7 +6059,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-blue-subtlest)",
+          "codeSyntax": "var(--ac-color-background-accent-blue-subtlest)",
           "values": {
             "light": {
               "alias": "color/blue/50"
@@ -6077,7 +6077,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-blue-subtle)",
+          "codeSyntax": "var(--ac-color-background-accent-blue-subtle)",
           "values": {
             "light": {
               "alias": "color/blue/100"
@@ -6095,7 +6095,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-blue-default)",
+          "codeSyntax": "var(--ac-color-background-accent-blue-default)",
           "values": {
             "light": {
               "alias": "color/blue/200"
@@ -6113,7 +6113,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-blue-bold)",
+          "codeSyntax": "var(--ac-color-background-accent-blue-bold)",
           "values": {
             "light": {
               "alias": "color/blue/600"
@@ -6131,7 +6131,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-blue-boldest)",
+          "codeSyntax": "var(--ac-color-background-accent-blue-boldest)",
           "values": {
             "light": {
               "alias": "color/blue/800"
@@ -6149,7 +6149,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-violet-subtlest)",
+          "codeSyntax": "var(--ac-color-background-accent-violet-subtlest)",
           "values": {
             "light": {
               "alias": "color/violet/50"
@@ -6167,7 +6167,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-violet-subtle)",
+          "codeSyntax": "var(--ac-color-background-accent-violet-subtle)",
           "values": {
             "light": {
               "alias": "color/violet/100"
@@ -6185,7 +6185,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-violet-default)",
+          "codeSyntax": "var(--ac-color-background-accent-violet-default)",
           "values": {
             "light": {
               "alias": "color/violet/200"
@@ -6203,7 +6203,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-violet-bold)",
+          "codeSyntax": "var(--ac-color-background-accent-violet-bold)",
           "values": {
             "light": {
               "alias": "color/violet/600"
@@ -6221,7 +6221,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-violet-boldest)",
+          "codeSyntax": "var(--ac-color-background-accent-violet-boldest)",
           "values": {
             "light": {
               "alias": "color/violet/800"
@@ -6239,7 +6239,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-purple-subtlest)",
+          "codeSyntax": "var(--ac-color-background-accent-purple-subtlest)",
           "values": {
             "light": {
               "alias": "color/purple/50"
@@ -6257,7 +6257,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-purple-subtle)",
+          "codeSyntax": "var(--ac-color-background-accent-purple-subtle)",
           "values": {
             "light": {
               "alias": "color/purple/100"
@@ -6275,7 +6275,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-purple-default)",
+          "codeSyntax": "var(--ac-color-background-accent-purple-default)",
           "values": {
             "light": {
               "alias": "color/purple/200"
@@ -6293,7 +6293,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-purple-bold)",
+          "codeSyntax": "var(--ac-color-background-accent-purple-bold)",
           "values": {
             "light": {
               "alias": "color/purple/600"
@@ -6311,7 +6311,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-purple-boldest)",
+          "codeSyntax": "var(--ac-color-background-accent-purple-boldest)",
           "values": {
             "light": {
               "alias": "color/purple/800"
@@ -6329,7 +6329,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-pink-subtlest)",
+          "codeSyntax": "var(--ac-color-background-accent-pink-subtlest)",
           "values": {
             "light": {
               "alias": "color/pink/50"
@@ -6347,7 +6347,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-pink-subtle)",
+          "codeSyntax": "var(--ac-color-background-accent-pink-subtle)",
           "values": {
             "light": {
               "alias": "color/pink/100"
@@ -6365,7 +6365,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-pink-default)",
+          "codeSyntax": "var(--ac-color-background-accent-pink-default)",
           "values": {
             "light": {
               "alias": "color/pink/200"
@@ -6383,7 +6383,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-pink-bold)",
+          "codeSyntax": "var(--ac-color-background-accent-pink-bold)",
           "values": {
             "light": {
               "alias": "color/pink/600"
@@ -6401,7 +6401,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-pink-boldest)",
+          "codeSyntax": "var(--ac-color-background-accent-pink-boldest)",
           "values": {
             "light": {
               "alias": "color/pink/800"
@@ -6419,7 +6419,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-red-subtlest)",
+          "codeSyntax": "var(--ac-color-background-accent-red-subtlest)",
           "values": {
             "light": {
               "alias": "color/red/50"
@@ -6437,7 +6437,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-red-subtle)",
+          "codeSyntax": "var(--ac-color-background-accent-red-subtle)",
           "values": {
             "light": {
               "alias": "color/red/100"
@@ -6455,7 +6455,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-red-default)",
+          "codeSyntax": "var(--ac-color-background-accent-red-default)",
           "values": {
             "light": {
               "alias": "color/red/200"
@@ -6473,7 +6473,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-red-bold)",
+          "codeSyntax": "var(--ac-color-background-accent-red-bold)",
           "values": {
             "light": {
               "alias": "color/red/600"
@@ -6491,7 +6491,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-red-boldest)",
+          "codeSyntax": "var(--ac-color-background-accent-red-boldest)",
           "values": {
             "light": {
               "alias": "color/red/800"
@@ -6509,7 +6509,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-orange-subtlest)",
+          "codeSyntax": "var(--ac-color-background-accent-orange-subtlest)",
           "values": {
             "light": {
               "alias": "color/orange/50"
@@ -6527,7 +6527,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-orange-subtle)",
+          "codeSyntax": "var(--ac-color-background-accent-orange-subtle)",
           "values": {
             "light": {
               "alias": "color/orange/100"
@@ -6545,7 +6545,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-orange-default)",
+          "codeSyntax": "var(--ac-color-background-accent-orange-default)",
           "values": {
             "light": {
               "alias": "color/orange/200"
@@ -6563,7 +6563,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-orange-bold)",
+          "codeSyntax": "var(--ac-color-background-accent-orange-bold)",
           "values": {
             "light": {
               "alias": "color/orange/700"
@@ -6581,7 +6581,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-orange-boldest)",
+          "codeSyntax": "var(--ac-color-background-accent-orange-boldest)",
           "values": {
             "light": {
               "alias": "color/orange/800"
@@ -6599,7 +6599,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-amber-subtlest)",
+          "codeSyntax": "var(--ac-color-background-accent-amber-subtlest)",
           "values": {
             "light": {
               "alias": "color/amber/50"
@@ -6617,7 +6617,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-amber-subtle)",
+          "codeSyntax": "var(--ac-color-background-accent-amber-subtle)",
           "values": {
             "light": {
               "alias": "color/amber/100"
@@ -6635,7 +6635,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-amber-default)",
+          "codeSyntax": "var(--ac-color-background-accent-amber-default)",
           "values": {
             "light": {
               "alias": "color/amber/200"
@@ -6653,7 +6653,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-amber-bold)",
+          "codeSyntax": "var(--ac-color-background-accent-amber-bold)",
           "values": {
             "light": {
               "alias": "color/amber/400"
@@ -6671,7 +6671,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-amber-boldest)",
+          "codeSyntax": "var(--ac-color-background-accent-amber-boldest)",
           "values": {
             "light": {
               "alias": "color/amber/800"
@@ -6689,7 +6689,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-lime-subtlest)",
+          "codeSyntax": "var(--ac-color-background-accent-lime-subtlest)",
           "values": {
             "light": {
               "alias": "color/lime/50"
@@ -6707,7 +6707,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-lime-subtle)",
+          "codeSyntax": "var(--ac-color-background-accent-lime-subtle)",
           "values": {
             "light": {
               "alias": "color/lime/100"
@@ -6725,7 +6725,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-lime-default)",
+          "codeSyntax": "var(--ac-color-background-accent-lime-default)",
           "values": {
             "light": {
               "alias": "color/lime/200"
@@ -6743,7 +6743,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-lime-bold)",
+          "codeSyntax": "var(--ac-color-background-accent-lime-bold)",
           "values": {
             "light": {
               "alias": "color/lime/400"
@@ -6761,7 +6761,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-lime-boldest)",
+          "codeSyntax": "var(--ac-color-background-accent-lime-boldest)",
           "values": {
             "light": {
               "alias": "color/lime/800"
@@ -6779,7 +6779,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-green-subtlest)",
+          "codeSyntax": "var(--ac-color-background-accent-green-subtlest)",
           "values": {
             "light": {
               "alias": "color/green/50"
@@ -6797,7 +6797,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-green-subtle)",
+          "codeSyntax": "var(--ac-color-background-accent-green-subtle)",
           "values": {
             "light": {
               "alias": "color/green/100"
@@ -6815,7 +6815,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-green-default)",
+          "codeSyntax": "var(--ac-color-background-accent-green-default)",
           "values": {
             "light": {
               "alias": "color/green/200"
@@ -6833,7 +6833,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-green-bold)",
+          "codeSyntax": "var(--ac-color-background-accent-green-bold)",
           "values": {
             "light": {
               "alias": "color/green/700"
@@ -6851,7 +6851,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-green-boldest)",
+          "codeSyntax": "var(--ac-color-background-accent-green-boldest)",
           "values": {
             "light": {
               "alias": "color/green/800"
@@ -6869,7 +6869,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-teal-subtlest)",
+          "codeSyntax": "var(--ac-color-background-accent-teal-subtlest)",
           "values": {
             "light": {
               "alias": "color/teal/50"
@@ -6887,7 +6887,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-teal-subtle)",
+          "codeSyntax": "var(--ac-color-background-accent-teal-subtle)",
           "values": {
             "light": {
               "alias": "color/teal/100"
@@ -6905,7 +6905,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-teal-default)",
+          "codeSyntax": "var(--ac-color-background-accent-teal-default)",
           "values": {
             "light": {
               "alias": "color/teal/200"
@@ -6923,7 +6923,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-teal-bold)",
+          "codeSyntax": "var(--ac-color-background-accent-teal-bold)",
           "values": {
             "light": {
               "alias": "color/teal/700"
@@ -6941,7 +6941,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-teal-boldest)",
+          "codeSyntax": "var(--ac-color-background-accent-teal-boldest)",
           "values": {
             "light": {
               "alias": "color/teal/800"
@@ -6959,7 +6959,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-cyan-subtlest)",
+          "codeSyntax": "var(--ac-color-background-accent-cyan-subtlest)",
           "values": {
             "light": {
               "alias": "color/cyan/50"
@@ -6977,7 +6977,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-cyan-subtle)",
+          "codeSyntax": "var(--ac-color-background-accent-cyan-subtle)",
           "values": {
             "light": {
               "alias": "color/cyan/100"
@@ -6995,7 +6995,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-cyan-default)",
+          "codeSyntax": "var(--ac-color-background-accent-cyan-default)",
           "values": {
             "light": {
               "alias": "color/cyan/200"
@@ -7013,7 +7013,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-cyan-bold)",
+          "codeSyntax": "var(--ac-color-background-accent-cyan-bold)",
           "values": {
             "light": {
               "alias": "color/cyan/700"
@@ -7031,7 +7031,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-cyan-boldest)",
+          "codeSyntax": "var(--ac-color-background-accent-cyan-boldest)",
           "values": {
             "light": {
               "alias": "color/cyan/800"
@@ -7049,7 +7049,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-sky-subtlest)",
+          "codeSyntax": "var(--ac-color-background-accent-sky-subtlest)",
           "values": {
             "light": {
               "alias": "color/sky/50"
@@ -7067,7 +7067,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-sky-subtle)",
+          "codeSyntax": "var(--ac-color-background-accent-sky-subtle)",
           "values": {
             "light": {
               "alias": "color/sky/100"
@@ -7085,7 +7085,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-sky-default)",
+          "codeSyntax": "var(--ac-color-background-accent-sky-default)",
           "values": {
             "light": {
               "alias": "color/sky/200"
@@ -7103,7 +7103,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-sky-bold)",
+          "codeSyntax": "var(--ac-color-background-accent-sky-bold)",
           "values": {
             "light": {
               "alias": "color/sky/700"
@@ -7121,7 +7121,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--color-background-accent-sky-boldest)",
+          "codeSyntax": "var(--ac-color-background-accent-sky-boldest)",
           "values": {
             "light": {
               "alias": "color/sky/800"
@@ -7138,7 +7138,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-link-default)",
+          "codeSyntax": "var(--ac-color-link-default)",
           "values": {
             "light": {
               "alias": "color/blue/700"
@@ -7155,7 +7155,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-link-hovered)",
+          "codeSyntax": "var(--ac-color-link-hovered)",
           "values": {
             "light": {
               "alias": "color/blue/800"
@@ -7172,7 +7172,7 @@
           "scopes": [
             "TEXT_FILL"
           ],
-          "codeSyntax": "var(--color-link-visited)",
+          "codeSyntax": "var(--ac-color-link-visited)",
           "values": {
             "light": {
               "alias": "color/purple/700"
@@ -7190,7 +7190,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--elevation-surface-default)",
+          "codeSyntax": "var(--ac-elevation-surface-default)",
           "values": {
             "light": {
               "alias": "color/neutral/50"
@@ -7208,7 +7208,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--elevation-surface-raised)",
+          "codeSyntax": "var(--ac-elevation-surface-raised)",
           "values": {
             "light": {
               "alias": "color/neutral/0"
@@ -7226,7 +7226,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--elevation-surface-overlay)",
+          "codeSyntax": "var(--ac-elevation-surface-overlay)",
           "values": {
             "light": {
               "alias": "color/neutral/0"
@@ -7244,7 +7244,7 @@
             "FRAME_FILL",
             "SHAPE_FILL"
           ],
-          "codeSyntax": "var(--elevation-surface-sunken)",
+          "codeSyntax": "var(--ac-elevation-surface-sunken)",
           "values": {
             "light": {
               "alias": "color/neutral/100"
@@ -7261,7 +7261,7 @@
           "scopes": [
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--elevation-shadow-rest)",
+          "codeSyntax": "var(--ac-elevation-shadow-rest)",
           "values": {
             "light": "#0000000A",
             "dark": "#0000004D"
@@ -7274,7 +7274,7 @@
           "scopes": [
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--elevation-shadow-rest)",
+          "codeSyntax": "var(--ac-elevation-shadow-rest)",
           "values": {
             "light": "#0000000F",
             "dark": "#00000033"
@@ -7287,7 +7287,7 @@
           "scopes": [
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--elevation-shadow-lifted)",
+          "codeSyntax": "var(--ac-elevation-shadow-lifted)",
           "values": {
             "light": "#0000000F",
             "dark": "#00000066"
@@ -7300,7 +7300,7 @@
           "scopes": [
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--elevation-shadow-lifted)",
+          "codeSyntax": "var(--ac-elevation-shadow-lifted)",
           "values": {
             "light": "#0000001F",
             "dark": "#0000004D"
@@ -7313,7 +7313,7 @@
           "scopes": [
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--elevation-shadow-floating)",
+          "codeSyntax": "var(--ac-elevation-shadow-floating)",
           "values": {
             "light": "#00000014",
             "dark": "#00000073"
@@ -7326,7 +7326,7 @@
           "scopes": [
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--elevation-shadow-floating)",
+          "codeSyntax": "var(--ac-elevation-shadow-floating)",
           "values": {
             "light": "#00000029",
             "dark": "#00000073"
@@ -7339,7 +7339,7 @@
           "scopes": [
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--elevation-shadow-overlay)",
+          "codeSyntax": "var(--ac-elevation-shadow-overlay)",
           "values": {
             "light": "#00000014",
             "dark": "#00000080"
@@ -7352,7 +7352,7 @@
           "scopes": [
             "EFFECT_COLOR"
           ],
-          "codeSyntax": "var(--elevation-shadow-overlay)",
+          "codeSyntax": "var(--ac-elevation-shadow-overlay)",
           "values": {
             "light": "#0000003D",
             "dark": "#00000099"
@@ -7385,7 +7385,7 @@
         "family": "Inter",
         "style": "Bold"
       },
-      "codeSyntax": "var(--font-display-sm-font-size)",
+      "codeSyntax": "var(--ac-font-display-sm-font-size)",
       "description": "48px / 60px（1.25）· bold · letterSpacing.sm"
     },
     {
@@ -7411,7 +7411,7 @@
         "family": "Inter",
         "style": "Bold"
       },
-      "codeSyntax": "var(--font-display-md-font-size)",
+      "codeSyntax": "var(--ac-font-display-md-font-size)",
       "description": "64px / 80px（1.25）· bold · letterSpacing.sm"
     },
     {
@@ -7437,7 +7437,7 @@
         "family": "Inter",
         "style": "Bold"
       },
-      "codeSyntax": "var(--font-display-lg-font-size)",
+      "codeSyntax": "var(--ac-font-display-lg-font-size)",
       "description": "80px / 100px（1.25）· bold · letterSpacing.sm"
     },
     {
@@ -7463,7 +7463,7 @@
         "family": "Inter",
         "style": "Bold"
       },
-      "codeSyntax": "var(--font-display-xl-font-size)",
+      "codeSyntax": "var(--ac-font-display-xl-font-size)",
       "description": "96px / 120px（1.25）· bold · letterSpacing.sm"
     },
     {
@@ -7489,7 +7489,7 @@
         "family": "Inter",
         "style": "Bold"
       },
-      "codeSyntax": "var(--font-display-xxl-font-size)",
+      "codeSyntax": "var(--ac-font-display-xxl-font-size)",
       "description": "128px / 160px（1.25）· bold · letterSpacing.sm"
     },
     {
@@ -7515,7 +7515,7 @@
         "family": "Inter",
         "style": "Semi Bold"
       },
-      "codeSyntax": "var(--font-heading-xs-font-size)",
+      "codeSyntax": "var(--ac-font-heading-xs-font-size)",
       "description": "16px / 20px（1.25）· semibold · letterSpacing.md"
     },
     {
@@ -7541,7 +7541,7 @@
         "family": "Inter",
         "style": "Semi Bold"
       },
-      "codeSyntax": "var(--font-heading-sm-font-size)",
+      "codeSyntax": "var(--ac-font-heading-sm-font-size)",
       "description": "18px / 24px（1.33）· semibold · letterSpacing.md"
     },
     {
@@ -7567,7 +7567,7 @@
         "family": "Inter",
         "style": "Semi Bold"
       },
-      "codeSyntax": "var(--font-heading-md-font-size)",
+      "codeSyntax": "var(--ac-font-heading-md-font-size)",
       "description": "20px / 28px（1.40）· semibold · letterSpacing.md"
     },
     {
@@ -7593,7 +7593,7 @@
         "family": "Inter",
         "style": "Semi Bold"
       },
-      "codeSyntax": "var(--font-heading-lg-font-size)",
+      "codeSyntax": "var(--ac-font-heading-lg-font-size)",
       "description": "24px / 32px（1.33）· semibold · letterSpacing.md"
     },
     {
@@ -7619,7 +7619,7 @@
         "family": "Inter",
         "style": "Semi Bold"
       },
-      "codeSyntax": "var(--font-heading-xl-font-size)",
+      "codeSyntax": "var(--ac-font-heading-xl-font-size)",
       "description": "28px / 36px（1.29）· semibold · letterSpacing.sm"
     },
     {
@@ -7645,7 +7645,7 @@
         "family": "Inter",
         "style": "Semi Bold"
       },
-      "codeSyntax": "var(--font-heading-xxl-font-size)",
+      "codeSyntax": "var(--ac-font-heading-xxl-font-size)",
       "description": "32px / 40px（1.25）· semibold · letterSpacing.sm"
     },
     {
@@ -7671,7 +7671,7 @@
         "family": "Inter",
         "style": "Semi Bold"
       },
-      "codeSyntax": "var(--font-heading-xxxl-font-size)",
+      "codeSyntax": "var(--ac-font-heading-xxxl-font-size)",
       "description": "40px / 48px（1.20）· semibold · letterSpacing.sm"
     },
     {
@@ -7697,7 +7697,7 @@
         "family": "Inter",
         "style": "Regular"
       },
-      "codeSyntax": "var(--font-body-sm-font-size)",
+      "codeSyntax": "var(--ac-font-body-sm-font-size)",
       "description": "14px / 24px（1.71）· regular · letterSpacing.md"
     },
     {
@@ -7723,7 +7723,7 @@
         "family": "Inter",
         "style": "Regular"
       },
-      "codeSyntax": "var(--font-body-md-font-size)",
+      "codeSyntax": "var(--ac-font-body-md-font-size)",
       "description": "16px / 28px（1.75）· regular · letterSpacing.md"
     },
     {
@@ -7749,7 +7749,7 @@
         "family": "Inter",
         "style": "Regular"
       },
-      "codeSyntax": "var(--font-body-lg-font-size)",
+      "codeSyntax": "var(--ac-font-body-lg-font-size)",
       "description": "18px / 28px（1.56）· regular · letterSpacing.md"
     },
     {
@@ -7775,7 +7775,7 @@
         "family": "Inter",
         "style": "Regular"
       },
-      "codeSyntax": "var(--font-body-xl-font-size)",
+      "codeSyntax": "var(--ac-font-body-xl-font-size)",
       "description": "20px / 32px（1.60）· regular · letterSpacing.md"
     },
     {
@@ -7801,7 +7801,7 @@
         "family": "Inter",
         "style": "Medium"
       },
-      "codeSyntax": "var(--font-label-xs-font-size)",
+      "codeSyntax": "var(--ac-font-label-xs-font-size)",
       "description": "10px / 12px（1.20）· medium · letterSpacing.lg"
     },
     {
@@ -7827,7 +7827,7 @@
         "family": "Inter",
         "style": "Medium"
       },
-      "codeSyntax": "var(--font-label-sm-font-size)",
+      "codeSyntax": "var(--ac-font-label-sm-font-size)",
       "description": "12px / 16px（1.33）· medium · letterSpacing.lg"
     },
     {
@@ -7853,7 +7853,7 @@
         "family": "Inter",
         "style": "Medium"
       },
-      "codeSyntax": "var(--font-label-md-font-size)",
+      "codeSyntax": "var(--ac-font-label-md-font-size)",
       "description": "14px / 20px（1.43）· medium · letterSpacing.md"
     },
     {
@@ -7879,7 +7879,7 @@
         "family": "Inter",
         "style": "Medium"
       },
-      "codeSyntax": "var(--font-label-lg-font-size)",
+      "codeSyntax": "var(--ac-font-label-lg-font-size)",
       "description": "16px / 24px（1.50）· medium · letterSpacing.md"
     },
     {
@@ -7905,7 +7905,7 @@
         "family": "Geist Mono",
         "style": "Regular"
       },
-      "codeSyntax": "var(--font-label-mono-xs-font-size)",
+      "codeSyntax": "var(--ac-font-label-mono-xs-font-size)",
       "description": "10px / 12px（1.20）· regular · letterSpacing.md"
     },
     {
@@ -7931,7 +7931,7 @@
         "family": "Geist Mono",
         "style": "Regular"
       },
-      "codeSyntax": "var(--font-label-mono-sm-font-size)",
+      "codeSyntax": "var(--ac-font-label-mono-sm-font-size)",
       "description": "12px / 16px（1.33）· regular · letterSpacing.md"
     },
     {
@@ -7957,7 +7957,7 @@
         "family": "Geist Mono",
         "style": "Regular"
       },
-      "codeSyntax": "var(--font-label-mono-md-font-size)",
+      "codeSyntax": "var(--ac-font-label-mono-md-font-size)",
       "description": "14px / 20px（1.43）· regular · letterSpacing.md"
     },
     {
@@ -7983,7 +7983,7 @@
         "family": "Geist Mono",
         "style": "Regular"
       },
-      "codeSyntax": "var(--font-label-mono-lg-font-size)",
+      "codeSyntax": "var(--ac-font-label-mono-lg-font-size)",
       "description": "16px / 24px（1.50）· regular · letterSpacing.md"
     }
   ],
@@ -7992,7 +7992,7 @@
       {
         "name": "elevation/shadow/rest",
         "description": "静止したカード、区切りの補助",
-        "codeSyntax": "var(--elevation-shadow-rest)",
+        "codeSyntax": "var(--ac-elevation-shadow-rest)",
         "effects": [
           {
             "type": "DROP_SHADOW",
@@ -8021,7 +8021,7 @@
       {
         "name": "elevation/shadow/lifted",
         "description": "浮いたカード、ホバーで持ち上がる面、ドロップダウン",
-        "codeSyntax": "var(--elevation-shadow-lifted)",
+        "codeSyntax": "var(--ac-elevation-shadow-lifted)",
         "effects": [
           {
             "type": "DROP_SHADOW",
@@ -8050,7 +8050,7 @@
       {
         "name": "elevation/shadow/floating",
         "description": "ポップオーバー、固定バー、ドラッグ中の要素",
-        "codeSyntax": "var(--elevation-shadow-floating)",
+        "codeSyntax": "var(--ac-elevation-shadow-floating)",
         "effects": [
           {
             "type": "DROP_SHADOW",
@@ -8079,7 +8079,7 @@
       {
         "name": "elevation/shadow/overlay",
         "description": "モーダル、ダイアログ、最上位のオーバーレイ",
-        "codeSyntax": "var(--elevation-shadow-overlay)",
+        "codeSyntax": "var(--ac-elevation-shadow-overlay)",
         "effects": [
           {
             "type": "DROP_SHADOW",
@@ -8110,7 +8110,7 @@
       {
         "name": "elevation/shadow/rest",
         "description": "静止したカード、区切りの補助",
-        "codeSyntax": "var(--elevation-shadow-rest)",
+        "codeSyntax": "var(--ac-elevation-shadow-rest)",
         "effects": [
           {
             "type": "DROP_SHADOW",
@@ -8139,7 +8139,7 @@
       {
         "name": "elevation/shadow/lifted",
         "description": "浮いたカード、ホバーで持ち上がる面、ドロップダウン",
-        "codeSyntax": "var(--elevation-shadow-lifted)",
+        "codeSyntax": "var(--ac-elevation-shadow-lifted)",
         "effects": [
           {
             "type": "DROP_SHADOW",
@@ -8168,7 +8168,7 @@
       {
         "name": "elevation/shadow/floating",
         "description": "ポップオーバー、固定バー、ドラッグ中の要素",
-        "codeSyntax": "var(--elevation-shadow-floating)",
+        "codeSyntax": "var(--ac-elevation-shadow-floating)",
         "effects": [
           {
             "type": "DROP_SHADOW",
@@ -8197,7 +8197,7 @@
       {
         "name": "elevation/shadow/overlay",
         "description": "モーダル、ダイアログ、最上位のオーバーレイ",
-        "codeSyntax": "var(--elevation-shadow-overlay)",
+        "codeSyntax": "var(--ac-elevation-shadow-overlay)",
         "effects": [
           {
             "type": "DROP_SHADOW",
