@@ -29,7 +29,7 @@ import { BrandIcon, Icon } from '@aristocraft/ui';
 
 | 要素 | 内容 |
 |---|---|
-| `icon/<name>` × 71 | Lucide の SVG から生成した 24×24 のコンポーネント。ベクターのストロークは `color/icon/default` に束縛、制約は Scale |
+| `icon/<name>` × 71 | Lucide の SVG から生成した 24×24 のコンポーネント。ストロークは**アウトライン化して 1 つの塗りベクター `glyph`** にし（Figma のストロークは縮小しても線幅が変わらないため）、塗りを `color/icon/default` に束縛。制約は Scale なのでどのサイズでも線幅が比例する |
 | `brand/<name>` × 9 | Simple Icons。塗りを `color/icon/default` に束縛。description にブランド色の hex |
 | `Icon`（コンポーネントセット） | variant `size` = sm / md / lg / xl。幅高さは `dimension/size/300〜600` に束縛。`glyph` は instance swap（候補 = icon/* と brand/*） |
 

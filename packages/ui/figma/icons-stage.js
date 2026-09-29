@@ -1,5 +1,5 @@
 // Prints the `use_figma` script that creates the icon library in Figma from icons.json:
-//   node figma/icons-stage.js icons 1/2   → icon/* components (Lucide, strokes bound to color/icon/default)
+//   node figma/icons-stage.js icons 1/2   → icon/* components (Lucide, strokes outlined into one filled vector bound to color/icon/default)
 //   node figma/icons-stage.js icons 2/2
 //   node figma/icons-stage.js brand       → brand/* components (Simple Icons, fills bound to color/icon/default)
 //   node figma/icons-stage.js wrapper     → "Icon" component set: size sm/md/lg/xl (bound to dimension/size) + instance swap
@@ -43,7 +43,6 @@ const vars = await figma.variables.getLocalVariablesAsync();
 const v = (name) => vars.find((x) => x.name === name);
 const iconColor = v('color/icon/default');
 const comps = new Map(page.findAll((n) => n.type === 'COMPONENT' || n.type === 'COMPONENT_SET').map((n) => [n.name, n]));
-const bindPaint = (paints, variable) => paints.map((p) => (p.type === 'SOLID' ? figma.variables.setBoundVariableForPaint(p, 'color', variable) : p));
 
 if (data.kind === 'icons') {
   const GAP = 40, COLS = 16;
@@ -56,11 +55,23 @@ if (data.kind === 'icons') {
     comp.name = name;
     comp.description = (item.title ? item.title + ' · ' : '') + data.license + (item.hex ? ' · brand #' + item.hex : '');
     comp.x = (data.prefix === 'brand' ? 900 : 0) + (i % COLS) * GAP; comp.y = Math.floor(i / COLS) * GAP; i++;
-    for (const child of comp.findAll((n) => n.type === 'VECTOR' || n.type === 'BOOLEAN_OPERATION')) {
-      child.constraints = { horizontal: 'SCALE', vertical: 'SCALE' };
-      if (child.strokes.length) child.strokes = bindPaint(child.strokes, iconColor);
-      if (child.fills !== figma.mixed && child.fills.length) child.fills = bindPaint(child.fills, iconColor);
+    // Figma strokes keep their weight when scaled, so outline them into one filled vector ("glyph").
+    // outlineStroke() drops the node on the page with parent-relative numbers: append it back first.
+    const parts = [];
+    for (const child of [...comp.children]) {
+      if (child.type === 'VECTOR' && child.strokes.length) {
+        const o = child.outlineStroke();
+        if (o) comp.appendChild(o);
+        const keep = child.fills !== figma.mixed && child.fills.length > 0; // filled dots stay as parts
+        if (keep) { child.strokes = []; parts.push(child); } else child.remove();
+        if (o) parts.push(o);
+      } else parts.push(child);
     }
+    const merged = parts.length > 1 ? figma.union(parts, comp) : parts[0];
+    const glyphNode = figma.flatten([merged], comp);
+    glyphNode.name = 'glyph'; glyphNode.strokes = [];
+    glyphNode.fills = [figma.variables.setBoundVariableForPaint({ type: 'SOLID', color: { r: 0, g: 0, b: 0 } }, 'color', iconColor)];
+    glyphNode.constraints = { horizontal: 'SCALE', vertical: 'SCALE' };
     comps.set(name, comp); out.created++; out.ids.push(comp.id);
   }
 }
