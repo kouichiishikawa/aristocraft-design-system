@@ -17,9 +17,13 @@ const [part, parts] = partSpec.split('/').map(Number);
 
 const lucideSvg = (name) => fs.readFileSync(require.resolve(`lucide-static/icons/${name}.svg`), 'utf8')
   .replace(/<!--[\s\S]*?-->\s*/g, '').replace(/\s*class="[^"]*"/, '').replace(/\s+/g, ' ').trim();
+// Brand glyphs are drawn edge to edge; show them at 20/24 so they sit optically with Lucide (same as BrandIcon).
+const BRAND_VIEWBOX = '-2.4 -2.4 28.8 28.8';
 const brandSvg = (name) => {
-  const si = require('simple-icons')[`si${name[0].toUpperCase()}${name.slice(1)}`];
-  return { svg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#000" d="${si.path}"/></svg>`, title: si.title, hex: si.hex };
+  const custom = path.join(ROOT, 'icons/brand', `${name}.json`);
+  const g = fs.existsSync(custom) ? JSON.parse(fs.readFileSync(custom, 'utf8')) : require('simple-icons')[`si${name[0].toUpperCase()}${name.slice(1)}`];
+  const transform = g.transform ? ` transform="${g.transform}"` : '';
+  return { svg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="${BRAND_VIEWBOX}"><path fill="#000"${transform} d="${g.path}"/></svg>`, title: g.title, hex: g.hex, source: g.source };
 };
 
 let data;
@@ -53,7 +57,7 @@ if (data.kind === 'icons') {
     const frame = figma.createNodeFromSvg(item.svg);
     const comp = figma.createComponentFromNode(frame);
     comp.name = name;
-    comp.description = (item.title ? item.title + ' · ' : '') + data.license + (item.hex ? ' · brand #' + item.hex : '');
+    comp.description = (item.title ? item.title + ' · ' : '') + (item.source ? item.source : data.license) + (item.hex ? ' · brand #' + item.hex : '');
     comp.x = (data.prefix === 'brand' ? 900 : 0) + (i % COLS) * GAP; comp.y = Math.floor(i / COLS) * GAP; i++;
     // Figma strokes keep their weight when scaled, so outline them into one filled vector ("glyph").
     // outlineStroke() drops the node on the page with parent-relative numbers: append it back first.

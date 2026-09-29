@@ -5,20 +5,113 @@
     "version": "1.48.0",
     "license": "ISC",
     "groups": {
-      "navigation": ["menu", "x", "chevron-down", "chevron-up", "chevron-left", "chevron-right", "chevrons-up-down", "arrow-left", "arrow-right", "arrow-up-right", "external-link", "house", "ellipsis"],
-      "action": ["search", "plus", "minus", "check", "copy", "link", "download", "upload", "share-2", "refresh-cw", "funnel", "settings", "maximize-2", "minimize-2", "eye", "eye-off"],
-      "status": ["info", "circle-check", "circle-alert", "triangle-alert", "circle-x", "loader-circle"],
-      "communication": ["mail", "send", "message-circle", "bot", "sparkles", "quote"],
-      "content": ["calendar", "clock", "map-pin", "tag", "file-text", "image", "layout-grid", "list", "layers", "palette", "code", "briefcase", "user", "users", "heart", "star"],
-      "media": ["play", "pause", "skip-back", "skip-forward", "music", "headphones", "mic", "volume-2", "volume-x"],
-      "system": ["sun", "moon", "monitor", "globe", "languages"]
+      "navigation": [
+        "menu",
+        "x",
+        "chevron-down",
+        "chevron-up",
+        "chevron-left",
+        "chevron-right",
+        "chevrons-up-down",
+        "arrow-left",
+        "arrow-right",
+        "arrow-up-right",
+        "external-link",
+        "house",
+        "ellipsis"
+      ],
+      "action": [
+        "search",
+        "plus",
+        "minus",
+        "check",
+        "copy",
+        "link",
+        "download",
+        "upload",
+        "share-2",
+        "refresh-cw",
+        "funnel",
+        "settings",
+        "maximize-2",
+        "minimize-2",
+        "eye",
+        "eye-off"
+      ],
+      "status": [
+        "info",
+        "circle-check",
+        "circle-alert",
+        "triangle-alert",
+        "circle-x",
+        "loader-circle"
+      ],
+      "communication": [
+        "mail",
+        "send",
+        "message-circle",
+        "bot",
+        "sparkles",
+        "quote"
+      ],
+      "content": [
+        "calendar",
+        "clock",
+        "map-pin",
+        "tag",
+        "file-text",
+        "image",
+        "layout-grid",
+        "list",
+        "layers",
+        "palette",
+        "code",
+        "briefcase",
+        "user",
+        "users",
+        "heart",
+        "star"
+      ],
+      "media": [
+        "play",
+        "pause",
+        "skip-back",
+        "skip-forward",
+        "music",
+        "headphones",
+        "mic",
+        "volume-2",
+        "volume-x"
+      ],
+      "system": [
+        "sun",
+        "moon",
+        "monitor",
+        "globe",
+        "languages"
+      ]
     }
   },
   "brand": {
     "package": "simple-icons",
     "version": "16.33.0",
     "license": "CC0-1.0",
-    "icons": ["github", "x", "instagram", "youtube", "spotify", "soundcloud", "applemusic", "bandcamp", "note"]
+    "icons": [
+      "github",
+      "x",
+      "instagram",
+      "youtube",
+      "linkedin",
+      "spotify",
+      "soundcloud",
+      "applemusic",
+      "bandcamp",
+      "note"
+    ],
+    "exceptions": {
+      "linkedin": "icons/brand/linkedin.json（Font Awesome Free 6、CC BY 4.0。Simple Icons は LinkedIn の要請で削除、公式配布は PNG のみ）"
+    },
+    "$comment": "ブランドは 24 の枠に対して 20/24（周囲 2.4 の余白）で描き、Lucide と光学的に揃える"
   },
   "animated": {
     "source": "https://animateicons.in/icons/lucide",

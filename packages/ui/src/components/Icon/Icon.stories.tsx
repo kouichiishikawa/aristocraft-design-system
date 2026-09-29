@@ -3,7 +3,8 @@ import * as lucide from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { expect, within } from 'storybook/test';
 import manifest from '../../../icons.json';
-import { BrandIcon, brands } from './BrandIcon';
+import { BrandIcon } from './BrandIcon';
+import { brands } from './brands';
 import { Icon } from './Icon';
 
 const pascal = (kebab: string) => kebab.replace(/(^|-)([a-z0-9])/g, (_, __, c: string) => c.toUpperCase());
