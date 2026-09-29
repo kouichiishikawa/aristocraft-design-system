@@ -1,0 +1,37 @@
+name: chromatic
+
+# Visual regression for every push / PR. Needs the CHROMATIC_PROJECT_TOKEN repository secret
+# (chromatic.com → project → Manage → Configure). Skips quietly until the secret exists.
+on:
+  push:
+    branches: [main]
+    paths: ['packages/**', '.github/workflows/chromatic.yml']
+  pull_request:
+    paths: ['packages/**']
+
+jobs:
+  chromatic:
+    runs-on: ubuntu-latest
+    env:
+      CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # Chromatic needs history for TurboSnap / baselines
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Publish to Chromatic
+        if: env.CHROMATIC_PROJECT_TOKEN != ''
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          workingDir: packages/ui
+          onlyChanged: true
+          autoAcceptChanges: main
+          exitOnceUploaded: true
+      - name: Secret missing
+        if: env.CHROMATIC_PROJECT_TOKEN == ''
+        run: echo "CHROMATIC_PROJECT_TOKEN is not set; skipping Chromatic."

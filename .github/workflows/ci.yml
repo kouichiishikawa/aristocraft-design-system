@@ -1,4 +1,4 @@
-name: tokens
+name: ci
 
 on:
   push:
@@ -23,8 +23,11 @@ jobs:
       - name: Install
         run: npm ci
 
-      # validate tokens/ → build dist/ → test dist/
-      - name: Validate, build, test
+      - name: Chromium for Storybook tests
+        run: npx playwright install --with-deps chromium
+
+      # tokens: validate → build → test dist/. ui: typecheck → build → story tests (Vitest browser + a11y)
+      - name: Validate, build, test (all workspaces)
         run: npm test
 
       # Semantic color is generated from docs/reference; re-run it and confirm 276 contrast checks still pass.

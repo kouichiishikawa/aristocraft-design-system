@@ -1,0 +1,80 @@
+/* Every value comes from @aristocraft/tokens (--ac-*). Rules: docs/pf-08-motion-state.md, pf-08-radius-border-shadow.md */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ac-dimension-space-200);
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  border-radius: var(--ac-dimension-radius-200);
+  corner-shape: squircle;
+  font-family: var(--ac-font-label-md-font-family);
+  font-weight: var(--ac-font-label-md-font-weight);
+  letter-spacing: var(--ac-font-label-md-letter-spacing);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--ac-motion-duration-allegro) var(--ac-motion-easing-out-practical),
+    color var(--ac-motion-duration-allegro) var(--ac-motion-easing-out-practical);
+}
+
+/* size: height from dimension.size, inset from dimension.space, type from font.label */
+.button[data-size='sm'] {
+  min-height: var(--ac-dimension-size-800);
+  padding-inline: var(--ac-dimension-space-300);
+  font-size: var(--ac-font-label-sm-font-size);
+  line-height: var(--ac-font-label-sm-line-height);
+}
+.button[data-size='md'] {
+  min-height: var(--ac-dimension-size-1000);
+  padding-inline: var(--ac-dimension-space-400);
+  font-size: var(--ac-font-label-md-font-size);
+  line-height: var(--ac-font-label-md-line-height);
+}
+.button[data-size='lg'] {
+  min-height: var(--ac-dimension-size-1200);
+  padding-inline: var(--ac-dimension-space-500);
+  font-size: var(--ac-font-label-lg-font-size);
+  line-height: var(--ac-font-label-lg-line-height);
+}
+
+/* variant: background emphasis + text role */
+.button[data-variant='primary'] {
+  background: var(--ac-color-background-brand-bold);
+  color: var(--ac-color-text-static-white);
+}
+.button[data-variant='secondary'] {
+  background: var(--ac-color-background-neutral-subtle);
+  color: var(--ac-color-text-default);
+}
+.button[data-variant='ghost'] {
+  background: transparent;
+  color: var(--ac-color-text-brand);
+}
+
+/* hover only on devices that hover; pressed is one step darker again */
+@media (hover: hover) {
+  .button[data-variant='primary']:hover { background: var(--ac-color-background-brand-bold-hovered); }
+  .button[data-variant='secondary']:hover { background: var(--ac-color-background-neutral-subtle-hovered); }
+  .button[data-variant='ghost']:hover { background: var(--ac-color-background-neutral-subtlest); }
+}
+.button[data-variant='primary']:active { background: var(--ac-color-background-brand-bold-pressed); }
+.button[data-variant='secondary']:active { background: var(--ac-color-background-neutral-subtle-pressed); }
+.button[data-variant='ghost']:active { background: var(--ac-color-background-neutral-subtle); }
+
+.button:focus-visible {
+  outline: var(--ac-border-width-focused) solid var(--ac-color-border-focused);
+  outline-offset: var(--ac-dimension-space-050);
+}
+
+.button[data-disabled],
+.button:disabled {
+  opacity: var(--ac-opacity-40);
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button { transition-duration: var(--ac-motion-duration-instant); }
+}

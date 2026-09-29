@@ -1,5 +1,5 @@
 // Generated from tokens/ by `npm run build` (build/index.js).
-// Do not edit by hand. Edit tokens/**/*.json and rebuild.
+// Do not edit by hand. Edit the JSON under tokens/ and rebuild.
 
 export const primitives = {
   "color": {

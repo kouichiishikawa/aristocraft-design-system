@@ -1,6 +1,6 @@
 {
   "$schema": "aristocraft/figma-variables@1",
-  "$comment": "Generated from tokens/ by `npm run build` (build/index.js). Do not edit by hand. Edit tokens/**/*.json and rebuild.",
+  "$comment": "Generated from tokens/ by `npm run build` (build/index.js). Do not edit by hand. Edit the JSON under tokens/ and rebuild.",
   "collections": [
     {
       "name": "primitives",

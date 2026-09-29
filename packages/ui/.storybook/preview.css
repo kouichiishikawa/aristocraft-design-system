@@ -1,0 +1,9 @@
+/* Storybook canvas only: page surface and default text from semantic tokens. */
+html {
+  background: var(--ac-elevation-surface-default);
+  color: var(--ac-color-text-default);
+  font-family: var(--ac-font-body-md-font-family);
+  font-size: var(--ac-font-body-md-font-size);
+  line-height: var(--ac-font-body-md-line-height);
+  -webkit-font-smoothing: antialiased;
+}

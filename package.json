@@ -11,10 +11,15 @@
     "node": ">=22"
   },
   "scripts": {
-    "build": "npm run build -ws --if-present",
-    "test": "npm run test -ws --if-present",
+    "build": "npm run build --ws --if-present",
+    "test": "npm run test --ws --if-present",
     "check:color": "cd docs/reference && python3 semantic_color_build.py",
     "tokens": "npm run build -w @aristocraft/tokens"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.3": true,
+    "unrs-resolver@1.12.2": true
+  }
 }
