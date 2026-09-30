@@ -54,6 +54,7 @@ test('flat json: 524 public names (dark merged as a mode), themed entries carry 
   assert.equal(themed.length, 191);
   for (const n of themed) assert.deepEqual(Object.keys(flat[n].$value), ['light', 'dark'], n);
   assert.equal(flat['color.text.brand'].$ref.light, '{color.blue.700}');
+  assert.ok(figma.collections.some((c) => c.variables.some((v) => v.name === 'Color/Text/Brand')), 'Figma names are Title Case');
 });
 
 test('figma json: aliases resolve, styles and skips are accounted for', () => {
@@ -69,7 +70,7 @@ test('figma json: aliases resolve, styles and skips are accounted for', () => {
   assert.equal(figma.textStyles.length, 24);
   assert.equal(figma.effectStyles.light.length, 4);
   assert.equal(figma.effectStyles.dark.length, 4);
-  const layerVars = [...names].filter((n) => /^elevation\/shadow\/.*\/layer\d$/.test(n)).length;
+  const layerVars = [...names].filter((n) => /^Elevation\/Shadow\/.*\/Layer \d$/.test(n)).length;
   assert.equal(layerVars, 8, 'shadow layers become themed colour variables');
   const total = names.size - layerVars + figma.textStyles.length + figma.effectStyles.light.length + figma.skipped.length;
   assert.equal(total, 524, 'every public name is a variable, a style, or an explicit skip');

@@ -21,14 +21,14 @@
 
 | tokens/（公開名） | Figma | CSS |
 |---|---|---|
-| `color.text.brand` | `color/text/brand`（color） | `--ac-color-text-brand` |
-| `color.text.brand.bold` | `color/text/brand/bold` | `--ac-color-text-brand-bold` |
-| `dimension.space.100` | `dimension/space/100`（primitives） | `--ac-dimension-space-100` |
-| `typography.lineHeight.md` | `typography/lineHeight/md` | `--ac-typography-line-height-md` |
-| `font.heading.md`（typography 複合） | Text Style `font/heading/md` | `--ac-font-heading-md-*`（5 本） |
-| `elevation.shadow.rest`（shadow 複合） | Effect Style `elevation/shadow/rest` + 色変数 `elevation/shadow/rest/layer1,2` | `--ac-elevation-shadow-rest` |
+| `color.text.brand` | `Color/Text/Brand`（Color） | `--ac-color-text-brand` |
+| `color.text.brand.bold` | `Color/Text/Brand/Bold` | `--ac-color-text-brand-bold` |
+| `dimension.space.100` | `Dimension/Space/100`（Primitives） | `--ac-dimension-space-100` |
+| `typography.lineHeight.md` | `Typography/Line Height/MD` | `--ac-typography-line-height-md` |
+| `font.heading.md`（typography 複合） | Text Style `Font/Heading/MD` | `--ac-font-heading-md-*`（5 本） |
+| `elevation.shadow.rest`（shadow 複合） | Effect Style `Elevation/Shadow/Rest` + 色変数 `Elevation/Shadow/Rest/Layer 1, 2` | `--ac-elevation-shadow-rest` |
 
-規則: `.` → `/`。`$root` は名前に出ない。変数の description はトークンの `$description`。Text Style の description に CSS の font-family スタックと変数名を記載。
+規則（2026-09-30 決定、Title Case）: `.` → `/`、各段は先頭大文字（`Color/Text/Brand`）、camelCase は空白で分ける（`Typography/Line Height/MD`）、サイズ略語は全部大文字（`XS` `SM` `MD` `LG` `XL` `XXL`）、`$root` は名前に出ない。部品のプロパティ値は単語に開く（`Size=Small / Medium / Large / Extra Large`）。ブランドは正式表記（`Brand/GitHub`）。コレクションは `Primitives` `Semantic` `Color`、モードは `Value` `Light` `Dark`。コード側（トークン名・CSS 変数・props）は小文字のまま。変換は `packages/tokens/build/figma-name.js`。変数の description はトークンの `$description`。Text Style の description に CSS の font-family スタックと変数名を記載。
 
 ## Figma 側でだけ決めたこと（tokens/ には無い）
 
@@ -61,7 +61,7 @@
 
 ## Icons ページ（2026-09-29 追加）
 
-`packages/ui/icons.json` から `packages/ui/figma/icons-stage.js` で生成。`icon/*` 71（Lucide）、`brand/*` 9（Simple Icons）、`Icon` コンポーネントセット（size sm / md / lg / xl を `dimension/size` に束縛、`glyph` は instance swap）。方針は `docs/icons.md`。
+`packages/ui/icons.json` から `packages/ui/figma/icons-stage.js` で生成。`Icon/*` 71（Lucide）、`Brand/*` 10（Simple Icons + LinkedIn）、`Icon` コンポーネントセット（Size Small / Medium / Large / Extra Large を `Dimension/Size` に束縛、`Glyph` は instance swap）。方針は `docs/icons.md`。
 
 ## 残り（PF-10 のもう半分）
 

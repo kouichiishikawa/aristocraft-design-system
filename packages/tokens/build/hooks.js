@@ -19,7 +19,10 @@ const kebabSegment = (s) => s.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase
 export const CSS_PREFIX = 'ac';
 export const cssName = (path) => [CSS_PREFIX, ...cleanPath(path).map(kebabSegment)].join('-');
 export const dotName = (path) => cleanPath(path).join('.');
-export const figmaName = (path) => cleanPath(path).join('/');
+export { figmaName as figmaDisplayName } from './figma-name.js';
+import { figmaName as toFigma } from './figma-name.js';
+/** Figma names are Title Case with spaces (build/figma-name.js). */
+export const figmaName = (path) => toFigma(cleanPath(path));
 
 /** DTCG dimension / duration object form: { value: 4, unit: "px" } */
 export const isUnitValue = (v) =>

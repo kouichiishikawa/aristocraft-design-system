@@ -23,7 +23,7 @@ const SCOPES = [
   [/^layout\/(breakpoint|container)\//, ['WIDTH_HEIGHT']],
   [/^layout\/(grid\/(gutter|margin)|section)\//, ['GAP']],
 ];
-const scopesFor = (name) => SCOPES.find(([re]) => re.test(name))?.[1] ?? [];
+const scopesFor = (name) => SCOPES.find(([re]) => re.test(name))?.[1] ?? []; // name = lowercase slash path
 /** Figma font family / style names for the token stacks and weights. */
 const FIGMA_FAMILY = { 'Inter Variable': 'Inter', 'Geist Mono': 'Geist Mono', Lora: 'Lora', 'Noto Sans JP': 'Noto Sans JP' };
 const FIGMA_STYLE = {
@@ -146,7 +146,7 @@ const effectStyle = (t) => ({
   effects: t.$value.map((l, i) => ({
     type: l.inset ? 'INNER_SHADOW' : 'DROP_SHADOW',
     color: l.color,
-    colorVariable: `${figmaName(t.path)}/layer${i + 1}`,
+    colorVariable: `${figmaName(t.path)}/Layer ${i + 1}`,
     offset: { x: l.offsetX.value, y: l.offsetY.value },
     radius: l.blur.value,
     spread: l.spread.value,
@@ -155,20 +155,20 @@ const effectStyle = (t) => ({
 /** Shadow layer colors as themed COLOR variables, so one effect style follows light / dark. */
 const shadowLayerVariables = (t, d) =>
   t.$value.map((l, i) => ({
-    name: `${figmaName(t.path)}/layer${i + 1}`,
+    name: `${figmaName(t.path)}/Layer ${i + 1}`,
     type: 'COLOR',
     description: `${t.$description ?? ''} (layer ${i + 1})`.trim(),
     scopes: ['EFFECT_COLOR'],
     codeSyntax: `var(--${cssName(t.path)})`,
-    values: { light: l.color, dark: d.$value[i].color },
+    values: { Light: l.color, Dark: d.$value[i].color },
   }));
 
 export function figmaJson(lightRaw, darkRaw) {
   const dark = new Map(darkRaw.filter(isDark).map((t) => [dotName(t.path), t]));
   const collections = {
-    primitives: { name: 'primitives', modes: ['value'], variables: [] },
-    semantic: { name: 'semantic', modes: ['value'], variables: [] },
-    color: { name: 'color', modes: ['light', 'dark'], variables: [] },
+    primitives: { name: 'Primitives', modes: ['Value'], variables: [] },
+    semantic: { name: 'Semantic', modes: ['Value'], variables: [] },
+    color: { name: 'Color', modes: ['Light', 'Dark'], variables: [] },
   };
   const textStyles = [];
   const effectStyles = { light: [], dark: [] };
@@ -195,14 +195,14 @@ export function figmaJson(lightRaw, darkRaw) {
       : set === 'semantic/color.light' ? collections.color : collections.semantic;
     const variable = {
       name, type: conv.type, description: t.$description ?? '',
-      scopes: scopesFor(name), codeSyntax: `var(--${cssName(t.path)})`,
+      scopes: scopesFor(cleanPath(t.path).join('/')), codeSyntax: `var(--${cssName(t.path)})`,
     };
     if (conv.unit) variable.unit = conv.unit;
     if (col === collections.color) {
       const d = dark.get(dotName(t.path));
-      variable.values = { light: valueOrAlias(t, conv), dark: valueOrAlias(d, toVariable(d)) };
+      variable.values = { Light: valueOrAlias(t, conv), Dark: valueOrAlias(d, toVariable(d)) };
     } else {
-      variable.values = { value: valueOrAlias(t, conv) };
+      variable.values = { Value: valueOrAlias(t, conv) };
     }
     col.variables.push(variable);
     names.add(name);

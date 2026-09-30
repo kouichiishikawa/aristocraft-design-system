@@ -29,11 +29,11 @@ import { BrandIcon, Icon } from '@aristocraft/ui';
 
 | 要素 | 内容 |
 |---|---|
-| `icon/<name>` × 71 | Lucide の SVG から生成した 24×24 のコンポーネント。ストロークは**アウトライン化して 1 つの塗りベクター `glyph`** にし（Figma のストロークは縮小しても線幅が変わらないため）、塗りを `color/icon/default` に束縛。制約は Scale なのでどのサイズでも線幅が比例する |
-| `brand/<name>` × 10 | Simple Icons（LinkedIn は Font Awesome）。glyph は 20/24 に縮めて中央配置、塗りを `color/icon/default` に束縛。description にブランド色の hex と出典 |
-| `Icon`（コンポーネントセット） | variant `size` = sm / md / lg / xl。幅高さは `dimension/size/300〜600` に束縛。`glyph` は instance swap（候補 = icon/* と brand/*） |
+| `Icon/<Name>` × 71 | Lucide の SVG から生成した 24×24 のコンポーネント。ストロークは**アウトライン化して 1 つの塗りベクター `glyph`** にし（Figma のストロークは縮小しても線幅が変わらないため）、塗りを `color/icon/default` に束縛。制約は Scale なのでどのサイズでも線幅が比例する |
+| `Brand/<Name>` × 10 | Simple Icons（LinkedIn は Font Awesome）。glyph は 20/24 に縮めて中央配置、塗りを `color/icon/default` に束縛。description にブランド色の hex と出典 |
+| `Icon`（コンポーネントセット） | variant `Size` = Small / Medium / Large / Extra Large。幅高さは `Dimension/Size/300〜600` に束縛。`Glyph` は instance swap（候補 = Icon/* と Brand/*） |
 
-使い方: `Icon` を置いて size を選び、`glyph` で差し替える。色は glyph 内のベクターの束縛を `color/icon/*` の別変数に変える。
+使い方: `Icon` を置いて Size を選び、`Glyph` で差し替える。色は Glyph 内のベクターの束縛を `Color/Icon/*` の別変数に変える。名前は Figma が Title Case、コードとトークンは小文字（`docs/pf-10-figma.md` の規則）。
 
 ページは 1 つの auto-layout フレーム `Library`（見出し → Icon component と Preview → icons.json のグループごとのセクション → brand）。各セルは主コンポーネントと名前ラベル（`font/label/mono/xs`）。レイアウトは `figma/icons-stage.js` とは別に手で組んだので、アイコンを追加したら該当グループのグリッドへ入れる。
 

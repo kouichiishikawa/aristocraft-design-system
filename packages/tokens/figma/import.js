@@ -10,7 +10,7 @@ const STAGE = '__STAGE__'; // primitives | semantic | color | text | effects | v
 const data = __DATA__;
 
 // CSS custom property name from the Figma name (same rule as build/hooks.js cssName).
-const css = (name) => `var(--ac-${name.split('/').map((x) => x.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()).join('-')})`;
+const css = (name) => `var(--ac-${name.split('/').map((x) => x.replace(/\s+/g, '-').toLowerCase()).join('-')})`;
 const hex = (h) => {
   const n = h.replace('#', '');
   const p = (i) => parseInt(n.slice(i, i + 2), 16) / 255;
@@ -99,13 +99,13 @@ async function verify() {
   out.expected = data.collections.map((c) => ({ name: c.name, variables: c.variables.length }));
   out.textStyles = (await figma.getLocalTextStylesAsync()).length;
   out.effectStyles = (await figma.getLocalEffectStylesAsync()).map((s) => ({ name: s.name, bound: s.effects.every((e) => e.boundVariables?.color) }));
-  const sample = byName.get('color/text/brand');
+  const sample = byName.get('Color/Text/Brand');
   const col = collections.find((c) => c.id === sample?.variableCollectionId);
   out.sample = sample && col ? Object.fromEntries(col.modes.map((m) => {
     const v = sample.valuesByMode[m.modeId];
     const target = v?.type === 'VARIABLE_ALIAS' ? variables.find((x) => x.id === v.id) : null;
     return [m.name, target ? `alias → ${target.name}` : JSON.stringify(v)];
-  })) : 'color/text/brand not found';
+  })) : 'Color/Text/Brand not found';
   out.missing = data.collections.flatMap((c) => c.variables.filter((v) => !byName.has(v.name)).map((v) => v.name));
 }
 

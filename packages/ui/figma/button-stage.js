@@ -4,6 +4,7 @@
 // Figma naming is Title Case with spaces (props "Icon Before", values "Medium", layers "Label"); code keeps camelCase.
 // Design: docs/components/button.md. variant 5 × size 3 × shape 2 × state 6 = 180 variants, every value bound
 // to a variable or text style. Re-run after changing the SPEC below.
+import { SIZE_WORDS, figmaName } from '@aristocraft/tokens/figma-name';
 const SPEC = {
   variants: {
     // [fill default, fill hovered, fill pressed, text, border]  (variable names; null = none/transparent)
@@ -34,8 +35,17 @@ if (only) SPEC.variants = Object.fromEntries(Object.entries(SPEC.variants).filte
 // Figma display names (Title Case). Code props stay camelCase: variant/size/shape, iconBefore/iconAfter, label.
 SPEC.names = {
   props: { variant: 'Variant', size: 'Size', shape: 'Shape', state: 'State', label: 'Label', iconBefore: 'Icon Before', iconAfter: 'Icon After' },
-  values: { default: 'Default', primary: 'Primary', secondary: 'Secondary', link: 'Link', danger: 'Danger', sm: 'Small', md: 'Medium', lg: 'Large', rounded: 'Rounded', pill: 'Pill', hovered: 'Hovered', pressed: 'Pressed', focused: 'Focused', disabled: 'Disabled', loading: 'Loading' },
+  values: { default: 'Default', primary: 'Primary', secondary: 'Secondary', link: 'Link', danger: 'Danger', ...SIZE_WORDS, rounded: 'Rounded', pill: 'Pill', hovered: 'Hovered', pressed: 'Pressed', focused: 'Focused', disabled: 'Disabled', loading: 'Loading' },
 };
+// Variable / style / component names in Figma are Title Case: convert the lowercase SPEC references once here.
+const fig = (s) => (typeof s === 'string' && s.includes('/') ? figmaName(s.split('/')) : s);
+for (const k of Object.keys(SPEC.variants)) SPEC.variants[k] = SPEC.variants[k].map(fig);
+for (const k of Object.keys(SPEC.sizes)) SPEC.sizes[k] = SPEC.sizes[k].map((x, i) => (i === 4 ? SIZE_WORDS[x] : fig(x)));
+SPEC.shapes = Object.fromEntries(Object.entries(SPEC.shapes).map(([k, x]) => [k, fig(x)]));
+SPEC.disabled = { fill: fig(SPEC.disabled.fill), text: fig(SPEC.disabled.text) };
+SPEC.focus = { ring: fig(SPEC.focus.ring), gap: fig(SPEC.focus.gap) };
+SPEC.loadingOpacity = fig(SPEC.loadingOpacity); SPEC.icon = fig(SPEC.icon); SPEC.spinner = fig(SPEC.spinner);
+SPEC.borderWidth = fig('border/width/default'); SPEC.linkPressedText = fig('color/text/brand/bold');
 
 const script = String.raw`
 const SPEC = __SPEC__;
@@ -53,14 +63,14 @@ for (const name of Object.values(SPEC.sizes).map((s) => s[3])) await figma.loadF
 const iconsPage = figma.root.children.find((p) => p.name === 'Icons');
 await figma.setCurrentPageAsync(iconsPage);
 const iconSet = iconsPage.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Icon');
-const glyphProp = Object.keys(iconSet.componentPropertyDefinitions).find((k) => k.startsWith('glyph'));
+const glyphProp = Object.keys(iconSet.componentPropertyDefinitions).find((k) => k.startsWith('Glyph'));
 const glyphs = Object.fromEntries(iconsPage.findAll((n) => n.type === 'COMPONENT' && (n.name === SPEC.icon || n.name === SPEC.spinner)).map((n) => [n.name, n.id]));
 await figma.setCurrentPageAsync(page);
 const old = page.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Button'); if (old) old.remove();
 const paint = (name) => figma.variables.setBoundVariableForPaint({ type: 'SOLID', color: { r: 0, g: 0, b: 0 } }, 'color', v(name));
 
 const iconInstance = (sizeVariant, glyphName, layerName) => {
-  const variant = iconSet.children.find((c) => c.name === 'size=' + sizeVariant);
+  const variant = iconSet.children.find((c) => c.name === 'Size=' + sizeVariant);
   const inst = variant.createInstance();
   inst.name = layerName;
   inst.setProperties({ [glyphProp]: glyphs[glyphName] });
@@ -90,7 +100,7 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
         const isDisabled = state === 'disabled';
         const fillTok = isDisabled ? SPEC.disabled.fill : state === 'hovered' ? fillHover : state === 'pressed' ? fillPress : fill;
         c.fills = fillTok ? [paint(fillTok)] : [];
-        if (border && !isDisabled) { c.strokes = [paint(border)]; c.strokeAlign = 'INSIDE'; c.setBoundVariable('strokeWeight', v('border/width/default')); }
+        if (border && !isDisabled) { c.strokes = [paint(border)]; c.strokeAlign = 'INSIDE'; c.setBoundVariable('strokeWeight', v(SPEC.borderWidth)); }
         else c.strokes = [];
         if (state === 'focused') { c.clipsContent = false;
           c.effects = [
@@ -103,7 +113,7 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
         const start = iconInstance(iconSize, state === 'loading' ? SPEC.spinner : SPEC.icon, N.props.iconBefore);
         c.appendChild(start); start.visible = state === 'loading'; start.isExposedInstance = true;
         const t = figma.createText(); t.name = N.props.label; t.textStyleId = styles[textStyle].id; t.characters = SPEC.label;
-        t.fills = [paint(isDisabled ? SPEC.disabled.text : state === 'pressed' && variant === 'link' ? 'color/text/brand/bold' : textColor)];
+        t.fills = [paint(isDisabled ? SPEC.disabled.text : state === 'pressed' && variant === 'link' ? SPEC.linkPressedText : textColor)];
         if (variant === 'link' && (state === 'hovered' || state === 'pressed')) t.textDecoration = 'UNDERLINE';
         c.appendChild(t);
         const end = iconInstance(iconSize, SPEC.icon, N.props.iconAfter);

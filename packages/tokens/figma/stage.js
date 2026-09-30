@@ -22,7 +22,7 @@ else {
   // colours, which point at the composite CSS shadow token; keep only the non-derivable ones.
   const derived = (name) => `var(--ac-${name.split('/').map((x) => x.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()).join('-')})`;
   const vars = col.variables
-    .filter((v) => !only || v.name.startsWith(only)) // `--only color/background/brand` = re-sync one group
+    .filter((v) => !only || v.name.startsWith(only)) // `--only Color/Background/Brand` = re-sync one group
     .map(({ codeSyntax, ...v }) => (codeSyntax === derived(v.name) ? v : { ...v, codeSyntax }));
   const size = Math.ceil(vars.length / parts);
   data = { collections: [{ ...col, variables: vars.slice((part - 1) * size, part * size) }] };

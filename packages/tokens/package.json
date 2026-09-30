@@ -21,6 +21,7 @@
     "./css": "./dist/css/tokens.css",
     "./css/*": "./dist/css/*",
     "./json": "./dist/json/tokens.json",
-    "./figma": "./dist/figma/variables.json"
+    "./figma": "./dist/figma/variables.json",
+    "./figma-name": "./build/figma-name.js"
   }
 }

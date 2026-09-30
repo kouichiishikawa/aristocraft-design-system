@@ -38,11 +38,11 @@ Figma: `Button` ページの `Button` セット。部品ごとにページを分
 ## 未決
 
 - pressed の scale 0.98（PF-08 の未決）。Figma には表現がないので実装時に決める
-- 既定の shape を rounded にした（本人確認待ち）
+- 既定の shape は rounded（2026-09-30 本人了承）
 
 ## Figma の構造
 
 - 各 variant は auto-layout（横）。高さ・左右余白・間隔・角丸・線幅・不透明度は変数に束縛、塗りと文字色は `color/*`、文字は Text Style `font/label/*`
 - プロパティ: `Label`（text）、`Icon Before` / `Icon After`（boolean、中身は `Icon` セットの露出インスタンスで glyph を差し替え）
-- 変数・スタイル名は Title Case への統一を検討中（下記）
+- 変数・スタイル・部品名は Title Case（`docs/pf-10-figma.md` の規則）
 - loading の variant は iconStart の位置に `icon/loader-circle`

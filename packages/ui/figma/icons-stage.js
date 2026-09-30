@@ -8,6 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
+import { BRAND_TITLES, SIZE_WORDS, figmaSegment } from '@aristocraft/tokens/figma-name';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const require = createRequire(import.meta.url);
@@ -30,11 +31,11 @@ let data;
 if (stage === 'icons') {
   const names = Object.values(manifest.lucide.groups).flat();
   const size = Math.ceil(names.length / parts);
-  data = { kind: 'icons', prefix: 'icon', license: `Lucide ${manifest.lucide.version} (ISC)`, items: names.slice((part - 1) * size, part * size).map((n) => ({ name: n, svg: lucideSvg(n) })) };
+  data = { kind: 'icons', prefix: 'Icon', license: `Lucide ${manifest.lucide.version} (ISC)`, items: names.slice((part - 1) * size, part * size).map((n) => ({ name: figmaSegment(n), svg: lucideSvg(n) })) };
 } else if (stage === 'brand') {
-  data = { kind: 'icons', prefix: 'brand', license: `Simple Icons ${manifest.brand.version} (CC0)`, items: manifest.brand.icons.map((n) => ({ name: n, ...brandSvg(n) })) };
+  data = { kind: 'icons', prefix: 'Brand', license: `Simple Icons ${manifest.brand.version} (CC0)`, items: manifest.brand.icons.map((n) => ({ name: BRAND_TITLES[n] ?? figmaSegment(n), ...brandSvg(n) })) };
 } else if (stage === 'wrapper') {
-  data = { kind: 'wrapper', defaultIcon: 'icon/arrow-right', sizes: [['sm', 300, 12], ['md', 400, 16], ['lg', 500, 20], ['xl', 600, 24]] };
+  data = { kind: 'wrapper', defaultIcon: 'Icon/Arrow Right', sizes: [[SIZE_WORDS.sm, 300, 12], [SIZE_WORDS.md, 400, 16], [SIZE_WORDS.lg, 500, 20], [SIZE_WORDS.xl, 600, 24]] };
 } else { console.error('stage: icons [n/m] | brand | wrapper'); process.exit(1); }
 
 const script = String.raw`
@@ -45,7 +46,7 @@ if (!page) { page = figma.createPage(); page.name = 'Icons'; }
 await figma.setCurrentPageAsync(page);
 const vars = await figma.variables.getLocalVariablesAsync();
 const v = (name) => vars.find((x) => x.name === name);
-const iconColor = v('color/icon/default');
+const iconColor = v('Color/Icon/Default');
 const comps = new Map(page.findAll((n) => n.type === 'COMPONENT' || n.type === 'COMPONENT_SET').map((n) => [n.name, n]));
 
 if (data.kind === 'icons') {
@@ -58,7 +59,7 @@ if (data.kind === 'icons') {
     const comp = figma.createComponentFromNode(frame);
     comp.name = name;
     comp.description = (item.title ? item.title + ' · ' : '') + (item.source ? item.source : data.license) + (item.hex ? ' · brand #' + item.hex : '');
-    comp.x = (data.prefix === 'brand' ? 900 : 0) + (i % COLS) * GAP; comp.y = Math.floor(i / COLS) * GAP; i++;
+    comp.x = (data.prefix === 'Brand' ? 900 : 0) + (i % COLS) * GAP; comp.y = Math.floor(i / COLS) * GAP; i++;
     // Figma strokes keep their weight when scaled, so outline them into one filled vector ("glyph").
     // outlineStroke() drops the node on the page with parent-relative numbers: append it back first.
     const parts = [];
@@ -73,7 +74,7 @@ if (data.kind === 'icons') {
     }
     const merged = parts.length > 1 ? figma.union(parts, comp) : parts[0];
     const glyphNode = figma.flatten([merged], comp);
-    glyphNode.name = 'glyph'; glyphNode.strokes = [];
+    glyphNode.name = 'Glyph'; glyphNode.strokes = [];
     glyphNode.fills = [figma.variables.setBoundVariableForPaint({ type: 'SOLID', color: { r: 0, g: 0, b: 0 } }, 'color', iconColor)];
     glyphNode.constraints = { horizontal: 'SCALE', vertical: 'SCALE' };
     comps.set(name, comp); out.created++; out.ids.push(comp.id);
@@ -87,24 +88,24 @@ if (data.kind === 'wrapper') {
   const variants = [];
   for (const [label, token, px] of data.sizes) {
     const c = figma.createComponent();
-    c.name = 'size=' + label;
+    c.name = 'Size=' + label;
     c.resize(px, px);
-    c.setBoundVariable('width', v('dimension/size/' + token));
-    c.setBoundVariable('height', v('dimension/size/' + token));
+    c.setBoundVariable('width', v('Dimension/Size/' + token));
+    c.setBoundVariable('height', v('Dimension/Size/' + token));
     const inst = glyph.createInstance();
     c.appendChild(inst);
     inst.x = 0; inst.y = 0; inst.resize(px, px);
     inst.constraints = { horizontal: 'SCALE', vertical: 'SCALE' };
-    inst.name = 'glyph';
+    inst.name = 'Glyph';
     variants.push(c);
   }
   const set = figma.combineAsVariants(variants, page);
   set.name = 'Icon';
-  set.description = 'Lucide のアイコン枠。size は dimension/size 300〜600、glyph は icon/* と brand/* をスワップ。コード: <Icon icon={…} size="md" />';
+  set.description = 'アイコン枠。Size は Dimension/Size 300〜600、Glyph は Icon/* と Brand/* をスワップ。コード: <Icon icon={…} size="md" />';
   set.x = 0; set.y = -200;
-  const iconComps = [...comps.entries()].filter(([k]) => k.startsWith('icon/') || k.startsWith('brand/')).map(([, c]) => c);
-  const prop = set.addComponentProperty('glyph', 'INSTANCE_SWAP', glyph.id, { preferredValues: iconComps.map((c) => ({ type: 'COMPONENT', key: c.key })) });
-  for (const c of variants) { const inst = c.findChild((n) => n.name === 'glyph'); inst.componentPropertyReferences = { mainComponent: prop }; }
+  const iconComps = [...comps.entries()].filter(([k]) => k.startsWith('Icon/') || k.startsWith('Brand/')).map(([, c]) => c);
+  const prop = set.addComponentProperty('Glyph', 'INSTANCE_SWAP', glyph.id, { preferredValues: iconComps.map((c) => ({ type: 'COMPONENT', key: c.key })) });
+  for (const c of variants) { const inst = c.findChild((n) => n.name === 'Glyph'); inst.componentPropertyReferences = { mainComponent: prop }; }
   set.children.forEach((c, idx) => { c.x = idx * 48; c.y = 0; });
   out.created = set.children.length; out.ids.push(set.id); out.property = prop; out.preferred = iconComps.length;
 }
