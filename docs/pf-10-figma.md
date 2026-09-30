@@ -36,6 +36,7 @@
 |---|---|
 | scopes | 名前の先頭で決める（`build/emit.js` の SCOPES）。text/link → TEXT_FILL、icon → SHAPE_FILL、border → STROKE_COLOR、background / surface → FRAME_FILL + SHAPE_FILL、primitive の色 → ALL_FILLS + STROKE_COLOR + EFFECT_COLOR、space / gutter / margin / section → GAP、size / breakpoint / container → WIDTH_HEIGHT、radius → CORNER_RADIUS、border 幅 → STROKE_FLOAT、size → FONT_SIZE、lineHeight → LINE_HEIGHT、weight → FONT_WEIGHT、family → FONT_FAMILY、opacity → OPACITY。duration / easing / shape / grid.columns は `[]`（ピッカーに出さない） |
 | フォント名 | `Inter Variable` → Figma の `Inter`。weight は Inter が Regular / Medium / Semi Bold / Bold、Geist Mono が Regular / Medium / SemiBold / Bold |
+| 不透明度 | Figma のレイヤー不透明度は 0–100 なので、`opacity/*` 変数は ×100 の値で投入する（トークンは 0–1 のまま） |
 | 影 | Effect Style は 1 つで、各層の色を `color` コレクションの変数に束縛。light / dark はモード切替で追従する。この 8 変数は shadow トークンから生成した派生値 |
 | Text Style | フォントは 1 書体しか持てないので Inter（mono は Geist Mono）。和文の Noto Sans JP はテキストごとに設定する（例外） |
 

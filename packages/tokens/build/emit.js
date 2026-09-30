@@ -103,6 +103,9 @@ function toVariable(t) {
   switch (t.$type) {
     case 'color': return { type: 'COLOR', value: v };
     case 'number':
+      // Figma binds layer opacity on a 0–100 scale; the token is 0–1.
+      if (t.path[0] === 'opacity') return { type: 'FLOAT', value: Math.round(v * 100), unit: '%' };
+      return { type: 'FLOAT', value: v };
     case 'fontWeight': return { type: 'FLOAT', value: v };
     case 'dimension':
       return isUnitValue(v) && v.unit === 'px' ? { type: 'FLOAT', value: v.value }
