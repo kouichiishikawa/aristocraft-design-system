@@ -37,7 +37,7 @@
 | 11 spacing | A+: semantic なし、用途の帯、負値 8 段、layout.section のみ | pf-08-spacing.md |
 | 12 角丸・線・影 | radius は規則、border.width 3 つ、shadow は 7b の 4 段 | pf-08-radius-border-shadow.md |
 | 13・14 モーション・状態 | トークンなし、規則のみ。transition の組は component 層へ | pf-08-motion-state.md |
-| 15 ユーティリティ | トークンなし。アイコンは size.300〜600、z-index は component 層、opacity は primitive | 本書 |
+| 15 ユーティリティ | トークンなし。アイコンは size.300 / 400 / 600 / 800 / 1200（12 / 16 / 24 / 32 / 48、2026-09-30 変更）、z-index は component 層、opacity は primitive | 本書 |
 
 ## 規則として持つもの（トークンにしなかった判断）
 

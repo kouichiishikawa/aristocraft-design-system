@@ -19,9 +19,9 @@ Figma: `Button` ページの `Button` セット。部品ごとにページを分
 
 | size | 高さ | 左右余白 | 間隔 | 文字 | アイコン |
 |---|---|---|---|---|---|
-| sm | size.800 = 32 | space.300 = 12 | space.100 = 4 | label.sm | 16（Icon md） |
-| md | size.1000 = 40 | space.400 = 16 | space.200 = 8 | label.md | 16（Icon md） |
-| lg | size.1200 = 48 | space.500 = 20 | space.200 = 8 | label.lg | 20（Icon lg） |
+| sm | size.800 = 32 | space.300 = 12 | space.100 = 4 | label.sm | 16（Icon sm） |
+| md | size.1000 = 40 | space.400 = 16 | space.200 = 8 | label.md | 16（Icon sm） |
+| lg | size.1200 = 48 | space.500 = 20 | space.200 = 8 | label.lg | 24（Icon md） |
 
 ## 色（variant × state）
 

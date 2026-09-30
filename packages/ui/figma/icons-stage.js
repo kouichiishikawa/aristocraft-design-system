@@ -35,7 +35,7 @@ if (stage === 'icons') {
 } else if (stage === 'brand') {
   data = { kind: 'icons', prefix: 'Brand', license: `Simple Icons ${manifest.brand.version} (CC0)`, items: manifest.brand.icons.map((n) => ({ name: BRAND_TITLES[n] ?? figmaSegment(n), ...brandSvg(n) })) };
 } else if (stage === 'wrapper') {
-  data = { kind: 'wrapper', defaultIcon: 'Icon/Arrow Right', sizes: [[SIZE_WORDS.sm, 300, 12], [SIZE_WORDS.md, 400, 16], [SIZE_WORDS.lg, 500, 20], [SIZE_WORDS.xl, 600, 24]] };
+  data = { kind: 'wrapper', defaultIcon: 'Icon/Arrow Right', sizes: [[SIZE_WORDS.xs, 300, 12], [SIZE_WORDS.sm, 400, 16], [SIZE_WORDS.md, 600, 24], [SIZE_WORDS.lg, 800, 32], [SIZE_WORDS.xl, 1200, 48]] };
 } else { console.error('stage: icons [n/m] | brand | wrapper'); process.exit(1); }
 
 const script = String.raw`
@@ -101,7 +101,7 @@ if (data.kind === 'wrapper') {
   }
   const set = figma.combineAsVariants(variants, page);
   set.name = 'Icon';
-  set.description = 'アイコン枠。Size は Dimension/Size 300〜600、Glyph は Icon/* と Brand/* をスワップ。コード: <Icon icon={…} size="md" />';
+  set.description = 'アイコン枠。Size は Extra Small 12 / Small 16 / Medium 24 / Large 32 / Extra Large 48（Dimension/Size 300 / 400 / 600 / 800 / 1200）、Glyph は Icon/* と Brand/* をスワップ。コード: <Icon icon={…} size="md" />';
   set.x = 0; set.y = -200;
   const iconComps = [...comps.entries()].filter(([k]) => k.startsWith('Icon/') || k.startsWith('Brand/')).map(([, c]) => c);
   const prop = set.addComponentProperty('Glyph', 'INSTANCE_SWAP', glyph.id, { preferredValues: iconComps.map((c) => ({ type: 'COMPONENT', key: c.key })) });

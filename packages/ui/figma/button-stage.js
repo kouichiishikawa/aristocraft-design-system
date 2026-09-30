@@ -14,11 +14,11 @@ const SPEC = {
     link:      [null, 'color/background/neutral/subtlest', 'color/background/neutral/subtle', 'color/text/brand', null],
     danger:    ['color/background/status/error/bold', 'color/background/status/error/bold/hovered', 'color/background/status/error/bold/pressed', 'color/text/static/white', null],
   },
-  // height token, padding-inline token, gap token, text style, icon size variant, rounded radius token
+  // height token, padding-inline token, gap token, text style, icon size (Icon set: sm 16 / md 24), rounded radius token
   sizes: {
-    sm: ['dimension/size/800', 'dimension/space/300', 'dimension/space/100', 'font/label/sm', 'md', 'dimension/radius/200'],
-    md: ['dimension/size/1000', 'dimension/space/400', 'dimension/space/200', 'font/label/md', 'md', 'dimension/radius/300'],
-    lg: ['dimension/size/1200', 'dimension/space/500', 'dimension/space/200', 'font/label/lg', 'lg', 'dimension/radius/300'],
+    sm: ['dimension/size/800', 'dimension/space/300', 'dimension/space/100', 'font/label/sm', 'sm', 'dimension/radius/200'],
+    md: ['dimension/size/1000', 'dimension/space/400', 'dimension/space/200', 'font/label/md', 'sm', 'dimension/radius/300'],
+    lg: ['dimension/size/1200', 'dimension/space/500', 'dimension/space/200', 'font/label/lg', 'md', 'dimension/radius/300'],
   },
   shapes: { rounded: null, pill: 'dimension/radius/full' }, // null = per-size rounded token
   states: ['default', 'hovered', 'pressed', 'focused', 'disabled', 'loading'],

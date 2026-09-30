@@ -7,7 +7,7 @@
 | 基本セット | **Lucide**（`lucide-react` 1.48、ISC）。24px グリッド、2px ストローク、丸端 |
 | アニメーション | **animateicons.in の Lucide 版**（`@animateicons/react`、MIT、Motion で動く。Lucide 全体ではなく 669 個の部分集合）を、動きが必要な部品にだけ個別採用する。採用したものは `packages/ui/icons.json` の `animated` に理由つきで列挙 |
 | ブランドロゴ | **Simple Icons**（`simple-icons` 16.33、CC0）。Lucide はブランドロゴを持たない方針を明文化している。CC0 はコードに対してで、各社の商標ガイドラインは別（`guidelines` フィールドを確認）。**例外: LinkedIn** は Simple Icons から削除済み（本家の要請）で公式配布は PNG のみのため、Font Awesome Free 6 の `linkedin`（CC BY 4.0）を `packages/ui/icons/brand/linkedin.json` に置いて使う |
-| サイズ | `dimension.size` の 300 / 400 / 500 / 600 = 12 / 16 / 20 / 24px（`sm` / `md` / `lg` / `xl`）。ストローク幅は Lucide 既定どおりサイズに比例して縮む。**ブランドロゴは 24 の枠に対して 20/24**（viewBox `-2.4 -2.4 28.8 28.8`）で描き、線画の Lucide と光学的に揃える |
+| サイズ | `dimension.size` の 300 / 400 / 600 / 800 / 1200 = 12 / 16 / 24 / 32 / 48px（`xs` / `sm` / `md` / `lg` / `xl`、既定 md = 24。2026-09-30 に 5 段へ変更）。ストローク幅は Lucide 既定どおりサイズに比例して縮む。**ブランドロゴは 24 の枠に対して 20/24**（viewBox `-2.4 -2.4 28.8 28.8`）で描き、線画の Lucide と光学的に揃える |
 | 色 | `currentColor`。親の `color` を `--ac-color-icon-*` で指定する。Figma は `color/icon/default` に束縛 |
 | 採用一覧 | `packages/ui/icons.json` が正本。コードと Figma の両方をここから生成する |
 
@@ -31,7 +31,7 @@ import { BrandIcon, Icon } from '@aristocraft/ui';
 |---|---|
 | `Icon/<Name>` × 71 | Lucide の SVG から生成した 24×24 のコンポーネント。ストロークは**アウトライン化して 1 つの塗りベクター `glyph`** にし（Figma のストロークは縮小しても線幅が変わらないため）、塗りを `color/icon/default` に束縛。制約は Scale なのでどのサイズでも線幅が比例する |
 | `Brand/<Name>` × 10 | Simple Icons（LinkedIn は Font Awesome）。glyph は 20/24 に縮めて中央配置、塗りを `color/icon/default` に束縛。description にブランド色の hex と出典 |
-| `Icon`（コンポーネントセット） | variant `Size` = Small / Medium / Large / Extra Large。幅高さは `Dimension/Size/300〜600` に束縛。`Glyph` は instance swap（候補 = Icon/* と Brand/*） |
+| `Icon`（コンポーネントセット） | variant `Size` = Extra Small 12 / Small 16 / Medium 24 / Large 32 / Extra Large 48。幅高さは `Dimension/Size/300 / 400 / 600 / 800 / 1200` に束縛。`Glyph` は instance swap（候補 = Icon/* と Brand/*） |
 
 使い方: `Icon` を置いて Size を選び、`Glyph` で差し替える。色は Glyph 内のベクターの束縛を `Color/Icon/*` の別変数に変える。名前は Figma が Title Case、コードとトークンは小文字（`docs/pf-10-figma.md` の規則）。
 
