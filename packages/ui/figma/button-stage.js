@@ -1,0 +1,129 @@
+// Prints the `use_figma` script that builds the Button component set on the "Components" page.
+//   node figma/button-stage.js            → creates (or replaces) the "Button" component set
+// Design: docs/components/button.md. variant 5 × size 3 × shape 2 × state 6 = 180 variants, every value bound
+// to a variable or text style. Re-run after changing the SPEC below.
+const SPEC = {
+  variants: {
+    // [fill default, fill hovered, fill pressed, text, border]  (variable names; null = none/transparent)
+    primary:   ['color/background/brand/bold', 'color/background/brand/bold/hovered', 'color/background/brand/bold/pressed', 'color/text/static/white', null],
+    default:   ['color/background/neutral/default', 'color/background/neutral/default/hovered', 'color/background/neutral/default/pressed', 'color/text/default', null],
+    secondary: [null, 'color/background/neutral/subtlest', 'color/background/neutral/subtle', 'color/text/default', 'color/border/bold'],
+    link:      [null, 'color/background/neutral/subtlest', 'color/background/neutral/subtle', 'color/text/brand', null],
+    danger:    ['color/background/status/error/bold', 'color/background/status/error/bold/hovered', 'color/background/status/error/bold/pressed', 'color/text/static/white', null],
+  },
+  // height token, padding-inline token, gap token, text style, icon size variant, rounded radius token
+  sizes: {
+    sm: ['dimension/size/800', 'dimension/space/300', 'dimension/space/100', 'font/label/sm', 'md', 'dimension/radius/200'],
+    md: ['dimension/size/1000', 'dimension/space/400', 'dimension/space/200', 'font/label/md', 'md', 'dimension/radius/300'],
+    lg: ['dimension/size/1200', 'dimension/space/500', 'dimension/space/200', 'font/label/lg', 'lg', 'dimension/radius/300'],
+  },
+  shapes: { rounded: null, pill: 'dimension/radius/full' }, // null = per-size rounded token
+  states: ['default', 'hovered', 'pressed', 'focused', 'disabled', 'loading'],
+  disabled: { fill: 'color/background/disabled', text: 'color/text/disabled' },
+  focus: { ring: 'color/border/focused', gap: 'elevation/surface/default' },
+  loadingOpacity: 'opacity/64',
+  label: 'Button',
+  icon: 'icon/arrow-right',
+  spinner: 'icon/loader-circle',
+};
+
+const script = String.raw`
+const SPEC = __SPEC__;
+const out = { created: 0, errors: [] };
+let page = figma.root.children.find((p) => p.name === 'Components');
+if (!page) { page = figma.createPage(); page.name = 'Components'; }
+await figma.setCurrentPageAsync(page);
+const vars = await figma.variables.getLocalVariablesAsync();
+const v = (name) => { const x = vars.find((y) => y.name === name); if (!x) throw new Error('variable missing: ' + name); return x; };
+const styles = Object.fromEntries((await figma.getLocalTextStylesAsync()).map((s) => [s.name, s]));
+for (const name of Object.values(SPEC.sizes).map((s) => s[3])) await figma.loadFontAsync(styles[name].fontName);
+const iconsPage = figma.root.children.find((p) => p.name === 'Icons');
+await figma.setCurrentPageAsync(iconsPage);
+const iconSet = iconsPage.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Icon');
+const glyphProp = Object.keys(iconSet.componentPropertyDefinitions).find((k) => k.startsWith('glyph'));
+const glyphs = Object.fromEntries(iconsPage.findAll((n) => n.type === 'COMPONENT' && (n.name === SPEC.icon || n.name === SPEC.spinner)).map((n) => [n.name, n.id]));
+await figma.setCurrentPageAsync(page);
+const old = page.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Button'); if (old) old.remove();
+const paint = (name) => figma.variables.setBoundVariableForPaint({ type: 'SOLID', color: { r: 0, g: 0, b: 0 } }, 'color', v(name));
+
+const iconInstance = (sizeVariant, glyphName, layerName) => {
+  const variant = iconSet.children.find((c) => c.name === 'size=' + sizeVariant);
+  const inst = variant.createInstance();
+  inst.name = layerName;
+  inst.setProperties({ [glyphProp]: glyphs[glyphName] });
+  return inst;
+};
+
+const variants = [];
+for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.entries(SPEC.variants)) {
+  for (const [size, [heightTok, padTok, gapTok, textStyle, iconSize, roundedTok]] of Object.entries(SPEC.sizes)) {
+    for (const [shape, shapeTok] of Object.entries(SPEC.shapes)) {
+      for (const state of SPEC.states) {
+        const c = figma.createComponent();
+        c.name = 'variant=' + variant + ', size=' + size + ', shape=' + shape + ', state=' + state;
+        c.layoutMode = 'HORIZONTAL';
+        c.primaryAxisSizingMode = 'AUTO';
+        c.counterAxisSizingMode = 'FIXED';
+        c.counterAxisAlignItems = 'CENTER';
+        c.primaryAxisAlignItems = 'CENTER';
+        c.resize(96, 40);
+        c.setBoundVariable('height', v(heightTok));
+        c.setBoundVariable('paddingLeft', v(padTok)); c.setBoundVariable('paddingRight', v(padTok));
+        c.setBoundVariable('itemSpacing', v(gapTok));
+        const radius = shapeTok ?? roundedTok;
+        for (const k of ['topLeftRadius', 'topRightRadius', 'bottomLeftRadius', 'bottomRightRadius']) c.setBoundVariable(k, v(radius));
+        // fills / strokes by state
+        const isDisabled = state === 'disabled';
+        const fillTok = isDisabled ? SPEC.disabled.fill : state === 'hovered' ? fillHover : state === 'pressed' ? fillPress : fill;
+        c.fills = fillTok ? [paint(fillTok)] : [];
+        if (border && !isDisabled) { c.strokes = [paint(border)]; c.strokeAlign = 'INSIDE'; c.setBoundVariable('strokeWeight', v('border/width/default')); }
+        else c.strokes = [];
+        if (state === 'focused') {
+          c.effects = [
+            figma.variables.setBoundVariableForEffect({ type: 'DROP_SHADOW', color: { r: 1, g: 1, b: 1, a: 1 }, offset: { x: 0, y: 0 }, radius: 0, spread: 2, visible: true, blendMode: 'NORMAL' }, 'color', v(SPEC.focus.gap)),
+            figma.variables.setBoundVariableForEffect({ type: 'DROP_SHADOW', color: { r: 0, g: 0, b: 1, a: 1 }, offset: { x: 0, y: 0 }, radius: 0, spread: 4, visible: true, blendMode: 'NORMAL' }, 'color', v(SPEC.focus.ring)),
+          ];
+        }
+        if (state === 'loading') c.setBoundVariable('opacity', v(SPEC.loadingOpacity));
+        // children: iconStart (or spinner when loading), label, iconEnd
+        const start = iconInstance(iconSize, state === 'loading' ? SPEC.spinner : SPEC.icon, 'iconStart');
+        c.appendChild(start); start.visible = state === 'loading'; start.isExposedInstance = true;
+        const t = figma.createText(); t.name = 'label'; t.textStyleId = styles[textStyle].id; t.characters = SPEC.label;
+        t.fills = [paint(isDisabled ? SPEC.disabled.text : state === 'pressed' && variant === 'link' ? 'color/text/brand/bold' : textColor)];
+        if (variant === 'link' && (state === 'hovered' || state === 'pressed')) t.textDecoration = 'UNDERLINE';
+        c.appendChild(t);
+        const end = iconInstance(iconSize, SPEC.icon, 'iconEnd');
+        c.appendChild(end); end.visible = false; end.isExposedInstance = true;
+        variants.push(c);
+      }
+    }
+  }
+}
+const set = figma.combineAsVariants(variants, page);
+set.name = 'Button';
+set.description = 'variant: primary は画面に 1 つ / default が標準 / secondary は default の隣の副次操作 / link は控えめな導線 / danger は破壊的操作。size sm 32 · md 40 · lg 48（TextField と同じ段）。shape rounded（sm 8px、md・lg 12px、squircle）/ pill。disabled は全 variant 共通。icon-only は IconButton を使う。label 必須。実装: <Button variant size shape iconStart iconEnd loading fullWidth>';
+// component properties (boolean/text) on the set, wired to the layers of every variant
+const pLabel = set.addComponentProperty('label', 'TEXT', SPEC.label);
+const pStart = set.addComponentProperty('iconStart', 'BOOLEAN', false);
+const pEnd = set.addComponentProperty('iconEnd', 'BOOLEAN', false);
+for (const c of set.children) {
+  const isLoading = c.name.includes('state=loading');
+  c.findChild((n) => n.name === 'label').componentPropertyReferences = { characters: pLabel };
+  if (!isLoading) c.findChild((n) => n.name === 'iconStart').componentPropertyReferences = { visible: pStart };
+  c.findChild((n) => n.name === 'iconEnd').componentPropertyReferences = { visible: pEnd };
+}
+// grid: rows = variant × state, columns = size × shape
+const sizes = Object.keys(SPEC.sizes), shapes = Object.keys(SPEC.shapes), variantsK = Object.keys(SPEC.variants);
+const colW = 200, rowH = 72, pad = 32;
+for (const c of set.children) {
+  const m = Object.fromEntries(c.name.split(', ').map((kv) => kv.split('=')));
+  const col = sizes.indexOf(m.size) * shapes.length + shapes.indexOf(m.shape);
+  const row = variantsK.indexOf(m.variant) * SPEC.states.length + SPEC.states.indexOf(m.state);
+  c.x = pad + col * colW; c.y = pad + row * rowH;
+}
+set.resizeWithoutConstraints(pad * 2 + sizes.length * shapes.length * colW, pad * 2 + variantsK.length * SPEC.states.length * rowH);
+set.x = 0; set.y = 0;
+out.created = set.children.length; out.id = set.id; out.props = Object.keys(set.componentPropertyDefinitions);
+return out;`;
+
+process.stdout.write(script.replace('__SPEC__', JSON.stringify(SPEC)));
