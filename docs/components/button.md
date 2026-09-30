@@ -1,6 +1,6 @@
 # Button（設計、2026-09-30）
 
-Figma: Components ページの `Button` セット（variant 5 × size 3 × shape 2 × state 6 = 180）。生成は `node packages/ui/figma/button-stage.js` → `use_figma`。実装は PF-13。
+Figma: `Button` ページの `Button` セット。部品ごとにページを分ける。名前は Figma 側が Title Case（Variant / Size / Shape / State、Label、Icon Before / Icon After、値は Default / Small / Rounded …）、コード側が camelCase（`variant` `size` `shape` `label` `iconBefore` `iconAfter`）。生成は `node packages/ui/figma/button-stage.js [--variants default]` → `use_figma`。進め方: Default だけ生成 → 本人が手直し → 他 4 variant を同じ規則で生成。実装は PF-13。
 
 ## props
 
@@ -9,7 +9,7 @@ Figma: Components ページの `Button` セット（variant 5 × size 3 × shape
 | `variant` | `default` / `primary` / `secondary` / `link` / `danger` | default | primary は画面に 1 つ。danger は破壊的操作 |
 | `size` | `sm` / `md` / `lg` | md | 高さ 32 / 40 / 48。TextField / Select と同じ段 |
 | `shape` | `rounded` / `pill` | rounded | rounded = sm 8px（radius.200）、md・lg 12px（radius.300）、squircle。pill = radius.full |
-| `iconStart` / `iconEnd` | Lucide のアイコン | なし | 片側のみ推奨 |
+| `iconBefore` / `iconAfter` | Lucide のアイコン（Figma は boolean「Icon Before / Icon After」+ glyph 差し替え） | なし | 片側のみ推奨 |
 | `loading` | boolean | false | 幅を保ち、iconStart の位置にスピナー、`aria-busy`、クリック不可、面は opacity.64 |
 | `disabled` | boolean | false | 全 variant 共通の見た目 |
 | `fullWidth` | boolean | false | Figma ではインスタンスの幅を fill |
@@ -43,5 +43,6 @@ Figma: Components ページの `Button` セット（variant 5 × size 3 × shape
 ## Figma の構造
 
 - 各 variant は auto-layout（横）。高さ・左右余白・間隔・角丸・線幅・不透明度は変数に束縛、塗りと文字色は `color/*`、文字は Text Style `font/label/*`
-- プロパティ: `label`（text）、`iconStart` / `iconEnd`（boolean、中身は `Icon` セットの露出インスタンスで glyph を差し替え）
+- プロパティ: `Label`（text）、`Icon Before` / `Icon After`（boolean、中身は `Icon` セットの露出インスタンスで glyph を差し替え）
+- 変数・スタイル名は Title Case への統一を検討中（下記）
 - loading の variant は iconStart の位置に `icon/loader-circle`

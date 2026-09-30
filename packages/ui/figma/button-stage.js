@@ -1,5 +1,7 @@
-// Prints the `use_figma` script that builds the Button component set on the "Components" page.
-//   node figma/button-stage.js            → creates (or replaces) the "Button" component set
+// Prints the `use_figma` script that builds the Button component set on the "Button" page (one page per component).
+//   node figma/button-stage.js                      → all variants
+//   node figma/button-stage.js --variants default   → only the listed variants (comma separated)
+// Figma naming is Title Case with spaces (props "Icon Before", values "Medium", layers "Label"); code keeps camelCase.
 // Design: docs/components/button.md. variant 5 × size 3 × shape 2 × state 6 = 180 variants, every value bound
 // to a variable or text style. Re-run after changing the SPEC below.
 const SPEC = {
@@ -27,11 +29,22 @@ const SPEC = {
   spinner: 'icon/loader-circle',
 };
 
+const only = process.argv.includes('--variants') ? process.argv[process.argv.indexOf('--variants') + 1].split(',') : null;
+if (only) SPEC.variants = Object.fromEntries(Object.entries(SPEC.variants).filter(([k]) => only.includes(k)));
+// Figma display names (Title Case). Code props stay camelCase: variant/size/shape, iconBefore/iconAfter, label.
+SPEC.names = {
+  props: { variant: 'Variant', size: 'Size', shape: 'Shape', state: 'State', label: 'Label', iconBefore: 'Icon Before', iconAfter: 'Icon After' },
+  values: { default: 'Default', primary: 'Primary', secondary: 'Secondary', link: 'Link', danger: 'Danger', sm: 'Small', md: 'Medium', lg: 'Large', rounded: 'Rounded', pill: 'Pill', hovered: 'Hovered', pressed: 'Pressed', focused: 'Focused', disabled: 'Disabled', loading: 'Loading' },
+};
+
 const script = String.raw`
 const SPEC = __SPEC__;
 const out = { created: 0, errors: [] };
-let page = figma.root.children.find((p) => p.name === 'Components');
-if (!page) { page = figma.createPage(); page.name = 'Components'; }
+const N = SPEC.names; const nm = (k) => N.values[k] ?? k;
+let page = figma.root.children.find((p) => p.name === 'Button');
+const legacy = figma.root.children.find((p) => p.name === 'Components');
+if (!page && legacy) { legacy.name = 'Button'; page = legacy; } // one page per component
+if (!page) { page = figma.createPage(); page.name = 'Button'; }
 await figma.setCurrentPageAsync(page);
 const vars = await figma.variables.getLocalVariablesAsync();
 const v = (name) => { const x = vars.find((y) => y.name === name); if (!x) throw new Error('variable missing: ' + name); return x; };
@@ -60,13 +73,14 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
     for (const [shape, shapeTok] of Object.entries(SPEC.shapes)) {
       for (const state of SPEC.states) {
         const c = figma.createComponent();
-        c.name = 'variant=' + variant + ', size=' + size + ', shape=' + shape + ', state=' + state;
+        c.name = N.props.variant + '=' + nm(variant) + ', ' + N.props.size + '=' + nm(size) + ', ' + N.props.shape + '=' + nm(shape) + ', ' + N.props.state + '=' + nm(state);
         c.layoutMode = 'HORIZONTAL';
         c.primaryAxisSizingMode = 'AUTO';
         c.counterAxisSizingMode = 'FIXED';
         c.counterAxisAlignItems = 'CENTER';
         c.primaryAxisAlignItems = 'CENTER';
         c.resize(96, 40);
+        c.primaryAxisSizingMode = 'AUTO'; // resize() resets sizing to FIXED
         c.setBoundVariable('height', v(heightTok));
         c.setBoundVariable('paddingLeft', v(padTok)); c.setBoundVariable('paddingRight', v(padTok));
         c.setBoundVariable('itemSpacing', v(gapTok));
@@ -78,7 +92,7 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
         c.fills = fillTok ? [paint(fillTok)] : [];
         if (border && !isDisabled) { c.strokes = [paint(border)]; c.strokeAlign = 'INSIDE'; c.setBoundVariable('strokeWeight', v('border/width/default')); }
         else c.strokes = [];
-        if (state === 'focused') {
+        if (state === 'focused') { c.clipsContent = false;
           c.effects = [
             figma.variables.setBoundVariableForEffect({ type: 'DROP_SHADOW', color: { r: 1, g: 1, b: 1, a: 1 }, offset: { x: 0, y: 0 }, radius: 0, spread: 2, visible: true, blendMode: 'NORMAL' }, 'color', v(SPEC.focus.gap)),
             figma.variables.setBoundVariableForEffect({ type: 'DROP_SHADOW', color: { r: 0, g: 0, b: 1, a: 1 }, offset: { x: 0, y: 0 }, radius: 0, spread: 4, visible: true, blendMode: 'NORMAL' }, 'color', v(SPEC.focus.ring)),
@@ -86,13 +100,13 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
         }
         if (state === 'loading') c.setBoundVariable('opacity', v(SPEC.loadingOpacity));
         // children: iconStart (or spinner when loading), label, iconEnd
-        const start = iconInstance(iconSize, state === 'loading' ? SPEC.spinner : SPEC.icon, 'iconStart');
+        const start = iconInstance(iconSize, state === 'loading' ? SPEC.spinner : SPEC.icon, N.props.iconBefore);
         c.appendChild(start); start.visible = state === 'loading'; start.isExposedInstance = true;
-        const t = figma.createText(); t.name = 'label'; t.textStyleId = styles[textStyle].id; t.characters = SPEC.label;
+        const t = figma.createText(); t.name = N.props.label; t.textStyleId = styles[textStyle].id; t.characters = SPEC.label;
         t.fills = [paint(isDisabled ? SPEC.disabled.text : state === 'pressed' && variant === 'link' ? 'color/text/brand/bold' : textColor)];
         if (variant === 'link' && (state === 'hovered' || state === 'pressed')) t.textDecoration = 'UNDERLINE';
         c.appendChild(t);
-        const end = iconInstance(iconSize, SPEC.icon, 'iconEnd');
+        const end = iconInstance(iconSize, SPEC.icon, N.props.iconAfter);
         c.appendChild(end); end.visible = false; end.isExposedInstance = true;
         variants.push(c);
       }
@@ -101,24 +115,25 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
 }
 const set = figma.combineAsVariants(variants, page);
 set.name = 'Button';
-set.description = 'variant: primary は画面に 1 つ / default が標準 / secondary は default の隣の副次操作 / link は控えめな導線 / danger は破壊的操作。size sm 32 · md 40 · lg 48（TextField と同じ段）。shape rounded（sm 8px、md・lg 12px、squircle）/ pill。disabled は全 variant 共通。icon-only は IconButton を使う。label 必須。実装: <Button variant size shape iconStart iconEnd loading fullWidth>';
+set.description = 'Variant: Primary は画面に 1 つ / default が標準 / secondary は default の隣の副次操作 / link は控えめな導線 / danger は破壊的操作。size sm 32 · md 40 · lg 48（TextField と同じ段）。shape rounded（sm 8px、md・lg 12px、squircle）/ pill。disabled は全 variant 共通。icon-only は IconButton を使う。label 必須。実装: <Button variant size shape iconStart iconEnd loading fullWidth>';
 // component properties (boolean/text) on the set, wired to the layers of every variant
-const pLabel = set.addComponentProperty('label', 'TEXT', SPEC.label);
-const pStart = set.addComponentProperty('iconStart', 'BOOLEAN', false);
-const pEnd = set.addComponentProperty('iconEnd', 'BOOLEAN', false);
+const pLabel = set.addComponentProperty(N.props.label, 'TEXT', SPEC.label);
+const pStart = set.addComponentProperty(N.props.iconBefore, 'BOOLEAN', false);
+const pEnd = set.addComponentProperty(N.props.iconAfter, 'BOOLEAN', false);
 for (const c of set.children) {
-  const isLoading = c.name.includes('state=loading');
-  c.findChild((n) => n.name === 'label').componentPropertyReferences = { characters: pLabel };
-  if (!isLoading) c.findChild((n) => n.name === 'iconStart').componentPropertyReferences = { visible: pStart };
-  c.findChild((n) => n.name === 'iconEnd').componentPropertyReferences = { visible: pEnd };
+  const isLoading = c.name.includes(N.props.state + '=' + nm('loading'));
+  c.findChild((n) => n.name === N.props.label).componentPropertyReferences = { characters: pLabel };
+  if (!isLoading) c.findChild((n) => n.name === N.props.iconBefore).componentPropertyReferences = { visible: pStart };
+  c.findChild((n) => n.name === N.props.iconAfter).componentPropertyReferences = { visible: pEnd };
 }
 // grid: rows = variant × state, columns = size × shape
 const sizes = Object.keys(SPEC.sizes), shapes = Object.keys(SPEC.shapes), variantsK = Object.keys(SPEC.variants);
 const colW = 200, rowH = 72, pad = 32;
 for (const c of set.children) {
   const m = Object.fromEntries(c.name.split(', ').map((kv) => kv.split('=')));
-  const col = sizes.indexOf(m.size) * shapes.length + shapes.indexOf(m.shape);
-  const row = variantsK.indexOf(m.variant) * SPEC.states.length + SPEC.states.indexOf(m.state);
+  const key = (val) => Object.keys(N.values).find((k) => N.values[k] === val) ?? val;
+  const col = sizes.indexOf(key(m[N.props.size])) * shapes.length + shapes.indexOf(key(m[N.props.shape]));
+  const row = variantsK.indexOf(key(m[N.props.variant])) * SPEC.states.length + SPEC.states.indexOf(key(m[N.props.state]));
   c.x = pad + col * colW; c.y = pad + row * rowH;
 }
 set.resizeWithoutConstraints(pad * 2 + sizes.length * shapes.length * colW, pad * 2 + variantsK.length * SPEC.states.length * rowH);
