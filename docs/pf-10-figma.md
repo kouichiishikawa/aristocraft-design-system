@@ -9,9 +9,11 @@
 
 | 種別 | 内容 | 数 |
 |---|---|---|
-| Collection `primitives` | mode: value。color / dimension / typography / motion / opacity | 265 |
-| Collection `semantic` | mode: value。font.family / layout / border.width。数値は primitives へ alias | 36 |
-| Collection `color` | modes: light / dark。text / icon / border / background / link / elevation.surface は primitives へ alias。blanket と影の色は実値 | 195 |
+| Collection `Primitives` | mode: Value。Color / Dimension / Typography / Motion / Opacity（1 コレクション、本人決定 2026-09-30） | 265 |
+| Collection `Semantic - Typography` | mode: Value。Font/Family | 3 |
+| Collection `Semantic - Layout` | mode: Value。Layout/Breakpoint / Grid / Container / Section。数値は Primitives へ alias | 30 |
+| Collection `Semantic - Border` | mode: Value。Border/Width | 3 |
+| Collection `Semantic - Color` | modes: Light / Dark。Text / Icon / Border / Background / Link / Elevation は Primitives へ alias。Blanket と影の色は実値 | 195 |
 | Text Styles | font/display 5・heading 7・body 4・label 4・label/mono 4 | 24 |
 | Effect Styles | elevation/shadow rest / lifted / floating / overlay。各 2 層、色は `elevation/shadow/*/layerN` 変数に束縛 | 4 |
 
@@ -28,7 +30,7 @@
 | `font.heading.md`（typography 複合） | Text Style `Font/Heading/MD` | `--ac-font-heading-md-*`（5 本） |
 | `elevation.shadow.rest`（shadow 複合） | Effect Style `Elevation/Shadow/Rest` + 色変数 `Elevation/Shadow/Rest/Layer 1, 2` | `--ac-elevation-shadow-rest` |
 
-規則（2026-09-30 決定、Title Case）: `.` → `/`、各段は先頭大文字（`Color/Text/Brand`）、camelCase は空白で分ける（`Typography/Line Height/MD`）、サイズ略語は全部大文字（`XS` `SM` `MD` `LG` `XL` `XXL`）、`$root` は名前に出ない。部品のプロパティ値は単語に開く（`Size=Small / Medium / Large / Extra Large`）。ブランドは正式表記（`Brand/GitHub`）。コレクションは `Primitives` `Semantic` `Color`、モードは `Value` `Light` `Dark`。コード側（トークン名・CSS 変数・props）は小文字のまま。変換は `packages/tokens/build/figma-name.js`。変数の description はトークンの `$description`。Text Style の description に CSS の font-family スタックと変数名を記載。
+規則（2026-09-30 決定、Title Case）: `.` → `/`、各段は先頭大文字（`Color/Text/Brand`）、camelCase は空白で分ける（`Typography/Line Height/MD`）、サイズ略語は全部大文字（`XS` `SM` `MD` `LG` `XL` `XXL`）、`$root` は名前に出ない。部品のプロパティ値は単語に開く（`Size=Small / Medium / Large / Extra Large`）。ブランドは正式表記（`Brand/GitHub`）。コレクションは `Primitives`（1 つ）と種別ごとの `Semantic - Color / Typography / Layout / Border`、モードは `Value` `Light` `Dark`。変数名はコレクション内でもフルパス（`Color/Text/Brand`）のまま。コード側（トークン名・CSS 変数・props）は小文字のまま。変換は `packages/tokens/build/figma-name.js`。変数の description はトークンの `$description`。Text Style の description に CSS の font-family スタックと変数名を記載。
 
 ## Figma 側でだけ決めたこと（tokens/ には無い）
 

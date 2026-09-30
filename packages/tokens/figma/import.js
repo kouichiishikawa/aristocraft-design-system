@@ -1,6 +1,6 @@
 // Imports dist/figma/variables.json into a Figma file. Runs inside Figma via the
 // Figma MCP `use_figma` tool (Plugin API), one STAGE per call, in this order:
-//   primitives → semantic → color → text → effects → verify
+//   Primitives 1/2, 2/2 → Semantic - Typography → Semantic - Layout → Semantic - Border → Semantic - Color 1/2, 2/2 → text → effects → verify
 // The plugin sandbox has no fetch(), so `node figma/stage.js <stage>` prints this file with
 // STAGE and DATA filled in; paste that output as the `use_figma` code (≤ 50k chars, so big
 // collections are split: `node figma/stage.js color 1/2`, then `2/2`).

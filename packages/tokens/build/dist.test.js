@@ -67,6 +67,7 @@ test('figma json: aliases resolve, styles and skips are accounted for', () => {
       }
     }
   }
+  assert.deepEqual(figma.collections.map((c) => c.name), ['Primitives', 'Semantic - Typography', 'Semantic - Layout', 'Semantic - Border', 'Semantic - Color']);
   assert.equal(figma.textStyles.length, 24);
   assert.equal(figma.effectStyles.light.length, 4);
   assert.equal(figma.effectStyles.dark.length, 4);

@@ -1,4 +1,4 @@
-// Prints the use_figma script for one stage: `node figma/stage.js primitives`
+// Prints the use_figma script for one stage: `node figma/stage.js Primitives 1/2` (collection name), `text`, `effects`, `verify`
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';

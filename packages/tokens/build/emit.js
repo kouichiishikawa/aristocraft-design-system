@@ -165,10 +165,13 @@ const shadowLayerVariables = (t, d) =>
 
 export function figmaJson(lightRaw, darkRaw) {
   const dark = new Map(darkRaw.filter(isDark).map((t) => [dotName(t.path), t]));
+  // Collections (decision 2026-09-30): primitives in one collection, semantic split by type.
   const collections = {
     primitives: { name: 'Primitives', modes: ['Value'], variables: [] },
-    semantic: { name: 'Semantic', modes: ['Value'], variables: [] },
-    color: { name: 'Color', modes: ['Light', 'Dark'], variables: [] },
+    typography: { name: 'Semantic - Typography', modes: ['Value'], variables: [] },
+    layout: { name: 'Semantic - Layout', modes: ['Value'], variables: [] },
+    border: { name: 'Semantic - Border', modes: ['Value'], variables: [] },
+    color: { name: 'Semantic - Color', modes: ['Light', 'Dark'], variables: [] },
   };
   const textStyles = [];
   const effectStyles = { light: [], dark: [] };
@@ -192,7 +195,9 @@ export function figmaJson(lightRaw, darkRaw) {
     if (conv.skip) { skipped.push({ name, reason: conv.skip }); continue; }
     const set = setOf(t);
     const col = set.startsWith('primitives/') ? collections.primitives
-      : set === 'semantic/color.light' ? collections.color : collections.semantic;
+      : set === 'semantic/color.light' ? collections.color
+      : set === 'semantic/typography' ? collections.typography
+      : set === 'semantic/layout' ? collections.layout : collections.border;
     const variable = {
       name, type: conv.type, description: t.$description ?? '',
       scopes: scopesFor(cleanPath(t.path).join('/')), codeSyntax: `var(--${cssName(t.path)})`,
