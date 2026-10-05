@@ -34,10 +34,10 @@
 | focus-visible | outline: border.width.focused（2px）color.border.focused、outline-offset 2px（空白 2px → リング 2px、リングの角丸は要素 + 2px） | transition.feedback | マウス操作では出さない。決して消さない。box-shadow ではなく outline（角形状に追従）。Figma は `Focus Ring` 部品を絶対配置（docs/components/focus-ring.md、2026-10-05） |
 | selected | background.selected + border.selected（2px）+ text.selected | transition.state | ナビの現在地、タブ、選択行 |
 | disabled | text.disabled / background.disabled / border.disabled。画像・アイコンは opacity.40 | なし | hover / pressed / focus を持たない。cursor: not-allowed。文字に opacity を重ねない |
-| loading | 面を opacity.64、skeleton は background.neutral.subtlest | なし | 高さを確保して CLS を出さない |
+| loading | 面の不透明度は変えず Spinner を置く（2026-10-06。それまでは opacity.64）、skeleton は background.neutral.subtlest | なし | 高さを確保して CLS を出さない |
 | target | 最小 48 × 48（size.1200） | — | タッチ・クリック対象。文字リンクは padding か line-height で確保 |
 
-トークンは持たない。フォーカスは `color.border.focused` + `border.width.focused` + offset 2px（space.050）、無効の不透明度は `opacity.40`、読み込み中は `opacity.64`、最小ターゲットは `size.1200`（48）を直接参照する。
+トークンは持たない。フォーカスは `color.border.focused` + `border.width.focused` + offset 2px（space.050）、無効の不透明度は `opacity.40`、読み込み中は不透明度を変えない（2026-10-06 本人決定。それまでは `opacity.64`）、最小ターゲットは `size.1200`（48）を直接参照する。
 
 ## 未決
 

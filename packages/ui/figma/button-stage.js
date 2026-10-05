@@ -8,13 +8,14 @@
 // to a variable or text style. Re-run after changing the SPEC below.
 import { SIZE_WORDS, figmaName } from '@aristocraft/tokens/figma-name';
 const SPEC = {
-  // Row order in Figma = this order (default first). secondary / link rest on neutral.subtle, which is transparent (Atlassian model).
+  // Row order in Figma = this order (default first). secondary / tertiary rest on neutral.subtle, which is transparent (Atlassian model).
+  // 2026-10-06: link → tertiary (text.default, no underline), secondary border = border.default, loading keeps full opacity.
   variants: {
     // [fill default, fill hovered, fill pressed, text, border]  (variable names)
     default:   ['color/background/neutral/default', 'color/background/neutral/default/hovered', 'color/background/neutral/default/pressed', 'color/text/default', null],
     primary:   ['color/background/brand/bold', 'color/background/brand/bold/hovered', 'color/background/brand/bold/pressed', 'color/text/static/white', null],
-    secondary: ['color/background/neutral/subtle', 'color/background/neutral/subtle/hovered', 'color/background/neutral/subtle/pressed', 'color/text/default', 'color/border/bold'],
-    link:      ['color/background/neutral/subtle', 'color/background/neutral/subtle/hovered', 'color/background/neutral/subtle/pressed', 'color/text/brand', null],
+    secondary: ['color/background/neutral/subtle', 'color/background/neutral/subtle/hovered', 'color/background/neutral/subtle/pressed', 'color/text/default', 'color/border/default'],
+    tertiary:  ['color/background/neutral/subtle', 'color/background/neutral/subtle/hovered', 'color/background/neutral/subtle/pressed', 'color/text/default', null],
     danger:    ['color/background/status/error/bold', 'color/background/status/error/bold/hovered', 'color/background/status/error/bold/pressed', 'color/text/static/white', null],
   },
   // height token, padding-inline token, gap token, text style, icon size (Icon / Spinner sets: sm 16 / md 24), rounded radius token
@@ -29,7 +30,6 @@ const SPEC = {
   disabled: { fill: 'color/background/disabled', text: 'color/text/disabled' },
   // focused: the single "Focus Ring" component (figma/focus-ring-stage.js); the instance's corner radius = button radius + inset
   focus: { ring: 'Focus Ring', radius: { 'dimension/radius/200': 8, 'dimension/radius/300': 12, 'dimension/radius/full': 9999 }, inset: 2 },
-  loadingOpacity: 'opacity/64',
   label: 'Button',
   icon: 'icon/arrow-right',
   spinner: 'Spinner', // component set on the Spinner page (figma/spinner-stage.js); the loading state shows it where Icon Before sits
@@ -41,7 +41,7 @@ if (only) SPEC.variants = Object.fromEntries(Object.entries(SPEC.variants).filte
 // Figma display names (Title Case). Code props stay camelCase: variant/size/shape, iconBefore/iconAfter, label.
 SPEC.names = {
   props: { variant: 'Variant', size: 'Size', shape: 'Shape', state: 'State', label: 'Label', iconBefore: 'Icon Before', iconAfter: 'Icon After' },
-  values: { default: 'Default', primary: 'Primary', secondary: 'Secondary', link: 'Link', danger: 'Danger', ...SIZE_WORDS, rounded: 'Rounded', pill: 'Pill', hovered: 'Hovered', pressed: 'Pressed', focused: 'Focused', disabled: 'Disabled', loading: 'Loading' },
+  values: { default: 'Default', primary: 'Primary', secondary: 'Secondary', tertiary: 'Tertiary', danger: 'Danger', ...SIZE_WORDS, rounded: 'Rounded', pill: 'Pill', hovered: 'Hovered', pressed: 'Pressed', focused: 'Focused', disabled: 'Disabled', loading: 'Loading' },
 };
 // Variable / style / component names in Figma are Title Case: convert the lowercase SPEC references once here.
 const fig = (s) => (typeof s === 'string' && s.includes('/') ? figmaName(s.split('/')) : s);
@@ -50,8 +50,8 @@ for (const k of Object.keys(SPEC.sizes)) SPEC.sizes[k] = SPEC.sizes[k].map((x, i
 SPEC.shapes = Object.fromEntries(Object.entries(SPEC.shapes).map(([k, x]) => [k, fig(x)]));
 SPEC.disabled = { fill: fig(SPEC.disabled.fill), text: fig(SPEC.disabled.text) };
 SPEC.focus.radius = Object.fromEntries(Object.entries(SPEC.focus.radius).map(([k, val]) => [fig(k), val]));
-SPEC.loadingOpacity = fig(SPEC.loadingOpacity); SPEC.icon = fig(SPEC.icon);
-SPEC.borderWidth = fig('border/width/default'); SPEC.linkPressedText = fig('color/text/brand/bold');
+SPEC.icon = fig(SPEC.icon);
+SPEC.borderWidth = fig('border/width/default');
 
 const script = String.raw`
 const SPEC = __SPEC__;
@@ -66,20 +66,6 @@ const vars = await figma.variables.getLocalVariablesAsync();
 const v = (name) => { const x = vars.find((y) => y.name === name); if (!x) throw new Error('variable missing: ' + name); return x; };
 const styles = Object.fromEntries((await figma.getLocalTextStylesAsync()).map((s) => [s.name, s]));
 for (const name of Object.values(SPEC.sizes).map((s) => s[3])) await figma.loadFontAsync(styles[name].fontName);
-// "<style> Underlined" Text Styles for the link variant (created here if missing; Figma-only derivation, see docs/pf-10-figma.md)
-const underlinedStyles = {};
-for (const name of new Set(Object.values(SPEC.sizes).map((s) => s[3]))) {
-  let st = styles[name + ' Underlined'];
-  if (!st) {
-    const src = styles[name];
-    st = figma.createTextStyle();
-    st.name = name + ' Underlined'; st.fontName = src.fontName; st.fontSize = src.fontSize; st.lineHeight = src.lineHeight; st.letterSpacing = src.letterSpacing;
-    st.textDecoration = 'UNDERLINE';
-    st.description = src.description + '\nFigma だけの派生: ' + name + ' + 下線。Link の hovered / pressed 用。CSS は text-decoration: underline';
-    styles[st.name] = st;
-  }
-  underlinedStyles[name] = st;
-}
 const iconsPage = figma.root.children.find((p) => p.name === 'Icons');
 await figma.setCurrentPageAsync(iconsPage);
 const iconSet = iconsPage.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Icon');
@@ -154,15 +140,11 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
         if (border && !isDisabled) { c.strokes = [paint(border)]; c.strokeAlign = 'INSIDE'; for (const k of ['strokeTopWeight', 'strokeRightWeight', 'strokeBottomWeight', 'strokeLeftWeight']) c.setBoundVariable(k, v(SPEC.borderWidth)); }
         else c.strokes = [];
         if (state === 'focused') c.clipsContent = false; // the Focus Ring instance (added after the children) sits 2px outside
-        if (state === 'loading') c.setBoundVariable('opacity', v(SPEC.loadingOpacity));
         // children: iconStart (or spinner when loading), label, iconEnd
         const start = state === 'loading' ? spinnerInstance(iconSize) : iconInstance(iconSize, SPEC.icon, N.props.iconBefore);
         c.appendChild(start); start.visible = state === 'loading'; start.isExposedInstance = true;
-        // link hovered / pressed: a Figma-only "… Underlined" copy of the text style (a decoration override on a label would be
-        // dropped as soon as the Label property is linked, see the Figma bug note below)
-        const underlined = variant === 'link' && (state === 'hovered' || state === 'pressed');
-        const t = figma.createText(); t.name = N.props.label; t.textStyleId = (underlined ? underlinedStyles[textStyle] : styles[textStyle]).id; t.characters = SPEC.label;
-        t.fills = [paint(isDisabled ? SPEC.disabled.text : state === 'pressed' && variant === 'link' ? SPEC.linkPressedText : textColor)];
+        const t = figma.createText(); t.name = N.props.label; t.textStyleId = styles[textStyle].id; t.characters = SPEC.label;
+        t.fills = [paint(isDisabled ? SPEC.disabled.text : textColor)];
         c.appendChild(t);
         const end = iconInstance(iconSize, SPEC.icon, N.props.iconAfter);
         c.appendChild(end); end.visible = false; end.isExposedInstance = true;
@@ -176,7 +158,7 @@ if (set) { for (const c of variants) set.appendChild(c); } // appended component
 else {
   set = figma.combineAsVariants(variants, page);
   set.name = 'Button';
-  set.description = 'Variant: Primary は画面に 1 つ / default が標準 / secondary は default の隣の副次操作 / link は控えめな導線 / danger は破壊的操作。size sm 32 · md 40 · lg 48（TextField と同じ段）。shape rounded（sm 8px、md・lg 12px、squircle）/ pill。disabled は全 variant 共通。icon-only は IconButton を使う。label 必須。実装: <Button variant size shape iconStart iconEnd loading fullWidth>';
+  set.description = 'Variant: Primary は画面に 1 つ / default が標準 / secondary は default の隣の副次操作（枠つき）/ tertiary は面なしの控えめな操作 / danger は破壊的操作。size sm 32 · md 40 · lg 48（TextField と同じ段）。shape rounded（sm 8px、md・lg 12px、squircle）/ pill。disabled は全 variant 共通。icon-only は IconButton を使う。label 必須。実装: <Button variant size shape iconStart iconEnd loading fullWidth>';
 }
 // component properties (boolean/text) on the set, wired to the layers.
 // Figma bug (forum "Issue with Text property overriding text styles in component sets"): once text layers are linked to the

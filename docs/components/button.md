@@ -6,11 +6,11 @@ Figma: `Button` ページの `Button` セット。部品ごとにページを分
 
 | prop | 値 | 既定 | 備考 |
 |---|---|---|---|
-| `variant` | `default` / `primary` / `secondary` / `link` / `danger` | default | primary は画面に 1 つ。danger は破壊的操作 |
+| `variant` | `default` / `primary` / `secondary` / `tertiary` / `danger` | default | primary は画面に 1 つ。secondary は枠つき、tertiary は面なし（2026-10-06 に link から改名）。danger は破壊的操作 |
 | `size` | `sm` / `md` / `lg` | md | 高さ 32 / 40 / 48。TextField / Select と同じ段 |
 | `shape` | `rounded` / `pill` | rounded | rounded = sm 8px（radius.200）、md・lg 12px（radius.300）、squircle。pill = radius.full |
 | `iconBefore` / `iconAfter` | Lucide のアイコン（Figma は boolean「Icon Before / Icon After」+ glyph 差し替え） | なし | 片側のみ推奨 |
-| `loading` | boolean | false | 幅を保ち、iconBefore の位置に `Spinner`（docs/components/spinner.md、アイコンと同じ径）、`aria-busy`、クリック不可、面は opacity.64 |
+| `loading` | boolean | false | 幅を保ち、iconBefore の位置に `Spinner`（docs/components/spinner.md、アイコンと同じ径）、`aria-busy`、クリック不可。面の不透明度は変えない（2026-10-06、opacity.64 を廃止） |
 | `disabled` | boolean | false | 全 variant 共通の見た目 |
 | `fullWidth` | boolean | false | Figma ではインスタンスの幅を fill |
 | `label` | text | 必須 | icon-only は IconButton |
@@ -31,8 +31,8 @@ Figma: `Button` ページの `Button` セット。部品ごとにページを分
 |---|---|---|---|---|---|
 | primary | background.brand.bold | .hovered | .pressed | text.static.white | — |
 | default | background.neutral.default（= neutral.100a、Atlassian 式 2026-10-05） | .hovered（200a） | .pressed（300a） | text.default | — |
-| secondary | background.neutral.subtle（透明） | .hovered（100a） | .pressed（200a） | text.default | color.border.bold 1px |
-| link | background.neutral.subtle（透明） | .hovered + 下線 | .pressed + 下線、文字 text.brand.bold | text.brand | — |
+| secondary | background.neutral.subtle（透明） | .hovered（100a） | .pressed（200a） | text.default | color.border.default 1px |
+| tertiary | background.neutral.subtle（透明） | .hovered（100a） | .pressed（200a） | text.default | — |
 | danger | background.status.error.bold | .hovered | .pressed | text.static.white | — |
 
 共通: focused = 要素から 2px 空けて 2px のリング、角丸は要素 + 2px（docs/components/focus-ring.md。CSS は outline + outline-offset、Figma は `Focus Ring` 部品を絶対配置。2026-10-05 に影 2 段から置き換え）。disabled = 背景 background.disabled + 文字 text.disabled、枠と下線なし、cursor not-allowed。hover は `@media (hover: hover)` のみ。
@@ -46,6 +46,6 @@ Figma: `Button` ページの `Button` セット。部品ごとにページを分
 
 - 各 variant は auto-layout（横）。高さ・左右余白・間隔・角丸・線幅・不透明度は変数に束縛、塗りと文字色は `color/*`、文字は Text Style `font/label/*`
 - プロパティ: `Label`（text）、`Icon Before` / `Icon After`（boolean、中身は `Icon` セットの露出インスタンスで glyph を差し替え）
-- Figma の既知バグ対策: 同じ `Label` プロパティに繋いだ文字は、繋いだ後に Text Style や下線を書くと全 variant に揃えられる。生成器は「全 variant の文字を確定 → `Label` プロパティを作り直して一度に繋ぐ」の順で作り、link の下線は `Font/Label/MD Underlined` / `LG Underlined`（Figma だけの派生 Text Style）で表現する。**Figma 上で Label の文字スタイルを手で変えるときも全 variant に写るので注意**
+- Figma の既知バグ対策: 同じ `Label` プロパティに繋いだ文字は、繋いだ後に Text Style や下線を書くと全 variant に揃えられる。生成器は「全 variant の文字を確定 → `Label` プロパティを作り直して一度に繋ぐ」の順で作る。**Figma 上で Label の文字スタイルを手で変えるときも全 variant に写るので注意**
 - 変数・スタイル・部品名は Title Case（`docs/pf-10-figma.md` の規則）
 - loading の variant は Icon Before の位置に `Spinner` セットのインスタンス（Size は Icon と同じ Small / Medium。2026-10-05 に `icon/loader-circle` から置き換え。既存セットに対しては `node packages/ui/figma/button-stage.js --swap-spinner` で差し替えだけを行い、手直しは保つ）
