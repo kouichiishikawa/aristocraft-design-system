@@ -174,6 +174,19 @@ for (const c of variants) {
   if (!isLoading) c.findChild((n) => n.name === N.props.iconBefore).componentPropertyReferences = { visible: pStart };
   c.findChild((n) => n.name === N.props.iconAfter).componentPropertyReferences = { visible: pEnd };
 }
+// Figma quirk: text layers linked to the same TEXT property take the property's text style when linked, and a style /
+// decoration written to one of them is copied to all (forum: "Issue with Text property overriding text styles in component
+// sets"). Writing while the characters are temporarily unique does not propagate, so re-apply per-variant style afterwards.
+let seq = 0;
+for (const c of variants) {
+  const t = c.findChild((n) => n.name === N.props.label);
+  const size = Object.keys(SPEC.sizes).find((k) => c.name.includes(N.props.size + '=' + nm(k)));
+  const underline = c.name.includes(N.props.variant + '=' + nm('link')) && (c.name.includes(N.props.state + '=' + nm('hovered')) || c.name.includes(N.props.state + '=' + nm('pressed')));
+  t.characters = SPEC.label + (seq++);
+  await t.setTextStyleIdAsync(styles[SPEC.sizes[size][3]].id);
+  t.setRangeTextDecoration(0, t.characters.length, underline ? 'UNDERLINE' : 'NONE');
+}
+for (const c of variants) c.findChild((n) => n.name === N.props.label).characters = SPEC.label;
 // grid (decision 2026-10-06): rows = variant (then size × shape inside each variant block), columns = state
 const sizes = Object.keys(SPEC.sizes), shapes = Object.keys(SPEC.shapes), variantsK = SPEC.variantOrder;
 const colW = 160, rowH = 72, pad = 32, groupGap = 32;
