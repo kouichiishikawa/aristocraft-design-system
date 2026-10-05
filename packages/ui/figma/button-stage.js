@@ -8,12 +8,13 @@
 // to a variable or text style. Re-run after changing the SPEC below.
 import { SIZE_WORDS, figmaName } from '@aristocraft/tokens/figma-name';
 const SPEC = {
+  // Row order in Figma = this order (default first). secondary / link rest on neutral.subtle, which is transparent (Atlassian model).
   variants: {
-    // [fill default, fill hovered, fill pressed, text, border]  (variable names; null = none/transparent)
-    primary:   ['color/background/brand/bold', 'color/background/brand/bold/hovered', 'color/background/brand/bold/pressed', 'color/text/static/white', null],
+    // [fill default, fill hovered, fill pressed, text, border]  (variable names)
     default:   ['color/background/neutral/default', 'color/background/neutral/default/hovered', 'color/background/neutral/default/pressed', 'color/text/default', null],
-    secondary: [null, 'color/background/neutral/subtlest', 'color/background/neutral/subtle', 'color/text/default', 'color/border/bold'],
-    link:      [null, 'color/background/neutral/subtlest', 'color/background/neutral/subtle', 'color/text/brand', null],
+    primary:   ['color/background/brand/bold', 'color/background/brand/bold/hovered', 'color/background/brand/bold/pressed', 'color/text/static/white', null],
+    secondary: ['color/background/neutral/subtle', 'color/background/neutral/subtle/hovered', 'color/background/neutral/subtle/pressed', 'color/text/default', 'color/border/bold'],
+    link:      ['color/background/neutral/subtle', 'color/background/neutral/subtle/hovered', 'color/background/neutral/subtle/pressed', 'color/text/brand', null],
     danger:    ['color/background/status/error/bold', 'color/background/status/error/bold/hovered', 'color/background/status/error/bold/pressed', 'color/text/static/white', null],
   },
   // height token, padding-inline token, gap token, text style, icon size (Icon / Spinner sets: sm 16 / md 24), rounded radius token
@@ -34,6 +35,7 @@ const SPEC = {
   spinner: 'Spinner', // component set on the Spinner page (figma/spinner-stage.js); the loading state shows it where Icon Before sits
 };
 
+SPEC.variantOrder = Object.keys(SPEC.variants); // the grid is laid out over every variant, even when only some are generated
 const only = process.argv.includes('--variants') ? process.argv[process.argv.indexOf('--variants') + 1].split(',') : null;
 if (only) SPEC.variants = Object.fromEntries(Object.entries(SPEC.variants).filter(([k]) => only.includes(k)));
 // Figma display names (Title Case). Code props stay camelCase: variant/size/shape, iconBefore/iconAfter, label.
@@ -78,7 +80,10 @@ await figma.setCurrentPageAsync(focusPage);
 const focusComp = focusPage.findOne((n) => n.type === 'COMPONENT' && n.name === SPEC.focus.ring);
 if (!focusComp) throw new Error('Focus Ring component missing: run figma/focus-ring-stage.js first');
 await figma.setCurrentPageAsync(page);
-const old = page.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Button'); if (old) old.remove();
+// Idempotent: an existing set is kept (hand edits and instance links survive); only variants that are missing are added.
+let set = page.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Button');
+const existing = new Set(set ? set.children.map((c) => c.name) : []);
+out.skipped = 0;
 const paint = (name) => figma.variables.setBoundVariableForPaint({ type: 'SOLID', color: { r: 0, g: 0, b: 0 } }, 'color', v(name));
 
 const iconInstance = (sizeVariant, glyphName, layerName) => {
@@ -112,8 +117,10 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
   for (const [size, [heightTok, padTok, gapTok, textStyle, iconSize, roundedTok]] of Object.entries(SPEC.sizes)) {
     for (const [shape, shapeTok] of Object.entries(SPEC.shapes)) {
       for (const state of SPEC.states) {
+        const name = N.props.variant + '=' + nm(variant) + ', ' + N.props.size + '=' + nm(size) + ', ' + N.props.shape + '=' + nm(shape) + ', ' + N.props.state + '=' + nm(state);
+        if (existing.has(name)) { out.skipped++; continue; }
         const c = figma.createComponent();
-        c.name = N.props.variant + '=' + nm(variant) + ', ' + N.props.size + '=' + nm(size) + ', ' + N.props.shape + '=' + nm(shape) + ', ' + N.props.state + '=' + nm(state);
+        c.name = name;
         c.layoutMode = 'HORIZONTAL';
         c.primaryAxisSizingMode = 'AUTO';
         c.counterAxisSizingMode = 'FIXED';
@@ -139,7 +146,8 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
         c.appendChild(start); start.visible = state === 'loading'; start.isExposedInstance = true;
         const t = figma.createText(); t.name = N.props.label; t.textStyleId = styles[textStyle].id; t.characters = SPEC.label;
         t.fills = [paint(isDisabled ? SPEC.disabled.text : state === 'pressed' && variant === 'link' ? SPEC.linkPressedText : textColor)];
-        if (variant === 'link' && (state === 'hovered' || state === 'pressed')) t.textDecoration = 'UNDERLINE';
+        // node-level textDecoration is ignored on styled text; the range setter underlines and keeps the Text Style attached
+        if (variant === 'link' && (state === 'hovered' || state === 'pressed')) t.setRangeTextDecoration(0, t.characters.length, 'UNDERLINE');
         c.appendChild(t);
         const end = iconInstance(iconSize, SPEC.icon, N.props.iconAfter);
         c.appendChild(end); end.visible = false; end.isExposedInstance = true;
@@ -149,32 +157,36 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
     }
   }
 }
-const set = figma.combineAsVariants(variants, page);
-set.name = 'Button';
-set.description = 'Variant: Primary は画面に 1 つ / default が標準 / secondary は default の隣の副次操作 / link は控えめな導線 / danger は破壊的操作。size sm 32 · md 40 · lg 48（TextField と同じ段）。shape rounded（sm 8px、md・lg 12px、squircle）/ pill。disabled は全 variant 共通。icon-only は IconButton を使う。label 必須。実装: <Button variant size shape iconStart iconEnd loading fullWidth>';
-// component properties (boolean/text) on the set, wired to the layers of every variant
-const pLabel = set.addComponentProperty(N.props.label, 'TEXT', SPEC.label);
-const pStart = set.addComponentProperty(N.props.iconBefore, 'BOOLEAN', false);
-const pEnd = set.addComponentProperty(N.props.iconAfter, 'BOOLEAN', false);
-for (const c of set.children) {
+if (set) { for (const c of variants) set.appendChild(c); } // appended components become variants of the existing set
+else {
+  set = figma.combineAsVariants(variants, page);
+  set.name = 'Button';
+  set.description = 'Variant: Primary は画面に 1 つ / default が標準 / secondary は default の隣の副次操作 / link は控えめな導線 / danger は破壊的操作。size sm 32 · md 40 · lg 48（TextField と同じ段）。shape rounded（sm 8px、md・lg 12px、squircle）/ pill。disabled は全 variant 共通。icon-only は IconButton を使う。label 必須。実装: <Button variant size shape iconStart iconEnd loading fullWidth>';
+}
+// component properties (boolean/text) on the set, wired to the layers of the new variants (existing keys are reused)
+const propKey = (name) => Object.keys(set.componentPropertyDefinitions).find((k) => k === name || k.startsWith(name + '#'));
+const pLabel = propKey(N.props.label) ?? set.addComponentProperty(N.props.label, 'TEXT', SPEC.label);
+const pStart = propKey(N.props.iconBefore) ?? set.addComponentProperty(N.props.iconBefore, 'BOOLEAN', false);
+const pEnd = propKey(N.props.iconAfter) ?? set.addComponentProperty(N.props.iconAfter, 'BOOLEAN', false);
+for (const c of variants) {
   const isLoading = c.name.includes(N.props.state + '=' + nm('loading'));
   c.findChild((n) => n.name === N.props.label).componentPropertyReferences = { characters: pLabel };
   if (!isLoading) c.findChild((n) => n.name === N.props.iconBefore).componentPropertyReferences = { visible: pStart };
   c.findChild((n) => n.name === N.props.iconAfter).componentPropertyReferences = { visible: pEnd };
 }
-// grid: rows = variant × state, columns = size × shape
-const sizes = Object.keys(SPEC.sizes), shapes = Object.keys(SPEC.shapes), variantsK = Object.keys(SPEC.variants);
-const colW = 200, rowH = 72, pad = 32;
+// grid (decision 2026-10-06): rows = variant (then size × shape inside each variant block), columns = state
+const sizes = Object.keys(SPEC.sizes), shapes = Object.keys(SPEC.shapes), variantsK = SPEC.variantOrder;
+const colW = 160, rowH = 72, pad = 32, groupGap = 32;
 for (const c of set.children) {
   const m = Object.fromEntries(c.name.split(', ').map((kv) => kv.split('=')));
   const key = (val) => Object.keys(N.values).find((k) => N.values[k] === val) ?? val;
-  const col = sizes.indexOf(key(m[N.props.size])) * shapes.length + shapes.indexOf(key(m[N.props.shape]));
-  const row = variantsK.indexOf(key(m[N.props.variant])) * SPEC.states.length + SPEC.states.indexOf(key(m[N.props.state]));
-  c.x = pad + col * colW; c.y = pad + row * rowH;
+  const vi = variantsK.indexOf(key(m[N.props.variant]));
+  const row = vi * sizes.length * shapes.length + sizes.indexOf(key(m[N.props.size])) * shapes.length + shapes.indexOf(key(m[N.props.shape]));
+  const col = SPEC.states.indexOf(key(m[N.props.state]));
+  c.x = pad + col * colW; c.y = pad + row * rowH + vi * groupGap;
 }
-set.resizeWithoutConstraints(pad * 2 + sizes.length * shapes.length * colW, pad * 2 + variantsK.length * SPEC.states.length * rowH);
-set.x = 0; set.y = 0;
-out.created = set.children.length; out.id = set.id; out.props = Object.keys(set.componentPropertyDefinitions);
+set.resizeWithoutConstraints(pad * 2 + SPEC.states.length * colW, pad * 2 + variantsK.length * sizes.length * shapes.length * rowH + (variantsK.length - 1) * groupGap);
+out.added = variants.length; out.total = set.children.length; out.id = set.id; out.props = Object.keys(set.componentPropertyDefinitions);
 return out;`;
 
 // `--swap-spinner`: in-place update of an existing (hand-tuned) Button set — replace the Icon/Loader Circle instance of every

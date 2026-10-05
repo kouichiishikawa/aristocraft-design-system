@@ -1,6 +1,6 @@
 # Button（設計、2026-09-30）
 
-Figma: `Button` ページの `Button` セット。部品ごとにページを分ける。名前は Figma 側が Title Case（Variant / Size / Shape / State、Label、Icon Before / Icon After、値は Default / Small / Rounded …）、コード側が camelCase（`variant` `size` `shape` `label` `iconBefore` `iconAfter`）。生成は `node packages/ui/figma/button-stage.js [--variants default]` → `use_figma`。進め方: Default だけ生成 → 本人が手直し → 他 4 variant を同じ規則で生成。実装は PF-13。
+Figma: `Button` ページの `Button` セット。部品ごとにページを分ける。名前は Figma 側が Title Case（Variant / Size / Shape / State、Label、Icon Before / Icon After、値は Default / Small / Rounded …）、コード側が camelCase（`variant` `size` `shape` `label` `iconBefore` `iconAfter`）。生成は `node packages/ui/figma/button-stage.js [--variants default]` → `use_figma`（冪等: 既存セットは残し、無い variant だけ追加する。手直しとインスタンスのリンクは保たれる）。経緯: Default だけ生成 → 本人が手直し（間隔・文字・Spinner・Focus Ring） → 2026-10-06 に他 4 variant を同じ規則で追加して **180 件**が揃った。Figma の格子は縦 = 種類（default / primary / secondary / link / danger、その中で size × shape）、横 = state。実装は PF-13。
 
 ## props
 

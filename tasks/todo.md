@@ -45,7 +45,8 @@
 - [x] Button の寸法は Figma を正に（2026-10-05）: 間隔 sm 4 / md 6 / lg 8（space.100 / 150 / 200）、sm の文字 label.md。SPEC / CSS / docs を追従
 - [x] Focus Ring 部品（2026-10-05）: Atlassian 式（2px 空けて 2px、角丸 +2px）。Figma は角丸 0 の部品 1 つ、置く側のインスタンスで角丸を上書き。Button の Focused 6 件を影 2 段から差し替え。CSS は outline + offset のまま（docs/components/focus-ring.md）
 - [ ] 本人: Figma の `Focus Ring (old)`（variant 版）を削除
-- [ ] Button の他 4 variant（primary / secondary / link / danger）を Figma に生成、React の variant 整理と loading prop（PF-13）
+- [x] Button の他 4 variant（primary / secondary / link / danger）を Figma に追加、180 件（2026-10-06。縦 = 種類、横 = state）
+- [ ] React の Button: variant 整理（default / primary / secondary / link / danger）、shape、loading prop（PF-13）
 - [ ] 本人: Figma の `Palette (old)` を削除
 - [ ] 主要部品の variant / 状態 / レスポンシブ設計（PF-04 の部品ライブラリ決定後）
 
