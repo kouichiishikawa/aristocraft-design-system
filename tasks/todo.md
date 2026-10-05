@@ -38,6 +38,7 @@
 - [x] Text Styles 24、Effect Styles 4（影の色は color 変数に束縛、light / dark 追従）
 - [x] 検証: 496 変数・重複なし・alias が両モードで解決（figma/import.js の verify）
 - [x] 手順書 docs/pf-10-figma.md（正本へ戻す手順と例外）
+- [x] Palette ページ（primitive 153 色、塗りは変数束縛、注記は段 / Hex / OKLCH / コントラスト比。figma/palette-stage.js、2026-10-05）
 - [ ] 主要部品の variant / 状態 / レスポンシブ設計（PF-04 の部品ライブラリ決定後）
 
 ## PF-04 技術構成（2026-09-29 完了）

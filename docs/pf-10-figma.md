@@ -65,6 +65,14 @@
 
 `packages/ui/icons.json` から `packages/ui/figma/icons-stage.js` で生成。`Icon/*` 71（Lucide）、`Brand/*` 10（Simple Icons + LinkedIn）、`Icon` コンポーネントセット（Size Small / Medium / Large / Extra Large を `Dimension/Size` に束縛、`Glyph` は instance swap）。方針は `docs/icons.md`。
 
+## Palette ページ（2026-10-05 追加）
+
+`tokens/primitives/color.json` から `packages/tokens/figma/palette-stage.js` で生成（`node figma/palette-stage.js` の出力を `use_figma` に貼る、1 回で約 24k 文字）。primitive の色 153 を 1 つの auto-layout フレーム `Palette`（幅 1992、padding 64、gap 48、面は `Elevation/Surface/Default`）に、色相の順（neutral → blue → … → sky、`color.json` の順）で 14 セクションに並べる。neutral は 0–1000 の 13 段と `Neutral Alpha` 8 段を分け、alpha 見本は下地フレーム（`Color/Neutral/50` または `950` に束縛）の上に置く。
+
+各見本（幅 136）: 色面 136×64（塗りを Primitives の `Color/{Hue}/{Step}` に束縛、角丸は `Dimension/Radius/200`）と文字 4 行 — 段（`Font/Label/SM`）、Hex（`Font/Label/Mono/XS`）、OKLCH `L .573 C .204 H 262.6`（`color.json` の `ac.oklch`）、WCAG 2.2 コントラスト比 `50 4.24 · 950 4.16`（neutral 50 上 · neutral 950 上。生成スクリプト内で計算。alpha 段は下地に合成した色と下地の比 `on 50 1.28`、OKLCH の代わりに `α 11.6% → #DDDBD9` を表示）。文字色は `Color/Text/Default / Subtle / Subtlest`。Hex・OKLCH・比は生成時の文字列なので、トークンを変えたら再生成する（色面は変数束縛なので自動で追従）。
+
+再投入: 既存の `Palette` フレームは `Palette (old)` に改名して残す（スクリプトは削除しない）。新しいフレームは右隣に作られるので、見比べてから古いものを手で削除する。
+
 ## 残り（PF-10 のもう半分）
 
 主要部品の variant / 状態 / レスポンシブ設計は、PF-04 で部品ライブラリ（React + TS）の構成を決めてから、PF-05 の Button 検証と合わせて進める。
