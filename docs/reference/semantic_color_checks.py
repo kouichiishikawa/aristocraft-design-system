@@ -27,9 +27,11 @@ def run_checks(M,hx):
         chk(mode,'inverse-ish on neutral.bold',W,'color.background.neutral.bold',4.5)
         groups=[('brand','color.background.brand','color.text.brand',PRIMARY)]+[(r,f'color.background.status.{r}',f'color.text.status.{r}',h) for r,h in STATUS.items()]+[(f'accent.{h}',f'color.background.accent.{h}',f'color.text.accent.{h}',h) for h in HUES]
         for name,base,tr,h in groups:
-            fg='color.text.static.black' if h in ('amber','lime') else 'color.text.static.white'
-            chk(mode,f'{name}.bold + static.{"black" if h in ("amber","lime") else "white"}',fg,f'{base}.bold',4.5)
-            if f'{base}.bold.hovered' in M: chk(mode,f'{name}.bold.hovered + text',fg,f'{base}.bold.hovered',4.5)
+            # text on bold fills = text.inverse (light: white, dark: neutral.950); light amber / lime keep static.black
+            fg='color.text.static.black' if (h in ('amber','lime') and mode=='light') else 'color.text.inverse'
+            chk(mode,f'{name}.bold + {fg.split(".")[-1]}',fg,f'{base}.bold',4.5)
+            for st in ('hovered','pressed'):
+                if f'{base}.bold.{st}' in M: chk(mode,f'{name}.bold.{st} + {fg.split(".")[-1]}',fg,f'{base}.bold.{st}',4.5)
             chk(mode,f'{name}.boldest + {"white" if mode=="light" else "black"}',W,f'{base}.boldest',4.5)
             chk(mode,f'text.{name} on surface.default',tr,'elevation.surface.default',4.5)
             chk(mode,f'text.{name} on {name}.subtlest',tr,f'{base}.subtlest',4.5)

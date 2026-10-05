@@ -13,11 +13,13 @@ const SPEC = {
   variants: {
     // [fill default, fill hovered, fill pressed, text, border]  (variable names)
     default:   ['color/background/neutral/default', 'color/background/neutral/default/hovered', 'color/background/neutral/default/pressed', 'color/text/default', null],
-    primary:   ['color/background/brand/bold', 'color/background/brand/bold/hovered', 'color/background/brand/bold/pressed', 'color/text/static/white', null],
+    primary:   ['color/background/brand/bold', 'color/background/brand/bold/hovered', 'color/background/brand/bold/pressed', 'color/text/inverse', null],
     secondary: ['color/background/neutral/subtle', 'color/background/neutral/subtle/hovered', 'color/background/neutral/subtle/pressed', 'color/text/default', 'color/border/default'],
     tertiary:  ['color/background/neutral/subtle', 'color/background/neutral/subtle/hovered', 'color/background/neutral/subtle/pressed', 'color/text/default', null],
-    danger:    ['color/background/status/error/bold', 'color/background/status/error/bold/hovered', 'color/background/status/error/bold/pressed', 'color/text/static/white', null],
+    danger:    ['color/background/status/error/bold', 'color/background/status/error/bold/hovered', 'color/background/status/error/bold/pressed', 'color/text/inverse', null],
   },
+  // loading spinner colour per variant (the Spinner component is bound to icon.default; bold fills need the inverse icon colour)
+  spinnerColor: { primary: 'color/icon/inverse', danger: 'color/icon/inverse' },
   // height token, padding-inline token, gap token, text style, icon size (Icon / Spinner sets: sm 16 / md 24), rounded radius token
   // 2026-10-05 (Figma is the source for these): gap sm 4 / md 6 / lg 8 (space.100 / 150 / 200), sm shares label.md with md.
   sizes: {
@@ -51,6 +53,7 @@ SPEC.shapes = Object.fromEntries(Object.entries(SPEC.shapes).map(([k, x]) => [k,
 SPEC.disabled = { fill: fig(SPEC.disabled.fill), text: fig(SPEC.disabled.text) };
 SPEC.focus.radius = Object.fromEntries(Object.entries(SPEC.focus.radius).map(([k, val]) => [fig(k), val]));
 SPEC.icon = fig(SPEC.icon);
+SPEC.spinnerColor = Object.fromEntries(Object.entries(SPEC.spinnerColor).map(([k, x]) => [k, fig(x)]));
 SPEC.borderWidth = fig('border/width/default');
 
 const script = String.raw`
@@ -106,9 +109,10 @@ const focusRing = (c, radiusPx) => {
   return ring;
 };
 // loading: the Spinner set's variant of the same size as the icon (Small 16 / Medium 24)
-const spinnerInstance = (sizeVariant) => {
+const spinnerInstance = (sizeVariant, colorTok) => {
   const inst = spinnerSet.children.find((c) => c.name === 'Size=' + sizeVariant).createInstance();
   inst.name = SPEC.spinner;
+  if (colorTok) for (const dot of inst.findAll((n) => n.type === 'ELLIPSE')) dot.fills = [paint(colorTok)]; // instance override
   return inst;
 };
 
@@ -141,7 +145,7 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
         else c.strokes = [];
         if (state === 'focused') c.clipsContent = false; // the Focus Ring instance (added after the children) sits 2px outside
         // children: iconStart (or spinner when loading), label, iconEnd
-        const start = state === 'loading' ? spinnerInstance(iconSize) : iconInstance(iconSize, SPEC.icon, N.props.iconBefore);
+        const start = state === 'loading' ? spinnerInstance(iconSize, SPEC.spinnerColor[variant]) : iconInstance(iconSize, SPEC.icon, N.props.iconBefore);
         c.appendChild(start); start.visible = state === 'loading'; start.isExposedInstance = true;
         const t = figma.createText(); t.name = N.props.label; t.textStyleId = styles[textStyle].id; t.characters = SPEC.label;
         t.fills = [paint(isDisabled ? SPEC.disabled.text : textColor)];

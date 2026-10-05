@@ -29,11 +29,11 @@ Figma: `Button` ページの `Button` セット。部品ごとにページを分
 
 | variant | default | hovered | pressed | 文字 | 枠 |
 |---|---|---|---|---|---|
-| primary | background.brand.bold | .hovered | .pressed | text.static.white | — |
+| primary | background.brand.bold（light 600 / dark 500） | .hovered（light 濃く / dark 明るく） | .pressed | text.inverse（Spinner は icon.inverse。2026-10-06、Atlassian 式） | — |
 | default | background.neutral.default（= neutral.100a、Atlassian 式 2026-10-05） | .hovered（200a） | .pressed（300a） | text.default | — |
 | secondary | background.neutral.subtle（透明） | .hovered（100a） | .pressed（200a） | text.default | color.border.default 1px |
 | tertiary | background.neutral.subtle（透明） | .hovered（100a） | .pressed（200a） | text.default | — |
-| danger | background.status.error.bold | .hovered | .pressed | text.static.white | — |
+| danger | background.status.error.bold（light 600 / dark 500） | .hovered | .pressed | text.inverse（Spinner は icon.inverse） | — |
 
 共通: focused = 要素から 2px 空けて 2px のリング、角丸は要素 + 2px（docs/components/focus-ring.md。CSS は outline + outline-offset、Figma は `Focus Ring` 部品を絶対配置。2026-10-05 に影 2 段から置き換え）。disabled = 背景 background.disabled + 文字 text.disabled、枠と下線なし、cursor not-allowed。hover は `@media (hover: hover)` のみ。
 

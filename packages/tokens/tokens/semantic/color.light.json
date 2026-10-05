@@ -226,8 +226,8 @@
       },
       "inverse": {
         "$type": "color",
-        "$value": "{color.neutral.50}",
-        "$description": "反転面の上"
+        "$value": "{color.neutral.0}",
+        "$description": "反転面・bold 塗りの上（2026-10-06: light は neutral.0 = 白。brand.bold 600 の上で AA にするため）"
       },
       "brand": {
         "$root": {
@@ -470,7 +470,8 @@
       },
       "inverse": {
         "$type": "color",
-        "$value": "{color.neutral.50}"
+        "$value": "{color.neutral.0}",
+        "$description": "反転面・bold 塗りの上（Spinner など）"
       },
       "brand": {
         "$type": "color",
@@ -539,7 +540,7 @@
       },
       "inverse": {
         "$type": "color",
-        "$value": "{color.neutral.50}",
+        "$value": "{color.neutral.0}",
         "$description": "反転面の上"
       },
       "brand": {
@@ -711,17 +712,17 @@
           "$root": {
             "$type": "color",
             "$value": "{color.blue.600}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "hovered": {
             "$type": "color",
             "$value": "{color.blue.700}",
-            "$description": "1 段濃く"
+            "$description": "1 段強く（light は濃く、dark は明るく）"
           },
           "pressed": {
             "$type": "color",
             "$value": "{color.blue.800}",
-            "$description": "2 段濃く"
+            "$description": "2 段強く"
           }
         },
         "boldest": {
@@ -771,17 +772,17 @@
             "$root": {
               "$type": "color",
               "$value": "{color.green.700}",
-              "$description": "塗り（白文字。amber / lime は黒文字）"
+              "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
             },
             "hovered": {
               "$type": "color",
               "$value": "{color.green.800}",
-              "$description": "1 段濃く"
+              "$description": "1 段強く（light は濃く、dark は明るく）"
             },
             "pressed": {
               "$type": "color",
               "$value": "{color.green.900}",
-              "$description": "2 段濃く"
+              "$description": "2 段強く"
             }
           },
           "boldest": {
@@ -830,17 +831,17 @@
             "$root": {
               "$type": "color",
               "$value": "{color.amber.400}",
-              "$description": "塗り（白文字。amber / lime は黒文字）"
+              "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
             },
             "hovered": {
               "$type": "color",
               "$value": "{color.amber.500}",
-              "$description": "1 段濃く"
+              "$description": "1 段強く（light は濃く、dark は明るく）"
             },
             "pressed": {
               "$type": "color",
               "$value": "{color.amber.600}",
-              "$description": "2 段濃く"
+              "$description": "2 段強く"
             }
           },
           "boldest": {
@@ -889,17 +890,17 @@
             "$root": {
               "$type": "color",
               "$value": "{color.red.600}",
-              "$description": "塗り（白文字。amber / lime は黒文字）"
+              "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
             },
             "hovered": {
               "$type": "color",
               "$value": "{color.red.700}",
-              "$description": "1 段濃く"
+              "$description": "1 段強く（light は濃く、dark は明るく）"
             },
             "pressed": {
               "$type": "color",
               "$value": "{color.red.800}",
-              "$description": "2 段濃く"
+              "$description": "2 段強く"
             }
           },
           "boldest": {
@@ -948,17 +949,17 @@
             "$root": {
               "$type": "color",
               "$value": "{color.sky.700}",
-              "$description": "塗り（白文字。amber / lime は黒文字）"
+              "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
             },
             "hovered": {
               "$type": "color",
               "$value": "{color.sky.800}",
-              "$description": "1 段濃く"
+              "$description": "1 段強く（light は濃く、dark は明るく）"
             },
             "pressed": {
               "$type": "color",
               "$value": "{color.sky.900}",
-              "$description": "2 段濃く"
+              "$description": "2 段強く"
             }
           },
           "boldest": {
@@ -1008,7 +1009,7 @@
           "bold": {
             "$type": "color",
             "$value": "{color.blue.600}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1055,7 +1056,7 @@
           "bold": {
             "$type": "color",
             "$value": "{color.violet.600}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1102,7 +1103,7 @@
           "bold": {
             "$type": "color",
             "$value": "{color.purple.600}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1149,7 +1150,7 @@
           "bold": {
             "$type": "color",
             "$value": "{color.pink.600}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1196,7 +1197,7 @@
           "bold": {
             "$type": "color",
             "$value": "{color.red.600}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1243,7 +1244,7 @@
           "bold": {
             "$type": "color",
             "$value": "{color.orange.700}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1290,7 +1291,7 @@
           "bold": {
             "$type": "color",
             "$value": "{color.amber.400}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1337,7 +1338,7 @@
           "bold": {
             "$type": "color",
             "$value": "{color.lime.400}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1384,7 +1385,7 @@
           "bold": {
             "$type": "color",
             "$value": "{color.green.700}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1431,7 +1432,7 @@
           "bold": {
             "$type": "color",
             "$value": "{color.teal.700}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1478,7 +1479,7 @@
           "bold": {
             "$type": "color",
             "$value": "{color.cyan.700}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1525,7 +1526,7 @@
           "bold": {
             "$type": "color",
             "$value": "{color.sky.700}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",

@@ -596,7 +596,7 @@ export const color = {
         "subtle": "#4f4b45",
         "subtlest": "#65615a",
         "disabled": "#949089",
-        "inverse": "#f8f6f4",
+        "inverse": "#ffffff",
         "brand": {
           "DEFAULT": "#1c55e0",
           "bold": "#163eb3"
@@ -680,7 +680,7 @@ export const color = {
         "subtle": "#4f4b45",
         "subtlest": "#65615a",
         "disabled": "#949089",
-        "inverse": "#f8f6f4",
+        "inverse": "#ffffff",
         "brand": "#316eee",
         "status": {
           "success": "#107b1a",
@@ -699,7 +699,7 @@ export const color = {
         "default": "rgba(18, 16, 13, 0.22745098039215686)",
         "bold": "#7c7871",
         "focused": "#316eee",
-        "inverse": "#f8f6f4",
+        "inverse": "#ffffff",
         "brand": "#316eee",
         "disabled": "rgba(18, 16, 13, 0.11372549019607843)",
         "selected": "#316eee",
@@ -1207,9 +1207,9 @@ export const color = {
             "pressed": "#1c55e0"
           },
           "bold": {
-            "DEFAULT": "#316eee",
-            "hovered": "#1c55e0",
-            "pressed": "#163eb3"
+            "DEFAULT": "#4c87f6",
+            "hovered": "#6c9ff8",
+            "pressed": "#8cb6f9"
           },
           "boldest": "#8cb6f9"
         },
@@ -1227,9 +1227,9 @@ export const color = {
               "pressed": "#107b1a"
             },
             "bold": {
-              "DEFAULT": "#107b1a",
-              "hovered": "#195d20",
-              "pressed": "#19411d"
+              "DEFAULT": "#29a818",
+              "hovered": "#50bc3b",
+              "pressed": "#77ce62"
             },
             "boldest": "#77ce62"
           },
@@ -1247,8 +1247,8 @@ export const color = {
             },
             "bold": {
               "DEFAULT": "#f6be33",
-              "hovered": "#ce9d29",
-              "pressed": "#a77d20"
+              "hovered": "#fbcb5d",
+              "pressed": "#fcda8d"
             },
             "boldest": "#fbcb5d"
           },
@@ -1265,9 +1265,9 @@ export const color = {
               "pressed": "#b91d31"
             },
             "bold": {
-              "DEFAULT": "#d92538",
-              "hovered": "#b91d31",
-              "pressed": "#901326"
+              "DEFAULT": "#f53c45",
+              "hovered": "#f86e69",
+              "pressed": "#fa958c"
             },
             "boldest": "#fa958c"
           },
@@ -1284,9 +1284,9 @@ export const color = {
               "pressed": "#1b77a0"
             },
             "bold": {
-              "DEFAULT": "#1b77a0",
-              "hovered": "#125473",
-              "pressed": "#093c54"
+              "DEFAULT": "#2eb5ed",
+              "hovered": "#4dc5f9",
+              "pressed": "#7dd2fa"
             },
             "boldest": "#7dd2fa"
           }
@@ -1304,7 +1304,7 @@ export const color = {
               "hovered": "#163eb3",
               "pressed": "#1c55e0"
             },
-            "bold": "#316eee",
+            "bold": "#4c87f6",
             "boldest": "#8cb6f9"
           },
           "violet": {
@@ -1319,7 +1319,7 @@ export const color = {
               "hovered": "#5329aa",
               "pressed": "#6e3bd5"
             },
-            "bold": "#834bf4",
+            "bold": "#956df6",
             "boldest": "#bba5f9"
           },
           "purple": {
@@ -1334,7 +1334,7 @@ export const color = {
               "hovered": "#751d86",
               "pressed": "#9d11b2"
             },
-            "bold": "#bd00d2",
+            "bold": "#d91eec",
             "boldest": "#e492e8"
           },
           "pink": {
@@ -1349,7 +1349,7 @@ export const color = {
               "hovered": "#851b58",
               "pressed": "#b21272"
             },
-            "bold": "#d50385",
+            "bold": "#f41b97",
             "boldest": "#ea99b7"
           },
           "red": {
@@ -1364,7 +1364,7 @@ export const color = {
               "hovered": "#901326",
               "pressed": "#b91d31"
             },
-            "bold": "#d92538",
+            "bold": "#f53c45",
             "boldest": "#fa958c"
           },
           "orange": {
@@ -1379,7 +1379,7 @@ export const color = {
               "hovered": "#783a0e",
               "pressed": "#ac581a"
             },
-            "bold": "#ac581a",
+            "bold": "#f6852b",
             "boldest": "#fbb482"
           },
           "amber": {
@@ -1424,7 +1424,7 @@ export const color = {
               "hovered": "#195d20",
               "pressed": "#107b1a"
             },
-            "bold": "#107b1a",
+            "bold": "#29a818",
             "boldest": "#77ce62"
           },
           "teal": {
@@ -1439,7 +1439,7 @@ export const color = {
               "hovered": "#115a4b",
               "pressed": "#1f7d68"
             },
-            "bold": "#1f7d68",
+            "bold": "#33c19d",
             "boldest": "#3ce4b6"
           },
           "cyan": {
@@ -1454,7 +1454,7 @@ export const color = {
               "hovered": "#11585e",
               "pressed": "#1d7a82"
             },
-            "bold": "#1d7a82",
+            "bold": "#2fbcc5",
             "boldest": "#3adfe6"
           },
           "sky": {
@@ -1469,7 +1469,7 @@ export const color = {
               "hovered": "#125473",
               "pressed": "#1b77a0"
             },
-            "bold": "#1b77a0",
+            "bold": "#2eb5ed",
             "boldest": "#7dd2fa"
           }
         }

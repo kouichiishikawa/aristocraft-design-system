@@ -4062,14 +4062,14 @@
         {
           "name": "Color/Text/Inverse",
           "type": "COLOR",
-          "description": "反転面の上",
+          "description": "反転面・bold 塗りの上（2026-10-06: light は neutral.0 = 白。brand.bold 600 の上で AA にするため）",
           "scopes": [
             "TEXT_FILL"
           ],
           "codeSyntax": "var(--ac-color-text-inverse)",
           "values": {
             "Light": {
-              "alias": "Color/Neutral/50"
+              "alias": "Color/Neutral/0"
             },
             "Dark": {
               "alias": "Color/Neutral/950"
@@ -4776,14 +4776,14 @@
         {
           "name": "Color/Icon/Inverse",
           "type": "COLOR",
-          "description": "",
+          "description": "反転面・bold 塗りの上（Spinner など）",
           "scopes": [
             "SHAPE_FILL"
           ],
           "codeSyntax": "var(--ac-color-icon-inverse)",
           "values": {
             "Light": {
-              "alias": "Color/Neutral/50"
+              "alias": "Color/Neutral/0"
             },
             "Dark": {
               "alias": "Color/Neutral/950"
@@ -5004,7 +5004,7 @@
           "codeSyntax": "var(--ac-color-border-inverse)",
           "values": {
             "Light": {
-              "alias": "Color/Neutral/50"
+              "alias": "Color/Neutral/0"
             },
             "Dark": {
               "alias": "Color/Neutral/950"
@@ -5573,7 +5573,7 @@
         {
           "name": "Color/Background/Brand/Bold",
           "type": "COLOR",
-          "description": "塗り（白文字。amber / lime は黒文字）",
+          "description": "塗り（文字は text.inverse。light の amber / lime は static.black）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -5584,14 +5584,14 @@
               "alias": "Color/Blue/600"
             },
             "Dark": {
-              "alias": "Color/Blue/600"
+              "alias": "Color/Blue/500"
             }
           }
         },
         {
           "name": "Color/Background/Brand/Bold/Hovered",
           "type": "COLOR",
-          "description": "1 段濃く",
+          "description": "1 段強く（light は濃く、dark は明るく）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -5602,14 +5602,14 @@
               "alias": "Color/Blue/700"
             },
             "Dark": {
-              "alias": "Color/Blue/700"
+              "alias": "Color/Blue/400"
             }
           }
         },
         {
           "name": "Color/Background/Brand/Bold/Pressed",
           "type": "COLOR",
-          "description": "2 段濃く",
+          "description": "2 段強く",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -5620,7 +5620,7 @@
               "alias": "Color/Blue/800"
             },
             "Dark": {
-              "alias": "Color/Blue/800"
+              "alias": "Color/Blue/300"
             }
           }
         },
@@ -5771,7 +5771,7 @@
         {
           "name": "Color/Background/Status/Success/Bold",
           "type": "COLOR",
-          "description": "塗り（白文字。amber / lime は黒文字）",
+          "description": "塗り（文字は text.inverse。light の amber / lime は static.black）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -5782,14 +5782,14 @@
               "alias": "Color/Green/700"
             },
             "Dark": {
-              "alias": "Color/Green/700"
+              "alias": "Color/Green/500"
             }
           }
         },
         {
           "name": "Color/Background/Status/Success/Bold/Hovered",
           "type": "COLOR",
-          "description": "1 段濃く",
+          "description": "1 段強く（light は濃く、dark は明るく）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -5800,14 +5800,14 @@
               "alias": "Color/Green/800"
             },
             "Dark": {
-              "alias": "Color/Green/800"
+              "alias": "Color/Green/400"
             }
           }
         },
         {
           "name": "Color/Background/Status/Success/Bold/Pressed",
           "type": "COLOR",
-          "description": "2 段濃く",
+          "description": "2 段強く",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -5818,7 +5818,7 @@
               "alias": "Color/Green/900"
             },
             "Dark": {
-              "alias": "Color/Green/900"
+              "alias": "Color/Green/300"
             }
           }
         },
@@ -5969,7 +5969,7 @@
         {
           "name": "Color/Background/Status/Warning/Bold",
           "type": "COLOR",
-          "description": "塗り（白文字。amber / lime は黒文字）",
+          "description": "塗り（文字は text.inverse。light の amber / lime は static.black）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -5987,7 +5987,7 @@
         {
           "name": "Color/Background/Status/Warning/Bold/Hovered",
           "type": "COLOR",
-          "description": "1 段濃く",
+          "description": "1 段強く（light は濃く、dark は明るく）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -5998,14 +5998,14 @@
               "alias": "Color/Amber/500"
             },
             "Dark": {
-              "alias": "Color/Amber/500"
+              "alias": "Color/Amber/300"
             }
           }
         },
         {
           "name": "Color/Background/Status/Warning/Bold/Pressed",
           "type": "COLOR",
-          "description": "2 段濃く",
+          "description": "2 段強く",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -6016,7 +6016,7 @@
               "alias": "Color/Amber/600"
             },
             "Dark": {
-              "alias": "Color/Amber/600"
+              "alias": "Color/Amber/200"
             }
           }
         },
@@ -6167,7 +6167,7 @@
         {
           "name": "Color/Background/Status/Error/Bold",
           "type": "COLOR",
-          "description": "塗り（白文字。amber / lime は黒文字）",
+          "description": "塗り（文字は text.inverse。light の amber / lime は static.black）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -6178,14 +6178,14 @@
               "alias": "Color/Red/600"
             },
             "Dark": {
-              "alias": "Color/Red/600"
+              "alias": "Color/Red/500"
             }
           }
         },
         {
           "name": "Color/Background/Status/Error/Bold/Hovered",
           "type": "COLOR",
-          "description": "1 段濃く",
+          "description": "1 段強く（light は濃く、dark は明るく）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -6196,14 +6196,14 @@
               "alias": "Color/Red/700"
             },
             "Dark": {
-              "alias": "Color/Red/700"
+              "alias": "Color/Red/400"
             }
           }
         },
         {
           "name": "Color/Background/Status/Error/Bold/Pressed",
           "type": "COLOR",
-          "description": "2 段濃く",
+          "description": "2 段強く",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -6214,7 +6214,7 @@
               "alias": "Color/Red/800"
             },
             "Dark": {
-              "alias": "Color/Red/800"
+              "alias": "Color/Red/300"
             }
           }
         },
@@ -6365,7 +6365,7 @@
         {
           "name": "Color/Background/Status/Info/Bold",
           "type": "COLOR",
-          "description": "塗り（白文字。amber / lime は黒文字）",
+          "description": "塗り（文字は text.inverse。light の amber / lime は static.black）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -6376,14 +6376,14 @@
               "alias": "Color/Sky/700"
             },
             "Dark": {
-              "alias": "Color/Sky/700"
+              "alias": "Color/Sky/500"
             }
           }
         },
         {
           "name": "Color/Background/Status/Info/Bold/Hovered",
           "type": "COLOR",
-          "description": "1 段濃く",
+          "description": "1 段強く（light は濃く、dark は明るく）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -6394,14 +6394,14 @@
               "alias": "Color/Sky/800"
             },
             "Dark": {
-              "alias": "Color/Sky/800"
+              "alias": "Color/Sky/400"
             }
           }
         },
         {
           "name": "Color/Background/Status/Info/Bold/Pressed",
           "type": "COLOR",
-          "description": "2 段濃く",
+          "description": "2 段強く",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -6412,7 +6412,7 @@
               "alias": "Color/Sky/900"
             },
             "Dark": {
-              "alias": "Color/Sky/900"
+              "alias": "Color/Sky/300"
             }
           }
         },
@@ -6563,7 +6563,7 @@
         {
           "name": "Color/Background/Accent/Blue/Bold",
           "type": "COLOR",
-          "description": "塗り（白文字。amber / lime は黒文字）",
+          "description": "塗り（文字は text.inverse。light の amber / lime は static.black）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -6574,7 +6574,7 @@
               "alias": "Color/Blue/600"
             },
             "Dark": {
-              "alias": "Color/Blue/600"
+              "alias": "Color/Blue/500"
             }
           }
         },
@@ -6725,7 +6725,7 @@
         {
           "name": "Color/Background/Accent/Violet/Bold",
           "type": "COLOR",
-          "description": "塗り（白文字。amber / lime は黒文字）",
+          "description": "塗り（文字は text.inverse。light の amber / lime は static.black）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -6736,7 +6736,7 @@
               "alias": "Color/Violet/600"
             },
             "Dark": {
-              "alias": "Color/Violet/600"
+              "alias": "Color/Violet/500"
             }
           }
         },
@@ -6887,7 +6887,7 @@
         {
           "name": "Color/Background/Accent/Purple/Bold",
           "type": "COLOR",
-          "description": "塗り（白文字。amber / lime は黒文字）",
+          "description": "塗り（文字は text.inverse。light の amber / lime は static.black）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -6898,7 +6898,7 @@
               "alias": "Color/Purple/600"
             },
             "Dark": {
-              "alias": "Color/Purple/600"
+              "alias": "Color/Purple/500"
             }
           }
         },
@@ -7049,7 +7049,7 @@
         {
           "name": "Color/Background/Accent/Pink/Bold",
           "type": "COLOR",
-          "description": "塗り（白文字。amber / lime は黒文字）",
+          "description": "塗り（文字は text.inverse。light の amber / lime は static.black）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -7060,7 +7060,7 @@
               "alias": "Color/Pink/600"
             },
             "Dark": {
-              "alias": "Color/Pink/600"
+              "alias": "Color/Pink/500"
             }
           }
         },
@@ -7211,7 +7211,7 @@
         {
           "name": "Color/Background/Accent/Red/Bold",
           "type": "COLOR",
-          "description": "塗り（白文字。amber / lime は黒文字）",
+          "description": "塗り（文字は text.inverse。light の amber / lime は static.black）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -7222,7 +7222,7 @@
               "alias": "Color/Red/600"
             },
             "Dark": {
-              "alias": "Color/Red/600"
+              "alias": "Color/Red/500"
             }
           }
         },
@@ -7373,7 +7373,7 @@
         {
           "name": "Color/Background/Accent/Orange/Bold",
           "type": "COLOR",
-          "description": "塗り（白文字。amber / lime は黒文字）",
+          "description": "塗り（文字は text.inverse。light の amber / lime は static.black）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -7384,7 +7384,7 @@
               "alias": "Color/Orange/700"
             },
             "Dark": {
-              "alias": "Color/Orange/700"
+              "alias": "Color/Orange/500"
             }
           }
         },
@@ -7535,7 +7535,7 @@
         {
           "name": "Color/Background/Accent/Amber/Bold",
           "type": "COLOR",
-          "description": "塗り（白文字。amber / lime は黒文字）",
+          "description": "塗り（文字は text.inverse。light の amber / lime は static.black）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -7697,7 +7697,7 @@
         {
           "name": "Color/Background/Accent/Lime/Bold",
           "type": "COLOR",
-          "description": "塗り（白文字。amber / lime は黒文字）",
+          "description": "塗り（文字は text.inverse。light の amber / lime は static.black）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -7859,7 +7859,7 @@
         {
           "name": "Color/Background/Accent/Green/Bold",
           "type": "COLOR",
-          "description": "塗り（白文字。amber / lime は黒文字）",
+          "description": "塗り（文字は text.inverse。light の amber / lime は static.black）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -7870,7 +7870,7 @@
               "alias": "Color/Green/700"
             },
             "Dark": {
-              "alias": "Color/Green/700"
+              "alias": "Color/Green/500"
             }
           }
         },
@@ -8021,7 +8021,7 @@
         {
           "name": "Color/Background/Accent/Teal/Bold",
           "type": "COLOR",
-          "description": "塗り（白文字。amber / lime は黒文字）",
+          "description": "塗り（文字は text.inverse。light の amber / lime は static.black）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -8032,7 +8032,7 @@
               "alias": "Color/Teal/700"
             },
             "Dark": {
-              "alias": "Color/Teal/700"
+              "alias": "Color/Teal/500"
             }
           }
         },
@@ -8183,7 +8183,7 @@
         {
           "name": "Color/Background/Accent/Cyan/Bold",
           "type": "COLOR",
-          "description": "塗り（白文字。amber / lime は黒文字）",
+          "description": "塗り（文字は text.inverse。light の amber / lime は static.black）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -8194,7 +8194,7 @@
               "alias": "Color/Cyan/700"
             },
             "Dark": {
-              "alias": "Color/Cyan/700"
+              "alias": "Color/Cyan/500"
             }
           }
         },
@@ -8345,7 +8345,7 @@
         {
           "name": "Color/Background/Accent/Sky/Bold",
           "type": "COLOR",
-          "description": "塗り（白文字。amber / lime は黒文字）",
+          "description": "塗り（文字は text.inverse。light の amber / lime は static.black）",
           "scopes": [
             "FRAME_FILL",
             "SHAPE_FILL"
@@ -8356,7 +8356,7 @@
               "alias": "Color/Sky/700"
             },
             "Dark": {
-              "alias": "Color/Sky/700"
+              "alias": "Color/Sky/500"
             }
           }
         },

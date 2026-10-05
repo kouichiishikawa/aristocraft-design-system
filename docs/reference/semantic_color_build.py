@@ -19,14 +19,14 @@ add('elevation.surface.overlay','neutral.0','neutral.800','モーダル・メニ
 add('elevation.surface.sunken','neutral.100','neutral.1000','入力欄・くぼみ・コードブロックの地。文字は text.default / subtle まで')
 # text / icon
 add('color.text.default','neutral.950','neutral.50','本文・見出し'); add('color.text.subtle','neutral.700','neutral.200','副次テキスト'); add('color.text.subtlest','neutral.600','neutral.300','キャプション・メタ')
-add('color.text.disabled','neutral.400','neutral.500','無効（コントラスト要件の対象外）'); add('color.text.inverse','neutral.50','neutral.950','反転面の上')
+add('color.text.disabled','neutral.400','neutral.500','無効（コントラスト要件の対象外）'); add('color.text.inverse','neutral.0','neutral.950','反転面・bold 塗りの上（2026-10-06: light は neutral.0 = 白。brand.bold 600 の上で AA にするため）')
 add('color.text.brand',f'{PRIMARY}.700',f'{PRIMARY}.400','ブランド色の文字・リンク'); add('color.text.brand.bold',f'{PRIMARY}.800',f'{PRIMARY}.200','brand.subtle の面に乗せる文字（dark は 200: subtle.pressed = 800 の上でも AA）')
 add('color.text.selected',f'{PRIMARY}.700',f'{PRIMARY}.400','選択状態の文字')
 add('color.icon.default','neutral.900','neutral.100',''); add('color.icon.subtle','neutral.700','neutral.200',''); add('color.icon.subtlest','neutral.600','neutral.300','')
-add('color.icon.disabled','neutral.400','neutral.500',''); add('color.icon.inverse','neutral.50','neutral.950',''); add('color.icon.brand',f'{PRIMARY}.600',f'{PRIMARY}.400','')
+add('color.icon.disabled','neutral.400','neutral.500',''); add('color.icon.inverse','neutral.0','neutral.950','反転面・bold 塗りの上（Spinner など）'); add('color.icon.brand',f'{PRIMARY}.600',f'{PRIMARY}.400','')
 # border
 add('color.border.subtlest','neutral.100a','neutral.900a','装飾的な区切り（3:1 の要件なし）'); add('color.border.subtle','neutral.200a','neutral.800a','カードの枠（装飾）'); add('color.border.default','neutral.300a','neutral.700a','既定の境界線（装飾）')
-add('color.border.bold','neutral.500','neutral.400','入力欄など機能的な境界（3:1）'); add('color.border.focused',f'{PRIMARY}.600',f'{PRIMARY}.400','フォーカスリング'); add('color.border.inverse','neutral.50','neutral.950','反転面の上')
+add('color.border.bold','neutral.500','neutral.400','入力欄など機能的な境界（3:1）'); add('color.border.focused',f'{PRIMARY}.600',f'{PRIMARY}.400','フォーカスリング'); add('color.border.inverse','neutral.0','neutral.950','反転面の上')
 add('color.border.brand',f'{PRIMARY}.600',f'{PRIMARY}.500','')
 
 # disabled / selected / input / blanket / icon.status / link
@@ -58,8 +58,11 @@ def emphasis(base,h,states=True):
     add(f'{base}.subtlest',f'{h}.50',f'{h}.950','ほのかな色の面')
     add(f'{base}.subtle',f'{h}.50',f'{h}.950','薄いタグ・通知の地（文字は .bold）'); add(f'{base}.subtle.hovered',f'{h}.100',f'{h}.900',''); add(f'{base}.subtle.pressed',f'{h}.200',f'{h}.800','')
     add(f'{base}.default',f'{h}.100',f'{h}.900','色つきの面（文字は text.default）'); add(f'{base}.default.hovered',f'{h}.200',f'{h}.800',''); add(f'{base}.default.pressed',f'{h}.300',f'{h}.700','')
-    b=fill_step(h); add(f'{base}.bold',f'{h}.{b}',f'{h}.{b}','塗り（白文字。amber / lime は黒文字）')
-    if states: add(f'{base}.bold.hovered',f'{h}.{b+100}',f'{h}.{b+100}','1 段濃く'); add(f'{base}.bold.pressed',f'{h}.{b+200}',f'{h}.{b+200}','2 段濃く')
+    # bold: light = lowest step with AA white text (amber / lime: 400 + black text); dark = lighter fill with inverse (dark) text,
+    # hovered / pressed move away from the surface (light: darker, dark: lighter) — Atlassian model, 2026-10-06
+    b=fill_step(h); d=400 if h in ('amber','lime') else 500
+    add(f'{base}.bold',f'{h}.{b}',f'{h}.{d}','塗り（文字は text.inverse。light の amber / lime は static.black）')
+    if states: add(f'{base}.bold.hovered',f'{h}.{b+100}',f'{h}.{d-100}','1 段強く（light は濃く、dark は明るく）'); add(f'{base}.bold.pressed',f'{h}.{b+200}',f'{h}.{d-200}','2 段強く')
     add(f'{base}.boldest',f'{h}.800',f'{h}.300','最も強い塗り（light 白文字、dark 黒文字）')
 # primary (brand)
 emphasis('color.background.brand',PRIMARY)

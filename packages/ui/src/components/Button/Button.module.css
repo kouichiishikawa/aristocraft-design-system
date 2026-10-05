@@ -46,7 +46,7 @@
 /* variant: background emphasis + text role */
 .button[data-variant='primary'] {
   background: var(--ac-color-background-brand-bold);
-  color: var(--ac-color-text-static-white);
+  color: var(--ac-color-text-inverse); /* white in light, dark text on the lighter dark-mode fill (Atlassian model, 2026-10-06) */
 }
 /* neutral.default is translucent (neutral 100a) so it sits on any surface; neutral.subtle is transparent until hovered */
 .button[data-variant='secondary'] {
