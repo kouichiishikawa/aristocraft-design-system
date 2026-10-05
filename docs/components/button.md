@@ -46,5 +46,6 @@ Figma: `Button` ページの `Button` セット。部品ごとにページを分
 
 - 各 variant は auto-layout（横）。高さ・左右余白・間隔・角丸・線幅・不透明度は変数に束縛、塗りと文字色は `color/*`、文字は Text Style `font/label/*`
 - プロパティ: `Label`（text）、`Icon Before` / `Icon After`（boolean、中身は `Icon` セットの露出インスタンスで glyph を差し替え）
+- Figma の既知バグ対策: 同じ `Label` プロパティに繋いだ文字は、繋いだ後に Text Style や下線を書くと全 variant に揃えられる。生成器は「全 variant の文字を確定 → `Label` プロパティを作り直して一度に繋ぐ」の順で作り、link の下線は `Font/Label/MD Underlined` / `LG Underlined`（Figma だけの派生 Text Style）で表現する。**Figma 上で Label の文字スタイルを手で変えるときも全 variant に写るので注意**
 - 変数・スタイル・部品名は Title Case（`docs/pf-10-figma.md` の規則）
 - loading の variant は Icon Before の位置に `Spinner` セットのインスタンス（Size は Icon と同じ Small / Medium。2026-10-05 に `icon/loader-circle` から置き換え。既存セットに対しては `node packages/ui/figma/button-stage.js --swap-spinner` で差し替えだけを行い、手直しは保つ）

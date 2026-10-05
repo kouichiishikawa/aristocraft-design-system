@@ -72,10 +72,10 @@
 **Verification**: 読み取りスクリプトで `Object.keys(node.boundVariables)` に 4 辺のキーがあること
 **Applies to**: all projects
 
-### [2026-10-06] [tooling] Figma: 同じ TEXT プロパティに繋いだ文字は、Text Style / 下線の書き込みが全 variant に伝播する
+### [2026-10-06] [tooling] Figma: 同じ TEXT プロパティに繋いだ文字は、繋いだ後の Text Style / 下線の書き込みが全 variant に揃えられる
 
-**Mistake**: Button の他 4 variant を追加したら、Large の文字（Label/LG）まで含む 180 件すべてが同じ Text Style になった。Link の下線を付けても他の variant に伝播・消失した
-**Root cause**: `componentPropertyReferences.characters` で同じ TEXT プロパティに繋ぐと、繋いだ時点でプロパティ側の Text Style を取り込み、以後 1 件への `setTextStyleIdAsync` / `setRangeTextDecoration` が全件に写る（Figma の既知事象: forum「Issue with Text property overriding text styles in component sets」）。文字を一時的に変えてから書くと伝播しない（`characters` を一意にする → style / decoration を書く → `characters` を戻す）
-**Rule**: variant ごとに Text Style が違う部品は、プロパティ結線の後に上の手順で style を当て直す（button-stage.js に実装）。投入後は size ごとの style / fontSize / 幅を集計して確かめる
-**Verification**: 読み取りで `Size × textStyle × fontSize` の集計が想定どおり（sm / md = MD 14、lg = LG 16）、幅が 69 / 77 / 91
+**Mistake**: Button の他 4 variant を既存セットに追加したら、Large（Label/LG）まで含む 180 件すべてが同じ Text Style になり、Link の下線も全件に付いたり消えたりした。スクリプト内の集計は正しく見えたが、コミット後に揃えられていた
+**Root cause**: Figma の既知バグ（forum「Issue with Text property overriding text styles in component sets」）。同じ TEXT プロパティに `componentPropertyReferences.characters` で繋いだ文字は、繋いだ時点でプロパティ側の style を取り込み、以後 1 件への `setTextStyleIdAsync` / `setRangeTextDecoration` がコミット時に全件へ写る。文字列を一時的に変える小細工は先送りにしかならない
+**Rule**: variant ごとに Text Style が違う部品は「全 variant の style を確定 → TEXT プロパティを（削除して）作り直す → 全件を一度に繋ぐ → 以後 Label に書かない」の順で作る（button-stage.js に実装）。既存セットに variant を足すときも同じ（プロパティを作り直すのでインスタンスの Label 上書きは消える）。**下線などの range 上書きは結線で消える**ので、下線は「… Underlined」の Text Style で表現する（Text Style の違いは結線後も保たれる）
+**Verification**: 投入の**次の呼び出し**で `Size × textStyle × fontSize` と下線を集計する（同じスクリプト内の集計は信用しない）。期待: sm / md = MD 14、lg = LG 16、幅 69 / 77 / 91、下線は Link hovered / pressed の 12 件だけ
 **Applies to**: all projects

@@ -66,6 +66,20 @@ const vars = await figma.variables.getLocalVariablesAsync();
 const v = (name) => { const x = vars.find((y) => y.name === name); if (!x) throw new Error('variable missing: ' + name); return x; };
 const styles = Object.fromEntries((await figma.getLocalTextStylesAsync()).map((s) => [s.name, s]));
 for (const name of Object.values(SPEC.sizes).map((s) => s[3])) await figma.loadFontAsync(styles[name].fontName);
+// "<style> Underlined" Text Styles for the link variant (created here if missing; Figma-only derivation, see docs/pf-10-figma.md)
+const underlinedStyles = {};
+for (const name of new Set(Object.values(SPEC.sizes).map((s) => s[3]))) {
+  let st = styles[name + ' Underlined'];
+  if (!st) {
+    const src = styles[name];
+    st = figma.createTextStyle();
+    st.name = name + ' Underlined'; st.fontName = src.fontName; st.fontSize = src.fontSize; st.lineHeight = src.lineHeight; st.letterSpacing = src.letterSpacing;
+    st.textDecoration = 'UNDERLINE';
+    st.description = src.description + '\nFigma だけの派生: ' + name + ' + 下線。Link の hovered / pressed 用。CSS は text-decoration: underline';
+    styles[st.name] = st;
+  }
+  underlinedStyles[name] = st;
+}
 const iconsPage = figma.root.children.find((p) => p.name === 'Icons');
 await figma.setCurrentPageAsync(iconsPage);
 const iconSet = iconsPage.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Icon');
@@ -144,10 +158,11 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
         // children: iconStart (or spinner when loading), label, iconEnd
         const start = state === 'loading' ? spinnerInstance(iconSize) : iconInstance(iconSize, SPEC.icon, N.props.iconBefore);
         c.appendChild(start); start.visible = state === 'loading'; start.isExposedInstance = true;
-        const t = figma.createText(); t.name = N.props.label; t.textStyleId = styles[textStyle].id; t.characters = SPEC.label;
+        // link hovered / pressed: a Figma-only "… Underlined" copy of the text style (a decoration override on a label would be
+        // dropped as soon as the Label property is linked, see the Figma bug note below)
+        const underlined = variant === 'link' && (state === 'hovered' || state === 'pressed');
+        const t = figma.createText(); t.name = N.props.label; t.textStyleId = (underlined ? underlinedStyles[textStyle] : styles[textStyle]).id; t.characters = SPEC.label;
         t.fills = [paint(isDisabled ? SPEC.disabled.text : state === 'pressed' && variant === 'link' ? SPEC.linkPressedText : textColor)];
-        // node-level textDecoration is ignored on styled text; the range setter underlines and keeps the Text Style attached
-        if (variant === 'link' && (state === 'hovered' || state === 'pressed')) t.setRangeTextDecoration(0, t.characters.length, 'UNDERLINE');
         c.appendChild(t);
         const end = iconInstance(iconSize, SPEC.icon, N.props.iconAfter);
         c.appendChild(end); end.visible = false; end.isExposedInstance = true;
@@ -163,30 +178,23 @@ else {
   set.name = 'Button';
   set.description = 'Variant: Primary は画面に 1 つ / default が標準 / secondary は default の隣の副次操作 / link は控えめな導線 / danger は破壊的操作。size sm 32 · md 40 · lg 48（TextField と同じ段）。shape rounded（sm 8px、md・lg 12px、squircle）/ pill。disabled は全 variant 共通。icon-only は IconButton を使う。label 必須。実装: <Button variant size shape iconStart iconEnd loading fullWidth>';
 }
-// component properties (boolean/text) on the set, wired to the layers of the new variants (existing keys are reused)
+// component properties (boolean/text) on the set, wired to the layers.
+// Figma bug (forum "Issue with Text property overriding text styles in component sets"): once text layers are linked to the
+// same TEXT property, any later text-style / decoration write on one of them is applied to all of them at commit time, and
+// newly linked layers adopt the property's style. So the Label property is (re)created only after every label has its final
+// style, all labels are linked in one go, and nothing touches a label afterwards.
 const propKey = (name) => Object.keys(set.componentPropertyDefinitions).find((k) => k === name || k.startsWith(name + '#'));
-const pLabel = propKey(N.props.label) ?? set.addComponentProperty(N.props.label, 'TEXT', SPEC.label);
+const oldLabel = propKey(N.props.label);
+if (oldLabel) set.deleteComponentProperty(oldLabel); // instances lose their Label override; they are re-linked below
+const pLabel = set.addComponentProperty(N.props.label, 'TEXT', SPEC.label);
 const pStart = propKey(N.props.iconBefore) ?? set.addComponentProperty(N.props.iconBefore, 'BOOLEAN', false);
 const pEnd = propKey(N.props.iconAfter) ?? set.addComponentProperty(N.props.iconAfter, 'BOOLEAN', false);
+for (const c of set.children) c.findChild((n) => n.name === N.props.label).componentPropertyReferences = { characters: pLabel };
 for (const c of variants) {
   const isLoading = c.name.includes(N.props.state + '=' + nm('loading'));
-  c.findChild((n) => n.name === N.props.label).componentPropertyReferences = { characters: pLabel };
   if (!isLoading) c.findChild((n) => n.name === N.props.iconBefore).componentPropertyReferences = { visible: pStart };
   c.findChild((n) => n.name === N.props.iconAfter).componentPropertyReferences = { visible: pEnd };
 }
-// Figma quirk: text layers linked to the same TEXT property take the property's text style when linked, and a style /
-// decoration written to one of them is copied to all (forum: "Issue with Text property overriding text styles in component
-// sets"). Writing while the characters are temporarily unique does not propagate, so re-apply per-variant style afterwards.
-let seq = 0;
-for (const c of variants) {
-  const t = c.findChild((n) => n.name === N.props.label);
-  const size = Object.keys(SPEC.sizes).find((k) => c.name.includes(N.props.size + '=' + nm(k)));
-  const underline = c.name.includes(N.props.variant + '=' + nm('link')) && (c.name.includes(N.props.state + '=' + nm('hovered')) || c.name.includes(N.props.state + '=' + nm('pressed')));
-  t.characters = SPEC.label + (seq++);
-  await t.setTextStyleIdAsync(styles[SPEC.sizes[size][3]].id);
-  t.setRangeTextDecoration(0, t.characters.length, underline ? 'UNDERLINE' : 'NONE');
-}
-for (const c of variants) c.findChild((n) => n.name === N.props.label).characters = SPEC.label;
 // grid (decision 2026-10-06): rows = variant (then size × shape inside each variant block), columns = state
 const sizes = Object.keys(SPEC.sizes), shapes = Object.keys(SPEC.shapes), variantsK = SPEC.variantOrder;
 const colW = 160, rowH = 72, pad = 32, groupGap = 32;
