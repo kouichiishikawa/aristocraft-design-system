@@ -17,14 +17,14 @@ export const primitives = {
       "900": "#25221e",
       "950": "#12100d",
       "1000": "#000000",
-      "100a": "rgba(18, 16, 13, 0.11764705882352941)",
-      "200a": "rgba(18, 16, 13, 0.22745098039215686)",
-      "300a": "rgba(18, 16, 13, 0.3411764705882353)",
-      "400a": "rgba(18, 16, 13, 0.4470588235294118)",
-      "900a": "rgba(248, 246, 244, 0.0784313725490196)",
-      "800a": "rgba(248, 246, 244, 0.16470588235294117)",
-      "700a": "rgba(248, 246, 244, 0.2549019607843137)",
-      "600a": "rgba(248, 246, 244, 0.34901960784313724)"
+      "100a": "rgba(18, 16, 13, 0.054901960784313725)",
+      "200a": "rgba(18, 16, 13, 0.11372549019607843)",
+      "300a": "rgba(18, 16, 13, 0.22745098039215686)",
+      "400a": "rgba(18, 16, 13, 0.3411764705882353)",
+      "900a": "rgba(248, 246, 244, 0.03137254901960784)",
+      "800a": "rgba(248, 246, 244, 0.0784313725490196)",
+      "700a": "rgba(248, 246, 244, 0.1607843137254902)",
+      "600a": "rgba(248, 246, 244, 0.25098039215686274)"
     },
     "blue": {
       "50": "#f0f6fe",
@@ -35,9 +35,9 @@ export const primitives = {
       "500": "#4c87f6",
       "600": "#316eee",
       "700": "#1c55e0",
-      "800": "#1b44b9",
-      "900": "#183594",
-      "950": "#122670"
+      "800": "#163eb3",
+      "900": "#0f2887",
+      "950": "#07145e"
     },
     "violet": {
       "50": "#f6f3fe",
@@ -48,9 +48,9 @@ export const primitives = {
       "500": "#956df6",
       "600": "#834bf4",
       "700": "#6e3bd5",
-      "800": "#5830b1",
-      "900": "#44268e",
-      "950": "#311c6c"
+      "800": "#5329aa",
+      "900": "#3b1881",
+      "950": "#24075a"
     },
     "purple": {
       "50": "#f6f4f6",
@@ -61,9 +61,9 @@ export const primitives = {
       "500": "#d91eec",
       "600": "#bd00d2",
       "700": "#9d11b2",
-      "800": "#7d1f8e",
-      "900": "#5d236b",
-      "950": "#41204b"
+      "800": "#751d86",
+      "900": "#501d5b",
+      "950": "#2f1537"
     },
     "pink": {
       "50": "#f6f4f5",
@@ -74,9 +74,9 @@ export const primitives = {
       "500": "#f41b97",
       "600": "#d50385",
       "700": "#b21272",
-      "800": "#8d1e5e",
-      "900": "#6a214a",
-      "950": "#4a1f36"
+      "800": "#851b58",
+      "900": "#5b1b3f",
+      "950": "#361426"
     },
     "red": {
       "50": "#fef2f0",
@@ -87,9 +87,9 @@ export const primitives = {
       "500": "#f53c45",
       "600": "#d92538",
       "700": "#b91d31",
-      "800": "#991529",
-      "900": "#7a1021",
-      "950": "#5d0918"
+      "800": "#901326",
+      "900": "#690a1a",
+      "950": "#44040f"
     },
     "orange": {
       "50": "#fef3ea",
@@ -100,9 +100,9 @@ export const primitives = {
       "500": "#f6852b",
       "600": "#e27826",
       "700": "#ac581a",
-      "800": "#803e0f",
-      "900": "#662f0a",
-      "950": "#4e2205"
+      "800": "#783a0e",
+      "900": "#582706",
+      "950": "#391602"
     },
     "amber": {
       "50": "#fef5dd",
@@ -113,9 +113,9 @@ export const primitives = {
       "500": "#ce9d29",
       "600": "#a77d20",
       "700": "#886418",
-      "800": "#6b4d0e",
-      "900": "#553c0a",
-      "950": "#402c06"
+      "800": "#64480d",
+      "900": "#483207",
+      "950": "#2e1e02"
     },
     "lime": {
       "50": "#f7f7dc",
@@ -126,9 +126,9 @@ export const primitives = {
       "500": "#adb22b",
       "600": "#888e20",
       "700": "#6b7117",
-      "800": "#52580f",
-      "900": "#40460a",
-      "950": "#2e3405"
+      "800": "#4d530d",
+      "900": "#363b08",
+      "950": "#202501"
     },
     "green": {
       "50": "#f3f6f2",
@@ -139,9 +139,9 @@ export const primitives = {
       "500": "#29a818",
       "600": "#019304",
       "700": "#107b1a",
-      "800": "#1c6323",
-      "900": "#1f4c24",
-      "950": "#1d3720"
+      "800": "#195d20",
+      "900": "#19411d",
+      "950": "#132715"
     },
     "teal": {
       "50": "#e0fdf0",
@@ -152,9 +152,9 @@ export const primitives = {
       "500": "#33c19d",
       "600": "#2db091",
       "700": "#1f7d68",
-      "800": "#126150",
-      "900": "#0e4c3f",
-      "950": "#07392f"
+      "800": "#115a4b",
+      "900": "#0b4035",
+      "950": "#022821"
     },
     "cyan": {
       "50": "#dbfdfd",
@@ -165,9 +165,9 @@ export const primitives = {
       "500": "#2fbcc5",
       "600": "#2eabb4",
       "700": "#1d7a82",
-      "800": "#155e64",
-      "900": "#0d4a50",
-      "950": "#09373c"
+      "800": "#11585e",
+      "900": "#083f44",
+      "950": "#03272b"
     },
     "sky": {
       "50": "#eaf8fe",
@@ -178,9 +178,9 @@ export const primitives = {
       "500": "#2eb5ed",
       "600": "#29a5da",
       "700": "#1b77a0",
-      "800": "#145a7b",
-      "900": "#0d4763",
-      "950": "#06344b"
+      "800": "#125473",
+      "900": "#093c54",
+      "950": "#022537"
     }
   },
   "dimension": {
@@ -599,7 +599,7 @@ export const color = {
         "inverse": "#f8f6f4",
         "brand": {
           "DEFAULT": "#1c55e0",
-          "bold": "#1b44b9"
+          "bold": "#163eb3"
         },
         "selected": "#1c55e0",
         "static": {
@@ -609,69 +609,69 @@ export const color = {
         "status": {
           "success": {
             "DEFAULT": "#107b1a",
-            "bold": "#1c6323"
+            "bold": "#195d20"
           },
           "warning": {
             "DEFAULT": "#886418",
-            "bold": "#6b4d0e"
+            "bold": "#64480d"
           },
           "error": {
             "DEFAULT": "#b91d31",
-            "bold": "#991529"
+            "bold": "#901326"
           },
           "info": {
             "DEFAULT": "#1b77a0",
-            "bold": "#145a7b"
+            "bold": "#125473"
           }
         },
         "accent": {
           "blue": {
             "DEFAULT": "#1c55e0",
-            "bold": "#1b44b9"
+            "bold": "#163eb3"
           },
           "violet": {
             "DEFAULT": "#6e3bd5",
-            "bold": "#5830b1"
+            "bold": "#5329aa"
           },
           "purple": {
             "DEFAULT": "#9d11b2",
-            "bold": "#7d1f8e"
+            "bold": "#751d86"
           },
           "pink": {
             "DEFAULT": "#b21272",
-            "bold": "#8d1e5e"
+            "bold": "#851b58"
           },
           "red": {
             "DEFAULT": "#b91d31",
-            "bold": "#991529"
+            "bold": "#901326"
           },
           "orange": {
             "DEFAULT": "#ac581a",
-            "bold": "#803e0f"
+            "bold": "#783a0e"
           },
           "amber": {
             "DEFAULT": "#886418",
-            "bold": "#6b4d0e"
+            "bold": "#64480d"
           },
           "lime": {
             "DEFAULT": "#6b7117",
-            "bold": "#52580f"
+            "bold": "#4d530d"
           },
           "green": {
             "DEFAULT": "#107b1a",
-            "bold": "#1c6323"
+            "bold": "#195d20"
           },
           "teal": {
             "DEFAULT": "#1f7d68",
-            "bold": "#126150"
+            "bold": "#115a4b"
           },
           "cyan": {
             "DEFAULT": "#1d7a82",
-            "bold": "#155e64"
+            "bold": "#11585e"
           },
           "sky": {
             "DEFAULT": "#1b77a0",
-            "bold": "#145a7b"
+            "bold": "#125473"
           }
         }
       },
@@ -694,14 +694,14 @@ export const color = {
         }
       },
       "border": {
-        "subtlest": "rgba(18, 16, 13, 0.11764705882352941)",
-        "subtle": "rgba(18, 16, 13, 0.22745098039215686)",
-        "default": "rgba(18, 16, 13, 0.3411764705882353)",
+        "subtlest": "rgba(18, 16, 13, 0.054901960784313725)",
+        "subtle": "rgba(18, 16, 13, 0.11372549019607843)",
+        "default": "rgba(18, 16, 13, 0.22745098039215686)",
         "bold": "#7c7871",
         "focused": "#316eee",
         "inverse": "#f8f6f4",
         "brand": "#316eee",
-        "disabled": "rgba(18, 16, 13, 0.22745098039215686)",
+        "disabled": "rgba(18, 16, 13, 0.11372549019607843)",
         "selected": "#316eee",
         "static": {
           "white": "#ffffff",
@@ -715,7 +715,7 @@ export const color = {
         }
       },
       "background": {
-        "disabled": "rgba(18, 16, 13, 0.11764705882352941)",
+        "disabled": "rgba(18, 16, 13, 0.054901960784313725)",
         "selected": {
           "DEFAULT": "#f0f6fe",
           "hovered": "#cee1fc",
@@ -727,167 +727,303 @@ export const color = {
         },
         "blanket": "rgba(0, 0, 0, 0.4)",
         "neutral": {
-          "subtlest": "rgba(18, 16, 13, 0.11764705882352941)",
+          "subtlest": "rgba(18, 16, 13, 0.054901960784313725)",
           "subtle": {
-            "DEFAULT": "rgba(18, 16, 13, 0.22745098039215686)",
-            "hovered": "rgba(18, 16, 13, 0.3411764705882353)",
-            "pressed": "rgba(18, 16, 13, 0.4470588235294118)"
+            "DEFAULT": "rgba(18, 16, 13, 0)",
+            "hovered": "rgba(18, 16, 13, 0.054901960784313725)",
+            "pressed": "rgba(18, 16, 13, 0.11372549019607843)"
           },
           "default": {
-            "DEFAULT": "#c5c2bd",
-            "hovered": "#aca9a2",
-            "pressed": "#949089"
+            "DEFAULT": "rgba(18, 16, 13, 0.054901960784313725)",
+            "hovered": "rgba(18, 16, 13, 0.11372549019607843)",
+            "pressed": "rgba(18, 16, 13, 0.22745098039215686)"
           },
           "bold": "#4f4b45",
           "boldest": "#12100d"
         },
         "brand": {
           "subtlest": "#f0f6fe",
-          "subtle": "#cee1fc",
-          "default": "#adccfa",
+          "subtle": {
+            "DEFAULT": "#f0f6fe",
+            "hovered": "#cee1fc",
+            "pressed": "#adccfa"
+          },
+          "default": {
+            "DEFAULT": "#cee1fc",
+            "hovered": "#adccfa",
+            "pressed": "#8cb6f9"
+          },
           "bold": {
             "DEFAULT": "#316eee",
             "hovered": "#1c55e0",
-            "pressed": "#1b44b9"
+            "pressed": "#163eb3"
           },
-          "boldest": "#1b44b9"
+          "boldest": "#163eb3"
         },
         "status": {
           "success": {
             "subtlest": "#f3f6f2",
-            "subtle": "#cbeac1",
-            "default": "#9ede8a",
+            "subtle": {
+              "DEFAULT": "#f3f6f2",
+              "hovered": "#cbeac1",
+              "pressed": "#9ede8a"
+            },
+            "default": {
+              "DEFAULT": "#cbeac1",
+              "hovered": "#9ede8a",
+              "pressed": "#77ce62"
+            },
             "bold": {
               "DEFAULT": "#107b1a",
-              "hovered": "#1c6323",
-              "pressed": "#1f4c24"
+              "hovered": "#195d20",
+              "pressed": "#19411d"
             },
-            "boldest": "#1c6323"
+            "boldest": "#195d20"
           },
           "warning": {
             "subtlest": "#fef5dd",
-            "subtle": "#fde8b6",
-            "default": "#fcda8d",
+            "subtle": {
+              "DEFAULT": "#fef5dd",
+              "hovered": "#fde8b6",
+              "pressed": "#fcda8d"
+            },
+            "default": {
+              "DEFAULT": "#fde8b6",
+              "hovered": "#fcda8d",
+              "pressed": "#fbcb5d"
+            },
             "bold": {
               "DEFAULT": "#f6be33",
               "hovered": "#ce9d29",
               "pressed": "#a77d20"
             },
-            "boldest": "#6b4d0e"
+            "boldest": "#64480d"
           },
           "error": {
             "subtlest": "#fef2f0",
-            "subtle": "#fcd5cf",
-            "default": "#fab6ae",
+            "subtle": {
+              "DEFAULT": "#fef2f0",
+              "hovered": "#fcd5cf",
+              "pressed": "#fab6ae"
+            },
+            "default": {
+              "DEFAULT": "#fcd5cf",
+              "hovered": "#fab6ae",
+              "pressed": "#fa958c"
+            },
             "bold": {
               "DEFAULT": "#d92538",
               "hovered": "#b91d31",
-              "pressed": "#991529"
+              "pressed": "#901326"
             },
-            "boldest": "#991529"
+            "boldest": "#901326"
           },
           "info": {
             "subtlest": "#eaf8fe",
-            "subtle": "#c8ecfd",
-            "default": "#a4dffb",
+            "subtle": {
+              "DEFAULT": "#eaf8fe",
+              "hovered": "#c8ecfd",
+              "pressed": "#a4dffb"
+            },
+            "default": {
+              "DEFAULT": "#c8ecfd",
+              "hovered": "#a4dffb",
+              "pressed": "#7dd2fa"
+            },
             "bold": {
               "DEFAULT": "#1b77a0",
-              "hovered": "#145a7b",
-              "pressed": "#0d4763"
+              "hovered": "#125473",
+              "pressed": "#093c54"
             },
-            "boldest": "#145a7b"
+            "boldest": "#125473"
           }
         },
         "accent": {
           "blue": {
             "subtlest": "#f0f6fe",
-            "subtle": "#cee1fc",
-            "default": "#adccfa",
+            "subtle": {
+              "DEFAULT": "#f0f6fe",
+              "hovered": "#cee1fc",
+              "pressed": "#adccfa"
+            },
+            "default": {
+              "DEFAULT": "#cee1fc",
+              "hovered": "#adccfa",
+              "pressed": "#8cb6f9"
+            },
             "bold": "#316eee",
-            "boldest": "#1b44b9"
+            "boldest": "#163eb3"
           },
           "violet": {
             "subtlest": "#f6f3fe",
-            "subtle": "#e2d9fc",
-            "default": "#cfbffa",
+            "subtle": {
+              "DEFAULT": "#f6f3fe",
+              "hovered": "#e2d9fc",
+              "pressed": "#cfbffa"
+            },
+            "default": {
+              "DEFAULT": "#e2d9fc",
+              "hovered": "#cfbffa",
+              "pressed": "#bba5f9"
+            },
             "bold": "#834bf4",
-            "boldest": "#5830b1"
+            "boldest": "#5329aa"
           },
           "purple": {
             "subtlest": "#f6f4f6",
-            "subtle": "#e9dae8",
-            "default": "#e5b9e5",
+            "subtle": {
+              "DEFAULT": "#f6f4f6",
+              "hovered": "#e9dae8",
+              "pressed": "#e5b9e5"
+            },
+            "default": {
+              "DEFAULT": "#e9dae8",
+              "hovered": "#e5b9e5",
+              "pressed": "#e492e8"
+            },
             "bold": "#bd00d2",
-            "boldest": "#7d1f8e"
+            "boldest": "#751d86"
           },
           "pink": {
             "subtlest": "#f6f4f5",
-            "subtle": "#e9dbdf",
-            "default": "#e5bdca",
+            "subtle": {
+              "DEFAULT": "#f6f4f5",
+              "hovered": "#e9dbdf",
+              "pressed": "#e5bdca"
+            },
+            "default": {
+              "DEFAULT": "#e9dbdf",
+              "hovered": "#e5bdca",
+              "pressed": "#ea99b7"
+            },
             "bold": "#d50385",
-            "boldest": "#8d1e5e"
+            "boldest": "#851b58"
           },
           "red": {
             "subtlest": "#fef2f0",
-            "subtle": "#fcd5cf",
-            "default": "#fab6ae",
+            "subtle": {
+              "DEFAULT": "#fef2f0",
+              "hovered": "#fcd5cf",
+              "pressed": "#fab6ae"
+            },
+            "default": {
+              "DEFAULT": "#fcd5cf",
+              "hovered": "#fab6ae",
+              "pressed": "#fa958c"
+            },
             "bold": "#d92538",
-            "boldest": "#991529"
+            "boldest": "#901326"
           },
           "orange": {
             "subtlest": "#fef3ea",
-            "subtle": "#fddfc9",
-            "default": "#fccaa7",
+            "subtle": {
+              "DEFAULT": "#fef3ea",
+              "hovered": "#fddfc9",
+              "pressed": "#fccaa7"
+            },
+            "default": {
+              "DEFAULT": "#fddfc9",
+              "hovered": "#fccaa7",
+              "pressed": "#fbb482"
+            },
             "bold": "#ac581a",
-            "boldest": "#803e0f"
+            "boldest": "#783a0e"
           },
           "amber": {
             "subtlest": "#fef5dd",
-            "subtle": "#fde8b6",
-            "default": "#fcda8d",
+            "subtle": {
+              "DEFAULT": "#fef5dd",
+              "hovered": "#fde8b6",
+              "pressed": "#fcda8d"
+            },
+            "default": {
+              "DEFAULT": "#fde8b6",
+              "hovered": "#fcda8d",
+              "pressed": "#fbcb5d"
+            },
             "bold": "#f6be33",
-            "boldest": "#6b4d0e"
+            "boldest": "#64480d"
           },
           "lime": {
             "subtlest": "#f7f7dc",
-            "subtle": "#efefb9",
-            "default": "#e7e890",
+            "subtle": {
+              "DEFAULT": "#f7f7dc",
+              "hovered": "#efefb9",
+              "pressed": "#e7e890"
+            },
+            "default": {
+              "DEFAULT": "#efefb9",
+              "hovered": "#e7e890",
+              "pressed": "#dee05f"
+            },
             "bold": "#d4d736",
-            "boldest": "#52580f"
+            "boldest": "#4d530d"
           },
           "green": {
             "subtlest": "#f3f6f2",
-            "subtle": "#cbeac1",
-            "default": "#9ede8a",
+            "subtle": {
+              "DEFAULT": "#f3f6f2",
+              "hovered": "#cbeac1",
+              "pressed": "#9ede8a"
+            },
+            "default": {
+              "DEFAULT": "#cbeac1",
+              "hovered": "#9ede8a",
+              "pressed": "#77ce62"
+            },
             "bold": "#107b1a",
-            "boldest": "#1c6323"
+            "boldest": "#195d20"
           },
           "teal": {
             "subtlest": "#e0fdf0",
-            "subtle": "#b8f5dc",
-            "default": "#87edc8",
+            "subtle": {
+              "DEFAULT": "#e0fdf0",
+              "hovered": "#b8f5dc",
+              "pressed": "#87edc8"
+            },
+            "default": {
+              "DEFAULT": "#b8f5dc",
+              "hovered": "#87edc8",
+              "pressed": "#3ce4b6"
+            },
             "bold": "#1f7d68",
-            "boldest": "#126150"
+            "boldest": "#115a4b"
           },
           "cyan": {
             "subtlest": "#dbfdfd",
-            "subtle": "#adf4f6",
-            "default": "#71ecf0",
+            "subtle": {
+              "DEFAULT": "#dbfdfd",
+              "hovered": "#adf4f6",
+              "pressed": "#71ecf0"
+            },
+            "default": {
+              "DEFAULT": "#adf4f6",
+              "hovered": "#71ecf0",
+              "pressed": "#3adfe6"
+            },
             "bold": "#1d7a82",
-            "boldest": "#155e64"
+            "boldest": "#11585e"
           },
           "sky": {
             "subtlest": "#eaf8fe",
-            "subtle": "#c8ecfd",
-            "default": "#a4dffb",
+            "subtle": {
+              "DEFAULT": "#eaf8fe",
+              "hovered": "#c8ecfd",
+              "pressed": "#a4dffb"
+            },
+            "default": {
+              "DEFAULT": "#c8ecfd",
+              "hovered": "#a4dffb",
+              "pressed": "#7dd2fa"
+            },
             "bold": "#1b77a0",
-            "boldest": "#145a7b"
+            "boldest": "#125473"
           }
         }
       },
       "link": {
         "default": "#1c55e0",
-        "hovered": "#1b44b9",
+        "hovered": "#163eb3",
         "visited": "#9d11b2"
       }
     },
@@ -916,7 +1052,7 @@ export const color = {
         "inverse": "#12100d",
         "brand": {
           "DEFAULT": "#6c9ff8",
-          "bold": "#8cb6f9"
+          "bold": "#adccfa"
         },
         "selected": "#6c9ff8",
         "static": {
@@ -926,69 +1062,69 @@ export const color = {
         "status": {
           "success": {
             "DEFAULT": "#50bc3b",
-            "bold": "#77ce62"
+            "bold": "#9ede8a"
           },
           "warning": {
             "DEFAULT": "#f6be33",
-            "bold": "#fbcb5d"
+            "bold": "#fcda8d"
           },
           "error": {
             "DEFAULT": "#f86e69",
-            "bold": "#fa958c"
+            "bold": "#fab6ae"
           },
           "info": {
             "DEFAULT": "#4dc5f9",
-            "bold": "#7dd2fa"
+            "bold": "#a4dffb"
           }
         },
         "accent": {
           "blue": {
             "DEFAULT": "#6c9ff8",
-            "bold": "#8cb6f9"
+            "bold": "#adccfa"
           },
           "violet": {
             "DEFAULT": "#a88af8",
-            "bold": "#bba5f9"
+            "bold": "#cfbffa"
           },
           "purple": {
             "DEFAULT": "#e55df0",
-            "bold": "#e492e8"
+            "bold": "#e5b9e5"
           },
           "pink": {
             "DEFAULT": "#f26aa6",
-            "bold": "#ea99b7"
+            "bold": "#e5bdca"
           },
           "red": {
             "DEFAULT": "#f86e69",
-            "bold": "#fa958c"
+            "bold": "#fab6ae"
           },
           "orange": {
             "DEFAULT": "#f99d5a",
-            "bold": "#fbb482"
+            "bold": "#fccaa7"
           },
           "amber": {
             "DEFAULT": "#f6be33",
-            "bold": "#fbcb5d"
+            "bold": "#fcda8d"
           },
           "lime": {
             "DEFAULT": "#d4d736",
-            "bold": "#dee05f"
+            "bold": "#e7e890"
           },
           "green": {
             "DEFAULT": "#50bc3b",
-            "bold": "#77ce62"
+            "bold": "#9ede8a"
           },
           "teal": {
             "DEFAULT": "#37d3aa",
-            "bold": "#3ce4b6"
+            "bold": "#87edc8"
           },
           "cyan": {
             "DEFAULT": "#35cdd6",
-            "bold": "#3adfe6"
+            "bold": "#71ecf0"
           },
           "sky": {
             "DEFAULT": "#4dc5f9",
-            "bold": "#7dd2fa"
+            "bold": "#a4dffb"
           }
         }
       },
@@ -1011,14 +1147,14 @@ export const color = {
         }
       },
       "border": {
-        "subtlest": "rgba(248, 246, 244, 0.0784313725490196)",
-        "subtle": "rgba(248, 246, 244, 0.16470588235294117)",
-        "default": "rgba(248, 246, 244, 0.2549019607843137)",
+        "subtlest": "rgba(248, 246, 244, 0.03137254901960784)",
+        "subtle": "rgba(248, 246, 244, 0.0784313725490196)",
+        "default": "rgba(248, 246, 244, 0.1607843137254902)",
         "bold": "#949089",
         "focused": "#6c9ff8",
         "inverse": "#12100d",
         "brand": "#4c87f6",
-        "disabled": "rgba(248, 246, 244, 0.16470588235294117)",
+        "disabled": "rgba(248, 246, 244, 0.0784313725490196)",
         "selected": "#6c9ff8",
         "static": {
           "white": "#ffffff",
@@ -1032,11 +1168,11 @@ export const color = {
         }
       },
       "background": {
-        "disabled": "rgba(248, 246, 244, 0.0784313725490196)",
+        "disabled": "rgba(248, 246, 244, 0.03137254901960784)",
         "selected": {
-          "DEFAULT": "#122670",
-          "hovered": "#183594",
-          "pressed": "#1b44b9"
+          "DEFAULT": "#07145e",
+          "hovered": "#0f2887",
+          "pressed": "#163eb3"
         },
         "input": {
           "DEFAULT": "#000000",
@@ -1044,47 +1180,71 @@ export const color = {
         },
         "blanket": "rgba(0, 0, 0, 0.6)",
         "neutral": {
-          "subtlest": "rgba(248, 246, 244, 0.0784313725490196)",
+          "subtlest": "rgba(248, 246, 244, 0.03137254901960784)",
           "subtle": {
-            "DEFAULT": "rgba(248, 246, 244, 0.16470588235294117)",
-            "hovered": "rgba(248, 246, 244, 0.2549019607843137)",
-            "pressed": "rgba(248, 246, 244, 0.34901960784313724)"
+            "DEFAULT": "rgba(248, 246, 244, 0)",
+            "hovered": "rgba(248, 246, 244, 0.03137254901960784)",
+            "pressed": "rgba(248, 246, 244, 0.0784313725490196)"
           },
           "default": {
-            "DEFAULT": "#393631",
-            "hovered": "#4f4b45",
-            "pressed": "#65615a"
+            "DEFAULT": "rgba(248, 246, 244, 0.03137254901960784)",
+            "hovered": "rgba(248, 246, 244, 0.0784313725490196)",
+            "pressed": "rgba(248, 246, 244, 0.1607843137254902)"
           },
           "bold": "#aca9a2",
           "boldest": "#f8f6f4"
         },
         "brand": {
-          "subtlest": "#122670",
-          "subtle": "#183594",
-          "default": "#1b44b9",
+          "subtlest": "#07145e",
+          "subtle": {
+            "DEFAULT": "#07145e",
+            "hovered": "#0f2887",
+            "pressed": "#163eb3"
+          },
+          "default": {
+            "DEFAULT": "#0f2887",
+            "hovered": "#163eb3",
+            "pressed": "#1c55e0"
+          },
           "bold": {
             "DEFAULT": "#316eee",
             "hovered": "#1c55e0",
-            "pressed": "#1b44b9"
+            "pressed": "#163eb3"
           },
           "boldest": "#8cb6f9"
         },
         "status": {
           "success": {
-            "subtlest": "#1d3720",
-            "subtle": "#1f4c24",
-            "default": "#1c6323",
+            "subtlest": "#132715",
+            "subtle": {
+              "DEFAULT": "#132715",
+              "hovered": "#19411d",
+              "pressed": "#195d20"
+            },
+            "default": {
+              "DEFAULT": "#19411d",
+              "hovered": "#195d20",
+              "pressed": "#107b1a"
+            },
             "bold": {
               "DEFAULT": "#107b1a",
-              "hovered": "#1c6323",
-              "pressed": "#1f4c24"
+              "hovered": "#195d20",
+              "pressed": "#19411d"
             },
             "boldest": "#77ce62"
           },
           "warning": {
-            "subtlest": "#402c06",
-            "subtle": "#553c0a",
-            "default": "#6b4d0e",
+            "subtlest": "#2e1e02",
+            "subtle": {
+              "DEFAULT": "#2e1e02",
+              "hovered": "#483207",
+              "pressed": "#64480d"
+            },
+            "default": {
+              "DEFAULT": "#483207",
+              "hovered": "#64480d",
+              "pressed": "#886418"
+            },
             "bold": {
               "DEFAULT": "#f6be33",
               "hovered": "#ce9d29",
@@ -1093,110 +1253,222 @@ export const color = {
             "boldest": "#fbcb5d"
           },
           "error": {
-            "subtlest": "#5d0918",
-            "subtle": "#7a1021",
-            "default": "#991529",
+            "subtlest": "#44040f",
+            "subtle": {
+              "DEFAULT": "#44040f",
+              "hovered": "#690a1a",
+              "pressed": "#901326"
+            },
+            "default": {
+              "DEFAULT": "#690a1a",
+              "hovered": "#901326",
+              "pressed": "#b91d31"
+            },
             "bold": {
               "DEFAULT": "#d92538",
               "hovered": "#b91d31",
-              "pressed": "#991529"
+              "pressed": "#901326"
             },
             "boldest": "#fa958c"
           },
           "info": {
-            "subtlest": "#06344b",
-            "subtle": "#0d4763",
-            "default": "#145a7b",
+            "subtlest": "#022537",
+            "subtle": {
+              "DEFAULT": "#022537",
+              "hovered": "#093c54",
+              "pressed": "#125473"
+            },
+            "default": {
+              "DEFAULT": "#093c54",
+              "hovered": "#125473",
+              "pressed": "#1b77a0"
+            },
             "bold": {
               "DEFAULT": "#1b77a0",
-              "hovered": "#145a7b",
-              "pressed": "#0d4763"
+              "hovered": "#125473",
+              "pressed": "#093c54"
             },
             "boldest": "#7dd2fa"
           }
         },
         "accent": {
           "blue": {
-            "subtlest": "#122670",
-            "subtle": "#183594",
-            "default": "#1b44b9",
+            "subtlest": "#07145e",
+            "subtle": {
+              "DEFAULT": "#07145e",
+              "hovered": "#0f2887",
+              "pressed": "#163eb3"
+            },
+            "default": {
+              "DEFAULT": "#0f2887",
+              "hovered": "#163eb3",
+              "pressed": "#1c55e0"
+            },
             "bold": "#316eee",
             "boldest": "#8cb6f9"
           },
           "violet": {
-            "subtlest": "#311c6c",
-            "subtle": "#44268e",
-            "default": "#5830b1",
+            "subtlest": "#24075a",
+            "subtle": {
+              "DEFAULT": "#24075a",
+              "hovered": "#3b1881",
+              "pressed": "#5329aa"
+            },
+            "default": {
+              "DEFAULT": "#3b1881",
+              "hovered": "#5329aa",
+              "pressed": "#6e3bd5"
+            },
             "bold": "#834bf4",
             "boldest": "#bba5f9"
           },
           "purple": {
-            "subtlest": "#41204b",
-            "subtle": "#5d236b",
-            "default": "#7d1f8e",
+            "subtlest": "#2f1537",
+            "subtle": {
+              "DEFAULT": "#2f1537",
+              "hovered": "#501d5b",
+              "pressed": "#751d86"
+            },
+            "default": {
+              "DEFAULT": "#501d5b",
+              "hovered": "#751d86",
+              "pressed": "#9d11b2"
+            },
             "bold": "#bd00d2",
             "boldest": "#e492e8"
           },
           "pink": {
-            "subtlest": "#4a1f36",
-            "subtle": "#6a214a",
-            "default": "#8d1e5e",
+            "subtlest": "#361426",
+            "subtle": {
+              "DEFAULT": "#361426",
+              "hovered": "#5b1b3f",
+              "pressed": "#851b58"
+            },
+            "default": {
+              "DEFAULT": "#5b1b3f",
+              "hovered": "#851b58",
+              "pressed": "#b21272"
+            },
             "bold": "#d50385",
             "boldest": "#ea99b7"
           },
           "red": {
-            "subtlest": "#5d0918",
-            "subtle": "#7a1021",
-            "default": "#991529",
+            "subtlest": "#44040f",
+            "subtle": {
+              "DEFAULT": "#44040f",
+              "hovered": "#690a1a",
+              "pressed": "#901326"
+            },
+            "default": {
+              "DEFAULT": "#690a1a",
+              "hovered": "#901326",
+              "pressed": "#b91d31"
+            },
             "bold": "#d92538",
             "boldest": "#fa958c"
           },
           "orange": {
-            "subtlest": "#4e2205",
-            "subtle": "#662f0a",
-            "default": "#803e0f",
+            "subtlest": "#391602",
+            "subtle": {
+              "DEFAULT": "#391602",
+              "hovered": "#582706",
+              "pressed": "#783a0e"
+            },
+            "default": {
+              "DEFAULT": "#582706",
+              "hovered": "#783a0e",
+              "pressed": "#ac581a"
+            },
             "bold": "#ac581a",
             "boldest": "#fbb482"
           },
           "amber": {
-            "subtlest": "#402c06",
-            "subtle": "#553c0a",
-            "default": "#6b4d0e",
+            "subtlest": "#2e1e02",
+            "subtle": {
+              "DEFAULT": "#2e1e02",
+              "hovered": "#483207",
+              "pressed": "#64480d"
+            },
+            "default": {
+              "DEFAULT": "#483207",
+              "hovered": "#64480d",
+              "pressed": "#886418"
+            },
             "bold": "#f6be33",
             "boldest": "#fbcb5d"
           },
           "lime": {
-            "subtlest": "#2e3405",
-            "subtle": "#40460a",
-            "default": "#52580f",
+            "subtlest": "#202501",
+            "subtle": {
+              "DEFAULT": "#202501",
+              "hovered": "#363b08",
+              "pressed": "#4d530d"
+            },
+            "default": {
+              "DEFAULT": "#363b08",
+              "hovered": "#4d530d",
+              "pressed": "#6b7117"
+            },
             "bold": "#d4d736",
             "boldest": "#dee05f"
           },
           "green": {
-            "subtlest": "#1d3720",
-            "subtle": "#1f4c24",
-            "default": "#1c6323",
+            "subtlest": "#132715",
+            "subtle": {
+              "DEFAULT": "#132715",
+              "hovered": "#19411d",
+              "pressed": "#195d20"
+            },
+            "default": {
+              "DEFAULT": "#19411d",
+              "hovered": "#195d20",
+              "pressed": "#107b1a"
+            },
             "bold": "#107b1a",
             "boldest": "#77ce62"
           },
           "teal": {
-            "subtlest": "#07392f",
-            "subtle": "#0e4c3f",
-            "default": "#126150",
+            "subtlest": "#022821",
+            "subtle": {
+              "DEFAULT": "#022821",
+              "hovered": "#0b4035",
+              "pressed": "#115a4b"
+            },
+            "default": {
+              "DEFAULT": "#0b4035",
+              "hovered": "#115a4b",
+              "pressed": "#1f7d68"
+            },
             "bold": "#1f7d68",
             "boldest": "#3ce4b6"
           },
           "cyan": {
-            "subtlest": "#09373c",
-            "subtle": "#0d4a50",
-            "default": "#155e64",
+            "subtlest": "#03272b",
+            "subtle": {
+              "DEFAULT": "#03272b",
+              "hovered": "#083f44",
+              "pressed": "#11585e"
+            },
+            "default": {
+              "DEFAULT": "#083f44",
+              "hovered": "#11585e",
+              "pressed": "#1d7a82"
+            },
             "bold": "#1d7a82",
             "boldest": "#3adfe6"
           },
           "sky": {
-            "subtlest": "#06344b",
-            "subtle": "#0d4763",
-            "default": "#145a7b",
+            "subtlest": "#022537",
+            "subtle": {
+              "DEFAULT": "#022537",
+              "hovered": "#093c54",
+              "pressed": "#125473"
+            },
+            "default": {
+              "DEFAULT": "#093c54",
+              "hovered": "#125473",
+              "pressed": "#1b77a0"
+            },
             "bold": "#1b77a0",
             "boldest": "#7dd2fa"
           }

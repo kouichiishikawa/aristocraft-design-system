@@ -156,8 +156,26 @@
   "mode": "light",
   "label": "text.default on neutral.subtle",
   "fg": "neutral.950",
+  "bg": "#12100D00",
+  "ratio": 17.62,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on neutral.subtle.hovered",
+  "fg": "neutral.950",
+  "bg": "neutral.100a",
+  "ratio": 15.68,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on neutral.subtle.pressed",
+  "fg": "neutral.950",
   "bg": "neutral.200a",
-  "ratio": 10.58,
+  "ratio": 13.88,
   "need": 4.5,
   "ok": true
  },
@@ -165,8 +183,26 @@
   "mode": "light",
   "label": "text.default on neutral.default",
   "fg": "neutral.950",
-  "bg": "neutral.200",
-  "ratio": 10.7,
+  "bg": "neutral.100a",
+  "ratio": 15.68,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on neutral.default.hovered",
+  "fg": "neutral.950",
+  "bg": "neutral.200a",
+  "ratio": 13.88,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on neutral.default.pressed",
+  "fg": "neutral.950",
+  "bg": "neutral.300a",
+  "ratio": 10.69,
   "need": 4.5,
   "ok": true
  },
@@ -202,7 +238,7 @@
   "label": "brand.boldest + white",
   "fg": "neutral.0",
   "bg": "blue.800",
-  "ratio": 8.16,
+  "ratio": 8.85,
   "need": 4.5,
   "ok": true
  },
@@ -228,8 +264,8 @@
   "mode": "light",
   "label": "text.brand.bold on brand.subtle",
   "fg": "blue.800",
-  "bg": "blue.100",
-  "ratio": 6.14,
+  "bg": "blue.50",
+  "ratio": 8.14,
   "need": 4.5,
   "ok": true
  },
@@ -237,8 +273,44 @@
   "mode": "light",
   "label": "text.default on brand.default",
   "fg": "neutral.950",
+  "bg": "blue.100",
+  "ratio": 14.29,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.brand.bold on brand.subtle.hovered",
+  "fg": "blue.800",
+  "bg": "blue.100",
+  "ratio": 6.66,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on brand.default.hovered",
+  "fg": "neutral.950",
   "bg": "blue.200",
   "ratio": 11.57,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.brand.bold on brand.subtle.pressed",
+  "fg": "blue.800",
+  "bg": "blue.200",
+  "ratio": 5.39,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on brand.default.pressed",
+  "fg": "neutral.950",
+  "bg": "blue.300",
+  "ratio": 9.2,
   "need": 4.5,
   "ok": true
  },
@@ -256,7 +328,7 @@
   "label": "success.bold.hovered + text",
   "fg": "neutral.0",
   "bg": "green.800",
-  "ratio": 7.35,
+  "ratio": 7.99,
   "need": 4.5,
   "ok": true
  },
@@ -265,7 +337,7 @@
   "label": "success.boldest + white",
   "fg": "neutral.0",
   "bg": "green.800",
-  "ratio": 7.35,
+  "ratio": 7.99,
   "need": 4.5,
   "ok": true
  },
@@ -291,8 +363,8 @@
   "mode": "light",
   "label": "text.success.bold on success.subtle",
   "fg": "green.800",
-  "bg": "green.100",
-  "ratio": 5.63,
+  "bg": "green.50",
+  "ratio": 7.33,
   "need": 4.5,
   "ok": true
  },
@@ -300,8 +372,44 @@
   "mode": "light",
   "label": "text.default on success.default",
   "fg": "neutral.950",
+  "bg": "green.100",
+  "ratio": 14.54,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.success.bold on success.subtle.hovered",
+  "fg": "green.800",
+  "bg": "green.100",
+  "ratio": 6.12,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on success.default.hovered",
+  "fg": "neutral.950",
   "bg": "green.200",
   "ratio": 12.0,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.success.bold on success.subtle.pressed",
+  "fg": "green.800",
+  "bg": "green.200",
+  "ratio": 5.05,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on success.default.pressed",
+  "fg": "neutral.950",
+  "bg": "green.300",
+  "ratio": 9.76,
   "need": 4.5,
   "ok": true
  },
@@ -328,7 +436,7 @@
   "label": "warning.boldest + white",
   "fg": "neutral.0",
   "bg": "amber.800",
-  "ratio": 7.8,
+  "ratio": 8.49,
   "need": 4.5,
   "ok": true
  },
@@ -354,8 +462,8 @@
   "mode": "light",
   "label": "text.warning.bold on warning.subtle",
   "fg": "amber.800",
-  "bg": "amber.100",
-  "ratio": 6.46,
+  "bg": "amber.50",
+  "ratio": 7.81,
   "need": 4.5,
   "ok": true
  },
@@ -363,8 +471,44 @@
   "mode": "light",
   "label": "text.default on warning.default",
   "fg": "neutral.950",
+  "bg": "amber.100",
+  "ratio": 15.73,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.warning.bold on warning.subtle.hovered",
+  "fg": "amber.800",
+  "bg": "amber.100",
+  "ratio": 7.03,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on warning.default.hovered",
+  "fg": "neutral.950",
   "bg": "amber.200",
   "ratio": 14.07,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.warning.bold on warning.subtle.pressed",
+  "fg": "amber.800",
+  "bg": "amber.200",
+  "ratio": 6.28,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on warning.default.pressed",
+  "fg": "neutral.950",
+  "bg": "amber.300",
+  "ratio": 12.48,
   "need": 4.5,
   "ok": true
  },
@@ -391,7 +535,7 @@
   "label": "error.boldest + white",
   "fg": "neutral.0",
   "bg": "red.800",
-  "ratio": 8.42,
+  "ratio": 9.1,
   "need": 4.5,
   "ok": true
  },
@@ -417,8 +561,8 @@
   "mode": "light",
   "label": "text.error.bold on error.subtle",
   "fg": "red.800",
-  "bg": "red.100",
-  "ratio": 6.24,
+  "bg": "red.50",
+  "ratio": 8.31,
   "need": 4.5,
   "ok": true
  },
@@ -426,8 +570,44 @@
   "mode": "light",
   "label": "text.default on error.default",
   "fg": "neutral.950",
+  "bg": "red.100",
+  "ratio": 14.07,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.error.bold on error.subtle.hovered",
+  "fg": "red.800",
+  "bg": "red.100",
+  "ratio": 6.74,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on error.default.hovered",
+  "fg": "neutral.950",
   "bg": "red.200",
   "ratio": 11.19,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.error.bold on error.subtle.pressed",
+  "fg": "red.800",
+  "bg": "red.200",
+  "ratio": 5.36,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on error.default.pressed",
+  "fg": "neutral.950",
+  "bg": "red.300",
+  "ratio": 8.81,
   "need": 4.5,
   "ok": true
  },
@@ -445,7 +625,7 @@
   "label": "info.bold.hovered + text",
   "fg": "neutral.0",
   "bg": "sky.800",
-  "ratio": 7.56,
+  "ratio": 8.26,
   "need": 4.5,
   "ok": true
  },
@@ -454,7 +634,7 @@
   "label": "info.boldest + white",
   "fg": "neutral.0",
   "bg": "sky.800",
-  "ratio": 7.56,
+  "ratio": 8.26,
   "need": 4.5,
   "ok": true
  },
@@ -480,8 +660,8 @@
   "mode": "light",
   "label": "text.info.bold on info.subtle",
   "fg": "sky.800",
-  "bg": "sky.100",
-  "ratio": 6.07,
+  "bg": "sky.50",
+  "ratio": 7.62,
   "need": 4.5,
   "ok": true
  },
@@ -489,8 +669,44 @@
   "mode": "light",
   "label": "text.default on info.default",
   "fg": "neutral.950",
+  "bg": "sky.100",
+  "ratio": 15.26,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.info.bold on info.subtle.hovered",
+  "fg": "sky.800",
+  "bg": "sky.100",
+  "ratio": 6.64,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on info.default.hovered",
+  "fg": "neutral.950",
   "bg": "sky.200",
   "ratio": 13.14,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.info.bold on info.subtle.pressed",
+  "fg": "sky.800",
+  "bg": "sky.200",
+  "ratio": 5.72,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on info.default.pressed",
+  "fg": "neutral.950",
+  "bg": "sky.300",
+  "ratio": 11.28,
   "need": 4.5,
   "ok": true
  },
@@ -508,7 +724,7 @@
   "label": "accent.blue.boldest + white",
   "fg": "neutral.0",
   "bg": "blue.800",
-  "ratio": 8.16,
+  "ratio": 8.85,
   "need": 4.5,
   "ok": true
  },
@@ -534,8 +750,8 @@
   "mode": "light",
   "label": "text.accent.blue.bold on accent.blue.subtle",
   "fg": "blue.800",
-  "bg": "blue.100",
-  "ratio": 6.14,
+  "bg": "blue.50",
+  "ratio": 8.14,
   "need": 4.5,
   "ok": true
  },
@@ -543,8 +759,44 @@
   "mode": "light",
   "label": "text.default on accent.blue.default",
   "fg": "neutral.950",
+  "bg": "blue.100",
+  "ratio": 14.29,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.blue.bold on accent.blue.subtle.hovered",
+  "fg": "blue.800",
+  "bg": "blue.100",
+  "ratio": 6.66,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.blue.default.hovered",
+  "fg": "neutral.950",
   "bg": "blue.200",
   "ratio": 11.57,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.blue.bold on accent.blue.subtle.pressed",
+  "fg": "blue.800",
+  "bg": "blue.200",
+  "ratio": 5.39,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.blue.default.pressed",
+  "fg": "neutral.950",
+  "bg": "blue.300",
+  "ratio": 9.2,
   "need": 4.5,
   "ok": true
  },
@@ -562,7 +814,7 @@
   "label": "accent.violet.boldest + white",
   "fg": "neutral.0",
   "bg": "violet.800",
-  "ratio": 8.49,
+  "ratio": 9.27,
   "need": 4.5,
   "ok": true
  },
@@ -588,8 +840,8 @@
   "mode": "light",
   "label": "text.accent.violet.bold on accent.violet.subtle",
   "fg": "violet.800",
-  "bg": "violet.100",
-  "ratio": 6.29,
+  "bg": "violet.50",
+  "ratio": 8.46,
   "need": 4.5,
   "ok": true
  },
@@ -597,8 +849,44 @@
   "mode": "light",
   "label": "text.default on accent.violet.default",
   "fg": "neutral.950",
+  "bg": "violet.100",
+  "ratio": 14.08,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.violet.bold on accent.violet.subtle.hovered",
+  "fg": "violet.800",
+  "bg": "violet.100",
+  "ratio": 6.87,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.violet.default.hovered",
+  "fg": "neutral.950",
   "bg": "violet.200",
   "ratio": 11.29,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.violet.bold on accent.violet.subtle.pressed",
+  "fg": "violet.800",
+  "bg": "violet.200",
+  "ratio": 5.51,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.violet.default.pressed",
+  "fg": "neutral.950",
+  "bg": "violet.300",
+  "ratio": 8.92,
   "need": 4.5,
   "ok": true
  },
@@ -616,7 +904,7 @@
   "label": "accent.purple.boldest + white",
   "fg": "neutral.0",
   "bg": "purple.800",
-  "ratio": 8.54,
+  "ratio": 9.23,
   "need": 4.5,
   "ok": true
  },
@@ -642,8 +930,8 @@
   "mode": "light",
   "label": "text.accent.purple.bold on accent.purple.subtle",
   "fg": "purple.800",
-  "bg": "purple.100",
-  "ratio": 6.37,
+  "bg": "purple.50",
+  "ratio": 8.43,
   "need": 4.5,
   "ok": true
  },
@@ -651,8 +939,44 @@
   "mode": "light",
   "label": "text.default on accent.purple.default",
   "fg": "neutral.950",
+  "bg": "purple.100",
+  "ratio": 14.16,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.purple.bold on accent.purple.subtle.hovered",
+  "fg": "purple.800",
+  "bg": "purple.100",
+  "ratio": 6.88,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.purple.default.hovered",
+  "fg": "neutral.950",
   "bg": "purple.200",
   "ratio": 11.22,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.purple.bold on accent.purple.subtle.pressed",
+  "fg": "purple.800",
+  "bg": "purple.200",
+  "ratio": 5.45,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.purple.default.pressed",
+  "fg": "neutral.950",
+  "bg": "purple.300",
+  "ratio": 8.66,
   "need": 4.5,
   "ok": true
  },
@@ -670,7 +994,7 @@
   "label": "accent.pink.boldest + white",
   "fg": "neutral.0",
   "bg": "pink.800",
-  "ratio": 8.47,
+  "ratio": 9.15,
   "need": 4.5,
   "ok": true
  },
@@ -696,8 +1020,8 @@
   "mode": "light",
   "label": "text.accent.pink.bold on accent.pink.subtle",
   "fg": "pink.800",
-  "bg": "pink.100",
-  "ratio": 6.32,
+  "bg": "pink.50",
+  "ratio": 8.36,
   "need": 4.5,
   "ok": true
  },
@@ -705,8 +1029,44 @@
   "mode": "light",
   "label": "text.default on accent.pink.default",
   "fg": "neutral.950",
+  "bg": "pink.100",
+  "ratio": 14.17,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.pink.bold on accent.pink.subtle.hovered",
+  "fg": "pink.800",
+  "bg": "pink.100",
+  "ratio": 6.82,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.pink.default.hovered",
+  "fg": "neutral.950",
   "bg": "pink.200",
   "ratio": 11.27,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.pink.bold on accent.pink.subtle.pressed",
+  "fg": "pink.800",
+  "bg": "pink.200",
+  "ratio": 5.43,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.pink.default.pressed",
+  "fg": "neutral.950",
+  "bg": "pink.300",
+  "ratio": 8.81,
   "need": 4.5,
   "ok": true
  },
@@ -724,7 +1084,7 @@
   "label": "accent.red.boldest + white",
   "fg": "neutral.0",
   "bg": "red.800",
-  "ratio": 8.42,
+  "ratio": 9.1,
   "need": 4.5,
   "ok": true
  },
@@ -750,8 +1110,8 @@
   "mode": "light",
   "label": "text.accent.red.bold on accent.red.subtle",
   "fg": "red.800",
-  "bg": "red.100",
-  "ratio": 6.24,
+  "bg": "red.50",
+  "ratio": 8.31,
   "need": 4.5,
   "ok": true
  },
@@ -759,8 +1119,44 @@
   "mode": "light",
   "label": "text.default on accent.red.default",
   "fg": "neutral.950",
+  "bg": "red.100",
+  "ratio": 14.07,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.red.bold on accent.red.subtle.hovered",
+  "fg": "red.800",
+  "bg": "red.100",
+  "ratio": 6.74,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.red.default.hovered",
+  "fg": "neutral.950",
   "bg": "red.200",
   "ratio": 11.19,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.red.bold on accent.red.subtle.pressed",
+  "fg": "red.800",
+  "bg": "red.200",
+  "ratio": 5.36,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.red.default.pressed",
+  "fg": "neutral.950",
+  "bg": "red.300",
+  "ratio": 8.81,
   "need": 4.5,
   "ok": true
  },
@@ -778,7 +1174,7 @@
   "label": "accent.orange.boldest + white",
   "fg": "neutral.0",
   "bg": "orange.800",
-  "ratio": 8.03,
+  "ratio": 8.71,
   "need": 4.5,
   "ok": true
  },
@@ -804,8 +1200,8 @@
   "mode": "light",
   "label": "text.accent.orange.bold on accent.orange.subtle",
   "fg": "orange.800",
-  "bg": "orange.100",
-  "ratio": 6.34,
+  "bg": "orange.50",
+  "ratio": 7.98,
   "need": 4.5,
   "ok": true
  },
@@ -813,8 +1209,44 @@
   "mode": "light",
   "label": "text.default on accent.orange.default",
   "fg": "neutral.950",
+  "bg": "orange.100",
+  "ratio": 14.99,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.orange.bold on accent.orange.subtle.hovered",
+  "fg": "orange.800",
+  "bg": "orange.100",
+  "ratio": 6.88,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.orange.default.hovered",
+  "fg": "neutral.950",
   "bg": "orange.200",
   "ratio": 12.79,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.orange.bold on accent.orange.subtle.pressed",
+  "fg": "orange.800",
+  "bg": "orange.200",
+  "ratio": 5.87,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.orange.default.pressed",
+  "fg": "neutral.950",
+  "bg": "orange.300",
+  "ratio": 10.81,
   "need": 4.5,
   "ok": true
  },
@@ -832,7 +1264,7 @@
   "label": "accent.amber.boldest + white",
   "fg": "neutral.0",
   "bg": "amber.800",
-  "ratio": 7.8,
+  "ratio": 8.49,
   "need": 4.5,
   "ok": true
  },
@@ -858,8 +1290,8 @@
   "mode": "light",
   "label": "text.accent.amber.bold on accent.amber.subtle",
   "fg": "amber.800",
-  "bg": "amber.100",
-  "ratio": 6.46,
+  "bg": "amber.50",
+  "ratio": 7.81,
   "need": 4.5,
   "ok": true
  },
@@ -867,8 +1299,44 @@
   "mode": "light",
   "label": "text.default on accent.amber.default",
   "fg": "neutral.950",
+  "bg": "amber.100",
+  "ratio": 15.73,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.amber.bold on accent.amber.subtle.hovered",
+  "fg": "amber.800",
+  "bg": "amber.100",
+  "ratio": 7.03,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.amber.default.hovered",
+  "fg": "neutral.950",
   "bg": "amber.200",
   "ratio": 14.07,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.amber.bold on accent.amber.subtle.pressed",
+  "fg": "amber.800",
+  "bg": "amber.200",
+  "ratio": 6.28,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.amber.default.pressed",
+  "fg": "neutral.950",
+  "bg": "amber.300",
+  "ratio": 12.48,
   "need": 4.5,
   "ok": true
  },
@@ -886,7 +1354,7 @@
   "label": "accent.lime.boldest + white",
   "fg": "neutral.0",
   "bg": "lime.800",
-  "ratio": 7.6,
+  "ratio": 8.21,
   "need": 4.5,
   "ok": true
  },
@@ -912,8 +1380,8 @@
   "mode": "light",
   "label": "text.accent.lime.bold on accent.lime.subtle",
   "fg": "lime.800",
-  "bg": "lime.100",
-  "ratio": 6.42,
+  "bg": "lime.50",
+  "ratio": 7.54,
   "need": 4.5,
   "ok": true
  },
@@ -921,8 +1389,44 @@
   "mode": "light",
   "label": "text.default on accent.lime.default",
   "fg": "neutral.950",
+  "bg": "lime.100",
+  "ratio": 16.02,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.lime.bold on accent.lime.subtle.hovered",
+  "fg": "lime.800",
+  "bg": "lime.100",
+  "ratio": 6.92,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.lime.default.hovered",
+  "fg": "neutral.950",
   "bg": "lime.200",
   "ratio": 14.78,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.lime.bold on accent.lime.subtle.pressed",
+  "fg": "lime.800",
+  "bg": "lime.200",
+  "ratio": 6.39,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.lime.default.pressed",
+  "fg": "neutral.950",
+  "bg": "lime.300",
+  "ratio": 13.51,
   "need": 4.5,
   "ok": true
  },
@@ -940,7 +1444,7 @@
   "label": "accent.green.boldest + white",
   "fg": "neutral.0",
   "bg": "green.800",
-  "ratio": 7.35,
+  "ratio": 7.99,
   "need": 4.5,
   "ok": true
  },
@@ -966,8 +1470,8 @@
   "mode": "light",
   "label": "text.accent.green.bold on accent.green.subtle",
   "fg": "green.800",
-  "bg": "green.100",
-  "ratio": 5.63,
+  "bg": "green.50",
+  "ratio": 7.33,
   "need": 4.5,
   "ok": true
  },
@@ -975,8 +1479,44 @@
   "mode": "light",
   "label": "text.default on accent.green.default",
   "fg": "neutral.950",
+  "bg": "green.100",
+  "ratio": 14.54,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.green.bold on accent.green.subtle.hovered",
+  "fg": "green.800",
+  "bg": "green.100",
+  "ratio": 6.12,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.green.default.hovered",
+  "fg": "neutral.950",
   "bg": "green.200",
   "ratio": 12.0,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.green.bold on accent.green.subtle.pressed",
+  "fg": "green.800",
+  "bg": "green.200",
+  "ratio": 5.05,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.green.default.pressed",
+  "fg": "neutral.950",
+  "bg": "green.300",
+  "ratio": 9.76,
   "need": 4.5,
   "ok": true
  },
@@ -994,7 +1534,7 @@
   "label": "accent.teal.boldest + white",
   "fg": "neutral.0",
   "bg": "teal.800",
-  "ratio": 7.36,
+  "ratio": 8.11,
   "need": 4.5,
   "ok": true
  },
@@ -1020,8 +1560,8 @@
   "mode": "light",
   "label": "text.accent.teal.bold on accent.teal.subtle",
   "fg": "teal.800",
-  "bg": "teal.100",
-  "ratio": 6.01,
+  "bg": "teal.50",
+  "ratio": 7.53,
   "need": 4.5,
   "ok": true
  },
@@ -1029,8 +1569,44 @@
   "mode": "light",
   "label": "text.default on accent.teal.default",
   "fg": "neutral.950",
+  "bg": "teal.100",
+  "ratio": 15.5,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.teal.bold on accent.teal.subtle.hovered",
+  "fg": "teal.800",
+  "bg": "teal.100",
+  "ratio": 6.62,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.teal.default.hovered",
+  "fg": "neutral.950",
   "bg": "teal.200",
   "ratio": 13.55,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.teal.bold on accent.teal.subtle.pressed",
+  "fg": "teal.800",
+  "bg": "teal.200",
+  "ratio": 5.79,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.teal.default.pressed",
+  "fg": "neutral.950",
+  "bg": "teal.300",
+  "ratio": 11.73,
   "need": 4.5,
   "ok": true
  },
@@ -1048,7 +1624,7 @@
   "label": "accent.cyan.boldest + white",
   "fg": "neutral.0",
   "bg": "cyan.800",
-  "ratio": 7.45,
+  "ratio": 8.14,
   "need": 4.5,
   "ok": true
  },
@@ -1074,8 +1650,8 @@
   "mode": "light",
   "label": "text.accent.cyan.bold on accent.cyan.subtle",
   "fg": "cyan.800",
-  "bg": "cyan.100",
-  "ratio": 6.05,
+  "bg": "cyan.50",
+  "ratio": 7.55,
   "need": 4.5,
   "ok": true
  },
@@ -1083,8 +1659,44 @@
   "mode": "light",
   "label": "text.default on accent.cyan.default",
   "fg": "neutral.950",
+  "bg": "cyan.100",
+  "ratio": 15.42,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.cyan.bold on accent.cyan.subtle.hovered",
+  "fg": "cyan.800",
+  "bg": "cyan.100",
+  "ratio": 6.6,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.cyan.default.hovered",
+  "fg": "neutral.950",
   "bg": "cyan.200",
   "ratio": 13.53,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.cyan.bold on accent.cyan.subtle.pressed",
+  "fg": "cyan.800",
+  "bg": "cyan.200",
+  "ratio": 5.79,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.cyan.default.pressed",
+  "fg": "neutral.950",
+  "bg": "cyan.300",
+  "ratio": 11.65,
   "need": 4.5,
   "ok": true
  },
@@ -1102,7 +1714,7 @@
   "label": "accent.sky.boldest + white",
   "fg": "neutral.0",
   "bg": "sky.800",
-  "ratio": 7.56,
+  "ratio": 8.26,
   "need": 4.5,
   "ok": true
  },
@@ -1128,8 +1740,8 @@
   "mode": "light",
   "label": "text.accent.sky.bold on accent.sky.subtle",
   "fg": "sky.800",
-  "bg": "sky.100",
-  "ratio": 6.07,
+  "bg": "sky.50",
+  "ratio": 7.62,
   "need": 4.5,
   "ok": true
  },
@@ -1137,8 +1749,44 @@
   "mode": "light",
   "label": "text.default on accent.sky.default",
   "fg": "neutral.950",
+  "bg": "sky.100",
+  "ratio": 15.26,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.sky.bold on accent.sky.subtle.hovered",
+  "fg": "sky.800",
+  "bg": "sky.100",
+  "ratio": 6.64,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.sky.default.hovered",
+  "fg": "neutral.950",
   "bg": "sky.200",
   "ratio": 13.14,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.accent.sky.bold on accent.sky.subtle.pressed",
+  "fg": "sky.800",
+  "bg": "sky.200",
+  "ratio": 5.72,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on accent.sky.default.pressed",
+  "fg": "neutral.950",
+  "bg": "sky.300",
+  "ratio": 11.28,
   "need": 4.5,
   "ok": true
  },
@@ -1183,7 +1831,7 @@
   "label": "link.hovered on surface.default",
   "fg": "blue.800",
   "bg": "neutral.50",
-  "ratio": 7.57,
+  "ratio": 8.21,
   "need": 4.5,
   "ok": true
  },
@@ -1398,8 +2046,26 @@
   "mode": "dark",
   "label": "text.default on neutral.subtle",
   "fg": "neutral.50",
+  "bg": "#F8F6F400",
+  "ratio": 17.62,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on neutral.subtle.hovered",
+  "fg": "neutral.50",
+  "bg": "neutral.900a",
+  "ratio": 16.43,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on neutral.subtle.pressed",
+  "fg": "neutral.50",
   "bg": "neutral.800a",
-  "ratio": 11.17,
+  "ratio": 14.72,
   "need": 4.5,
   "ok": true
  },
@@ -1407,8 +2073,26 @@
   "mode": "dark",
   "label": "text.default on neutral.default",
   "fg": "neutral.50",
-  "bg": "neutral.800",
-  "ratio": 11.16,
+  "bg": "neutral.900a",
+  "ratio": 16.43,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on neutral.default.hovered",
+  "fg": "neutral.50",
+  "bg": "neutral.800a",
+  "ratio": 14.72,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on neutral.default.pressed",
+  "fg": "neutral.50",
+  "bg": "neutral.700a",
+  "ratio": 11.34,
   "need": 4.5,
   "ok": true
  },
@@ -1462,16 +2146,16 @@
   "label": "text.brand on brand.subtlest",
   "fg": "blue.400",
   "bg": "blue.950",
-  "ratio": 5.17,
+  "ratio": 6.26,
   "need": 4.5,
   "ok": true
  },
  {
   "mode": "dark",
   "label": "text.brand.bold on brand.subtle",
-  "fg": "blue.300",
-  "bg": "blue.900",
-  "ratio": 5.15,
+  "fg": "blue.200",
+  "bg": "blue.950",
+  "ratio": 10.07,
   "need": 4.5,
   "ok": true
  },
@@ -1479,8 +2163,44 @@
   "mode": "dark",
   "label": "text.default on brand.default",
   "fg": "neutral.50",
+  "bg": "blue.900",
+  "ratio": 11.64,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.brand.bold on brand.subtle.hovered",
+  "fg": "blue.200",
+  "bg": "blue.900",
+  "ratio": 7.64,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on brand.default.hovered",
+  "fg": "neutral.50",
   "bg": "blue.800",
-  "ratio": 7.57,
+  "ratio": 8.21,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.brand.bold on brand.subtle.pressed",
+  "fg": "blue.200",
+  "bg": "blue.800",
+  "ratio": 5.39,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on brand.default.pressed",
+  "fg": "neutral.50",
+  "bg": "blue.700",
+  "ratio": 5.69,
   "need": 4.5,
   "ok": true
  },
@@ -1498,7 +2218,7 @@
   "label": "success.bold.hovered + text",
   "fg": "neutral.0",
   "bg": "green.800",
-  "ratio": 7.35,
+  "ratio": 7.99,
   "need": 4.5,
   "ok": true
  },
@@ -1525,16 +2245,16 @@
   "label": "text.success on success.subtlest",
   "fg": "green.400",
   "bg": "green.950",
-  "ratio": 5.31,
+  "ratio": 6.47,
   "need": 4.5,
   "ok": true
  },
  {
   "mode": "dark",
   "label": "text.success.bold on success.subtle",
-  "fg": "green.300",
-  "bg": "green.900",
-  "ratio": 5.1,
+  "fg": "green.200",
+  "bg": "green.950",
+  "ratio": 9.99,
   "need": 4.5,
   "ok": true
  },
@@ -1542,8 +2262,44 @@
   "mode": "dark",
   "label": "text.default on success.default",
   "fg": "neutral.50",
+  "bg": "green.900",
+  "ratio": 10.73,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.success.bold on success.subtle.hovered",
+  "fg": "green.200",
+  "bg": "green.900",
+  "ratio": 7.31,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on success.default.hovered",
+  "fg": "neutral.50",
   "bg": "green.800",
-  "ratio": 6.82,
+  "ratio": 7.41,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.success.bold on success.subtle.pressed",
+  "fg": "green.200",
+  "bg": "green.800",
+  "ratio": 5.05,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on success.default.pressed",
+  "fg": "neutral.50",
+  "bg": "green.700",
+  "ratio": 5.03,
   "need": 4.5,
   "ok": true
  },
@@ -1588,16 +2344,16 @@
   "label": "text.warning on warning.subtlest",
   "fg": "amber.400",
   "bg": "amber.950",
-  "ratio": 7.8,
+  "ratio": 9.47,
   "need": 4.5,
   "ok": true
  },
  {
   "mode": "dark",
   "label": "text.warning.bold on warning.subtle",
-  "fg": "amber.300",
-  "bg": "amber.900",
-  "ratio": 6.78,
+  "fg": "amber.200",
+  "bg": "amber.950",
+  "ratio": 11.94,
   "need": 4.5,
   "ok": true
  },
@@ -1605,8 +2361,44 @@
   "mode": "dark",
   "label": "text.default on warning.default",
   "fg": "neutral.50",
+  "bg": "amber.900",
+  "ratio": 11.23,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.warning.bold on warning.subtle.hovered",
+  "fg": "amber.200",
+  "bg": "amber.900",
+  "ratio": 8.96,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on warning.default.hovered",
+  "fg": "neutral.50",
   "bg": "amber.800",
-  "ratio": 7.23,
+  "ratio": 7.87,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.warning.bold on warning.subtle.pressed",
+  "fg": "amber.200",
+  "bg": "amber.800",
+  "ratio": 6.28,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on warning.default.pressed",
+  "fg": "neutral.50",
+  "bg": "amber.700",
+  "ratio": 5.02,
   "need": 4.5,
   "ok": true
  },
@@ -1651,16 +2443,16 @@
   "label": "text.error on error.subtlest",
   "fg": "red.400",
   "bg": "red.950",
-  "ratio": 4.89,
+  "ratio": 5.85,
   "need": 4.5,
   "ok": true
  },
  {
   "mode": "dark",
   "label": "text.error.bold on error.subtle",
-  "fg": "red.300",
-  "bg": "red.900",
-  "ratio": 5.06,
+  "fg": "red.200",
+  "bg": "red.950",
+  "ratio": 9.74,
   "need": 4.5,
   "ok": true
  },
@@ -1668,8 +2460,44 @@
   "mode": "dark",
   "label": "text.default on error.default",
   "fg": "neutral.50",
+  "bg": "red.900",
+  "ratio": 11.74,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.error.bold on error.subtle.hovered",
+  "fg": "red.200",
+  "bg": "red.900",
+  "ratio": 7.45,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on error.default.hovered",
+  "fg": "neutral.50",
   "bg": "red.800",
-  "ratio": 7.81,
+  "ratio": 8.44,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.error.bold on error.subtle.pressed",
+  "fg": "red.200",
+  "bg": "red.800",
+  "ratio": 5.36,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on error.default.pressed",
+  "fg": "neutral.50",
+  "bg": "red.700",
+  "ratio": 5.93,
   "need": 4.5,
   "ok": true
  },
@@ -1687,7 +2515,7 @@
   "label": "info.bold.hovered + text",
   "fg": "neutral.0",
   "bg": "sky.800",
-  "ratio": 7.56,
+  "ratio": 8.26,
   "need": 4.5,
   "ok": true
  },
@@ -1714,16 +2542,16 @@
   "label": "text.info on info.subtlest",
   "fg": "sky.400",
   "bg": "sky.950",
-  "ratio": 6.67,
+  "ratio": 8.07,
   "need": 4.5,
   "ok": true
  },
  {
   "mode": "dark",
   "label": "text.info.bold on info.subtle",
-  "fg": "sky.300",
-  "bg": "sky.900",
-  "ratio": 5.94,
+  "fg": "sky.200",
+  "bg": "sky.950",
+  "ratio": 10.99,
   "need": 4.5,
   "ok": true
  },
@@ -1731,8 +2559,44 @@
   "mode": "dark",
   "label": "text.default on info.default",
   "fg": "neutral.50",
+  "bg": "sky.900",
+  "ratio": 10.91,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.info.bold on info.subtle.hovered",
+  "fg": "sky.200",
+  "bg": "sky.900",
+  "ratio": 8.13,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on info.default.hovered",
+  "fg": "neutral.50",
   "bg": "sky.800",
-  "ratio": 7.01,
+  "ratio": 7.67,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.info.bold on info.subtle.pressed",
+  "fg": "sky.200",
+  "bg": "sky.800",
+  "ratio": 5.72,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on info.default.pressed",
+  "fg": "neutral.50",
+  "bg": "sky.700",
+  "ratio": 4.65,
   "need": 4.5,
   "ok": true
  },
@@ -1768,16 +2632,16 @@
   "label": "text.accent.blue on accent.blue.subtlest",
   "fg": "blue.400",
   "bg": "blue.950",
-  "ratio": 5.17,
+  "ratio": 6.26,
   "need": 4.5,
   "ok": true
  },
  {
   "mode": "dark",
   "label": "text.accent.blue.bold on accent.blue.subtle",
-  "fg": "blue.300",
-  "bg": "blue.900",
-  "ratio": 5.15,
+  "fg": "blue.200",
+  "bg": "blue.950",
+  "ratio": 10.07,
   "need": 4.5,
   "ok": true
  },
@@ -1785,8 +2649,44 @@
   "mode": "dark",
   "label": "text.default on accent.blue.default",
   "fg": "neutral.50",
+  "bg": "blue.900",
+  "ratio": 11.64,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.blue.bold on accent.blue.subtle.hovered",
+  "fg": "blue.200",
+  "bg": "blue.900",
+  "ratio": 7.64,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.blue.default.hovered",
+  "fg": "neutral.50",
   "bg": "blue.800",
-  "ratio": 7.57,
+  "ratio": 8.21,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.blue.bold on accent.blue.subtle.pressed",
+  "fg": "blue.200",
+  "bg": "blue.800",
+  "ratio": 5.39,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.blue.default.pressed",
+  "fg": "neutral.50",
+  "bg": "blue.700",
+  "ratio": 5.69,
   "need": 4.5,
   "ok": true
  },
@@ -1822,16 +2722,16 @@
   "label": "text.accent.violet on accent.violet.subtlest",
   "fg": "violet.400",
   "bg": "violet.950",
-  "ratio": 5.06,
+  "ratio": 6.11,
   "need": 4.5,
   "ok": true
  },
  {
   "mode": "dark",
   "label": "text.accent.violet.bold on accent.violet.subtle",
-  "fg": "violet.300",
-  "bg": "violet.900",
-  "ratio": 5.15,
+  "fg": "violet.200",
+  "bg": "violet.950",
+  "ratio": 9.96,
   "need": 4.5,
   "ok": true
  },
@@ -1839,8 +2739,44 @@
   "mode": "dark",
   "label": "text.default on accent.violet.default",
   "fg": "neutral.50",
+  "bg": "violet.900",
+  "ratio": 11.92,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.violet.bold on accent.violet.subtle.hovered",
+  "fg": "violet.200",
+  "bg": "violet.900",
+  "ratio": 7.64,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.violet.default.hovered",
+  "fg": "neutral.50",
   "bg": "violet.800",
-  "ratio": 7.88,
+  "ratio": 8.6,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.violet.bold on accent.violet.subtle.pressed",
+  "fg": "violet.200",
+  "bg": "violet.800",
+  "ratio": 5.51,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.violet.default.pressed",
+  "fg": "neutral.50",
+  "bg": "violet.700",
+  "ratio": 5.99,
   "need": 4.5,
   "ok": true
  },
@@ -1876,16 +2812,16 @@
   "label": "text.accent.purple on accent.purple.subtlest",
   "fg": "purple.400",
   "bg": "purple.950",
-  "ratio": 4.67,
+  "ratio": 5.58,
   "need": 4.5,
   "ok": true
  },
  {
   "mode": "dark",
   "label": "text.accent.purple.bold on accent.purple.subtle",
-  "fg": "purple.300",
-  "bg": "purple.900",
-  "ratio": 4.99,
+  "fg": "purple.200",
+  "bg": "purple.950",
+  "ratio": 9.66,
   "need": 4.5,
   "ok": true
  },
@@ -1893,8 +2829,44 @@
   "mode": "dark",
   "label": "text.default on accent.purple.default",
   "fg": "neutral.50",
+  "bg": "purple.900",
+  "ratio": 11.68,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.purple.bold on accent.purple.subtle.hovered",
+  "fg": "purple.200",
+  "bg": "purple.900",
+  "ratio": 7.44,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.purple.default.hovered",
+  "fg": "neutral.50",
   "bg": "purple.800",
-  "ratio": 7.92,
+  "ratio": 8.56,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.purple.bold on accent.purple.subtle.pressed",
+  "fg": "purple.200",
+  "bg": "purple.800",
+  "ratio": 5.45,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.purple.default.pressed",
+  "fg": "neutral.50",
+  "bg": "purple.700",
+  "ratio": 6.17,
   "need": 4.5,
   "ok": true
  },
@@ -1930,16 +2902,16 @@
   "label": "text.accent.pink on accent.pink.subtlest",
   "fg": "pink.400",
   "bg": "pink.950",
-  "ratio": 4.8,
+  "ratio": 5.75,
   "need": 4.5,
   "ok": true
  },
  {
   "mode": "dark",
   "label": "text.accent.pink.bold on accent.pink.subtle",
-  "fg": "pink.300",
-  "bg": "pink.900",
-  "ratio": 5.05,
+  "fg": "pink.200",
+  "bg": "pink.950",
+  "ratio": 9.7,
   "need": 4.5,
   "ok": true
  },
@@ -1947,8 +2919,44 @@
   "mode": "dark",
   "label": "text.default on accent.pink.default",
   "fg": "neutral.50",
+  "bg": "pink.900",
+  "ratio": 11.64,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.pink.bold on accent.pink.subtle.hovered",
+  "fg": "pink.200",
+  "bg": "pink.900",
+  "ratio": 7.45,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.pink.default.hovered",
+  "fg": "neutral.50",
   "bg": "pink.800",
-  "ratio": 7.86,
+  "ratio": 8.49,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.pink.bold on accent.pink.subtle.pressed",
+  "fg": "pink.200",
+  "bg": "pink.800",
+  "ratio": 5.43,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.pink.default.pressed",
+  "fg": "neutral.50",
+  "bg": "pink.700",
+  "ratio": 6.04,
   "need": 4.5,
   "ok": true
  },
@@ -1984,16 +2992,16 @@
   "label": "text.accent.red on accent.red.subtlest",
   "fg": "red.400",
   "bg": "red.950",
-  "ratio": 4.89,
+  "ratio": 5.85,
   "need": 4.5,
   "ok": true
  },
  {
   "mode": "dark",
   "label": "text.accent.red.bold on accent.red.subtle",
-  "fg": "red.300",
-  "bg": "red.900",
-  "ratio": 5.06,
+  "fg": "red.200",
+  "bg": "red.950",
+  "ratio": 9.74,
   "need": 4.5,
   "ok": true
  },
@@ -2001,8 +3009,44 @@
   "mode": "dark",
   "label": "text.default on accent.red.default",
   "fg": "neutral.50",
+  "bg": "red.900",
+  "ratio": 11.74,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.red.bold on accent.red.subtle.hovered",
+  "fg": "red.200",
+  "bg": "red.900",
+  "ratio": 7.45,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.red.default.hovered",
+  "fg": "neutral.50",
   "bg": "red.800",
-  "ratio": 7.81,
+  "ratio": 8.44,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.red.bold on accent.red.subtle.pressed",
+  "fg": "red.200",
+  "bg": "red.800",
+  "ratio": 5.36,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.red.default.pressed",
+  "fg": "neutral.50",
+  "bg": "red.700",
+  "ratio": 5.93,
   "need": 4.5,
   "ok": true
  },
@@ -2038,16 +3082,16 @@
   "label": "text.accent.orange on accent.orange.subtlest",
   "fg": "orange.400",
   "bg": "orange.950",
-  "ratio": 6.43,
+  "ratio": 7.75,
   "need": 4.5,
   "ok": true
  },
  {
   "mode": "dark",
   "label": "text.accent.orange.bold on accent.orange.subtle",
-  "fg": "orange.300",
-  "bg": "orange.900",
-  "ratio": 6.05,
+  "fg": "orange.200",
+  "bg": "orange.950",
+  "ratio": 10.97,
   "need": 4.5,
   "ok": true
  },
@@ -2055,8 +3099,44 @@
   "mode": "dark",
   "label": "text.default on accent.orange.default",
   "fg": "neutral.50",
+  "bg": "orange.900",
+  "ratio": 11.41,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.orange.bold on accent.orange.subtle.hovered",
+  "fg": "orange.200",
+  "bg": "orange.900",
+  "ratio": 8.28,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.orange.default.hovered",
+  "fg": "neutral.50",
   "bg": "orange.800",
-  "ratio": 7.45,
+  "ratio": 8.08,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.orange.bold on accent.orange.subtle.pressed",
+  "fg": "orange.200",
+  "bg": "orange.800",
+  "ratio": 5.87,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.orange.default.pressed",
+  "fg": "neutral.50",
+  "bg": "orange.700",
+  "ratio": 4.68,
   "need": 4.5,
   "ok": true
  },
@@ -2092,16 +3172,16 @@
   "label": "text.accent.amber on accent.amber.subtlest",
   "fg": "amber.400",
   "bg": "amber.950",
-  "ratio": 7.8,
+  "ratio": 9.47,
   "need": 4.5,
   "ok": true
  },
  {
   "mode": "dark",
   "label": "text.accent.amber.bold on accent.amber.subtle",
-  "fg": "amber.300",
-  "bg": "amber.900",
-  "ratio": 6.78,
+  "fg": "amber.200",
+  "bg": "amber.950",
+  "ratio": 11.94,
   "need": 4.5,
   "ok": true
  },
@@ -2109,8 +3189,44 @@
   "mode": "dark",
   "label": "text.default on accent.amber.default",
   "fg": "neutral.50",
+  "bg": "amber.900",
+  "ratio": 11.23,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.amber.bold on accent.amber.subtle.hovered",
+  "fg": "amber.200",
+  "bg": "amber.900",
+  "ratio": 8.96,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.amber.default.hovered",
+  "fg": "neutral.50",
   "bg": "amber.800",
-  "ratio": 7.23,
+  "ratio": 7.87,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.amber.bold on accent.amber.subtle.pressed",
+  "fg": "amber.200",
+  "bg": "amber.800",
+  "ratio": 6.28,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.amber.default.pressed",
+  "fg": "neutral.50",
+  "bg": "amber.700",
+  "ratio": 5.02,
   "need": 4.5,
   "ok": true
  },
@@ -2146,16 +3262,16 @@
   "label": "text.accent.lime on accent.lime.subtlest",
   "fg": "lime.400",
   "bg": "lime.950",
-  "ratio": 8.43,
+  "ratio": 10.23,
   "need": 4.5,
   "ok": true
  },
  {
   "mode": "dark",
   "label": "text.accent.lime.bold on accent.lime.subtle",
-  "fg": "lime.300",
-  "bg": "lime.900",
-  "ratio": 7.12,
+  "fg": "lime.200",
+  "bg": "lime.950",
+  "ratio": 12.32,
   "need": 4.5,
   "ok": true
  },
@@ -2163,8 +3279,44 @@
   "mode": "dark",
   "label": "text.default on accent.lime.default",
   "fg": "neutral.50",
+  "bg": "lime.900",
+  "ratio": 10.91,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.lime.bold on accent.lime.subtle.hovered",
+  "fg": "lime.200",
+  "bg": "lime.900",
+  "ratio": 9.15,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.lime.default.hovered",
+  "fg": "neutral.50",
   "bg": "lime.800",
-  "ratio": 7.05,
+  "ratio": 7.61,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.lime.bold on accent.lime.subtle.pressed",
+  "fg": "lime.200",
+  "bg": "lime.800",
+  "ratio": 6.39,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.lime.default.pressed",
+  "fg": "neutral.50",
+  "bg": "lime.700",
+  "ratio": 4.87,
   "need": 4.5,
   "ok": true
  },
@@ -2200,16 +3352,16 @@
   "label": "text.accent.green on accent.green.subtlest",
   "fg": "green.400",
   "bg": "green.950",
-  "ratio": 5.31,
+  "ratio": 6.47,
   "need": 4.5,
   "ok": true
  },
  {
   "mode": "dark",
   "label": "text.accent.green.bold on accent.green.subtle",
-  "fg": "green.300",
-  "bg": "green.900",
-  "ratio": 5.1,
+  "fg": "green.200",
+  "bg": "green.950",
+  "ratio": 9.99,
   "need": 4.5,
   "ok": true
  },
@@ -2217,8 +3369,44 @@
   "mode": "dark",
   "label": "text.default on accent.green.default",
   "fg": "neutral.50",
+  "bg": "green.900",
+  "ratio": 10.73,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.green.bold on accent.green.subtle.hovered",
+  "fg": "green.200",
+  "bg": "green.900",
+  "ratio": 7.31,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.green.default.hovered",
+  "fg": "neutral.50",
   "bg": "green.800",
-  "ratio": 6.82,
+  "ratio": 7.41,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.green.bold on accent.green.subtle.pressed",
+  "fg": "green.200",
+  "bg": "green.800",
+  "ratio": 5.05,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.green.default.pressed",
+  "fg": "neutral.50",
+  "bg": "green.700",
+  "ratio": 5.03,
   "need": 4.5,
   "ok": true
  },
@@ -2254,16 +3442,16 @@
   "label": "text.accent.teal on accent.teal.subtlest",
   "fg": "teal.400",
   "bg": "teal.950",
-  "ratio": 6.76,
+  "ratio": 8.33,
   "need": 4.5,
   "ok": true
  },
  {
   "mode": "dark",
   "label": "text.accent.teal.bold on accent.teal.subtle",
-  "fg": "teal.300",
-  "bg": "teal.900",
-  "ratio": 6.1,
+  "fg": "teal.200",
+  "bg": "teal.950",
+  "ratio": 11.28,
   "need": 4.5,
   "ok": true
  },
@@ -2271,8 +3459,44 @@
   "mode": "dark",
   "label": "text.default on accent.teal.default",
   "fg": "neutral.50",
+  "bg": "teal.900",
+  "ratio": 10.83,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.teal.bold on accent.teal.subtle.hovered",
+  "fg": "teal.200",
+  "bg": "teal.900",
+  "ratio": 8.33,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.teal.default.hovered",
+  "fg": "neutral.50",
   "bg": "teal.800",
-  "ratio": 6.83,
+  "ratio": 7.53,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.teal.bold on accent.teal.subtle.pressed",
+  "fg": "teal.200",
+  "bg": "teal.800",
+  "ratio": 5.79,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.teal.default.pressed",
+  "fg": "neutral.50",
+  "bg": "teal.700",
+  "ratio": 4.65,
   "need": 4.5,
   "ok": true
  },
@@ -2308,16 +3532,16 @@
   "label": "text.accent.cyan on accent.cyan.subtlest",
   "fg": "cyan.400",
   "bg": "cyan.950",
-  "ratio": 6.69,
+  "ratio": 8.17,
   "need": 4.5,
   "ok": true
  },
  {
   "mode": "dark",
   "label": "text.accent.cyan.bold on accent.cyan.subtle",
-  "fg": "cyan.300",
-  "bg": "cyan.900",
-  "ratio": 6.1,
+  "fg": "cyan.200",
+  "bg": "cyan.950",
+  "ratio": 11.26,
   "need": 4.5,
   "ok": true
  },
@@ -2325,8 +3549,44 @@
   "mode": "dark",
   "label": "text.default on accent.cyan.default",
   "fg": "neutral.50",
+  "bg": "cyan.900",
+  "ratio": 10.79,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.cyan.bold on accent.cyan.subtle.hovered",
+  "fg": "cyan.200",
+  "bg": "cyan.900",
+  "ratio": 8.29,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.cyan.default.hovered",
+  "fg": "neutral.50",
   "bg": "cyan.800",
-  "ratio": 6.92,
+  "ratio": 7.55,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.cyan.bold on accent.cyan.subtle.pressed",
+  "fg": "cyan.200",
+  "bg": "cyan.800",
+  "ratio": 5.79,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.cyan.default.pressed",
+  "fg": "neutral.50",
+  "bg": "cyan.700",
+  "ratio": 4.68,
   "need": 4.5,
   "ok": true
  },
@@ -2362,16 +3622,16 @@
   "label": "text.accent.sky on accent.sky.subtlest",
   "fg": "sky.400",
   "bg": "sky.950",
-  "ratio": 6.67,
+  "ratio": 8.07,
   "need": 4.5,
   "ok": true
  },
  {
   "mode": "dark",
   "label": "text.accent.sky.bold on accent.sky.subtle",
-  "fg": "sky.300",
-  "bg": "sky.900",
-  "ratio": 5.94,
+  "fg": "sky.200",
+  "bg": "sky.950",
+  "ratio": 10.99,
   "need": 4.5,
   "ok": true
  },
@@ -2379,8 +3639,44 @@
   "mode": "dark",
   "label": "text.default on accent.sky.default",
   "fg": "neutral.50",
+  "bg": "sky.900",
+  "ratio": 10.91,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.sky.bold on accent.sky.subtle.hovered",
+  "fg": "sky.200",
+  "bg": "sky.900",
+  "ratio": 8.13,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.sky.default.hovered",
+  "fg": "neutral.50",
   "bg": "sky.800",
-  "ratio": 7.01,
+  "ratio": 7.67,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.accent.sky.bold on accent.sky.subtle.pressed",
+  "fg": "sky.200",
+  "bg": "sky.800",
+  "ratio": 5.72,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on accent.sky.default.pressed",
+  "fg": "neutral.50",
+  "bg": "sky.700",
+  "ratio": 4.65,
   "need": 4.5,
   "ok": true
  },
@@ -2389,7 +3685,7 @@
   "label": "text.selected on background.selected",
   "fg": "blue.400",
   "bg": "blue.950",
-  "ratio": 5.17,
+  "ratio": 6.26,
   "need": 4.5,
   "ok": true
  },
@@ -2398,7 +3694,7 @@
   "label": "text.default on background.selected",
   "fg": "neutral.50",
   "bg": "blue.950",
-  "ratio": 12.67,
+  "ratio": 15.33,
   "need": 4.5,
   "ok": true
  },

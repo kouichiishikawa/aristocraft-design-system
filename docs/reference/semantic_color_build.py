@@ -3,7 +3,7 @@
 It overwrites packages/tokens/tokens/semantic/color.{light,dark}.json. The committed JSON is the source of
 truth afterwards; CI validates it with semantic_color_check.py (same contrast checks, no regeneration)."""
 import json
-from color import cr
+from color import cr, composite
 pal=json.load(open('palette.json')); al=json.load(open('neutral-alpha.json'))
 P={n:{o['step']:o['hex'] for o in v['scale']} for n,v in pal.items()}
 from semantic_color_checks import HUES, STATUS, PRIMARY
@@ -20,7 +20,7 @@ add('elevation.surface.sunken','neutral.100','neutral.1000','入力欄・くぼ�
 # text / icon
 add('color.text.default','neutral.950','neutral.50','本文・見出し'); add('color.text.subtle','neutral.700','neutral.200','副次テキスト'); add('color.text.subtlest','neutral.600','neutral.300','キャプション・メタ')
 add('color.text.disabled','neutral.400','neutral.500','無効（コントラスト要件の対象外）'); add('color.text.inverse','neutral.50','neutral.950','反転面の上')
-add('color.text.brand',f'{PRIMARY}.700',f'{PRIMARY}.400','ブランド色の文字・リンク'); add('color.text.brand.bold',f'{PRIMARY}.800',f'{PRIMARY}.300','brand.subtle の面に乗せる文字')
+add('color.text.brand',f'{PRIMARY}.700',f'{PRIMARY}.400','ブランド色の文字・リンク'); add('color.text.brand.bold',f'{PRIMARY}.800',f'{PRIMARY}.200','brand.subtle の面に乗せる文字（dark は 200: subtle.pressed = 800 の上でも AA）')
 add('color.text.selected',f'{PRIMARY}.700',f'{PRIMARY}.400','選択状態の文字')
 add('color.icon.default','neutral.900','neutral.100',''); add('color.icon.subtle','neutral.700','neutral.200',''); add('color.icon.subtlest','neutral.600','neutral.300','')
 add('color.icon.disabled','neutral.400','neutral.500',''); add('color.icon.inverse','neutral.50','neutral.950',''); add('color.icon.brand',f'{PRIMARY}.600',f'{PRIMARY}.400','')
@@ -48,12 +48,16 @@ for ns in ('text','icon','border'):
     add(f'color.{ns}.static.white','neutral.0','neutral.0','テーマに依存しない白。bold 塗り・写真・スクリムの上')
     add(f'color.{ns}.static.black','neutral.1000','neutral.1000','テーマに依存しない黒。amber / lime の bold 塗り・明るい写真の上')
 # background neutral
+# Atlassian model (2026-10-05): the subtler the level the lighter its rest colour; hovered / pressed are one / two steps stronger.
+# neutral is translucent (composites on any surface); `@0` = fully transparent but keeping the hue so hover fades in smoothly.
 add('color.background.neutral.subtlest','neutral.100a','neutral.900a','ホバー面・薄いタグ')
-add('color.background.neutral.subtle','neutral.200a','neutral.800a','二次ボタン・チップ'); add('color.background.neutral.subtle.hovered','neutral.300a','neutral.700a',''); add('color.background.neutral.subtle.pressed','neutral.400a','neutral.600a','')
-add('color.background.neutral.default','neutral.200','neutral.800','塗りの二次ボタン'); add('color.background.neutral.default.hovered','neutral.300','neutral.700',''); add('color.background.neutral.default.pressed','neutral.400','neutral.600','')
+add('color.background.neutral.subtle','neutral.950@0','neutral.50@0','面なしの二次ボタン・チップ（hover で初めて面が出る）'); add('color.background.neutral.subtle.hovered','neutral.100a','neutral.900a',''); add('color.background.neutral.subtle.pressed','neutral.200a','neutral.800a','')
+add('color.background.neutral.default','neutral.100a','neutral.900a','塗りの二次ボタン（default variant）'); add('color.background.neutral.default.hovered','neutral.200a','neutral.800a',''); add('color.background.neutral.default.pressed','neutral.300a','neutral.700a','')
 add('color.background.neutral.bold','neutral.700','neutral.300','強い塗り'); add('color.background.neutral.boldest','neutral.950','neutral.50','反転面。inverse の文字を乗せる')
 def emphasis(base,h,states=True):
-    add(f'{base}.subtlest',f'{h}.50',f'{h}.950','ほのかな色の面'); add(f'{base}.subtle',f'{h}.100',f'{h}.900','薄いタグ・通知の地（文字は .bold）'); add(f'{base}.default',f'{h}.200',f'{h}.800','色つきの面（文字は text.default）')
+    add(f'{base}.subtlest',f'{h}.50',f'{h}.950','ほのかな色の面')
+    add(f'{base}.subtle',f'{h}.50',f'{h}.950','薄いタグ・通知の地（文字は .bold）'); add(f'{base}.subtle.hovered',f'{h}.100',f'{h}.900',''); add(f'{base}.subtle.pressed',f'{h}.200',f'{h}.800','')
+    add(f'{base}.default',f'{h}.100',f'{h}.900','色つきの面（文字は text.default）'); add(f'{base}.default.hovered',f'{h}.200',f'{h}.800',''); add(f'{base}.default.pressed',f'{h}.300',f'{h}.700','')
     b=fill_step(h); add(f'{base}.bold',f'{h}.{b}',f'{h}.{b}','塗り（白文字。amber / lime は黒文字）')
     if states: add(f'{base}.bold.hovered',f'{h}.{b+100}',f'{h}.{b+100}','1 段濃く'); add(f'{base}.bold.pressed',f'{h}.{b+200}',f'{h}.{b+200}','2 段濃く')
     add(f'{base}.boldest',f'{h}.800',f'{h}.300','最も強い塗り（light 白文字、dark 黒文字）')
@@ -62,27 +66,29 @@ emphasis('color.background.brand',PRIMARY)
 # status
 for role,h in STATUS.items():
     emphasis(f'color.background.status.{role}',h)
-    add(f'color.text.status.{role}',f'{h}.700',f'{h}.400',''); add(f'color.text.status.{role}.bold',f'{h}.800',f'{h}.300',f'{role}.subtle の面に乗せる文字')
+    add(f'color.text.status.{role}',f'{h}.700',f'{h}.400',''); add(f'color.text.status.{role}.bold',f'{h}.800',f'{h}.200',f'{role}.subtle の面に乗せる文字')
     add(f'color.border.status.{role}',f'{h}.600',f'{h}.500','')
 # accent (all 12 hues, no states)
 for h in HUES:
     emphasis(f'color.background.accent.{h}',h,states=False)
-    add(f'color.text.accent.{h}',f'{h}.700',f'{h}.400','意味を持たない色の文字（neutral 面・subtlest 面）'); add(f'color.text.accent.{h}.bold',f'{h}.800',f'{h}.300',f'accent.{h}.subtle の面に乗せる文字')
+    add(f'color.text.accent.{h}',f'{h}.700',f'{h}.400','意味を持たない色の文字（neutral 面・subtlest 面）'); add(f'color.text.accent.{h}.bold',f'{h}.800',f'{h}.200',f'accent.{h}.subtle の面に乗せる文字')
 SH={'rest':{'desc':'静止したカード、区切りの補助','light':[('#0000000A',0,1,2,0),('#0000000F',0,1,3,0)],'dark':[('#0000004D',0,1,2,0),('#00000033',0,1,3,0)]},
     'lifted':{'desc':'浮いたカード、ホバーで持ち上がる面、ドロップダウン','light':[('#0000000F',0,2,4,0),('#0000001F',0,4,12,-2)],'dark':[('#00000066',0,2,4,0),('#0000004D',0,4,12,-2)]},
     'floating':{'desc':'ポップオーバー、固定バー、ドラッグ中の要素','light':[('#00000014',0,4,8,0),('#00000029',0,12,24,-4)],'dark':[('#00000073',0,4,8,0),('#00000073',0,12,24,-4)]},
     'overlay':{'desc':'モーダル、ダイアログ、最上位のオーバーレイ','light':[('#00000014',0,8,16,0),('#0000003D',0,24,48,-8)],'dark':[('#00000080',0,8,16,0),('#00000099',0,24,48,-8)]}}
 def px(n): return {"value":n,"unit":"px"}
 def layers(ls): return [dict(color=c,offsetX=px(x),offsetY=px(y),blur=px(b),spread=px(s)) for c,x,y,b,s in ls]
-def hx(r):
-    if '@' in r: r=r.split('@')[0]
+SURFACE={'light':'neutral.50','dark':'neutral.950'}
+def hx(r,mode):
+    """Resolve a ref to the opaque hex it reads as in `mode`: translucent neutrals and `@pct` literals are composited onto the theme surface."""
+    if '@' in r: return composite(ref(r),hx(SURFACE[mode],mode))
     fam,step=r.split('.')
     if step.endswith('a'):
-        st=int(step[:-1]); mode='light' if st<=400 else 'dark'; return next(x for x in al[mode]['steps'] if x['step']==st)['result']
+        st=int(step[:-1]); m='light' if st<=400 else 'dark'; return next(x for x in al[m]['steps'] if x['step']==st)['result']
     return P[fam][int(step)]
 def ref(r):
     if '@' in r:
-        base,pct=r.split('@'); return f"#000000{round(int(pct)*255/100):02X}"
+        base,pct=r.split('@'); fam,step=base.split('.'); return f"{P[fam][int(step)]}{round(int(pct)*255/100):02X}"
     fam,step=r.split('.'); return f"{{color.{fam}.{step}}}"
 if __name__=='__main__':
     json.dump(M,open('semantic-color-map.json','w'),indent=1,ensure_ascii=False)

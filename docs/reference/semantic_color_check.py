@@ -2,6 +2,7 @@
 Run: python3 semantic_color_check.py   (exit 1 on any failure). Writes semantic-color-checks.json."""
 import json, re, sys
 from semantic_color_checks import run_checks
+from color import composite
 
 TOK='../../packages/tokens/tokens'
 prim=json.load(open(f'{TOK}/primitives/color.json'))['color']
@@ -27,8 +28,9 @@ for mode in ('light','dark'):
         if isinstance(v,list): continue  # shadow layers are not part of the contrast checks
         M.setdefault(path,{})[mode]=to_ref(v)
 
-def hx(r):
-    if r.startswith('#'): return r
+SURFACE={'light':'neutral.50','dark':'neutral.950'}
+def hx(r,mode):
+    if r.startswith('#'): return composite(r,HEX[SURFACE[mode]]) if len(r)==9 else r  # translucent literal (e.g. transparent subtle) reads as the surface
     if r not in HEX: sys.exit(f'unknown primitive {r}')
     return HEX[r]
 

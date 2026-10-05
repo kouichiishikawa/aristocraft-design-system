@@ -39,19 +39,19 @@ test('css counts: 272 primitives, light and dark declare the same names twice fo
   assert.equal(declared(css.primitives).length, 272);
   const l = declared(css.light);
   const d = declared(css.dark);
-  assert.equal(l.length, 191);
-  assert.equal(d.length, 382, 'dark = data-theme block + prefers-color-scheme block');
+  assert.equal(l.length, 259); // 255 colours + 4 shadows (2026-10-05: hovered / pressed for subtle and default)
+  assert.equal(d.length, 518, 'dark = data-theme block + prefers-color-scheme block');
   assert.deepEqual([...new Set(d)].sort(), [...l].sort());
   assert.match(css.dark, /\[data-theme="dark"\]/);
   assert.match(css.dark, /@media \(prefers-color-scheme: dark\)/);
 });
 
-test('flat json: 524 public names (dark merged as a mode), themed entries carry light and dark', () => {
+test('flat json: 592 public names (dark merged as a mode), themed entries carry light and dark', () => {
   const names = Object.keys(flat);
-  assert.equal(names.length, 524);
+  assert.equal(names.length, 592);
   assert.ok(!names.some((n) => n.includes('$root')));
   const themed = names.filter((n) => flat[n].$set === 'semantic/color.light');
-  assert.equal(themed.length, 191);
+  assert.equal(themed.length, 259);
   for (const n of themed) assert.deepEqual(Object.keys(flat[n].$value), ['light', 'dark'], n);
   assert.equal(flat['color.text.brand'].$ref.light, '{color.blue.700}');
   assert.ok(figma.collections.some((c) => c.variables.some((v) => v.name === 'Color/Text/Brand')), 'Figma names are Title Case');
@@ -74,7 +74,7 @@ test('figma json: aliases resolve, styles and skips are accounted for', () => {
   const layerVars = [...names].filter((n) => /^Elevation\/Shadow\/.*\/Layer \d$/.test(n)).length;
   assert.equal(layerVars, 8, 'shadow layers become themed colour variables');
   const total = names.size - layerVars + figma.textStyles.length + figma.effectStyles.light.length + figma.skipped.length;
-  assert.equal(total, 524, 'every public name is a variable, a style, or an explicit skip');
+  assert.equal(total, 592, 'every public name is a variable, a style, or an explicit skip');
   for (const c of figma.collections) for (const v of c.variables) {
     assert.ok(Array.isArray(v.scopes), `${v.name} scopes`);
     assert.match(v.codeSyntax, /^var\(--[a-z0-9-]+\)$/, `${v.name} codeSyntax`);
