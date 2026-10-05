@@ -26,8 +26,8 @@ const SPEC = {
   shapes: { rounded: null, pill: 'dimension/radius/full' }, // null = per-size rounded token
   states: ['default', 'hovered', 'pressed', 'focused', 'disabled', 'loading'],
   disabled: { fill: 'color/background/disabled', text: 'color/text/disabled' },
-  // focused: the "Focus Ring" component set (figma/focus-ring-stage.js), variant chosen by the button's corner radius
-  focus: { ring: 'Focus Ring', radius: { 'dimension/radius/200': '8', 'dimension/radius/300': '12', 'dimension/radius/full': 'Full' }, inset: 2 },
+  // focused: the single "Focus Ring" component (figma/focus-ring-stage.js); the instance's corner radius = button radius + inset
+  focus: { ring: 'Focus Ring', radius: { 'dimension/radius/200': 8, 'dimension/radius/300': 12, 'dimension/radius/full': 9999 }, inset: 2 },
   loadingOpacity: 'opacity/64',
   label: 'Button',
   icon: 'icon/arrow-right',
@@ -75,8 +75,8 @@ const spinnerSet = spinnerPage.findOne((n) => n.type === 'COMPONENT_SET' && n.na
 if (!spinnerSet) throw new Error('Spinner set missing: run figma/spinner-stage.js first');
 const focusPage = figma.root.children.find((p) => p.name === SPEC.focus.ring);
 await figma.setCurrentPageAsync(focusPage);
-const focusSet = focusPage.findOne((n) => n.type === 'COMPONENT_SET' && n.name === SPEC.focus.ring);
-if (!focusSet) throw new Error('Focus Ring set missing: run figma/focus-ring-stage.js first');
+const focusComp = focusPage.findOne((n) => n.type === 'COMPONENT' && n.name === SPEC.focus.ring);
+if (!focusComp) throw new Error('Focus Ring component missing: run figma/focus-ring-stage.js first');
 await figma.setCurrentPageAsync(page);
 const old = page.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Button'); if (old) old.remove();
 const paint = (name) => figma.variables.setBoundVariableForPaint({ type: 'SOLID', color: { r: 0, g: 0, b: 0 } }, 'color', v(name));
@@ -88,10 +88,11 @@ const iconInstance = (sizeVariant, glyphName, layerName) => {
   inst.setProperties({ [glyphProp]: glyphs[glyphName] });
   return inst;
 };
-// focused: Focus Ring instance over the whole button, 2px larger on every side, stretching with it
-const focusRing = (c, radiusValue) => {
-  const ring = focusSet.children.find((n) => n.name === 'Radius=' + radiusValue).createInstance();
+// focused: Focus Ring instance over the whole button, 2px larger on every side, stretching with it; radius = button + inset
+const focusRing = (c, radiusPx) => {
+  const ring = focusComp.createInstance();
   ring.name = SPEC.focus.ring;
+  ring.cornerRadius = radiusPx >= 9999 ? 9999 : radiusPx + SPEC.focus.inset;
   c.appendChild(ring);
   ring.layoutPositioning = 'ABSOLUTE';
   ring.x = -SPEC.focus.inset; ring.y = -SPEC.focus.inset;
@@ -201,31 +202,32 @@ for (const c of set.children) {
 }
 return out;`;
 
-// `--swap-focus`: in-place update of an existing Button set — drop the two drop-shadow effects of every State=Focused variant
-// and add a Focus Ring instance (variant by corner radius) absolutely positioned 2px outside the button.
+// `--swap-focus`: in-place update of an existing Button set — drop the two drop-shadow effects of every State=Focused variant,
+// remove any earlier Focus Ring instance, and add one from the single Focus Ring component, absolutely positioned 2px outside
+// the button with the corner radius overridden to button radius + 2.
 const swapFocus = String.raw`
 const INSET = __INSET__;
 const out = { swapped: [], skipped: [] };
 const focusPage = figma.root.children.find((p) => p.name === 'Focus Ring');
 await figma.setCurrentPageAsync(focusPage);
-const focusSet = focusPage.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Focus Ring');
+const focusComp = focusPage.findOne((n) => n.type === 'COMPONENT' && n.name === 'Focus Ring');
+if (!focusComp) throw new Error('Focus Ring component missing: run figma/focus-ring-stage.js first');
 const page = figma.root.children.find((p) => p.name === 'Button');
 await figma.setCurrentPageAsync(page);
 const set = page.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Button');
 for (const c of set.children) {
   if (!c.name.includes('State=Focused')) continue;
-  if (c.children.some((n) => n.type === 'INSTANCE' && n.mainComponent?.parent?.name === 'Focus Ring')) { out.skipped.push(c.name); continue; }
-  const value = c.topLeftRadius >= 9999 ? 'Full' : String(c.topLeftRadius);
-  const variant = focusSet.children.find((n) => n.name === 'Radius=' + value);
-  if (!variant) { out.skipped.push(c.name + ': no Focus Ring for radius ' + c.topLeftRadius); continue; }
+  for (const old of c.children.filter((n) => n.type === 'INSTANCE' && n.name === 'Focus Ring')) old.remove();
   c.effects = []; c.clipsContent = false;
-  const ring = variant.createInstance(); ring.name = 'Focus Ring';
+  const radius = c.topLeftRadius >= 9999 ? 9999 : c.topLeftRadius + INSET;
+  const ring = focusComp.createInstance(); ring.name = 'Focus Ring';
+  ring.cornerRadius = radius;
   c.appendChild(ring);
   ring.layoutPositioning = 'ABSOLUTE';
   ring.x = -INSET; ring.y = -INSET;
   ring.resize(c.width + INSET * 2, c.height + INSET * 2);
   ring.constraints = { horizontal: 'STRETCH', vertical: 'STRETCH' };
-  out.swapped.push(c.name + ' → Radius=' + value);
+  out.swapped.push(c.name + ' → r' + radius);
 }
 return out;`;
 

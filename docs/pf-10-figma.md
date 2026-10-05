@@ -83,7 +83,7 @@
 
 ## Focus Ring ページ（2026-10-05 追加）
 
-`node packages/ui/figma/focus-ring-stage.js` で生成。セット `Focus Ring`（`Radius = 8 / 12 / Full`、ストローク外側 2px を `Border/Width/Focused` と `Color/Border/Focused` に束縛、角丸は内側 + 2）。設計は `docs/components/focus-ring.md`。Button の Focused 6 variant は `node packages/ui/figma/button-stage.js --swap-focus` で影 2 段を外してこの部品を絶対配置した。
+`node packages/ui/figma/focus-ring-stage.js` で生成。部品 `Focus Ring` 1 つ（variant なし、角丸 0。ストローク外側 2px を `Border/Width/Focused` と `Color/Border/Focused` に束縛）。角丸は当てる要素で変わるので、置く側のインスタンスで「要素 + 2px」に上書きする（本人決定 2026-10-05。最初に作った `Radius = 8 / 12 / Full` のセットは `Focus Ring (old)` として残っているので手で削除）。設計は `docs/components/focus-ring.md`。Button の Focused 6 variant は `node packages/ui/figma/button-stage.js --swap-focus` で影 2 段を外してこの部品を絶対配置し、角丸 10 / 14 / 9999 を上書きした。
 
 ## 残り（PF-10 のもう半分）
 

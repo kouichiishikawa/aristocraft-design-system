@@ -25,8 +25,8 @@
 
 ## Figma
 
-`node packages/ui/figma/focus-ring-stage.js` → `use_figma`。`Focus Ring` ページのセット `Focus Ring`、variant は **内側の要素の角丸**で選ぶ: `Radius = 8`（Button rounded sm）/ `12`（rounded md・lg）/ `Full`（pill）。中身は 40×40 の空フレーム、塗りなし、ストローク **外側** 2px（幅 `Border/Width/Focused`、色 `Color/Border/Focused` に束縛）、角丸 10 / 14 / 9999（実値）。
+`node packages/ui/figma/focus-ring-stage.js` → `use_figma`。`Focus Ring` ページの **部品 1 つ**（variant なし、本人決定 2026-10-05: 角丸は当てる要素で変わるので部品側では持たない）。中身は 40×40 の空フレーム、塗りなし、**角丸 0**、ストローク **外側** 2px（幅 `Border/Width/Focused`、色 `Color/Border/Focused` に束縛）。
 
-使い方: 対象の上に **絶対配置**（auto-layout の中では `layoutPositioning = ABSOLUTE`）、対象より上下左右 2px 大きく（x −2, y −2, 幅 +4, 高さ +4）、constraints は左右・上下とも **伸縮**。ストロークが外側なので、対象との隙間 2px → リング 2px になる。親の `clipsContent` は off。角丸の段が増えたら variant を足す（`focus-ring-stage.js` の `radii`）。
+使い方: 対象の上に **絶対配置**（auto-layout の中では `layoutPositioning = ABSOLUTE`）、対象より上下左右 2px 大きく（x −2, y −2, 幅 +4, 高さ +4）、constraints は左右・上下とも **伸縮**、そして **インスタンスの角丸を「対象の角丸 + 2px」に上書き**する（Button rounded sm 8 → 10、md / lg 12 → 14、pill → 9999）。ストロークが外側なので、対象との隙間 2px → リング 2px になる。親の `clipsContent` は off。
 
-Button の Focused variant はこの部品を置く（`node packages/ui/figma/button-stage.js --swap-focus` で既存セットの影 2 段を差し替え、再生成時は `button-stage.js` が自動で置く）。
+Button の Focused variant はこの部品を置く（`node packages/ui/figma/button-stage.js --swap-focus` で既存セットの影 2 段を差し替え、角丸も自動で上書き。再生成時は `button-stage.js` が同じことをする）。
