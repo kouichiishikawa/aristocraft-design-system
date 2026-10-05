@@ -6,6 +6,7 @@
 |---|---|
 | 基本セット | **Lucide**（`lucide-react` 1.48、ISC）。24px グリッド、2px ストローク、丸端 |
 | アニメーション | **animateicons.in の Lucide 版**（`@animateicons/react`、MIT、Motion で動く。Lucide 全体ではなく 669 個の部分集合）を、動きが必要な部品にだけ個別採用する。採用したものは `packages/ui/icons.json` の `animated` に理由つきで列挙 |
+| ローディング | アイコンではなく **Spinner 部品**（loading-ui の dots-ring、`docs/components/spinner.md`、2026-10-05）。`loader-circle` はアイコンとして残すが Button の loading には使わない |
 | ブランドロゴ | **Simple Icons**（`simple-icons` 16.33、CC0）。Lucide はブランドロゴを持たない方針を明文化している。CC0 はコードに対してで、各社の商標ガイドラインは別（`guidelines` フィールドを確認）。**例外: LinkedIn** は Simple Icons から削除済み（本家の要請）で公式配布は PNG のみのため、Font Awesome Free 6 の `linkedin`（CC BY 4.0）を `packages/ui/icons/brand/linkedin.json` に置いて使う |
 | サイズ | `dimension.size` の 300 / 400 / 600 / 800 / 1200 = 12 / 16 / 24 / 32 / 48px（`xs` / `sm` / `md` / `lg` / `xl`、既定 md = 24。2026-09-30 に 5 段へ変更）。ストローク幅は Lucide 既定どおりサイズに比例して縮む。**ブランドロゴは 24 の枠に対して 20/24**（viewBox `-2.4 -2.4 28.8 28.8`）で描き、線画の Lucide と光学的に揃える |
 | 色 | `currentColor`。親の `color` を `--ac-color-icon-*` で指定する。Figma は `color/icon/default` に束縛 |

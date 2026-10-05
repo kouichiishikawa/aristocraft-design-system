@@ -1,0 +1,57 @@
+/* loading-ui "dots-ring" (MIT) at token sizes. Design: docs/components/spinner.md.
+   Geometry from the original: dot diameter 0.2 × size, ring radius 0.34 × size, 8 dots, pulse 1 s linear,
+   each dot offset by 1/8 of the period. The period is component-specific (not a motion token). */
+.spinner {
+  --spinner-size: var(--ac-dimension-size-600);
+  --spinner-duration: 1s;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+  vertical-align: middle;
+}
+.spinner[data-size='xs'] { --spinner-size: var(--ac-dimension-size-300); }
+.spinner[data-size='sm'] { --spinner-size: var(--ac-dimension-size-400); }
+.spinner[data-size='md'] { --spinner-size: var(--ac-dimension-size-600); }
+.spinner[data-size='lg'] { --spinner-size: var(--ac-dimension-size-800); }
+.spinner[data-size='xl'] { --spinner-size: var(--ac-dimension-size-1200); }
+
+/* Dot i sits at 45° × i on the ring (rotate about the centre, then push outwards); the pulse scales the inner circle. */
+.dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(var(--spinner-size) * 0.2);
+  height: calc(var(--spinner-size) * 0.2);
+  margin: calc(var(--spinner-size) * -0.1);
+  transform: rotate(calc(var(--i) * 45deg)) translateY(calc(var(--spinner-size) * -0.34));
+}
+.dot::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse var(--spinner-duration) linear infinite;
+  animation-delay: calc(var(--spinner-duration) / 8 * (var(--i) - 8));
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.25; transform: scale(0.65); }
+  12.5% { opacity: 1; transform: scale(1); }
+  25% { opacity: 0.75; transform: scale(0.85); }
+  50% { opacity: 0.35; transform: scale(0.7); }
+}
+
+/* No motion: freeze one frame of the pulse (the same frame the Figma component shows). opacity tokens 100 / 80 / 64 / 40 / 32 / 24. */
+@media (prefers-reduced-motion: reduce) {
+  .dot::before { animation: none; opacity: var(--ac-opacity-24); }
+  .dot:nth-child(8)::before { opacity: var(--ac-opacity-100); }
+  .dot:nth-child(7)::before { opacity: var(--ac-opacity-80); }
+  .dot:nth-child(6)::before { opacity: var(--ac-opacity-64); }
+  .dot:nth-child(5)::before { opacity: var(--ac-opacity-40); }
+  .dot:nth-child(4)::before,
+  .dot:nth-child(3)::before { opacity: var(--ac-opacity-32); }
+}

@@ -55,3 +55,11 @@
 **Rule**: 正本は tokens JSON の 1 系統。生成器は再設計用、CI は JSON を読む検査だけにする（semantic_color_check.py）
 **Verification**: JSON を 1 行変えた PR が検査だけで通ること（PR #1）
 **Applies to**: all projects
+
+### [2026-10-05] [success] 生成規則を変える前に、変更前の生成器が正本を再現できるか確かめる
+
+**Mistake**: なし（予防）。palette_build.py の L 規則を変える前に、HEAD の生成器を一時ディレクトリで走らせて committed の palette.json と hex 差分 0 を確認してから着手した
+**Root cause**: 生成器と正本が乖離していると、規則変更の差分に「乖離の修正」が混ざって本人判断の範囲を超える
+**Rule**: 生成器を触る変更は ①旧生成器で再現（差分 0）→ ②規則変更 → ③差分が意図した項目だけか一覧で確認、の順で進める。Figma への再投入は `stage.js --changed-since <ref>` で差分だけ送る（50k 上限にも収まる）
+**Verification**: 変更前後の JSON をフラットにして added / removed / changed の一覧を出す（このセッションの semantic 差分確認スクリプト）
+**Applies to**: all projects

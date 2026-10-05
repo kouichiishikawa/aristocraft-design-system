@@ -71,7 +71,15 @@
 
 各見本（幅 136）: 色面 136×64（塗りを Primitives の `Color/{Hue}/{Step}` に束縛、角丸は `Dimension/Radius/200`）と文字 4 行 — 段（`Font/Label/SM`）、Hex（`Font/Label/Mono/XS`）、OKLCH `L .573 C .204 H 262.6`（`color.json` の `ac.oklch`）、WCAG 2.2 コントラスト比 `50 4.24 · 950 4.16`（neutral 50 上 · neutral 950 上。生成スクリプト内で計算。alpha 段は下地に合成した色と下地の比 `on 50 1.28`、OKLCH の代わりに `α 11.6% → #DDDBD9` を表示）。文字色は `Color/Text/Default / Subtle / Subtlest`。Hex・OKLCH・比は生成時の文字列なので、トークンを変えたら再生成する（色面は変数束縛なので自動で追従）。
 
-再投入: 既存の `Palette` フレームは `Palette (old)` に改名して残す（スクリプトは削除しない）。新しいフレームは右隣に作られるので、見比べてから古いものを手で削除する。
+再投入: 既存の `Palette` フレームは `Palette (old)` に改名して残す（スクリプトは削除しない）。新しいフレームは右隣に作られるので、見比べてから古いものを手で削除する。2026-10-05 のパレット改訂（docs/pf-08-tokens.md）で再投入済み: `Palette (old)`（61:3）は改訂前、`Palette`（69:2）が現行。
+
+## 変更分だけ再投入する（2026-10-05 追加）
+
+`node figma/stage.js <collection> --changed-since <git-ref>` で、その ref の `dist/figma/variables.json` と比べて新規・変更のある変数だけを出す（例: `--changed-since HEAD~1`）。パレット改訂では Primitives 44 件、Semantic - Color 125 件（新規 68 + 更新 57）をそれぞれ 1 回の `use_figma` で投入した。投入後の変数は 564（Primitives 265 / Color 263 / Typography 3 / Layout 30 / Border 3）、重複なし。
+
+## Spinner ページ（2026-10-05 追加）
+
+`node packages/ui/figma/spinner-stage.js` で生成。セット `Spinner`（Size 5 段を `Dimension/Size` に束縛、点 8 つは `Color/Icon/Default` と `Opacity/*` に束縛）。設計は `docs/components/spinner.md`。Button の Loading 6 variant は `node packages/ui/figma/button-stage.js --swap-spinner` で Icon Before の `Icon/Loader Circle` を `Spinner` インスタンスに差し替えた（セットは再生成せず、本人の手直しを保持）。
 
 ## 残り（PF-10 のもう半分）
 

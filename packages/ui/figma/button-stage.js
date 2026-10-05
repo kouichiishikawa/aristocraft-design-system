@@ -1,6 +1,7 @@
 // Prints the `use_figma` script that builds the Button component set on the "Button" page (one page per component).
 //   node figma/button-stage.js                      → all variants
 //   node figma/button-stage.js --variants default   → only the listed variants (comma separated)
+//   node figma/button-stage.js --swap-spinner       → keep the existing set, only swap the Loading icon for the Spinner component
 // Figma naming is Title Case with spaces (props "Icon Before", values "Medium", layers "Label"); code keeps camelCase.
 // Design: docs/components/button.md. variant 5 × size 3 × shape 2 × state 6 = 180 variants, every value bound
 // to a variable or text style. Re-run after changing the SPEC below.
@@ -14,11 +15,12 @@ const SPEC = {
     link:      [null, 'color/background/neutral/subtlest', 'color/background/neutral/subtle', 'color/text/brand', null],
     danger:    ['color/background/status/error/bold', 'color/background/status/error/bold/hovered', 'color/background/status/error/bold/pressed', 'color/text/static/white', null],
   },
-  // height token, padding-inline token, gap token, text style, icon size (Icon set: sm 16 / md 24), rounded radius token
+  // height token, padding-inline token, gap token, text style, icon size (Icon / Spinner sets: sm 16 / md 24), rounded radius token
+  // 2026-10-05 (Figma is the source for these): gap is space.100 for every size, sm shares label.md with md.
   sizes: {
-    sm: ['dimension/size/800', 'dimension/space/300', 'dimension/space/100', 'font/label/sm', 'sm', 'dimension/radius/200'],
-    md: ['dimension/size/1000', 'dimension/space/400', 'dimension/space/200', 'font/label/md', 'sm', 'dimension/radius/300'],
-    lg: ['dimension/size/1200', 'dimension/space/500', 'dimension/space/200', 'font/label/lg', 'md', 'dimension/radius/300'],
+    sm: ['dimension/size/800', 'dimension/space/300', 'dimension/space/100', 'font/label/md', 'sm', 'dimension/radius/200'],
+    md: ['dimension/size/1000', 'dimension/space/400', 'dimension/space/100', 'font/label/md', 'sm', 'dimension/radius/300'],
+    lg: ['dimension/size/1200', 'dimension/space/500', 'dimension/space/100', 'font/label/lg', 'md', 'dimension/radius/300'],
   },
   shapes: { rounded: null, pill: 'dimension/radius/full' }, // null = per-size rounded token
   states: ['default', 'hovered', 'pressed', 'focused', 'disabled', 'loading'],
@@ -27,7 +29,7 @@ const SPEC = {
   loadingOpacity: 'opacity/64',
   label: 'Button',
   icon: 'icon/arrow-right',
-  spinner: 'icon/loader-circle',
+  spinner: 'Spinner', // component set on the Spinner page (figma/spinner-stage.js); the loading state shows it where Icon Before sits
 };
 
 const only = process.argv.includes('--variants') ? process.argv[process.argv.indexOf('--variants') + 1].split(',') : null;
@@ -44,7 +46,7 @@ for (const k of Object.keys(SPEC.sizes)) SPEC.sizes[k] = SPEC.sizes[k].map((x, i
 SPEC.shapes = Object.fromEntries(Object.entries(SPEC.shapes).map(([k, x]) => [k, fig(x)]));
 SPEC.disabled = { fill: fig(SPEC.disabled.fill), text: fig(SPEC.disabled.text) };
 SPEC.focus = { ring: fig(SPEC.focus.ring), gap: fig(SPEC.focus.gap) };
-SPEC.loadingOpacity = fig(SPEC.loadingOpacity); SPEC.icon = fig(SPEC.icon); SPEC.spinner = fig(SPEC.spinner);
+SPEC.loadingOpacity = fig(SPEC.loadingOpacity); SPEC.icon = fig(SPEC.icon);
 SPEC.borderWidth = fig('border/width/default'); SPEC.linkPressedText = fig('color/text/brand/bold');
 
 const script = String.raw`
@@ -64,7 +66,11 @@ const iconsPage = figma.root.children.find((p) => p.name === 'Icons');
 await figma.setCurrentPageAsync(iconsPage);
 const iconSet = iconsPage.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Icon');
 const glyphProp = Object.keys(iconSet.componentPropertyDefinitions).find((k) => k.startsWith('Glyph'));
-const glyphs = Object.fromEntries(iconsPage.findAll((n) => n.type === 'COMPONENT' && (n.name === SPEC.icon || n.name === SPEC.spinner)).map((n) => [n.name, n.id]));
+const glyphs = Object.fromEntries(iconsPage.findAll((n) => n.type === 'COMPONENT' && n.name === SPEC.icon).map((n) => [n.name, n.id]));
+const spinnerPage = figma.root.children.find((p) => p.name === SPEC.spinner);
+await figma.setCurrentPageAsync(spinnerPage);
+const spinnerSet = spinnerPage.findOne((n) => n.type === 'COMPONENT_SET' && n.name === SPEC.spinner);
+if (!spinnerSet) throw new Error('Spinner set missing: run figma/spinner-stage.js first');
 await figma.setCurrentPageAsync(page);
 const old = page.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Button'); if (old) old.remove();
 const paint = (name) => figma.variables.setBoundVariableForPaint({ type: 'SOLID', color: { r: 0, g: 0, b: 0 } }, 'color', v(name));
@@ -74,6 +80,12 @@ const iconInstance = (sizeVariant, glyphName, layerName) => {
   const inst = variant.createInstance();
   inst.name = layerName;
   inst.setProperties({ [glyphProp]: glyphs[glyphName] });
+  return inst;
+};
+// loading: the Spinner set's variant of the same size as the icon (Small 16 / Medium 24)
+const spinnerInstance = (sizeVariant) => {
+  const inst = spinnerSet.children.find((c) => c.name === 'Size=' + sizeVariant).createInstance();
+  inst.name = SPEC.spinner;
   return inst;
 };
 
@@ -110,7 +122,7 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
         }
         if (state === 'loading') c.setBoundVariable('opacity', v(SPEC.loadingOpacity));
         // children: iconStart (or spinner when loading), label, iconEnd
-        const start = iconInstance(iconSize, state === 'loading' ? SPEC.spinner : SPEC.icon, N.props.iconBefore);
+        const start = state === 'loading' ? spinnerInstance(iconSize) : iconInstance(iconSize, SPEC.icon, N.props.iconBefore);
         c.appendChild(start); start.visible = state === 'loading'; start.isExposedInstance = true;
         const t = figma.createText(); t.name = N.props.label; t.textStyleId = styles[textStyle].id; t.characters = SPEC.label;
         t.fills = [paint(isDisabled ? SPEC.disabled.text : state === 'pressed' && variant === 'link' ? SPEC.linkPressedText : textColor)];
@@ -151,4 +163,30 @@ set.x = 0; set.y = 0;
 out.created = set.children.length; out.id = set.id; out.props = Object.keys(set.componentPropertyDefinitions);
 return out;`;
 
-process.stdout.write(script.replace('__SPEC__', JSON.stringify(SPEC)));
+// `--swap-spinner`: in-place update of an existing (hand-tuned) Button set — replace the Icon/Loader Circle instance of every
+// State=Loading variant with a Spinner instance of the same size. Nothing else is touched, so manual edits survive.
+const swap = String.raw`
+const WORDS = __WORDS__;
+const out = { swapped: [], skipped: [] };
+const spinnerPage = figma.root.children.find((p) => p.name === 'Spinner');
+await figma.setCurrentPageAsync(spinnerPage);
+const spinnerSet = spinnerPage.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Spinner');
+const page = figma.root.children.find((p) => p.name === 'Button');
+await figma.setCurrentPageAsync(page);
+const set = page.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Button');
+for (const c of set.children) {
+  if (!c.name.includes('State=Loading')) continue;
+  const old = c.children.find((n) => n.type === 'INSTANCE' && n.name !== 'Icon After');
+  if (!old || old.mainComponent?.parent?.name === 'Spinner') { out.skipped.push(c.name); continue; }
+  const word = WORDS[Math.round(old.width)];
+  if (!word) { out.skipped.push(c.name + ': icon width ' + old.width); continue; }
+  const inst = spinnerSet.children.find((n) => n.name === 'Size=' + word).createInstance();
+  inst.name = 'Spinner';
+  c.insertChild(c.children.indexOf(old), inst);
+  old.remove();
+  out.swapped.push(c.name + ' → ' + word);
+}
+return out;`;
+
+if (process.argv.includes('--swap-spinner')) process.stdout.write(swap.replace('__WORDS__', JSON.stringify({ 16: SIZE_WORDS.sm, 24: SIZE_WORDS.md })));
+else process.stdout.write(script.replace('__SPEC__', JSON.stringify(SPEC)));
