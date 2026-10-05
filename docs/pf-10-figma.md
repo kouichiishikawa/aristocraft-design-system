@@ -81,6 +81,10 @@
 
 `node packages/ui/figma/spinner-stage.js` で生成。セット `Spinner`（Size 5 段を `Dimension/Size` に束縛、点 8 つは `Color/Icon/Default` と `Opacity/*` に束縛）。設計は `docs/components/spinner.md`。Button の Loading 6 variant は `node packages/ui/figma/button-stage.js --swap-spinner` で Icon Before の `Icon/Loader Circle` を `Spinner` インスタンスに差し替えた（セットは再生成せず、本人の手直しを保持）。
 
+## Focus Ring ページ（2026-10-05 追加）
+
+`node packages/ui/figma/focus-ring-stage.js` で生成。セット `Focus Ring`（`Radius = 8 / 12 / Full`、ストローク外側 2px を `Border/Width/Focused` と `Color/Border/Focused` に束縛、角丸は内側 + 2）。設計は `docs/components/focus-ring.md`。Button の Focused 6 variant は `node packages/ui/figma/button-stage.js --swap-focus` で影 2 段を外してこの部品を絶対配置した。
+
 ## 残り（PF-10 のもう半分）
 
 主要部品の variant / 状態 / レスポンシブ設計は、PF-04 で部品ライブラリ（React + TS）の構成を決めてから、PF-05 の Button 検証と合わせて進める。

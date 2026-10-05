@@ -2,6 +2,7 @@
 //   node figma/button-stage.js                      → all variants
 //   node figma/button-stage.js --variants default   → only the listed variants (comma separated)
 //   node figma/button-stage.js --swap-spinner       → keep the existing set, only swap the Loading icon for the Spinner component
+//   node figma/button-stage.js --swap-focus         → keep the existing set, only replace the Focused shadows with a Focus Ring instance
 // Figma naming is Title Case with spaces (props "Icon Before", values "Medium", layers "Label"); code keeps camelCase.
 // Design: docs/components/button.md. variant 5 × size 3 × shape 2 × state 6 = 180 variants, every value bound
 // to a variable or text style. Re-run after changing the SPEC below.
@@ -16,16 +17,17 @@ const SPEC = {
     danger:    ['color/background/status/error/bold', 'color/background/status/error/bold/hovered', 'color/background/status/error/bold/pressed', 'color/text/static/white', null],
   },
   // height token, padding-inline token, gap token, text style, icon size (Icon / Spinner sets: sm 16 / md 24), rounded radius token
-  // 2026-10-05 (Figma is the source for these): gap is space.100 for every size, sm shares label.md with md.
+  // 2026-10-05 (Figma is the source for these): gap sm 4 / md 6 / lg 8 (space.100 / 150 / 200), sm shares label.md with md.
   sizes: {
     sm: ['dimension/size/800', 'dimension/space/300', 'dimension/space/100', 'font/label/md', 'sm', 'dimension/radius/200'],
-    md: ['dimension/size/1000', 'dimension/space/400', 'dimension/space/100', 'font/label/md', 'sm', 'dimension/radius/300'],
-    lg: ['dimension/size/1200', 'dimension/space/500', 'dimension/space/100', 'font/label/lg', 'md', 'dimension/radius/300'],
+    md: ['dimension/size/1000', 'dimension/space/400', 'dimension/space/150', 'font/label/md', 'sm', 'dimension/radius/300'],
+    lg: ['dimension/size/1200', 'dimension/space/500', 'dimension/space/200', 'font/label/lg', 'md', 'dimension/radius/300'],
   },
   shapes: { rounded: null, pill: 'dimension/radius/full' }, // null = per-size rounded token
   states: ['default', 'hovered', 'pressed', 'focused', 'disabled', 'loading'],
   disabled: { fill: 'color/background/disabled', text: 'color/text/disabled' },
-  focus: { ring: 'color/border/focused', gap: 'elevation/surface/default' },
+  // focused: the "Focus Ring" component set (figma/focus-ring-stage.js), variant chosen by the button's corner radius
+  focus: { ring: 'Focus Ring', radius: { 'dimension/radius/200': '8', 'dimension/radius/300': '12', 'dimension/radius/full': 'Full' }, inset: 2 },
   loadingOpacity: 'opacity/64',
   label: 'Button',
   icon: 'icon/arrow-right',
@@ -45,7 +47,7 @@ for (const k of Object.keys(SPEC.variants)) SPEC.variants[k] = SPEC.variants[k].
 for (const k of Object.keys(SPEC.sizes)) SPEC.sizes[k] = SPEC.sizes[k].map((x, i) => (i === 4 ? SIZE_WORDS[x] : fig(x)));
 SPEC.shapes = Object.fromEntries(Object.entries(SPEC.shapes).map(([k, x]) => [k, fig(x)]));
 SPEC.disabled = { fill: fig(SPEC.disabled.fill), text: fig(SPEC.disabled.text) };
-SPEC.focus = { ring: fig(SPEC.focus.ring), gap: fig(SPEC.focus.gap) };
+SPEC.focus.radius = Object.fromEntries(Object.entries(SPEC.focus.radius).map(([k, val]) => [fig(k), val]));
 SPEC.loadingOpacity = fig(SPEC.loadingOpacity); SPEC.icon = fig(SPEC.icon);
 SPEC.borderWidth = fig('border/width/default'); SPEC.linkPressedText = fig('color/text/brand/bold');
 
@@ -71,6 +73,10 @@ const spinnerPage = figma.root.children.find((p) => p.name === SPEC.spinner);
 await figma.setCurrentPageAsync(spinnerPage);
 const spinnerSet = spinnerPage.findOne((n) => n.type === 'COMPONENT_SET' && n.name === SPEC.spinner);
 if (!spinnerSet) throw new Error('Spinner set missing: run figma/spinner-stage.js first');
+const focusPage = figma.root.children.find((p) => p.name === SPEC.focus.ring);
+await figma.setCurrentPageAsync(focusPage);
+const focusSet = focusPage.findOne((n) => n.type === 'COMPONENT_SET' && n.name === SPEC.focus.ring);
+if (!focusSet) throw new Error('Focus Ring set missing: run figma/focus-ring-stage.js first');
 await figma.setCurrentPageAsync(page);
 const old = page.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Button'); if (old) old.remove();
 const paint = (name) => figma.variables.setBoundVariableForPaint({ type: 'SOLID', color: { r: 0, g: 0, b: 0 } }, 'color', v(name));
@@ -81,6 +87,17 @@ const iconInstance = (sizeVariant, glyphName, layerName) => {
   inst.name = layerName;
   inst.setProperties({ [glyphProp]: glyphs[glyphName] });
   return inst;
+};
+// focused: Focus Ring instance over the whole button, 2px larger on every side, stretching with it
+const focusRing = (c, radiusValue) => {
+  const ring = focusSet.children.find((n) => n.name === 'Radius=' + radiusValue).createInstance();
+  ring.name = SPEC.focus.ring;
+  c.appendChild(ring);
+  ring.layoutPositioning = 'ABSOLUTE';
+  ring.x = -SPEC.focus.inset; ring.y = -SPEC.focus.inset;
+  ring.resize(c.width + SPEC.focus.inset * 2, c.height + SPEC.focus.inset * 2);
+  ring.constraints = { horizontal: 'STRETCH', vertical: 'STRETCH' };
+  return ring;
 };
 // loading: the Spinner set's variant of the same size as the icon (Small 16 / Medium 24)
 const spinnerInstance = (sizeVariant) => {
@@ -112,14 +129,9 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
         const isDisabled = state === 'disabled';
         const fillTok = isDisabled ? SPEC.disabled.fill : state === 'hovered' ? fillHover : state === 'pressed' ? fillPress : fill;
         c.fills = fillTok ? [paint(fillTok)] : [];
-        if (border && !isDisabled) { c.strokes = [paint(border)]; c.strokeAlign = 'INSIDE'; c.setBoundVariable('strokeWeight', v(SPEC.borderWidth)); }
+        if (border && !isDisabled) { c.strokes = [paint(border)]; c.strokeAlign = 'INSIDE'; for (const k of ['strokeTopWeight', 'strokeRightWeight', 'strokeBottomWeight', 'strokeLeftWeight']) c.setBoundVariable(k, v(SPEC.borderWidth)); }
         else c.strokes = [];
-        if (state === 'focused') { c.clipsContent = false;
-          c.effects = [
-            figma.variables.setBoundVariableForEffect({ type: 'DROP_SHADOW', color: { r: 1, g: 1, b: 1, a: 1 }, offset: { x: 0, y: 0 }, radius: 0, spread: 2, visible: true, blendMode: 'NORMAL' }, 'color', v(SPEC.focus.gap)),
-            figma.variables.setBoundVariableForEffect({ type: 'DROP_SHADOW', color: { r: 0, g: 0, b: 1, a: 1 }, offset: { x: 0, y: 0 }, radius: 0, spread: 4, visible: true, blendMode: 'NORMAL' }, 'color', v(SPEC.focus.ring)),
-          ];
-        }
+        if (state === 'focused') c.clipsContent = false; // the Focus Ring instance (added after the children) sits 2px outside
         if (state === 'loading') c.setBoundVariable('opacity', v(SPEC.loadingOpacity));
         // children: iconStart (or spinner when loading), label, iconEnd
         const start = state === 'loading' ? spinnerInstance(iconSize) : iconInstance(iconSize, SPEC.icon, N.props.iconBefore);
@@ -130,6 +142,7 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
         c.appendChild(t);
         const end = iconInstance(iconSize, SPEC.icon, N.props.iconAfter);
         c.appendChild(end); end.visible = false; end.isExposedInstance = true;
+        if (state === 'focused') focusRing(c, SPEC.focus.radius[radius]);
         variants.push(c);
       }
     }
@@ -188,5 +201,34 @@ for (const c of set.children) {
 }
 return out;`;
 
+// `--swap-focus`: in-place update of an existing Button set — drop the two drop-shadow effects of every State=Focused variant
+// and add a Focus Ring instance (variant by corner radius) absolutely positioned 2px outside the button.
+const swapFocus = String.raw`
+const INSET = __INSET__;
+const out = { swapped: [], skipped: [] };
+const focusPage = figma.root.children.find((p) => p.name === 'Focus Ring');
+await figma.setCurrentPageAsync(focusPage);
+const focusSet = focusPage.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Focus Ring');
+const page = figma.root.children.find((p) => p.name === 'Button');
+await figma.setCurrentPageAsync(page);
+const set = page.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Button');
+for (const c of set.children) {
+  if (!c.name.includes('State=Focused')) continue;
+  if (c.children.some((n) => n.type === 'INSTANCE' && n.mainComponent?.parent?.name === 'Focus Ring')) { out.skipped.push(c.name); continue; }
+  const value = c.topLeftRadius >= 9999 ? 'Full' : String(c.topLeftRadius);
+  const variant = focusSet.children.find((n) => n.name === 'Radius=' + value);
+  if (!variant) { out.skipped.push(c.name + ': no Focus Ring for radius ' + c.topLeftRadius); continue; }
+  c.effects = []; c.clipsContent = false;
+  const ring = variant.createInstance(); ring.name = 'Focus Ring';
+  c.appendChild(ring);
+  ring.layoutPositioning = 'ABSOLUTE';
+  ring.x = -INSET; ring.y = -INSET;
+  ring.resize(c.width + INSET * 2, c.height + INSET * 2);
+  ring.constraints = { horizontal: 'STRETCH', vertical: 'STRETCH' };
+  out.swapped.push(c.name + ' → Radius=' + value);
+}
+return out;`;
+
 if (process.argv.includes('--swap-spinner')) process.stdout.write(swap.replace('__WORDS__', JSON.stringify({ 16: SIZE_WORDS.sm, 24: SIZE_WORDS.md })));
+else if (process.argv.includes('--swap-focus')) process.stdout.write(swapFocus.replace('__INSET__', String(SPEC.focus.inset)));
 else process.stdout.write(script.replace('__SPEC__', JSON.stringify(SPEC)));

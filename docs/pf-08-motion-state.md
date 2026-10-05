@@ -31,7 +31,7 @@
 |---|---|---|---|
 | hover | background.*.hovered（1 段濃く）。カードは translateY −2px + shadow.lifted | transition.feedback | `@media (hover: hover)` のみ。タッチでは適用しない |
 | pressed | background.*.pressed（2 段濃く）。ボタンは scale 0.98 | transition.feedback | 「沈まないボタン」にしない（本人の言葉） |
-| focus-visible | outline: border.width.focused（2px）color.border.focused、outline-offset 2px | transition.feedback | マウス操作では出さない。決して消さない。box-shadow ではなく outline（角形状に追従） |
+| focus-visible | outline: border.width.focused（2px）color.border.focused、outline-offset 2px（空白 2px → リング 2px、リングの角丸は要素 + 2px） | transition.feedback | マウス操作では出さない。決して消さない。box-shadow ではなく outline（角形状に追従）。Figma は `Focus Ring` 部品を絶対配置（docs/components/focus-ring.md、2026-10-05） |
 | selected | background.selected + border.selected（2px）+ text.selected | transition.state | ナビの現在地、タブ、選択行 |
 | disabled | text.disabled / background.disabled / border.disabled。画像・アイコンは opacity.40 | なし | hover / pressed / focus を持たない。cursor: not-allowed。文字に opacity を重ねない |
 | loading | 面を opacity.64、skeleton は background.neutral.subtlest | なし | 高さを確保して CLS を出さない |

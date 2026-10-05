@@ -3,7 +3,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--ac-dimension-space-100); /* 4px for every size (Figma decision 2026-10-05) */
   box-sizing: border-box;
   margin: 0;
   border: 0;
@@ -20,22 +19,26 @@
     color var(--ac-motion-duration-allegro) var(--ac-motion-easing-out-practical);
 }
 
-/* size: height from dimension.size, inset from dimension.space, type from font.label (sm and md share label.md) */
+/* size: height from dimension.size, inset and icon gap from dimension.space, type from font.label (sm and md share label.md).
+   Figma is the source for these values (2026-10-05): gap 4 / 6 / 8. */
 .button[data-size='sm'] {
   min-height: var(--ac-dimension-size-800);
   padding-inline: var(--ac-dimension-space-300);
+  gap: var(--ac-dimension-space-100);
   font-size: var(--ac-font-label-md-font-size);
   line-height: var(--ac-font-label-md-line-height);
 }
 .button[data-size='md'] {
   min-height: var(--ac-dimension-size-1000);
   padding-inline: var(--ac-dimension-space-400);
+  gap: var(--ac-dimension-space-150);
   font-size: var(--ac-font-label-md-font-size);
   line-height: var(--ac-font-label-md-line-height);
 }
 .button[data-size='lg'] {
   min-height: var(--ac-dimension-size-1200);
   padding-inline: var(--ac-dimension-space-500);
+  gap: var(--ac-dimension-space-200);
   font-size: var(--ac-font-label-lg-font-size);
   line-height: var(--ac-font-label-lg-line-height);
 }

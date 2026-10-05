@@ -63,3 +63,11 @@
 **Rule**: 生成器を触る変更は ①旧生成器で再現（差分 0）→ ②規則変更 → ③差分が意図した項目だけか一覧で確認、の順で進める。Figma への再投入は `stage.js --changed-since <ref>` で差分だけ送る（50k 上限にも収まる）
 **Verification**: 変更前後の JSON をフラットにして added / removed / changed の一覧を出す（このセッションの semantic 差分確認スクリプト）
 **Applies to**: all projects
+
+### [2026-10-05] [tooling] Figma の frame / component はストローク幅を 4 辺の key で束縛する
+
+**Mistake**: `node.setBoundVariable('strokeWeight', v)` が例外なく通るのに `boundVariables` に残らず、Focus Ring のストローク幅が未束縛のまま投入された
+**Root cause**: frame 系ノードは辺ごとの太さ（strokeTopWeight …）を持ち、`strokeWeight` への束縛は無視される
+**Rule**: frame / component のストローク幅は `strokeTopWeight / strokeRightWeight / strokeBottomWeight / strokeLeftWeight` の 4 つに束縛する。投入後は `boundVariables` のキーを読み取りで確かめる
+**Verification**: 読み取りスクリプトで `Object.keys(node.boundVariables)` に 4 辺のキーがあること
+**Applies to**: all projects

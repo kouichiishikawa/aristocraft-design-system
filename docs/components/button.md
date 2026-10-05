@@ -17,13 +17,13 @@ Figma: `Button` ページの `Button` セット。部品ごとにページを分
 
 ## 寸法
 
-2026-10-05: 本人が Figma 上で調整した値を正とした（間隔は全サイズ space.100、sm の文字は md と同じ label.md）。`button-stage.js` の SPEC と `Button.module.css` も同じ値。
+2026-10-05: 本人が Figma 上で調整した値を正とした（間隔 4 / 6 / 8、sm の文字は md と同じ label.md）。`button-stage.js` の SPEC と `Button.module.css` も同じ値。
 
 | size | 高さ | 左右余白 | 間隔 | 文字 | アイコン / Spinner |
 |---|---|---|---|---|---|
 | sm | size.800 = 32 | space.300 = 12 | space.100 = 4 | label.md | 16（sm） |
-| md | size.1000 = 40 | space.400 = 16 | space.100 = 4 | label.md | 16（sm） |
-| lg | size.1200 = 48 | space.500 = 20 | space.100 = 4 | label.lg | 24（md） |
+| md | size.1000 = 40 | space.400 = 16 | space.150 = 6 | label.md | 16（sm） |
+| lg | size.1200 = 48 | space.500 = 20 | space.200 = 8 | label.lg | 24（md） |
 
 ## 色（variant × state）
 
@@ -35,7 +35,7 @@ Figma: `Button` ページの `Button` セット。部品ごとにページを分
 | link | background.neutral.subtle（透明） | .hovered + 下線 | .pressed + 下線、文字 text.brand.bold | text.brand | — |
 | danger | background.status.error.bold | .hovered | .pressed | text.static.white | — |
 
-共通: focused = outline 2px（border.width.focused）color.border.focused、offset 2px（Figma は影 2 段で表現）。disabled = 背景 background.disabled + 文字 text.disabled、枠と下線なし、cursor not-allowed。hover は `@media (hover: hover)` のみ。
+共通: focused = 要素から 2px 空けて 2px のリング、角丸は要素 + 2px（docs/components/focus-ring.md。CSS は outline + outline-offset、Figma は `Focus Ring` 部品を絶対配置。2026-10-05 に影 2 段から置き換え）。disabled = 背景 background.disabled + 文字 text.disabled、枠と下線なし、cursor not-allowed。hover は `@media (hover: hover)` のみ。
 
 ## 未決
 

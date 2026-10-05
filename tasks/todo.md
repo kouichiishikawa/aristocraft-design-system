@@ -42,7 +42,8 @@
 - [x] パレット改訂（2026-10-05）: 950 を L 0.25、800 / 900 を 700→950 で等分、alpha を 1 段薄く。Figma の変数と Palette ページを再投入（`stage.js --changed-since`）
 - [x] background を Atlassian 式に（2026-10-05）: neutral.default = 100a 系、subtle = 透明→100a→200a、brand / status / accent は subtle 50 / default 100 に hovered / pressed。dark の text.*.bold は 200。検査 420 全合格
 - [x] Spinner（2026-10-05）: loading-ui dots-ring。React `<Spinner size>`、Figma の Spinner ページ + セット、Button の Loading 6 件を差し替え（docs/components/spinner.md）
-- [x] Button の寸法は Figma を正に（2026-10-05）: 間隔 space.100、sm の文字 label.md。SPEC / CSS / docs を追従
+- [x] Button の寸法は Figma を正に（2026-10-05）: 間隔 sm 4 / md 6 / lg 8（space.100 / 150 / 200）、sm の文字 label.md。SPEC / CSS / docs を追従
+- [x] Focus Ring 部品（2026-10-05）: Atlassian 式（2px 空けて 2px、角丸 +2px）。Figma の Focus Ring ページ + セット、Button の Focused 6 件を影 2 段から差し替え。CSS は outline + offset のまま（docs/components/focus-ring.md）
 - [ ] Button の他 4 variant（primary / secondary / link / danger）を Figma に生成、React の variant 整理と loading prop（PF-13）
 - [ ] 本人: Figma の `Palette (old)` を削除
 - [ ] 主要部品の variant / 状態 / レスポンシブ設計（PF-04 の部品ライブラリ決定後）
