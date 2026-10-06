@@ -1,0 +1,16 @@
+{
+  "name": "@aristocraft/fonts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "aristocraft web fonts: Inter Display (Inter 4.1, OFL) as @font-face for the token family \"Inter Display\"",
+  "license": "OFL-1.1",
+  "files": [
+    "files",
+    "inter-display.css",
+    "LICENSE-Inter.txt"
+  ],
+  "exports": {
+    "./inter-display.css": "./inter-display.css",
+    "./files/*": "./files/*"
+  }
+}

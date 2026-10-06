@@ -1,0 +1,32 @@
+/* Inter Display — the optical-size "Display" cut of Inter 4.1 (rsms/inter, SIL OFL 1.1, LICENSE-Inter.txt).
+   Decision 2026-10-06: the sans family is Inter Display at every size (typography.family.sans), so only these four
+   weights are shipped (typography.weight 400 / 500 / 600 / 700, no italics). Import once at the app root, before
+   @aristocraft/tokens/css. Bundlers (Next.js, Astro, Vite) resolve the relative url() and copy the files. */
+@font-face {
+  font-family: 'Inter Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./files/InterDisplay-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./files/InterDisplay-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./files/InterDisplay-SemiBold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./files/InterDisplay-Bold.woff2') format('woff2');
+}

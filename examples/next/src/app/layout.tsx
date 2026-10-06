@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 // Two stylesheets, once, in the root layout: tokens (CSS variables, light/dark) then component styles.
 import '@aristocraft/tokens/css';
+import '@aristocraft/fonts/inter-display.css';
 import '@aristocraft/ui/styles.css';
 import './globals.css';
 

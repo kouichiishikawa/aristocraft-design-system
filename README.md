@@ -27,6 +27,7 @@
 |---|---|
 | `packages/tokens` | `@aristocraft/tokens`。DTCG の正本 `tokens/` と生成物 `dist/`（CSS 変数 `--ac-*`、TS、JSON、Figma 用 JSON） |
 | `packages/ui` | `@aristocraft/ui`。React 19 + Base UI + CSS Modules の部品。Storybook 10（story = テスト + a11y） |
+| `packages/fonts` | `@aristocraft/fonts`。Inter Display（Inter 4.1、OFL）の `@font-face`。アプリの入口でトークン CSS の前に読み込む |
 | `examples/next` | Next.js 16 の薄いサンプル（サイト側の仮決定） |
 | `examples/astro` | Astro 7 の薄いサンプル（比較用） |
 

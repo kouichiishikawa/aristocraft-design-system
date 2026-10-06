@@ -47,7 +47,7 @@
 - [x] 本人: Figma の `Focus Ring (old)` / `Palette (old)` を削除（2026-10-06）
 - [x] Figma の Text Style 24 件を変数に束縛（family / size / weight、2026-10-06。行の高さと字間は束縛しない）
 - [x] 決定（2026-10-06）: 欧文サンセリフは **Inter Display**（Display グリフのみ）。トークン `typography.family.sans` と docs を更新
-- [ ] Inter Display の配信: Inter 4 の InterDisplay を `@font-face` で examples / Storybook に組み込む（family 名 "Inter Display"）
+- [x] Inter Display の配信（2026-10-06）: `@aristocraft/fonts`（InterDisplay 400 / 500 / 600 / 700 の woff2 + `inter-display.css`）を examples / Storybook で読み込む
 - [x] Button の他 4 variant（primary / secondary / link / danger）を Figma に追加、180 件（2026-10-06。縦 = 種類、横 = state）
 - [ ] React の Button: variant 整理（default / primary / secondary / link / danger）、shape、loading prop（PF-13）
 - [ ] 本人: Figma の `Palette (old)` を削除

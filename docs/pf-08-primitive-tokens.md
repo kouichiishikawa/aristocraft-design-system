@@ -182,7 +182,7 @@ tokens/
 #### family の補足
 
 - Inter と Geist Mono は design-quality.md の「理由なく選ぶと凡庸」リストにあるが、本人指定。理由は可変軸（opsz / wght）の実用性と、Noto Sans JP との混植で字面の癖が衝突しないこと。
-- **2026-10-06 改訂（本人決定、デザインシステム全体の重要決定）**: 欧文サンセリフは **Inter Display**（Inter の光学サイズ Display のグリフ）を本文サイズも含む全サイズで使う。通常の Inter / Inter Variable の既定 opsz には戻さない。CSS の family 名は `Inter Display`（Inter 4 の InterDisplay を `@font-face` で配信。配信の実装は PF-04 の例に追加、todo 参照）。Figma の `Typography/Family/Sans` は本人がローカルフォントの `Inter Display` に設定済み（docs/pf-10-figma.md）。
+- **2026-10-06 改訂（本人決定、デザインシステム全体の重要決定）**: 欧文サンセリフは **Inter Display**（Inter の光学サイズ Display のグリフ）を本文サイズも含む全サイズで使う。通常の Inter / Inter Variable の既定 opsz には戻さない。CSS の family 名は `Inter Display`。配信は `packages/fonts`（`@aristocraft/fonts/inter-display.css`: Inter 4.1 の InterDisplay Regular / Medium / SemiBold / Bold の woff2、`font-display: swap`。examples と Storybook がトークン CSS の前に読み込む）。Figma の `Typography/Family/Sans` は本人がローカルフォントの `Inter Display` に設定済み（docs/pf-10-figma.md）。
 - Noto Sans JP は Google Fonts の unicode-range 分割サブセットで配信し、初期表示は system-ui にフォールバック（FOUT 許容）。
 - Lora は引用・見出しの対比用に限定。本文には使わない。
 
