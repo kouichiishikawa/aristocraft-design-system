@@ -1,15 +1,17 @@
-// Shared `use_figma` snippet for the component page template (decision 2026-10-06, simplified after review):
-//   Header frame  — _Doc/Header instance: Title, Summary, Status badge, Updated, Storybook link
-//   Section "Example"    — a row of representative instances
-//   Section "Components" — the component set itself (moved into the section), with _Doc/Axis row / column labels
-//   Section "Parts"      — instances of the sub-components it uses (omitted when there are none)
-// Sections are Figma SECTION nodes. A *-doc-stage.js script embeds PAGE_LIB and calls `await buildComponentPage(spec)`:
-//   spec = { page, set, header: { status, title, summary, updated, storybook },
-//            example: [{ variant, props }], parts: [{ set, variant, props }], axes: { rows: [[label, y]], cols: [[label, x]] } }
+// Shared `use_figma` snippet for the component page template (decision 2026-10-06, v2 after review):
+//   Header            — _Doc/Header instance spanning the columns: brand rule, system name + Storybook link, Title, Summary, Status / Updated
+//   Column "Example"    — SECTION: _Doc/Banner, then "Mode: Light" / "Mode: Dark" example frames (same rows; the dark frame sets the Dark mode)
+//   Column "Components" — SECTION: _Doc/Banner, _Doc/Chip with the set name, the set itself with _Doc/Axis row / column labels
+//   Column "Parts"      — SECTION: _Doc/Banner, one _Doc/Chip + instance per internal part (omitted when the component has none)
+// Parts = Figma-only building blocks that are not design-system components themselves (Spinner / Focus Ring have their own pages → not parts).
+// A *-doc-stage.js script embeds PAGE_LIB and calls `await buildComponentPage(spec)`:
+//   spec = { page, set, header: { status, title, summary, updated, storybook }, example: [[{ variant, props }, …], …],
+//            parts: [{ label, set, variant, props }], axes: { rows: [[label, y]], cols: [[label, x]] } }
 // Existing Header / sections with the same names are renamed "(old)" (scripts never delete).
 export const PAGE_LIB = String.raw`
 const __vars = await figma.variables.getLocalVariablesAsync();
 const __v = (name) => { const x = __vars.find((y) => y.name === name); if (!x) throw new Error('variable missing: ' + name); return x; };
+const __paint = (name) => figma.variables.setBoundVariableForPaint({ type: 'SOLID', color: { r: 0, g: 0, b: 0 } }, 'color', __v(name));
 const __docPage = figma.root.children.find((p) => p.name === '_Doc');
 const __docIndex = async () => { await figma.setCurrentPageAsync(__docPage); return Object.fromEntries(__docPage.children.filter((n) => n.name.startsWith('_Doc/')).map((n) => [n.name, n])); };
 const __propKey = (node, name) => Object.keys(node.componentProperties ?? {}).find((k) => k === name || k.startsWith(name + '#'));
@@ -20,21 +22,47 @@ const __instance = (doc, name, variant, props) => {
   if (!main) throw new Error(name + ' has no variant ' + variant);
   const inst = main.createInstance(); __setProps(inst, props); return inst;
 };
-// Component sets live on lazily loaded pages: open each page once to resolve them by name.
+const __variantInstance = (set, variant, props) => { const main = set.type === 'COMPONENT_SET' ? set.children.find((c) => c.name === variant) : set; if (!main) throw new Error('variant missing: ' + variant); const inst = main.createInstance(); __setProps(inst, props); return inst; };
+// Component sets live on lazily loaded pages (possibly nested in a section): open each page once to resolve them by name.
 const __resolveSets = async (names) => {
   const found = {};
   for (const p of figma.root.children) {
     if (Object.keys(found).length === names.size) break;
     await figma.setCurrentPageAsync(p);
-    for (const n of p.children) if ((n.type === 'COMPONENT_SET' || n.type === 'COMPONENT') && names.has(n.name) && !found[n.name]) found[n.name] = n;
+    for (const n of names) if (!found[n]) { const hit = p.findOne((x) => (x.type === 'COMPONENT_SET' || x.type === 'COMPONENT') && x.name === n); if (hit) found[n] = hit; }
   }
   for (const n of names) if (!found[n]) throw new Error('component missing: ' + n);
   return found;
 };
-const __row = (name, gapTok) => { const f = figma.createFrame(); f.name = name; f.layoutMode = 'HORIZONTAL'; f.counterAxisAlignItems = 'CENTER'; f.fills = []; f.clipsContent = false; f.primaryAxisSizingMode = 'AUTO'; f.counterAxisSizingMode = 'AUTO'; f.setBoundVariable('itemSpacing', __v(gapTok)); return f; };
+const __frame = (name, dir, gapTok) => { const f = figma.createFrame(); f.name = name; f.layoutMode = dir; f.fills = []; f.clipsContent = false; f.primaryAxisSizingMode = 'AUTO'; f.counterAxisSizingMode = 'AUTO'; if (gapTok) f.setBoundVariable('itemSpacing', __v(gapTok)); return f; };
 const __retire = (page, pred) => { const ids = []; for (const n of page.children.filter(pred)) { n.name = n.name + ' (old)'; ids.push(n.id); } return ids; };
-const __section = (name, x, y, w, h) => { const s = figma.createSection(); s.name = name; s.x = x; s.y = y; s.resizeWithoutConstraints(w, h); return s; };
-const GAP = 80, PAD = 48;
+const __section = (name, x, y, w, h) => { const s = figma.createSection(); s.name = name; s.x = x; s.y = y; s.resizeWithoutConstraints(w, h); s.fills = [__paint('Elevation/Surface/Default')]; return s; };
+const PAD = 48, COL_GAP = 48, HEAD_GAP = 64, BLOCK_GAP = 40, LABEL_GAP = 12, AXIS_W = 80;
+// A column: banner on top, then blocks (each = { chip, node }) stacked; returns the section (height fitted).
+const __column = (page, doc, name, x, y, innerW, banner, blocks) => {
+  const s = __section(name, x, y, innerW + PAD * 2, 100); page.appendChild(s);
+  const b = __instance(doc, '_Doc/Banner', null, banner); s.appendChild(b); b.x = PAD; b.y = PAD; b.resize(innerW, b.height);
+  let cy = PAD + b.height + BLOCK_GAP;
+  for (const blk of blocks) {
+    if (blk.chip) { const c = __instance(doc, '_Doc/Chip', null, { Text: blk.chip }); s.appendChild(c); c.x = PAD + (blk.chipX ?? 0); c.y = cy; cy += c.height + LABEL_GAP; }
+    cy += blk.before ?? 0;
+    s.appendChild(blk.node); blk.node.x = PAD + (blk.x ?? 0); blk.node.y = cy;
+    if (blk.after) blk.after(blk.node);
+    cy += blk.node.height + (blk.gap ?? BLOCK_GAP);
+  }
+  s.resizeWithoutConstraints(innerW + PAD * 2, cy - (blocks.length ? (blocks[blocks.length - 1].gap ?? BLOCK_GAP) : 0) + PAD);
+  return s;
+};
+// Example frame: surface + subtle border, rows of instances. mode = 'Light' | 'Dark' (explicit Semantic - Color mode).
+const __exampleFrame = async (name, set, rows, mode) => {
+  const f = __frame(name, 'VERTICAL', 'Dimension/Space/600'); f.fills = [__paint('Elevation/Surface/Default')];
+  f.strokes = [__paint('Color/Border/Subtle')]; f.strokeAlign = 'INSIDE'; f.strokeWeight = 1;
+  for (const k of ['topLeftRadius', 'topRightRadius', 'bottomLeftRadius', 'bottomRightRadius']) f.setBoundVariable(k, __v('Dimension/Radius/300'));
+  for (const k of ['paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft']) f.setBoundVariable(k, __v('Dimension/Space/800'));
+  for (const row of rows) { const r = __frame('Row', 'HORIZONTAL', 'Dimension/Space/400'); r.counterAxisAlignItems = 'CENTER'; f.appendChild(r); for (const e of row) r.appendChild(__variantInstance(set, e.variant, e.props)); }
+  if (mode === 'Dark') { const col = (await figma.variables.getLocalVariableCollectionsAsync()).find((c) => c.name === 'Semantic - Color'); const m = col.modes.find((x) => x.name === 'Dark'); f.setExplicitVariableModeForCollection(col, m.modeId); }
+  return f;
+};
 async function buildComponentPage(spec) {
   const names = new Set([spec.set, ...(spec.parts ?? []).map((p) => p.set)]);
   const sets = await __resolveSets(names);
@@ -42,35 +70,44 @@ async function buildComponentPage(spec) {
   const page = figma.root.children.find((p) => p.name === spec.page); if (!page) throw new Error('page missing: ' + spec.page);
   await figma.setCurrentPageAsync(page);
   const out = { renamed: [] };
-  out.renamed.push(...__retire(page, (n) => (n.type === 'FRAME' && (n.name === 'Header' || n.name === spec.page)) || (n.type === 'SECTION' && ['Example', 'Components', 'Parts'].includes(n.name)) || n.name === 'Axes'));
+  out.renamed.push(...__retire(page, (n) => ((n.type === 'FRAME' || n.type === 'INSTANCE') && (n.name === 'Header' || n.name === spec.page)) || (n.type === 'SECTION' && ['Example', 'Components', 'Parts'].includes(n.name)) || n.name === 'Axes'));
   const set = sets[spec.set];
-  const width = Math.max(1280, set.width + PAD * 2);
-  let y = 0;
   const h = spec.header;
-  const header = __instance(doc, '_Doc/Header', 'Status=' + (h.status ?? 'Draft'), { Title: h.title, Summary: h.summary, Updated: 'Updated ' + h.updated, Storybook: 'Storybook: ' + h.storybook });
-  page.appendChild(header); header.name = 'Header'; header.x = 0; header.y = y; header.resize(width, header.height);
-  y += header.height + GAP;
-  const example = __section('Example', 0, y, width, 100); page.appendChild(example);
-  const exRow = __row('Example', 'Dimension/Space/600'); example.appendChild(exRow); exRow.x = PAD; exRow.y = PAD;
-  for (const e of spec.example ?? []) { const main = set.type === 'COMPONENT_SET' ? set.children.find((c) => c.name === e.variant) : set; if (!main) throw new Error('variant missing: ' + e.variant); const inst = main.createInstance(); __setProps(inst, e.props); exRow.appendChild(inst); }
-  example.resizeWithoutConstraints(width, exRow.height + PAD * 2);
-  y += example.height + GAP;
-  const comps = __section('Components', 0, y, width, 100); page.appendChild(comps);
-  comps.appendChild(set); set.x = PAD; set.y = PAD;
+  // --- Example column
+  const light = await __exampleFrame('Light', set, spec.example ?? [], 'Light');
+  const dark = await __exampleFrame('Dark', set, spec.example ?? [], 'Dark');
+  page.appendChild(light); page.appendChild(dark);
+  const exW = Math.max(560, light.width, dark.width);
+  const fit = (n) => { n.layoutSizingHorizontal = 'FIXED'; n.resize(exW, n.height); };
+  // --- Components column: chip + set (room for row axis labels on the left)
+  const compInnerW = AXIS_W + set.width;
+  // --- Parts column
+  const parts = (spec.parts ?? []).map((p) => { const inst = __variantInstance(sets[p.set], p.variant, p.props); inst.layoutSizingHorizontal = 'FIXED'; inst.layoutSizingVertical = 'FIXED'; return { chip: p.label, node: inst }; });
+  const partsInnerW = parts.length ? Math.max(320, ...parts.map((p) => p.node.width)) : 0;
+  const totalW = (exW + PAD * 2) + COL_GAP + (compInnerW + PAD * 2) + (parts.length ? COL_GAP + partsInnerW + PAD * 2 : 0);
+  // --- Header
+  const header = __instance(doc, '_Doc/Header', 'Status=' + (h.status ?? 'Draft'), { Title: h.title, Summary: h.summary, Updated: h.updated, Storybook: 'Storybook ↗' });
+  page.appendChild(header); header.name = 'Header'; header.x = 0; header.y = 0; header.resize(totalW, header.height);
+  if (h.storybook) { const t = header.findOne((n) => n.type === 'TEXT' && n.name === 'Storybook'); if (t) { await figma.loadFontAsync(t.fontName); t.hyperlink = { type: 'URL', value: h.storybook }; } }
+  let x = 0; const y = header.height + HEAD_GAP;
+  const ex = __column(page, doc, 'Example', x, y, exW, { Title: 'Example', Description: 'そのまま貼って使える作例。Light / Dark はモードで切り替わる。' }, [
+    { chip: 'Mode: Light', node: light, after: fit, gap: BLOCK_GAP },
+    { chip: 'Mode: Dark', node: dark, after: fit },
+  ]);
+  x += ex.width + COL_GAP;
   const A = spec.axes;
-  if (A) {
-    for (const [label, x] of A.cols) { const t = __instance(doc, '_Doc/Axis', null, { Text: label }); comps.appendChild(t); t.x = PAD + x; t.y = PAD - 20; }
-    for (const [label, ry] of A.rows) { const t = __instance(doc, '_Doc/Axis', null, { Text: label }); comps.appendChild(t); t.x = PAD - t.width - 12; t.y = PAD + ry; }
+  const comps = __column(page, doc, 'Components', x, y, compInnerW, { Title: 'Components', Description: 'このコンポーネントの全 variant。縦 = 種類、横 = state。' }, [
+    { chip: spec.set, node: set, x: AXIS_W, before: 24, after: (n) => {
+      if (!A) return;
+      for (const [label, cx] of A.cols) { const t = __instance(doc, '_Doc/Axis', null, { Text: label }); n.parent.appendChild(t); t.x = n.x + cx; t.y = n.y - 20; }
+      for (const [label, ry] of A.rows) { const t = __instance(doc, '_Doc/Axis', null, { Text: label }); n.parent.appendChild(t); t.x = n.x - t.width - LABEL_GAP; t.y = n.y + ry; }
+    } },
+  ]);
+  x += comps.width + COL_GAP;
+  out.header = header.id; out.example = ex.id; out.components = comps.id; out.width = totalW;
+  if (parts.length) {
+    const ps = __column(page, doc, 'Parts', x, y, partsInnerW, { Title: 'Parts', Description: 'このコンポーネントを組み立てるための Figma 専用の部品。単体のコンポーネントではない。' }, parts);
+    out.parts = ps.id;
   }
-  comps.resizeWithoutConstraints(width, set.height + PAD * 2);
-  y += comps.height + GAP;
-  if (spec.parts?.length) {
-    const parts = __section('Parts', 0, y, width, 100); page.appendChild(parts);
-    const row = __row('Parts', 'Dimension/Space/600'); parts.appendChild(row); row.x = PAD; row.y = PAD;
-    for (const p of spec.parts) { const src = sets[p.set]; const main = src.type === 'COMPONENT_SET' ? src.children.find((c) => c.name === p.variant) : src; if (!main) throw new Error('variant missing: ' + p.variant); const inst = main.createInstance(); __setProps(inst, p.props); row.appendChild(inst); inst.layoutSizingHorizontal = 'FIXED'; inst.layoutSizingVertical = 'FIXED'; inst.resize(main.width, main.height); } // empty-frame parts (Focus Ring) collapse without an explicit size
-    parts.resizeWithoutConstraints(width, row.height + PAD * 2);
-    out.parts = parts.id;
-  }
-  out.header = header.id; out.example = example.id; out.components = comps.id; out.width = width;
   return out;
 }`;

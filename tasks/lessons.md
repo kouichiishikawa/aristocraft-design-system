@@ -95,3 +95,11 @@
 **Rule**: `fontSize` / `fontWeight` / `fontFamily` は `setBoundVariable` で束縛できる。`fontFamily` は変数の値のフォントを `loadFontAsync` できることが前提（ローカルフォント "Inter Variable" は MCP の sandbox に無い → 手で束縛し、スクリプトは既存の family 束縛を壊さない）。`lineHeight` / `letterSpacing` はスタイルの単位で読まれるので倍率 / em のトークンは束縛しない。「不可」と書く前に、エラー全文を読む
 **Verification**: `text` ステージ後の読み取りで 24 スタイルの `boundVariables` に fontSize / fontWeight（Mono は fontFamily も）があること
 **Applies to**: all projects
+
+### [2026-10-06] [communication] Figma ページの Parts の定義
+
+**Mistake**: Button ページの Parts に Spinner / Focus Ring（それぞれ独立したコンポーネント）を並べた
+**Root cause**: Atlassian の見た目（Parts 列）だけを真似て、Parts の意味を確認しなかった
+**Rule**: Parts = デザインシステムのコンポーネントとしては定義されていないが、そのコンポーネントを組み立てるために必要な Figma 部品（内部専用の部品）。Spinner や Focus Ring のように独立したページ・コンポーネントを持つものは Parts に入れない。内部部品がなければ Parts 節を省く
+**Verification**: Parts に並べる前に、その部品が自分のページ / セットを持っているか確認する
+**Applies to**: this project
