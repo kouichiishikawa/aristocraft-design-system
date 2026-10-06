@@ -2931,7 +2931,7 @@
           ],
           "codeSyntax": "var(--ac-typography-family-sans)",
           "values": {
-            "Value": "Inter"
+            "Value": "Inter Variable"
           }
         },
         {
@@ -3505,7 +3505,7 @@
           ],
           "codeSyntax": "var(--ac-font-family-default)",
           "values": {
-            "Value": "Inter"
+            "Value": "Inter Variable"
           }
         },
         {
@@ -8611,6 +8611,11 @@
   "textStyles": [
     {
       "name": "Font/Display/SM",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/1200",
+        "fontWeight": "Typography/Weight/Bold"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -8637,6 +8642,11 @@
     },
     {
       "name": "Font/Display/MD",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/1600",
+        "fontWeight": "Typography/Weight/Bold"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -8663,6 +8673,11 @@
     },
     {
       "name": "Font/Display/LG",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/2000",
+        "fontWeight": "Typography/Weight/Bold"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -8689,6 +8704,11 @@
     },
     {
       "name": "Font/Display/XL",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/2400",
+        "fontWeight": "Typography/Weight/Bold"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -8715,6 +8735,11 @@
     },
     {
       "name": "Font/Display/XXL",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/3200",
+        "fontWeight": "Typography/Weight/Bold"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -8741,6 +8766,11 @@
     },
     {
       "name": "Font/Heading/XS",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/400",
+        "fontWeight": "Typography/Weight/Semibold"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -8767,6 +8797,11 @@
     },
     {
       "name": "Font/Heading/SM",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/450",
+        "fontWeight": "Typography/Weight/Semibold"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -8793,6 +8828,11 @@
     },
     {
       "name": "Font/Heading/MD",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/500",
+        "fontWeight": "Typography/Weight/Semibold"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -8819,6 +8859,11 @@
     },
     {
       "name": "Font/Heading/LG",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/600",
+        "fontWeight": "Typography/Weight/Semibold"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -8845,6 +8890,11 @@
     },
     {
       "name": "Font/Heading/XL",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/700",
+        "fontWeight": "Typography/Weight/Semibold"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -8871,6 +8921,11 @@
     },
     {
       "name": "Font/Heading/XXL",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/800",
+        "fontWeight": "Typography/Weight/Semibold"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -8897,6 +8952,11 @@
     },
     {
       "name": "Font/Heading/XXXL",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/1000",
+        "fontWeight": "Typography/Weight/Semibold"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -8923,6 +8983,11 @@
     },
     {
       "name": "Font/Body/SM",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/350",
+        "fontWeight": "Typography/Weight/Regular"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -8949,6 +9014,11 @@
     },
     {
       "name": "Font/Body/MD",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/400",
+        "fontWeight": "Typography/Weight/Regular"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -8975,6 +9045,11 @@
     },
     {
       "name": "Font/Body/LG",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/450",
+        "fontWeight": "Typography/Weight/Regular"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -9001,6 +9076,11 @@
     },
     {
       "name": "Font/Body/XL",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/500",
+        "fontWeight": "Typography/Weight/Regular"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -9027,6 +9107,11 @@
     },
     {
       "name": "Font/Label/XS",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/250",
+        "fontWeight": "Typography/Weight/Medium"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -9053,6 +9138,11 @@
     },
     {
       "name": "Font/Label/SM",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/300",
+        "fontWeight": "Typography/Weight/Medium"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -9079,6 +9169,11 @@
     },
     {
       "name": "Font/Label/MD",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/350",
+        "fontWeight": "Typography/Weight/Medium"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -9105,6 +9200,11 @@
     },
     {
       "name": "Font/Label/LG",
+      "bindings": {
+        "fontFamily": "Font/Family/Default",
+        "fontSize": "Typography/Size/400",
+        "fontWeight": "Typography/Weight/Medium"
+      },
       "fontFamily": [
         "Inter Variable",
         "Inter",
@@ -9131,6 +9231,11 @@
     },
     {
       "name": "Font/Label/Mono/XS",
+      "bindings": {
+        "fontFamily": "Font/Family/Mono",
+        "fontSize": "Typography/Size/250",
+        "fontWeight": "Typography/Weight/Regular"
+      },
       "fontFamily": [
         "Geist Mono",
         "ui-monospace",
@@ -9157,6 +9262,11 @@
     },
     {
       "name": "Font/Label/Mono/SM",
+      "bindings": {
+        "fontFamily": "Font/Family/Mono",
+        "fontSize": "Typography/Size/300",
+        "fontWeight": "Typography/Weight/Regular"
+      },
       "fontFamily": [
         "Geist Mono",
         "ui-monospace",
@@ -9183,6 +9293,11 @@
     },
     {
       "name": "Font/Label/Mono/MD",
+      "bindings": {
+        "fontFamily": "Font/Family/Mono",
+        "fontSize": "Typography/Size/350",
+        "fontWeight": "Typography/Weight/Regular"
+      },
       "fontFamily": [
         "Geist Mono",
         "ui-monospace",
@@ -9209,6 +9324,11 @@
     },
     {
       "name": "Font/Label/Mono/LG",
+      "bindings": {
+        "fontFamily": "Font/Family/Mono",
+        "fontSize": "Typography/Size/400",
+        "fontWeight": "Typography/Weight/Regular"
+      },
       "fontFamily": [
         "Geist Mono",
         "ui-monospace",

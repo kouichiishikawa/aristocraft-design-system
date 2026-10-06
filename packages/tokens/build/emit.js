@@ -112,9 +112,10 @@ function toVariable(t) {
         : { skip: `dimension unit "${v?.unit}" has no Figma variable equivalent` };
     case 'duration': return { type: 'FLOAT', value: v.unit === 's' ? v.value * 1000 : v.value, unit: 'ms' };
     case 'string': return { type: 'STRING', value: v };
-    case 'fontFamily': { // Figma family name for the first family in the stack (Inter Variable → Inter)
+    case 'fontFamily': { // first family in the stack, as named in the token ("Inter Variable": the local font; decision
+      // 2026-10-06 — switch to FIGMA_FAMILY mapping if the file is shared with people without it)
       const first = Array.isArray(v) ? v[0] : v;
-      return { type: 'STRING', value: FIGMA_FAMILY[first] ?? first };
+      return { type: 'STRING', value: first };
     }
     case 'cubicBezier': return { skip: 'Figma has no easing variable type' };
     default: return { skip: `type ${t.$type} is exported as a style, not a variable` };
@@ -123,8 +124,17 @@ function toVariable(t) {
 const textStyle = (t) => {
   const v = t.$value;
   const ls = v.letterSpacing;
+  // Variables the Text Style binds to (fontFamily / fontSize / fontWeight when the composite references a token; decision
+  // 2026-10-06: lineHeight and letterSpacing stay unbound — Figma reads a bound number in the style's unit, the tokens are ratios / em)
+  const orig = t.original?.$value ?? {};
+  const bindings = {};
+  for (const field of ['fontFamily', 'fontSize', 'fontWeight']) {
+    const r = typeof orig[field] === 'string' && /^\{.+\}$/.test(orig[field]) ? orig[field] : null;
+    if (r) bindings[field] = figmaName(refPath(r));
+  }
   return {
     name: figmaName(t.path),
+    bindings,
     fontFamily: Array.isArray(v.fontFamily) ? v.fontFamily : [v.fontFamily],
     fontSize: v.fontSize.value,
     lineHeight: isUnitValue(v.lineHeight) ? { unit: 'PIXELS', value: v.lineHeight.value }

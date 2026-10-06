@@ -87,3 +87,11 @@
 **Rule**: ①Figma を変更して読み取り + スクリーンショットで報告 → ②承認 → ③生成器 / CSS / docs / トークンを追従してコミット。トークン変更が前提になる場合はその旨を先に伝える
 **Verification**: Figma の変更を含むターンで `packages/` や `docs/` に差分を作っていない（`git status` が空）
 **Applies to**: this project（memory にも feedback として保存）
+
+### [2026-10-06] [tooling] Figma: Text Style への変数束縛は use_figma でできる（2026-09-29 の「不可」は誤り）。fontFamily はフォントが読めるときだけ
+
+**Mistake**: 2026-09-29 の lesson に「TextStyle.setBoundVariable 不可」と書き、Text Style の変数束縛を手作業前提にしていた。本人が手で当てて「スクリプトでできないのか」と指摘
+**Root cause**: 当時の 1 回の失敗（おそらく font 未ロード）を API の制約と断定した。lessons に「確認した事実」と「推測」を分けて書いていなかった
+**Rule**: `fontSize` / `fontWeight` / `fontFamily` は `setBoundVariable` で束縛できる。`fontFamily` は変数の値のフォントを `loadFontAsync` できることが前提（ローカルフォント "Inter Variable" は MCP の sandbox に無い → 手で束縛し、スクリプトは既存の family 束縛を壊さない）。`lineHeight` / `letterSpacing` はスタイルの単位で読まれるので倍率 / em のトークンは束縛しない。「不可」と書く前に、エラー全文を読む
+**Verification**: `text` ステージ後の読み取りで 24 スタイルの `boundVariables` に fontSize / fontWeight（Mono は fontFamily も）があること
+**Applies to**: all projects

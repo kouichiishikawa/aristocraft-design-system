@@ -14,7 +14,7 @@
 | Collection `Semantic - Layout` | mode: Value。Layout/Breakpoint / Grid / Container / Section。数値は Primitives へ alias | 30 |
 | Collection `Semantic - Border` | mode: Value。Border/Width | 3 |
 | Collection `Semantic - Color` | modes: Light / Dark。Text / Icon / Border / Background / Link / Elevation は Primitives へ alias。Blanket と影の色は実値 | 195 |
-| Text Styles | font/display 5・heading 7・body 4・label 4・label/mono 4 | 24 |
+| Text Styles | font/display 5・heading 7・body 4・label 4・label/mono 4（size / weight / family を変数に束縛。+ Figma だけの `Font/Label/MD Underlined` / `LG Underlined`） | 24 (+2) |
 | Effect Styles | elevation/shadow rest / lifted / floating / overlay。各 2 層、色は `elevation/shadow/*/layerN` 変数に束縛 | 4 |
 
 検証: 496 変数、重複なし。`color/text/brand` は light で blue/700 (#1C55E0)、dark で blue/400 (#6C9FF8) に解決。全変数に WEB code syntax（`var(--ac-…)`）を設定。
@@ -53,7 +53,7 @@
 
 - `typography.letterSpacing.*`（em）、`layout.container.full`（%）、`motion.easing.*`（cubicBezier）は変数にならない（`skipped` に列挙）。Text Style の letterSpacing は em → % に換算して入れている
 - `font.family.default` の混植スタック（Inter + Noto Sans JP）は Figma で表現できない。変数の値は `Inter`
-- Text Style のプロパティを変数に束縛する API は `use_figma` で使えない。必要なら Figma 上で手動束縛
+- Text Style の `fontSize` / `fontWeight` / `fontFamily` は `text` ステージが変数に束縛する（`TextStyle.setBoundVariable`、2026-10-06 に使えることを確認。それ以前の「不可」は誤り）。`lineHeight` / `letterSpacing` は束縛しない（本人決定: Figma は束縛した数値をスタイルの単位で読むが、トークンは倍率 / em）。**`fontFamily` の束縛は、変数の値のフォントを MCP 側で読み込める場合だけ**: `Typography/Family/Sans` の値は `Inter Variable`（ローカルフォント、本人決定）で MCP の sandbox にはないため、Inter 系 20 スタイルの family 束縛は Figma 上で手で行う（スクリプトは手で付けた束縛を壊さない）。Mono の 4 スタイルは Geist Mono が読めるので自動。他の人と共有する段になったら `typography.family.sans` の Figma 向け値を `Inter` に変えれば全部自動化できる
 - `Font/Label/MD Underlined` / `Font/Label/LG Underlined` は Figma だけの派生 Text Style（トークンにない）。同じ Text プロパティに繋いだ文字は下線の上書きを保てない（Figma の既知バグ）ため、下線は Text Style で表現する。Button の link variant 用に作り、link → tertiary（下線なし）後は **Link 部品で使う予定**として残す（本人決定 2026-10-06）
 - `motion.duration.*` は FLOAT（ms）だが Figma のプロトタイプ設定には束縛できない。参照用
 

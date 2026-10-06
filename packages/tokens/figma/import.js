@@ -62,17 +62,43 @@ async function importTextStyles(specs) {
     return variants.find((v) => has(family, v)) ?? style;
   };
   for (const s of specs) s.figmaFont = { family: s.figmaFont.family, style: resolveStyle(s.figmaFont.family, s.figmaFont.style) };
+  // A STRING variable's value (following aliases) = the font family a fontFamily binding will switch the style to.
+  const resolveFamily = (vr) => {
+    let v = vr.valuesByMode[Object.keys(vr.valuesByMode)[0]];
+    while (v && typeof v === 'object' && v.type === 'VARIABLE_ALIAS') { const t = variables.find((x) => x.id === v.id); v = t && t.valuesByMode[Object.keys(t.valuesByMode)[0]]; }
+    return typeof v === 'string' ? v : null;
+  };
   const fonts = new Set(specs.map((s) => JSON.stringify(s.figmaFont)));
   for (const f of fonts) await figma.loadFontAsync(JSON.parse(f));
   const existing = new Map((await figma.getLocalTextStylesAsync()).map((s) => [s.name, s]));
   for (const s of specs) {
     let st = existing.get(s.name);
     if (!st) { st = figma.createTextStyle(); st.name = s.name; out.created++; } else out.updated++;
-    st.fontName = s.figmaFont;
+    // A family binding made by hand in Figma (to the local "Inter Variable", which the MCP sandbox cannot load) is kept:
+    // setting fontName would drop it. Everything else is (re)applied.
+    const familyVar = s.bindings?.fontFamily ? byName.get(s.bindings.fontFamily) : null;
+    const keepFamily = familyVar && st.boundVariables?.fontFamily?.id === familyVar.id;
+    if (!keepFamily) st.fontName = s.figmaFont;
     st.fontSize = s.fontSize;
     st.lineHeight = s.lineHeight;
     st.letterSpacing = s.letterSpacing;
     st.description = `${s.description}\nfont-family: ${s.fontFamily.join(', ')}\nCSS: ${s.codeSyntax}`;
+    // Bind the style's family / size / weight to the variables the token references (fontFamily last: it switches the
+    // style to the variable's family, which must be loadable here — otherwise bind it by hand in Figma).
+    for (const field of ['fontSize', 'fontWeight', 'fontFamily']) {
+      const name = s.bindings?.[field];
+      if (!name) continue;
+      if (field === 'fontFamily' && keepFamily) continue;
+      const vr = byName.get(name);
+      if (!vr) { out.errors.push(`${s.name}: ${field} variable ${name} missing`); continue; }
+      try {
+        if (field === 'fontFamily') {
+          const family = resolveFamily(vr);
+          await figma.loadFontAsync({ family, style: resolveStyle(family, s.figmaFont.style) });
+        }
+        st.setBoundVariable(field, vr);
+      } catch (e) { out.errors.push(`${s.name}: ${field} → ${name}: ${String(e.message).split('\n')[0]}`); }
+    }
   }
   out.textStyles = (await figma.getLocalTextStylesAsync()).length;
 }
