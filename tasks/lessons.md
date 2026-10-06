@@ -79,3 +79,11 @@
 **Rule**: variant ごとに Text Style が違う部品は「全 variant の style を確定 → TEXT プロパティを（削除して）作り直す → 全件を一度に繋ぐ → 以後 Label に書かない」の順で作る（button-stage.js に実装）。既存セットに variant を足すときも同じ（プロパティを作り直すのでインスタンスの Label 上書きは消える）。**下線などの range 上書きは結線で消える**ので、下線は「… Underlined」の Text Style で表現する（Text Style の違いは結線後も保たれる）
 **Verification**: 投入の**次の呼び出し**で `Size × textStyle × fontSize` と下線を集計する（同じスクリプト内の集計は信用しない）。期待: sm / md = MD 14、lg = LG 16、幅 69 / 77 / 91、下線は Link hovered / pressed の 12 件だけ
 **Applies to**: all projects
+
+### [2026-10-06] [workflow] デザイン変更は Figma 先行 → 本人承認 → コード追従
+
+**Mistake**: Button の変更（枠色・tertiary 改名・inverse・loading）を Figma とコード（生成器 SPEC / CSS / docs / トークン）に同じターンで同時に入れた
+**Root cause**: 「Figma を正にする」と「コードを同期する」を一度に済ませようとした。本人は Figma で見て判断してからコードに固定したい
+**Rule**: ①Figma を変更して読み取り + スクリーンショットで報告 → ②承認 → ③生成器 / CSS / docs / トークンを追従してコミット。トークン変更が前提になる場合はその旨を先に伝える
+**Verification**: Figma の変更を含むターンで `packages/` や `docs/` に差分を作っていない（`git status` が空）
+**Applies to**: this project（memory にも feedback として保存）

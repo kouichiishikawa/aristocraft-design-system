@@ -18,8 +18,9 @@ const SPEC = {
     tertiary:  ['color/background/neutral/subtle', 'color/background/neutral/subtle/hovered', 'color/background/neutral/subtle/pressed', 'color/text/default', null],
     danger:    ['color/background/status/error/bold', 'color/background/status/error/bold/hovered', 'color/background/status/error/bold/pressed', 'color/text/inverse', null],
   },
-  // loading spinner colour per variant (the Spinner component is bound to icon.default; bold fills need the inverse icon colour)
-  spinnerColor: { primary: 'color/icon/inverse', danger: 'color/icon/inverse' },
+  // icon colour per variant (Icon Before / Icon After glyphs and the loading Spinner are bound to icon.default in their
+  // components; bold fills need the inverse icon colour — instance override, approved 2026-10-06)
+  iconColor: { primary: 'color/icon/inverse', danger: 'color/icon/inverse' },
   // height token, padding-inline token, gap token, text style, icon size (Icon / Spinner sets: sm 16 / md 24), rounded radius token
   // 2026-10-05 (Figma is the source for these): gap sm 4 / md 6 / lg 8 (space.100 / 150 / 200), sm shares label.md with md.
   sizes: {
@@ -53,7 +54,7 @@ SPEC.shapes = Object.fromEntries(Object.entries(SPEC.shapes).map(([k, x]) => [k,
 SPEC.disabled = { fill: fig(SPEC.disabled.fill), text: fig(SPEC.disabled.text) };
 SPEC.focus.radius = Object.fromEntries(Object.entries(SPEC.focus.radius).map(([k, val]) => [fig(k), val]));
 SPEC.icon = fig(SPEC.icon);
-SPEC.spinnerColor = Object.fromEntries(Object.entries(SPEC.spinnerColor).map(([k, x]) => [k, fig(x)]));
+SPEC.iconColor = Object.fromEntries(Object.entries(SPEC.iconColor).map(([k, x]) => [k, fig(x)]));
 SPEC.borderWidth = fig('border/width/default');
 
 const script = String.raw`
@@ -89,11 +90,13 @@ const existing = new Set(set ? set.children.map((c) => c.name) : []);
 out.skipped = 0;
 const paint = (name) => figma.variables.setBoundVariableForPaint({ type: 'SOLID', color: { r: 0, g: 0, b: 0 } }, 'color', v(name));
 
-const iconInstance = (sizeVariant, glyphName, layerName) => {
+const iconInstance = (sizeVariant, glyphName, layerName, colorTok) => {
   const variant = iconSet.children.find((c) => c.name === 'Size=' + sizeVariant);
   const inst = variant.createInstance();
   inst.name = layerName;
   inst.setProperties({ [glyphProp]: glyphs[glyphName] });
+  // override the glyph fill while the instance is still visible (hidden instances expose no children to the API)
+  if (colorTok) for (const s of inst.findAll((n) => n.type === 'VECTOR' || n.type === 'BOOLEAN_OPERATION')) s.fills = [paint(colorTok)];
   return inst;
 };
 // focused: Focus Ring instance over the whole button, 2px larger on every side, stretching with it; radius = button + inset
@@ -145,12 +148,13 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
         else c.strokes = [];
         if (state === 'focused') c.clipsContent = false; // the Focus Ring instance (added after the children) sits 2px outside
         // children: iconStart (or spinner when loading), label, iconEnd
-        const start = state === 'loading' ? spinnerInstance(iconSize, SPEC.spinnerColor[variant]) : iconInstance(iconSize, SPEC.icon, N.props.iconBefore);
+        const iconColor = isDisabled ? null : SPEC.iconColor[variant]; // disabled keeps icon.default (not decided yet)
+        const start = state === 'loading' ? spinnerInstance(iconSize, iconColor) : iconInstance(iconSize, SPEC.icon, N.props.iconBefore, iconColor);
         c.appendChild(start); start.visible = state === 'loading'; start.isExposedInstance = true;
         const t = figma.createText(); t.name = N.props.label; t.textStyleId = styles[textStyle].id; t.characters = SPEC.label;
         t.fills = [paint(isDisabled ? SPEC.disabled.text : textColor)];
         c.appendChild(t);
-        const end = iconInstance(iconSize, SPEC.icon, N.props.iconAfter);
+        const end = iconInstance(iconSize, SPEC.icon, N.props.iconAfter, iconColor);
         c.appendChild(end); end.visible = false; end.isExposedInstance = true;
         if (state === 'focused') focusRing(c, SPEC.focus.radius[radius]);
         variants.push(c);
