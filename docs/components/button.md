@@ -35,7 +35,7 @@ Figma: `Button` ページの `Button` セット。部品ごとにページを分
 | tertiary | background.neutral.subtle（透明） | .hovered（100a） | .pressed（200a） | text.default | — |
 | danger | background.status.error.bold（light 600 / dark 500） | .hovered | .pressed | text.inverse / icon.inverse | — |
 
-アイコンの色は他の variant では icon.default（`Icon` 部品の既定）。disabled は全 variant で文字 text.disabled、アイコンは icon.default のまま（未決: icon.disabled に揃えるか）。
+アイコンの色は他の variant では icon.default（`Icon` 部品の既定）。disabled は全 variant で文字 text.disabled。アイコンは primary / danger の disabled で icon.disabled（2026-10-06 承認）、default / secondary / tertiary の disabled は icon.default のまま（未決）。
 
 共通: focused = 要素から 2px 空けて 2px のリング、角丸は要素 + 2px（docs/components/focus-ring.md。CSS は outline + outline-offset、Figma は `Focus Ring` 部品を絶対配置。2026-10-05 に影 2 段から置き換え）。disabled = 背景 background.disabled + 文字 text.disabled、枠と下線なし、cursor not-allowed。hover は `@media (hover: hover)` のみ。
 

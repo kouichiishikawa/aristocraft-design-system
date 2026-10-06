@@ -30,7 +30,7 @@ const SPEC = {
   },
   shapes: { rounded: null, pill: 'dimension/radius/full' }, // null = per-size rounded token
   states: ['default', 'hovered', 'pressed', 'focused', 'disabled', 'loading'],
-  disabled: { fill: 'color/background/disabled', text: 'color/text/disabled' },
+  disabled: { fill: 'color/background/disabled', text: 'color/text/disabled', icon: 'color/icon/disabled' },
   // focused: the single "Focus Ring" component (figma/focus-ring-stage.js); the instance's corner radius = button radius + inset
   focus: { ring: 'Focus Ring', radius: { 'dimension/radius/200': 8, 'dimension/radius/300': 12, 'dimension/radius/full': 9999 }, inset: 2 },
   label: 'Button',
@@ -51,7 +51,7 @@ const fig = (s) => (typeof s === 'string' && s.includes('/') ? figmaName(s.split
 for (const k of Object.keys(SPEC.variants)) SPEC.variants[k] = SPEC.variants[k].map(fig);
 for (const k of Object.keys(SPEC.sizes)) SPEC.sizes[k] = SPEC.sizes[k].map((x, i) => (i === 4 ? SIZE_WORDS[x] : fig(x)));
 SPEC.shapes = Object.fromEntries(Object.entries(SPEC.shapes).map(([k, x]) => [k, fig(x)]));
-SPEC.disabled = { fill: fig(SPEC.disabled.fill), text: fig(SPEC.disabled.text) };
+SPEC.disabled = { fill: fig(SPEC.disabled.fill), text: fig(SPEC.disabled.text), icon: fig(SPEC.disabled.icon) };
 SPEC.focus.radius = Object.fromEntries(Object.entries(SPEC.focus.radius).map(([k, val]) => [fig(k), val]));
 SPEC.icon = fig(SPEC.icon);
 SPEC.iconColor = Object.fromEntries(Object.entries(SPEC.iconColor).map(([k, x]) => [k, fig(x)]));
@@ -148,7 +148,9 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
         else c.strokes = [];
         if (state === 'focused') c.clipsContent = false; // the Focus Ring instance (added after the children) sits 2px outside
         // children: iconStart (or spinner when loading), label, iconEnd
-        const iconColor = isDisabled ? null : SPEC.iconColor[variant]; // disabled keeps icon.default (not decided yet)
+        // disabled: icon.disabled for the variants whose icon colour is overridden (primary / danger, approved 2026-10-06);
+        // the other variants keep the Icon component's icon.default
+        const iconColor = isDisabled ? (SPEC.iconColor[variant] ? SPEC.disabled.icon : null) : SPEC.iconColor[variant];
         const start = state === 'loading' ? spinnerInstance(iconSize, iconColor) : iconInstance(iconSize, SPEC.icon, N.props.iconBefore, iconColor);
         c.appendChild(start); start.visible = state === 'loading'; start.isExposedInstance = true;
         const t = figma.createText(); t.name = N.props.label; t.textStyleId = styles[textStyle].id; t.characters = SPEC.label;

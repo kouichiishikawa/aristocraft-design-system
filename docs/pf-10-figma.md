@@ -54,7 +54,7 @@
 - `typography.letterSpacing.*`（em）、`layout.container.full`（%）、`motion.easing.*`（cubicBezier）は変数にならない（`skipped` に列挙）。Text Style の letterSpacing は em → % に換算して入れている
 - `font.family.default` の混植スタック（Inter + Noto Sans JP）は Figma で表現できない。変数の値は `Inter`
 - Text Style のプロパティを変数に束縛する API は `use_figma` で使えない。必要なら Figma 上で手動束縛
-- `Font/Label/MD Underlined` / `Font/Label/LG Underlined` は Figma だけの派生 Text Style（トークンにない）。Button の link variant の下線用に作ったが、2026-10-06 に link → tertiary（下線なし）になり **未使用**。手で削除してよい（同じ Text プロパティに繋いだ文字は下線の上書きを保てないため、下線が要る部品では同様の派生 Text Style を使う）
+- `Font/Label/MD Underlined` / `Font/Label/LG Underlined` は Figma だけの派生 Text Style（トークンにない）。同じ Text プロパティに繋いだ文字は下線の上書きを保てない（Figma の既知バグ）ため、下線は Text Style で表現する。Button の link variant 用に作り、link → tertiary（下線なし）後は **Link 部品で使う予定**として残す（本人決定 2026-10-06）
 - `motion.duration.*` は FLOAT（ms）だが Figma のプロトタイプ設定には束縛できない。参照用
 
 ## 制約
