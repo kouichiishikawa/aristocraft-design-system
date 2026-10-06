@@ -25,6 +25,9 @@ const SCOPES = [
 ];
 const scopesFor = (name) => SCOPES.find(([re]) => re.test(name))?.[1] ?? []; // name = lowercase slash path
 /** Figma font family / style names for the token stacks and weights. */
+// Token family → Figma variable value. Families not listed pass through unchanged: "Inter Display" (sans, decision 2026-10-06)
+// is a local font the owner manages in Figma by hand; Text Styles are first created with the loadable "Inter" (figmaFont
+// fallback below) and take the real family from the fontFamily binding.
 const FIGMA_FAMILY = { 'Inter Variable': 'Inter', 'Geist Mono': 'Geist Mono', Lora: 'Lora', 'Noto Sans JP': 'Noto Sans JP' };
 const FIGMA_STYLE = {
   Inter: { 400: 'Regular', 500: 'Medium', 600: 'Semi Bold', 700: 'Bold' },

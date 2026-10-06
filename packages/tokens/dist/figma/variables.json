@@ -2925,13 +2925,13 @@
         {
           "name": "Typography/Family/Sans",
           "type": "STRING",
-          "description": "欧文の本文・見出し・UI。可変フォント（opsz 軸あり）",
+          "description": "欧文の本文・見出し・UI。Inter の光学サイズ Display のグリフだけを全サイズで使う（2026-10-06 本人決定。Inter 4 の InterDisplay を @font-face で配信）",
           "scopes": [
             "FONT_FAMILY"
           ],
           "codeSyntax": "var(--ac-typography-family-sans)",
           "values": {
-            "Value": "Inter"
+            "Value": "Inter Display"
           }
         },
         {
@@ -3499,7 +3499,7 @@
         {
           "name": "Font/Family/Default",
           "type": "STRING",
-          "description": "Inter Variable,Inter,system-ui,sans-serif + Noto Sans JP,Hiragino Sans,Yu Gothic,sans-serif",
+          "description": "Inter Display,Inter,system-ui,sans-serif + Noto Sans JP,Hiragino Sans,Yu Gothic,sans-serif",
           "scopes": [
             "FONT_FAMILY"
           ],

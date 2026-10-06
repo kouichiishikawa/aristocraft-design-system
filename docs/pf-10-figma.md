@@ -37,7 +37,7 @@
 | 項目 | 決定 |
 |---|---|
 | scopes | 名前の先頭で決める（`build/emit.js` の SCOPES）。text/link → TEXT_FILL、icon → SHAPE_FILL、border → STROKE_COLOR、background / surface → FRAME_FILL + SHAPE_FILL、primitive の色 → ALL_FILLS + STROKE_COLOR + EFFECT_COLOR、space / gutter / margin / section → GAP、size / breakpoint / container → WIDTH_HEIGHT、radius → CORNER_RADIUS、border 幅 → STROKE_FLOAT、size → FONT_SIZE、lineHeight → LINE_HEIGHT、weight → FONT_WEIGHT、family → FONT_FAMILY、opacity → OPACITY。duration / easing / shape / grid.columns は `[]`（ピッカーに出さない） |
-| フォント名 | `Inter Variable` → Figma の `Inter`。weight は Inter が Regular / Medium / Semi Bold / Bold、Geist Mono が Regular / Medium / SemiBold / Bold |
+| フォント名 | `Typography/Family/Sans` の値は本人が Figma 上で管理する（2026-10-06 時点 `Inter Display`、ローカルフォント。スクリプトは触らない。MCP から Text Style を更新する必要が出たら本人が `Inter` に直してから指示する）。Text Style は作成時に Google Fonts の `Inter` で作り、family の束縛で実際の書体に切り替わる。weight は Inter が Regular / Medium / Semi Bold / Bold、Geist Mono が Regular / Medium / SemiBold / Bold |
 | 不透明度 | Figma のレイヤー不透明度は 0–100 なので、`opacity/*` 変数は ×100 の値で投入する（トークンは 0–1 のまま） |
 | 影 | Effect Style は 1 つで、各層の色を `color` コレクションの変数に束縛。light / dark はモード切替で追従する。この 8 変数は shadow トークンから生成した派生値 |
 | Text Style | フォントは 1 書体しか持てないので Inter（mono は Geist Mono）。和文の Noto Sans JP はテキストごとに設定する（例外） |
@@ -53,7 +53,7 @@
 
 - `typography.letterSpacing.*`（em）、`layout.container.full`（%）、`motion.easing.*`（cubicBezier）は変数にならない（`skipped` に列挙）。Text Style の letterSpacing は em → % に換算して入れている
 - `font.family.default` の混植スタック（Inter + Noto Sans JP）は Figma で表現できない。変数の値は `Inter`
-- Text Style の `fontSize` / `fontWeight` / `fontFamily` は `text` ステージが変数に束縛する（`TextStyle.setBoundVariable`、2026-10-06 に使えることを確認。それ以前の「不可」は誤り）。`lineHeight` / `letterSpacing` は束縛しない（本人決定: Figma は束縛した数値をスタイルの単位で読むが、トークンは倍率 / em）。**`fontFamily` の束縛は、変数の値のフォントを MCP 側で読み込める場合だけ**動く。`Typography/Family/Sans` の Figma 向け値は `Inter`（Google Fonts 版。トークンと CSS は `Inter Variable` のまま、`build/emit.js` の FIGMA_FAMILY で変換）にしてある（本人決定 2026-10-06。ローカルの `Inter Variable` を値にすると MCP の sandbox で読めず、family 束縛もその変数の値変更もできない）。24 スタイルすべて family / size / weight が束縛済み
+- Text Style の `fontSize` / `fontWeight` / `fontFamily` は `text` ステージが変数に束縛する（`TextStyle.setBoundVariable`、2026-10-06 に使えることを確認。それ以前の「不可」は誤り）。`lineHeight` / `letterSpacing` は束縛しない（本人決定: Figma は束縛した数値をスタイルの単位で読むが、トークンは倍率 / em）。**`fontFamily` の束縛は、変数の値のフォントを MCP 側で読み込める場合だけ**動く。Figma の `Typography/Family/Sans` は `Inter Display`（ローカルフォント、本人管理）で MCP の sandbox には無いため、**Text Style の再投入（`text` ステージ）と Sans の値変更は MCP からできない**。やるときは本人が値を `Inter` に直してから指示する（運用決定 2026-10-06）。変数の再投入は `--changed-since` で差分だけ送れば Sans に触れないので従来どおり MCP で可能。24 スタイルすべて family / size / weight が束縛済み
 - `Font/Label/MD Underlined` / `Font/Label/LG Underlined` は Figma だけの派生 Text Style（トークンにない）。同じ Text プロパティに繋いだ文字は下線の上書きを保てない（Figma の既知バグ）ため、下線は Text Style で表現する。Button の link variant 用に作り、link → tertiary（下線なし）後は **Link 部品で使う予定**として残す（本人決定 2026-10-06）
 - `motion.duration.*` は FLOAT（ms）だが Figma のプロトタイプ設定には束縛できない。参照用
 

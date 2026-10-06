@@ -44,7 +44,10 @@
 - [x] Spinner（2026-10-05）: loading-ui dots-ring。React `<Spinner size>`、Figma の Spinner ページ + セット、Button の Loading 6 件を差し替え（docs/components/spinner.md）
 - [x] Button の寸法は Figma を正に（2026-10-05）: 間隔 sm 4 / md 6 / lg 8（space.100 / 150 / 200）、sm の文字 label.md。SPEC / CSS / docs を追従
 - [x] Focus Ring 部品（2026-10-05）: Atlassian 式（2px 空けて 2px、角丸 +2px）。Figma は角丸 0 の部品 1 つ、置く側のインスタンスで角丸を上書き。Button の Focused 6 件を影 2 段から差し替え。CSS は outline + offset のまま（docs/components/focus-ring.md）
-- [ ] 本人: Figma の `Focus Ring (old)`（variant 版）を削除
+- [x] 本人: Figma の `Focus Ring (old)` / `Palette (old)` を削除（2026-10-06）
+- [x] Figma の Text Style 24 件を変数に束縛（family / size / weight、2026-10-06。行の高さと字間は束縛しない）
+- [x] 決定（2026-10-06）: 欧文サンセリフは **Inter Display**（Display グリフのみ）。トークン `typography.family.sans` と docs を更新
+- [ ] Inter Display の配信: Inter 4 の InterDisplay を `@font-face` で examples / Storybook に組み込む（family 名 "Inter Display"）
 - [x] Button の他 4 variant（primary / secondary / link / danger）を Figma に追加、180 件（2026-10-06。縦 = 種類、横 = state）
 - [ ] React の Button: variant 整理（default / primary / secondary / link / danger）、shape、loading prop（PF-13）
 - [ ] 本人: Figma の `Palette (old)` を削除

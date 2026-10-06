@@ -266,7 +266,7 @@ export const primitives = {
   },
   "typography": {
     "family": {
-      "sans": "'Inter Variable', Inter, system-ui, sans-serif",
+      "sans": "'Inter Display', Inter, system-ui, sans-serif",
       "serif": "Lora, Georgia, serif",
       "jp": "'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif",
       "mono": "'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace"

@@ -222,7 +222,7 @@
   --ac-dimension-breakpoint-lg: 1024px; /** タブレット横・ノート PC */
   --ac-dimension-breakpoint-xl: 1440px; /** デスクトップ */
   --ac-dimension-breakpoint-xxl: 1768px; /** 大型 */
-  --ac-typography-family-sans: 'Inter Variable', Inter, system-ui, sans-serif; /** 欧文の本文・見出し・UI。可変フォント（opsz 軸あり） */
+  --ac-typography-family-sans: 'Inter Display', Inter, system-ui, sans-serif; /** 欧文の本文・見出し・UI。Inter の光学サイズ Display のグリフだけを全サイズで使う（2026-10-06 本人決定。Inter 4 の InterDisplay を @font-face で配信） */
   --ac-typography-family-serif: Lora, Georgia, serif; /** 欧文の引用・見出しの対比用。可変フォント */
   --ac-typography-family-jp: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif; /** 和文。サブセット配信（Google Fonts の unicode-range）を前提 */
   --ac-typography-family-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace; /** 数値・コード・トークン名 */

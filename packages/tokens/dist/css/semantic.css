@@ -4,7 +4,7 @@
  */
 
 :root {
-  --ac-font-family-default: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 'Inter Variable', Inter, system-ui, sans-serif + 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif */
+  --ac-font-family-default: 'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif; /** 'Inter Display', Inter, system-ui, sans-serif + 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif */
   --ac-font-family-serif: Lora, 'Noto Sans JP', Georgia, serif; /** Lora, Georgia, serif + 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif。装飾用途（引用・Music など、英語のみ）。semantic の role は持たず、使う部品の component トークンで size / line box を display.* から借りて定義する */
   --ac-font-family-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace; /** 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace。数値・コード・トークン名 */
   --ac-layout-grid-columns-xs: 4;
