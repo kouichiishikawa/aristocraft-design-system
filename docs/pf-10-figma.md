@@ -53,7 +53,7 @@
 
 - `typography.letterSpacing.*`（em）、`layout.container.full`（%）、`motion.easing.*`（cubicBezier）は変数にならない（`skipped` に列挙）。Text Style の letterSpacing は em → % に換算して入れている
 - `font.family.default` の混植スタック（Inter + Noto Sans JP）は Figma で表現できない。変数の値は `Inter`
-- Text Style の `fontSize` / `fontWeight` / `fontFamily` は `text` ステージが変数に束縛する（`TextStyle.setBoundVariable`、2026-10-06 に使えることを確認。それ以前の「不可」は誤り）。`lineHeight` / `letterSpacing` は束縛しない（本人決定: Figma は束縛した数値をスタイルの単位で読むが、トークンは倍率 / em）。**`fontFamily` の束縛は、変数の値のフォントを MCP 側で読み込める場合だけ**: `Typography/Family/Sans` の値は `Inter Variable`（ローカルフォント、本人決定）で MCP の sandbox にはないため、Inter 系 20 スタイルの family 束縛は Figma 上で手で行う（スクリプトは手で付けた束縛を壊さない）。Mono の 4 スタイルは Geist Mono が読めるので自動。他の人と共有する段になったら `typography.family.sans` の Figma 向け値を `Inter` に変えれば全部自動化できる
+- Text Style の `fontSize` / `fontWeight` / `fontFamily` は `text` ステージが変数に束縛する（`TextStyle.setBoundVariable`、2026-10-06 に使えることを確認。それ以前の「不可」は誤り）。`lineHeight` / `letterSpacing` は束縛しない（本人決定: Figma は束縛した数値をスタイルの単位で読むが、トークンは倍率 / em）。**`fontFamily` の束縛は、変数の値のフォントを MCP 側で読み込める場合だけ**動く。`Typography/Family/Sans` の Figma 向け値は `Inter`（Google Fonts 版。トークンと CSS は `Inter Variable` のまま、`build/emit.js` の FIGMA_FAMILY で変換）にしてある（本人決定 2026-10-06。ローカルの `Inter Variable` を値にすると MCP の sandbox で読めず、family 束縛もその変数の値変更もできない）。24 スタイルすべて family / size / weight が束縛済み
 - `Font/Label/MD Underlined` / `Font/Label/LG Underlined` は Figma だけの派生 Text Style（トークンにない）。同じ Text プロパティに繋いだ文字は下線の上書きを保てない（Figma の既知バグ）ため、下線は Text Style で表現する。Button の link variant 用に作り、link → tertiary（下線なし）後は **Link 部品で使う予定**として残す（本人決定 2026-10-06）
 - `motion.duration.*` は FLOAT（ms）だが Figma のプロトタイプ設定には束縛できない。参照用
 
