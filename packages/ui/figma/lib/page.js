@@ -31,7 +31,7 @@ const __resolveSets = async (names) => {
   for (const n of names) if (!found[n]) throw new Error('component missing: ' + n);
   return found;
 };
-const __row = (name, gapTok) => { const f = figma.createFrame(); f.name = name; f.layoutMode = 'HORIZONTAL'; f.counterAxisAlignItems = 'CENTER'; f.fills = []; f.primaryAxisSizingMode = 'AUTO'; f.counterAxisSizingMode = 'AUTO'; f.setBoundVariable('itemSpacing', __v(gapTok)); return f; };
+const __row = (name, gapTok) => { const f = figma.createFrame(); f.name = name; f.layoutMode = 'HORIZONTAL'; f.counterAxisAlignItems = 'CENTER'; f.fills = []; f.clipsContent = false; f.primaryAxisSizingMode = 'AUTO'; f.counterAxisSizingMode = 'AUTO'; f.setBoundVariable('itemSpacing', __v(gapTok)); return f; };
 const __retire = (page, pred) => { const ids = []; for (const n of page.children.filter(pred)) { n.name = n.name + ' (old)'; ids.push(n.id); } return ids; };
 const __section = (name, x, y, w, h) => { const s = figma.createSection(); s.name = name; s.x = x; s.y = y; s.resizeWithoutConstraints(w, h); return s; };
 const GAP = 80, PAD = 48;
