@@ -1,19 +1,15 @@
-// Shared `use_figma` snippet for the page template (decision 2026-10-06): one vertical auto-layout frame "Page" per Figma
-// page, built from `_Doc/*` instances (figma/doc-stage.js). Foundations and Components pages use the same skeleton:
-//   Header (Status badge, summary, meta) → Section heading → blocks (note / table / label / instance / custom) → …
-// A *-stage.js script embeds PAGE_LIB in its use_figma code and calls `await buildPage(spec)`.
-//   spec = { page, name, x, y, width, replace, header: { status, title, summary, updated, source, links },
-//            sections: [{ heading, description, blocks: [block, …] }] }
-//   block = { type: 'note', kind: 'Note'|'Do'|"Don't", text }
-//         | { type: 'table', header: [c1..c4], rows: [[c1..c4], …] }
-//         | { type: 'label', name, meta }
-//         | { type: 'instance', set: 'Button', variant: 'Variant=Default, …', props: { 'Icon Before': true, Label: '…' } }
-//         | { type: 'row', gap, blocks: [block, …] }   (horizontal group)
-// Returns { frameId, renamed }. An existing frame with the same name is renamed "<name> (old)" (scripts never delete).
+// Shared `use_figma` snippet for the component page template (decision 2026-10-06, simplified after review):
+//   Header frame  — _Doc/Header instance: Title, Summary, Status badge, Updated, Storybook link
+//   Section "Example"    — a row of representative instances
+//   Section "Components" — the component set itself (moved into the section), with _Doc/Axis row / column labels
+//   Section "Parts"      — instances of the sub-components it uses (omitted when there are none)
+// Sections are Figma SECTION nodes. A *-doc-stage.js script embeds PAGE_LIB and calls `await buildComponentPage(spec)`:
+//   spec = { page, set, header: { status, title, summary, updated, storybook },
+//            example: [{ variant, props }], parts: [{ set, variant, props }], axes: { rows: [[label, y]], cols: [[label, x]] } }
+// Existing Header / sections with the same names are renamed "(old)" (scripts never delete).
 export const PAGE_LIB = String.raw`
 const __vars = await figma.variables.getLocalVariablesAsync();
 const __v = (name) => { const x = __vars.find((y) => y.name === name); if (!x) throw new Error('variable missing: ' + name); return x; };
-const __paint = (name) => figma.variables.setBoundVariableForPaint({ type: 'SOLID', color: { r: 0, g: 0, b: 0 } }, 'color', __v(name));
 const __docPage = figma.root.children.find((p) => p.name === '_Doc');
 const __docIndex = async () => { await figma.setCurrentPageAsync(__docPage); return Object.fromEntries(__docPage.children.filter((n) => n.name.startsWith('_Doc/')).map((n) => [n.name, n])); };
 const __propKey = (node, name) => Object.keys(node.componentProperties ?? {}).find((k) => k === name || k.startsWith(name + '#'));
@@ -24,12 +20,8 @@ const __instance = (doc, name, variant, props) => {
   if (!main) throw new Error(name + ' has no variant ' + variant);
   const inst = main.createInstance(); __setProps(inst, props); return inst;
 };
-const __column = (name, gapTok) => { const f = figma.createFrame(); f.name = name; f.layoutMode = 'VERTICAL'; f.fills = []; f.primaryAxisSizingMode = 'AUTO'; f.counterAxisSizingMode = 'AUTO'; f.setBoundVariable('itemSpacing', __v(gapTok)); return f; };
-const __fill = (node) => { node.layoutSizingHorizontal = 'FILL'; };
-// Component sets referenced by 'instance' blocks live on other pages, which are loaded lazily: open each page once to resolve them.
-const __resolveSets = async (spec) => {
-  const names = new Set(); const walk = (bs) => { for (const b of bs ?? []) { if (b.type === 'instance') names.add(b.set); if (b.type === 'row') walk(b.blocks); } };
-  for (const s of spec.sections) walk(s.blocks);
+// Component sets live on lazily loaded pages: open each page once to resolve them by name.
+const __resolveSets = async (names) => {
   const found = {};
   for (const p of figma.root.children) {
     if (Object.keys(found).length === names.size) break;
@@ -39,53 +31,46 @@ const __resolveSets = async (spec) => {
   for (const n of names) if (!found[n]) throw new Error('component missing: ' + n);
   return found;
 };
-async function buildPage(spec) {
-  const sets = await __resolveSets(spec);
+const __row = (name, gapTok) => { const f = figma.createFrame(); f.name = name; f.layoutMode = 'HORIZONTAL'; f.counterAxisAlignItems = 'CENTER'; f.fills = []; f.primaryAxisSizingMode = 'AUTO'; f.counterAxisSizingMode = 'AUTO'; f.setBoundVariable('itemSpacing', __v(gapTok)); return f; };
+const __retire = (page, pred) => { const ids = []; for (const n of page.children.filter(pred)) { n.name = n.name + ' (old)'; ids.push(n.id); } return ids; };
+const __section = (name, x, y, w, h) => { const s = figma.createSection(); s.name = name; s.x = x; s.y = y; s.resizeWithoutConstraints(w, h); return s; };
+const GAP = 80, PAD = 48;
+async function buildComponentPage(spec) {
+  const names = new Set([spec.set, ...(spec.parts ?? []).map((p) => p.set)]);
+  const sets = await __resolveSets(names);
   const doc = await __docIndex();
   const page = figma.root.children.find((p) => p.name === spec.page); if (!page) throw new Error('page missing: ' + spec.page);
   await figma.setCurrentPageAsync(page);
-  const out = { renamed: null, blocks: 0 };
-  const prev = page.children.find((n) => n.type === 'FRAME' && n.name === spec.name); // FRAME only: the component set may share the name
-  if (prev) { prev.name = spec.name + ' (old)'; out.renamed = prev.id; }
-  const root = __column(spec.name, 'Dimension/Space/1600'); // 64 between sections
-  root.x = spec.x ?? 0; root.y = spec.y ?? 0;
-  for (const k of ['paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft']) root.setBoundVariable(k, __v('Dimension/Space/1600'));
-  root.fills = [__paint('Elevation/Surface/Default')];
-  root.resize(spec.width ?? 1440, 100); root.counterAxisSizingMode = 'FIXED'; root.primaryAxisSizingMode = 'AUTO';
-  page.appendChild(root);
+  const out = { renamed: [] };
+  out.renamed.push(...__retire(page, (n) => (n.type === 'FRAME' && (n.name === 'Header' || n.name === spec.page)) || (n.type === 'SECTION' && ['Example', 'Components', 'Parts'].includes(n.name)) || n.name === 'Axes'));
+  const set = sets[spec.set];
+  const width = Math.max(1280, set.width + PAD * 2);
+  let y = 0;
   const h = spec.header;
-  const header = __instance(doc, '_Doc/Header', 'Status=' + (h.status ?? 'Draft'), { Title: h.title, Summary: h.summary, Updated: 'Updated ' + h.updated, Source: 'Source: ' + h.source, Links: 'Links: ' + h.links });
-  root.appendChild(header); __fill(header);
-  const addBlock = (parent, b) => {
-    let node;
-    if (b.type === 'note') node = __instance(doc, '_Doc/Note', 'Kind=' + b.kind, { Text: b.text });
-    else if (b.type === 'label') node = __instance(doc, '_Doc/Label', null, { Name: b.name, Meta: b.meta });
-    else if (b.type === 'axis') node = __instance(doc, '_Doc/Axis', null, { Text: b.text });
-    else if (b.type === 'table') {
-      node = __column('Table', 'Dimension/Space/0');
-      const row = (kind, cells) => { const r = __instance(doc, '_Doc/Table Row', 'Kind=' + kind, Object.fromEntries(cells.map((c, i) => ['Col ' + (i + 1), c]))); node.appendChild(r); __fill(r); };
-      row('Header', b.header); for (const cells of b.rows) row('Row', cells);
-    } else if (b.type === 'instance') {
-      const src = sets[b.set];
-      const main = src.type === 'COMPONENT_SET' ? src.children.find((x) => x.name === b.variant) : src;
-      node = main.createInstance(); __setProps(node, b.props);
-    } else if (b.type === 'row') {
-      node = __column('Row', b.gap ?? 'Dimension/Space/600'); node.layoutMode = 'HORIZONTAL'; node.counterAxisAlignItems = 'CENTER';
-      for (const inner of b.blocks) addBlock(node, inner);
-    } else throw new Error('unknown block ' + b.type);
-    parent.appendChild(node);
-    if (b.type === 'note' || b.type === 'table') __fill(node);
-    out.blocks++;
-    return node;
-  };
-  for (const s of spec.sections) {
-    const section = __column(s.heading, 'Dimension/Space/400'); // 16 between heading and blocks
-    root.appendChild(section); __fill(section);
-    const head = __instance(doc, '_Doc/Section', null, { Heading: s.heading, Description: s.description ?? '' });
-    if (!s.description) __setProps(head, { 'Show Description': false });
-    section.appendChild(head); __fill(head);
-    for (const b of s.blocks ?? []) addBlock(section, b);
+  const header = __instance(doc, '_Doc/Header', 'Status=' + (h.status ?? 'Draft'), { Title: h.title, Summary: h.summary, Updated: 'Updated ' + h.updated, Storybook: 'Storybook: ' + h.storybook });
+  page.appendChild(header); header.name = 'Header'; header.x = 0; header.y = y; header.resize(width, header.height);
+  y += header.height + GAP;
+  const example = __section('Example', 0, y, width, 100); page.appendChild(example);
+  const exRow = __row('Example', 'Dimension/Space/600'); example.appendChild(exRow); exRow.x = PAD; exRow.y = PAD;
+  for (const e of spec.example ?? []) { const main = set.type === 'COMPONENT_SET' ? set.children.find((c) => c.name === e.variant) : set; if (!main) throw new Error('variant missing: ' + e.variant); const inst = main.createInstance(); __setProps(inst, e.props); exRow.appendChild(inst); }
+  example.resizeWithoutConstraints(width, exRow.height + PAD * 2);
+  y += example.height + GAP;
+  const comps = __section('Components', 0, y, width, 100); page.appendChild(comps);
+  comps.appendChild(set); set.x = PAD; set.y = PAD;
+  const A = spec.axes;
+  if (A) {
+    for (const [label, x] of A.cols) { const t = __instance(doc, '_Doc/Axis', null, { Text: label }); comps.appendChild(t); t.x = PAD + x; t.y = PAD - 20; }
+    for (const [label, ry] of A.rows) { const t = __instance(doc, '_Doc/Axis', null, { Text: label }); comps.appendChild(t); t.x = PAD - t.width - 12; t.y = PAD + ry; }
   }
-  out.frameId = root.id; out.width = root.width; out.height = root.height;
+  comps.resizeWithoutConstraints(width, set.height + PAD * 2);
+  y += comps.height + GAP;
+  if (spec.parts?.length) {
+    const parts = __section('Parts', 0, y, width, 100); page.appendChild(parts);
+    const row = __row('Parts', 'Dimension/Space/600'); parts.appendChild(row); row.x = PAD; row.y = PAD;
+    for (const p of spec.parts) { const src = sets[p.set]; const main = src.type === 'COMPONENT_SET' ? src.children.find((c) => c.name === p.variant) : src; if (!main) throw new Error('variant missing: ' + p.variant); const inst = main.createInstance(); __setProps(inst, p.props); row.appendChild(inst); inst.layoutSizingHorizontal = 'FIXED'; inst.layoutSizingVertical = 'FIXED'; inst.resize(main.width, main.height); } // empty-frame parts (Focus Ring) collapse without an explicit size
+    parts.resizeWithoutConstraints(width, row.height + PAD * 2);
+    out.parts = parts.id;
+  }
+  out.header = header.id; out.example = example.id; out.components = comps.id; out.width = width;
   return out;
 }`;
