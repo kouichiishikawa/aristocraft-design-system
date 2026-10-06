@@ -349,41 +349,41 @@ export const primitives = {
 export const semantic = {
   "font": {
     "family": {
-      "default": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+      "default": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
       "serif": "Lora, 'Noto Sans JP', Georgia, serif",
       "mono": "'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
     },
     "display": {
       "sm": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "48px",
         "lineHeight": "60px",
         "letterSpacing": "-0.02em",
         "fontWeight": 700
       },
       "md": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "64px",
         "lineHeight": "80px",
         "letterSpacing": "-0.02em",
         "fontWeight": 700
       },
       "lg": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "80px",
         "lineHeight": "100px",
         "letterSpacing": "-0.02em",
         "fontWeight": 700
       },
       "xl": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "96px",
         "lineHeight": "120px",
         "letterSpacing": "-0.02em",
         "fontWeight": 700
       },
       "xxl": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "128px",
         "lineHeight": "160px",
         "letterSpacing": "-0.02em",
@@ -392,49 +392,49 @@ export const semantic = {
     },
     "heading": {
       "xs": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "16px",
         "lineHeight": "20px",
         "letterSpacing": "0em",
         "fontWeight": 600
       },
       "sm": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "18px",
         "lineHeight": "24px",
         "letterSpacing": "0em",
         "fontWeight": 600
       },
       "md": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "20px",
         "lineHeight": "28px",
         "letterSpacing": "0em",
         "fontWeight": 600
       },
       "lg": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "24px",
         "lineHeight": "32px",
         "letterSpacing": "0em",
         "fontWeight": 600
       },
       "xl": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "28px",
         "lineHeight": "36px",
         "letterSpacing": "-0.02em",
         "fontWeight": 600
       },
       "xxl": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "32px",
         "lineHeight": "40px",
         "letterSpacing": "-0.02em",
         "fontWeight": 600
       },
       "xxxl": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "40px",
         "lineHeight": "48px",
         "letterSpacing": "-0.02em",
@@ -443,28 +443,28 @@ export const semantic = {
     },
     "body": {
       "sm": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "14px",
         "lineHeight": "24px",
         "letterSpacing": "0em",
         "fontWeight": 400
       },
       "md": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "16px",
         "lineHeight": "28px",
         "letterSpacing": "0em",
         "fontWeight": 400
       },
       "lg": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "18px",
         "lineHeight": "28px",
         "letterSpacing": "0em",
         "fontWeight": 400
       },
       "xl": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "20px",
         "lineHeight": "32px",
         "letterSpacing": "0em",
@@ -473,28 +473,28 @@ export const semantic = {
     },
     "label": {
       "xs": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "10px",
         "lineHeight": "12px",
         "letterSpacing": "0.02em",
         "fontWeight": 500
       },
       "sm": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "12px",
         "lineHeight": "16px",
         "letterSpacing": "0.02em",
         "fontWeight": 500
       },
       "md": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "14px",
         "lineHeight": "20px",
         "letterSpacing": "0em",
         "fontWeight": 500
       },
       "lg": {
-        "fontFamily": "'Inter Variable', Inter, 'Noto Sans JP', system-ui, sans-serif",
+        "fontFamily": "'Inter Display', Inter, 'Noto Sans JP', system-ui, sans-serif",
         "fontSize": "16px",
         "lineHeight": "24px",
         "letterSpacing": "0em",

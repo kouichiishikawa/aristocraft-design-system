@@ -3505,7 +3505,7 @@
           ],
           "codeSyntax": "var(--ac-font-family-default)",
           "values": {
-            "Value": "Inter"
+            "Value": "Inter Display"
           }
         },
         {
@@ -8617,7 +8617,7 @@
         "fontWeight": "Typography/Weight/Bold"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -8648,7 +8648,7 @@
         "fontWeight": "Typography/Weight/Bold"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -8679,7 +8679,7 @@
         "fontWeight": "Typography/Weight/Bold"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -8710,7 +8710,7 @@
         "fontWeight": "Typography/Weight/Bold"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -8741,7 +8741,7 @@
         "fontWeight": "Typography/Weight/Bold"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -8772,7 +8772,7 @@
         "fontWeight": "Typography/Weight/Semibold"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -8803,7 +8803,7 @@
         "fontWeight": "Typography/Weight/Semibold"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -8834,7 +8834,7 @@
         "fontWeight": "Typography/Weight/Semibold"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -8865,7 +8865,7 @@
         "fontWeight": "Typography/Weight/Semibold"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -8896,7 +8896,7 @@
         "fontWeight": "Typography/Weight/Semibold"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -8927,7 +8927,7 @@
         "fontWeight": "Typography/Weight/Semibold"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -8958,7 +8958,7 @@
         "fontWeight": "Typography/Weight/Semibold"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -8989,7 +8989,7 @@
         "fontWeight": "Typography/Weight/Regular"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -9020,7 +9020,7 @@
         "fontWeight": "Typography/Weight/Regular"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -9051,7 +9051,7 @@
         "fontWeight": "Typography/Weight/Regular"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -9082,7 +9082,7 @@
         "fontWeight": "Typography/Weight/Regular"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -9113,7 +9113,7 @@
         "fontWeight": "Typography/Weight/Medium"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -9144,7 +9144,7 @@
         "fontWeight": "Typography/Weight/Medium"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -9175,7 +9175,7 @@
         "fontWeight": "Typography/Weight/Medium"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",
@@ -9206,7 +9206,7 @@
         "fontWeight": "Typography/Weight/Medium"
       },
       "fontFamily": [
-        "Inter Variable",
+        "Inter Display",
         "Inter",
         "Noto Sans JP",
         "system-ui",

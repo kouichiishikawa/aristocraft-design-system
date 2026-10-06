@@ -5,7 +5,7 @@
       "default": {
         "$type": "fontFamily",
         "$value": [
-          "Inter Variable",
+          "Inter Display",
           "Inter",
           "Noto Sans JP",
           "system-ui",

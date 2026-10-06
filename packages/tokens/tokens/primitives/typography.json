@@ -222,7 +222,7 @@
       }
     },
     "weight": {
-      "$description": "4 段。Inter Variable / Noto Sans JP / Lora / Geist Mono すべてで利用可",
+      "$description": "4 段。Inter Display / Noto Sans JP / Lora / Geist Mono すべてで利用可",
       "regular": {
         "$type": "fontWeight",
         "$value": 400
