@@ -69,6 +69,12 @@ emphasis('color.background.brand',PRIMARY)
 # status
 for role,h in STATUS.items():
     emphasis(f'color.background.status.{role}',h)
+    # 2026-10-22: status keeps subtlest < subtle < default one step apart (light 50/100/200, dark 950/900/800).
+    # subtle.pressed = hovered (two steps fails AA for text.*.bold); dark default.pressed = hovered (text.default AA)
+    b=f'color.background.status.{role}'
+    for path,l,d in ((f'{b}.subtle',100,900),(f'{b}.subtle.hovered',200,800),(f'{b}.subtle.pressed',200,800),
+                     (f'{b}.default',200,800),(f'{b}.default.hovered',300,700),(f'{b}.default.pressed',400,700)):
+        M[path].update(light=f'{h}.{l}',dark=f'{h}.{d}')
     add(f'color.text.status.{role}',f'{h}.700',f'{h}.400',''); add(f'color.text.status.{role}.bold',f'{h}.800',f'{h}.200',f'{role}.subtle の面に乗せる文字')
     add(f'color.border.status.{role}',f'{h}.600',f'{h}.500','')
 # accent (all 12 hues, no states)

@@ -540,45 +540,45 @@
   --ac-color-background-brand-bold-pressed: var(--ac-color-blue-800); /** 2 段強く */
   --ac-color-background-brand-boldest: var(--ac-color-blue-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
   --ac-color-background-status-success-subtlest: var(--ac-color-green-50); /** ほのかな色の面 */
-  --ac-color-background-status-success-subtle: var(--ac-color-green-50); /** 薄いタグ・通知の地（文字は .bold） */
-  --ac-color-background-status-success-subtle-hovered: var(--ac-color-green-100);
+  --ac-color-background-status-success-subtle: var(--ac-color-green-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --ac-color-background-status-success-subtle-hovered: var(--ac-color-green-200);
   --ac-color-background-status-success-subtle-pressed: var(--ac-color-green-200);
-  --ac-color-background-status-success-default: var(--ac-color-green-100); /** 色つきの面（文字は text.default） */
-  --ac-color-background-status-success-default-hovered: var(--ac-color-green-200);
-  --ac-color-background-status-success-default-pressed: var(--ac-color-green-300);
+  --ac-color-background-status-success-default: var(--ac-color-green-200); /** 色つきの面（文字は text.default） */
+  --ac-color-background-status-success-default-hovered: var(--ac-color-green-300);
+  --ac-color-background-status-success-default-pressed: var(--ac-color-green-400);
   --ac-color-background-status-success-bold: var(--ac-color-green-700); /** 塗り（文字は text.inverse。light の amber / lime は static.black） */
   --ac-color-background-status-success-bold-hovered: var(--ac-color-green-800); /** 1 段強く（light は濃く、dark は明るく） */
   --ac-color-background-status-success-bold-pressed: var(--ac-color-green-900); /** 2 段強く */
   --ac-color-background-status-success-boldest: var(--ac-color-green-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
   --ac-color-background-status-warning-subtlest: var(--ac-color-amber-50); /** ほのかな色の面 */
-  --ac-color-background-status-warning-subtle: var(--ac-color-amber-50); /** 薄いタグ・通知の地（文字は .bold） */
-  --ac-color-background-status-warning-subtle-hovered: var(--ac-color-amber-100);
+  --ac-color-background-status-warning-subtle: var(--ac-color-amber-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --ac-color-background-status-warning-subtle-hovered: var(--ac-color-amber-200);
   --ac-color-background-status-warning-subtle-pressed: var(--ac-color-amber-200);
-  --ac-color-background-status-warning-default: var(--ac-color-amber-100); /** 色つきの面（文字は text.default） */
-  --ac-color-background-status-warning-default-hovered: var(--ac-color-amber-200);
-  --ac-color-background-status-warning-default-pressed: var(--ac-color-amber-300);
+  --ac-color-background-status-warning-default: var(--ac-color-amber-200); /** 色つきの面（文字は text.default） */
+  --ac-color-background-status-warning-default-hovered: var(--ac-color-amber-300);
+  --ac-color-background-status-warning-default-pressed: var(--ac-color-amber-400);
   --ac-color-background-status-warning-bold: var(--ac-color-amber-400); /** 塗り（文字は text.inverse。light の amber / lime は static.black） */
   --ac-color-background-status-warning-bold-hovered: var(--ac-color-amber-500); /** 1 段強く（light は濃く、dark は明るく） */
   --ac-color-background-status-warning-bold-pressed: var(--ac-color-amber-600); /** 2 段強く */
   --ac-color-background-status-warning-boldest: var(--ac-color-amber-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
   --ac-color-background-status-error-subtlest: var(--ac-color-red-50); /** ほのかな色の面 */
-  --ac-color-background-status-error-subtle: var(--ac-color-red-50); /** 薄いタグ・通知の地（文字は .bold） */
-  --ac-color-background-status-error-subtle-hovered: var(--ac-color-red-100);
+  --ac-color-background-status-error-subtle: var(--ac-color-red-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --ac-color-background-status-error-subtle-hovered: var(--ac-color-red-200);
   --ac-color-background-status-error-subtle-pressed: var(--ac-color-red-200);
-  --ac-color-background-status-error-default: var(--ac-color-red-100); /** 色つきの面（文字は text.default） */
-  --ac-color-background-status-error-default-hovered: var(--ac-color-red-200);
-  --ac-color-background-status-error-default-pressed: var(--ac-color-red-300);
+  --ac-color-background-status-error-default: var(--ac-color-red-200); /** 色つきの面（文字は text.default） */
+  --ac-color-background-status-error-default-hovered: var(--ac-color-red-300);
+  --ac-color-background-status-error-default-pressed: var(--ac-color-red-400);
   --ac-color-background-status-error-bold: var(--ac-color-red-600); /** 塗り（文字は text.inverse。light の amber / lime は static.black） */
   --ac-color-background-status-error-bold-hovered: var(--ac-color-red-700); /** 1 段強く（light は濃く、dark は明るく） */
   --ac-color-background-status-error-bold-pressed: var(--ac-color-red-800); /** 2 段強く */
   --ac-color-background-status-error-boldest: var(--ac-color-red-800); /** 最も強い塗り（light 白文字、dark 黒文字） */
   --ac-color-background-status-info-subtlest: var(--ac-color-sky-50); /** ほのかな色の面 */
-  --ac-color-background-status-info-subtle: var(--ac-color-sky-50); /** 薄いタグ・通知の地（文字は .bold） */
-  --ac-color-background-status-info-subtle-hovered: var(--ac-color-sky-100);
+  --ac-color-background-status-info-subtle: var(--ac-color-sky-100); /** 薄いタグ・通知の地（文字は .bold） */
+  --ac-color-background-status-info-subtle-hovered: var(--ac-color-sky-200);
   --ac-color-background-status-info-subtle-pressed: var(--ac-color-sky-200);
-  --ac-color-background-status-info-default: var(--ac-color-sky-100); /** 色つきの面（文字は text.default） */
-  --ac-color-background-status-info-default-hovered: var(--ac-color-sky-200);
-  --ac-color-background-status-info-default-pressed: var(--ac-color-sky-300);
+  --ac-color-background-status-info-default: var(--ac-color-sky-200); /** 色つきの面（文字は text.default） */
+  --ac-color-background-status-info-default-hovered: var(--ac-color-sky-300);
+  --ac-color-background-status-info-default-pressed: var(--ac-color-sky-400);
   --ac-color-background-status-info-bold: var(--ac-color-sky-700); /** 塗り（文字は text.inverse。light の amber / lime は static.black） */
   --ac-color-background-status-info-bold-hovered: var(--ac-color-sky-800); /** 1 段強く（light は濃く、dark は明るく） */
   --ac-color-background-status-info-bold-pressed: var(--ac-color-sky-900); /** 2 段強く */
@@ -802,44 +802,44 @@
   --ac-color-background-brand-bold-pressed: var(--ac-color-blue-300); /** 2 段強く */
   --ac-color-background-brand-boldest: var(--ac-color-blue-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
   --ac-color-background-status-success-subtlest: var(--ac-color-green-950); /** ほのかな色の面 */
-  --ac-color-background-status-success-subtle: var(--ac-color-green-950); /** 薄いタグ・通知の地（文字は .bold） */
-  --ac-color-background-status-success-subtle-hovered: var(--ac-color-green-900);
+  --ac-color-background-status-success-subtle: var(--ac-color-green-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --ac-color-background-status-success-subtle-hovered: var(--ac-color-green-800);
   --ac-color-background-status-success-subtle-pressed: var(--ac-color-green-800);
-  --ac-color-background-status-success-default: var(--ac-color-green-900); /** 色つきの面（文字は text.default） */
-  --ac-color-background-status-success-default-hovered: var(--ac-color-green-800);
+  --ac-color-background-status-success-default: var(--ac-color-green-800); /** 色つきの面（文字は text.default） */
+  --ac-color-background-status-success-default-hovered: var(--ac-color-green-700);
   --ac-color-background-status-success-default-pressed: var(--ac-color-green-700);
   --ac-color-background-status-success-bold: var(--ac-color-green-500); /** 塗り（文字は text.inverse。light の amber / lime は static.black） */
   --ac-color-background-status-success-bold-hovered: var(--ac-color-green-400); /** 1 段強く（light は濃く、dark は明るく） */
   --ac-color-background-status-success-bold-pressed: var(--ac-color-green-300); /** 2 段強く */
   --ac-color-background-status-success-boldest: var(--ac-color-green-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
   --ac-color-background-status-warning-subtlest: var(--ac-color-amber-950); /** ほのかな色の面 */
-  --ac-color-background-status-warning-subtle: var(--ac-color-amber-950); /** 薄いタグ・通知の地（文字は .bold） */
-  --ac-color-background-status-warning-subtle-hovered: var(--ac-color-amber-900);
+  --ac-color-background-status-warning-subtle: var(--ac-color-amber-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --ac-color-background-status-warning-subtle-hovered: var(--ac-color-amber-800);
   --ac-color-background-status-warning-subtle-pressed: var(--ac-color-amber-800);
-  --ac-color-background-status-warning-default: var(--ac-color-amber-900); /** 色つきの面（文字は text.default） */
-  --ac-color-background-status-warning-default-hovered: var(--ac-color-amber-800);
+  --ac-color-background-status-warning-default: var(--ac-color-amber-800); /** 色つきの面（文字は text.default） */
+  --ac-color-background-status-warning-default-hovered: var(--ac-color-amber-700);
   --ac-color-background-status-warning-default-pressed: var(--ac-color-amber-700);
   --ac-color-background-status-warning-bold: var(--ac-color-amber-400); /** 塗り（文字は text.inverse。light の amber / lime は static.black） */
   --ac-color-background-status-warning-bold-hovered: var(--ac-color-amber-300); /** 1 段強く（light は濃く、dark は明るく） */
   --ac-color-background-status-warning-bold-pressed: var(--ac-color-amber-200); /** 2 段強く */
   --ac-color-background-status-warning-boldest: var(--ac-color-amber-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
   --ac-color-background-status-error-subtlest: var(--ac-color-red-950); /** ほのかな色の面 */
-  --ac-color-background-status-error-subtle: var(--ac-color-red-950); /** 薄いタグ・通知の地（文字は .bold） */
-  --ac-color-background-status-error-subtle-hovered: var(--ac-color-red-900);
+  --ac-color-background-status-error-subtle: var(--ac-color-red-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --ac-color-background-status-error-subtle-hovered: var(--ac-color-red-800);
   --ac-color-background-status-error-subtle-pressed: var(--ac-color-red-800);
-  --ac-color-background-status-error-default: var(--ac-color-red-900); /** 色つきの面（文字は text.default） */
-  --ac-color-background-status-error-default-hovered: var(--ac-color-red-800);
+  --ac-color-background-status-error-default: var(--ac-color-red-800); /** 色つきの面（文字は text.default） */
+  --ac-color-background-status-error-default-hovered: var(--ac-color-red-700);
   --ac-color-background-status-error-default-pressed: var(--ac-color-red-700);
   --ac-color-background-status-error-bold: var(--ac-color-red-500); /** 塗り（文字は text.inverse。light の amber / lime は static.black） */
   --ac-color-background-status-error-bold-hovered: var(--ac-color-red-400); /** 1 段強く（light は濃く、dark は明るく） */
   --ac-color-background-status-error-bold-pressed: var(--ac-color-red-300); /** 2 段強く */
   --ac-color-background-status-error-boldest: var(--ac-color-red-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
   --ac-color-background-status-info-subtlest: var(--ac-color-sky-950); /** ほのかな色の面 */
-  --ac-color-background-status-info-subtle: var(--ac-color-sky-950); /** 薄いタグ・通知の地（文字は .bold） */
-  --ac-color-background-status-info-subtle-hovered: var(--ac-color-sky-900);
+  --ac-color-background-status-info-subtle: var(--ac-color-sky-900); /** 薄いタグ・通知の地（文字は .bold） */
+  --ac-color-background-status-info-subtle-hovered: var(--ac-color-sky-800);
   --ac-color-background-status-info-subtle-pressed: var(--ac-color-sky-800);
-  --ac-color-background-status-info-default: var(--ac-color-sky-900); /** 色つきの面（文字は text.default） */
-  --ac-color-background-status-info-default-hovered: var(--ac-color-sky-800);
+  --ac-color-background-status-info-default: var(--ac-color-sky-800); /** 色つきの面（文字は text.default） */
+  --ac-color-background-status-info-default-hovered: var(--ac-color-sky-700);
   --ac-color-background-status-info-default-pressed: var(--ac-color-sky-700);
   --ac-color-background-status-info-bold: var(--ac-color-sky-500); /** 塗り（文字は text.inverse。light の amber / lime は static.black） */
   --ac-color-background-status-info-bold-hovered: var(--ac-color-sky-400); /** 1 段強く（light は濃く、dark は明るく） */
@@ -1065,44 +1065,44 @@
     --ac-color-background-brand-bold-pressed: var(--ac-color-blue-300); /** 2 段強く */
     --ac-color-background-brand-boldest: var(--ac-color-blue-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
     --ac-color-background-status-success-subtlest: var(--ac-color-green-950); /** ほのかな色の面 */
-    --ac-color-background-status-success-subtle: var(--ac-color-green-950); /** 薄いタグ・通知の地（文字は .bold） */
-    --ac-color-background-status-success-subtle-hovered: var(--ac-color-green-900);
+    --ac-color-background-status-success-subtle: var(--ac-color-green-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --ac-color-background-status-success-subtle-hovered: var(--ac-color-green-800);
     --ac-color-background-status-success-subtle-pressed: var(--ac-color-green-800);
-    --ac-color-background-status-success-default: var(--ac-color-green-900); /** 色つきの面（文字は text.default） */
-    --ac-color-background-status-success-default-hovered: var(--ac-color-green-800);
+    --ac-color-background-status-success-default: var(--ac-color-green-800); /** 色つきの面（文字は text.default） */
+    --ac-color-background-status-success-default-hovered: var(--ac-color-green-700);
     --ac-color-background-status-success-default-pressed: var(--ac-color-green-700);
     --ac-color-background-status-success-bold: var(--ac-color-green-500); /** 塗り（文字は text.inverse。light の amber / lime は static.black） */
     --ac-color-background-status-success-bold-hovered: var(--ac-color-green-400); /** 1 段強く（light は濃く、dark は明るく） */
     --ac-color-background-status-success-bold-pressed: var(--ac-color-green-300); /** 2 段強く */
     --ac-color-background-status-success-boldest: var(--ac-color-green-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
     --ac-color-background-status-warning-subtlest: var(--ac-color-amber-950); /** ほのかな色の面 */
-    --ac-color-background-status-warning-subtle: var(--ac-color-amber-950); /** 薄いタグ・通知の地（文字は .bold） */
-    --ac-color-background-status-warning-subtle-hovered: var(--ac-color-amber-900);
+    --ac-color-background-status-warning-subtle: var(--ac-color-amber-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --ac-color-background-status-warning-subtle-hovered: var(--ac-color-amber-800);
     --ac-color-background-status-warning-subtle-pressed: var(--ac-color-amber-800);
-    --ac-color-background-status-warning-default: var(--ac-color-amber-900); /** 色つきの面（文字は text.default） */
-    --ac-color-background-status-warning-default-hovered: var(--ac-color-amber-800);
+    --ac-color-background-status-warning-default: var(--ac-color-amber-800); /** 色つきの面（文字は text.default） */
+    --ac-color-background-status-warning-default-hovered: var(--ac-color-amber-700);
     --ac-color-background-status-warning-default-pressed: var(--ac-color-amber-700);
     --ac-color-background-status-warning-bold: var(--ac-color-amber-400); /** 塗り（文字は text.inverse。light の amber / lime は static.black） */
     --ac-color-background-status-warning-bold-hovered: var(--ac-color-amber-300); /** 1 段強く（light は濃く、dark は明るく） */
     --ac-color-background-status-warning-bold-pressed: var(--ac-color-amber-200); /** 2 段強く */
     --ac-color-background-status-warning-boldest: var(--ac-color-amber-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
     --ac-color-background-status-error-subtlest: var(--ac-color-red-950); /** ほのかな色の面 */
-    --ac-color-background-status-error-subtle: var(--ac-color-red-950); /** 薄いタグ・通知の地（文字は .bold） */
-    --ac-color-background-status-error-subtle-hovered: var(--ac-color-red-900);
+    --ac-color-background-status-error-subtle: var(--ac-color-red-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --ac-color-background-status-error-subtle-hovered: var(--ac-color-red-800);
     --ac-color-background-status-error-subtle-pressed: var(--ac-color-red-800);
-    --ac-color-background-status-error-default: var(--ac-color-red-900); /** 色つきの面（文字は text.default） */
-    --ac-color-background-status-error-default-hovered: var(--ac-color-red-800);
+    --ac-color-background-status-error-default: var(--ac-color-red-800); /** 色つきの面（文字は text.default） */
+    --ac-color-background-status-error-default-hovered: var(--ac-color-red-700);
     --ac-color-background-status-error-default-pressed: var(--ac-color-red-700);
     --ac-color-background-status-error-bold: var(--ac-color-red-500); /** 塗り（文字は text.inverse。light の amber / lime は static.black） */
     --ac-color-background-status-error-bold-hovered: var(--ac-color-red-400); /** 1 段強く（light は濃く、dark は明るく） */
     --ac-color-background-status-error-bold-pressed: var(--ac-color-red-300); /** 2 段強く */
     --ac-color-background-status-error-boldest: var(--ac-color-red-300); /** 最も強い塗り（light 白文字、dark 黒文字） */
     --ac-color-background-status-info-subtlest: var(--ac-color-sky-950); /** ほのかな色の面 */
-    --ac-color-background-status-info-subtle: var(--ac-color-sky-950); /** 薄いタグ・通知の地（文字は .bold） */
-    --ac-color-background-status-info-subtle-hovered: var(--ac-color-sky-900);
+    --ac-color-background-status-info-subtle: var(--ac-color-sky-900); /** 薄いタグ・通知の地（文字は .bold） */
+    --ac-color-background-status-info-subtle-hovered: var(--ac-color-sky-800);
     --ac-color-background-status-info-subtle-pressed: var(--ac-color-sky-800);
-    --ac-color-background-status-info-default: var(--ac-color-sky-900); /** 色つきの面（文字は text.default） */
-    --ac-color-background-status-info-default-hovered: var(--ac-color-sky-800);
+    --ac-color-background-status-info-default: var(--ac-color-sky-800); /** 色つきの面（文字は text.default） */
+    --ac-color-background-status-info-default-hovered: var(--ac-color-sky-700);
     --ac-color-background-status-info-default-pressed: var(--ac-color-sky-700);
     --ac-color-background-status-info-bold: var(--ac-color-sky-500); /** 塗り（文字は text.inverse。light の amber / lime は static.black） */
     --ac-color-background-status-info-bold-hovered: var(--ac-color-sky-400); /** 1 段強く（light は濃く、dark は明るく） */

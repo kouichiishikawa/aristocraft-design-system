@@ -741,12 +741,12 @@
           "subtle": {
             "$root": {
               "$type": "color",
-              "$value": "{color.green.50}",
+              "$value": "{color.green.100}",
               "$description": "薄いタグ・通知の地（文字は .bold）"
             },
             "hovered": {
               "$type": "color",
-              "$value": "{color.green.100}"
+              "$value": "{color.green.200}"
             },
             "pressed": {
               "$type": "color",
@@ -756,16 +756,16 @@
           "default": {
             "$root": {
               "$type": "color",
-              "$value": "{color.green.100}",
+              "$value": "{color.green.200}",
               "$description": "色つきの面（文字は text.default）"
             },
             "hovered": {
               "$type": "color",
-              "$value": "{color.green.200}"
+              "$value": "{color.green.300}"
             },
             "pressed": {
               "$type": "color",
-              "$value": "{color.green.300}"
+              "$value": "{color.green.400}"
             }
           },
           "bold": {
@@ -800,12 +800,12 @@
           "subtle": {
             "$root": {
               "$type": "color",
-              "$value": "{color.amber.50}",
+              "$value": "{color.amber.100}",
               "$description": "薄いタグ・通知の地（文字は .bold）"
             },
             "hovered": {
               "$type": "color",
-              "$value": "{color.amber.100}"
+              "$value": "{color.amber.200}"
             },
             "pressed": {
               "$type": "color",
@@ -815,16 +815,16 @@
           "default": {
             "$root": {
               "$type": "color",
-              "$value": "{color.amber.100}",
+              "$value": "{color.amber.200}",
               "$description": "色つきの面（文字は text.default）"
             },
             "hovered": {
               "$type": "color",
-              "$value": "{color.amber.200}"
+              "$value": "{color.amber.300}"
             },
             "pressed": {
               "$type": "color",
-              "$value": "{color.amber.300}"
+              "$value": "{color.amber.400}"
             }
           },
           "bold": {
@@ -859,12 +859,12 @@
           "subtle": {
             "$root": {
               "$type": "color",
-              "$value": "{color.red.50}",
+              "$value": "{color.red.100}",
               "$description": "薄いタグ・通知の地（文字は .bold）"
             },
             "hovered": {
               "$type": "color",
-              "$value": "{color.red.100}"
+              "$value": "{color.red.200}"
             },
             "pressed": {
               "$type": "color",
@@ -874,16 +874,16 @@
           "default": {
             "$root": {
               "$type": "color",
-              "$value": "{color.red.100}",
+              "$value": "{color.red.200}",
               "$description": "色つきの面（文字は text.default）"
             },
             "hovered": {
               "$type": "color",
-              "$value": "{color.red.200}"
+              "$value": "{color.red.300}"
             },
             "pressed": {
               "$type": "color",
-              "$value": "{color.red.300}"
+              "$value": "{color.red.400}"
             }
           },
           "bold": {
@@ -918,12 +918,12 @@
           "subtle": {
             "$root": {
               "$type": "color",
-              "$value": "{color.sky.50}",
+              "$value": "{color.sky.100}",
               "$description": "薄いタグ・通知の地（文字は .bold）"
             },
             "hovered": {
               "$type": "color",
-              "$value": "{color.sky.100}"
+              "$value": "{color.sky.200}"
             },
             "pressed": {
               "$type": "color",
@@ -933,16 +933,16 @@
           "default": {
             "$root": {
               "$type": "color",
-              "$value": "{color.sky.100}",
+              "$value": "{color.sky.200}",
               "$description": "色つきの面（文字は text.default）"
             },
             "hovered": {
               "$type": "color",
-              "$value": "{color.sky.200}"
+              "$value": "{color.sky.300}"
             },
             "pressed": {
               "$type": "color",
-              "$value": "{color.sky.300}"
+              "$value": "{color.sky.400}"
             }
           },
           "bold": {

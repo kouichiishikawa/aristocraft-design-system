@@ -381,24 +381,6 @@
   "mode": "light",
   "label": "text.success.bold on success.subtle",
   "fg": "green.800",
-  "bg": "green.50",
-  "ratio": 7.33,
-  "need": 4.5,
-  "ok": true
- },
- {
-  "mode": "light",
-  "label": "text.default on success.default",
-  "fg": "neutral.950",
-  "bg": "green.100",
-  "ratio": 14.54,
-  "need": 4.5,
-  "ok": true
- },
- {
-  "mode": "light",
-  "label": "text.success.bold on success.subtle.hovered",
-  "fg": "green.800",
   "bg": "green.100",
   "ratio": 6.12,
   "need": 4.5,
@@ -406,10 +388,28 @@
  },
  {
   "mode": "light",
-  "label": "text.default on success.default.hovered",
+  "label": "text.default on success.default",
   "fg": "neutral.950",
   "bg": "green.200",
   "ratio": 12.0,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.success.bold on success.subtle.hovered",
+  "fg": "green.800",
+  "bg": "green.200",
+  "ratio": 5.05,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on success.default.hovered",
+  "fg": "neutral.950",
+  "bg": "green.300",
+  "ratio": 9.76,
   "need": 4.5,
   "ok": true
  },
@@ -426,8 +426,8 @@
   "mode": "light",
   "label": "text.default on success.default.pressed",
   "fg": "neutral.950",
-  "bg": "green.300",
-  "ratio": 9.76,
+  "bg": "green.400",
+  "ratio": 7.78,
   "need": 4.5,
   "ok": true
  },
@@ -489,24 +489,6 @@
   "mode": "light",
   "label": "text.warning.bold on warning.subtle",
   "fg": "amber.800",
-  "bg": "amber.50",
-  "ratio": 7.81,
-  "need": 4.5,
-  "ok": true
- },
- {
-  "mode": "light",
-  "label": "text.default on warning.default",
-  "fg": "neutral.950",
-  "bg": "amber.100",
-  "ratio": 15.73,
-  "need": 4.5,
-  "ok": true
- },
- {
-  "mode": "light",
-  "label": "text.warning.bold on warning.subtle.hovered",
-  "fg": "amber.800",
   "bg": "amber.100",
   "ratio": 7.03,
   "need": 4.5,
@@ -514,10 +496,28 @@
  },
  {
   "mode": "light",
-  "label": "text.default on warning.default.hovered",
+  "label": "text.default on warning.default",
   "fg": "neutral.950",
   "bg": "amber.200",
   "ratio": 14.07,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.warning.bold on warning.subtle.hovered",
+  "fg": "amber.800",
+  "bg": "amber.200",
+  "ratio": 6.28,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on warning.default.hovered",
+  "fg": "neutral.950",
+  "bg": "amber.300",
+  "ratio": 12.48,
   "need": 4.5,
   "ok": true
  },
@@ -534,8 +534,8 @@
   "mode": "light",
   "label": "text.default on warning.default.pressed",
   "fg": "neutral.950",
-  "bg": "amber.300",
-  "ratio": 12.48,
+  "bg": "amber.400",
+  "ratio": 11.15,
   "need": 4.5,
   "ok": true
  },
@@ -597,24 +597,6 @@
   "mode": "light",
   "label": "text.error.bold on error.subtle",
   "fg": "red.800",
-  "bg": "red.50",
-  "ratio": 8.31,
-  "need": 4.5,
-  "ok": true
- },
- {
-  "mode": "light",
-  "label": "text.default on error.default",
-  "fg": "neutral.950",
-  "bg": "red.100",
-  "ratio": 14.07,
-  "need": 4.5,
-  "ok": true
- },
- {
-  "mode": "light",
-  "label": "text.error.bold on error.subtle.hovered",
-  "fg": "red.800",
   "bg": "red.100",
   "ratio": 6.74,
   "need": 4.5,
@@ -622,10 +604,28 @@
  },
  {
   "mode": "light",
-  "label": "text.default on error.default.hovered",
+  "label": "text.default on error.default",
   "fg": "neutral.950",
   "bg": "red.200",
   "ratio": 11.19,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.error.bold on error.subtle.hovered",
+  "fg": "red.800",
+  "bg": "red.200",
+  "ratio": 5.36,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on error.default.hovered",
+  "fg": "neutral.950",
+  "bg": "red.300",
+  "ratio": 8.81,
   "need": 4.5,
   "ok": true
  },
@@ -642,8 +642,8 @@
   "mode": "light",
   "label": "text.default on error.default.pressed",
   "fg": "neutral.950",
-  "bg": "red.300",
-  "ratio": 8.81,
+  "bg": "red.400",
+  "ratio": 6.72,
   "need": 4.5,
   "ok": true
  },
@@ -705,24 +705,6 @@
   "mode": "light",
   "label": "text.info.bold on info.subtle",
   "fg": "sky.800",
-  "bg": "sky.50",
-  "ratio": 7.62,
-  "need": 4.5,
-  "ok": true
- },
- {
-  "mode": "light",
-  "label": "text.default on info.default",
-  "fg": "neutral.950",
-  "bg": "sky.100",
-  "ratio": 15.26,
-  "need": 4.5,
-  "ok": true
- },
- {
-  "mode": "light",
-  "label": "text.info.bold on info.subtle.hovered",
-  "fg": "sky.800",
   "bg": "sky.100",
   "ratio": 6.64,
   "need": 4.5,
@@ -730,10 +712,28 @@
  },
  {
   "mode": "light",
-  "label": "text.default on info.default.hovered",
+  "label": "text.default on info.default",
   "fg": "neutral.950",
   "bg": "sky.200",
   "ratio": 13.14,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.info.bold on info.subtle.hovered",
+  "fg": "sky.800",
+  "bg": "sky.200",
+  "ratio": 5.72,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "light",
+  "label": "text.default on info.default.hovered",
+  "fg": "neutral.950",
+  "bg": "sky.300",
+  "ratio": 11.28,
   "need": 4.5,
   "ok": true
  },
@@ -750,8 +750,8 @@
   "mode": "light",
   "label": "text.default on info.default.pressed",
   "fg": "neutral.950",
-  "bg": "sky.300",
-  "ratio": 11.28,
+  "bg": "sky.400",
+  "ratio": 9.65,
   "need": 4.5,
   "ok": true
  },
@@ -2316,24 +2316,6 @@
   "mode": "dark",
   "label": "text.success.bold on success.subtle",
   "fg": "green.200",
-  "bg": "green.950",
-  "ratio": 9.99,
-  "need": 4.5,
-  "ok": true
- },
- {
-  "mode": "dark",
-  "label": "text.default on success.default",
-  "fg": "neutral.50",
-  "bg": "green.900",
-  "ratio": 10.73,
-  "need": 4.5,
-  "ok": true
- },
- {
-  "mode": "dark",
-  "label": "text.success.bold on success.subtle.hovered",
-  "fg": "green.200",
   "bg": "green.900",
   "ratio": 7.31,
   "need": 4.5,
@@ -2341,10 +2323,28 @@
  },
  {
   "mode": "dark",
-  "label": "text.default on success.default.hovered",
+  "label": "text.default on success.default",
   "fg": "neutral.50",
   "bg": "green.800",
   "ratio": 7.41,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.success.bold on success.subtle.hovered",
+  "fg": "green.200",
+  "bg": "green.800",
+  "ratio": 5.05,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on success.default.hovered",
+  "fg": "neutral.50",
+  "bg": "green.700",
+  "ratio": 5.03,
   "need": 4.5,
   "ok": true
  },
@@ -2424,24 +2424,6 @@
   "mode": "dark",
   "label": "text.warning.bold on warning.subtle",
   "fg": "amber.200",
-  "bg": "amber.950",
-  "ratio": 11.94,
-  "need": 4.5,
-  "ok": true
- },
- {
-  "mode": "dark",
-  "label": "text.default on warning.default",
-  "fg": "neutral.50",
-  "bg": "amber.900",
-  "ratio": 11.23,
-  "need": 4.5,
-  "ok": true
- },
- {
-  "mode": "dark",
-  "label": "text.warning.bold on warning.subtle.hovered",
-  "fg": "amber.200",
   "bg": "amber.900",
   "ratio": 8.96,
   "need": 4.5,
@@ -2449,10 +2431,28 @@
  },
  {
   "mode": "dark",
-  "label": "text.default on warning.default.hovered",
+  "label": "text.default on warning.default",
   "fg": "neutral.50",
   "bg": "amber.800",
   "ratio": 7.87,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.warning.bold on warning.subtle.hovered",
+  "fg": "amber.200",
+  "bg": "amber.800",
+  "ratio": 6.28,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on warning.default.hovered",
+  "fg": "neutral.50",
+  "bg": "amber.700",
+  "ratio": 5.02,
   "need": 4.5,
   "ok": true
  },
@@ -2532,24 +2532,6 @@
   "mode": "dark",
   "label": "text.error.bold on error.subtle",
   "fg": "red.200",
-  "bg": "red.950",
-  "ratio": 9.74,
-  "need": 4.5,
-  "ok": true
- },
- {
-  "mode": "dark",
-  "label": "text.default on error.default",
-  "fg": "neutral.50",
-  "bg": "red.900",
-  "ratio": 11.74,
-  "need": 4.5,
-  "ok": true
- },
- {
-  "mode": "dark",
-  "label": "text.error.bold on error.subtle.hovered",
-  "fg": "red.200",
   "bg": "red.900",
   "ratio": 7.45,
   "need": 4.5,
@@ -2557,10 +2539,28 @@
  },
  {
   "mode": "dark",
-  "label": "text.default on error.default.hovered",
+  "label": "text.default on error.default",
   "fg": "neutral.50",
   "bg": "red.800",
   "ratio": 8.44,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.error.bold on error.subtle.hovered",
+  "fg": "red.200",
+  "bg": "red.800",
+  "ratio": 5.36,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on error.default.hovered",
+  "fg": "neutral.50",
+  "bg": "red.700",
+  "ratio": 5.93,
   "need": 4.5,
   "ok": true
  },
@@ -2640,24 +2640,6 @@
   "mode": "dark",
   "label": "text.info.bold on info.subtle",
   "fg": "sky.200",
-  "bg": "sky.950",
-  "ratio": 10.99,
-  "need": 4.5,
-  "ok": true
- },
- {
-  "mode": "dark",
-  "label": "text.default on info.default",
-  "fg": "neutral.50",
-  "bg": "sky.900",
-  "ratio": 10.91,
-  "need": 4.5,
-  "ok": true
- },
- {
-  "mode": "dark",
-  "label": "text.info.bold on info.subtle.hovered",
-  "fg": "sky.200",
   "bg": "sky.900",
   "ratio": 8.13,
   "need": 4.5,
@@ -2665,10 +2647,28 @@
  },
  {
   "mode": "dark",
-  "label": "text.default on info.default.hovered",
+  "label": "text.default on info.default",
   "fg": "neutral.50",
   "bg": "sky.800",
   "ratio": 7.67,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.info.bold on info.subtle.hovered",
+  "fg": "sky.200",
+  "bg": "sky.800",
+  "ratio": 5.72,
+  "need": 4.5,
+  "ok": true
+ },
+ {
+  "mode": "dark",
+  "label": "text.default on info.default.hovered",
+  "fg": "neutral.50",
+  "bg": "sky.700",
+  "ratio": 4.65,
   "need": 4.5,
   "ok": true
  },

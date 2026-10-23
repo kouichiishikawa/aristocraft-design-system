@@ -764,14 +764,14 @@ export const color = {
           "success": {
             "subtlest": "#f3f6f2",
             "subtle": {
-              "DEFAULT": "#f3f6f2",
-              "hovered": "#cbeac1",
+              "DEFAULT": "#cbeac1",
+              "hovered": "#9ede8a",
               "pressed": "#9ede8a"
             },
             "default": {
-              "DEFAULT": "#cbeac1",
-              "hovered": "#9ede8a",
-              "pressed": "#77ce62"
+              "DEFAULT": "#9ede8a",
+              "hovered": "#77ce62",
+              "pressed": "#50bc3b"
             },
             "bold": {
               "DEFAULT": "#107b1a",
@@ -783,14 +783,14 @@ export const color = {
           "warning": {
             "subtlest": "#fef5dd",
             "subtle": {
-              "DEFAULT": "#fef5dd",
-              "hovered": "#fde8b6",
+              "DEFAULT": "#fde8b6",
+              "hovered": "#fcda8d",
               "pressed": "#fcda8d"
             },
             "default": {
-              "DEFAULT": "#fde8b6",
-              "hovered": "#fcda8d",
-              "pressed": "#fbcb5d"
+              "DEFAULT": "#fcda8d",
+              "hovered": "#fbcb5d",
+              "pressed": "#f6be33"
             },
             "bold": {
               "DEFAULT": "#f6be33",
@@ -802,14 +802,14 @@ export const color = {
           "error": {
             "subtlest": "#fef2f0",
             "subtle": {
-              "DEFAULT": "#fef2f0",
-              "hovered": "#fcd5cf",
+              "DEFAULT": "#fcd5cf",
+              "hovered": "#fab6ae",
               "pressed": "#fab6ae"
             },
             "default": {
-              "DEFAULT": "#fcd5cf",
-              "hovered": "#fab6ae",
-              "pressed": "#fa958c"
+              "DEFAULT": "#fab6ae",
+              "hovered": "#fa958c",
+              "pressed": "#f86e69"
             },
             "bold": {
               "DEFAULT": "#d92538",
@@ -821,14 +821,14 @@ export const color = {
           "info": {
             "subtlest": "#eaf8fe",
             "subtle": {
-              "DEFAULT": "#eaf8fe",
-              "hovered": "#c8ecfd",
+              "DEFAULT": "#c8ecfd",
+              "hovered": "#a4dffb",
               "pressed": "#a4dffb"
             },
             "default": {
-              "DEFAULT": "#c8ecfd",
-              "hovered": "#a4dffb",
-              "pressed": "#7dd2fa"
+              "DEFAULT": "#a4dffb",
+              "hovered": "#7dd2fa",
+              "pressed": "#4dc5f9"
             },
             "bold": {
               "DEFAULT": "#1b77a0",
@@ -1217,13 +1217,13 @@ export const color = {
           "success": {
             "subtlest": "#132715",
             "subtle": {
-              "DEFAULT": "#132715",
-              "hovered": "#19411d",
+              "DEFAULT": "#19411d",
+              "hovered": "#195d20",
               "pressed": "#195d20"
             },
             "default": {
-              "DEFAULT": "#19411d",
-              "hovered": "#195d20",
+              "DEFAULT": "#195d20",
+              "hovered": "#107b1a",
               "pressed": "#107b1a"
             },
             "bold": {
@@ -1236,13 +1236,13 @@ export const color = {
           "warning": {
             "subtlest": "#2e1e02",
             "subtle": {
-              "DEFAULT": "#2e1e02",
-              "hovered": "#483207",
+              "DEFAULT": "#483207",
+              "hovered": "#64480d",
               "pressed": "#64480d"
             },
             "default": {
-              "DEFAULT": "#483207",
-              "hovered": "#64480d",
+              "DEFAULT": "#64480d",
+              "hovered": "#886418",
               "pressed": "#886418"
             },
             "bold": {
@@ -1255,13 +1255,13 @@ export const color = {
           "error": {
             "subtlest": "#44040f",
             "subtle": {
-              "DEFAULT": "#44040f",
-              "hovered": "#690a1a",
+              "DEFAULT": "#690a1a",
+              "hovered": "#901326",
               "pressed": "#901326"
             },
             "default": {
-              "DEFAULT": "#690a1a",
-              "hovered": "#901326",
+              "DEFAULT": "#901326",
+              "hovered": "#b91d31",
               "pressed": "#b91d31"
             },
             "bold": {
@@ -1274,13 +1274,13 @@ export const color = {
           "info": {
             "subtlest": "#022537",
             "subtle": {
-              "DEFAULT": "#022537",
-              "hovered": "#093c54",
+              "DEFAULT": "#093c54",
+              "hovered": "#125473",
               "pressed": "#125473"
             },
             "default": {
-              "DEFAULT": "#093c54",
-              "hovered": "#125473",
+              "DEFAULT": "#125473",
+              "hovered": "#1b77a0",
               "pressed": "#1b77a0"
             },
             "bold": {

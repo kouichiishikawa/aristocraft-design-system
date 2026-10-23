@@ -5671,10 +5671,10 @@
           "codeSyntax": "var(--ac-color-background-status-success-subtle)",
           "values": {
             "Light": {
-              "alias": "Color/Green/50"
+              "alias": "Color/Green/100"
             },
             "Dark": {
-              "alias": "Color/Green/950"
+              "alias": "Color/Green/900"
             }
           }
         },
@@ -5689,10 +5689,10 @@
           "codeSyntax": "var(--ac-color-background-status-success-subtle-hovered)",
           "values": {
             "Light": {
-              "alias": "Color/Green/100"
+              "alias": "Color/Green/200"
             },
             "Dark": {
-              "alias": "Color/Green/900"
+              "alias": "Color/Green/800"
             }
           }
         },
@@ -5725,10 +5725,10 @@
           "codeSyntax": "var(--ac-color-background-status-success-default)",
           "values": {
             "Light": {
-              "alias": "Color/Green/100"
+              "alias": "Color/Green/200"
             },
             "Dark": {
-              "alias": "Color/Green/900"
+              "alias": "Color/Green/800"
             }
           }
         },
@@ -5743,10 +5743,10 @@
           "codeSyntax": "var(--ac-color-background-status-success-default-hovered)",
           "values": {
             "Light": {
-              "alias": "Color/Green/200"
+              "alias": "Color/Green/300"
             },
             "Dark": {
-              "alias": "Color/Green/800"
+              "alias": "Color/Green/700"
             }
           }
         },
@@ -5761,7 +5761,7 @@
           "codeSyntax": "var(--ac-color-background-status-success-default-pressed)",
           "values": {
             "Light": {
-              "alias": "Color/Green/300"
+              "alias": "Color/Green/400"
             },
             "Dark": {
               "alias": "Color/Green/700"
@@ -5869,10 +5869,10 @@
           "codeSyntax": "var(--ac-color-background-status-warning-subtle)",
           "values": {
             "Light": {
-              "alias": "Color/Amber/50"
+              "alias": "Color/Amber/100"
             },
             "Dark": {
-              "alias": "Color/Amber/950"
+              "alias": "Color/Amber/900"
             }
           }
         },
@@ -5887,10 +5887,10 @@
           "codeSyntax": "var(--ac-color-background-status-warning-subtle-hovered)",
           "values": {
             "Light": {
-              "alias": "Color/Amber/100"
+              "alias": "Color/Amber/200"
             },
             "Dark": {
-              "alias": "Color/Amber/900"
+              "alias": "Color/Amber/800"
             }
           }
         },
@@ -5923,10 +5923,10 @@
           "codeSyntax": "var(--ac-color-background-status-warning-default)",
           "values": {
             "Light": {
-              "alias": "Color/Amber/100"
+              "alias": "Color/Amber/200"
             },
             "Dark": {
-              "alias": "Color/Amber/900"
+              "alias": "Color/Amber/800"
             }
           }
         },
@@ -5941,10 +5941,10 @@
           "codeSyntax": "var(--ac-color-background-status-warning-default-hovered)",
           "values": {
             "Light": {
-              "alias": "Color/Amber/200"
+              "alias": "Color/Amber/300"
             },
             "Dark": {
-              "alias": "Color/Amber/800"
+              "alias": "Color/Amber/700"
             }
           }
         },
@@ -5959,7 +5959,7 @@
           "codeSyntax": "var(--ac-color-background-status-warning-default-pressed)",
           "values": {
             "Light": {
-              "alias": "Color/Amber/300"
+              "alias": "Color/Amber/400"
             },
             "Dark": {
               "alias": "Color/Amber/700"
@@ -6067,10 +6067,10 @@
           "codeSyntax": "var(--ac-color-background-status-error-subtle)",
           "values": {
             "Light": {
-              "alias": "Color/Red/50"
+              "alias": "Color/Red/100"
             },
             "Dark": {
-              "alias": "Color/Red/950"
+              "alias": "Color/Red/900"
             }
           }
         },
@@ -6085,10 +6085,10 @@
           "codeSyntax": "var(--ac-color-background-status-error-subtle-hovered)",
           "values": {
             "Light": {
-              "alias": "Color/Red/100"
+              "alias": "Color/Red/200"
             },
             "Dark": {
-              "alias": "Color/Red/900"
+              "alias": "Color/Red/800"
             }
           }
         },
@@ -6121,10 +6121,10 @@
           "codeSyntax": "var(--ac-color-background-status-error-default)",
           "values": {
             "Light": {
-              "alias": "Color/Red/100"
+              "alias": "Color/Red/200"
             },
             "Dark": {
-              "alias": "Color/Red/900"
+              "alias": "Color/Red/800"
             }
           }
         },
@@ -6139,10 +6139,10 @@
           "codeSyntax": "var(--ac-color-background-status-error-default-hovered)",
           "values": {
             "Light": {
-              "alias": "Color/Red/200"
+              "alias": "Color/Red/300"
             },
             "Dark": {
-              "alias": "Color/Red/800"
+              "alias": "Color/Red/700"
             }
           }
         },
@@ -6157,7 +6157,7 @@
           "codeSyntax": "var(--ac-color-background-status-error-default-pressed)",
           "values": {
             "Light": {
-              "alias": "Color/Red/300"
+              "alias": "Color/Red/400"
             },
             "Dark": {
               "alias": "Color/Red/700"
@@ -6265,10 +6265,10 @@
           "codeSyntax": "var(--ac-color-background-status-info-subtle)",
           "values": {
             "Light": {
-              "alias": "Color/Sky/50"
+              "alias": "Color/Sky/100"
             },
             "Dark": {
-              "alias": "Color/Sky/950"
+              "alias": "Color/Sky/900"
             }
           }
         },
@@ -6283,10 +6283,10 @@
           "codeSyntax": "var(--ac-color-background-status-info-subtle-hovered)",
           "values": {
             "Light": {
-              "alias": "Color/Sky/100"
+              "alias": "Color/Sky/200"
             },
             "Dark": {
-              "alias": "Color/Sky/900"
+              "alias": "Color/Sky/800"
             }
           }
         },
@@ -6319,10 +6319,10 @@
           "codeSyntax": "var(--ac-color-background-status-info-default)",
           "values": {
             "Light": {
-              "alias": "Color/Sky/100"
+              "alias": "Color/Sky/200"
             },
             "Dark": {
-              "alias": "Color/Sky/900"
+              "alias": "Color/Sky/800"
             }
           }
         },
@@ -6337,10 +6337,10 @@
           "codeSyntax": "var(--ac-color-background-status-info-default-hovered)",
           "values": {
             "Light": {
-              "alias": "Color/Sky/200"
+              "alias": "Color/Sky/300"
             },
             "Dark": {
-              "alias": "Color/Sky/800"
+              "alias": "Color/Sky/700"
             }
           }
         },
@@ -6355,7 +6355,7 @@
           "codeSyntax": "var(--ac-color-background-status-info-default-pressed)",
           "values": {
             "Light": {
-              "alias": "Color/Sky/300"
+              "alias": "Color/Sky/400"
             },
             "Dark": {
               "alias": "Color/Sky/700"
