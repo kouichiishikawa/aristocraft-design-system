@@ -176,12 +176,25 @@ else {
 // newly linked layers adopt the property's style. So the Label property is (re)created only after every label has its final
 // style, all labels are linked in one go, and nothing touches a label afterwards.
 const propKey = (name) => Object.keys(set.componentPropertyDefinitions).find((k) => k === name || k.startsWith(name + '#'));
-const oldLabel = propKey(N.props.label);
-if (oldLabel) set.deleteComponentProperty(oldLabel); // instances lose their Label override; they are re-linked below
-const pLabel = set.addComponentProperty(N.props.label, 'TEXT', SPEC.label);
+// Nothing added → the set is unchanged, so the Label property is kept as is. Otherwise deleting it drops every instance's
+// Label override (e.g. "Primary" / "Saving"), so the overrides are saved before and restored after.
+let pLabel = propKey(N.props.label);
+if (!pLabel || variants.length) {
+  const saved = [];
+  if (pLabel) {
+    for (const c of set.children) for (const inst of await c.getInstancesAsync()) {
+      const p = inst.componentProperties[pLabel];
+      if (p && p.value !== set.componentPropertyDefinitions[pLabel].defaultValue) saved.push([inst, p.value]);
+    }
+    set.deleteComponentProperty(pLabel);
+  }
+  pLabel = set.addComponentProperty(N.props.label, 'TEXT', SPEC.label);
+  for (const c of set.children) c.findChild((n) => n.name === N.props.label).componentPropertyReferences = { characters: pLabel };
+  for (const [inst, value] of saved) inst.setProperties({ [pLabel]: value });
+  out.restoredLabels = saved.length;
+}
 const pStart = propKey(N.props.iconBefore) ?? set.addComponentProperty(N.props.iconBefore, 'BOOLEAN', false);
 const pEnd = propKey(N.props.iconAfter) ?? set.addComponentProperty(N.props.iconAfter, 'BOOLEAN', false);
-for (const c of set.children) c.findChild((n) => n.name === N.props.label).componentPropertyReferences = { characters: pLabel };
 for (const c of variants) {
   const isLoading = c.name.includes(N.props.state + '=' + nm('loading'));
   if (!isLoading) c.findChild((n) => n.name === N.props.iconBefore).componentPropertyReferences = { visible: pStart };

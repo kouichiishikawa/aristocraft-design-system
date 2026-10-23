@@ -28,7 +28,7 @@ const topRule = (f) => { f.strokes = [paint('Color/Border/Subtle')]; f.strokeAli
 const textProp = (c, layer, prop, val) => { const key = c.addComponentProperty(prop, 'TEXT', val); for (const x of (c.type === 'COMPONENT_SET' ? c.children : [c])) { const t = x.findOne((n) => n.type === 'TEXT' && n.name === layer); if (t) t.componentPropertyReferences = { ...(t.componentPropertyReferences || {}), characters: key }; } };
 const out = { created: {}, renamed: [] };
 const retire = (name) => { for (const n of page.children.filter((c) => (c.type === 'COMPONENT' || c.type === 'COMPONENT_SET') && c.name === name)) { n.name = name + ' (old)'; out.renamed.push(n.id); } };
-let y = Math.max(...page.children.map((n) => n.y + n.height)) + 160;
+let y = Math.max(0, ...page.children.map((n) => n.y + n.height)) + 160; // 0: an empty page would give -Infinity
 const place = (n) => { n.x = 0; n.y = y; y += n.height + 80; out.created[n.name] = n.id; };
 // _Doc/Page Header
 retire('_Doc/Page Header');
