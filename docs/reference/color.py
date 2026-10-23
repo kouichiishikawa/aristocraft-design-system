@@ -38,3 +38,9 @@ def apca(txt,bg):
         s=(yb**0.65-yt**0.62)*1.14
         lc=0 if s>-0.1 else s+0.027
     return round(lc*100,1)
+
+# '#RRGGBBAA' composited onto an opaque '#RRGGBB' (browser default: linear interpolation of sRGB 8-bit values).
+def composite(fg8,bg):
+    a=int(fg8[7:9],16)/255 if len(fg8)==9 else 1.0
+    f=[int(fg8[i:i+2],16) for i in (1,3,5)]; b=[int(bg[i:i+2],16) for i in (1,3,5)]
+    return '#%02X%02X%02X'%tuple(round(x*a+y*(1-a)) for x,y in zip(f,b))

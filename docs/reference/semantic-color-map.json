@@ -40,9 +40,9 @@
   "desc": "無効（コントラスト要件の対象外）"
  },
  "color.text.inverse": {
-  "light": "neutral.50",
+  "light": "neutral.0",
   "dark": "neutral.950",
-  "desc": "反転面の上"
+  "desc": "反転面・bold 塗りの上（2026-10-06: light は neutral.0 = 白。brand.bold 600 の上で AA にするため）"
  },
  "color.text.brand": {
   "light": "blue.700",
@@ -51,8 +51,8 @@
  },
  "color.text.brand.bold": {
   "light": "blue.800",
-  "dark": "blue.300",
-  "desc": "brand.subtle の面に乗せる文字"
+  "dark": "blue.200",
+  "desc": "brand.subtle の面に乗せる文字（dark は 200: subtle.pressed = 800 の上でも AA）"
  },
  "color.text.selected": {
   "light": "blue.700",
@@ -80,9 +80,9 @@
   "desc": ""
  },
  "color.icon.inverse": {
-  "light": "neutral.50",
+  "light": "neutral.0",
   "dark": "neutral.950",
-  "desc": ""
+  "desc": "反転面・bold 塗りの上（Spinner など）"
  },
  "color.icon.brand": {
   "light": "blue.600",
@@ -115,7 +115,7 @@
   "desc": "フォーカスリング"
  },
  "color.border.inverse": {
-  "light": "neutral.50",
+  "light": "neutral.0",
   "dark": "neutral.950",
   "desc": "反転面の上"
  },
@@ -240,33 +240,33 @@
   "desc": "ホバー面・薄いタグ"
  },
  "color.background.neutral.subtle": {
-  "light": "neutral.200a",
-  "dark": "neutral.800a",
-  "desc": "二次ボタン・チップ"
+  "light": "neutral.950@0",
+  "dark": "neutral.50@0",
+  "desc": "面なしの二次ボタン・チップ（hover で初めて面が出る）"
  },
  "color.background.neutral.subtle.hovered": {
-  "light": "neutral.300a",
-  "dark": "neutral.700a",
+  "light": "neutral.100a",
+  "dark": "neutral.900a",
   "desc": ""
  },
  "color.background.neutral.subtle.pressed": {
-  "light": "neutral.400a",
-  "dark": "neutral.600a",
+  "light": "neutral.200a",
+  "dark": "neutral.800a",
   "desc": ""
  },
  "color.background.neutral.default": {
-  "light": "neutral.200",
-  "dark": "neutral.800",
-  "desc": "塗りの二次ボタン"
+  "light": "neutral.100a",
+  "dark": "neutral.900a",
+  "desc": "塗りの二次ボタン（default variant）"
  },
  "color.background.neutral.default.hovered": {
-  "light": "neutral.300",
-  "dark": "neutral.700",
+  "light": "neutral.200a",
+  "dark": "neutral.800a",
   "desc": ""
  },
  "color.background.neutral.default.pressed": {
-  "light": "neutral.400",
-  "dark": "neutral.600",
+  "light": "neutral.300a",
+  "dark": "neutral.700a",
   "desc": ""
  },
  "color.background.neutral.bold": {
@@ -285,29 +285,49 @@
   "desc": "ほのかな色の面"
  },
  "color.background.brand.subtle": {
-  "light": "blue.100",
-  "dark": "blue.900",
+  "light": "blue.50",
+  "dark": "blue.950",
   "desc": "薄いタグ・通知の地（文字は .bold）"
  },
- "color.background.brand.default": {
+ "color.background.brand.subtle.hovered": {
+  "light": "blue.100",
+  "dark": "blue.900",
+  "desc": ""
+ },
+ "color.background.brand.subtle.pressed": {
   "light": "blue.200",
   "dark": "blue.800",
+  "desc": ""
+ },
+ "color.background.brand.default": {
+  "light": "blue.100",
+  "dark": "blue.900",
   "desc": "色つきの面（文字は text.default）"
+ },
+ "color.background.brand.default.hovered": {
+  "light": "blue.200",
+  "dark": "blue.800",
+  "desc": ""
+ },
+ "color.background.brand.default.pressed": {
+  "light": "blue.300",
+  "dark": "blue.700",
+  "desc": ""
  },
  "color.background.brand.bold": {
   "light": "blue.600",
-  "dark": "blue.600",
-  "desc": "塗り（白文字。amber / lime は黒文字）"
+  "dark": "blue.500",
+  "desc": "塗り（文字は text.inverse。light の amber / lime は static.black）"
  },
  "color.background.brand.bold.hovered": {
   "light": "blue.700",
-  "dark": "blue.700",
-  "desc": "1 段濃く"
+  "dark": "blue.400",
+  "desc": "1 段強く（light は濃く、dark は明るく）"
  },
  "color.background.brand.bold.pressed": {
   "light": "blue.800",
-  "dark": "blue.800",
-  "desc": "2 段濃く"
+  "dark": "blue.300",
+  "desc": "2 段強く"
  },
  "color.background.brand.boldest": {
   "light": "blue.800",
@@ -320,29 +340,49 @@
   "desc": "ほのかな色の面"
  },
  "color.background.status.success.subtle": {
-  "light": "green.100",
-  "dark": "green.900",
+  "light": "green.50",
+  "dark": "green.950",
   "desc": "薄いタグ・通知の地（文字は .bold）"
  },
- "color.background.status.success.default": {
+ "color.background.status.success.subtle.hovered": {
+  "light": "green.100",
+  "dark": "green.900",
+  "desc": ""
+ },
+ "color.background.status.success.subtle.pressed": {
   "light": "green.200",
   "dark": "green.800",
+  "desc": ""
+ },
+ "color.background.status.success.default": {
+  "light": "green.100",
+  "dark": "green.900",
   "desc": "色つきの面（文字は text.default）"
+ },
+ "color.background.status.success.default.hovered": {
+  "light": "green.200",
+  "dark": "green.800",
+  "desc": ""
+ },
+ "color.background.status.success.default.pressed": {
+  "light": "green.300",
+  "dark": "green.700",
+  "desc": ""
  },
  "color.background.status.success.bold": {
   "light": "green.700",
-  "dark": "green.700",
-  "desc": "塗り（白文字。amber / lime は黒文字）"
+  "dark": "green.500",
+  "desc": "塗り（文字は text.inverse。light の amber / lime は static.black）"
  },
  "color.background.status.success.bold.hovered": {
   "light": "green.800",
-  "dark": "green.800",
-  "desc": "1 段濃く"
+  "dark": "green.400",
+  "desc": "1 段強く（light は濃く、dark は明るく）"
  },
  "color.background.status.success.bold.pressed": {
   "light": "green.900",
-  "dark": "green.900",
-  "desc": "2 段濃く"
+  "dark": "green.300",
+  "desc": "2 段強く"
  },
  "color.background.status.success.boldest": {
   "light": "green.800",
@@ -356,7 +396,7 @@
  },
  "color.text.status.success.bold": {
   "light": "green.800",
-  "dark": "green.300",
+  "dark": "green.200",
   "desc": "success.subtle の面に乗せる文字"
  },
  "color.border.status.success": {
@@ -370,29 +410,49 @@
   "desc": "ほのかな色の面"
  },
  "color.background.status.warning.subtle": {
-  "light": "amber.100",
-  "dark": "amber.900",
+  "light": "amber.50",
+  "dark": "amber.950",
   "desc": "薄いタグ・通知の地（文字は .bold）"
  },
- "color.background.status.warning.default": {
+ "color.background.status.warning.subtle.hovered": {
+  "light": "amber.100",
+  "dark": "amber.900",
+  "desc": ""
+ },
+ "color.background.status.warning.subtle.pressed": {
   "light": "amber.200",
   "dark": "amber.800",
+  "desc": ""
+ },
+ "color.background.status.warning.default": {
+  "light": "amber.100",
+  "dark": "amber.900",
   "desc": "色つきの面（文字は text.default）"
+ },
+ "color.background.status.warning.default.hovered": {
+  "light": "amber.200",
+  "dark": "amber.800",
+  "desc": ""
+ },
+ "color.background.status.warning.default.pressed": {
+  "light": "amber.300",
+  "dark": "amber.700",
+  "desc": ""
  },
  "color.background.status.warning.bold": {
   "light": "amber.400",
   "dark": "amber.400",
-  "desc": "塗り（白文字。amber / lime は黒文字）"
+  "desc": "塗り（文字は text.inverse。light の amber / lime は static.black）"
  },
  "color.background.status.warning.bold.hovered": {
   "light": "amber.500",
-  "dark": "amber.500",
-  "desc": "1 段濃く"
+  "dark": "amber.300",
+  "desc": "1 段強く（light は濃く、dark は明るく）"
  },
  "color.background.status.warning.bold.pressed": {
   "light": "amber.600",
-  "dark": "amber.600",
-  "desc": "2 段濃く"
+  "dark": "amber.200",
+  "desc": "2 段強く"
  },
  "color.background.status.warning.boldest": {
   "light": "amber.800",
@@ -406,7 +466,7 @@
  },
  "color.text.status.warning.bold": {
   "light": "amber.800",
-  "dark": "amber.300",
+  "dark": "amber.200",
   "desc": "warning.subtle の面に乗せる文字"
  },
  "color.border.status.warning": {
@@ -420,29 +480,49 @@
   "desc": "ほのかな色の面"
  },
  "color.background.status.error.subtle": {
-  "light": "red.100",
-  "dark": "red.900",
+  "light": "red.50",
+  "dark": "red.950",
   "desc": "薄いタグ・通知の地（文字は .bold）"
  },
- "color.background.status.error.default": {
+ "color.background.status.error.subtle.hovered": {
+  "light": "red.100",
+  "dark": "red.900",
+  "desc": ""
+ },
+ "color.background.status.error.subtle.pressed": {
   "light": "red.200",
   "dark": "red.800",
+  "desc": ""
+ },
+ "color.background.status.error.default": {
+  "light": "red.100",
+  "dark": "red.900",
   "desc": "色つきの面（文字は text.default）"
+ },
+ "color.background.status.error.default.hovered": {
+  "light": "red.200",
+  "dark": "red.800",
+  "desc": ""
+ },
+ "color.background.status.error.default.pressed": {
+  "light": "red.300",
+  "dark": "red.700",
+  "desc": ""
  },
  "color.background.status.error.bold": {
   "light": "red.600",
-  "dark": "red.600",
-  "desc": "塗り（白文字。amber / lime は黒文字）"
+  "dark": "red.500",
+  "desc": "塗り（文字は text.inverse。light の amber / lime は static.black）"
  },
  "color.background.status.error.bold.hovered": {
   "light": "red.700",
-  "dark": "red.700",
-  "desc": "1 段濃く"
+  "dark": "red.400",
+  "desc": "1 段強く（light は濃く、dark は明るく）"
  },
  "color.background.status.error.bold.pressed": {
   "light": "red.800",
-  "dark": "red.800",
-  "desc": "2 段濃く"
+  "dark": "red.300",
+  "desc": "2 段強く"
  },
  "color.background.status.error.boldest": {
   "light": "red.800",
@@ -456,7 +536,7 @@
  },
  "color.text.status.error.bold": {
   "light": "red.800",
-  "dark": "red.300",
+  "dark": "red.200",
   "desc": "error.subtle の面に乗せる文字"
  },
  "color.border.status.error": {
@@ -470,29 +550,49 @@
   "desc": "ほのかな色の面"
  },
  "color.background.status.info.subtle": {
-  "light": "sky.100",
-  "dark": "sky.900",
+  "light": "sky.50",
+  "dark": "sky.950",
   "desc": "薄いタグ・通知の地（文字は .bold）"
  },
- "color.background.status.info.default": {
+ "color.background.status.info.subtle.hovered": {
+  "light": "sky.100",
+  "dark": "sky.900",
+  "desc": ""
+ },
+ "color.background.status.info.subtle.pressed": {
   "light": "sky.200",
   "dark": "sky.800",
+  "desc": ""
+ },
+ "color.background.status.info.default": {
+  "light": "sky.100",
+  "dark": "sky.900",
   "desc": "色つきの面（文字は text.default）"
+ },
+ "color.background.status.info.default.hovered": {
+  "light": "sky.200",
+  "dark": "sky.800",
+  "desc": ""
+ },
+ "color.background.status.info.default.pressed": {
+  "light": "sky.300",
+  "dark": "sky.700",
+  "desc": ""
  },
  "color.background.status.info.bold": {
   "light": "sky.700",
-  "dark": "sky.700",
-  "desc": "塗り（白文字。amber / lime は黒文字）"
+  "dark": "sky.500",
+  "desc": "塗り（文字は text.inverse。light の amber / lime は static.black）"
  },
  "color.background.status.info.bold.hovered": {
   "light": "sky.800",
-  "dark": "sky.800",
-  "desc": "1 段濃く"
+  "dark": "sky.400",
+  "desc": "1 段強く（light は濃く、dark は明るく）"
  },
  "color.background.status.info.bold.pressed": {
   "light": "sky.900",
-  "dark": "sky.900",
-  "desc": "2 段濃く"
+  "dark": "sky.300",
+  "desc": "2 段強く"
  },
  "color.background.status.info.boldest": {
   "light": "sky.800",
@@ -506,7 +606,7 @@
  },
  "color.text.status.info.bold": {
   "light": "sky.800",
-  "dark": "sky.300",
+  "dark": "sky.200",
   "desc": "info.subtle の面に乗せる文字"
  },
  "color.border.status.info": {
@@ -520,19 +620,39 @@
   "desc": "ほのかな色の面"
  },
  "color.background.accent.blue.subtle": {
-  "light": "blue.100",
-  "dark": "blue.900",
+  "light": "blue.50",
+  "dark": "blue.950",
   "desc": "薄いタグ・通知の地（文字は .bold）"
  },
- "color.background.accent.blue.default": {
+ "color.background.accent.blue.subtle.hovered": {
+  "light": "blue.100",
+  "dark": "blue.900",
+  "desc": ""
+ },
+ "color.background.accent.blue.subtle.pressed": {
   "light": "blue.200",
   "dark": "blue.800",
+  "desc": ""
+ },
+ "color.background.accent.blue.default": {
+  "light": "blue.100",
+  "dark": "blue.900",
   "desc": "色つきの面（文字は text.default）"
+ },
+ "color.background.accent.blue.default.hovered": {
+  "light": "blue.200",
+  "dark": "blue.800",
+  "desc": ""
+ },
+ "color.background.accent.blue.default.pressed": {
+  "light": "blue.300",
+  "dark": "blue.700",
+  "desc": ""
  },
  "color.background.accent.blue.bold": {
   "light": "blue.600",
-  "dark": "blue.600",
-  "desc": "塗り（白文字。amber / lime は黒文字）"
+  "dark": "blue.500",
+  "desc": "塗り（文字は text.inverse。light の amber / lime は static.black）"
  },
  "color.background.accent.blue.boldest": {
   "light": "blue.800",
@@ -546,7 +666,7 @@
  },
  "color.text.accent.blue.bold": {
   "light": "blue.800",
-  "dark": "blue.300",
+  "dark": "blue.200",
   "desc": "accent.blue.subtle の面に乗せる文字"
  },
  "color.background.accent.violet.subtlest": {
@@ -555,19 +675,39 @@
   "desc": "ほのかな色の面"
  },
  "color.background.accent.violet.subtle": {
-  "light": "violet.100",
-  "dark": "violet.900",
+  "light": "violet.50",
+  "dark": "violet.950",
   "desc": "薄いタグ・通知の地（文字は .bold）"
  },
- "color.background.accent.violet.default": {
+ "color.background.accent.violet.subtle.hovered": {
+  "light": "violet.100",
+  "dark": "violet.900",
+  "desc": ""
+ },
+ "color.background.accent.violet.subtle.pressed": {
   "light": "violet.200",
   "dark": "violet.800",
+  "desc": ""
+ },
+ "color.background.accent.violet.default": {
+  "light": "violet.100",
+  "dark": "violet.900",
   "desc": "色つきの面（文字は text.default）"
+ },
+ "color.background.accent.violet.default.hovered": {
+  "light": "violet.200",
+  "dark": "violet.800",
+  "desc": ""
+ },
+ "color.background.accent.violet.default.pressed": {
+  "light": "violet.300",
+  "dark": "violet.700",
+  "desc": ""
  },
  "color.background.accent.violet.bold": {
   "light": "violet.600",
-  "dark": "violet.600",
-  "desc": "塗り（白文字。amber / lime は黒文字）"
+  "dark": "violet.500",
+  "desc": "塗り（文字は text.inverse。light の amber / lime は static.black）"
  },
  "color.background.accent.violet.boldest": {
   "light": "violet.800",
@@ -581,7 +721,7 @@
  },
  "color.text.accent.violet.bold": {
   "light": "violet.800",
-  "dark": "violet.300",
+  "dark": "violet.200",
   "desc": "accent.violet.subtle の面に乗せる文字"
  },
  "color.background.accent.purple.subtlest": {
@@ -590,19 +730,39 @@
   "desc": "ほのかな色の面"
  },
  "color.background.accent.purple.subtle": {
-  "light": "purple.100",
-  "dark": "purple.900",
+  "light": "purple.50",
+  "dark": "purple.950",
   "desc": "薄いタグ・通知の地（文字は .bold）"
  },
- "color.background.accent.purple.default": {
+ "color.background.accent.purple.subtle.hovered": {
+  "light": "purple.100",
+  "dark": "purple.900",
+  "desc": ""
+ },
+ "color.background.accent.purple.subtle.pressed": {
   "light": "purple.200",
   "dark": "purple.800",
+  "desc": ""
+ },
+ "color.background.accent.purple.default": {
+  "light": "purple.100",
+  "dark": "purple.900",
   "desc": "色つきの面（文字は text.default）"
+ },
+ "color.background.accent.purple.default.hovered": {
+  "light": "purple.200",
+  "dark": "purple.800",
+  "desc": ""
+ },
+ "color.background.accent.purple.default.pressed": {
+  "light": "purple.300",
+  "dark": "purple.700",
+  "desc": ""
  },
  "color.background.accent.purple.bold": {
   "light": "purple.600",
-  "dark": "purple.600",
-  "desc": "塗り（白文字。amber / lime は黒文字）"
+  "dark": "purple.500",
+  "desc": "塗り（文字は text.inverse。light の amber / lime は static.black）"
  },
  "color.background.accent.purple.boldest": {
   "light": "purple.800",
@@ -616,7 +776,7 @@
  },
  "color.text.accent.purple.bold": {
   "light": "purple.800",
-  "dark": "purple.300",
+  "dark": "purple.200",
   "desc": "accent.purple.subtle の面に乗せる文字"
  },
  "color.background.accent.pink.subtlest": {
@@ -625,19 +785,39 @@
   "desc": "ほのかな色の面"
  },
  "color.background.accent.pink.subtle": {
-  "light": "pink.100",
-  "dark": "pink.900",
+  "light": "pink.50",
+  "dark": "pink.950",
   "desc": "薄いタグ・通知の地（文字は .bold）"
  },
- "color.background.accent.pink.default": {
+ "color.background.accent.pink.subtle.hovered": {
+  "light": "pink.100",
+  "dark": "pink.900",
+  "desc": ""
+ },
+ "color.background.accent.pink.subtle.pressed": {
   "light": "pink.200",
   "dark": "pink.800",
+  "desc": ""
+ },
+ "color.background.accent.pink.default": {
+  "light": "pink.100",
+  "dark": "pink.900",
   "desc": "色つきの面（文字は text.default）"
+ },
+ "color.background.accent.pink.default.hovered": {
+  "light": "pink.200",
+  "dark": "pink.800",
+  "desc": ""
+ },
+ "color.background.accent.pink.default.pressed": {
+  "light": "pink.300",
+  "dark": "pink.700",
+  "desc": ""
  },
  "color.background.accent.pink.bold": {
   "light": "pink.600",
-  "dark": "pink.600",
-  "desc": "塗り（白文字。amber / lime は黒文字）"
+  "dark": "pink.500",
+  "desc": "塗り（文字は text.inverse。light の amber / lime は static.black）"
  },
  "color.background.accent.pink.boldest": {
   "light": "pink.800",
@@ -651,7 +831,7 @@
  },
  "color.text.accent.pink.bold": {
   "light": "pink.800",
-  "dark": "pink.300",
+  "dark": "pink.200",
   "desc": "accent.pink.subtle の面に乗せる文字"
  },
  "color.background.accent.red.subtlest": {
@@ -660,19 +840,39 @@
   "desc": "ほのかな色の面"
  },
  "color.background.accent.red.subtle": {
-  "light": "red.100",
-  "dark": "red.900",
+  "light": "red.50",
+  "dark": "red.950",
   "desc": "薄いタグ・通知の地（文字は .bold）"
  },
- "color.background.accent.red.default": {
+ "color.background.accent.red.subtle.hovered": {
+  "light": "red.100",
+  "dark": "red.900",
+  "desc": ""
+ },
+ "color.background.accent.red.subtle.pressed": {
   "light": "red.200",
   "dark": "red.800",
+  "desc": ""
+ },
+ "color.background.accent.red.default": {
+  "light": "red.100",
+  "dark": "red.900",
   "desc": "色つきの面（文字は text.default）"
+ },
+ "color.background.accent.red.default.hovered": {
+  "light": "red.200",
+  "dark": "red.800",
+  "desc": ""
+ },
+ "color.background.accent.red.default.pressed": {
+  "light": "red.300",
+  "dark": "red.700",
+  "desc": ""
  },
  "color.background.accent.red.bold": {
   "light": "red.600",
-  "dark": "red.600",
-  "desc": "塗り（白文字。amber / lime は黒文字）"
+  "dark": "red.500",
+  "desc": "塗り（文字は text.inverse。light の amber / lime は static.black）"
  },
  "color.background.accent.red.boldest": {
   "light": "red.800",
@@ -686,7 +886,7 @@
  },
  "color.text.accent.red.bold": {
   "light": "red.800",
-  "dark": "red.300",
+  "dark": "red.200",
   "desc": "accent.red.subtle の面に乗せる文字"
  },
  "color.background.accent.orange.subtlest": {
@@ -695,19 +895,39 @@
   "desc": "ほのかな色の面"
  },
  "color.background.accent.orange.subtle": {
-  "light": "orange.100",
-  "dark": "orange.900",
+  "light": "orange.50",
+  "dark": "orange.950",
   "desc": "薄いタグ・通知の地（文字は .bold）"
  },
- "color.background.accent.orange.default": {
+ "color.background.accent.orange.subtle.hovered": {
+  "light": "orange.100",
+  "dark": "orange.900",
+  "desc": ""
+ },
+ "color.background.accent.orange.subtle.pressed": {
   "light": "orange.200",
   "dark": "orange.800",
+  "desc": ""
+ },
+ "color.background.accent.orange.default": {
+  "light": "orange.100",
+  "dark": "orange.900",
   "desc": "色つきの面（文字は text.default）"
+ },
+ "color.background.accent.orange.default.hovered": {
+  "light": "orange.200",
+  "dark": "orange.800",
+  "desc": ""
+ },
+ "color.background.accent.orange.default.pressed": {
+  "light": "orange.300",
+  "dark": "orange.700",
+  "desc": ""
  },
  "color.background.accent.orange.bold": {
   "light": "orange.700",
-  "dark": "orange.700",
-  "desc": "塗り（白文字。amber / lime は黒文字）"
+  "dark": "orange.500",
+  "desc": "塗り（文字は text.inverse。light の amber / lime は static.black）"
  },
  "color.background.accent.orange.boldest": {
   "light": "orange.800",
@@ -721,7 +941,7 @@
  },
  "color.text.accent.orange.bold": {
   "light": "orange.800",
-  "dark": "orange.300",
+  "dark": "orange.200",
   "desc": "accent.orange.subtle の面に乗せる文字"
  },
  "color.background.accent.amber.subtlest": {
@@ -730,19 +950,39 @@
   "desc": "ほのかな色の面"
  },
  "color.background.accent.amber.subtle": {
-  "light": "amber.100",
-  "dark": "amber.900",
+  "light": "amber.50",
+  "dark": "amber.950",
   "desc": "薄いタグ・通知の地（文字は .bold）"
  },
- "color.background.accent.amber.default": {
+ "color.background.accent.amber.subtle.hovered": {
+  "light": "amber.100",
+  "dark": "amber.900",
+  "desc": ""
+ },
+ "color.background.accent.amber.subtle.pressed": {
   "light": "amber.200",
   "dark": "amber.800",
+  "desc": ""
+ },
+ "color.background.accent.amber.default": {
+  "light": "amber.100",
+  "dark": "amber.900",
   "desc": "色つきの面（文字は text.default）"
+ },
+ "color.background.accent.amber.default.hovered": {
+  "light": "amber.200",
+  "dark": "amber.800",
+  "desc": ""
+ },
+ "color.background.accent.amber.default.pressed": {
+  "light": "amber.300",
+  "dark": "amber.700",
+  "desc": ""
  },
  "color.background.accent.amber.bold": {
   "light": "amber.400",
   "dark": "amber.400",
-  "desc": "塗り（白文字。amber / lime は黒文字）"
+  "desc": "塗り（文字は text.inverse。light の amber / lime は static.black）"
  },
  "color.background.accent.amber.boldest": {
   "light": "amber.800",
@@ -756,7 +996,7 @@
  },
  "color.text.accent.amber.bold": {
   "light": "amber.800",
-  "dark": "amber.300",
+  "dark": "amber.200",
   "desc": "accent.amber.subtle の面に乗せる文字"
  },
  "color.background.accent.lime.subtlest": {
@@ -765,19 +1005,39 @@
   "desc": "ほのかな色の面"
  },
  "color.background.accent.lime.subtle": {
-  "light": "lime.100",
-  "dark": "lime.900",
+  "light": "lime.50",
+  "dark": "lime.950",
   "desc": "薄いタグ・通知の地（文字は .bold）"
  },
- "color.background.accent.lime.default": {
+ "color.background.accent.lime.subtle.hovered": {
+  "light": "lime.100",
+  "dark": "lime.900",
+  "desc": ""
+ },
+ "color.background.accent.lime.subtle.pressed": {
   "light": "lime.200",
   "dark": "lime.800",
+  "desc": ""
+ },
+ "color.background.accent.lime.default": {
+  "light": "lime.100",
+  "dark": "lime.900",
   "desc": "色つきの面（文字は text.default）"
+ },
+ "color.background.accent.lime.default.hovered": {
+  "light": "lime.200",
+  "dark": "lime.800",
+  "desc": ""
+ },
+ "color.background.accent.lime.default.pressed": {
+  "light": "lime.300",
+  "dark": "lime.700",
+  "desc": ""
  },
  "color.background.accent.lime.bold": {
   "light": "lime.400",
   "dark": "lime.400",
-  "desc": "塗り（白文字。amber / lime は黒文字）"
+  "desc": "塗り（文字は text.inverse。light の amber / lime は static.black）"
  },
  "color.background.accent.lime.boldest": {
   "light": "lime.800",
@@ -791,7 +1051,7 @@
  },
  "color.text.accent.lime.bold": {
   "light": "lime.800",
-  "dark": "lime.300",
+  "dark": "lime.200",
   "desc": "accent.lime.subtle の面に乗せる文字"
  },
  "color.background.accent.green.subtlest": {
@@ -800,19 +1060,39 @@
   "desc": "ほのかな色の面"
  },
  "color.background.accent.green.subtle": {
-  "light": "green.100",
-  "dark": "green.900",
+  "light": "green.50",
+  "dark": "green.950",
   "desc": "薄いタグ・通知の地（文字は .bold）"
  },
- "color.background.accent.green.default": {
+ "color.background.accent.green.subtle.hovered": {
+  "light": "green.100",
+  "dark": "green.900",
+  "desc": ""
+ },
+ "color.background.accent.green.subtle.pressed": {
   "light": "green.200",
   "dark": "green.800",
+  "desc": ""
+ },
+ "color.background.accent.green.default": {
+  "light": "green.100",
+  "dark": "green.900",
   "desc": "色つきの面（文字は text.default）"
+ },
+ "color.background.accent.green.default.hovered": {
+  "light": "green.200",
+  "dark": "green.800",
+  "desc": ""
+ },
+ "color.background.accent.green.default.pressed": {
+  "light": "green.300",
+  "dark": "green.700",
+  "desc": ""
  },
  "color.background.accent.green.bold": {
   "light": "green.700",
-  "dark": "green.700",
-  "desc": "塗り（白文字。amber / lime は黒文字）"
+  "dark": "green.500",
+  "desc": "塗り（文字は text.inverse。light の amber / lime は static.black）"
  },
  "color.background.accent.green.boldest": {
   "light": "green.800",
@@ -826,7 +1106,7 @@
  },
  "color.text.accent.green.bold": {
   "light": "green.800",
-  "dark": "green.300",
+  "dark": "green.200",
   "desc": "accent.green.subtle の面に乗せる文字"
  },
  "color.background.accent.teal.subtlest": {
@@ -835,19 +1115,39 @@
   "desc": "ほのかな色の面"
  },
  "color.background.accent.teal.subtle": {
-  "light": "teal.100",
-  "dark": "teal.900",
+  "light": "teal.50",
+  "dark": "teal.950",
   "desc": "薄いタグ・通知の地（文字は .bold）"
  },
- "color.background.accent.teal.default": {
+ "color.background.accent.teal.subtle.hovered": {
+  "light": "teal.100",
+  "dark": "teal.900",
+  "desc": ""
+ },
+ "color.background.accent.teal.subtle.pressed": {
   "light": "teal.200",
   "dark": "teal.800",
+  "desc": ""
+ },
+ "color.background.accent.teal.default": {
+  "light": "teal.100",
+  "dark": "teal.900",
   "desc": "色つきの面（文字は text.default）"
+ },
+ "color.background.accent.teal.default.hovered": {
+  "light": "teal.200",
+  "dark": "teal.800",
+  "desc": ""
+ },
+ "color.background.accent.teal.default.pressed": {
+  "light": "teal.300",
+  "dark": "teal.700",
+  "desc": ""
  },
  "color.background.accent.teal.bold": {
   "light": "teal.700",
-  "dark": "teal.700",
-  "desc": "塗り（白文字。amber / lime は黒文字）"
+  "dark": "teal.500",
+  "desc": "塗り（文字は text.inverse。light の amber / lime は static.black）"
  },
  "color.background.accent.teal.boldest": {
   "light": "teal.800",
@@ -861,7 +1161,7 @@
  },
  "color.text.accent.teal.bold": {
   "light": "teal.800",
-  "dark": "teal.300",
+  "dark": "teal.200",
   "desc": "accent.teal.subtle の面に乗せる文字"
  },
  "color.background.accent.cyan.subtlest": {
@@ -870,19 +1170,39 @@
   "desc": "ほのかな色の面"
  },
  "color.background.accent.cyan.subtle": {
-  "light": "cyan.100",
-  "dark": "cyan.900",
+  "light": "cyan.50",
+  "dark": "cyan.950",
   "desc": "薄いタグ・通知の地（文字は .bold）"
  },
- "color.background.accent.cyan.default": {
+ "color.background.accent.cyan.subtle.hovered": {
+  "light": "cyan.100",
+  "dark": "cyan.900",
+  "desc": ""
+ },
+ "color.background.accent.cyan.subtle.pressed": {
   "light": "cyan.200",
   "dark": "cyan.800",
+  "desc": ""
+ },
+ "color.background.accent.cyan.default": {
+  "light": "cyan.100",
+  "dark": "cyan.900",
   "desc": "色つきの面（文字は text.default）"
+ },
+ "color.background.accent.cyan.default.hovered": {
+  "light": "cyan.200",
+  "dark": "cyan.800",
+  "desc": ""
+ },
+ "color.background.accent.cyan.default.pressed": {
+  "light": "cyan.300",
+  "dark": "cyan.700",
+  "desc": ""
  },
  "color.background.accent.cyan.bold": {
   "light": "cyan.700",
-  "dark": "cyan.700",
-  "desc": "塗り（白文字。amber / lime は黒文字）"
+  "dark": "cyan.500",
+  "desc": "塗り（文字は text.inverse。light の amber / lime は static.black）"
  },
  "color.background.accent.cyan.boldest": {
   "light": "cyan.800",
@@ -896,7 +1216,7 @@
  },
  "color.text.accent.cyan.bold": {
   "light": "cyan.800",
-  "dark": "cyan.300",
+  "dark": "cyan.200",
   "desc": "accent.cyan.subtle の面に乗せる文字"
  },
  "color.background.accent.sky.subtlest": {
@@ -905,19 +1225,39 @@
   "desc": "ほのかな色の面"
  },
  "color.background.accent.sky.subtle": {
-  "light": "sky.100",
-  "dark": "sky.900",
+  "light": "sky.50",
+  "dark": "sky.950",
   "desc": "薄いタグ・通知の地（文字は .bold）"
  },
- "color.background.accent.sky.default": {
+ "color.background.accent.sky.subtle.hovered": {
+  "light": "sky.100",
+  "dark": "sky.900",
+  "desc": ""
+ },
+ "color.background.accent.sky.subtle.pressed": {
   "light": "sky.200",
   "dark": "sky.800",
+  "desc": ""
+ },
+ "color.background.accent.sky.default": {
+  "light": "sky.100",
+  "dark": "sky.900",
   "desc": "色つきの面（文字は text.default）"
+ },
+ "color.background.accent.sky.default.hovered": {
+  "light": "sky.200",
+  "dark": "sky.800",
+  "desc": ""
+ },
+ "color.background.accent.sky.default.pressed": {
+  "light": "sky.300",
+  "dark": "sky.700",
+  "desc": ""
  },
  "color.background.accent.sky.bold": {
   "light": "sky.700",
-  "dark": "sky.700",
-  "desc": "塗り（白文字。amber / lime は黒文字）"
+  "dark": "sky.500",
+  "desc": "塗り（文字は text.inverse。light の amber / lime は static.black）"
  },
  "color.background.accent.sky.boldest": {
   "light": "sky.800",
@@ -931,7 +1271,7 @@
  },
  "color.text.accent.sky.bold": {
   "light": "sky.800",
-  "dark": "sky.300",
+  "dark": "sky.200",
   "desc": "accent.sky.subtle の面に乗せる文字"
  }
 }

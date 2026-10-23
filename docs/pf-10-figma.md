@@ -14,7 +14,7 @@
 | Collection `Semantic - Layout` | mode: Value。Layout/Breakpoint / Grid / Container / Section。数値は Primitives へ alias | 30 |
 | Collection `Semantic - Border` | mode: Value。Border/Width | 3 |
 | Collection `Semantic - Color` | modes: Light / Dark。Text / Icon / Border / Background / Link / Elevation は Primitives へ alias。Blanket と影の色は実値 | 195 |
-| Text Styles | font/display 5・heading 7・body 4・label 4・label/mono 4 | 24 |
+| Text Styles | font/display 5・heading 7・body 4・label 4・label/mono 4（size / weight / family を変数に束縛。+ Figma だけの `Font/Label/MD Underlined` / `LG Underlined`） | 24 (+2) |
 | Effect Styles | elevation/shadow rest / lifted / floating / overlay。各 2 層、色は `elevation/shadow/*/layerN` 変数に束縛 | 4 |
 
 検証: 496 変数、重複なし。`color/text/brand` は light で blue/700 (#1C55E0)、dark で blue/400 (#6C9FF8) に解決。全変数に WEB code syntax（`var(--ac-…)`）を設定。
@@ -37,7 +37,7 @@
 | 項目 | 決定 |
 |---|---|
 | scopes | 名前の先頭で決める（`build/emit.js` の SCOPES）。text/link → TEXT_FILL、icon → SHAPE_FILL、border → STROKE_COLOR、background / surface → FRAME_FILL + SHAPE_FILL、primitive の色 → ALL_FILLS + STROKE_COLOR + EFFECT_COLOR、space / gutter / margin / section → GAP、size / breakpoint / container → WIDTH_HEIGHT、radius → CORNER_RADIUS、border 幅 → STROKE_FLOAT、size → FONT_SIZE、lineHeight → LINE_HEIGHT、weight → FONT_WEIGHT、family → FONT_FAMILY、opacity → OPACITY。duration / easing / shape / grid.columns は `[]`（ピッカーに出さない） |
-| フォント名 | `Inter Variable` → Figma の `Inter`。weight は Inter が Regular / Medium / Semi Bold / Bold、Geist Mono が Regular / Medium / SemiBold / Bold |
+| フォント名 | `Typography/Family/Sans` の値は本人が Figma 上で管理する（2026-10-06 時点 `Inter Display`、ローカルフォント。スクリプトは触らない。MCP から Text Style を更新する必要が出たら本人が `Inter` に直してから指示する）。Text Style は作成時に Google Fonts の `Inter` で作り、family の束縛で実際の書体に切り替わる。weight は Inter が Regular / Medium / Semi Bold / Bold、Geist Mono が Regular / Medium / SemiBold / Bold |
 | 不透明度 | Figma のレイヤー不透明度は 0–100 なので、`opacity/*` 変数は ×100 の値で投入する（トークンは 0–1 のまま） |
 | 影 | Effect Style は 1 つで、各層の色を `color` コレクションの変数に束縛。light / dark はモード切替で追従する。この 8 変数は shadow トークンから生成した派生値 |
 | Text Style | フォントは 1 書体しか持てないので Inter（mono は Geist Mono）。和文の Noto Sans JP はテキストごとに設定する（例外） |
@@ -53,7 +53,8 @@
 
 - `typography.letterSpacing.*`（em）、`layout.container.full`（%）、`motion.easing.*`（cubicBezier）は変数にならない（`skipped` に列挙）。Text Style の letterSpacing は em → % に換算して入れている
 - `font.family.default` の混植スタック（Inter + Noto Sans JP）は Figma で表現できない。変数の値は `Inter`
-- Text Style のプロパティを変数に束縛する API は `use_figma` で使えない。必要なら Figma 上で手動束縛
+- Text Style の `fontSize` / `fontWeight` / `fontFamily` は `text` ステージが変数に束縛する（`TextStyle.setBoundVariable`、2026-10-06 に使えることを確認。それ以前の「不可」は誤り）。`lineHeight` / `letterSpacing` は束縛しない（本人決定: Figma は束縛した数値をスタイルの単位で読むが、トークンは倍率 / em）。**`fontFamily` の束縛は、変数の値のフォントを MCP 側で読み込める場合だけ**動く。Figma の `Typography/Family/Sans` は `Inter Display`（ローカルフォント、本人管理）で MCP の sandbox には無いため、**Text Style の再投入（`text` ステージ）と Sans の値変更は MCP からできない**。やるときは本人が値を `Inter` に直してから指示する（運用決定 2026-10-06）。変数の再投入は `--changed-since` で差分だけ送れば Sans に触れないので従来どおり MCP で可能。24 スタイルすべて family / size / weight が束縛済み
+- `Font/Label/MD Underlined` / `Font/Label/LG Underlined` は Figma だけの派生 Text Style（トークンにない）。同じ Text プロパティに繋いだ文字は下線の上書きを保てない（Figma の既知バグ）ため、下線は Text Style で表現する。Button の link variant 用に作り、link → tertiary（下線なし）後は **Link 部品で使う予定**として残す（本人決定 2026-10-06）
 - `motion.duration.*` は FLOAT（ms）だが Figma のプロトタイプ設定には束縛できない。参照用
 
 ## 制約
@@ -64,6 +65,37 @@
 ## Icons ページ（2026-09-29 追加）
 
 `packages/ui/icons.json` から `packages/ui/figma/icons-stage.js` で生成。`Icon/*` 71（Lucide）、`Brand/*` 10（Simple Icons + LinkedIn）、`Icon` コンポーネントセット（Size Small / Medium / Large / Extra Large を `Dimension/Size` に束縛、`Glyph` は instance swap）。方針は `docs/icons.md`。
+
+## Palette ページ（2026-10-05 追加）
+
+`tokens/primitives/color.json` から `packages/tokens/figma/palette-stage.js` で生成（`node figma/palette-stage.js` の出力を `use_figma` に貼る、1 回で約 24k 文字）。primitive の色 153 を 1 つの auto-layout フレーム `Palette`（幅 1992、padding 64、gap 48、面は `Elevation/Surface/Default`）に、色相の順（neutral → blue → … → sky、`color.json` の順）で 14 セクションに並べる。neutral は 0–1000 の 13 段と `Neutral Alpha` 8 段を分け、alpha 見本は下地フレーム（`Color/Neutral/50` または `950` に束縛）の上に置く。
+
+各見本（幅 136）: 色面 136×64（塗りを Primitives の `Color/{Hue}/{Step}` に束縛、角丸は `Dimension/Radius/200`）と文字 4 行 — 段（`Font/Label/SM`）、Hex（`Font/Label/Mono/XS`）、OKLCH `L .573 C .204 H 262.6`（`color.json` の `ac.oklch`）、WCAG 2.2 コントラスト比 `50 4.24 · 950 4.16`（neutral 50 上 · neutral 950 上。生成スクリプト内で計算。alpha 段は下地に合成した色と下地の比 `on 50 1.28`、OKLCH の代わりに `α 11.6% → #DDDBD9` を表示）。文字色は `Color/Text/Default / Subtle / Subtlest`。Hex・OKLCH・比は生成時の文字列なので、トークンを変えたら再生成する（色面は変数束縛なので自動で追従）。
+
+再投入: 既存の `Palette` フレームは `Palette (old)` に改名して残す（スクリプトは削除しない）。新しいフレームは右隣に作られるので、見比べてから古いものを手で削除する。2026-10-05 のパレット改訂（docs/pf-08-tokens.md）で再投入済み: `Palette (old)`（61:3）は改訂前、`Palette`（69:2）が現行。
+
+## 変更分だけ再投入する（2026-10-05 追加）
+
+`node figma/stage.js <collection> --changed-since <git-ref>` で、その ref の `dist/figma/variables.json` と比べて新規・変更のある変数だけを出す（例: `--changed-since HEAD~1`）。パレット改訂では Primitives 44 件、Semantic - Color 125 件（新規 68 + 更新 57）をそれぞれ 1 回の `use_figma` で投入した。投入後の変数は 564（Primitives 265 / Color 263 / Typography 3 / Layout 30 / Border 3）、重複なし。
+
+## Spinner ページ（2026-10-05 追加）
+
+`node packages/ui/figma/spinner-stage.js` で生成。セット `Spinner`（Size 5 段を `Dimension/Size` に束縛、点 8 つは `Color/Icon/Default` と `Opacity/*` に束縛）。設計は `docs/components/spinner.md`。Button の Loading 6 variant は `node packages/ui/figma/button-stage.js --swap-spinner` で Icon Before の `Icon/Loader Circle` を `Spinner` インスタンスに差し替えた（セットは再生成せず、本人の手直しを保持）。
+
+## Focus Ring ページ（2026-10-05 追加）
+
+`node packages/ui/figma/focus-ring-stage.js` で生成。部品 `Focus Ring` 1 つ（variant なし、角丸 0。ストローク外側 2px を `Border/Width/Focused` と `Color/Border/Focused` に束縛）。角丸は当てる要素で変わるので、置く側のインスタンスで「要素 + 2px」に上書きする（本人決定 2026-10-05。最初に作った `Radius = 8 / 12 / Full` のセットは `Focus Ring (old)` として残っているので手で削除）。設計は `docs/components/focus-ring.md`。Button の Focused 6 variant は `node packages/ui/figma/button-stage.js --swap-focus` で影 2 段を外してこの部品を絶対配置し、角丸 10 / 14 / 9999 を上書きした。
+
+## コンポーネントページのテンプレート v3（2026-10-23 承認）
+
+1 ページ = 縦積みの文書フレーム 1 枚（幅 1360、padding `Space/1600`、節の間 `Space/2400`、Light モードを明示）。上から次の順に並べる。
+
+- Header: `_Doc/Page Header`。System と Storybook の行、Title、2 行以内の Summary、Status バッジと Updated。
+- Example: `_Doc/Section Head` の下に、Light と Dark のキャンバスを横に並べる。2 枚は同じ構成で、モードだけが違う。
+- Components: セット本体を Grid に置く。上に State の Caption、左の余白に Variant 名（Caption Strong）と「Size · Shape」の Caption を付ける。
+- Parts: 内部専用の部品があるときだけ置く。
+
+部品は `node packages/ui/figma/doc-page-stage.js` で、ページは `node packages/ui/figma/button-doc-stage.js` で生成する（共通処理は `figma/lib/page.js`）。再生成すると、前のフレームは「(old)」に改名して左へ 9000 ずらす。v2（3 列・Banner・Chip）は承認されなかった。v2 の部品は退避待ちとして `_Doc` に残っている。
 
 ## 残り（PF-10 のもう半分）
 

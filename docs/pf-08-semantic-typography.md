@@ -9,7 +9,7 @@
 
 | トークン | スタック | 用途 |
 |---|---|---|
-| font.family.default | Inter Variable → Noto Sans JP → system-ui | 全 role の既定 |
+| font.family.default | Inter Display → Noto Sans JP → system-ui（2026-10-06 に Inter Variable から変更） | 全 role の既定 |
 | font.family.serif | Lora → Noto Sans JP → Georgia | 装飾用途（引用・Music、英語のみ）。role は持たず component 層で定義 |
 | font.family.mono | Geist Mono → ui-monospace | label.mono |
 

@@ -14,6 +14,7 @@
     "test": "astro build"
   },
   "dependencies": {
+    "@aristocraft/fonts": "*",
     "@aristocraft/tokens": "*",
     "@aristocraft/ui": "*",
     "@astrojs/react": "^7.0.0",

@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/react-vite';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import '@aristocraft/tokens/css';
+import '@aristocraft/fonts/inter-display.css';
 import './preview.css';
 
 const preview: Preview = {

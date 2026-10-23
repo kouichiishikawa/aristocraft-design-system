@@ -10,6 +10,7 @@
     "test": "next build"
   },
   "dependencies": {
+    "@aristocraft/fonts": "*",
     "@aristocraft/tokens": "*",
     "@aristocraft/ui": "*",
     "next": "16.3.7",

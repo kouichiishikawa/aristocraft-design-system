@@ -17,14 +17,14 @@
   --ac-color-neutral-900: #25221e;
   --ac-color-neutral-950: #12100d;
   --ac-color-neutral-1000: #000000;
-  --ac-color-neutral-100a: rgba(18, 16, 13, 0.11764705882352941); /** neutral.950 （light）α 11.6%。neutral.50 上で neutral.100 と一致（合成 #DDDBD9） */
-  --ac-color-neutral-200a: rgba(18, 16, 13, 0.22745098039215686); /** neutral.950 （light）α 22.9%。neutral.50 上で neutral.200 と一致（合成 #C3C1BF） */
-  --ac-color-neutral-300a: rgba(18, 16, 13, 0.3411764705882353); /** neutral.950 （light）α 34.0%。neutral.50 上で neutral.300 と一致（合成 #AAA8A5） */
-  --ac-color-neutral-400a: rgba(18, 16, 13, 0.4470588235294118); /** neutral.950 （light）α 44.7%。neutral.50 上で neutral.400 と一致（合成 #918F8D） */
-  --ac-color-neutral-900a: rgba(248, 246, 244, 0.0784313725490196); /** neutral.50 （dark）α 7.8%。neutral.950 上で neutral.900 と一致（合成 #24221F） */
-  --ac-color-neutral-800a: rgba(248, 246, 244, 0.16470588235294117); /** neutral.50 （dark）α 16.4%。neutral.950 上で neutral.800 と一致（合成 #383633） */
-  --ac-color-neutral-700a: rgba(248, 246, 244, 0.2549019607843137); /** neutral.50 （dark）α 25.5%。neutral.950 上で neutral.700 と一致（合成 #4D4B48） */
-  --ac-color-neutral-600a: rgba(248, 246, 244, 0.34901960784313724); /** neutral.50 （dark）α 34.9%。neutral.950 上で neutral.600 と一致（合成 #62605E） */
+  --ac-color-neutral-100a: rgba(18, 16, 13, 0.054901960784313725); /** neutral.950 （light）α 5.5%。neutral.50 上で neutral.50 と 100 の中間（合成 #EBE9E7） */
+  --ac-color-neutral-200a: rgba(18, 16, 13, 0.11372549019607843); /** neutral.950 （light）α 11.5%。neutral.50 上で neutral.100 と一致（合成 #DEDCD9） */
+  --ac-color-neutral-300a: rgba(18, 16, 13, 0.22745098039215686); /** neutral.950 （light）α 22.8%。neutral.50 上で neutral.200 と一致（合成 #C4C2BF） */
+  --ac-color-neutral-400a: rgba(18, 16, 13, 0.3411764705882353); /** neutral.950 （light）α 34.0%。neutral.50 上で neutral.300 と一致（合成 #AAA8A5） */
+  --ac-color-neutral-900a: rgba(248, 246, 244, 0.03137254901960784); /** neutral.50 （dark）α 3.3%。neutral.950 上で neutral.950 と 900 の中間（合成 #1A1815） */
+  --ac-color-neutral-800a: rgba(248, 246, 244, 0.0784313725490196); /** neutral.50 （dark）α 7.7%。neutral.950 上で neutral.900 と一致（合成 #24221F） */
+  --ac-color-neutral-700a: rgba(248, 246, 244, 0.1607843137254902); /** neutral.50 （dark）α 15.9%。neutral.950 上で neutral.800 と一致（合成 #373532） */
+  --ac-color-neutral-600a: rgba(248, 246, 244, 0.25098039215686274); /** neutral.50 （dark）α 25.0%。neutral.950 上で neutral.700 と一致（合成 #4C4A47） */
   --ac-color-blue-50: #f0f6fe;
   --ac-color-blue-100: #cee1fc;
   --ac-color-blue-200: #adccfa;
@@ -33,9 +33,9 @@
   --ac-color-blue-500: #4c87f6;
   --ac-color-blue-600: #316eee;
   --ac-color-blue-700: #1c55e0;
-  --ac-color-blue-800: #1b44b9;
-  --ac-color-blue-900: #183594;
-  --ac-color-blue-950: #122670;
+  --ac-color-blue-800: #163eb3;
+  --ac-color-blue-900: #0f2887;
+  --ac-color-blue-950: #07145e;
   --ac-color-violet-50: #f6f3fe;
   --ac-color-violet-100: #e2d9fc;
   --ac-color-violet-200: #cfbffa;
@@ -44,9 +44,9 @@
   --ac-color-violet-500: #956df6;
   --ac-color-violet-600: #834bf4;
   --ac-color-violet-700: #6e3bd5;
-  --ac-color-violet-800: #5830b1;
-  --ac-color-violet-900: #44268e;
-  --ac-color-violet-950: #311c6c;
+  --ac-color-violet-800: #5329aa;
+  --ac-color-violet-900: #3b1881;
+  --ac-color-violet-950: #24075a;
   --ac-color-purple-50: #f6f4f6;
   --ac-color-purple-100: #e9dae8;
   --ac-color-purple-200: #e5b9e5;
@@ -55,9 +55,9 @@
   --ac-color-purple-500: #d91eec;
   --ac-color-purple-600: #bd00d2;
   --ac-color-purple-700: #9d11b2;
-  --ac-color-purple-800: #7d1f8e;
-  --ac-color-purple-900: #5d236b;
-  --ac-color-purple-950: #41204b;
+  --ac-color-purple-800: #751d86;
+  --ac-color-purple-900: #501d5b;
+  --ac-color-purple-950: #2f1537;
   --ac-color-pink-50: #f6f4f5;
   --ac-color-pink-100: #e9dbdf;
   --ac-color-pink-200: #e5bdca;
@@ -66,9 +66,9 @@
   --ac-color-pink-500: #f41b97;
   --ac-color-pink-600: #d50385;
   --ac-color-pink-700: #b21272;
-  --ac-color-pink-800: #8d1e5e;
-  --ac-color-pink-900: #6a214a;
-  --ac-color-pink-950: #4a1f36;
+  --ac-color-pink-800: #851b58;
+  --ac-color-pink-900: #5b1b3f;
+  --ac-color-pink-950: #361426;
   --ac-color-red-50: #fef2f0;
   --ac-color-red-100: #fcd5cf;
   --ac-color-red-200: #fab6ae;
@@ -77,9 +77,9 @@
   --ac-color-red-500: #f53c45;
   --ac-color-red-600: #d92538;
   --ac-color-red-700: #b91d31;
-  --ac-color-red-800: #991529;
-  --ac-color-red-900: #7a1021;
-  --ac-color-red-950: #5d0918;
+  --ac-color-red-800: #901326;
+  --ac-color-red-900: #690a1a;
+  --ac-color-red-950: #44040f;
   --ac-color-orange-50: #fef3ea;
   --ac-color-orange-100: #fddfc9;
   --ac-color-orange-200: #fccaa7;
@@ -88,9 +88,9 @@
   --ac-color-orange-500: #f6852b;
   --ac-color-orange-600: #e27826;
   --ac-color-orange-700: #ac581a;
-  --ac-color-orange-800: #803e0f;
-  --ac-color-orange-900: #662f0a;
-  --ac-color-orange-950: #4e2205;
+  --ac-color-orange-800: #783a0e;
+  --ac-color-orange-900: #582706;
+  --ac-color-orange-950: #391602;
   --ac-color-amber-50: #fef5dd;
   --ac-color-amber-100: #fde8b6;
   --ac-color-amber-200: #fcda8d;
@@ -99,9 +99,9 @@
   --ac-color-amber-500: #ce9d29;
   --ac-color-amber-600: #a77d20;
   --ac-color-amber-700: #886418;
-  --ac-color-amber-800: #6b4d0e;
-  --ac-color-amber-900: #553c0a;
-  --ac-color-amber-950: #402c06;
+  --ac-color-amber-800: #64480d;
+  --ac-color-amber-900: #483207;
+  --ac-color-amber-950: #2e1e02;
   --ac-color-lime-50: #f7f7dc;
   --ac-color-lime-100: #efefb9;
   --ac-color-lime-200: #e7e890;
@@ -110,9 +110,9 @@
   --ac-color-lime-500: #adb22b;
   --ac-color-lime-600: #888e20;
   --ac-color-lime-700: #6b7117;
-  --ac-color-lime-800: #52580f;
-  --ac-color-lime-900: #40460a;
-  --ac-color-lime-950: #2e3405;
+  --ac-color-lime-800: #4d530d;
+  --ac-color-lime-900: #363b08;
+  --ac-color-lime-950: #202501;
   --ac-color-green-50: #f3f6f2;
   --ac-color-green-100: #cbeac1;
   --ac-color-green-200: #9ede8a;
@@ -121,9 +121,9 @@
   --ac-color-green-500: #29a818;
   --ac-color-green-600: #019304;
   --ac-color-green-700: #107b1a;
-  --ac-color-green-800: #1c6323;
-  --ac-color-green-900: #1f4c24;
-  --ac-color-green-950: #1d3720;
+  --ac-color-green-800: #195d20;
+  --ac-color-green-900: #19411d;
+  --ac-color-green-950: #132715;
   --ac-color-teal-50: #e0fdf0;
   --ac-color-teal-100: #b8f5dc;
   --ac-color-teal-200: #87edc8;
@@ -132,9 +132,9 @@
   --ac-color-teal-500: #33c19d;
   --ac-color-teal-600: #2db091;
   --ac-color-teal-700: #1f7d68;
-  --ac-color-teal-800: #126150;
-  --ac-color-teal-900: #0e4c3f;
-  --ac-color-teal-950: #07392f;
+  --ac-color-teal-800: #115a4b;
+  --ac-color-teal-900: #0b4035;
+  --ac-color-teal-950: #022821;
   --ac-color-cyan-50: #dbfdfd;
   --ac-color-cyan-100: #adf4f6;
   --ac-color-cyan-200: #71ecf0;
@@ -143,9 +143,9 @@
   --ac-color-cyan-500: #2fbcc5;
   --ac-color-cyan-600: #2eabb4;
   --ac-color-cyan-700: #1d7a82;
-  --ac-color-cyan-800: #155e64;
-  --ac-color-cyan-900: #0d4a50;
-  --ac-color-cyan-950: #09373c;
+  --ac-color-cyan-800: #11585e;
+  --ac-color-cyan-900: #083f44;
+  --ac-color-cyan-950: #03272b;
   --ac-color-sky-50: #eaf8fe;
   --ac-color-sky-100: #c8ecfd;
   --ac-color-sky-200: #a4dffb;
@@ -154,9 +154,9 @@
   --ac-color-sky-500: #2eb5ed;
   --ac-color-sky-600: #29a5da;
   --ac-color-sky-700: #1b77a0;
-  --ac-color-sky-800: #145a7b;
-  --ac-color-sky-900: #0d4763;
-  --ac-color-sky-950: #06344b;
+  --ac-color-sky-800: #125473;
+  --ac-color-sky-900: #093c54;
+  --ac-color-sky-950: #022537;
   --ac-dimension-space-0: 0px;
   --ac-dimension-space-100: 4px;
   --ac-dimension-space-150: 6px;
@@ -222,7 +222,7 @@
   --ac-dimension-breakpoint-lg: 1024px; /** タブレット横・ノート PC */
   --ac-dimension-breakpoint-xl: 1440px; /** デスクトップ */
   --ac-dimension-breakpoint-xxl: 1768px; /** 大型 */
-  --ac-typography-family-sans: 'Inter Variable', Inter, system-ui, sans-serif; /** 欧文の本文・見出し・UI。可変フォント（opsz 軸あり） */
+  --ac-typography-family-sans: 'Inter Display', Inter, system-ui, sans-serif; /** 欧文の本文・見出し・UI。Inter の光学サイズ Display のグリフだけを全サイズで使う（2026-10-06 本人決定。Inter 4 の InterDisplay を @font-face で配信） */
   --ac-typography-family-serif: Lora, Georgia, serif; /** 欧文の引用・見出しの対比用。可変フォント */
   --ac-typography-family-jp: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif; /** 和文。サブセット配信（Google Fonts の unicode-range）を前提 */
   --ac-typography-family-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace; /** 数値・コード・トークン名 */

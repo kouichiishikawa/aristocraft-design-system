@@ -5,12 +5,12 @@
       "sans": {
         "$type": "fontFamily",
         "$value": [
-          "Inter Variable",
+          "Inter Display",
           "Inter",
           "system-ui",
           "sans-serif"
         ],
-        "$description": "欧文の本文・見出し・UI。可変フォント（opsz 軸あり）"
+        "$description": "欧文の本文・見出し・UI。Inter の光学サイズ Display のグリフだけを全サイズで使う（2026-10-06 本人決定。Inter 4 の InterDisplay を @font-face で配信）"
       },
       "serif": {
         "$type": "fontFamily",
@@ -222,7 +222,7 @@
       }
     },
     "weight": {
-      "$description": "4 段。Inter Variable / Noto Sans JP / Lora / Geist Mono すべてで利用可",
+      "$description": "4 段。Inter Display / Noto Sans JP / Lora / Geist Mono すべてで利用可",
       "regular": {
         "$type": "fontWeight",
         "$value": 400

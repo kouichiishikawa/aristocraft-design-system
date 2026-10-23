@@ -2,7 +2,7 @@
 
 run_checks(M, hx) -> list of {mode,label,fg,bg,ratio,need,ok}
   M:  {token path: {'light': ref-or-hex, 'dark': ref-or-hex}}   ref = 'blue.700' | 'neutral.100a'
-  hx: resolves a ref or '#RRGGBB(AA)' literal to a hex string
+  hx(ref_or_literal, mode): resolves to the opaque '#RRGGBB' it reads as on that mode's surface (translucent values composited)
 """
 from color import cr
 
@@ -13,7 +13,7 @@ PRIMARY='blue'
 def run_checks(M,hx):
     checks=[]
     def chk(mode,label,fg,bg,need):
-        f=M[fg][mode] if fg in M else fg; b=M[bg][mode] if bg in M else bg; c=cr(hx(f),hx(b))
+        f=M[fg][mode] if fg in M else fg; b=M[bg][mode] if bg in M else bg; c=cr(hx(f,mode),hx(b,mode))
         checks.append(dict(mode=mode,label=label,fg=f,bg=b,ratio=round(c,2),need=need,ok=c>=need))
     for mode in ('light','dark'):
         W='neutral.0' if mode=='light' else 'neutral.1000'
@@ -22,18 +22,22 @@ def run_checks(M,hx):
         for t in ['color.text.default','color.text.subtle']: chk(mode,f'{t.split(".")[-1]} on sunken',t,'elevation.surface.sunken',4.5)
         chk(mode,'border.bold on default','color.border.bold','elevation.surface.default',3.0); chk(mode,'border.focused on default','color.border.focused','elevation.surface.default',3.0)
         chk(mode,'text.inverse on neutral.boldest','color.text.inverse','color.background.neutral.boldest',4.5)
-        chk(mode,'text.default on neutral.subtle','color.text.default','color.background.neutral.subtle',4.5); chk(mode,'text.default on neutral.default','color.text.default','color.background.neutral.default',4.5)
+        for lvl in ('subtle','default'):
+            for st in ('','.hovered','.pressed'): chk(mode,f'text.default on neutral.{lvl}{st}','color.text.default',f'color.background.neutral.{lvl}{st}',4.5)
         chk(mode,'inverse-ish on neutral.bold',W,'color.background.neutral.bold',4.5)
         groups=[('brand','color.background.brand','color.text.brand',PRIMARY)]+[(r,f'color.background.status.{r}',f'color.text.status.{r}',h) for r,h in STATUS.items()]+[(f'accent.{h}',f'color.background.accent.{h}',f'color.text.accent.{h}',h) for h in HUES]
         for name,base,tr,h in groups:
-            fg='color.text.static.black' if h in ('amber','lime') else 'color.text.static.white'
-            chk(mode,f'{name}.bold + static.{"black" if h in ("amber","lime") else "white"}',fg,f'{base}.bold',4.5)
-            if f'{base}.bold.hovered' in M: chk(mode,f'{name}.bold.hovered + text',fg,f'{base}.bold.hovered',4.5)
+            # text on bold fills = text.inverse (light: white, dark: neutral.950); light amber / lime keep static.black
+            fg='color.text.static.black' if (h in ('amber','lime') and mode=='light') else 'color.text.inverse'
+            chk(mode,f'{name}.bold + {fg.split(".")[-1]}',fg,f'{base}.bold',4.5)
+            for st in ('hovered','pressed'):
+                if f'{base}.bold.{st}' in M: chk(mode,f'{name}.bold.{st} + {fg.split(".")[-1]}',fg,f'{base}.bold.{st}',4.5)
             chk(mode,f'{name}.boldest + {"white" if mode=="light" else "black"}',W,f'{base}.boldest',4.5)
             chk(mode,f'text.{name} on surface.default',tr,'elevation.surface.default',4.5)
             chk(mode,f'text.{name} on {name}.subtlest',tr,f'{base}.subtlest',4.5)
-            chk(mode,f'text.{name}.bold on {name}.subtle',tr+'.bold',f'{base}.subtle',4.5)
-            chk(mode,f'text.default on {name}.default','color.text.default',f'{base}.default',4.5)
+            for st in ('','.hovered','.pressed'):
+                chk(mode,f'text.{name}.bold on {name}.subtle{st}',tr+'.bold',f'{base}.subtle{st}',4.5)
+                chk(mode,f'text.default on {name}.default{st}','color.text.default',f'{base}.default{st}',4.5)
         chk(mode,'text.selected on background.selected','color.text.selected','color.background.selected',4.5)
         chk(mode,'text.default on background.selected','color.text.default','color.background.selected',4.5)
         chk(mode,'text.default on background.input','color.text.default','color.background.input',4.5)

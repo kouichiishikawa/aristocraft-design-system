@@ -32,7 +32,7 @@
 | 0 primitive | color 153 / dimension 65 / typography 31 / motion 12 / opacity 11。4px = 100 の命名、z-index なし | pf-08-primitive-tokens.md |
 | 7a semantic typography | display 5 / heading 7 / body 4 / label 4 + mono 4。line box は 4px 倍数の px | pf-08-semantic-typography.md |
 | 7b semantic color | A（Atlassian 型）。brand / status / accent 12 色相、emphasis 5 段、static、surface 4 + shadow 4。276 組み合わせ検証全合格 | pf-08-semantic-color.md |
-| 8 フォント | Inter Variable / Lora / Noto Sans JP / Geist Mono（typography primitive で確定） | pf-08-primitive-tokens.md |
+| 8 フォント | Inter Display（2026-10-06 に Inter Variable から変更）/ Lora / Noto Sans JP / Geist Mono（typography primitive で確定） | pf-08-primitive-tokens.md |
 | 9 layout | breakpoint 6 段（Atlassian 同値）、grid 4 / 6 / 12、container content 1280 / prose 720 / full、section 4 段 | pf-08-layout.md |
 | 11 spacing | A+: semantic なし、用途の帯、負値 8 段、layout.section のみ | pf-08-spacing.md |
 | 12 角丸・線・影 | radius は規則、border.width 3 つ、shadow は 7b の 4 段 | pf-08-radius-border-shadow.md |
@@ -48,7 +48,7 @@
 
 1. gradient（工程 6）は部品の需要が出てから
 2. ~~`color.text.primary` の名前~~ → 2026-09-29 に `brand` へ改名して解決
-3. 二言語の実測（Noto Sans JP × Inter Variable の混植、line box の見え方）は PF-13 の部品実装で確認
+3. 二言語の実測（Noto Sans JP × Inter Display の混植、line box の見え方）は PF-13 の部品実装で確認
 4. corner-shape は Chromium のみ。角形状をブランドの識別要素にしない前提を実装時に守る
 5. shadow の dark 値は暫定。実画面で調整
 

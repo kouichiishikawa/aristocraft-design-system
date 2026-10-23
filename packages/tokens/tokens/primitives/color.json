@@ -158,82 +158,88 @@
       "$description": "H 82.6° · neutral",
       "100a": {
         "$type": "color",
-        "$value": "#12100D1E",
-        "$description": "neutral.950 （light）α 11.6%。neutral.50 上で neutral.100 と一致（合成 #DDDBD9）",
+        "$value": "#12100D0E",
+        "$description": "neutral.950 （light）α 5.5%。neutral.50 上で neutral.50 と 100 の中間（合成 #EBE9E7）",
         "$extensions": {
-          "ac.alpha": 0.116,
+          "ac.alpha": 0.055,
           "ac.base": "{color.neutral.950}",
-          "ac.matches": "{color.neutral.100}"
+          "ac.target": "#EBE9E6"
         }
       },
       "200a": {
         "$type": "color",
-        "$value": "#12100D3A",
-        "$description": "neutral.950 （light）α 22.9%。neutral.50 上で neutral.200 と一致（合成 #C3C1BF）",
+        "$value": "#12100D1D",
+        "$description": "neutral.950 （light）α 11.5%。neutral.50 上で neutral.100 と一致（合成 #DEDCD9）",
         "$extensions": {
-          "ac.alpha": 0.229,
+          "ac.alpha": 0.115,
           "ac.base": "{color.neutral.950}",
-          "ac.matches": "{color.neutral.200}"
+          "ac.target": "#DEDCD8",
+          "ac.matches": "{color.neutral.100}"
         }
       },
       "300a": {
+        "$type": "color",
+        "$value": "#12100D3A",
+        "$description": "neutral.950 （light）α 22.8%。neutral.50 上で neutral.200 と一致（合成 #C4C2BF）",
+        "$extensions": {
+          "ac.alpha": 0.228,
+          "ac.base": "{color.neutral.950}",
+          "ac.target": "#C5C2BD",
+          "ac.matches": "{color.neutral.200}"
+        }
+      },
+      "400a": {
         "$type": "color",
         "$value": "#12100D57",
         "$description": "neutral.950 （light）α 34.0%。neutral.50 上で neutral.300 と一致（合成 #AAA8A5）",
         "$extensions": {
           "ac.alpha": 0.34,
           "ac.base": "{color.neutral.950}",
+          "ac.target": "#ACA9A2",
           "ac.matches": "{color.neutral.300}"
-        }
-      },
-      "400a": {
-        "$type": "color",
-        "$value": "#12100D72",
-        "$description": "neutral.950 （light）α 44.7%。neutral.50 上で neutral.400 と一致（合成 #918F8D）",
-        "$extensions": {
-          "ac.alpha": 0.447,
-          "ac.base": "{color.neutral.950}",
-          "ac.matches": "{color.neutral.400}"
         }
       },
       "900a": {
         "$type": "color",
-        "$value": "#F8F6F414",
-        "$description": "neutral.50 （dark）α 7.8%。neutral.950 上で neutral.900 と一致（合成 #24221F）",
+        "$value": "#F8F6F408",
+        "$description": "neutral.50 （dark）α 3.3%。neutral.950 上で neutral.950 と 900 の中間（合成 #1A1815）",
         "$extensions": {
-          "ac.alpha": 0.078,
+          "ac.alpha": 0.033,
           "ac.base": "{color.neutral.50}",
-          "ac.matches": "{color.neutral.900}"
+          "ac.target": "#1B1915"
         }
       },
       "800a": {
         "$type": "color",
-        "$value": "#F8F6F42A",
-        "$description": "neutral.50 （dark）α 16.4%。neutral.950 上で neutral.800 と一致（合成 #383633）",
+        "$value": "#F8F6F414",
+        "$description": "neutral.50 （dark）α 7.7%。neutral.950 上で neutral.900 と一致（合成 #24221F）",
         "$extensions": {
-          "ac.alpha": 0.164,
+          "ac.alpha": 0.077,
           "ac.base": "{color.neutral.50}",
-          "ac.matches": "{color.neutral.800}"
+          "ac.target": "#25221E",
+          "ac.matches": "{color.neutral.900}"
         }
       },
       "700a": {
         "$type": "color",
-        "$value": "#F8F6F441",
-        "$description": "neutral.50 （dark）α 25.5%。neutral.950 上で neutral.700 と一致（合成 #4D4B48）",
+        "$value": "#F8F6F429",
+        "$description": "neutral.50 （dark）α 15.9%。neutral.950 上で neutral.800 と一致（合成 #373532）",
         "$extensions": {
-          "ac.alpha": 0.255,
+          "ac.alpha": 0.159,
           "ac.base": "{color.neutral.50}",
-          "ac.matches": "{color.neutral.700}"
+          "ac.target": "#393631",
+          "ac.matches": "{color.neutral.800}"
         }
       },
       "600a": {
         "$type": "color",
-        "$value": "#F8F6F459",
-        "$description": "neutral.50 （dark）α 34.9%。neutral.950 上で neutral.600 と一致（合成 #62605E）",
+        "$value": "#F8F6F440",
+        "$description": "neutral.50 （dark）α 25.0%。neutral.950 上で neutral.700 と一致（合成 #4C4A47）",
         "$extensions": {
-          "ac.alpha": 0.349,
+          "ac.alpha": 0.25,
           "ac.base": "{color.neutral.50}",
-          "ac.matches": "{color.neutral.600}"
+          "ac.target": "#4F4B45",
+          "ac.matches": "{color.neutral.700}"
         }
       }
     },
@@ -336,10 +342,10 @@
       },
       "800": {
         "$type": "color",
-        "$value": "#1B44B9",
+        "$value": "#163EB3",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.44,
+            "l": 0.422,
             "c": 0.19,
             "h": 264.6
           },
@@ -348,10 +354,10 @@
       },
       "900": {
         "$type": "color",
-        "$value": "#183594",
+        "$value": "#0F2887",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.376,
+            "l": 0.335,
             "c": 0.16,
             "h": 265.7
           },
@@ -360,10 +366,10 @@
       },
       "950": {
         "$type": "color",
-        "$value": "#122670",
+        "$value": "#07145E",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.308,
+            "l": 0.249,
             "c": 0.13,
             "h": 266.6
           },
@@ -471,36 +477,36 @@
       },
       "800": {
         "$type": "color",
-        "$value": "#5830B1",
+        "$value": "#5329AA",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.44,
-            "c": 0.191,
-            "h": 290.6
+            "l": 0.42,
+            "c": 0.19,
+            "h": 290.7
           },
           "ac.method": "hybrid"
         }
       },
       "900": {
         "$type": "color",
-        "$value": "#44268E",
+        "$value": "#3B1881",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.375,
+            "l": 0.335,
             "c": 0.16,
-            "h": 289.5
+            "h": 290.0
           },
           "ac.method": "hybrid"
         }
       },
       "950": {
         "$type": "color",
-        "$value": "#311C6C",
+        "$value": "#24075A",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.309,
+            "l": 0.249,
             "c": 0.13,
-            "h": 288.4
+            "h": 288.6
           },
           "ac.method": "hybrid"
         }
@@ -606,36 +612,36 @@
       },
       "800": {
         "$type": "color",
-        "$value": "#7D1F8E",
+        "$value": "#751D86",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.442,
-            "c": 0.182,
-            "h": 320.9
+            "l": 0.422,
+            "c": 0.174,
+            "h": 320.5
           },
           "ac.method": "vivid"
         }
       },
       "900": {
         "$type": "color",
-        "$value": "#5D236B",
+        "$value": "#501D5B",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.374,
-            "c": 0.13,
-            "h": 319.3
+            "l": 0.337,
+            "c": 0.116,
+            "h": 320.1
           },
           "ac.method": "vivid"
         }
       },
       "950": {
         "$type": "color",
-        "$value": "#41204B",
+        "$value": "#2F1537",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.309,
-            "c": 0.084,
-            "h": 317.9
+            "l": 0.25,
+            "c": 0.07,
+            "h": 317.7
           },
           "ac.method": "vivid"
         }
@@ -741,23 +747,23 @@
       },
       "800": {
         "$type": "color",
-        "$value": "#8D1E5E",
+        "$value": "#851B58",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.441,
-            "c": 0.158,
-            "h": 350.5
+            "l": 0.422,
+            "c": 0.152,
+            "h": 350.6
           },
           "ac.method": "vivid"
         }
       },
       "900": {
         "$type": "color",
-        "$value": "#6A214A",
+        "$value": "#5B1B3F",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.375,
-            "c": 0.114,
+            "l": 0.336,
+            "c": 0.102,
             "h": 349.3
           },
           "ac.method": "vivid"
@@ -765,12 +771,12 @@
       },
       "950": {
         "$type": "color",
-        "$value": "#4A1F36",
+        "$value": "#361426",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.31,
-            "c": 0.072,
-            "h": 348.9
+            "l": 0.25,
+            "c": 0.06,
+            "h": 349.3
           },
           "ac.method": "vivid"
         }
@@ -876,11 +882,11 @@
       },
       "800": {
         "$type": "color",
-        "$value": "#991529",
+        "$value": "#901326",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.442,
-            "c": 0.164,
+            "l": 0.422,
+            "c": 0.157,
             "h": 20.5
           },
           "ac.method": "hybrid"
@@ -888,24 +894,24 @@
       },
       "900": {
         "$type": "color",
-        "$value": "#7A1021",
+        "$value": "#690A1A",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.376,
-            "c": 0.138,
-            "h": 19.6
+            "l": 0.336,
+            "c": 0.126,
+            "h": 19.8
           },
           "ac.method": "hybrid"
         }
       },
       "950": {
         "$type": "color",
-        "$value": "#5D0918",
+        "$value": "#44040F",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.31,
-            "c": 0.114,
-            "h": 18.8
+            "l": 0.25,
+            "c": 0.093,
+            "h": 18.5
           },
           "ac.method": "hybrid"
         }
@@ -1011,23 +1017,23 @@
       },
       "800": {
         "$type": "color",
-        "$value": "#803E0F",
+        "$value": "#783A0E",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.442,
-            "c": 0.107,
-            "h": 50.4
+            "l": 0.422,
+            "c": 0.102,
+            "h": 50.5
           },
           "ac.method": "hybrid"
         }
       },
       "900": {
         "$type": "color",
-        "$value": "#662F0A",
+        "$value": "#582706",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.374,
-            "c": 0.092,
+            "l": 0.336,
+            "c": 0.084,
             "h": 49.2
           },
           "ac.method": "hybrid"
@@ -1035,12 +1041,12 @@
       },
       "950": {
         "$type": "color",
-        "$value": "#4E2205",
+        "$value": "#391602",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.31,
-            "c": 0.077,
-            "h": 49.2
+            "l": 0.25,
+            "c": 0.064,
+            "h": 48.4
           },
           "ac.method": "hybrid"
         }
@@ -1146,36 +1152,36 @@
       },
       "800": {
         "$type": "color",
-        "$value": "#6B4D0E",
+        "$value": "#64480D",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.442,
-            "c": 0.085,
-            "h": 80.5
+            "l": 0.422,
+            "c": 0.081,
+            "h": 80.7
           },
           "ac.method": "peak@400"
         }
       },
       "900": {
         "$type": "color",
-        "$value": "#553C0A",
+        "$value": "#483207",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.375,
-            "c": 0.072,
-            "h": 79.5
+            "l": 0.334,
+            "c": 0.064,
+            "h": 79.1
           },
           "ac.method": "peak@400"
         }
       },
       "950": {
         "$type": "color",
-        "$value": "#402C06",
+        "$value": "#2E1E02",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.309,
-            "c": 0.059,
-            "h": 78.8
+            "l": 0.249,
+            "c": 0.049,
+            "h": 78.3
           },
           "ac.method": "peak@400"
         }
@@ -1281,36 +1287,36 @@
       },
       "800": {
         "$type": "color",
-        "$value": "#52580F",
+        "$value": "#4D530D",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.441,
-            "c": 0.092,
-            "h": 114.4
+            "l": 0.423,
+            "c": 0.089,
+            "h": 114.6
           },
           "ac.method": "peak@400"
         }
       },
       "900": {
         "$type": "color",
-        "$value": "#40460A",
+        "$value": "#363B08",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.376,
-            "c": 0.079,
-            "h": 115.4
+            "l": 0.337,
+            "c": 0.07,
+            "h": 115.2
           },
           "ac.method": "peak@400"
         }
       },
       "950": {
         "$type": "color",
-        "$value": "#2E3405",
+        "$value": "#202501",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.309,
-            "c": 0.066,
-            "h": 116.9
+            "l": 0.251,
+            "c": 0.056,
+            "h": 117.2
           },
           "ac.method": "peak@400"
         }
@@ -1416,11 +1422,11 @@
       },
       "800": {
         "$type": "color",
-        "$value": "#1C6323",
+        "$value": "#195D20",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.441,
-            "c": 0.12,
+            "l": 0.422,
+            "c": 0.115,
             "h": 144.7
           },
           "ac.method": "vivid"
@@ -1428,24 +1434,24 @@
       },
       "900": {
         "$type": "color",
-        "$value": "#1F4C24",
+        "$value": "#19411D",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.374,
-            "c": 0.083,
-            "h": 145.9
+            "l": 0.336,
+            "c": 0.076,
+            "h": 145.6
           },
           "ac.method": "vivid"
         }
       },
       "950": {
         "$type": "color",
-        "$value": "#1D3720",
+        "$value": "#132715",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.308,
-            "c": 0.052,
-            "h": 146.8
+            "l": 0.25,
+            "c": 0.043,
+            "h": 146.4
           },
           "ac.method": "vivid"
         }
@@ -1551,36 +1557,36 @@
       },
       "800": {
         "$type": "color",
-        "$value": "#126150",
+        "$value": "#115A4B",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.443,
-            "c": 0.078,
-            "h": 174.2
+            "l": 0.421,
+            "c": 0.073,
+            "h": 175.1
           },
           "ac.method": "hybrid"
         }
       },
       "900": {
         "$type": "color",
-        "$value": "#0E4C3F",
+        "$value": "#0B4035",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.375,
-            "c": 0.065,
-            "h": 175.0
+            "l": 0.335,
+            "c": 0.057,
+            "h": 175.3
           },
           "ac.method": "hybrid"
         }
       },
       "950": {
         "$type": "color",
-        "$value": "#07392F",
+        "$value": "#022821",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.31,
-            "c": 0.054,
-            "h": 175.6
+            "l": 0.249,
+            "c": 0.044,
+            "h": 177.4
           },
           "ac.method": "hybrid"
         }
@@ -1686,35 +1692,35 @@
       },
       "800": {
         "$type": "color",
-        "$value": "#155E64",
+        "$value": "#11585E",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.442,
-            "c": 0.068,
-            "h": 203.3
+            "l": 0.422,
+            "c": 0.066,
+            "h": 203.6
           },
           "ac.method": "hybrid"
         }
       },
       "900": {
         "$type": "color",
-        "$value": "#0D4A50",
+        "$value": "#083F44",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.376,
-            "c": 0.059,
-            "h": 205.0
+            "l": 0.337,
+            "c": 0.054,
+            "h": 204.4
           },
           "ac.method": "hybrid"
         }
       },
       "950": {
         "$type": "color",
-        "$value": "#09373C",
+        "$value": "#03272B",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.31,
-            "c": 0.048,
+            "l": 0.25,
+            "c": 0.04,
             "h": 205.8
           },
           "ac.method": "hybrid"
@@ -1821,36 +1827,36 @@
       },
       "800": {
         "$type": "color",
-        "$value": "#145A7B",
+        "$value": "#125473",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.442,
-            "c": 0.085,
-            "h": 234.7
+            "l": 0.422,
+            "c": 0.081,
+            "h": 234.6
           },
           "ac.method": "hybrid"
         }
       },
       "900": {
         "$type": "color",
-        "$value": "#0D4763",
+        "$value": "#093C54",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.377,
-            "c": 0.074,
-            "h": 235.5
+            "l": 0.337,
+            "c": 0.066,
+            "h": 234.9
           },
           "ac.method": "hybrid"
         }
       },
       "950": {
         "$type": "color",
-        "$value": "#06344B",
+        "$value": "#022537",
         "$extensions": {
           "ac.oklch": {
-            "l": 0.308,
-            "c": 0.062,
-            "h": 236.6
+            "l": 0.25,
+            "c": 0.052,
+            "h": 236.1
           },
           "ac.method": "hybrid"
         }

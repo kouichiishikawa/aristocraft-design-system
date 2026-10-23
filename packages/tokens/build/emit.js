@@ -25,6 +25,9 @@ const SCOPES = [
 ];
 const scopesFor = (name) => SCOPES.find(([re]) => re.test(name))?.[1] ?? []; // name = lowercase slash path
 /** Figma font family / style names for the token stacks and weights. */
+// Token family → Figma variable value. Families not listed pass through unchanged: "Inter Display" (sans, decision 2026-10-06)
+// is a local font the owner manages in Figma by hand; Text Styles are first created with the loadable "Inter" (figmaFont
+// fallback below) and take the real family from the fontFamily binding.
 const FIGMA_FAMILY = { 'Inter Variable': 'Inter', 'Geist Mono': 'Geist Mono', Lora: 'Lora', 'Noto Sans JP': 'Noto Sans JP' };
 const FIGMA_STYLE = {
   Inter: { 400: 'Regular', 500: 'Medium', 600: 'Semi Bold', 700: 'Bold' },
@@ -112,7 +115,8 @@ function toVariable(t) {
         : { skip: `dimension unit "${v?.unit}" has no Figma variable equivalent` };
     case 'duration': return { type: 'FLOAT', value: v.unit === 's' ? v.value * 1000 : v.value, unit: 'ms' };
     case 'string': return { type: 'STRING', value: v };
-    case 'fontFamily': { // Figma family name for the first family in the stack (Inter Variable → Inter)
+    case 'fontFamily': { // Figma family name for the first family in the stack (Inter Variable → Inter: the Google Fonts
+      // copy, so family bindings on Text Styles resolve to a font every Figma environment can load; decision 2026-10-06)
       const first = Array.isArray(v) ? v[0] : v;
       return { type: 'STRING', value: FIGMA_FAMILY[first] ?? first };
     }
@@ -123,8 +127,17 @@ function toVariable(t) {
 const textStyle = (t) => {
   const v = t.$value;
   const ls = v.letterSpacing;
+  // Variables the Text Style binds to (fontFamily / fontSize / fontWeight when the composite references a token; decision
+  // 2026-10-06: lineHeight and letterSpacing stay unbound — Figma reads a bound number in the style's unit, the tokens are ratios / em)
+  const orig = t.original?.$value ?? {};
+  const bindings = {};
+  for (const field of ['fontFamily', 'fontSize', 'fontWeight']) {
+    const r = typeof orig[field] === 'string' && /^\{.+\}$/.test(orig[field]) ? orig[field] : null;
+    if (r) bindings[field] = figmaName(refPath(r));
+  }
   return {
     name: figmaName(t.path),
+    bindings,
     fontFamily: Array.isArray(v.fontFamily) ? v.fontFamily : [v.fontFamily],
     fontSize: v.fontSize.value,
     lineHeight: isUnitValue(v.lineHeight) ? { unit: 'PIXELS', value: v.lineHeight.value }

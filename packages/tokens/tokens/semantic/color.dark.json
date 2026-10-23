@@ -227,7 +227,7 @@
       "inverse": {
         "$type": "color",
         "$value": "{color.neutral.950}",
-        "$description": "反転面の上"
+        "$description": "反転面・bold 塗りの上（2026-10-06: light は neutral.0 = 白。brand.bold 600 の上で AA にするため）"
       },
       "brand": {
         "$root": {
@@ -237,8 +237,8 @@
         },
         "bold": {
           "$type": "color",
-          "$value": "{color.blue.300}",
-          "$description": "brand.subtle の面に乗せる文字"
+          "$value": "{color.blue.200}",
+          "$description": "brand.subtle の面に乗せる文字（dark は 200: subtle.pressed = 800 の上でも AA）"
         }
       },
       "selected": {
@@ -266,7 +266,7 @@
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.green.300}",
+            "$value": "{color.green.200}",
             "$description": "success.subtle の面に乗せる文字"
           }
         },
@@ -277,7 +277,7 @@
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.amber.300}",
+            "$value": "{color.amber.200}",
             "$description": "warning.subtle の面に乗せる文字"
           }
         },
@@ -288,7 +288,7 @@
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.red.300}",
+            "$value": "{color.red.200}",
             "$description": "error.subtle の面に乗せる文字"
           }
         },
@@ -299,7 +299,7 @@
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.sky.300}",
+            "$value": "{color.sky.200}",
             "$description": "info.subtle の面に乗せる文字"
           }
         }
@@ -313,7 +313,7 @@
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.blue.300}",
+            "$value": "{color.blue.200}",
             "$description": "accent.blue.subtle の面に乗せる文字"
           }
         },
@@ -325,7 +325,7 @@
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.violet.300}",
+            "$value": "{color.violet.200}",
             "$description": "accent.violet.subtle の面に乗せる文字"
           }
         },
@@ -337,7 +337,7 @@
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.purple.300}",
+            "$value": "{color.purple.200}",
             "$description": "accent.purple.subtle の面に乗せる文字"
           }
         },
@@ -349,7 +349,7 @@
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.pink.300}",
+            "$value": "{color.pink.200}",
             "$description": "accent.pink.subtle の面に乗せる文字"
           }
         },
@@ -361,7 +361,7 @@
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.red.300}",
+            "$value": "{color.red.200}",
             "$description": "accent.red.subtle の面に乗せる文字"
           }
         },
@@ -373,7 +373,7 @@
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.orange.300}",
+            "$value": "{color.orange.200}",
             "$description": "accent.orange.subtle の面に乗せる文字"
           }
         },
@@ -385,7 +385,7 @@
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.amber.300}",
+            "$value": "{color.amber.200}",
             "$description": "accent.amber.subtle の面に乗せる文字"
           }
         },
@@ -397,7 +397,7 @@
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.lime.300}",
+            "$value": "{color.lime.200}",
             "$description": "accent.lime.subtle の面に乗せる文字"
           }
         },
@@ -409,7 +409,7 @@
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.green.300}",
+            "$value": "{color.green.200}",
             "$description": "accent.green.subtle の面に乗せる文字"
           }
         },
@@ -421,7 +421,7 @@
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.teal.300}",
+            "$value": "{color.teal.200}",
             "$description": "accent.teal.subtle の面に乗せる文字"
           }
         },
@@ -433,7 +433,7 @@
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.cyan.300}",
+            "$value": "{color.cyan.200}",
             "$description": "accent.cyan.subtle の面に乗せる文字"
           }
         },
@@ -445,7 +445,7 @@
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.sky.300}",
+            "$value": "{color.sky.200}",
             "$description": "accent.sky.subtle の面に乗せる文字"
           }
         }
@@ -470,7 +470,8 @@
       },
       "inverse": {
         "$type": "color",
-        "$value": "{color.neutral.950}"
+        "$value": "{color.neutral.950}",
+        "$description": "反転面・bold 塗りの上（Spinner など）"
       },
       "brand": {
         "$type": "color",
@@ -633,31 +634,31 @@
         "subtle": {
           "$root": {
             "$type": "color",
-            "$value": "{color.neutral.800a}",
-            "$description": "二次ボタン・チップ"
+            "$value": "#F8F6F400",
+            "$description": "面なしの二次ボタン・チップ（hover で初めて面が出る）"
           },
           "hovered": {
             "$type": "color",
-            "$value": "{color.neutral.700a}"
+            "$value": "{color.neutral.900a}"
           },
           "pressed": {
             "$type": "color",
-            "$value": "{color.neutral.600a}"
+            "$value": "{color.neutral.800a}"
           }
         },
         "default": {
           "$root": {
             "$type": "color",
-            "$value": "{color.neutral.800}",
-            "$description": "塗りの二次ボタン"
+            "$value": "{color.neutral.900a}",
+            "$description": "塗りの二次ボタン（default variant）"
           },
           "hovered": {
             "$type": "color",
-            "$value": "{color.neutral.700}"
+            "$value": "{color.neutral.800a}"
           },
           "pressed": {
             "$type": "color",
-            "$value": "{color.neutral.600}"
+            "$value": "{color.neutral.700a}"
           }
         },
         "bold": {
@@ -678,30 +679,50 @@
           "$description": "ほのかな色の面"
         },
         "subtle": {
-          "$type": "color",
-          "$value": "{color.blue.900}",
-          "$description": "薄いタグ・通知の地（文字は .bold）"
+          "$root": {
+            "$type": "color",
+            "$value": "{color.blue.950}",
+            "$description": "薄いタグ・通知の地（文字は .bold）"
+          },
+          "hovered": {
+            "$type": "color",
+            "$value": "{color.blue.900}"
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": "{color.blue.800}"
+          }
         },
         "default": {
-          "$type": "color",
-          "$value": "{color.blue.800}",
-          "$description": "色つきの面（文字は text.default）"
+          "$root": {
+            "$type": "color",
+            "$value": "{color.blue.900}",
+            "$description": "色つきの面（文字は text.default）"
+          },
+          "hovered": {
+            "$type": "color",
+            "$value": "{color.blue.800}"
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": "{color.blue.700}"
+          }
         },
         "bold": {
           "$root": {
             "$type": "color",
-            "$value": "{color.blue.600}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$value": "{color.blue.500}",
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "hovered": {
             "$type": "color",
-            "$value": "{color.blue.700}",
-            "$description": "1 段濃く"
+            "$value": "{color.blue.400}",
+            "$description": "1 段強く（light は濃く、dark は明るく）"
           },
           "pressed": {
             "$type": "color",
-            "$value": "{color.blue.800}",
-            "$description": "2 段濃く"
+            "$value": "{color.blue.300}",
+            "$description": "2 段強く"
           }
         },
         "boldest": {
@@ -718,30 +739,50 @@
             "$description": "ほのかな色の面"
           },
           "subtle": {
-            "$type": "color",
-            "$value": "{color.green.900}",
-            "$description": "薄いタグ・通知の地（文字は .bold）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.green.900}",
+              "$description": "薄いタグ・通知の地（文字は .bold）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.green.800}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.green.800}"
+            }
           },
           "default": {
-            "$type": "color",
-            "$value": "{color.green.800}",
-            "$description": "色つきの面（文字は text.default）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.green.800}",
+              "$description": "色つきの面（文字は text.default）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.green.700}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.green.700}"
+            }
           },
           "bold": {
             "$root": {
               "$type": "color",
-              "$value": "{color.green.700}",
-              "$description": "塗り（白文字。amber / lime は黒文字）"
+              "$value": "{color.green.500}",
+              "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
             },
             "hovered": {
               "$type": "color",
-              "$value": "{color.green.800}",
-              "$description": "1 段濃く"
+              "$value": "{color.green.400}",
+              "$description": "1 段強く（light は濃く、dark は明るく）"
             },
             "pressed": {
               "$type": "color",
-              "$value": "{color.green.900}",
-              "$description": "2 段濃く"
+              "$value": "{color.green.300}",
+              "$description": "2 段強く"
             }
           },
           "boldest": {
@@ -757,30 +798,50 @@
             "$description": "ほのかな色の面"
           },
           "subtle": {
-            "$type": "color",
-            "$value": "{color.amber.900}",
-            "$description": "薄いタグ・通知の地（文字は .bold）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.amber.900}",
+              "$description": "薄いタグ・通知の地（文字は .bold）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.amber.800}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.amber.800}"
+            }
           },
           "default": {
-            "$type": "color",
-            "$value": "{color.amber.800}",
-            "$description": "色つきの面（文字は text.default）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.amber.800}",
+              "$description": "色つきの面（文字は text.default）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.amber.700}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.amber.700}"
+            }
           },
           "bold": {
             "$root": {
               "$type": "color",
               "$value": "{color.amber.400}",
-              "$description": "塗り（白文字。amber / lime は黒文字）"
+              "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
             },
             "hovered": {
               "$type": "color",
-              "$value": "{color.amber.500}",
-              "$description": "1 段濃く"
+              "$value": "{color.amber.300}",
+              "$description": "1 段強く（light は濃く、dark は明るく）"
             },
             "pressed": {
               "$type": "color",
-              "$value": "{color.amber.600}",
-              "$description": "2 段濃く"
+              "$value": "{color.amber.200}",
+              "$description": "2 段強く"
             }
           },
           "boldest": {
@@ -796,30 +857,50 @@
             "$description": "ほのかな色の面"
           },
           "subtle": {
-            "$type": "color",
-            "$value": "{color.red.900}",
-            "$description": "薄いタグ・通知の地（文字は .bold）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.red.900}",
+              "$description": "薄いタグ・通知の地（文字は .bold）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.red.800}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.red.800}"
+            }
           },
           "default": {
-            "$type": "color",
-            "$value": "{color.red.800}",
-            "$description": "色つきの面（文字は text.default）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.red.800}",
+              "$description": "色つきの面（文字は text.default）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.red.700}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.red.700}"
+            }
           },
           "bold": {
             "$root": {
               "$type": "color",
-              "$value": "{color.red.600}",
-              "$description": "塗り（白文字。amber / lime は黒文字）"
+              "$value": "{color.red.500}",
+              "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
             },
             "hovered": {
               "$type": "color",
-              "$value": "{color.red.700}",
-              "$description": "1 段濃く"
+              "$value": "{color.red.400}",
+              "$description": "1 段強く（light は濃く、dark は明るく）"
             },
             "pressed": {
               "$type": "color",
-              "$value": "{color.red.800}",
-              "$description": "2 段濃く"
+              "$value": "{color.red.300}",
+              "$description": "2 段強く"
             }
           },
           "boldest": {
@@ -835,30 +916,50 @@
             "$description": "ほのかな色の面"
           },
           "subtle": {
-            "$type": "color",
-            "$value": "{color.sky.900}",
-            "$description": "薄いタグ・通知の地（文字は .bold）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.sky.900}",
+              "$description": "薄いタグ・通知の地（文字は .bold）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.sky.800}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.sky.800}"
+            }
           },
           "default": {
-            "$type": "color",
-            "$value": "{color.sky.800}",
-            "$description": "色つきの面（文字は text.default）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.sky.800}",
+              "$description": "色つきの面（文字は text.default）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.sky.700}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.sky.700}"
+            }
           },
           "bold": {
             "$root": {
               "$type": "color",
-              "$value": "{color.sky.700}",
-              "$description": "塗り（白文字。amber / lime は黒文字）"
+              "$value": "{color.sky.500}",
+              "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
             },
             "hovered": {
               "$type": "color",
-              "$value": "{color.sky.800}",
-              "$description": "1 段濃く"
+              "$value": "{color.sky.400}",
+              "$description": "1 段強く（light は濃く、dark は明るく）"
             },
             "pressed": {
               "$type": "color",
-              "$value": "{color.sky.900}",
-              "$description": "2 段濃く"
+              "$value": "{color.sky.300}",
+              "$description": "2 段強く"
             }
           },
           "boldest": {
@@ -876,19 +977,39 @@
             "$description": "ほのかな色の面"
           },
           "subtle": {
-            "$type": "color",
-            "$value": "{color.blue.900}",
-            "$description": "薄いタグ・通知の地（文字は .bold）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.blue.950}",
+              "$description": "薄いタグ・通知の地（文字は .bold）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.blue.900}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.blue.800}"
+            }
           },
           "default": {
-            "$type": "color",
-            "$value": "{color.blue.800}",
-            "$description": "色つきの面（文字は text.default）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.blue.900}",
+              "$description": "色つきの面（文字は text.default）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.blue.800}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.blue.700}"
+            }
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.blue.600}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$value": "{color.blue.500}",
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -903,19 +1024,39 @@
             "$description": "ほのかな色の面"
           },
           "subtle": {
-            "$type": "color",
-            "$value": "{color.violet.900}",
-            "$description": "薄いタグ・通知の地（文字は .bold）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.violet.950}",
+              "$description": "薄いタグ・通知の地（文字は .bold）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.violet.900}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.violet.800}"
+            }
           },
           "default": {
-            "$type": "color",
-            "$value": "{color.violet.800}",
-            "$description": "色つきの面（文字は text.default）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.violet.900}",
+              "$description": "色つきの面（文字は text.default）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.violet.800}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.violet.700}"
+            }
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.violet.600}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$value": "{color.violet.500}",
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -930,19 +1071,39 @@
             "$description": "ほのかな色の面"
           },
           "subtle": {
-            "$type": "color",
-            "$value": "{color.purple.900}",
-            "$description": "薄いタグ・通知の地（文字は .bold）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.purple.950}",
+              "$description": "薄いタグ・通知の地（文字は .bold）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.purple.900}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.purple.800}"
+            }
           },
           "default": {
-            "$type": "color",
-            "$value": "{color.purple.800}",
-            "$description": "色つきの面（文字は text.default）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.purple.900}",
+              "$description": "色つきの面（文字は text.default）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.purple.800}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.purple.700}"
+            }
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.purple.600}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$value": "{color.purple.500}",
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -957,19 +1118,39 @@
             "$description": "ほのかな色の面"
           },
           "subtle": {
-            "$type": "color",
-            "$value": "{color.pink.900}",
-            "$description": "薄いタグ・通知の地（文字は .bold）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.pink.950}",
+              "$description": "薄いタグ・通知の地（文字は .bold）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.pink.900}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.pink.800}"
+            }
           },
           "default": {
-            "$type": "color",
-            "$value": "{color.pink.800}",
-            "$description": "色つきの面（文字は text.default）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.pink.900}",
+              "$description": "色つきの面（文字は text.default）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.pink.800}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.pink.700}"
+            }
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.pink.600}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$value": "{color.pink.500}",
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -984,19 +1165,39 @@
             "$description": "ほのかな色の面"
           },
           "subtle": {
-            "$type": "color",
-            "$value": "{color.red.900}",
-            "$description": "薄いタグ・通知の地（文字は .bold）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.red.950}",
+              "$description": "薄いタグ・通知の地（文字は .bold）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.red.900}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.red.800}"
+            }
           },
           "default": {
-            "$type": "color",
-            "$value": "{color.red.800}",
-            "$description": "色つきの面（文字は text.default）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.red.900}",
+              "$description": "色つきの面（文字は text.default）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.red.800}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.red.700}"
+            }
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.red.600}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$value": "{color.red.500}",
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1011,19 +1212,39 @@
             "$description": "ほのかな色の面"
           },
           "subtle": {
-            "$type": "color",
-            "$value": "{color.orange.900}",
-            "$description": "薄いタグ・通知の地（文字は .bold）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.orange.950}",
+              "$description": "薄いタグ・通知の地（文字は .bold）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.orange.900}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.orange.800}"
+            }
           },
           "default": {
-            "$type": "color",
-            "$value": "{color.orange.800}",
-            "$description": "色つきの面（文字は text.default）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.orange.900}",
+              "$description": "色つきの面（文字は text.default）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.orange.800}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.orange.700}"
+            }
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.orange.700}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$value": "{color.orange.500}",
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1038,19 +1259,39 @@
             "$description": "ほのかな色の面"
           },
           "subtle": {
-            "$type": "color",
-            "$value": "{color.amber.900}",
-            "$description": "薄いタグ・通知の地（文字は .bold）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.amber.950}",
+              "$description": "薄いタグ・通知の地（文字は .bold）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.amber.900}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.amber.800}"
+            }
           },
           "default": {
-            "$type": "color",
-            "$value": "{color.amber.800}",
-            "$description": "色つきの面（文字は text.default）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.amber.900}",
+              "$description": "色つきの面（文字は text.default）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.amber.800}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.amber.700}"
+            }
           },
           "bold": {
             "$type": "color",
             "$value": "{color.amber.400}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1065,19 +1306,39 @@
             "$description": "ほのかな色の面"
           },
           "subtle": {
-            "$type": "color",
-            "$value": "{color.lime.900}",
-            "$description": "薄いタグ・通知の地（文字は .bold）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.lime.950}",
+              "$description": "薄いタグ・通知の地（文字は .bold）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.lime.900}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.lime.800}"
+            }
           },
           "default": {
-            "$type": "color",
-            "$value": "{color.lime.800}",
-            "$description": "色つきの面（文字は text.default）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.lime.900}",
+              "$description": "色つきの面（文字は text.default）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.lime.800}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.lime.700}"
+            }
           },
           "bold": {
             "$type": "color",
             "$value": "{color.lime.400}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1092,19 +1353,39 @@
             "$description": "ほのかな色の面"
           },
           "subtle": {
-            "$type": "color",
-            "$value": "{color.green.900}",
-            "$description": "薄いタグ・通知の地（文字は .bold）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.green.950}",
+              "$description": "薄いタグ・通知の地（文字は .bold）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.green.900}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.green.800}"
+            }
           },
           "default": {
-            "$type": "color",
-            "$value": "{color.green.800}",
-            "$description": "色つきの面（文字は text.default）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.green.900}",
+              "$description": "色つきの面（文字は text.default）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.green.800}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.green.700}"
+            }
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.green.700}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$value": "{color.green.500}",
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1119,19 +1400,39 @@
             "$description": "ほのかな色の面"
           },
           "subtle": {
-            "$type": "color",
-            "$value": "{color.teal.900}",
-            "$description": "薄いタグ・通知の地（文字は .bold）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.teal.950}",
+              "$description": "薄いタグ・通知の地（文字は .bold）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.teal.900}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.teal.800}"
+            }
           },
           "default": {
-            "$type": "color",
-            "$value": "{color.teal.800}",
-            "$description": "色つきの面（文字は text.default）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.teal.900}",
+              "$description": "色つきの面（文字は text.default）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.teal.800}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.teal.700}"
+            }
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.teal.700}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$value": "{color.teal.500}",
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1146,19 +1447,39 @@
             "$description": "ほのかな色の面"
           },
           "subtle": {
-            "$type": "color",
-            "$value": "{color.cyan.900}",
-            "$description": "薄いタグ・通知の地（文字は .bold）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.cyan.950}",
+              "$description": "薄いタグ・通知の地（文字は .bold）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.cyan.900}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.cyan.800}"
+            }
           },
           "default": {
-            "$type": "color",
-            "$value": "{color.cyan.800}",
-            "$description": "色つきの面（文字は text.default）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.cyan.900}",
+              "$description": "色つきの面（文字は text.default）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.cyan.800}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.cyan.700}"
+            }
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.cyan.700}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$value": "{color.cyan.500}",
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",
@@ -1173,19 +1494,39 @@
             "$description": "ほのかな色の面"
           },
           "subtle": {
-            "$type": "color",
-            "$value": "{color.sky.900}",
-            "$description": "薄いタグ・通知の地（文字は .bold）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.sky.950}",
+              "$description": "薄いタグ・通知の地（文字は .bold）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.sky.900}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.sky.800}"
+            }
           },
           "default": {
-            "$type": "color",
-            "$value": "{color.sky.800}",
-            "$description": "色つきの面（文字は text.default）"
+            "$root": {
+              "$type": "color",
+              "$value": "{color.sky.900}",
+              "$description": "色つきの面（文字は text.default）"
+            },
+            "hovered": {
+              "$type": "color",
+              "$value": "{color.sky.800}"
+            },
+            "pressed": {
+              "$type": "color",
+              "$value": "{color.sky.700}"
+            }
           },
           "bold": {
             "$type": "color",
-            "$value": "{color.sky.700}",
-            "$description": "塗り（白文字。amber / lime は黒文字）"
+            "$value": "{color.sky.500}",
+            "$description": "塗り（文字は text.inverse。light の amber / lime は static.black）"
           },
           "boldest": {
             "$type": "color",

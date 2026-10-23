@@ -5,6 +5,9 @@ from color import cr, oklch, apca
 KEY='#316EEE'; KL,KC,KH=oklch(KEY)
 STEPS=[50,100,200,300,400,500,600,700,800,900,950]
 dB=(0.97-KL)/6; BL=[0.97-i*dB for i in range(11)]
+# 2026-10-05: 950 darkened to L 0.25 (was 0.309); 700 kept (validated text colour), 800 / 900 spaced evenly between 700 and 950.
+L950=0.25; L800_V2=BL[8]  # the pre-revision 800 keeps bounding the 700 "soften" so 700 does not move
+BL[8]=BL[7]-(BL[7]-L950)/3; BL[9]=BL[7]-2*(BL[7]-L950)/3; BL[10]=L950
 ABS_H=[0.035,0.07,0.11,0.15,0.19,0.22,0.24,0.22,0.19,0.16,0.13]
 ABS_P=[0.035,0.07,0.11,0.15,0.24,0.24,0.24,0.22,0.19,0.16,0.13]
 VIV=[0.12,0.30,0.50,0.68,0.84,0.96,1.00,0.96,0.86,0.72,0.56]  # vivid: fraction of gamut max (v1 definition)
@@ -48,7 +51,7 @@ def build(n,H,m,drift_on=True,soften=True):
     Ls=L_profile(n,H,m); ABS=ABS_P if m=='peak@400' else ABS_H
     if soften and Ls[6]>KL+0.01:
         # raise 700 as far as contrast on gray50 stays >= 4.6 and L700 <= midpoint(L600,L800)
-        best=Ls[7]; mid=(Ls[6]+Ls[8])/2
+        best=Ls[7]; mid=(Ls[6]+L800_V2)/2
         for l in range(int(Ls[7]*1000),int(mid*1000)+1,5):
             L=l/1000; Hd=drift(H,7,drift_on); hx,_=to_hex(L,min(ABS[7],0.92*maxC(L,Hd)),Hd)
             if cr(hx,G50)>=4.6: best=L
@@ -69,12 +72,12 @@ def gray():
         hx,c=to_hex(L0-i*d,Cs[i],82.6); out.append(dict(step=s,hex=hx,L=round(L0-i*d,3),C=round(c,3),H=82.6))
     out.append(dict(step=1000,hex='#000000',L=0.0,C=0.0,H=82.6)); return out
 if __name__=='__main__':
-    pal={'gray':dict(H=82.6,method='gray',scale=gray())}
+    prev=json.load(open('palette.json'))
+    pal={'neutral':dict(H=82.6,method='neutral',scale=gray())}
     for n,(H,m) in HUES.items(): pal[n]=dict(H=H,method=m,scale=build(n,H,m))
     json.dump(pal,open('palette.json','w'),indent=1,ensure_ascii=False)
-    v1=json.load(open('palette-v1.json'))
-    print("hue     | 700 L v1->v2 | 700/g50 v1->v2 | 400/g950 | H50 H950 | 600 hex v1 -> v2")
+    print("hue     | 700 L prev->new | 800 | 900 | 950 L prev->new | 700/g50 | 950 hex prev -> new")
     for n in HUES:
-        a=v1[n]['scale']; b=pal[n]['scale']
-        print(f"{n:7} | {a[7]['L']:.3f}->{b[7]['L']:.3f} | {a[7]['on_g50']:.2f}->{b[7]['on_g50']:.2f} | {b[4]['on_g950']:.2f} | {b[0]['H']:>6} {b[10]['H']:>6} | {a[6]['hex']} -> {b[6]['hex']}")
-    print('gray',' '.join(f"{o['step']}:{o['hex'][1:]}" for o in pal['gray']['scale']))
+        a=prev[n]['scale']; b=pal[n]['scale']
+        print(f"{n:7} | {a[7]['L']:.3f}->{b[7]['L']:.3f} | {b[8]['L']:.3f} | {b[9]['L']:.3f} | {a[10]['L']:.3f}->{b[10]['L']:.3f} | {b[7]['on_g50']:.2f} | {a[10]['hex']} -> {b[10]['hex']}")
+    print('neutral',' '.join(f"{o['step']}:{o['hex'][1:]}" for o in pal['neutral']['scale']))
