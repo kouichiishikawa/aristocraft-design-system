@@ -43,30 +43,43 @@
   line-height: var(--ac-font-label-lg-line-height);
 }
 
-/* variant: background emphasis + text role */
+/* variant: background emphasis + text role (Figma Button set 39:426) */
+.button[data-variant='default'] {
+  background: var(--ac-color-background-neutral-default);
+  color: var(--ac-color-text-default);
+}
 .button[data-variant='primary'] {
   background: var(--ac-color-background-brand-bold);
   color: var(--ac-color-text-inverse); /* white in light, dark text on the lighter dark-mode fill (Atlassian model, 2026-10-06) */
 }
 /* neutral.default is translucent (neutral 100a) so it sits on any surface; neutral.subtle is transparent until hovered */
 .button[data-variant='secondary'] {
-  background: var(--ac-color-background-neutral-default);
+  border: var(--ac-border-width-default) solid var(--ac-color-border-default);
+  background: var(--ac-color-background-neutral-subtle);
   color: var(--ac-color-text-default);
 }
-.button[data-variant='ghost'] {
+.button[data-variant='tertiary'] {
   background: var(--ac-color-background-neutral-subtle);
-  color: var(--ac-color-text-brand);
+  color: var(--ac-color-text-default);
+}
+.button[data-variant='danger'] {
+  background: var(--ac-color-background-status-error-bold);
+  color: var(--ac-color-text-inverse);
 }
 
 /* hover only on devices that hover; pressed is one step stronger again */
 @media (hover: hover) {
+  .button[data-variant='default']:hover { background: var(--ac-color-background-neutral-default-hovered); }
   .button[data-variant='primary']:hover { background: var(--ac-color-background-brand-bold-hovered); }
-  .button[data-variant='secondary']:hover { background: var(--ac-color-background-neutral-default-hovered); }
-  .button[data-variant='ghost']:hover { background: var(--ac-color-background-neutral-subtle-hovered); }
+  .button[data-variant='secondary']:hover { background: var(--ac-color-background-neutral-subtle-hovered); }
+  .button[data-variant='tertiary']:hover { background: var(--ac-color-background-neutral-subtle-hovered); }
+  .button[data-variant='danger']:hover { background: var(--ac-color-background-status-error-bold-hovered); }
 }
+.button[data-variant='default']:active { background: var(--ac-color-background-neutral-default-pressed); }
 .button[data-variant='primary']:active { background: var(--ac-color-background-brand-bold-pressed); }
-.button[data-variant='secondary']:active { background: var(--ac-color-background-neutral-default-pressed); }
-.button[data-variant='ghost']:active { background: var(--ac-color-background-neutral-subtle-pressed); }
+.button[data-variant='secondary']:active { background: var(--ac-color-background-neutral-subtle-pressed); }
+.button[data-variant='tertiary']:active { background: var(--ac-color-background-neutral-subtle-pressed); }
+.button[data-variant='danger']:active { background: var(--ac-color-background-status-error-bold-pressed); }
 
 .button:focus-visible {
   outline: var(--ac-border-width-focused) solid var(--ac-color-border-focused);

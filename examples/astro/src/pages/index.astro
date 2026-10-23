@@ -18,9 +18,11 @@ import { ThemeToggle } from '../components/ThemeToggle';
       <h1 class="title">aristocraft ui × Astro 7</h1>
       <p class="lead">Button from @aristocraft/ui as React islands, tokens from @aristocraft/tokens.</p>
       <div class="row">
-        <Button client:load>Primary</Button>
+        <Button client:load>Default</Button>
+        <Button client:load variant="primary">Primary</Button>
         <Button client:load variant="secondary">Secondary</Button>
-        <Button client:load variant="ghost">Ghost</Button>
+        <Button client:load variant="tertiary">Tertiary</Button>
+        <Button client:load variant="danger">Danger</Button>
       </div>
       <div class="row">
         <Button client:load size="sm">Small</Button>

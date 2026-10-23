@@ -7,7 +7,7 @@ export function ThemeToggle() {
     root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
   };
   return (
-    <Button variant="secondary" size="sm" onClick={toggle}>
+    <Button variant="default" size="sm" onClick={toggle}>
       Toggle light / dark
     </Button>
   );

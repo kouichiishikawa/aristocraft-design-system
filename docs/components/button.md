@@ -52,16 +52,16 @@ Figma: `Button` ページの `Button` セット。部品ごとにページを分
 - 変数・スタイル・部品名は Title Case（`docs/pf-10-figma.md` の規則）
 - loading の variant は Icon Before の位置に `Spinner` セットのインスタンス（Size は Icon と同じ Small / Medium。2026-10-05 に `icon/loader-circle` から置き換え。既存セットに対しては `node packages/ui/figma/button-stage.js --swap-spinner` で差し替えだけを行い、手直しは保つ）
 
-## コードへの反映状況（2026-10-23 確認、DEV-22）
+## コードへの反映状況（2026-10-23 確認、DEV-22。2026-10-24 に DEV-109 を反映）
 
-Figma のセットと本書は一致している。`packages/ui/src/components/Button` はまだ PF-04 の仮実装で、次の差がある（実装は PF-13）。
+Figma のセットと本書は一致している。`packages/ui/src/components/Button` は variant だけ DEV-109 で Figma にそろえた。残りは PF-04 の仮実装で、次の差がある（実装は PF-13）。
 
 | 項目 | Figma・本書 | 現在のコード |
 |---|---|---|
-| variant | default / primary / secondary / tertiary / danger、既定 default | primary / secondary / ghost、既定 primary |
-| secondary | neutral.subtle（透明）+ 枠 border.default | neutral.default の塗り（Figma の default に相当） |
-| tertiary | neutral.subtle、文字 text.default | ghost: 文字 text.brand |
-| danger | status.error.bold、文字 text.inverse | なし |
+| variant | default / primary / secondary / tertiary / danger、既定 default | 一致（DEV-109。ghost は tertiary に改名、別名なし） |
+| secondary | neutral.subtle（透明）+ 枠 border.default | 一致（DEV-109） |
+| tertiary | neutral.subtle、文字 text.default | 一致（DEV-109） |
+| danger | status.error.bold、文字 text.inverse | 一致（DEV-109） |
 | shape | rounded（sm 8 / md・lg 12）/ pill（radius.full） | shape なし。角丸は全サイズ radius.200（8px） |
 | disabled | 地 background.disabled + 文字 text.disabled（primary / danger のアイコンは icon.disabled） | opacity 40% |
 | loading | Spinner を iconBefore の位置に、aria-busy、面は変えない | なし |
