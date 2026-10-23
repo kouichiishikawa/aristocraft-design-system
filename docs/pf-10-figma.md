@@ -86,6 +86,17 @@
 
 `node packages/ui/figma/focus-ring-stage.js` で生成。部品 `Focus Ring` 1 つ（variant なし、角丸 0。ストローク外側 2px を `Border/Width/Focused` と `Color/Border/Focused` に束縛）。角丸は当てる要素で変わるので、置く側のインスタンスで「要素 + 2px」に上書きする（本人決定 2026-10-05。最初に作った `Radius = 8 / 12 / Full` のセットは `Focus Ring (old)` として残っているので手で削除）。設計は `docs/components/focus-ring.md`。Button の Focused 6 variant は `node packages/ui/figma/button-stage.js --swap-focus` で影 2 段を外してこの部品を絶対配置し、角丸 10 / 14 / 9999 を上書きした。
 
+## コンポーネントページのテンプレート v3（2026-10-23 承認）
+
+1 ページ = 縦積みの文書フレーム 1 枚（幅 1360、padding `Space/1600`、節の間 `Space/2400`、Light モードを明示）。上から次の順に並べる。
+
+- Header: `_Doc/Page Header`。System と Storybook の行、Title、2 行以内の Summary、Status バッジと Updated。
+- Example: `_Doc/Section Head` の下に、Light と Dark のキャンバスを横に並べる。2 枚は同じ構成で、モードだけが違う。
+- Components: セット本体を Grid に置く。上に State の Caption、左の余白に Variant 名（Caption Strong）と「Size · Shape」の Caption を付ける。
+- Parts: 内部専用の部品があるときだけ置く。
+
+部品は `node packages/ui/figma/doc-page-stage.js` で、ページは `node packages/ui/figma/button-doc-stage.js` で生成する（共通処理は `figma/lib/page.js`）。再生成すると、前のフレームは「(old)」に改名して左へ 9000 ずらす。v2（3 列・Banner・Chip）は承認されなかった。v2 の部品は退避待ちとして `_Doc` に残っている。
+
 ## 残り（PF-10 のもう半分）
 
 主要部品の variant / 状態 / レスポンシブ設計は、PF-04 で部品ライブラリ（React + TS）の構成を決めてから、PF-05 の Button 検証と合わせて進める。

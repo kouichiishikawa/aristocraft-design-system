@@ -3,6 +3,7 @@
 // `_Doc/*` — the `_` prefix keeps them out of the published library. Every value is bound to a variable or Text Style.
 //   node figma/doc-stage.js pages      → page skeleton (Cover, Getting Started, separators, Foundations / Components / Internal order)
 //   node figma/doc-stage.js blocks     → the _Doc components (idempotent: existing ones are renamed "(old)")
+// The component page template v3 uses the newer blocks from doc-page-stage.js (Page Header / Section Head / Caption).
 // Requires the sans family variable to resolve to a font the MCP sandbox can load ("Inter"); see pf-10 for the Inter Display rule.
 const PAGES = ['Cover', 'Getting Started', '——— Foundations ———', 'Palette', 'Typography', 'Spacing & Layout', 'Elevation', 'Icons', '——— Components ———', 'Button', 'Spinner', 'Focus Ring', '——— Internal ———', '_Doc'];
 
