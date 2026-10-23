@@ -9,9 +9,11 @@ export default function Home() {
       <h1 className="title">aristocraft ui × Next.js 16</h1>
       <p className="lead">Button from @aristocraft/ui, colours and spacing from @aristocraft/tokens.</p>
       <div className="row">
-        <Button>Primary</Button>
+        <Button>Default</Button>
+        <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>
-        <Button variant="ghost">Ghost</Button>
+        <Button variant="tertiary">Tertiary</Button>
+        <Button variant="danger">Danger</Button>
         <Button render={<a href="#contact" />}>Contact</Button>
       </div>
       <div className="row">
