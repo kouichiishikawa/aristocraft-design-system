@@ -1,6 +1,6 @@
 # 部品ごとの設計案（DEV-129、2026-10-24、案）
 
-部品共通の規則・一覧・Figma との対応表は [README.md](README.md)。本書は優先度の高い 8 部品の **案**で、Figma で部品を作る前の叩き台。確定は本人が Figma 上で行い、その後コードを合わせる（Figma 先行 → 承認 → コード追従）。Button は [button.md](button.md) が正。
+部品共通の規則・一覧・Figma との対応表は [README.md](README.md)。本書は優先度の高い 8 部品の **案**で、Figma で部品を作る前の叩き台。確定は本人が Figma 上で行い、その後コードを合わせる（Figma 先行 → 承認 → コード追従）。Button は [button.md](button.md) が正。2026-10-24 にユーザーが決めた点（README §5、DEV-132）は「決定」と書いた。それ以外は案のまま。
 
 各部品の「Figma」欄の variant 数は、プロパティの値の積から出した見積もり。
 
@@ -15,7 +15,7 @@
 | `iconAfter` | Lucide | なし | standalone のみ |
 | `render` | element | `<a>` | Next.js の `<Link>` などに差し替える |
 
-- size は持たない。文字の大きさは親から継承する（`font: inherit`）。standalone だけは label.md / label.lg を `size` で選ぶ案もある（README の判断待ち 6）
+- size は持たない。文字の大きさは親から継承する（`font: inherit`）。standalone も親の文字に合わせる（決定、README §5 の 6）
 - 色: `color.link.default` / `.hovered` / `.visited`（visited は本文中の default だけ）。subtle は `color.text.subtle` → hover で `color.text.default`
 - 下線: default は `text-decoration-thickness: 1px`、`text-underline-offset: 0.2em`。hover で太さ 2px。Figma は `Font/Label/MD Underlined` / `LG Underlined`（pf-10-figma.md の例外として Link 用に残してあるもの）。本文中の Link は本文の Text Style に下線を足す形になるので、Figma では Text Style を増やすか、インスタンスで上書きするかを決める必要がある
 - 状態: default / hovered / pressed（`:active` で link.hovered のまま下線 2px）/ focused（Focus Ring。角丸は 2px = radius.050 を付ける）/ visited。disabled は持たない（リンクを無効にしない。必要なら文字にする）
@@ -29,7 +29,7 @@
 
 | prop | 値 | 既定 | 備考 |
 |---|---|---|---|
-| `variant` | Button と同じ 5 種 | **tertiary** | 道具として置くことが多いので面なしを既定にする案（README の判断待ち 4） |
+| `variant` | Button と同じ 5 種 | **tertiary** | 道具として置くことが多いので面なしを既定にする（決定、README §5 の 4） |
 | `size` | `sm` / `md` / `lg` | md | 正方形 32 / 40 / 48、アイコン 16 / 20 / 24 |
 | `shape` | `rounded` / `circle` | rounded | rounded の角丸は Button と同じ、circle は radius.full |
 | `icon` | Lucide | 必須 | |
@@ -40,7 +40,7 @@
 - 色・状態: Button と同じ表（button.md の「色」）。トグルとして使うとき（メニューが開いている、ミュート中など）は `pressed` prop → `aria-pressed`、見た目は selected（background.selected + icon は text.selected の色）
 - ターゲット: sm 32 は 48 の規則を下回る。疑似要素で当たり判定を 48 に広げる（見た目は 32 のまま）
 - レスポンシブ: なし
-- Figma: `Icon Button` セット。`Variant`（5）× `Size`（3）× `Shape`（2）× `State = Default / Hovered / Pressed / Focused / Disabled / Loading / Selected`（7）= 210 は多すぎる。Shape を boolean にせずインスタンスで角丸を上書きする、または Variant を Default / Primary / Tertiary の 3 種に絞ると **3 × 3 × 7 = 63**（README の判断待ち 4）
+- Figma: `Icon Button` セット。`Variant`（5）× `Size`（3）× `Shape`（2）× `State = Default / Hovered / Pressed / Focused / Disabled / Loading / Selected`（7）= 210 は多すぎるので、Variant を Default / Primary / Tertiary の 3 種に絞り **3 × 3 × 7 = 63** にする。secondary / danger はコードだけで持つ（決定、README §5 の 4）。63 は Shape を Variant プロパティに含まない数で、Figma での circle の表し方は未決
 
 ## 3. TextField（Textarea を含む）
 
@@ -55,7 +55,7 @@ Contact フォームと補助 AI の入力欄。Base UI の `Field`（Root / Lab
 | `required` / `disabled` / `readOnly` | boolean | false | 必須はラベルの後ろに「必須 / Required」の文字（色だけで示さない） |
 | `iconBefore` / `suffix` | Lucide / node | なし | 検索アイコン、単位、文字数など |
 | `multiline` | boolean | false | `rows`、`autoResize`（field-sizing: content。未対応ブラウザは rows のまま） |
-| `fullWidth` | boolean | **true** | 入力欄は親の幅いっぱいが既定（README の判断待ち 3） |
+| `fullWidth` | boolean | **true** | 入力欄は親の幅いっぱいが既定（決定、README §5 の 3） |
 
 - 寸法: 左右余白 space.300 / 300 / 400、角丸 sm radius.200 / md・lg radius.300（Button と同じ）、枠 border.width.default
 - 文字: 入力値は **body.md（16px）を全 size で使う**。16px 未満だと iOS Safari がフォーカス時に拡大するため。ラベルは label.md、説明とエラーは body.sm
@@ -73,12 +73,12 @@ Contact フォームと補助 AI の入力欄。Base UI の `Field`（Root / Lab
 | `size` | `sm` / `md` / `lg` | md | Trigger の高さは TextField と同じ |
 | `label` / `description` / `error` / `required` / `disabled` | | | TextField と同じ（Field で包む） |
 | `placeholder` | string | なし | 未選択の表示。`color.text.subtlest` |
-| `fullWidth` | boolean | true | TextField と同じ |
+| `fullWidth` | boolean | true | TextField と同じ（決定、README §5 の 3） |
 
 - Trigger: 見た目は TextField と同じ（地・枠・角丸・余白）。右端に `chevron-down`（icon.subtle、size.400）。開いている間（`data-popup-open`）は chevron を 180° 回す（transition.state）
 - Popup: 地 `elevation.surface.overlay`、影 `elevation.shadow.floating`、角丸 radius.300、内側の余白 space.100、最大高さ size.6000（240）でスクロール。開閉は transition.enter / exit
 - Item: 高さは Trigger と同じ段、左右余白 space.300。`data-highlighted`（キーボード・ホバーの現在地）= background.neutral.subtle.hovered、`data-selected` = 左に `check` アイコン + text.selected、`data-disabled` = text.disabled
-- ネイティブの `<select>` にするかどうか: Base UI の Select は見た目をそろえられるが、スマホでは OS の選択画面の方が使いやすい。選択肢が少ない Contact では大差がないので Base UI に寄せる案（README の判断待ち 5）
+- ネイティブの `<select>` にするかどうか: Base UI の Select は見た目をそろえられるが、スマホでは OS の選択画面の方が使いやすい。選択肢が少ない Contact では大差がないので Base UI にする（決定、README §5 の 5）。選択肢が 10 を超える入力が出たらネイティブを再検討する
 - レスポンシブ: Popup は Trigger の幅に合わせる（`--anchor-width`）。xs でも同じ
 - Figma: `Select` セット（Trigger）`Size`（3）× `State = Default / Hovered / Focused / Open / Disabled / Invalid`（6）= 18、`Select Item` セット `State = Default / Highlighted / Selected / Disabled`（4）、`Select Popup` は Item を並べた部品 1。合計 **23**
 
@@ -94,14 +94,14 @@ Contact フォームと補助 AI の入力欄。Base UI の `Field`（Root / Lab
 | `disabled` / `readOnly` / `required` / `invalid` | boolean | false | invalid は Field の検証から |
 
 - 見た目: 未選択 = 地 background.input + 枠 border.bold、選択 = 地 `background.brand.bold` + 白い `check`（icon.inverse）/ Radio は中の丸。Checkbox の角丸は radius.100（4）、Radio は full
-- 状態: interaction（default / hovered / pressed / focused / disabled）と値（off / on / mixed）を **別の軸**にする（README §2.2）。hovered は枠を border.bold のまま地を background.input.hovered、選択時は brand.bold.hovered
+- 状態: interaction（default / hovered / pressed / focused / disabled）と値（off / on / mixed）を **別の軸**にする（決定、README §5 の 9）。hovered は枠を border.bold のまま地を background.input.hovered、選択時は brand.bold.hovered
 - ラベルとの間 space.200、選択肢どうしの間 space.300（縦）/ space.600（横並び）
 - レスポンシブ: 横並びのグループは xs で縦に折り返す（`flex-wrap`）。部品は変えない
 - Figma: `Checkbox` セット `Size`（2）× `Checked = Off / On / Mixed`（3）× `State = Default / Hovered / Pressed / Focused / Disabled`（5）= 30、`Radio` セット 2 × 2 × 5 = 20。Invalid は State に足すと +12、枠の色だけなので **インスタンスで上書き**にする案。合計 **50**
 
-## 6. SegmentedControl（言語切替・テーマ切替）
+## 6. SegmentedControl / LanguageSwitcher（テーマ切替・言語切替）
 
-pf-01 §5 の「言語切替」。日本語 / English、Light / Dark / System のように 2〜4 の選択肢を常に見せる。Base UI の `ToggleGroup`（単一選択）+ `Toggle`。
+Light / Dark / System のように 2〜4 の選択肢を常に見せる。SegmentedControl は Base UI の `ToggleGroup`（単一選択）+ `Toggle` で、テーマ切替にだけ使う。pf-01 §5 の「言語切替」（日本語 / English）は同じ見た目の別部品 `LanguageSwitcher` にする（決定、README §5 の 7。一覧では同じ行に数える）。
 
 | prop | 値 | 既定 | 備考 |
 |---|---|---|---|
@@ -111,7 +111,7 @@ pf-01 §5 の「言語切替」。日本語 / English、Light / Dark / System �
 
 - 見た目: 外枠 = 地 background.neutral.default、角丸 radius.300、内側 space.050。選択中の項目 = 地 `elevation.surface.raised` + `elevation.shadow.rest`、文字 text.default。未選択 = 透明、文字 text.subtle
 - 状態: 項目ごとに default / hovered / pressed / focused / disabled + 選択（Base UI の Toggle は選択中に **`data-pressed`** を付ける。押下の `:active` と名前が重なるので、CSS では `[data-pressed]` を「選択」、`:active` を「押下」と読む。README §2.2）
-- 言語切替はリンク（`/en/...`）なので、ToggleGroup ではなく **Link を並べた見た目違い**にする方が正しい。同じ見た目で `as="nav"` の別部品にするか、SegmentedControl に `render` で `<a>` を渡すかは判断待ち（README の判断待ち 7）
+- LanguageSwitcher: 言語切替はリンク（`/en/...`）なので、ToggleGroup ではなく **Link を並べた別部品**にする。`<nav>` の中に Link を並べ、現在の言語に `aria-current` を付ける。見た目は SegmentedControl と同じ（決定、README §5 の 7）。props と Figma のセットは未決
 - レスポンシブ: 部品は変えない。ヘッダーでの置き場所（xs ではメニューの中へ）はパターン側
 - Figma: `Segmented Control` セット `Size`（3）× `Items = 2 / 3`（2）= 6、`Segmented Control Item` セット `Selected = False / True`（2）× `State = Default / Hovered / Pressed / Focused / Disabled`（5）= 10。合計 **16**
 
@@ -146,7 +146,7 @@ pf-01 §5 の「作品カード（Works 一覧）」。画像 + タイトル + �
 | `href` | string | 必須 | カード全体を押せるようにする（タイトルの `<a>` に `::after` を広げる。中に別のリンクを置かない） |
 | `orientation` | `auto` / `vertical` / `horizontal` | auto | auto はカード自身の幅で決める（下記） |
 
-- 状態: default / hovered / focused。hovered は画像を scale 1.02（transition.feedback）+ タイトルに下線。pf-08-motion-state.md の「カードは translateY −2px + shadow.lifted」は elevated のときだけ（未決 1 と合わせて判断待ち 8）。focused は Focus Ring をカードの外側（角丸 = カード + 2px）
+- 状態: default / hovered / focused。hovered は画像を scale 1.02（transition.feedback）+ タイトルに下線。lift（translateY −2px + shadow.lifted）は elevated のときだけ（決定、README §5 の 8。pf-08-motion-state.md の未決 1 もこれで閉じた）。focused は Focus Ring をカードの外側（角丸 = カード + 2px）
 - 角丸: 画像 radius.400、elevated / outlined はカード radius.400 + 画像は「外側 − padding」（pf-08-radius-border-shadow.md の入れ子の規則）
 - **レスポンシブ: container query を使う部品の代表**。カードを `container-type: inline-size` にし、幅 480px（breakpoint.sm と同じ値）以上で `horizontal`（画像左 2/5、文字右）に切り替える。一覧の列数（xs 1 / md 2 / lg 3）はページ側の grid が決め、カードは自分の幅だけを見る
 - loading: 画像の位置に skeleton（background.neutral.subtlest）。高さは `aspect-ratio` で確保して CLS を出さない
@@ -156,7 +156,7 @@ pf-01 §5 の「作品カード（Works 一覧）」。画像 + タイトル + �
 
 | 部品 | 要点 |
 |---|---|
-| Header / Navigation | パターン。Link（subtle）+ SegmentedControl + IconButton。md 未満でメニューを IconButton + Drawer に畳む。現在地は `aria-current="page"` + selected の色 |
+| Header / Navigation | パターン。Link（subtle）+ LanguageSwitcher + SegmentedControl（テーマ）+ IconButton。md 未満でメニューを IconButton + Drawer に畳む。現在地は `aria-current="page"` + selected の色 |
 | Dialog / Drawer | Base UI `Dialog`。補助 AI とスマホのメニュー。blanket、surface.overlay、shadow.overlay、enter.large / exit.large。xs では下から出る Drawer、md 以上は中央の Dialog |
 | MediaPlayer | 音楽メディア。Base UI に無い。IconButton（再生）+ Slider（シーク、Base UI `Slider`）+ 時間表示。YouTube / SoundCloud の埋め込みを包む形か自前の `<audio>` かは別 issue |
 | Tooltip | Base UI `Tooltip`。IconButton のラベル表示。hover と focus の両方で出す、タッチでは出さない |

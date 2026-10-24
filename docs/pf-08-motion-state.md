@@ -29,7 +29,7 @@
 
 | 状態 | 見た目 | 動き | 規則 |
 |---|---|---|---|
-| hover | background.*.hovered（1 段濃く）。カードは translateY −2px + shadow.lifted | transition.feedback | `@media (hover: hover)` のみ。タッチでは適用しない |
+| hover | background.*.hovered（1 段濃く）。カードは plain / outlined が画像 scale 1.02 + タイトルの下線、lift（translateY −2px + shadow.lifted）は elevated だけ（2026-10-24 決定） | transition.feedback | `@media (hover: hover)` のみ。タッチでは適用しない |
 | pressed | background.*.pressed（2 段濃く）。ボタンは scale 0.98 | transition.feedback | 「沈まないボタン」にしない（本人の言葉） |
 | focus-visible | outline: border.width.focused（2px）color.border.focused、outline-offset 2px（空白 2px → リング 2px、リングの角丸は要素 + 2px） | transition.feedback | マウス操作では出さない。決して消さない。box-shadow ではなく outline（角形状に追従）。Figma は `Focus Ring` 部品を絶対配置（docs/components/focus-ring.md、2026-10-05） |
 | selected | background.selected + border.selected（2px）+ text.selected | transition.state | ナビの現在地、タブ、選択行 |
@@ -41,5 +41,5 @@
 
 ## 未決
 
-1. hover の lift（−2px）を持つか。カードのホバーで持ち上げない方針なら削る。
+1. ~~hover の lift（−2px）を持つか~~ → 2026-10-24 決定（ユーザー、DEV-132）: lift は持つが Card の elevated だけ。plain / outlined は画像 scale 1.02 + タイトルの下線（docs/components/README.md §5 の 8）
 2. pressed の scale 0.98 をボタン以外（カード、タグ）にも使うか。
