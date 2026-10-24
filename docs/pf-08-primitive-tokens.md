@@ -17,11 +17,13 @@ primitive は「生の値の辞書」。テーマ（light / dark）を持たず�
 | family | 12 色相 + neutral。英小文字 | blue, violet, purple, pink, red, orange, amber, lime, green, teal, cyan, sky, neutral |
 | step | 50 / 100 / 200 / … / 900 / 950。neutral のみ 0 と 1000 を持つ | `color.neutral.0` = #FFFFFF |
 | アルファ | `color.neutral.{step}a`。step は「一致する不透明段」。100a〜400a = light 用（neutral.950 のアルファ）、600a〜900a = dark 用（neutral.50 のアルファ）。段が重ならないので theme 階層は不要 | `color.neutral.200a`（neutral.950 の 22.9%） |
-| 出力 CSS | `--color-{family}-{step}`、アルファは `--color-neutral-{step}a` | `--color-blue-600`、`--color-neutral-200a` |
-| 出力 Figma | `color/{family}/{step}` | `color/blue/600` |
+| 出力 CSS | `--ac-color-{family}-{step}`、アルファは `--ac-color-neutral-{step}a` | `--ac-color-blue-600`、`--ac-color-neutral-200a` |
+| 出力 Figma | `Color/{Family}/{Step}`（各段の先頭を大文字） | `Color/Blue/600`、`Color/Neutral/200a` |
 
 - 段番号の意味: 600 = その色相の代表色（blue は #316EEE）。700 以上は文字用途、400 以下は薄い面。ただし amber / lime は 400 が最も鮮やかな段。
-- 接頭辞は付けない。他システムと混在する場合のみ出力側で `ac-` を付ける。
+- CSS 変数には接頭辞 `ac` を付ける。当初（2026-09-24）は「接頭辞は付けない。他システムと混在する場合のみ出力側で `ac-` を付ける」としていたが、2026-09-29 の PF-04 で部品を CSS Modules + `var()` で出荷すると決め、利用側の `--color-*` と衝突しないよう `ac` に変えた（ADR 0002 §3、pf-09-pipeline.md）。
+- Figma 名も当初は小文字（`color/blue/600`）だったが、2026-09-30 に Title Case に変えた（規則は pf-10-figma.md、変換は `packages/tokens/build/figma-name.js`）。
+- 命名規則の全体と、全カテゴリの CSS 変数・Figma 名の対応は `docs/pf-08-token-naming.md` を正とする。
 
 ## 3. 値の表現
 
@@ -87,7 +89,7 @@ tokens/
 
 すべて `tokens/primitives/*.json` に生成済み。値は標準的な慣行と PF-01 の制約（日英二言語、月 3,000 円）から置いた初期値で、工程 8〜15 で役割に割り当てるときに増減する。
 
-### dimension（56、2026-09-28 確定）
+### dimension（65。2026-09-28 確定時は 56、2026-09-29 に space.negative 8 段と breakpoint xs を足して 65）
 
 命名は Polaris 式で **4px = 100**。名前は 4px に対する百分率（1px = 025、2px = 050、4px = 100、8px = 200、16px = 400 …）。space / size / radius / border で同じ規則。
 
@@ -99,7 +101,7 @@ tokens/
 | radius | `dimension.radius.{none, 050, 100, 200, 300, 400, 600, 800, 1200, full}` | 0, 2, 4, 8, 12, 16, 24, 32, 48, 9999 | 10 段。既定の角形状は continuous（下記 shape） |
 | radius.shape | `dimension.radius.shape.{default, continuous, round}` + `figmaSmoothing` | default = `squircle`、continuous = `superellipse(2.32)`、round、0.6 | 角の形状。DTCG に型がないため string |
 | border | `dimension.border.{0, 025, 050, 075, 100}` | 0, 1, 2, 3, 4 | Polaris と同じ 025 / 050 / 100 |
-| breakpoint | `dimension.breakpoint.{sm, md, lg, xl, xxl}` | 480 / 768 / 1024 / 1280 / 1536 | 工程 9 で確定 |
+| breakpoint | `dimension.breakpoint.{xs, sm, md, lg, xl, xxl}` | 0 / 480 / 768 / 1024 / 1440 / 1768 | 6 段。当初は `sm–xxl` の 5 段（480 / 768 / 1024 / 1280 / 1536）。2026-09-29 の工程 9 で Atlassian と同じ 6 段に変更（pf-08-layout.md） |
 
 削除（2026-09-28）: measure と container。本文の測長・最大幅は工程 9〜10 でレイアウト規則として扱う。
 
@@ -124,7 +126,7 @@ tokens/
 
 - Figma: Corner Smoothing 60%（iOS の continuous と同等）を既定にする。
 - Web: `corner-shape` は Chromium 139+ のみで、Safari / Firefox は円弧に自動フォールバックする。CSS の `squircle` は superellipse n=4 で、Figma / Apple の曲線（円弧 + ベジェ肩）とは族が異なる。本人判断で既定は `squircle`（CSS 名前付き値）。Apple 近似の `superellipse(2.32)` は `shape.continuous` として残す。
-- 実装は `corner-shape: var(--radius-shape-default)` を全 radius 使用箇所に付与し、非対応環境は round のまま許容する（主要ブラウザで揃わないため、角形状はブランドの主要な識別要素にしない）。
+- 実装は `corner-shape: var(--ac-dimension-radius-shape-default)` を全 radius 使用箇所に付与し、非対応環境は round のまま許容する（主要ブラウザで揃わないため、角形状はブランドの主要な識別要素にしない）。
 ### typography（31、2026-09-28 本人指定）
 
 | グループ | 命名 | 値 | 備考 |
@@ -229,5 +231,5 @@ stagger は持たない（本人判断）。
 
 ## 8. 決めること
 
-3. breakpoint の 5 段でよいか（xxl 不要なら 4 段）
+3. ~~breakpoint の 5 段でよいか（xxl 不要なら 4 段）~~ → 2026-09-29 に xs–xxl の 6 段で確定（pf-08-layout.md）
 4. space の上限 256（3200）、size の上限 480（6000）で足りるか

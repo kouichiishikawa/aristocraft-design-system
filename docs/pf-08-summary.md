@@ -1,7 +1,7 @@
 # PF-08 まとめ: 色・書体・余白・レイアウト・モーションの規則（2026-09-23〜29）
 
 - 作業台: https://claude.ai/artifact/UpfaekdEd2BzkqKmpYLvha（ローカル正本 docs/reference/workbench.html）
-- トークン正本: `tokens/`（DTCG 形式、$metadata.json に読み込み順）。合計 715 トークン（primitive 272 + semantic 443）
+- トークン正本: `tokens/`（DTCG 形式、$metadata.json に読み込み順）。公開名 592（primitive 272 + semantic 320）、ファイル上の項目は 851（semantic 色 259 が light / dark に 1 回ずつ）。当初（2026-09-29）は semantic 色 191 で「715 トークン（primitive 272 + semantic 443）」と数えていた。2026-10-05・06 の semantic 色の改訂（pf-08-semantic-color.md 冒頭）で色が 259 に増え、2026-10-24 に数え方を公開名に揃えた（正本は docs/pf-08-token-naming.md §4）
 - 生成スクリプト: docs/reference/palette_build.py（色）、semantic_color_build.py（semantic 色 + 検証）、hues12.py / scale.py / gray.py / color.py（算出）
 
 ## トークン一覧
@@ -14,10 +14,11 @@
 | tokens/primitives/opacity.json | 11 |
 | tokens/primitives/typography.json | 31 |
 | tokens/semantic/border.json | 3 |
-| tokens/semantic/color.dark.json | 191 |
-| tokens/semantic/color.light.json | 191 |
+| tokens/semantic/color.dark.json | 259（当初 191） |
+| tokens/semantic/color.light.json | 259（当初 191） |
 | tokens/semantic/layout.json | 31 |
 | tokens/semantic/typography.json | 27 |
+| 公開名の合計 | 592（light / dark は 1 回と数える） |
 
 ## 工程ごとの決定
 

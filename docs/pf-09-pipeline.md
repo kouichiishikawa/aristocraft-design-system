@@ -11,11 +11,11 @@
 | 項目 | 決定 | 理由 |
 |---|---|---|
 | ツール | Style Dictionary 5.5（ESM、`usesDtcg` 自動判定） | 計画どおり。Terrazzo 2 の方が DTCG 準拠は上だが採用実績と情報量で SD |
-| token 兼 group（52 件） | DTCG 2025.10 の `$root` に書き換え | 公開名を変えない。`semantic_color_build.py` が自動で `$root` を出す |
+| token 兼 group（`$root` 60 件。当初 52 件、2026-10-05・06 の semantic 色の改訂で増えた） | DTCG 2025.10 の `$root` に書き換え | 公開名を変えない。`semantic_color_build.py` が自動で `$root` を出す |
 | CSS 変数の接頭辞 | `ac`（`--ac-color-text-brand`）。2026-09-29 の PF-04 で「なし」から変更 | 部品は CSS Modules + `var()` で出荷する（Tailwind に依存しない）と決めたため、利用側の Tailwind / shadcn の `--color-*` と衝突しない接頭辞を優先 |
 | 名前の変換 | kebab（`lineHeight` → `line-height`、`050` はそのまま）、`$root` は落とす | SD 5.5 は `$root` を名前に漏らす（issue #1757）ので自前の name transform |
 | TypeScript の入れ子 | `$root` は `DEFAULT` キー（`color.light.color.text.brand.DEFAULT`） | 入れ子オブジェクトは値と子を同時に持てない。Tailwind の慣習に合わせた |
-| typography の CSS | `font` 短縮形ではなくプロパティごとに展開（`--font-heading-md-font-size` など 5 本） | 短縮形は letter-spacing を持てない（SD が警告して落とす） |
+| typography の CSS | `font` 短縮形ではなくプロパティごとに展開（`--ac-font-heading-md-font-size` など 5 本） | 短縮形は letter-spacing を持てない（SD が警告して落とす） |
 | dark の CSS | `[data-theme="dark"]` と `@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) }` の両方 | 明示切替と OS 設定の両対応 |
 | 参照 | CSS は `var(--…)` を保持（`outputReferences: true`）。TS / JSON は解決済みの値 + `$ref` に元の参照 | CSS は primitive を差し替えれば semantic が追従。TS は値で使えるのが実用的 |
 | 単位付き値 | 自前の `unit/css`（`{value, unit}` → `4px`） | 組み込み `size/px` は em / % を px に書き換えてしまう |
@@ -26,19 +26,19 @@
 | ファイル | 内容 |
 |---|---|
 | `dist/css/primitives.css` | primitive 272 本（`:root`） |
-| `dist/css/semantic.css` | typography（展開 123 本）・layout・border（`:root`） |
-| `dist/css/color.light.css` | semantic color + shadow 191 本（`:root`） |
-| `dist/css/color.dark.css` | 同じ 191 本 × 2 ブロック（属性 / メディアクエリ） |
+| `dist/css/semantic.css` | typography（展開 123 本）・layout 31・border 3 の計 157 本（`:root`） |
+| `dist/css/color.light.css` | semantic color + shadow 259 本（`:root`。当初 191 本） |
+| `dist/css/color.dark.css` | 同じ 259 本 × 2 ブロック = 518 本（属性 / メディアクエリ。当初 382 本） |
 | `dist/css/tokens.css` | 上 4 つの結合。これ 1 つを読めばよい |
 | `dist/ts/tokens.ts` | `primitives` / `semantic` / `color.{light,dark}` を `as const` で。`Theme` 型 |
-| `dist/json/tokens.json` | 公開名 524 件のフラット表。`$type` `$set` `$value`（テーマ持ちは `{light, dark}`）`$ref` `$description` `$extensions` |
+| `dist/json/tokens.json` | 公開名 592 件のフラット表（当初 524 件）。`$type` `$set` `$value`（テーマ持ちは `{light, dark}`）`$ref` `$description` `$extensions` |
 | `dist/figma/variables.json` | PF-10 の `use_figma` スクリプトが読む。下記 |
 
 ### Figma 用 JSON（`aristocraft/figma-variables@1`）
 
-- collections: `primitives`（mode: value、265 変数）、`semantic`（36 変数）、`color`（modes: light / dark、187 変数。semantic → primitive は alias）
+- collections: `Primitives`（mode: Value、265 変数）、`Semantic - Typography` 3 / `Semantic - Layout` 30 / `Semantic - Border` 3、`Semantic - Color`（modes: Light / Dark、263 変数 = 色 259 − 影 4 + 影の層の色 8。semantic → primitive は alias）。計 564。当初（2026-09-29）は `primitives` 265 / `semantic` 36 / `color` 187 の 3 つで、2026-09-30 にコレクションを種別ごとに分けて名前を Title Case にし（pf-10-figma.md）、2026-10-05・06 の semantic 色の改訂で `Semantic - Color` が増えた
 - 型: color → COLOR、number / fontWeight / px の dimension / duration(ms) → FLOAT、string / fontFamily（先頭の書体名）→ STRING
-- textStyles 24（`font/heading/md` など。lineHeight は PIXELS、letterSpacing は em → PERCENT）
+- textStyles 24（`Font/Heading/MD` など。当初は小文字の `font/heading/md`。lineHeight は PIXELS、letterSpacing は em → PERCENT）
 - effectStyles: light / dark 各 4（shadow → DROP_SHADOW）
 - skipped 8: letterSpacing の em 3 つ、easing 4 つ（Figma に easing 変数なし）、`layout/container/full`（%）
 - alias 先が変数として存在することをビルド時に検査する
@@ -47,7 +47,7 @@
 
 1. `build/validate.js`: `$metadata.json` の一覧とディスクの一致、キー文字、`$type` の存在と値の形（10 型）、token 兼 group の禁止、重複名（light / dark は同一集合であること）、参照解決
 2. Style Dictionary: 未解決参照はビルド失敗
-3. `build/dist.test.js`（node:test 6 件）: 出力に `[object Object]` / 未解決参照 / `-root` が無い、`var()` の参照先が全て定義済み、本数（272 / 191 / 382）、flat 524 件、Figma の alias 解決と「全トークンが変数か Style か skip のどれか」、TS が読み込めて値が一致
+3. `build/dist.test.js`（node:test 6 件）: 出力に `[object Object]` / 未解決参照 / `-root` が無い、`var()` の参照先が全て定義済み、本数（272 / 259 / 518。当初 272 / 191 / 382）、flat 592 件（当初 524 件）、Figma の alias 解決と「全トークンが変数か Style か skip のどれか」、TS が読み込めて値が一致
 4. `docs/reference/semantic_color_check.py`: コミット済み JSON を読んでコントラスト 276 件（PF-05 で生成器から分離。生成器 `semantic_color_build.py` は再設計時のみ）
 5. CI（`.github/workflows/ci.yml`）: Node 24 + Python 3.12 のクリーン環境で 1〜4 を実行し、`dist/` に差分が無いことを確認
 

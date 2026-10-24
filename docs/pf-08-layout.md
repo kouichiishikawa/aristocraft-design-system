@@ -57,11 +57,13 @@
 ## 使い方
 
 ```css
-.container { max-width: var(--layout-container-content); margin-inline: auto; padding-inline: var(--layout-grid-margin-xs); }
-@media (min-width: 768px)  { .container { padding-inline: var(--layout-grid-margin-md); } }
-@media (min-width: 1024px) { .container { padding-inline: var(--layout-grid-margin-lg); } }
-.grid { display: grid; gap: var(--layout-grid-gutter-lg); grid-template-columns: repeat(var(--layout-grid-columns-lg), 1fr); }
+.container { max-width: var(--ac-layout-container-content); margin-inline: auto; padding-inline: var(--ac-layout-grid-margin-xs); }
+@media (min-width: 768px)  { .container { padding-inline: var(--ac-layout-grid-margin-md); } }
+@media (min-width: 1024px) { .container { padding-inline: var(--ac-layout-grid-margin-lg); } }
+.grid { display: grid; gap: var(--ac-layout-grid-gutter-lg); grid-template-columns: repeat(var(--ac-layout-grid-columns-lg), 1fr); }
 .full { max-width: none; padding-inline: 0; }   /* 内側に .container を置く（breakout） */
-.prose { max-width: var(--layout-container-prose); }
-section + section { margin-block-start: var(--layout-section-md); }
+.prose { max-width: var(--ac-layout-container-prose); }
+section + section { margin-block-start: var(--ac-layout-section-md); }
 ```
+
+当初（2026-09-29）の例は接頭辞なしの `--layout-*` だった。同じ日の PF-04 で CSS 変数の接頭辞を `ac` に決めた（ADR 0002 §3）ので、実際の名前は `--ac-layout-*`（2026-10-24 に例を直した）。

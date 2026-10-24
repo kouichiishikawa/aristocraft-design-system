@@ -13,11 +13,11 @@
 | Collection `Semantic - Typography` | mode: Value。Font/Family | 3 |
 | Collection `Semantic - Layout` | mode: Value。Layout/Breakpoint / Grid / Container / Section。数値は Primitives へ alias | 30 |
 | Collection `Semantic - Border` | mode: Value。Border/Width | 3 |
-| Collection `Semantic - Color` | modes: Light / Dark。Text / Icon / Border / Background / Link / Elevation は Primitives へ alias。Blanket と影の色は実値 | 195 |
+| Collection `Semantic - Color` | modes: Light / Dark。Text / Icon / Border / Background / Link / Elevation は Primitives へ alias。Blanket と影の色は実値 | 263（色 259 − 影 4 + 影の層の色 8。2026-09-29 の投入時は 195、2026-10-05 の再投入で 263） |
 | Text Styles | font/display 5・heading 7・body 4・label 4・label/mono 4（size / weight / family を変数に束縛。+ Figma だけの `Font/Label/MD Underlined` / `LG Underlined`） | 24 (+2) |
 | Effect Styles | elevation/shadow rest / lifted / floating / overlay。各 2 層、色は `elevation/shadow/*/layerN` 変数に束縛 | 4 |
 
-検証: 496 変数、重複なし。`color/text/brand` は light で blue/700 (#1C55E0)、dark で blue/400 (#6C9FF8) に解決。全変数に WEB code syntax（`var(--ac-…)`）を設定。
+検証（2026-09-29）: 496 変数、重複なし。2026-10-05 の再投入後は 564（下の「変更分だけ再投入する」）。`color/text/brand` は light で blue/700 (#1C55E0)、dark で blue/400 (#6C9FF8) に解決。全変数に WEB code syntax（`var(--ac-…)`）を設定。
 
 ## トークン名と Figma 名の対応
 
@@ -64,7 +64,7 @@
 
 ## Icons ページ（2026-09-29 追加）
 
-`packages/ui/icons.json` から `packages/ui/figma/icons-stage.js` で生成。`Icon/*` 71（Lucide）、`Brand/*` 10（Simple Icons + LinkedIn）、`Icon` コンポーネントセット（Size Small / Medium / Large / Extra Large を `Dimension/Size` に束縛、`Glyph` は instance swap）。方針は `docs/icons.md`。
+`packages/ui/icons.json` から `packages/ui/figma/icons-stage.js` で生成。`Icon/*` 71（Lucide）、`Brand/*` 10（Simple Icons + LinkedIn）、`Icon` コンポーネントセット（Size Extra Small / Small / Medium / Large / Extra Large の 5 段 = 12 / 16 / 24 / 32 / 48 を `Dimension/Size/300 / 400 / 600 / 800 / 1200` に束縛、`Glyph` は instance swap）。当初は Small〜Extra Large の 4 段で、2026-09-30 に Extra Small を足して 5 段にした（同じ ID のまま更新）。方針は `docs/icons.md`。
 
 ## Palette ページ（2026-10-05 追加）
 
@@ -72,7 +72,7 @@
 
 各見本（幅 136）: 色面 136×64（塗りを Primitives の `Color/{Hue}/{Step}` に束縛、角丸は `Dimension/Radius/200`）と文字 4 行 — 段（`Font/Label/SM`）、Hex（`Font/Label/Mono/XS`）、OKLCH `L .573 C .204 H 262.6`（`color.json` の `ac.oklch`）、WCAG 2.2 コントラスト比 `50 4.24 · 950 4.16`（neutral 50 上 · neutral 950 上。生成スクリプト内で計算。alpha 段は下地に合成した色と下地の比 `on 50 1.28`、OKLCH の代わりに `α 11.6% → #DDDBD9` を表示）。文字色は `Color/Text/Default / Subtle / Subtlest`。Hex・OKLCH・比は生成時の文字列なので、トークンを変えたら再生成する（色面は変数束縛なので自動で追従）。
 
-再投入: 既存の `Palette` フレームは `Palette (old)` に改名して残す（スクリプトは削除しない）。新しいフレームは右隣に作られるので、見比べてから古いものを手で削除する。2026-10-05 のパレット改訂（docs/pf-08-tokens.md）で再投入済み: `Palette (old)`（61:3）は改訂前、`Palette`（69:2）が現行。
+再投入: 既存の `Palette` フレームは `Palette (old)` に改名して残す（スクリプトは削除しない）。新しいフレームは右隣に作られるので、見比べてから古いものを手で削除する。2026-10-05 のパレット改訂（docs/pf-08-tokens.md）で再投入済み: `Palette (old)`（61:3）は改訂前、`Palette`（69:2）が現行。`Palette (old)` は 2026-10-06 に本人が削除した（tasks/todo.md）。
 
 ## 変更分だけ再投入する（2026-10-05 追加）
 
@@ -84,7 +84,7 @@
 
 ## Focus Ring ページ（2026-10-05 追加）
 
-`node packages/ui/figma/focus-ring-stage.js` で生成。部品 `Focus Ring` 1 つ（variant なし、角丸 0。ストローク外側 2px を `Border/Width/Focused` と `Color/Border/Focused` に束縛）。角丸は当てる要素で変わるので、置く側のインスタンスで「要素 + 2px」に上書きする（本人決定 2026-10-05。最初に作った `Radius = 8 / 12 / Full` のセットは `Focus Ring (old)` として残っているので手で削除）。設計は `docs/components/focus-ring.md`。Button の Focused 6 variant は `node packages/ui/figma/button-stage.js --swap-focus` で影 2 段を外してこの部品を絶対配置し、角丸 10 / 14 / 9999 を上書きした。
+`node packages/ui/figma/focus-ring-stage.js` で生成。部品 `Focus Ring` 1 つ（variant なし、角丸 0。ストローク外側 2px を `Border/Width/Focused` と `Color/Border/Focused` に束縛）。角丸は当てる要素で変わるので、置く側のインスタンスで「要素 + 2px」に上書きする（本人決定 2026-10-05）。最初に作った `Radius = 8 / 12 / Full` のセットは `Focus Ring (old)` に改名して残し、2026-10-06 に本人が削除した（tasks/todo.md）。今の Focus Ring ページにあるのは `Focus Ring`（77:2）だけ（2026-10-24 の読み取り、docs/components/README.md §3）。設計は `docs/components/focus-ring.md`。Button の Focused 6 variant は `node packages/ui/figma/button-stage.js --swap-focus` で影 2 段を外してこの部品を絶対配置し、角丸 10 / 14 / 9999 を上書きした。
 
 ## コンポーネントページのテンプレート v3（2026-10-23 承認）
 
