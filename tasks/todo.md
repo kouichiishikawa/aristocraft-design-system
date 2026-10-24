@@ -49,9 +49,9 @@
 - [x] 決定（2026-10-06）: 欧文サンセリフは **Inter Display**（Display グリフのみ）。トークン `typography.family.sans` と docs を更新
 - [x] Inter Display の配信（2026-10-06）: `@aristocraft/fonts`（InterDisplay 400 / 500 / 600 / 700 の woff2 + `inter-display.css`）を examples / Storybook で読み込む
 - [x] Button の他 4 variant（primary / secondary / link / danger）を Figma に追加、180 件（2026-10-06。縦 = 種類、横 = state）
-- [ ] React の Button: variant 整理（default / primary / secondary / link / danger）、shape、loading prop（PF-13）
-- [ ] 本人: Figma の `Palette (old)` を削除
-- [ ] 主要部品の variant / 状態 / レスポンシブ設計（PF-04 の部品ライブラリ決定後）
+- [x] React の Button: variant 整理（default / primary / secondary / tertiary / danger）、shape、loading prop（DEV-109 / DEV-111。残り disabled は DEV-110）
+- [x] 本人: Figma の `Palette (old)` を削除（47 行目と重複。2026-10-06 に完了済み）
+- [x] 主要部品の variant / 状態 / レスポンシブ設計の案（2026-10-24、docs/components/README.md・proposals.md、DEV-129）。判断待ち 9 点は 2026-10-24 に全部推奨案で決定（README §5 の書き換えは DEV-132）
 
 ## PF-04 技術構成（2026-09-29 完了）
 - [x] モノレポ化（packages/tokens・ui、examples/next・astro）、接頭辞 ac
