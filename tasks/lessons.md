@@ -103,3 +103,11 @@
 **Rule**: Parts = デザインシステムのコンポーネントとしては定義されていないが、そのコンポーネントを組み立てるために必要な Figma 部品（内部専用の部品）。Spinner や Focus Ring のように独立したページ・コンポーネントを持つものは Parts に入れない。内部部品がなければ Parts 節を省く
 **Verification**: Parts に並べる前に、その部品が自分のページ / セットを持っているか確認する
 **Applies to**: this project
+
+### [2026-10-24] [tooling] 未コミットの変更があるファイルを git checkout で戻さない
+
+**Mistake**: Button.stories.tsx の検査をわざと壊して失敗を確かめたあと、`git checkout -- <file>` で戻した。同じファイルにあった未コミットの stories 追加もすべて消え、適用し直した（DEV-111、PR #4）
+**Root cause**: `git checkout -- <file>` は「わざと壊した行」ではなく「最後のコミット以降の変更すべて」を捨てる
+**Rule**: 検査をわざと壊して試すときは、先にコミットする（WIP でよい）か、ファイルのコピーを退避してからそのコピーで戻す。未コミットの変更があるファイルに `git checkout --` / `git restore` を使わない
+**Verification**: 戻す前に `git diff --stat <file>` を見て、わざと壊した行以外の差分が無いことを確かめる
+**Applies to**: all projects
