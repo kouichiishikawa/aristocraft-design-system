@@ -147,8 +147,8 @@ semantic を持つカテゴリは semantic だけを参照する。semantic を�
 1. **`dimension.radius.shape.figmaSmoothing`**: shape の group に、形状ではなく Figma の Corner Smoothing の数値（0.6）が入っている。group の中で値の種類が混ざり（他 3 件は string）、カテゴリの段に Figma 固有の語が入る。CSS では `--ac-dimension-radius-shape-figma-smoothing` として出るが、Web では使い道が無い
 2. **`motion.easing.inout.*`**: 複数語なのに camelCase（`inOut`）になっていない。Figma 名の規則を当てると `Inout` になる（今は skipped なので Figma には出ない）
 3. **`color.link.{default, hovered, visited}`**: `visited` は §2 の state 語彙（hovered / pressed）に無い。link は `pressed` を持たない。`color.text.*` とは別の property になっている
-4. **`$metadata.json` の `"format": "DTCG 2024 draft"`**: 実装は DTCG 2025.10 の `$root` を使っている（pf-09-pipeline.md）。`generated: 2026-09-28` も古い
-5. **`$metadata.json` の `layers` の `components`**: 層の宣言はあるが、`tokenSetOrder` にも `tokens/` にも component のファイルが無い（§1 のとおり、部品を作るときに足す）
+4. **`$metadata.json` の `"format": "DTCG 2024 draft"`**: 実装は DTCG 2025.10 の `$root` を使っている（pf-09-pipeline.md）。`generated: 2026-09-28` も古い → **直した（DEV-125）**: `"DTCG 2025.10"` に。`generated` は生成器が無い手書きの値なので、最終更新日（2026-10-24）にした
+5. **`$metadata.json` の `layers` の `components`**: 層の宣言はあるが、`tokenSetOrder` にも `tokens/` にも component のファイルが無い（§1 のとおり、部品を作るときに足す） → **直した（DEV-125）**: `layers` から外した。`layers` を読むコードは無い（build・検証が読むのは `tokenSetOrder` だけ）。component のファイルを足すときに戻す
 
 参考（外れではないが、読み違えやすいところ）:
 
