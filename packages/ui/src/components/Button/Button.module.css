@@ -6,7 +6,7 @@
   box-sizing: border-box;
   margin: 0;
   border: 0;
-  border-radius: var(--ac-dimension-radius-200);
+  border-radius: var(--ac-dimension-radius-300);
   corner-shape: squircle;
   font-family: var(--ac-font-label-md-font-family);
   font-weight: var(--ac-font-label-md-font-weight);
@@ -14,6 +14,7 @@
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
+  --button-glyph-color: var(--ac-color-icon-default);
   transition:
     background-color var(--ac-motion-duration-allegro) var(--ac-motion-easing-out-practical),
     color var(--ac-motion-duration-allegro) var(--ac-motion-easing-out-practical);
@@ -25,6 +26,7 @@
   min-height: var(--ac-dimension-size-800);
   padding-inline: var(--ac-dimension-space-300);
   gap: var(--ac-dimension-space-100);
+  border-radius: var(--ac-dimension-radius-200);
   font-size: var(--ac-font-label-md-font-size);
   line-height: var(--ac-font-label-md-line-height);
 }
@@ -43,6 +45,23 @@
   line-height: var(--ac-font-label-lg-line-height);
 }
 
+/* shape: rounded = sm 8 / md・lg 12 (above), pill = full. The focus ring's radius follows via outline (focus-ring.md).
+   A squircle cannot reach a semicircle, so the pill uses round corners (Figma: radius 9999 leaves no room for smoothing). */
+.button[data-shape='pill'] {
+  border-radius: var(--ac-dimension-radius-full);
+  corner-shape: round;
+}
+
+.button[data-full-width] {
+  display: flex;
+  width: 100%;
+}
+
+/* Icon Before / After and the loading Spinner: icon.default, icon.inverse on primary / danger (Spinner is currentColor) */
+.glyph {
+  color: var(--button-glyph-color);
+}
+
 /* variant: background emphasis + text role (Figma Button set 39:426) */
 .button[data-variant='default'] {
   background: var(--ac-color-background-neutral-default);
@@ -51,6 +70,7 @@
 .button[data-variant='primary'] {
   background: var(--ac-color-background-brand-bold);
   color: var(--ac-color-text-inverse); /* white in light, dark text on the lighter dark-mode fill (Atlassian model, 2026-10-06) */
+  --button-glyph-color: var(--ac-color-icon-inverse);
 }
 /* neutral.default is translucent (neutral 100a) so it sits on any surface; neutral.subtle is transparent until hovered */
 .button[data-variant='secondary'] {
@@ -65,21 +85,22 @@
 .button[data-variant='danger'] {
   background: var(--ac-color-background-status-error-bold);
   color: var(--ac-color-text-inverse);
+  --button-glyph-color: var(--ac-color-icon-inverse);
 }
 
-/* hover only on devices that hover; pressed is one step stronger again */
+/* hover only on devices that hover; pressed is one step stronger again. Neither applies while loading. */
 @media (hover: hover) {
-  .button[data-variant='default']:hover { background: var(--ac-color-background-neutral-default-hovered); }
-  .button[data-variant='primary']:hover { background: var(--ac-color-background-brand-bold-hovered); }
-  .button[data-variant='secondary']:hover { background: var(--ac-color-background-neutral-subtle-hovered); }
-  .button[data-variant='tertiary']:hover { background: var(--ac-color-background-neutral-subtle-hovered); }
-  .button[data-variant='danger']:hover { background: var(--ac-color-background-status-error-bold-hovered); }
+  .button[data-variant='default']:not([data-loading]):hover { background: var(--ac-color-background-neutral-default-hovered); }
+  .button[data-variant='primary']:not([data-loading]):hover { background: var(--ac-color-background-brand-bold-hovered); }
+  .button[data-variant='secondary']:not([data-loading]):hover { background: var(--ac-color-background-neutral-subtle-hovered); }
+  .button[data-variant='tertiary']:not([data-loading]):hover { background: var(--ac-color-background-neutral-subtle-hovered); }
+  .button[data-variant='danger']:not([data-loading]):hover { background: var(--ac-color-background-status-error-bold-hovered); }
 }
-.button[data-variant='default']:active { background: var(--ac-color-background-neutral-default-pressed); }
-.button[data-variant='primary']:active { background: var(--ac-color-background-brand-bold-pressed); }
-.button[data-variant='secondary']:active { background: var(--ac-color-background-neutral-subtle-pressed); }
-.button[data-variant='tertiary']:active { background: var(--ac-color-background-neutral-subtle-pressed); }
-.button[data-variant='danger']:active { background: var(--ac-color-background-status-error-bold-pressed); }
+.button[data-variant='default']:not([data-loading]):active { background: var(--ac-color-background-neutral-default-pressed); }
+.button[data-variant='primary']:not([data-loading]):active { background: var(--ac-color-background-brand-bold-pressed); }
+.button[data-variant='secondary']:not([data-loading]):active { background: var(--ac-color-background-neutral-subtle-pressed); }
+.button[data-variant='tertiary']:not([data-loading]):active { background: var(--ac-color-background-neutral-subtle-pressed); }
+.button[data-variant='danger']:not([data-loading]):active { background: var(--ac-color-background-status-error-bold-pressed); }
 
 .button:focus-visible {
   outline: var(--ac-border-width-focused) solid var(--ac-color-border-focused);
@@ -88,8 +109,12 @@
 
 .button[data-disabled],
 .button:disabled {
-  opacity: var(--ac-opacity-40);
   cursor: not-allowed;
+}
+/* loading keeps the surface opacity (2026-10-06); an explicit disabled still wins (native :disabled) */
+.button[data-disabled]:not([data-loading]),
+.button:disabled {
+  opacity: var(--ac-opacity-40);
 }
 
 @media (prefers-reduced-motion: reduce) {

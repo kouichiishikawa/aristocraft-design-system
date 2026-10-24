@@ -1,5 +1,5 @@
 export { Button } from './components/Button/Button';
-export type { ButtonProps, ButtonSize, ButtonVariant } from './components/Button/Button';
+export type { ButtonProps, ButtonShape, ButtonSize, ButtonVariant } from './components/Button/Button';
 export { Icon } from './components/Icon/Icon';
 export type { IconProps, IconSize } from './components/Icon/Icon';
 export { Spinner } from './components/Spinner/Spinner';
