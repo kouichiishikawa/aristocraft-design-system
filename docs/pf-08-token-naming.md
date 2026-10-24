@@ -159,14 +159,22 @@ semantic を持つカテゴリは semantic だけを参照する。semantic を�
 
 ## 6. docs と実装の食い違い（実装を正とした）
 
-| 文書 | 書いてあること | 実装 |
-|---|---|---|
-| pf-08-tokens.md 工程 0（2026-09-24） | 接頭辞なし、role `surface` / `text.primary` / `decorative`、`color.gray.alpha.light.200`、`components/*.json` | `--ac-` 接頭辞、`elevation.surface` / `text.default` / `accent`、`color.neutral.200a`、component のファイルなし |
-| pf-08-primitive-tokens.md §2 | 出力 CSS `--color-blue-600`、Figma `color/blue/600`、「接頭辞は付けない」 | `--ac-color-blue-600`、`Color/Blue/600`（ADR 0002 §3、2026-09-30 の Title Case 決定） |
-| pf-08-primitive-tokens.md §7 | dimension 56、breakpoint `sm–xxl` 5 段（480〜1536） | 65、`xs–xxl` 6 段（0 / 480 / 768 / 1024 / 1440 / 1768、pf-08-layout.md 2026-09-29） |
-| pf-08-summary.md | 715 トークン、semantic 色 191 | 公開名 592（ファイル上 851）、semantic 色 259 |
-| pf-09-pipeline.md | token 兼 group 52 件、color 191 本、flat 524 件 | `$root` 60 件、259 本、592 件（`build/dist.test.js` は 259 / 592 で検査） |
-| pf-10-figma.md | `Semantic - Color` 195 | 263（259 − 影 4 + 影の層 8） |
-| `$metadata.json` | DTCG 2024 draft | DTCG 2025.10 の `$root`（§5-4） |
+| 文書 | 書いてあること | 実装 | 状態 |
+|---|---|---|---|
+| pf-08-tokens.md 工程 0（2026-09-24） | 接頭辞なし、role `surface` / `text.primary` / `decorative`、`color.gray.alpha.light.200`、`components/*.json` | `--ac-` 接頭辞、`elevation.surface` / `text.default` / `accent`、`color.neutral.200a`、component のファイルなし | 未反映（DEV-126 の範囲外。工程 0 の記録として残すかを別 issue で決める） |
+| pf-08-primitive-tokens.md §2 | 出力 CSS `--color-blue-600`、Figma `color/blue/600`、「接頭辞は付けない」 | `--ac-color-blue-600`、`Color/Blue/600`（ADR 0002 §3、2026-09-30 の Title Case 決定） | DEV-126 で反映 |
+| pf-08-primitive-tokens.md §7 | dimension 56、breakpoint `sm–xxl` 5 段（480〜1536） | 65、`xs–xxl` 6 段（0 / 480 / 768 / 1024 / 1440 / 1768、pf-08-layout.md 2026-09-29） | DEV-126 で反映 |
+| pf-08-summary.md | 715 トークン、semantic 色 191 | 公開名 592（ファイル上 851）、semantic 色 259 | DEV-126 で反映 |
+| pf-09-pipeline.md | token 兼 group 52 件、color 191 本、flat 524 件 | `$root` 60 件、259 本、592 件（`build/dist.test.js` は 259 / 592 で検査） | DEV-126 で反映 |
+| pf-10-figma.md | `Semantic - Color` 195 | 263（259 − 影 4 + 影の層 8） | DEV-126 で反映 |
+| `$metadata.json` | DTCG 2024 draft | DTCG 2025.10 の `$root`（§5-4） | 未反映（DEV-125 の範囲） |
+
+2026-10-24 に PR #6 の docs/components/README.md §3・§4 で見つかった次の 3 点も、DEV-126 で反映した。
+
+| 文書 | 書いてあること | 実装 | 状態 |
+|---|---|---|---|
+| pf-10-figma.md「Focus Ring ページ」 | `Focus Ring (old)` が残っている | 2026-10-06 に削除済み（`Focus Ring` 77:2 だけ） | DEV-126 で反映 |
+| pf-10-figma.md「Icons ページ」 | Size は Small〜Extra Large の 4 段 | Extra Small を含む 5 段（2026-09-30） | DEV-126 で反映 |
+| pf-08-layout.md「使い方」の CSS 例 | `--layout-*` | `--ac-layout-*` | DEV-126 で反映 |
 
 数の食い違いは semantic 色を増やした 2026-10-05・06 の改訂（pf-08-semantic-color.md 冒頭）より前に書かれたもの。どの文書も、この文書の対応表を正として読む。
