@@ -4,7 +4,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import StyleDictionary from 'style-dictionary';
-import { CSS_TRANSFORMS, cssHeader, hooks, stripHeader } from './hooks.js';
+import { CSS_TRANSFORMS, cssHeader, hooks, isFigmaOnly, stripHeader, webOnly } from './hooks.js';
 import { figmaJson, flatJson, tsModule } from './emit.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -22,7 +22,7 @@ const log = { warnings: 'warn', verbosity: 'silent' };
 const cssFile = (destination, re, format = 'css/variables') => ({
   destination,
   format,
-  filter: (token) => re.test(token.filePath),
+  filter: (token) => re.test(token.filePath) && !isFigmaOnly(token),
 });
 const cssPlatform = (files) => ({
   transforms: CSS_TRANSFORMS,
@@ -73,9 +73,9 @@ const [lightRaw, darkRaw, lightCss, darkCss] = await Promise.all([
   dark.getPlatformTokens('css'),
 ]);
 await Promise.all(['dist/json', 'dist/ts', 'dist/figma'].map((d) => fs.mkdir(d, { recursive: true })));
-await fs.writeFile('dist/json/tokens.json', flatJson(lightRaw.allTokens, darkRaw.allTokens));
-await fs.writeFile('dist/ts/tokens.ts', tsModule(lightCss.allTokens, darkCss.allTokens));
-await fs.writeFile('dist/figma/variables.json', figmaJson(lightRaw.allTokens, darkRaw.allTokens));
+await fs.writeFile('dist/json/tokens.json', flatJson(webOnly(lightRaw.allTokens), webOnly(darkRaw.allTokens)));
+await fs.writeFile('dist/ts/tokens.ts', tsModule(webOnly(lightCss.allTokens), webOnly(darkCss.allTokens)));
+await fs.writeFile('dist/figma/variables.json', figmaJson(lightRaw.allTokens, darkRaw.allTokens)); // Figma-only tokens included
 
 const darkCount = darkRaw.allTokens.filter((t) => /color\.dark/.test(t.filePath)).length;
 console.log(`tokens: ${lightRaw.allTokens.length} light + ${darkCount} dark → dist/`);

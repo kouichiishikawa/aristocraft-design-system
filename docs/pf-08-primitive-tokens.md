@@ -99,7 +99,7 @@ tokens/
 | space.negative | `dimension.space.negative.{050 … 800}` | −2, −4, −6, −8, −12, −16, −24, −32 | 8 段（2026-09-29 追加）。用途は bleed / overlap / optical nudge に限定 |
 | size | `dimension.size.{300 … 12000}` | 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128, 240, 480 | 13 段。12〜24 アイコン、32〜48 コントロール（タッチ最小は 48 で代替、44 は持たない）、64〜480 メディア・カラム幅。2〜8px は space に任せる |
 | radius | `dimension.radius.{none, 050, 100, 200, 300, 400, 600, 800, 1200, full}` | 0, 2, 4, 8, 12, 16, 24, 32, 48, 9999 | 10 段。既定の角形状は continuous（下記 shape） |
-| radius.shape | `dimension.radius.shape.{default, continuous, round}` + `figmaSmoothing` | default = `squircle`、continuous = `superellipse(2.32)`、round、0.6 | 角の形状。DTCG に型がないため string |
+| radius.shape | `dimension.radius.shape.{default, continuous, round}` + `figmaSmoothing` | default = `squircle`、continuous = `superellipse(2.32)`、round、0.6 | 角の形状。DTCG に型がないため string。`figmaSmoothing`（0.6、Figma の Corner Smoothing）は Figma 専用で、CSS / TS / フラット JSON には出さない（2026-10-24、DEV-124。pf-08-token-naming.md §2） |
 | border | `dimension.border.{0, 025, 050, 075, 100}` | 0, 1, 2, 3, 4 | Polaris と同じ 025 / 050 / 100 |
 | breakpoint | `dimension.breakpoint.{xs, sm, md, lg, xl, xxl}` | 0 / 480 / 768 / 1024 / 1440 / 1768 | 6 段。当初は `sm–xxl` の 5 段（480 / 768 / 1024 / 1280 / 1536）。2026-09-29 の工程 9 で Atlassian と同じ 6 段に変更（pf-08-layout.md） |
 
@@ -211,7 +211,7 @@ duration は instant + テンポ記号（本人指定）。easing は Atlassian 
 | `motion.easing.in.practical` | cubic-bezier(0.6, 0, 0.8, 0.6) | 退場。ゆっくり始まり加速して去る |
 | `motion.easing.out.practical` | cubic-bezier(0.4, 1, 0.6, 1) | 日常的な入場。コンテンツ差し替え、タブ切替、並び替え |
 | `motion.easing.out.bold` | cubic-bezier(0, 0.4, 0, 1) | 素早く到着して減速停止。注意を引く入場 |
-| `motion.easing.inout.bold` | cubic-bezier(0.4, 0, 0, 1) | 拡大縮小・位置移動。始点と終点の両方を制御 |
+| `motion.easing.inOut.bold` | cubic-bezier(0.4, 0, 0, 1) | 拡大縮小・位置移動。始点と終点の両方を制御 |
 | `motion.easing.spring` | `linear(…)` 25 点 | 減衰バネ。質量 1、剛性 170、減衰 20（減衰比 0.77、オーバーシュート約 2.3%、整定 630ms）。DTCG に spring 型がないため string。非対応環境は out.bold にフォールバック |
 
 spring の補足: Atlassian は内部で EaseSpring を使うが公開トークンにはない。CSS の `linear()` は Chrome 113+ / Safari 17.2+ / Firefox 112+ で使え、duration には整定時間（630ms ≒ adagio）を組み合わせる。パラメータを変えたい場合は `$extensions.ac.spring` の 3 値を変えて再サンプリングする。

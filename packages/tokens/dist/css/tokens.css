@@ -209,7 +209,6 @@
   --ac-dimension-radius-full: 9999px; /** 円・ピル */
   --ac-dimension-radius-shape-default: squircle; /** CSS corner-shape の名前付き値（superellipse(2) = n 4）。Chromium 139+、非対応環境は円弧にフォールバック。Figma は Corner Smoothing 60% */
   --ac-dimension-radius-shape-round: round; /** 円弧。フォールバック */
-  --ac-dimension-radius-shape-figma-smoothing: 0.6; /** Figma Corner Smoothing 60%（iOS 相当） */
   --ac-dimension-radius-shape-continuous: superellipse(2.32); /** Apple continuous corner（n≈5）の近似。代替候補 */
   --ac-dimension-border-0: 0px;
   --ac-dimension-border-100: 4px;
@@ -263,7 +262,7 @@
   --ac-motion-easing-in-practical: cubic-bezier(0.6, 0, 0.8, 0.6); /** ゆっくり始まり加速して去る。退場向け。画面から出る要素が道を空けるように感じる */
   --ac-motion-easing-out-practical: cubic-bezier(0.4, 1, 0.6, 1); /** 日常的な入場曲線。bold より控えめ。コンテンツの差し替え、タブ切替、リストの並び替え */
   --ac-motion-easing-out-bold: cubic-bezier(0, 0.4, 0, 1); /** 素早く到着して減速停止。速い出だしで注意を引き、穏やかな着地で制御感を出す */
-  --ac-motion-easing-inout-bold: cubic-bezier(0.4, 0, 0, 1); /** 大胆な in-out。拡大縮小・位置移動に合う。始点と終点の両方を制御する */
+  --ac-motion-easing-in-out-bold: cubic-bezier(0.4, 0, 0, 1); /** 大胆な in-out。拡大縮小・位置移動に合う。始点と終点の両方を制御する */
   --ac-motion-easing-spring: linear(0.0, 0.049, 0.164, 0.307, 0.455, 0.591, 0.709, 0.804, 0.879, 0.934, 0.972, 0.997, 1.013, 1.02, 1.023, 1.023, 1.02, 1.017, 1.014, 1.011, 1.008, 1.005, 1.003, 1.002, 1.001); /** 減衰バネ（質量 1、剛性 170、減衰 20、減衰比 0.77、オーバーシュート約 2.3%、整定 630ms）を CSS linear() で 25 点サンプリング。duration には整定時間 630ms 前後を使う。非対応環境は out.bold にフォールバック */
   --ac-opacity-0: 0;
   --ac-opacity-4: 0.04;

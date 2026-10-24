@@ -378,7 +378,10 @@
         "figmaSmoothing": {
           "$type": "number",
           "$value": 0.6,
-          "$description": "Figma Corner Smoothing 60%（iOS 相当）"
+          "$description": "Figma Corner Smoothing 60%（iOS 相当）",
+          "$extensions": {
+            "ac.figmaOnly": true
+          }
         },
         "continuous": {
           "$type": "string",

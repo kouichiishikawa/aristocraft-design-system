@@ -17,6 +17,8 @@ const css = {
 const declared = (s) => [...s.matchAll(/^\s*(--[a-z0-9-]+):/gm)].map((m) => m[1]);
 const flat = JSON.parse(read('dist/json/tokens.json')).tokens;
 const figma = JSON.parse(read('dist/figma/variables.json'));
+// Figma-only tokens ($extensions."ac.figmaOnly", docs/pf-08-token-naming.md §2): Figma variables, never CSS / TS / flat JSON.
+const FIGMA_ONLY = [{ path: 'dimension.radius.shape.figmaSmoothing', css: '--ac-dimension-radius-shape-figma-smoothing', figma: 'Dimension/Radius/Shape/Figma Smoothing' }];
 
 test('css has no leaked objects, references, $root or $ signs', () => {
   for (const [name, s] of Object.entries(css)) {
@@ -35,8 +37,8 @@ test('every var(--x) used in css is declared in tokens.css', () => {
   assert.deepEqual(missing, []);
 });
 
-test('css counts: 272 primitives, light and dark declare the same names twice for dark', () => {
-  assert.equal(declared(css.primitives).length, 272);
+test('css counts: 271 primitives, light and dark declare the same names twice for dark', () => {
+  assert.equal(declared(css.primitives).length, 271); // 272 source primitives − 1 Figma-only
   const l = declared(css.light);
   const d = declared(css.dark);
   assert.equal(l.length, 259); // 255 colours + 4 shadows (2026-10-05: hovered / pressed for subtle and default)
@@ -46,9 +48,9 @@ test('css counts: 272 primitives, light and dark declare the same names twice fo
   assert.match(css.dark, /@media \(prefers-color-scheme: dark\)/);
 });
 
-test('flat json: 592 public names (dark merged as a mode), themed entries carry light and dark', () => {
+test('flat json: 591 public names (dark merged as a mode), themed entries carry light and dark', () => {
   const names = Object.keys(flat);
-  assert.equal(names.length, 592);
+  assert.equal(names.length, 591);
   assert.ok(!names.some((n) => n.includes('$root')));
   const themed = names.filter((n) => flat[n].$set === 'semantic/color.light');
   assert.equal(themed.length, 259);
@@ -74,13 +76,25 @@ test('figma json: aliases resolve, styles and skips are accounted for', () => {
   const layerVars = [...names].filter((n) => /^Elevation\/Shadow\/.*\/Layer \d$/.test(n)).length;
   assert.equal(layerVars, 8, 'shadow layers become themed colour variables');
   const total = names.size - layerVars + figma.textStyles.length + figma.effectStyles.light.length + figma.skipped.length;
-  assert.equal(total, 592, 'every public name is a variable, a style, or an explicit skip');
+  assert.equal(total, Object.keys(flat).length + FIGMA_ONLY.length, 'every public name (and every Figma-only token) is a variable, a style, or an explicit skip');
   for (const c of figma.collections) for (const v of c.variables) {
     assert.ok(Array.isArray(v.scopes), `${v.name} scopes`);
     assert.match(v.codeSyntax, /^var\(--[a-z0-9-]+\)$/, `${v.name} codeSyntax`);
   }
   for (const s of figma.textStyles) assert.ok(s.figmaFont.family && s.figmaFont.style, s.name);
   for (const s of figma.effectStyles.light) for (const e of s.effects) assert.ok(names.has(e.colorVariable), e.colorVariable);
+});
+
+test('figma-only tokens stay out of css / ts / flat json and remain Figma variables', async () => {
+  const mod = await import(path.join(ROOT, 'dist/ts/tokens.ts'));
+  const names = new Set(figma.collections.flatMap((c) => c.variables.map((v) => v.name)));
+  for (const t of FIGMA_ONLY) {
+    assert.ok(!declared(css.all).includes(t.css), `${t.css} must not be a CSS variable`);
+    assert.ok(!(t.path in flat), `${t.path} must not be in flat json`);
+    const leaf = t.path.split('.').reduce((o, k) => o?.[k], mod.primitives);
+    assert.equal(leaf, undefined, `${t.path} must not be in the TS module`);
+    assert.ok(names.has(t.figma), `${t.figma} must stay a Figma variable`);
+  }
 });
 
 test('typescript module loads and mirrors the css values', async () => {

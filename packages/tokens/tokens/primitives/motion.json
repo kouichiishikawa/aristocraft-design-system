@@ -94,7 +94,7 @@
           "$description": "素早く到着して減速停止。速い出だしで注意を引き、穏やかな着地で制御感を出す"
         }
       },
-      "inout": {
+      "inOut": {
         "bold": {
           "$type": "cubicBezier",
           "$value": [
