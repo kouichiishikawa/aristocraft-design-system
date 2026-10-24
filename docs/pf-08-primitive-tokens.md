@@ -211,7 +211,7 @@ duration は instant + テンポ記号（本人指定）。easing は Atlassian 
 | `motion.easing.in.practical` | cubic-bezier(0.6, 0, 0.8, 0.6) | 退場。ゆっくり始まり加速して去る |
 | `motion.easing.out.practical` | cubic-bezier(0.4, 1, 0.6, 1) | 日常的な入場。コンテンツ差し替え、タブ切替、並び替え |
 | `motion.easing.out.bold` | cubic-bezier(0, 0.4, 0, 1) | 素早く到着して減速停止。注意を引く入場 |
-| `motion.easing.inout.bold` | cubic-bezier(0.4, 0, 0, 1) | 拡大縮小・位置移動。始点と終点の両方を制御 |
+| `motion.easing.inOut.bold` | cubic-bezier(0.4, 0, 0, 1) | 拡大縮小・位置移動。始点と終点の両方を制御 |
 | `motion.easing.spring` | `linear(…)` 25 点 | 減衰バネ。質量 1、剛性 170、減衰 20（減衰比 0.77、オーバーシュート約 2.3%、整定 630ms）。DTCG に spring 型がないため string。非対応環境は out.bold にフォールバック |
 
 spring の補足: Atlassian は内部で EaseSpring を使うが公開トークンにはない。CSS の `linear()` は Chrome 113+ / Safari 17.2+ / Firefox 112+ で使え、duration には整定時間（630ms ≒ adagio）を組み合わせる。パラメータを変えたい場合は `$extensions.ac.spring` の 3 値を変えて再サンプリングする。

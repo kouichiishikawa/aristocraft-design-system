@@ -14,7 +14,7 @@
 | exit | allegro 150 | in.practical | 上記の退場（enter の 60%） |
 | enter.large | andante 400 | out.bold | モーダル、パネル、ページ遷移 |
 | exit.large | moderato 250 | in.practical | モーダル・パネルの退場 |
-| move | moderato 250 | inout.bold | 位置・サイズの変化（アコーディオン、ドロワー、並び替え、テーマ切替） |
+| move | moderato 250 | inOut.bold | 位置・サイズの変化（アコーディオン、ドロワー、並び替え、テーマ切替） |
 | reveal | adagio 600 | out.bold | スクロールで現れるセクション。移動量 8〜16px まで |
 | spring | adagio 600 | spring | 遊びのある反応。1 画面 1 か所まで |
 

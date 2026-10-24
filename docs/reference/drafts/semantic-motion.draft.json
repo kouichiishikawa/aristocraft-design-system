@@ -82,7 +82,7 @@
             "value": 0,
             "unit": "ms"
           },
-          "timingFunction": "{motion.easing.inout.bold}"
+          "timingFunction": "{motion.easing.inOut.bold}"
         },
         "$description": "250ms。位置・サイズの変化。アコーディオン、ドロワー、並び替え、テーマ切替"
       },
