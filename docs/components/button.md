@@ -52,13 +52,14 @@ Figma: `Button` ページの `Button` セット。部品ごとにページを分
 - 変数・スタイル・部品名は Title Case（`docs/pf-10-figma.md` の規則）
 - loading の variant は Icon Before の位置に `Spinner` セットのインスタンス（Size は Icon と同じ Small / Medium。2026-10-05 に `icon/loader-circle` から置き換え。既存セットに対しては `node packages/ui/figma/button-stage.js --swap-spinner` で差し替えだけを行い、手直しは保つ）
 
-## コードへの反映状況（2026-10-23 確認、DEV-22。2026-10-24 に DEV-109・DEV-111 を反映）
+## コードへの反映状況（2026-10-23 確認、DEV-22。2026-10-24 に DEV-109・DEV-111・DEV-118 を反映）
 
 Figma のセットと本書は一致している。`packages/ui/src/components/Button` は variant を DEV-109、shape・loading・アイコン・fullWidth を DEV-111 で Figma にそろえた。残る差は disabled だけ（DEV-110、Figma を先に直す）。
 
 | 項目 | Figma・本書 | 現在のコード |
 |---|---|---|
 | variant | default / primary / secondary / tertiary / danger、既定 default | 一致（DEV-109。ghost は tertiary に改名、別名なし） |
+| default | neutral.default（半透明 100a）、枠なし | 一致（DEV-118 で Figma を読み取って確認。下の注記） |
 | secondary | neutral.subtle（透明）+ 枠 border.default | 一致（DEV-109） |
 | tertiary | neutral.subtle、文字 text.default | 一致（DEV-109） |
 | danger | status.error.bold、文字 text.inverse | 一致（DEV-109） |
@@ -69,3 +70,5 @@ Figma のセットと本書は一致している。`packages/ui/src/components/B
 | fullWidth | あり | 一致（DEV-111） |
 
 寸法（高さ・padding・gap・文字）、hover・pressed の段、focus の 2px + 2px は一致している。
+
+注記（2026-10-24、DEV-118）: Figma の default に「細い灰色の枠と明るい面」が見えたのは見え方の問題で、枠はない。Default（`39:186`）・Focused（`39:216`）・Loading（`39:236`）を get_design_context と get_variable_defs で読むと、塗りは `background.neutral.default`（light `#12100D0E`）だけで、ストロークも border の変数もない（Focused の青い輪は子の `Focus Ring` `77:61`）。枠があるのは secondary（`78:590`、`border.default` 1px）だけ。get_screenshot で 1 つの variant を撮ると、PNG は不透明で、角丸の外にページの地 `#F8F6F4` が焼き込まれる（中は地に 100a を重ねた `#EBE9E8`）。これを白や暗い背景で見ると、地の四角が「明るい面」、その縁が「枠」に見える。Figma とコードを見比べるときは、セット全体（`39:426`）を撮るか、同じ地の上に置いて比べる。
