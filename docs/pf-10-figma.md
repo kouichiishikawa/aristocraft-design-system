@@ -99,4 +99,4 @@
 
 ## 残り（PF-10 のもう半分）
 
-主要部品の variant / 状態 / レスポンシブ設計は、PF-04 で部品ライブラリ（React + TS）の構成を決めてから、PF-05 の Button 検証と合わせて進める。
+主要部品の一覧・variant / 状態 / レスポンシブの共通規則・Figma の既存部品との対応表は [docs/components/README.md](components/README.md)、部品ごとの案は [docs/components/proposals.md](components/proposals.md)（DEV-129、2026-10-24 の案）。
