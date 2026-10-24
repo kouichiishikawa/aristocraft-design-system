@@ -24,6 +24,14 @@ import { figmaName as toFigma } from './figma-name.js';
 /** Figma names are Title Case with spaces (build/figma-name.js). */
 export const figmaName = (path) => toFigma(cleanPath(path));
 
+/**
+ * Figma-only tokens (decision 2026-10-24, DEV-124): `$extensions: { "ac.figmaOnly": true }` keeps a token as a Figma
+ * variable but out of the CSS / TS / flat JSON outputs, for values with no Web meaning (Corner Smoothing).
+ */
+export const FIGMA_ONLY = 'ac.figmaOnly';
+export const isFigmaOnly = (token) => token.$extensions?.[FIGMA_ONLY] === true;
+export const webOnly = (tokens) => tokens.filter((t) => !isFigmaOnly(t));
+
 /** DTCG dimension / duration object form: { value: 4, unit: "px" } */
 export const isUnitValue = (v) =>
   v !== null && typeof v === 'object' && !Array.isArray(v) && 'value' in v && 'unit' in v;

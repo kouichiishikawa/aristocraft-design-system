@@ -209,7 +209,6 @@
   --ac-dimension-radius-full: 9999px; /** 円・ピル */
   --ac-dimension-radius-shape-default: squircle; /** CSS corner-shape の名前付き値（superellipse(2) = n 4）。Chromium 139+、非対応環境は円弧にフォールバック。Figma は Corner Smoothing 60% */
   --ac-dimension-radius-shape-round: round; /** 円弧。フォールバック */
-  --ac-dimension-radius-shape-figma-smoothing: 0.6; /** Figma Corner Smoothing 60%（iOS 相当） */
   --ac-dimension-radius-shape-continuous: superellipse(2.32); /** Apple continuous corner（n≈5）の近似。代替候補 */
   --ac-dimension-border-0: 0px;
   --ac-dimension-border-100: 4px;

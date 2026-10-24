@@ -244,7 +244,6 @@ export const primitives = {
       "shape": {
         "default": "squircle",
         "round": "round",
-        "figmaSmoothing": 0.6,
         "continuous": "superellipse(2.32)"
       }
     },
