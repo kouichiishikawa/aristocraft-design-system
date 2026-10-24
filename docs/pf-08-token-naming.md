@@ -41,6 +41,7 @@ semantic を持つカテゴリは semantic だけを参照する。semantic を�
    - 大きさの語: `xs` `sm` `md` `lg` `xl` `xxl` `xxxl`（lineHeight、letterSpacing、breakpoint、font の段、layout）
 4. **token であり group でもあるものは `$root`**: 子を持つ名前（`color.text.brand` と `color.text.brand.bold`）は、自分の値を `$root` に書く（DTCG 2025.10）。`$root` は公開名に出ない。60 件（color の light / dark で各 60）
 5. **型**は `$type` に書き、group に書いたものは子が受け継ぐ。`validate.js` が 10 型の値の形を検査する
+6. **例外: Figma 専用の値**（2026-10-24 決定、DEV-124）。Web で意味を持たない Figma だけの値は、`$extensions` に `"ac.figmaOnly": true` を書く。`build/` はその token を CSS 変数・TS・フラット JSON に出さず、Figma の出力（`dist/figma/variables.json`）にだけ変数として残す（`hooks.js` の `isFigmaOnly`、`build/dist.test.js` が検査する）。名前は規則の外にあってよい。今は `dimension.radius.shape.figmaSmoothing`（Corner Smoothing 0.6）の 1 件だけ
 
 ### カテゴリごと
 
@@ -48,9 +49,9 @@ semantic を持つカテゴリは semantic だけを参照する。semantic を�
 |---|---|---|---|
 | primitive 色 | `color.{family}.{step}`。family は 12 色相（色相角順）と `neutral` | `color.blue.600` | pf-08-primitive-tokens.md §2 |
 | primitive 色のアルファ | `color.neutral.{step}a`。step は見た目が一致する不透明段。100a〜400a が light 用、600a〜900a が dark 用 | `color.neutral.200a` | 同上 |
-| dimension | `dimension.{space \| size \| radius \| border}.{4px=100}`、`dimension.breakpoint.{xs…xxl}`。負の余白は `dimension.space.negative.{step}`。角丸の両端は `none` / `full`、角の形状は `dimension.radius.shape.{default \| continuous \| round}` | `dimension.space.050` | pf-08-primitive-tokens.md §7、pf-08-spacing.md、pf-08-layout.md |
+| dimension | `dimension.{space \| size \| radius \| border}.{4px=100}`、`dimension.breakpoint.{xs…xxl}`。負の余白は `dimension.space.negative.{step}`。角丸の両端は `none` / `full`、角の形状は `dimension.radius.shape.{default \| continuous \| round}`（Figma 専用の `figmaSmoothing` は規則 6 の例外） | `dimension.space.050` | pf-08-primitive-tokens.md §7、pf-08-spacing.md、pf-08-layout.md |
 | typography | `typography.{family \| size \| lineHeight \| letterSpacing \| weight}.{…}`。size は 4px = 100、weight は語（`regular`〜`bold`） | `typography.size.400` | pf-08-primitive-tokens.md §7 |
-| motion | `motion.duration.{instant \| presto … adagio}`（テンポ記号）、`motion.easing.{in \| out \| inout}.{practical \| bold}` と `motion.easing.spring` | `motion.easing.out.bold` | pf-08-primitive-tokens.md §7 |
+| motion | `motion.duration.{instant \| presto … adagio}`（テンポ記号）、`motion.easing.{in \| out \| inOut}.{practical \| bold}` と `motion.easing.spring` | `motion.easing.out.bold` | pf-08-primitive-tokens.md §7 |
 | opacity | `opacity.{百分率}` | `opacity.40` | 同上 |
 | semantic 色 | `color.{property}.{role?}.{emphasis?}.{state?}`。property は `text` `icon` `border` `background` `link` | `color.background.brand.bold.hovered` | pf-08-semantic-color.md |
 | semantic 面と影 | `elevation.surface.{default \| raised \| overlay \| sunken}`、`elevation.shadow.{rest \| lifted \| floating \| overlay}` | `elevation.surface.raised` | 同上 |
@@ -96,9 +97,9 @@ semantic を持つカテゴリは semantic だけを参照する。semantic を�
 
 ## 4. 既存トークンとの対応表
 
-数え方: `tokens/$metadata.json` の `tokenSetOrder` の順に各ファイルを読み、`$value` を持つ葉を数えた（使い捨てスクリプト、PR 本文にコマンドと出力）。**公開名は 592 件**、ファイル上の項目は 851 件（semantic 色の 259 件が light と dark に 1 回ずつ）。`dist/json/tokens.json` の 592 件、`dist/css` の primitive 272 本・color 259 本と一致する。
+数え方: `tokens/$metadata.json` の `tokenSetOrder` の順に各ファイルを読み、`$value` を持つ葉を数えた（使い捨てスクリプト、PR 本文にコマンドと出力）。ファイル上の項目は 851 件（semantic 色の 259 件が light と dark に 1 回ずつ）。そこから Figma 専用の 1 件（§2 規則 6）を除いた**公開名は 591 件**（2026-10-24、DEV-124 で 592 から 1 減）。`dist/json/tokens.json` の 591 件、`dist/css` の primitive 271 本・color 259 本と一致する。Figma の出力は Figma 専用の 1 件を含めた 592 件を、変数・Style・skipped のどれかとして持つ
 
-### primitive（272）
+### primitive（271。Figma 専用の 1 件を除く）
 
 | カテゴリ | パス例 | CSS 変数例 | Figma 名例 | 件数 | 規則 |
 |---|---|---|---|---|---|
@@ -109,7 +110,8 @@ semantic を持つカテゴリは semantic だけを参照する。semantic を�
 | space 負値 | `dimension.space.negative.100` | `--ac-dimension-space-negative-100` | `Dimension/Space/Negative/100` | 8 | 合う |
 | size | `dimension.size.1200` | `--ac-dimension-size-1200` | `Dimension/Size/1200` | 13 | 合う |
 | radius | `dimension.radius.full` | `--ac-dimension-radius-full` | `Dimension/Radius/Full` | 10 | 合う |
-| radius の形状 | `dimension.radius.shape.default` | `--ac-dimension-radius-shape-default` | `Dimension/Radius/Shape/Default` | 4 | **外れ 1**（`figmaSmoothing`） |
+| radius の形状 | `dimension.radius.shape.default` | `--ac-dimension-radius-shape-default` | `Dimension/Radius/Shape/Default` | 3 | 合う |
+| Figma 専用 | `dimension.radius.shape.figmaSmoothing` | （出さない） | `Dimension/Radius/Shape/Figma Smoothing` | （公開名に数えない） | 例外（§2 規則 6。旧 外れ 1） |
 | border | `dimension.border.025` | `--ac-dimension-border-025` | `Dimension/Border/025` | 5 | 合う |
 | breakpoint | `dimension.breakpoint.xl` | `--ac-dimension-breakpoint-xl` | `Dimension/Breakpoint/XL` | 6 | 合う |
 | family | `typography.family.sans` | `--ac-typography-family-sans` | `Typography/Family/Sans` | 4 | 合う |
@@ -118,7 +120,7 @@ semantic を持つカテゴリは semantic だけを参照する。semantic を�
 | letterSpacing | `typography.letterSpacing.sm` | `--ac-typography-letter-spacing-sm` | （skipped） | 3 | 合う |
 | weight | `typography.weight.semibold` | `--ac-typography-weight-semibold` | `Typography/Weight/Semibold` | 4 | 合う |
 | duration | `motion.duration.allegro` | `--ac-motion-duration-allegro` | `Motion/Duration/Allegro` | 7 | 合う |
-| easing | `motion.easing.inout.bold` | `--ac-motion-easing-inout-bold` | （skipped。spring だけ `Motion/Easing/Spring`） | 5 | **外れ 2**（`inout`） |
+| easing | `motion.easing.inOut.bold` | `--ac-motion-easing-in-out-bold` | （skipped の名前は `Motion/Easing/In Out/Bold`。spring だけ変数 `Motion/Easing/Spring`） | 5 | 合う（DEV-124 で `inout` から改名。旧 外れ 2） |
 | opacity | `opacity.40` | `--ac-opacity-40` | `Opacity/40` | 11 | 合う |
 
 ### semantic（320。色は light / dark の各 259）
@@ -140,13 +142,13 @@ semantic を持つカテゴリは semantic だけを参照する。semantic を�
 | layout section | `layout.section.lg` | `--ac-layout-section-lg` | `Layout/Section/LG` | 4 | 合う |
 | border width | `border.width.focused` | `--ac-border-width-focused` | `Border/Width/Focused` | 3 | 合う |
 
-合計: primitive 272 + semantic 320 = **592**（背景色 179 の内訳: neutral 9、brand 11、status 4 × 11、accent 12 × 9、単独の disabled 1・selected 3・input 2・blanket 1）。
+合計: primitive 271 + semantic 320 = **591**（背景色 179 の内訳: neutral 9、brand 11、status 4 × 11、accent 12 × 9、単独の disabled 1・selected 3・input 2・blanket 1）。
 
-## 5. 規則から外れるもの（改名しない。直すかは別 issue）
+## 5. 規則から外れるもの（1〜3 は DEV-124、4・5 は DEV-125 で決着）
 
-1. **`dimension.radius.shape.figmaSmoothing`**: shape の group に、形状ではなく Figma の Corner Smoothing の数値（0.6）が入っている。group の中で値の種類が混ざり（他 3 件は string）、カテゴリの段に Figma 固有の語が入る。CSS では `--ac-dimension-radius-shape-figma-smoothing` として出るが、Web では使い道が無い
-2. **`motion.easing.inout.*`**: 複数語なのに camelCase（`inOut`）になっていない。Figma 名の規則を当てると `Inout` になる（今は skipped なので Figma には出ない）
-3. **`color.link.{default, hovered, visited}`**: `visited` は §2 の state 語彙（hovered / pressed）に無い。link は `pressed` を持たない。`color.text.*` とは別の property になっている
+1. ~~**`dimension.radius.shape.figmaSmoothing`**~~ → **直した（2026-10-24、DEV-124）**: 名前は変えず、§2 規則 6 の「Figma 専用の値」の例外にした。CSS / TS / フラット JSON からは外し、Figma の変数（`Dimension/Radius/Shape/Figma Smoothing`）は今までどおり残す。元の指摘: shape の group に、形状ではなく Figma の Corner Smoothing の数値（0.6）が入っている。group の中で値の種類が混ざり（他 3 件は string）、カテゴリの段に Figma 固有の語が入る。CSS では `--ac-dimension-radius-shape-figma-smoothing` として出るが、Web では使い道が無い
+2. ~~**`motion.easing.inout.*`**~~ → **直した（2026-10-24、DEV-124）**: `motion.easing.inOut.bold` に改名した。CSS は `--ac-motion-easing-in-out-bold`、Figma の skipped 名は `Motion/Easing/In Out/Bold`。元の指摘: 複数語なのに camelCase（`inOut`）になっていない。Figma 名の規則を当てると `Inout` になる（skipped なので Figma には出ない）
+3. **`color.link.{default, hovered, visited}`**: **外れだが今のままでよい（2026-10-24 決定、DEV-124）**。`visited` は §2 の state 語彙（hovered / pressed）に無い。link は `pressed` を持たない。`color.text.*` とは別の property になっている
 4. **`$metadata.json` の `"format": "DTCG 2024 draft"`**: 実装は DTCG 2025.10 の `$root` を使っている（pf-09-pipeline.md）。`generated: 2026-09-28` も古い → **直した（DEV-125）**: `"DTCG 2025.10"` に。`generated` は生成器が無い手書きの値なので、最終更新日（2026-10-24）にした
 5. **`$metadata.json` の `layers` の `components`**: 層の宣言はあるが、`tokenSetOrder` にも `tokens/` にも component のファイルが無い（§1 のとおり、部品を作るときに足す） → **直した（DEV-125）**: `layers` から外した。`layers` を読むコードは無い（build・検証が読むのは `tokenSetOrder` だけ）。component のファイルを足すときに戻す
 
