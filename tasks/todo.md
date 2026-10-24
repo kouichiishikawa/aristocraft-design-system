@@ -2,7 +2,7 @@
 
 - [x] PF-01: 公開要件・対象読者・稼働時間を確定する（docs/pf-01-requirements.md、2026-09-11）
 - [x] PF-07: ブランド原則・文章トーン確定（docs/pf-07-brand-principles.md）
-- [ ] PF-08 工程0: トークン構造と命名規則
+- [x] PF-08 工程0: トークン構造と命名規則（docs/pf-08-token-naming.md、2026-10-24。対応表 592 件、外れ 5 件は改名せず列挙。直すものは DEV-124〜126）
 - [x] PF-08 工程1: キーカラー #316EEE 確定（docs/pf-08-tokens.md）
 - [x] PF-08 工程2: blue 11段確定（APCA併記）
 - [x] PF-08 工程3: gray 11段 H82.6 確定
