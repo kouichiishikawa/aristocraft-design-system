@@ -180,6 +180,8 @@ APCA Lc（参考。判定の正は WCAG 2.2 AA、APCA は補助。目安 |Lc| 75
 
 ## 工程 0 · トークンの構造と命名規則（2026-09-24 提案・確認待ち）
 
+> 正本は [docs/pf-08-token-naming.md](pf-08-token-naming.md)（2026-10-24、今の実装に合わせた規則と対応表）。以下は 2026-09-24 の提案で、経緯として残す。
+
 - 3 層: primitive（生値、テーマなし）→ semantic（役割名、light/dark で参照先が変わる。部品はここだけ使う）→ component（部品固有、semantic 参照）
 - 形式: DTCG JSON を正本。Style Dictionary で CSS 変数 / TS / Figma Variables 用に変換（PF-09 で検証）
 - 命名: primitive `color.{hue}.{step}`（例 color.blue.600、color.gray.alpha.light.200）/ semantic `color.{role}.{variant}.{state?}` / component `{component}.{part}.{property}.{state?}`
