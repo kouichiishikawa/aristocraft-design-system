@@ -65,6 +65,7 @@ export function Button({
       data-size={size}
       data-shape={shape}
       data-loading={loading || undefined}
+      data-disabled-explicit={disabled || undefined}
       data-full-width={fullWidth || undefined}
       aria-busy={loading || undefined}
       disabled={disabled || loading}

@@ -111,8 +111,10 @@
 .button:disabled {
   cursor: not-allowed;
 }
-/* loading keeps the surface opacity (2026-10-06); an explicit disabled still wins (native :disabled) */
+/* loading keeps the surface opacity (2026-10-06). An explicit `disabled` always wins, whatever the element
+   (render={<a />}) or focusableWhenDisabled, so it is marked separately from loading's disabling. */
 .button[data-disabled]:not([data-loading]),
+.button[data-disabled-explicit],
 .button:disabled {
   opacity: var(--ac-opacity-40);
 }

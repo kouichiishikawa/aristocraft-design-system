@@ -186,3 +186,23 @@ export const FullWidth: Story = {
     await expect(button.getBoundingClientRect().width).toBe(320);
   },
 };
+
+/** An explicit disabled keeps its look while loading, whatever the element or focusability (Codex P2 on PR #4). */
+export const DisabledWhileLoading: Story = {
+  args: { disabled: true, loading: true },
+  render: (args) => (
+    <div style={row}>
+      <Button {...args}>Native</Button>
+      <Button {...args} render={<a href="#save" />}>Link</Button>
+      <Button {...args} focusableWhenDisabled>Focusable</Button>
+    </div>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    for (const name of ['Native', 'Link', 'Focusable']) {
+      const button = canvas.getByRole('button', { name });
+      await expect(button).toHaveAttribute('aria-busy', 'true');
+      await expect(getComputedStyle(button).opacity).toBe('0.4');
+    }
+  },
+};
