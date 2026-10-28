@@ -163,7 +163,7 @@ semantic を持つカテゴリは semantic だけを参照する。semantic を�
 
 | 文書 | 書いてあること | 実装 | 状態 |
 |---|---|---|---|
-| pf-08-tokens.md 工程 0（2026-09-24） | 接頭辞なし、role `surface` / `text.primary` / `decorative`、`color.gray.alpha.light.200`、`components/*.json` | `--ac-` 接頭辞、`elevation.surface` / `text.default` / `accent`、`color.neutral.200a`、component のファイルなし | 未反映（DEV-126 の範囲外。工程 0 の記録として残すかを別 issue で決める） |
+| pf-08-tokens.md 工程 0（2026-09-24） | 接頭辞なし、role `surface` / `text.primary` / `decorative`、`color.gray.alpha.light.200`、`components/*.json` | `--ac-` 接頭辞、`elevation.surface` / `text.default` / `accent`、`color.neutral.200a`、component のファイルなし | DEV-135 で反映（2026-10-28。本文は 2026-09-24 の記録として残し、各行に「注記」で当初の形・変わった日・出典を足した） |
 | pf-08-primitive-tokens.md §2 | 出力 CSS `--color-blue-600`、Figma `color/blue/600`、「接頭辞は付けない」 | `--ac-color-blue-600`、`Color/Blue/600`（ADR 0002 §3、2026-09-30 の Title Case 決定） | DEV-126 で反映 |
 | pf-08-primitive-tokens.md §7 | dimension 56、breakpoint `sm–xxl` 5 段（480〜1536） | 65、`xs–xxl` 6 段（0 / 480 / 768 / 1024 / 1440 / 1768、pf-08-layout.md 2026-09-29） | DEV-126 で反映 |
 | pf-08-summary.md | 715 トークン、semantic 色 191 | 公開名 592（ファイル上 851）、semantic 色 259 | DEV-126 で反映 |

@@ -180,11 +180,26 @@ APCA Lc（参考。判定の正は WCAG 2.2 AA、APCA は補助。目安 |Lc| 75
 
 ## 工程 0 · トークンの構造と命名規則（2026-09-24 提案・確認待ち）
 
-> 正本は [docs/pf-08-token-naming.md](pf-08-token-naming.md)（2026-10-24、今の実装に合わせた規則と対応表）。以下は 2026-09-24 の提案で、経緯として残す。
+> 正本は [docs/pf-08-token-naming.md](pf-08-token-naming.md)（2026-10-24、今の実装に合わせた規則と対応表）。以下は 2026-09-24 の提案で、経緯として残す。本文は書き換えず、今と違う箇所には「注記」として、当初の形・変わった日・出典を足した（2026-10-28、DEV-135）。
+>
+> 注記: 見出しの「確認待ち」は当時の状態。構造（3 層・DTCG・Style Dictionary）は 2026-09-29 の PF-09 で実装し（pf-09-pipeline.md）、命名規則は 2026-10-24 に pf-08-token-naming.md で正本にした（DEV-123）。
 
 - 3 層: primitive（生値、テーマなし）→ semantic（役割名、light/dark で参照先が変わる。部品はここだけ使う）→ component（部品固有、semantic 参照）
+  > 注記: 3 層の構造はそのまま。ただし component 層はまだトークンもファイルも持たない。2026-09-29 の工程 13・14 で、transition の組などは部品を作る段階で component トークン（例 `button.transition`）として置くと決めた（pf-08-motion-state.md）。2026-10-24 に「規則だけ決め、繰り返しが見えたものから足す」とした（pf-08-token-naming.md §1）。名前の形 `{component}.{part}.{property}.{state?}` はこの提案のものを引き継いでいる。
 - 形式: DTCG JSON を正本。Style Dictionary で CSS 変数 / TS / Figma Variables 用に変換（PF-09 で検証）
+  > 注記: 2026-09-29 の PF-09 で Style Dictionary 5.5 により実装した。CSS 変数には接頭辞 `--ac-` が付く（例 `--ac-color-blue-600`）。当初の PF-09 は接頭辞なしで、同日の PF-04 で `ac` に変えた（ADR 0002 §3）。Figma 名は 2026-09-30 に Title Case（例 `Color/Blue/600`）にした（pf-10-figma.md）。
 - 命名: primitive `color.{hue}.{step}`（例 color.blue.600、color.gray.alpha.light.200）/ semantic `color.{role}.{variant}.{state?}` / component `{component}.{part}.{property}.{state?}`
+  > 注記: gray は工程 0a で `neutral` に改名し、アルファは `color.gray.alpha.light.200` の形ではなく `color.neutral.200a`（step は見た目が一致する不透明段。100a〜400a が light 用、600a〜900a が dark 用）にした（pf-08-primitive-tokens.md。工程 0a の日付未確認）。semantic の `{variant}` は emphasis（`subtlest` / `subtle` / `default` / `bold` / `boldest`）、`{state}` は `hovered` / `pressed` になった（2026-09-28 の工程 7b、pf-08-semantic-color.md。状態の付け方は 2026-10-05 に改訂）。
 - role 候補: surface（canvas/default/raised/sunken/overlay）、text（primary/secondary/tertiary/disabled/inverse/link）、border（subtle/default/strong/focus）、accent（default/hover/active/subtle/text）、status（success/warning/error/info × default/subtle/text）、decorative（残り 7 色相 × default/subtle）
+  > 注記: 2026-09-28 の工程 7b（pf-08-semantic-color-plan.md → pf-08-semantic-color.md）で Atlassian 型の語彙に揃え、次のように変わった。
+  >
+  > - surface → `elevation.surface.{default, raised, overlay, sunken}` の 4 つ。`canvas` は持たず、ページの地は `elevation.surface.default`。影は `elevation.shadow.{rest, lifted, floating, overlay}` として別に持つ
+  > - text.primary / secondary / tertiary → `color.text.default` / `color.text.subtle` / `color.text.subtlest`。link は text の下ではなく `color.link.default`（hovered / visited も持つ）
+  > - border.subtle / default / strong / focus → 強さは `color.border.{subtlest, subtle, default, bold}` の 4 段（機能的な境界は `color.border.bold`）、フォーカスは `color.border.focused`
+  > - accent（この提案では青のブランド色の役割）→ 一度 `primary` になり、2026-09-29 に `brand` へ改名した（pf-08-semantic-color.md、pf-08-summary.md「未決・持ち越し」2）。今は `color.background.brand.*`・`color.text.brand` など。hover / active は `hovered` / `pressed`
+  > - status の default / subtle / text → `color.background.status.{success, warning, error, info}.{subtlest … boldest}` と `color.text.status.*`、`color.icon.status.*`、`color.border.status.*`
+  > - decorative → `accent.{12 色相}`（例 `color.text.accent.amber`）。今の `accent` は意味を持たない色の役割で、この提案の accent（青）とは別物。7 色相に絞らず、brand と status の色相も含む 12 色相すべてを持つ（decorative から accent への改名は工程 7b の計画では decorative のままで、改名した日付は未確認）
 - ファイル: tokens/primitives/color.json, color.alpha.json / semantic/color.light.json, color.dark.json / components/*.json / $metadata.json
+  > 注記: アルファは別ファイルにせず `tokens/primitives/color.json` に含めた（工程 0a、日付未確認）。正本は `packages/tokens/tokens/` の下にあり、primitive は color / dimension / motion / opacity / typography、semantic は color.light / color.dark / border / layout / typography の 5 ファイルずつ。`components/*.json` は無い（上の 3 層の注記を参照）。
 - 決めること: $value は hex か oklch() か / テーマは 2 ファイルか $extensions.modes か / 接頭辞の有無（ac-）
+  > 注記: 決めた結果は次のとおり。$value は sRGB hex（8 桁でアルファ）で、OKLCH は `$extensions["ac.oklch"]` に併記する（pf-08-primitive-tokens.md）。テーマは color だけ light / dark の 2 ファイル（pf-08-token-naming.md §1）。接頭辞は `ac` を付ける（2026-09-29、ADR 0002 §3）。
