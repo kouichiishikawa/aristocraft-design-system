@@ -3,6 +3,7 @@
 //   node figma/button-stage.js --variants default   → only the listed variants (comma separated)
 //   node figma/button-stage.js --swap-spinner       → keep the existing set, only swap the Loading icon for the Spinner component
 //   node figma/button-stage.js --swap-focus         → keep the existing set, only replace the Focused shadows with a Focus Ring instance
+//   node figma/button-stage.js --recolor-disabled   → keep the existing set, only bind the Disabled icons to icon.disabled
 // Figma naming is Title Case with spaces (props "Icon Before", values "Medium", layers "Label"); code keeps camelCase.
 // Design: docs/components/button.md. variant 5 × size 3 × shape 2 × state 6 = 180 variants, every value bound
 // to a variable or text style. Re-run after changing the SPEC below.
@@ -148,9 +149,8 @@ for (const [variant, [fill, fillHover, fillPress, textColor, border]] of Object.
         else c.strokes = [];
         if (state === 'focused') c.clipsContent = false; // the Focus Ring instance (added after the children) sits 2px outside
         // children: iconStart (or spinner when loading), label, iconEnd
-        // disabled: icon.disabled for the variants whose icon colour is overridden (primary / danger, approved 2026-10-06);
-        // the other variants keep the Icon component's icon.default
-        const iconColor = isDisabled ? (SPEC.iconColor[variant] ? SPEC.disabled.icon : null) : SPEC.iconColor[variant];
+        // disabled: icon.disabled in every variant (primary / danger approved 2026-10-06, the rest 2026-10-23, DEV-110)
+        const iconColor = isDisabled ? SPEC.disabled.icon : SPEC.iconColor[variant];
         const start = state === 'loading' ? spinnerInstance(iconSize, iconColor) : iconInstance(iconSize, SPEC.icon, N.props.iconBefore, iconColor);
         c.appendChild(start); start.visible = state === 'loading'; start.isExposedInstance = true;
         const t = figma.createText(); t.name = N.props.label; t.textStyleId = styles[textStyle].id; t.characters = SPEC.label;
@@ -269,6 +269,34 @@ for (const c of set.children) {
 }
 return out;`;
 
-if (process.argv.includes('--swap-spinner')) process.stdout.write(swap.replace('__WORDS__', JSON.stringify({ 16: SIZE_WORDS.sm, 24: SIZE_WORDS.md })));
+// `--recolor-disabled`: in-place update of an existing Button set — bind the Icon Before / Icon After glyphs of every
+// State=Disabled variant to icon.disabled (2026-10-23 decision, DEV-110). Hidden instances expose no children to the API,
+// so each icon is shown while it is recoloured and its visibility is put back afterwards.
+const recolorDisabled = String.raw`
+const ICON = __ICON__;
+const out = { recolored: [], skipped: [] };
+const vars = await figma.variables.getLocalVariablesAsync();
+const icon = vars.find((x) => x.name === ICON);
+if (!icon) throw new Error('variable missing: ' + ICON);
+const paint = figma.variables.setBoundVariableForPaint({ type: 'SOLID', color: { r: 0, g: 0, b: 0 } }, 'color', icon);
+const page = figma.root.children.find((p) => p.name === 'Button');
+await figma.setCurrentPageAsync(page);
+const set = page.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Button');
+for (const c of set.children) {
+  if (!c.name.includes('State=Disabled')) continue;
+  for (const inst of c.children.filter((n) => n.type === 'INSTANCE' && (n.name === 'Icon Before' || n.name === 'Icon After'))) {
+    const visible = inst.visible;
+    inst.visible = true;
+    const glyphs = inst.findAll((n) => n.type === 'VECTOR' || n.type === 'BOOLEAN_OPERATION');
+    for (const g of glyphs) g.fills = [paint];
+    inst.visible = visible;
+    if (glyphs.length) out.recolored.push(c.name + ' / ' + inst.name + ' (' + glyphs.length + ')');
+    else out.skipped.push(c.name + ' / ' + inst.name + ': no glyph');
+  }
+}
+return out;`;
+
+if (process.argv.includes('--recolor-disabled')) process.stdout.write(recolorDisabled.replace('__ICON__', JSON.stringify(SPEC.disabled.icon)));
+else if (process.argv.includes('--swap-spinner')) process.stdout.write(swap.replace('__WORDS__', JSON.stringify({ 16: SIZE_WORDS.sm, 24: SIZE_WORDS.md })));
 else if (process.argv.includes('--swap-focus')) process.stdout.write(swapFocus.replace('__INSET__', String(SPEC.focus.inset)));
 else process.stdout.write(script.replace('__SPEC__', JSON.stringify(SPEC)));

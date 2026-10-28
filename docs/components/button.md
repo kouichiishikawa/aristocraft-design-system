@@ -35,7 +35,7 @@ Figma: `Button` ページの `Button` セット。部品ごとにページを分
 | tertiary | background.neutral.subtle（透明） | .hovered（100a） | .pressed（200a） | text.default | — |
 | danger | background.status.error.bold（light 600 / dark 500） | .hovered | .pressed | text.inverse / icon.inverse | — |
 
-アイコンの色は他の variant では icon.default（`Icon` 部品の既定）。disabled は全 variant で文字 text.disabled。アイコンは primary / danger の disabled で icon.disabled（2026-10-06 承認）、default / secondary / tertiary の disabled は icon.default のまま（未決）。
+アイコンの色は他の variant では icon.default（`Icon` 部品の既定）。disabled は全 variant で文字 text.disabled。アイコンも disabled は全 variant で icon.disabled（primary / danger は 2026-10-06 承認、default / secondary / tertiary は 2026-10-23 決定・2026-10-28 に Figma で承認、DEV-110）。disabled と loading が重なったときの Spinner も icon.disabled（2026-10-28）。
 
 共通: focused = 要素から 2px 空けて 2px のリング、角丸は要素 + 2px（docs/components/focus-ring.md。CSS は outline + outline-offset、Figma は `Focus Ring` 部品を絶対配置。2026-10-05 に影 2 段から置き換え）。disabled = 背景 background.disabled + 文字 text.disabled、枠と下線なし、cursor not-allowed。hover は `@media (hover: hover)` のみ。
 
@@ -52,9 +52,9 @@ Figma: `Button` ページの `Button` セット。部品ごとにページを分
 - 変数・スタイル・部品名は Title Case（`docs/pf-10-figma.md` の規則）
 - loading の variant は Icon Before の位置に `Spinner` セットのインスタンス（Size は Icon と同じ Small / Medium。2026-10-05 に `icon/loader-circle` から置き換え。既存セットに対しては `node packages/ui/figma/button-stage.js --swap-spinner` で差し替えだけを行い、手直しは保つ）
 
-## コードへの反映状況（2026-10-23 確認、DEV-22。2026-10-24 に DEV-109・DEV-111・DEV-118 を反映）
+## コードへの反映状況（2026-10-23 確認、DEV-22。2026-10-24 に DEV-109・DEV-111・DEV-118、2026-10-28 に DEV-110 を反映）
 
-Figma のセットと本書は一致している。`packages/ui/src/components/Button` は variant を DEV-109、shape・loading・アイコン・fullWidth を DEV-111 で Figma にそろえた。残る差は disabled だけ（DEV-110、Figma を先に直す）。
+Figma のセットと本書は一致している。`packages/ui/src/components/Button` は variant を DEV-109、shape・loading・アイコン・fullWidth を DEV-111、disabled を DEV-110 で Figma にそろえ、残る差はない。
 
 | 項目 | Figma・本書 | 現在のコード |
 |---|---|---|
@@ -64,7 +64,7 @@ Figma のセットと本書は一致している。`packages/ui/src/components/B
 | tertiary | neutral.subtle、文字 text.default | 一致（DEV-109） |
 | danger | status.error.bold、文字 text.inverse | 一致（DEV-109） |
 | shape | rounded（sm 8 / md・lg 12）/ pill（radius.full） | 一致（DEV-111。pill は squircle では半円にならないので corner-shape: round） |
-| disabled | 地 background.disabled + 文字 text.disabled（primary / danger のアイコンは icon.disabled） | opacity 40% |
+| disabled | 地 background.disabled + 文字 text.disabled + アイコン icon.disabled（全 variant）、枠なし | 一致（DEV-110。opacity は使わない。hover / pressed は disabled・loading では効かない。loading だけのときは面を変えない） |
 | loading | Spinner を iconBefore の位置に、aria-busy、面は変えない | 一致（DEV-111。Base UI の disabled + focusableWhenDisabled でクリック不可・フォーカス可、hover / pressed も止める。Spinner は aria-hidden で、名前はラベルのまま） |
 | iconBefore / iconAfter | Lucide アイコン。primary / danger は icon.inverse | 一致（DEV-111。`LucideIcon` を渡し、径 16 / 16 / 24 と色は Button が決める） |
 | fullWidth | あり | 一致（DEV-111） |
