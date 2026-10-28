@@ -4,6 +4,31 @@ import { expect, fn, userEvent, within } from 'storybook/test';
 import { Button } from './Button';
 
 const row = { display: 'flex', gap: 'var(--ac-dimension-space-400)', alignItems: 'center' } as const;
+const variants = ['default', 'primary', 'secondary', 'tertiary', 'danger'] as const;
+
+/** Resolves a color token to the computed rgb() string, so a play function can compare it with an element. */
+function tokenColor(canvasElement: HTMLElement, token: string) {
+  const probe = document.createElement('span');
+  probe.style.color = `var(${token})`;
+  canvasElement.appendChild(probe);
+  const value = getComputedStyle(probe).color;
+  probe.remove();
+  return value;
+}
+
+/** The disabled look (DEV-110): background.disabled + text.disabled + icon.disabled, no border, no opacity. */
+async function expectDisabledLook(canvasElement: HTMLElement, button: HTMLElement) {
+  const style = getComputedStyle(button);
+  await expect(style.backgroundColor).toBe(tokenColor(canvasElement, '--ac-color-background-disabled'));
+  await expect(style.color).toBe(tokenColor(canvasElement, '--ac-color-text-disabled'));
+  await expect(style.borderTopWidth).toBe('0px');
+  await expect(style.opacity).toBe('1');
+  const glyph = button.querySelector(glyphSelector);
+  if (glyph) await expect(getComputedStyle(glyph).color).toBe(tokenColor(canvasElement, '--ac-color-icon-disabled'));
+}
+
+/** Icon (svg) or Spinner (span role="status"), whichever sits in the glyph slot. */
+const glyphSelector = 'svg, [role="status"]';
 
 const meta = {
   title: 'Components/Button',
@@ -67,11 +92,24 @@ export const Sizes: Story = {
   ),
 };
 
+/** Every variant shares one disabled look (Figma 39:426); hover and pressed do not change it. */
 export const Disabled: Story = {
   args: { disabled: true },
+  render: (args) => (
+    <div style={row}>
+      {variants.map((variant) => (
+        <Button key={variant} {...args} variant={variant} iconBefore={ArrowLeft}>{variant}</Button>
+      ))}
+    </div>
+  ),
   play: async ({ canvasElement }) => {
-    const button = within(canvasElement).getByRole('button');
-    await expect(button).toBeDisabled();
+    for (const button of within(canvasElement).getAllByRole('button')) {
+      await expect(button).toBeDisabled();
+      await expectDisabledLook(canvasElement, button);
+    }
+    const primary = within(canvasElement).getByRole('button', { name: 'primary' });
+    await userEvent.hover(primary);
+    await expectDisabledLook(canvasElement, primary);
   },
 };
 
@@ -141,8 +179,9 @@ export const Loading: Story = {
     await expect(args.onClick).not.toHaveBeenCalled();
     button.focus();
     await expect(button).toHaveFocus();
-    // Surface opacity is unchanged while loading (only explicit disabled dims).
-    await expect(getComputedStyle(button).opacity).toBe('1');
+    // The surface is unchanged while loading (only an explicit disabled switches to the disabled look).
+    await expect(getComputedStyle(button).backgroundColor).not.toBe(tokenColor(canvasElement, '--ac-color-background-disabled'));
+    await expect(getComputedStyle(button.querySelector(glyphSelector)!).color).toBe(tokenColor(canvasElement, '--ac-color-icon-inverse'));
   },
 };
 
@@ -189,7 +228,7 @@ export const FullWidth: Story = {
 
 /** An explicit disabled keeps its look while loading, whatever the element or focusability (Codex P2 on PR #4). */
 export const DisabledWhileLoading: Story = {
-  args: { disabled: true, loading: true },
+  args: { disabled: true, loading: true, variant: 'primary' },
   render: (args) => (
     <div style={row}>
       <Button {...args}>Native</Button>
@@ -197,12 +236,13 @@ export const DisabledWhileLoading: Story = {
       <Button {...args} focusableWhenDisabled>Focusable</Button>
     </div>
   ),
+  /* The Spinner takes icon.disabled too (2026-10-28), not primary's icon.inverse. */
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     for (const name of ['Native', 'Link', 'Focusable']) {
       const button = canvas.getByRole('button', { name });
       await expect(button).toHaveAttribute('aria-busy', 'true');
-      await expect(getComputedStyle(button).opacity).toBe('0.4');
+      await expectDisabledLook(canvasElement, button);
     }
   },
 };
