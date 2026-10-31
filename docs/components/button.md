@@ -52,7 +52,7 @@ Figma: `Button` ページの `Button` セット。部品ごとにページを分
 - 変数・スタイル・部品名は Title Case（`docs/pf-10-figma.md` の規則）
 - loading の variant は Icon Before の位置に `Spinner` セットのインスタンス（Size は Icon と同じ Small / Medium。2026-10-05 に `icon/loader-circle` から置き換え。既存セットに対しては `node packages/ui/figma/button-stage.js --swap-spinner` で差し替えだけを行い、手直しは保つ）
 
-## コードへの反映状況（2026-10-23 確認、DEV-22。2026-10-24 に DEV-109・DEV-111・DEV-118、2026-10-28 に DEV-110 を反映）
+## コードへの反映状況（2026-10-23 確認、DEV-22。2026-10-24 に DEV-109・DEV-111・DEV-118、2026-10-28 に DEV-110、2026-10-31 に DEV-167 を反映）
 
 Figma のセットと本書は一致している。`packages/ui/src/components/Button` は variant を DEV-109、shape・loading・アイコン・fullWidth を DEV-111、disabled を DEV-110 で Figma にそろえ、残る差はない。
 
@@ -60,7 +60,7 @@ Figma のセットと本書は一致している。`packages/ui/src/components/B
 |---|---|---|
 | variant | default / primary / secondary / tertiary / danger、既定 default | 一致（DEV-109。ghost は tertiary に改名、別名なし） |
 | default | neutral.default（半透明 100a）、枠なし | 一致（DEV-118 で Figma を読み取って確認。下の注記） |
-| secondary | neutral.subtle（透明）+ 枠 border.default | 一致（DEV-109） |
+| secondary | neutral.subtle（透明）+ 枠 border.default（内側ストローク、寸法に含まない） | 一致（DEV-109。DEV-167 で枠の幅だけ左右の余白を減らし、default と同じ幅にした。disabled は枠を透明にして幅を保つ。実の border なので forced-colors でも枠が見える） |
 | tertiary | neutral.subtle、文字 text.default | 一致（DEV-109） |
 | danger | status.error.bold、文字 text.inverse | 一致（DEV-109） |
 | shape | rounded（sm 8 / md・lg 12）/ pill（radius.full） | 一致（DEV-111。pill は squircle では半円にならないので corner-shape: round） |
