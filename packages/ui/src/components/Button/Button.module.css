@@ -78,6 +78,17 @@
   background: var(--ac-color-background-neutral-subtle);
   color: var(--ac-color-text-default);
 }
+/* The border sits inside the width like Figma's inside stroke (DEV-167): the inline inset gives back the border width,
+   so secondary matches default. A real border (not an inset box-shadow) stays visible in forced-colors mode. */
+.button[data-variant='secondary'][data-size='sm'] {
+  padding-inline: calc(var(--ac-dimension-space-300) - var(--ac-border-width-default));
+}
+.button[data-variant='secondary'][data-size='md'] {
+  padding-inline: calc(var(--ac-dimension-space-400) - var(--ac-border-width-default));
+}
+.button[data-variant='secondary'][data-size='lg'] {
+  padding-inline: calc(var(--ac-dimension-space-500) - var(--ac-border-width-default));
+}
 .button[data-variant='tertiary'] {
   background: var(--ac-color-background-neutral-subtle);
   color: var(--ac-color-text-default);
@@ -112,14 +123,15 @@
 .button:disabled {
   cursor: not-allowed;
 }
-/* disabled: background.disabled + text.disabled + icon.disabled in every variant, no border, no opacity
-   (Figma 39:426, DEV-110; the Spinner follows the icons). loading alone keeps the variant's surface (2026-10-06).
+/* disabled: background.disabled + text.disabled + icon.disabled in every variant, no visible border, no opacity
+   (Figma 39:426, DEV-110; the Spinner follows the icons). secondary's border turns transparent instead of 0,
+   so disabling it does not shrink it by the border width (DEV-167). loading alone keeps the variant's surface (2026-10-06).
    An explicit `disabled` always wins, whatever the element (render={<a />}) or focusableWhenDisabled,
    so it is marked separately from loading's disabling. */
 .button[data-disabled]:not([data-loading]),
 .button[data-disabled-explicit],
 .button:disabled:not([data-loading]) {
-  border: 0;
+  border-color: transparent;
   background: var(--ac-color-background-disabled);
   color: var(--ac-color-text-disabled);
   --button-glyph-color: var(--ac-color-icon-disabled);
