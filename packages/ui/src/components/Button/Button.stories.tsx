@@ -16,12 +16,13 @@ function tokenColor(canvasElement: HTMLElement, token: string) {
   return value;
 }
 
-/** The disabled look (DEV-110): background.disabled + text.disabled + icon.disabled, no border, no opacity. */
+/** The disabled look (DEV-110): background.disabled + text.disabled + icon.disabled, no visible border, no opacity.
+    secondary keeps its border width as a transparent border so its width does not change (DEV-167). */
 async function expectDisabledLook(canvasElement: HTMLElement, button: HTMLElement) {
   const style = getComputedStyle(button);
   await expect(style.backgroundColor).toBe(tokenColor(canvasElement, '--ac-color-background-disabled'));
   await expect(style.color).toBe(tokenColor(canvasElement, '--ac-color-text-disabled'));
-  await expect(style.borderTopWidth).toBe('0px');
+  if (style.borderTopWidth !== '0px') await expect(style.borderTopColor).toBe('rgba(0, 0, 0, 0)');
   await expect(style.opacity).toBe('1');
   const glyph = button.querySelector(glyphSelector);
   if (glyph) await expect(getComputedStyle(glyph).color).toBe(tokenColor(canvasElement, '--ac-color-icon-disabled'));
@@ -110,6 +111,36 @@ export const Disabled: Story = {
     const primary = within(canvasElement).getByRole('button', { name: 'primary' });
     await userEvent.hover(primary);
     await expectDisabledLook(canvasElement, primary);
+  },
+};
+
+/** secondary's border sits inside its width like Figma's inside stroke (DEV-167): the same label gives the same width
+    as default, and disabling it (border made transparent) does not shift it. */
+export const SecondaryWidths: Story = {
+  render: (args) => (
+    <div style={{ display: 'grid', gap: 'var(--ac-dimension-space-400)' }}>
+      {(['sm', 'md', 'lg'] as const).map((size) => (
+        <div key={size} style={row} data-testid={`widths-${size}`}>
+          <Button {...args} size={size} variant="default">Label</Button>
+          <Button {...args} size={size} variant="secondary">Label</Button>
+          <Button {...args} size={size} variant="secondary" disabled>Label</Button>
+          <Button {...args} size={size} variant="secondary" iconBefore={Plus}>Label</Button>
+          <Button {...args} size={size} variant="default" iconBefore={Plus}>Label</Button>
+        </div>
+      ))}
+    </div>
+  ),
+  play: async ({ canvasElement }) => {
+    for (const size of ['sm', 'md', 'lg']) {
+      const buttons = within(within(canvasElement).getByTestId(`widths-${size}`)).getAllByRole('button');
+      const [base, secondary, disabled, withIcon, defaultWithIcon] = buttons.map((b) => b.getBoundingClientRect());
+      await expect(secondary!.width).toBe(base!.width);
+      await expect(disabled!.width).toBe(base!.width);
+      await expect(secondary!.height).toBe(base!.height);
+      await expect(disabled!.height).toBe(base!.height);
+      await expect(withIcon!.width).toBe(defaultWithIcon!.width);
+      await expect(getComputedStyle(buttons[1]!).borderTopWidth).toBe('1px');
+    }
   },
 };
 
