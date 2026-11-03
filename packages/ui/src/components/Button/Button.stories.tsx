@@ -17,7 +17,7 @@ function tokenColor(canvasElement: HTMLElement, token: string) {
 }
 
 /** The disabled look (DEV-110): background.disabled + text.disabled + icon.disabled, no visible border, no opacity.
-    secondary keeps its border width as a transparent border so its width does not change (DEV-167). */
+    The border keeps its width as a transparent border, so the width does not change (DEV-167, DEV-226). */
 async function expectDisabledLook(canvasElement: HTMLElement, button: HTMLElement) {
   const style = getComputedStyle(button);
   await expect(style.backgroundColor).toBe(tokenColor(canvasElement, '--ac-color-background-disabled'));
@@ -140,6 +140,35 @@ export const SecondaryWidths: Story = {
       await expect(disabled!.height).toBe(base!.height);
       await expect(withIcon!.width).toBe(defaultWithIcon!.width);
       await expect(getComputedStyle(buttons[1]!).borderTopWidth).toBe('1px');
+    }
+  },
+};
+
+/** Every variant carries a real 1px border inside its width (DEV-226): transparent except on secondary, so forced-colors
+    mode (where backgrounds drop out) paints it and every button keeps a visible edge. Widths match across variants. */
+export const BorderEdges: Story = {
+  render: (args) => (
+    <div style={{ display: 'grid', gap: 'var(--ac-dimension-space-400)' }}>
+      {(['sm', 'md', 'lg'] as const).map((size) => (
+        <div key={size} style={row} data-testid={`edges-${size}`}>
+          {variants.map((variant) => (
+            <Button key={variant} {...args} size={size} variant={variant}>Label</Button>
+          ))}
+        </div>
+      ))}
+    </div>
+  ),
+  play: async ({ canvasElement }) => {
+    for (const size of ['sm', 'md', 'lg']) {
+      const buttons = within(within(canvasElement).getByTestId(`edges-${size}`)).getAllByRole('button');
+      const width = buttons[0]!.getBoundingClientRect().width;
+      for (const button of buttons) {
+        const style = getComputedStyle(button);
+        await expect(style.borderTopStyle).toBe('solid');
+        await expect(style.borderTopWidth).toBe('1px');
+        await expect(button.getBoundingClientRect().width).toBe(width);
+        if (button.dataset.variant !== 'secondary') await expect(style.borderTopColor).toBe('rgba(0, 0, 0, 0)');
+      }
     }
   },
 };
