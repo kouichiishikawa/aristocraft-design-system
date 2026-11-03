@@ -52,17 +52,18 @@ Figma: `Button` ページの `Button` セット。部品ごとにページを分
 - 変数・スタイル・部品名は Title Case（`docs/pf-10-figma.md` の規則）
 - loading の variant は Icon Before の位置に `Spinner` セットのインスタンス（Size は Icon と同じ Small / Medium。2026-10-05 に `icon/loader-circle` から置き換え。既存セットに対しては `node packages/ui/figma/button-stage.js --swap-spinner` で差し替えだけを行い、手直しは保つ）
 
-## コードへの反映状況（2026-10-23 確認、DEV-22。2026-10-24 に DEV-109・DEV-111・DEV-118、2026-10-28 に DEV-110、2026-10-31 に DEV-167 を反映）
+## コードへの反映状況（2026-10-23 確認、DEV-22。2026-10-24 に DEV-109・DEV-111・DEV-118、2026-10-28 に DEV-110、2026-10-31 に DEV-167、2026-11-03 に DEV-226 を反映）
 
 Figma のセットと本書は一致している。`packages/ui/src/components/Button` は variant を DEV-109、shape・loading・アイコン・fullWidth を DEV-111、disabled を DEV-110 で Figma にそろえ、残る差はない。
 
 | 項目 | Figma・本書 | 現在のコード |
 |---|---|---|
 | variant | default / primary / secondary / tertiary / danger、既定 default | 一致（DEV-109。ghost は tertiary に改名、別名なし） |
-| default | neutral.default（半透明 100a）、枠なし | 一致（DEV-118 で Figma を読み取って確認。下の注記） |
-| secondary | neutral.subtle（透明）+ 枠 border.default（内側ストローク、寸法に含まない） | 一致（DEV-109。DEV-167 で枠の幅だけ左右の余白を減らし、default と同じ幅にした。disabled は枠を透明にして幅を保つ。実の border なので forced-colors でも枠が見える） |
-| tertiary | neutral.subtle、文字 text.default | 一致（DEV-109） |
-| danger | status.error.bold、文字 text.inverse | 一致（DEV-109） |
+| default | neutral.default（半透明 100a）、枠なし | 一致（DEV-118 で Figma を読み取って確認。下の注記。透明な枠 1px（forced-colors 用、DEV-226）） |
+| primary | brand.bold、文字 text.inverse・アイコン icon.inverse、枠なし | 一致（DEV-109。透明な枠 1px（forced-colors 用、DEV-226）） |
+| secondary | neutral.subtle（透明）+ 枠 border.default（内側ストローク、寸法に含まない） | 一致（DEV-109。全 variant が 1px の透明な border を持ち、左右の余白から枠の幅を引く（DEV-167 → DEV-226 で全 variant に広げた）。secondary は枠の色 border.default だけを持ち、disabled は枠を透明にして幅を保つ。forced-colors では全 variant の枠をブラウザが描く） |
+| tertiary | neutral.subtle、文字 text.default | 一致（DEV-109。透明な枠 1px（forced-colors 用、DEV-226）） |
+| danger | status.error.bold、文字 text.inverse | 一致（DEV-109。透明な枠 1px（forced-colors 用、DEV-226）） |
 | shape | rounded（sm 8 / md・lg 12）/ pill（radius.full） | 一致（DEV-111。pill は squircle では半円にならないので corner-shape: round） |
 | disabled | 地 background.disabled + 文字 text.disabled + アイコン icon.disabled（全 variant）、枠なし | 一致（DEV-110。opacity は使わない。hover / pressed は disabled・loading では効かない。loading だけのときは面を変えない） |
 | loading | Spinner を iconBefore の位置に、aria-busy、面は変えない | 一致（DEV-111。Base UI の disabled + focusableWhenDisabled でクリック不可・フォーカス可、hover / pressed も止める。Spinner は aria-hidden で、名前はラベルのまま） |
