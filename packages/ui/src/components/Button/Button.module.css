@@ -5,7 +5,10 @@
   justify-content: center;
   box-sizing: border-box;
   margin: 0;
-  border: 0;
+  /* A real border on every variant, transparent except on secondary (DEV-226). It sits inside the width like Figma's
+     inside stroke: each size's inline inset gives the border width back. In forced-colors mode backgrounds drop out
+     and the browser paints this border in a system color, so every button keeps a visible edge. */
+  border: var(--ac-border-width-default) solid transparent;
   border-radius: var(--ac-dimension-radius-300);
   corner-shape: squircle;
   font-family: var(--ac-font-label-md-font-family);
@@ -24,7 +27,7 @@
    Figma is the source for these values (2026-10-05): gap 4 / 6 / 8. */
 .button[data-size='sm'] {
   min-height: var(--ac-dimension-size-800);
-  padding-inline: var(--ac-dimension-space-300);
+  padding-inline: calc(var(--ac-dimension-space-300) - var(--ac-border-width-default));
   gap: var(--ac-dimension-space-100);
   border-radius: var(--ac-dimension-radius-200);
   font-size: var(--ac-font-label-md-font-size);
@@ -32,14 +35,14 @@
 }
 .button[data-size='md'] {
   min-height: var(--ac-dimension-size-1000);
-  padding-inline: var(--ac-dimension-space-400);
+  padding-inline: calc(var(--ac-dimension-space-400) - var(--ac-border-width-default));
   gap: var(--ac-dimension-space-150);
   font-size: var(--ac-font-label-md-font-size);
   line-height: var(--ac-font-label-md-line-height);
 }
 .button[data-size='lg'] {
   min-height: var(--ac-dimension-size-1200);
-  padding-inline: var(--ac-dimension-space-500);
+  padding-inline: calc(var(--ac-dimension-space-500) - var(--ac-border-width-default));
   gap: var(--ac-dimension-space-200);
   font-size: var(--ac-font-label-lg-font-size);
   line-height: var(--ac-font-label-lg-line-height);
@@ -74,20 +77,9 @@
 }
 /* neutral.default is translucent (neutral 100a) so it sits on any surface; neutral.subtle is transparent until hovered */
 .button[data-variant='secondary'] {
-  border: var(--ac-border-width-default) solid var(--ac-color-border-default);
+  border-color: var(--ac-color-border-default);
   background: var(--ac-color-background-neutral-subtle);
   color: var(--ac-color-text-default);
-}
-/* The border sits inside the width like Figma's inside stroke (DEV-167): the inline inset gives back the border width,
-   so secondary matches default. A real border (not an inset box-shadow) stays visible in forced-colors mode. */
-.button[data-variant='secondary'][data-size='sm'] {
-  padding-inline: calc(var(--ac-dimension-space-300) - var(--ac-border-width-default));
-}
-.button[data-variant='secondary'][data-size='md'] {
-  padding-inline: calc(var(--ac-dimension-space-400) - var(--ac-border-width-default));
-}
-.button[data-variant='secondary'][data-size='lg'] {
-  padding-inline: calc(var(--ac-dimension-space-500) - var(--ac-border-width-default));
 }
 .button[data-variant='tertiary'] {
   background: var(--ac-color-background-neutral-subtle);
@@ -124,8 +116,8 @@
   cursor: not-allowed;
 }
 /* disabled: background.disabled + text.disabled + icon.disabled in every variant, no visible border, no opacity
-   (Figma 39:426, DEV-110; the Spinner follows the icons). secondary's border turns transparent instead of 0,
-   so disabling it does not shrink it by the border width (DEV-167). loading alone keeps the variant's surface (2026-10-06).
+   (Figma 39:426, DEV-110; the Spinner follows the icons). secondary's border turns transparent like the others,
+   so disabling it keeps its width (DEV-167) and forced-colors mode still draws the edge (DEV-226). loading alone keeps the variant's surface (2026-10-06).
    An explicit `disabled` always wins, whatever the element (render={<a />}) or focusableWhenDisabled,
    so it is marked separately from loading's disabling. */
 .button[data-disabled]:not([data-loading]),
