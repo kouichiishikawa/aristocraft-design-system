@@ -61,6 +61,9 @@
 
 - `use_figma` の sandbox に `fetch` が無いので JSON はコードに埋め込む。コードは 50,000 文字までなので大きいコレクションは分割する
 - Figma REST Variables API は Enterprise 限定、Code Connect は Organization 以上。どちらも使わない前提
+- Code layers と Specs は open beta（2026-11-09 時点）。AI クレジットはプランに含まれる分だけで運用し、追加購入はしない。超えそうなら止めて本人に相談する（2026-11-09 決定、PF-01 §7・§8）
+- Code layers を MCP で import するには Full seat が要る。import はクレジットを消費しないが、code layer の作成・編集（Figma Make の agent への指示）は消費する。Spec を手で直すのは消費しない。`use_figma` で Spec を書くときに消費するかは未確認
+- code layer の中で Figma variables を使えるか、Plugin API から code layer を作れるか、Dev Mode との関係は未確認（下の「Code layers と Specs（2026-11-09 案）」）
 
 ## Icons ページ（2026-09-29 追加）
 
@@ -94,8 +97,40 @@
 - Example: `_Doc/Section Head` の下に、Light と Dark のキャンバスを横に並べる。2 枚は同じ構成で、モードだけが違う。
 - Components: セット本体を Grid に置く。上に State の Caption、左の余白に Variant 名（Caption Strong）と「Size · Shape」の Caption を付ける。
 - Parts: 内部専用の部品があるときだけ置く。
+- （案、2026-11-09、未承認）Code（code layer の実装）と Spec（`docs/components/<部品>.md` の写し）を足す。中身は下の「Code layers と Specs（2026-11-09 案）」。承認されるまで v3 は上の 4 節のまま。
 
 部品は `node packages/ui/figma/doc-page-stage.js` で、ページは `node packages/ui/figma/button-doc-stage.js` で生成する（共通処理は `figma/lib/page.js`）。再生成すると、前のフレームは「(old)」に改名して左へ 9000 ずらす。v2（3 列・Banner・Chip）は承認されなかった。v2 の部品は退避待ちとして `_Doc` に残っている。
+
+## Code layers と Specs（2026-11-09 案）
+
+PF-01 §8 の決定（2026-11-09）を Figma の部品ページに落とす案。テンプレートの変更は Figma を先に直して本人の承認を得てから文書とスクリプトを合わせるので、ここに書くのは **案** で、テンプレート v3 はまだ変えていない。
+
+### テンプレート v3 に足す節（案）
+
+- Code（Components の後）: `_Doc/Section Head` の下に、その部品の code layer を置く。中身は Storybook の同じ部品のストーリーで、Components の Grid と同じ variant・状態が見える並びにする。Light と Dark は Example と同じく横に 2 枚並べる。code layer の中で実装を直さない（正本は `packages/ui`）
+- Spec（ページの最後）: `docs/components/<部品>.md` の写しを、埋め込みの Spec 1 つとして置く。タイトルは `<部品名> Spec`（例: `Button Spec`）。冒頭に「この Spec は repo の写し。直すときは repo を直す」と正本の GitHub のリンクを書く
+
+節の位置・大きさ・Light/Dark の並べ方は、Figma で 1 部品（Button）を試してから決める。
+
+### code layer の import（案。実地の検証は別 issue）
+
+1. 本人の seat が Full seat であることを確かめる（MCP の import に要る）
+2. リポジトリは public なので、GitHub の接続をせず URL で clone する（push と PR はできないが、見るだけなので足りる）
+3. Figma MCP に「Import this project as a code layer in <部品ページの URL>」と頼む。import はクレジットを消費しない。10 分以上かかることがある
+4. 動かなければ、Figma Make の agent に直させず（クレジットを消費する）、止めて原因を repo 側で調べる
+
+### Spec の同期手順（docs/components/*.md → Spec）
+
+向きは repo → Figma の一方向。Figma の Spec を直接直さない。figma-spec スキル（Figma 公式プラグイン）を読み込んでから `use_figma` で行う。
+
+1. `whoami` を呼び、hicard のプラン（この Figma ファイルの持ち主、Professional）で `specs_enabled: true` を確かめる。`whoami` はファイルの持ち主のプランを教えないので、プランが分からなければ本人に聞く。false または無ければ止める
+2. 写す Markdown を作る。相対リンク（`../pf-10-figma.md` など）は GitHub の permalink（`https://github.com/kouichiishikawa/aristocraft-design-system/blob/<commit>/docs/...`）に直す（スキルの規則: 共有する Spec に手元のパスや localhost を書かない）。先頭は `# <部品名>` の H1 のままにし、その下に正本のリンクと「この Spec は写し」の 1 行を足す
+3. 部品ページで `SPEC_BLOCK`（`specBlockType === "DOCUMENT"`）をタイトルで探す。無ければ `figma.spec.createOnCanvasAsync({ title, content })` で作る
+4. 有れば、先に `figma.spec.getContent` で本文を読み、`[comment:<uuid>]` の印が付いたコメントがあれば内容を Linear の issue に移す（本文を置き換えるとコメントが外れる）。そのあと `figma.spec.setContent` で本文を丸ごと置き換える。写しなので Figma 側の差分は残さない
+5. `figma.spec.getContent` で読み直し、手元の Markdown と比べる。Markdown の書き方の揺れ（表の区切り・空行）で文字単位では一致しない場合は、見出し・表の行・リンクが揃っていることを一致とみなす。どこまで揃えば一致とするかは、最初の同期（Button）で決めて本書に書く
+6. 1 回の `use_figma` のコードは 50,000 文字まで。部品の文書は 10 KB 前後（`button.md` 約 9.4 KB）なので 1 回で足りる
+
+同期の時機: `docs/components/<部品>.md` を変えた PR をマージしたあと。§6 の完成条件（PF-01）を確かめるときに、全部品の Spec をもう一度比べる。
 
 ## 残り（PF-10 のもう半分）
 

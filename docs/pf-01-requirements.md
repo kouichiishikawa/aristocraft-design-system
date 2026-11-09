@@ -62,13 +62,50 @@ Music セクションはプロフィール補強として扱い、Home では Wo
 
 ## 6. Design System v1 の完成条件
 
-- [ ] 公開で使う共通部品の 100% にトークン・Figma・実装・Storybook の対応がある
+- [ ] 公開で使う共通部品の 100% にトークン・Figma・実装・Storybook の対応がある。Figma と実装の対応は、部品ページで Figma のセットと Code layer（実装）を並べて確かめる（2026-11-09 決定、§8）
+- [ ] 公開で使う共通部品の Figma ページに Spec が埋め込まれ、本文が `docs/components/<部品>.md` と一致する。向きは repo → Figma の一方向（2026-11-09 決定、§8）
 - [ ] トークン変更 → 生成 → Figma 反映/差分確認 → 実装/Storybook → CI の検証手順を再現できる
 - [ ] AI が既存部品と定義済みトークンで代表セクションを構築でき、型・基本 a11y 検査に合格する
 
 ## 7. 費用上限が DS の技術選定に与える制約
 
-- Figma: 現行契約の範囲で運用。Variables / Code Connect の利用可否は PF-05 で契約条件を確認
+- Figma: 現行契約（Professional）の範囲で運用。REST Variables API（Enterprise）と Code Connect（Organization 以上）は使わない（PF-10 で確認済み、`docs/pf-10-figma.md`「制約」）
+- Figma の AI クレジット: プランに含まれる分だけで運用し、追加購入はしない。超えそうなら作業を止めて相談する（2026-11-09 決定）。Code layers と Specs での消費は §8
 - 配信: 無料プラン前提（Vercel Hobby / Cloudflare Pages など）。PF-04 で比較
 - AI API: 従量課金に上限を設定。補助AI の試作（PF-06）は上限内で設計
 - Storybook ホスティング: 無料枠（GitHub Pages / Chromatic 無料枠など）
+
+## 8. Figma の Code layers と Specs の使い方（2026-11-09 決定）
+
+Config India 2026（2026-10）で open beta になった 2 つの機能を、§6 の完成条件を確かめる手段に使う。決定は本人（2026-11-09、main タブ）。手順と Figma 側の案は `docs/pf-10-figma.md`「Code layers と Specs（2026-11-09 案）」。
+
+| 機能 | 使い方 | 向き |
+|---|---|---|
+| Code layers | 部品ページに実装を並べる。`packages/ui`（Storybook）を Figma MCP で code layer として import し、Figma のセットの隣に置いて見比べる | repo → Figma（見るだけ。code layer 側で実装を直さない） |
+| Specs | 部品ページに Spec を埋め込み、`docs/components/<部品>.md` の写しを置く。正本は repo のまま | repo → Figma の一方向（PF-05 の同期方針と同じ向き） |
+
+費用（§7）: AI クレジットはプランに含まれる分だけで運用する。公式ヘルプ（2026-11-09 確認）の記述は次のとおり。
+
+- Code layers: MCP からの import はクレジットを消費しない。open beta 中も、作成・編集（Figma Make の agent への指示）はクレジットを消費する。消費量は作業の複雑さで変わる。ヘルプには無料期間の記述は無い
+- Specs: 手で書く・直すのはクレジットを消費しない。Figma の agent を使うと消費する
+- 未確認: Figma MCP の `use_figma`（figma-spec スキル）で Spec を書くときにクレジットを消費するか。最初の同期の前後で、Figma の設定画面のクレジット残量を比べて確かめる
+
+使える条件（公式ヘルプ、2026-11-09 確認）:
+
+- 両方とも Starter・Professional・Organization・Enterprise で使える。書く・直すにはファイルの編集権限が要る
+- Code layers を MCP で import するには Full seat が要る。import には 10 分以上かかることがあり、プロジェクトによっては手直しが要る
+- Code layers に入れられるのは、install と run ができ、入口と build スクリプトを持つ Web アプリ（3 GB 未満）。public のリポジトリは GitHub をつながなくても URL で clone できる（push と PR はできない）。本リポジトリは public なので、この方法で足りる
+
+未確認（実地の検証は別 issue）:
+
+- `packages/ui` の Storybook（npm workspaces のモノレポ）がそのまま code layer で動くか。ヘルプに Storybook の記述は無い
+- 本人の Figma の seat が Full seat か
+- code layer の中で Figma variables を参照できるか
+- Plugin API（`use_figma`）から code layer を作れるか
+- Dev Mode・Code Connect との関係（Code Connect は Organization 以上なので、どちらにしても使わない）
+
+出典:
+
+- Code layers: https://help.figma.com/hc/en-us/articles/44193259600535
+- Git と code layers（動くリポジトリの条件）: https://help.figma.com/hc/en-us/articles/44220165255063
+- Specs: https://help.figma.com/hc/en-us/articles/44049066011671
