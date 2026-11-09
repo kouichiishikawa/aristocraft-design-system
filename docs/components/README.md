@@ -120,6 +120,7 @@
 - 1 部品 = 1 ページ（`——— Components ———` の下）。中身はテンプレート v3（pf-10-figma.md「コンポーネントページのテンプレート v3」）
 - セット名は Title Case で単語を空白で区切る（`Icon Button`、`Text Field`、`Segmented Control`）。コード側は PascalCase（`IconButton`）
 - 内部だけで使う部品（`Select Item`、`Segmented Control Item`）は同じページの Parts に置く
+- 部品ページに Code layer（実装）と Spec（この文書群の写し）を足す案がある（2026-11-09、未承認）。案は pf-10-figma.md「Code layers と Specs（2026-11-09 案）」、Spec の正本は `docs/components/<部品>.md` のまま
 
 ## 3. Figma の既存部品との対応表
 
