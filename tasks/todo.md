@@ -52,6 +52,8 @@
 - [x] React の Button: variant 整理（default / primary / secondary / tertiary / danger）、shape、loading prop（DEV-109 / DEV-111。残り disabled は DEV-110）
 - [x] 本人: Figma の `Palette (old)` を削除（47 行目と重複。2026-10-06 に完了済み）
 - [x] 主要部品の variant / 状態 / レスポンシブ設計の案（2026-10-24、docs/components/README.md・proposals.md、DEV-129）。判断待ち 9 点は 2026-10-24 に全部推奨案で決定（README §5 の書き換えは DEV-132）
+- [x] 要件に Figma の Code layers と Specs を組み込む（2026-11-09、PR #18、DEV-338。PF-01 §6・§7・§8、pf-10「Code layers と Specs（2026-11-09 案）」）
+- [ ] Code layer と Spec の節（案）を Button で試し、テンプレート v3 に足すか決める（DEV-339。Figma 先行 → 承認）
 
 ## PF-04 技術構成（2026-09-29 完了）
 - [x] モノレポ化（packages/tokens・ui、examples/next・astro）、接頭辞 ac
