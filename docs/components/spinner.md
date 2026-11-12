@@ -23,6 +23,8 @@
 
 `node packages/ui/figma/spinner-stage.js` → `use_figma`。セット `Spinner`（`Size = Extra Small / Small / Medium / Large / Extra Large`、幅と高さを `Dimension/Size/*` に束縛）。各 variant は `Dot 1`〜`Dot 8`（楕円、上から時計回り、constraints SCALE）。塗りは `Color/Icon/Default`、不透明度は脈の 1 コマを Opacity 変数で表現 — Dot 8（上の左隣）が `Opacity/100`、そこから反時計回りに 80 / 64 / 40 / 32 / 32 / 24 / 24。再実行すると既存セットは `Spinner (old)` に改名して残る（削除は手で）。
 
+ページの文書フレーム（テンプレート v3: Header / Example / Components）は `node packages/ui/figma/spinner-doc-stage.js` で作る（2026-11-12、DEV-24）。
+
 ## コード
 
 ```tsx

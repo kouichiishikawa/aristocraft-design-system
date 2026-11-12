@@ -30,3 +30,5 @@
 使い方: 対象の上に **絶対配置**（auto-layout の中では `layoutPositioning = ABSOLUTE`）、対象より上下左右 2px 大きく（x −2, y −2, 幅 +4, 高さ +4）、constraints は左右・上下とも **伸縮**、そして **インスタンスの角丸を「対象の角丸 + 2px」に上書き**する（Button rounded sm 8 → 10、md / lg 12 → 14、pill → 9999）。ストロークが外側なので、対象との隙間 2px → リング 2px になる。親の `clipsContent` は off。
 
 Button の Focused variant はこの部品を置く（`node packages/ui/figma/button-stage.js --swap-focus` で既存セットの影 2 段を差し替え、角丸も自動で上書き。再生成時は `button-stage.js` が同じことをする）。
+
+ページの文書フレーム（テンプレート v3: Header / Example / Components。ストーリーが無いので Storybook の行は隠す）は `node packages/ui/figma/focus-ring-doc-stage.js` で作る（2026-11-12、DEV-24）。
