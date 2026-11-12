@@ -25,7 +25,8 @@ const v = (name) => { const x = vars.find((y) => y.name === name); if (!x) out.m
 const widthVar = v(SPEC.width), colorVar = v(SPEC.color);
 if (out.missingVars.length) return out;
 
-for (const prev of page.children.filter((n) => (n.type === 'COMPONENT_SET' || n.type === 'COMPONENT') && n.name === 'Focus Ring')) { prev.name = 'Focus Ring (old)'; out.renamed.push(prev.id); }
+// findAll, not children: the v3 page (focus-ring-doc-stage.js) nests the component inside Focus Ring > Components > Grid
+for (const prev of page.findAll((n) => (n.type === 'COMPONENT_SET' || n.type === 'COMPONENT') && n.name === 'Focus Ring')) { prev.name = 'Focus Ring (old)'; out.renamed.push(prev.id); }
 
 const c = figma.createComponent();
 c.name = 'Focus Ring';

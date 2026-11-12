@@ -36,7 +36,7 @@ import { BrandIcon, Icon } from '@aristocraft/ui';
 
 使い方: `Icon` を置いて Size を選び、`Glyph` で差し替える。色は Glyph 内のベクターの束縛を `Color/Icon/*` の別変数に変える。名前は Figma が Title Case、コードとトークンは小文字（`docs/pf-10-figma.md` の規則）。
 
-ページは 1 つの auto-layout フレーム `Library`（見出し → Icon component と Preview → icons.json のグループごとのセクション → brand）。各セルは主コンポーネントと名前ラベル（`font/label/mono/xs`）。レイアウトは `figma/icons-stage.js` とは別に手で組んだので、アイコンを追加したら該当グループのグリッドへ入れる。
+ページは 1 つの auto-layout フレーム `Library`（見出し → Icon component と Preview → icons.json のグループごとのセクション → brand）。各セルは主コンポーネントと名前ラベル（`font/label/mono/xs`）。レイアウトは `figma/icons-stage.js` とは別に手で組んだので、アイコンを追加したら該当グループのグリッドへ入れる。2026-11-12（DEV-24）から、ページは Foundations のテンプレートの文書フレーム `Icons` で、グリッドは `Icons > Glyphs > Groups > <グループ>` の中にある（`Library` は `Library (old)` に退避。docs/pf-10-figma.md）。
 
 ## 追加・更新の手順
 

@@ -69,6 +69,8 @@
 
 `packages/ui/icons.json` から `packages/ui/figma/icons-stage.js` で生成。`Icon/*` 71（Lucide）、`Brand/*` 10（Simple Icons + LinkedIn）、`Icon` コンポーネントセット（Size Extra Small / Small / Medium / Large / Extra Large の 5 段 = 12 / 16 / 24 / 32 / 48 を `Dimension/Size/300 / 400 / 600 / 800 / 1200` に束縛、`Glyph` は instance swap）。当初は Small〜Extra Large の 4 段で、2026-09-30 に Extra Small を足して 5 段にした（同じ ID のまま更新）。方針は `docs/icons.md`。
 
+2026-11-12（DEV-24）に Foundations ページのテンプレート（下）へ移した。今の文書フレームは `Icons`（225:7）で、節は Icon（`Icon` セット）と Glyphs（用途別 8 グループ）。見本は描き直さずに移したので、部品 87 個（`Icon` セット・`Icon/*`・`Brand/*`）の ID は変わらない。元の枠は `Library (old)`（24:197、ラベルだけが残る）として x −9000 に退避した。手で削除してよい。`Library` の並びを作る生成器は無い（docs/icons.md）ので、アイコンを足したら `Icons` の該当グループの Grid に手で入れる。テンプレートを変えて包み直すときは、`foundation-doc-stage.js icons` が今の v3 の枠を元にする（グループは各節の `Groups` の下から名前で探す。Palette も、`palette-stage.js` で作り直していなければ同じ）。
+
 ## Palette ページ（2026-10-05 追加）
 
 `tokens/primitives/color.json` から `packages/tokens/figma/palette-stage.js` で生成（`node figma/palette-stage.js` の出力を `use_figma` に貼る、1 回で約 24k 文字）。primitive の色 153 を 1 つの auto-layout フレーム `Palette`（幅 1992、padding 64、gap 48、面は `Elevation/Surface/Default`）に、色相の順（neutral → blue → … → sky、`color.json` の順）で 14 セクションに並べる。neutral は 0–1000 の 13 段と `Neutral Alpha` 8 段を分け、alpha 見本は下地フレーム（`Color/Neutral/50` または `950` に束縛）の上に置く。
@@ -76,6 +78,8 @@
 各見本（幅 136）: 色面 136×64（塗りを Primitives の `Color/{Hue}/{Step}` に束縛、角丸は `Dimension/Radius/200`）と文字 4 行 — 段（`Font/Label/SM`）、Hex（`Font/Label/Mono/XS`）、OKLCH `L .573 C .204 H 262.6`（`color.json` の `ac.oklch`）、WCAG 2.2 コントラスト比 `50 4.24 · 950 4.16`（neutral 50 上 · neutral 950 上。生成スクリプト内で計算。alpha 段は下地に合成した色と下地の比 `on 50 1.28`、OKLCH の代わりに `α 11.6% → #DDDBD9` を表示）。文字色は `Color/Text/Default / Subtle / Subtlest`。Hex・OKLCH・比は生成時の文字列なので、トークンを変えたら再生成する（色面は変数束縛なので自動で追従）。
 
 再投入: 既存の `Palette` フレームは `Palette (old)` に改名して残す（スクリプトは削除しない）。新しいフレームは右隣に作られるので、見比べてから古いものを手で削除する。2026-10-05 のパレット改訂（docs/pf-08-tokens.md）で再投入済み: `Palette (old)`（61:3）は改訂前、`Palette`（69:2）が現行。`Palette (old)` は 2026-10-06 に本人が削除した（tasks/todo.md）。
+
+2026-11-12（DEV-24）に Foundations ページのテンプレート（下）へ移した。今の文書フレームは `Palette`（225:529）で、節は Neutral（Neutral・Neutral Alpha）と Hues（12 色相）。見本 153 個は描き直さずに移し、153 個すべてが変数に束縛されたままであることを読み戻して確かめた。元の枠は `Palette (old)`（69:2、ラベルだけが残る）として x −9000 に退避した。手で削除してよい。色を変えたら、`palette-stage.js` で再生成し、そのあと `node packages/ui/figma/foundation-doc-stage.js palette` で包み直す（`palette-stage.js` は名前が `Palette` の枠を `(old)` に改名するので、包み直す前の v3 の枠が `(old)` になる）。
 
 ## 変更分だけ再投入する（2026-10-05 追加）
 
@@ -85,9 +89,13 @@
 
 `node packages/ui/figma/spinner-stage.js` で生成。セット `Spinner`（Size 5 段を `Dimension/Size` に束縛、点 8 つは `Color/Icon/Default` と `Opacity/*` に束縛）。設計は `docs/components/spinner.md`。Button の Loading 6 variant は `node packages/ui/figma/button-stage.js --swap-spinner` で Icon Before の `Icon/Loader Circle` を `Spinner` インスタンスに差し替えた（セットは再生成せず、本人の手直しを保持）。
 
+2026-11-12（DEV-24）に、テンプレート v3 の文書フレーム `Spinner`（222:873）を `node packages/ui/figma/spinner-doc-stage.js` で作った。Example は径 5 段と Button の Loading、Components は 5 variant に「xs · 12」から「xl · 48」のラベルを付けたもの。Parts は無い。セット本体は `Spinner > Components > Grid` の中に入るので、`spinner-stage.js` は入れ子の中まで探して `(old)` にする（`focus-ring-stage.js` も同じ）。部品を作り直したら、そのあとページも作り直す。
+
 ## Focus Ring ページ（2026-10-05 追加）
 
 `node packages/ui/figma/focus-ring-stage.js` で生成。部品 `Focus Ring` 1 つ（variant なし、角丸 0。ストローク外側 2px を `Border/Width/Focused` と `Color/Border/Focused` に束縛）。角丸は当てる要素で変わるので、置く側のインスタンスで「要素 + 2px」に上書きする（本人決定 2026-10-05）。最初に作った `Radius = 8 / 12 / Full` のセットは `Focus Ring (old)` に改名して残し、2026-10-06 に本人が削除した（tasks/todo.md）。今の Focus Ring ページにあるのは `Focus Ring`（77:2）だけ（2026-10-24 の読み取り、docs/components/README.md §3）。設計は `docs/components/focus-ring.md`。Button の Focused 6 variant は `node packages/ui/figma/button-stage.js --swap-focus` で影 2 段を外してこの部品を絶対配置し、角丸 10 / 14 / 9999 を上書きした。
+
+2026-11-12（DEV-24）に、テンプレート v3 の文書フレーム `Focus Ring`（223:1041）を `node packages/ui/figma/focus-ring-doc-stage.js` で作った。Example は Button の Focused と、角丸を 10 / 14 / 9999 に上書きしたリング。Components は部品 1 つ。Storybook にストーリーが無いので、Header の Storybook の行は隠した。
 
 ## コンポーネントページのテンプレート v3（2026-10-23 承認）
 
@@ -99,7 +107,18 @@
 - Parts: 内部専用の部品があるときだけ置く。
 - （案、2026-11-09、未承認）Code（code layer の実装）と Spec（`docs/components/<部品>.md` の写し）を足す。中身は下の「Code layers と Specs（2026-11-09 案）」。承認されるまで v3 は上の 4 節のまま。
 
-部品は `node packages/ui/figma/doc-page-stage.js` で、ページは `node packages/ui/figma/button-doc-stage.js` で生成する（共通処理は `figma/lib/page.js`）。再生成すると、前のフレームは「(old)」に改名して左へ 9000 ずらす。v2（3 列・Banner・Chip）は承認されなかった。v2 の部品は退避待ちとして `_Doc` に残っている。
+部品は `node packages/ui/figma/doc-page-stage.js` で、ページは `node packages/ui/figma/{button,spinner,focus-ring}-doc-stage.js` で生成する（共通処理は `figma/lib/page.js`）。再生成すると、前のフレームは「(old)」に改名して左へ 9000 ずらす。Example の 1 件ごとに、別の部品（`set`、例: Spinner のページに置く Button）・寸法（`size`）・角丸（`radius`）を指定できる。`header.storybook` を省くと、Storybook の行を隠す（2026-11-12、DEV-24）。
+
+v2（3 列・Banner・Chip）は承認されなかった。2026-11-12（DEV-24）に、使われていない旧部品 12 個を `_Archive` ページ（Internal の末尾）へ名前を変えずに移した。対象は `_Doc/Header (old)`（v1）、`_Doc/Header`（v2）、Section、Axis、Note、Table Row、Banner、Chip、Label、Swatch、Specimen、Bar。インスタンス 72 個は Button ページの「(old)」フレームの中だけにあり、移したあとも参照は切れていない（読み戻しで 0 件）。今の `_Doc` には v3 の 4 部品（Page Header / Section Head / Caption / Caption Strong）だけが残る。`doc-stage.js blocks` を再実行すると旧部品が `_Doc` に作り直されるので、実行しない。
+
+## Foundations ページのテンプレート（2026-11-12 承認、DEV-24）
+
+コンポーネントページと同じ文書フレーム（幅は中身に合わせる、padding `Space/1600`、節の間 `Space/2400`、Light モードを明示）。上から次の順に並べる。
+
+- Header: `_Doc/Page Header`。Storybook のストーリーが無いページでは Storybook の行を隠す。
+- 節: `_Doc/Section Head` の下に、グループを `Space/1200` 間隔で縦に並べる。グループごとに、名前（Caption Strong）と補足（Caption）の下に見本を置く。
+
+見本は、各ページの生成器（`icons-stage.js`・`packages/tokens/figma/palette-stage.js`）が作った枠から `node packages/ui/figma/foundation-doc-stage.js icons|palette` で移す（共通処理は `figma/lib/foundation.js`）。描き直さないので、部品と変数の束縛はそのまま残る。補足を省くと、元のラベルの 2 行目（色相角と作り方など）を使う。元の枠は「(old)」に改名して左へ 9000 ずらす（ラベルだけが残る）。Typography / Spacing & Layout / Elevation のページは、中身ができたときにこの形で作る。
 
 ## Code layers と Specs（2026-11-09 案）
 

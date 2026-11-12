@@ -7,7 +7,9 @@
 //   Parts       — only when the component has Figma-only building blocks (Spinner / Focus Ring have their own pages → not parts)
 // Blocks come from doc-page-stage.js. A *-doc-stage.js script embeds PAGE_LIB and calls `await buildComponentPage(spec)`:
 //   spec = { page, set, width, header: { status, title, summary, updated, storybook },
-//            example: { description, rows: [[{ variant, props }, …], …] },
+//            example: { description, rows: [[{ variant, props, set?, size?: [w, h], radius? }, …], …] },
+//              (set = another component shown in context, e.g. Button with its Focus Ring; size / radius = instance overrides)
+//            header.storybook may be omitted: the Storybook line is then hidden
 //            components: { description, grid: { cols, groups, sub: [[label, height]], colW, rowH, pad, groupStride } },
 //            parts: [{ label, set, variant, props }] }
 // The previous frame / v2 sections are renamed "(old)" and moved 9000 to the left (scripts never delete).
@@ -41,7 +43,7 @@ const __al = (name, dir, gapTok) => { const f = figma.createAutoLayout(dir, { na
 const __pad = (f, tok) => { for (const k of ['paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft']) f.setBoundVariable(k, __v(tok)); };
 const __radius = (f, tok) => { for (const k of ['topLeftRadius', 'topRightRadius', 'bottomLeftRadius', 'bottomRightRadius']) f.setBoundVariable(k, __v(tok)); };
 async function buildComponentPage(spec) {
-  const names = new Set([spec.set, ...(spec.parts ?? []).map((p) => p.set)]);
+  const names = new Set([spec.set, ...(spec.parts ?? []).map((p) => p.set), ...spec.example.rows.flat().filter((e) => e.set).map((e) => e.set)]);
   const sets = await __resolveSets(names);
   const doc = await __docIndex();
   const page = figma.root.children.find((p) => p.name === spec.page); if (!page) throw new Error('page missing: ' + spec.page);
@@ -64,6 +66,7 @@ async function buildComponentPage(spec) {
   const header = __instance(doc, '_Doc/Page Header', 'Status=' + (h.status ?? 'Draft'), { Title: h.title, Summary: h.summary, Updated: 'Updated ' + h.updated });
   frame.appendChild(header); header.name = 'Header';
   if (h.storybook) { const t = header.findOne((n) => n.type === 'TEXT' && n.name === 'Storybook'); await figma.loadFontAsync(t.fontName); t.hyperlink = { type: 'URL', value: h.storybook }; }
+  else header.findOne((n) => n.type === 'TEXT' && n.name === 'Storybook').visible = false;
   // Example: Light | Dark
   const ex = __al('Example', 'VERTICAL', 'Dimension/Space/800'); frame.appendChild(ex);
   ex.appendChild(head('Example', spec.example.description));
@@ -77,7 +80,11 @@ async function buildComponentPage(spec) {
     __pad(f, 'Dimension/Space/1000'); __radius(f, 'Dimension/Radius/300');
     for (const row of spec.example.rows) {
       const r = __al('Row', 'HORIZONTAL', 'Dimension/Space/300'); r.counterAxisAlignItems = 'CENTER'; f.appendChild(r);
-      for (const e of row) r.appendChild(__variantInstance(set, e.variant, e.props));
+      for (const e of row) {
+        const i = __variantInstance(e.set ? sets[e.set] : set, e.variant, e.props); r.appendChild(i);
+        if (e.size) i.resize(e.size[0], e.size[1]);
+        if (e.radius != null) i.cornerRadius = e.radius;
+      }
     }
     f.layoutSizingHorizontal = 'FIXED'; f.resize((W - 24) / 2, f.height); f.layoutSizingVertical = 'HUG';
   }

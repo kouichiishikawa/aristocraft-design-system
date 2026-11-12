@@ -28,7 +28,8 @@ const opacityVars = Object.fromEntries(Object.entries(SPEC.opacity).map(([i, pct
 for (const [, tok] of SPEC.sizes) v(tok);
 if (out.missingVars.length) return out;
 
-const prev = page.children.find((n) => n.type === 'COMPONENT_SET' && n.name === 'Spinner');
+// findOne, not children: the v3 page (spinner-doc-stage.js) nests the set inside Spinner > Components > Grid
+const prev = page.findOne((n) => n.type === 'COMPONENT_SET' && n.name === 'Spinner');
 if (prev) { prev.name = 'Spinner (old)'; out.renamed = prev.id; }
 
 const variants = [];
