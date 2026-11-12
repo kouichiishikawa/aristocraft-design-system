@@ -53,7 +53,12 @@
 - [x] 本人: Figma の `Palette (old)` を削除（47 行目と重複。2026-10-06 に完了済み）
 - [x] 主要部品の variant / 状態 / レスポンシブ設計の案（2026-10-24、docs/components/README.md・proposals.md、DEV-129）。判断待ち 9 点は 2026-10-24 に全部推奨案で決定（README §5 の書き換えは DEV-132）
 - [x] 要件に Figma の Code layers と Specs を組み込む（2026-11-09、PR #18、DEV-338。PF-01 §6・§7・§8、pf-10「Code layers と Specs（2026-11-09 案）」）
-- [ ] Code layer と Spec の節（案）を Button で試し、テンプレート v3 に足すか決める（DEV-339。Figma 先行 → 承認）
+- [x] Code layer と Spec を Button で試す（2026-11-12、PR #20、DEV-339。結果は PF-01 §8・pf-10「Button での試し」）
+- [ ] 本人: テンプレート v3 に Code / Spec の節を足すか、`packages/tokens/build` を改名するか、`.figma/make/` を repo に置くかを決める（DEV-339 の結果から）
+- [x] テンプレート v3 を Spinner / Focus Ring に適用、Icons / Palette を Foundations 版へ（2026-11-12、PR #19、DEV-24）
+- [x] Figma の (old) フレームと旧 `_Doc` 部品を削除、docs を追従（2026-11-12、PR #21、DEV-397）
+- [ ] 本人: 空の `_Archive` ページを Figma で削除する
+- [ ] 本人: Focus Ring の作例で Light 側の Focused の行が詰まって見える件（リングの間 4px）を直すか決める
 
 ## PF-04 技術構成（2026-09-29 完了）
 - [x] モノレポ化（packages/tokens・ui、examples/next・astro）、接頭辞 ac
