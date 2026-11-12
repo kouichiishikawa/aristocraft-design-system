@@ -69,7 +69,7 @@
 
 `packages/ui/icons.json` から `packages/ui/figma/icons-stage.js` で生成。`Icon/*` 71（Lucide）、`Brand/*` 10（Simple Icons + LinkedIn）、`Icon` コンポーネントセット（Size Extra Small / Small / Medium / Large / Extra Large の 5 段 = 12 / 16 / 24 / 32 / 48 を `Dimension/Size/300 / 400 / 600 / 800 / 1200` に束縛、`Glyph` は instance swap）。当初は Small〜Extra Large の 4 段で、2026-09-30 に Extra Small を足して 5 段にした（同じ ID のまま更新）。方針は `docs/icons.md`。
 
-2026-11-12（DEV-24）に Foundations ページのテンプレート（下）へ移した。今の文書フレームは `Icons`（225:7）で、節は Icon（`Icon` セット）と Glyphs（用途別 8 グループ）。見本は描き直さずに移したので、部品 87 個（`Icon` セット・`Icon/*`・`Brand/*`）の ID は変わらない。元の枠は `Library (old)`（24:197、ラベルだけが残る）として x −9000 に退避した。手で削除してよい。
+2026-11-12（DEV-24）に Foundations ページのテンプレート（下）へ移した。今の文書フレームは `Icons`（225:7）で、節は Icon（`Icon` セット）と Glyphs（用途別 8 グループ）。見本は描き直さずに移したので、部品 87 個（`Icon` セット・`Icon/*`・`Brand/*`）の ID は変わらない。元の枠は `Library (old)`（24:197、ラベルだけが残る）として x −9000 に退避した。手で削除してよい。`Library` の並びを作る生成器は無い（docs/icons.md）ので、アイコンを足したら `Icons` の該当グループの Grid に手で入れる。テンプレートを変えて包み直すときは、`foundation-doc-stage.js icons` が今の v3 の枠を元にする（グループは各節の `Groups` の下から名前で探す。Palette も、`palette-stage.js` で作り直していなければ同じ）。
 
 ## Palette ページ（2026-10-05 追加）
 
@@ -89,7 +89,7 @@
 
 `node packages/ui/figma/spinner-stage.js` で生成。セット `Spinner`（Size 5 段を `Dimension/Size` に束縛、点 8 つは `Color/Icon/Default` と `Opacity/*` に束縛）。設計は `docs/components/spinner.md`。Button の Loading 6 variant は `node packages/ui/figma/button-stage.js --swap-spinner` で Icon Before の `Icon/Loader Circle` を `Spinner` インスタンスに差し替えた（セットは再生成せず、本人の手直しを保持）。
 
-2026-11-12（DEV-24）に、テンプレート v3 の文書フレーム `Spinner`（222:873）を `node packages/ui/figma/spinner-doc-stage.js` で作った。Example は径 5 段と Button の Loading、Components は 5 variant に「xs · 12」から「xl · 48」のラベルを付けたもの。Parts は無い。
+2026-11-12（DEV-24）に、テンプレート v3 の文書フレーム `Spinner`（222:873）を `node packages/ui/figma/spinner-doc-stage.js` で作った。Example は径 5 段と Button の Loading、Components は 5 variant に「xs · 12」から「xl · 48」のラベルを付けたもの。Parts は無い。セット本体は `Spinner > Components > Grid` の中に入るので、`spinner-stage.js` は入れ子の中まで探して `(old)` にする（`focus-ring-stage.js` も同じ）。部品を作り直したら、そのあとページも作り直す。
 
 ## Focus Ring ページ（2026-10-05 追加）
 

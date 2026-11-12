@@ -9,6 +9,8 @@
 //   from = name of a group frame inside the source frame; its last child (the Row / Grid) is moved into the new block.
 //   meta omitted = reuse the old label's second text (e.g. the hue angle and method written by palette-stage.js).
 // The source frame (with the old labels left behind) is renamed "(old)" and moved 9000 to the left (scripts never delete).
+// Re-running without a fresh source (Icons has no generator for its Library layout) re-wraps the current v3 frame:
+// its groups are found by title under each section's `Groups`.
 export const FOUNDATION_LIB = String.raw`
 const __vars = await figma.variables.getLocalVariablesAsync();
 const __v = (name) => { const x = __vars.find((y) => y.name === name); if (!x) throw new Error('variable missing: ' + name); return x; };
@@ -31,9 +33,15 @@ const __pad = (f, tok) => { for (const k of ['paddingTop', 'paddingRight', 'padd
 async function buildFoundationPage(spec) {
   const page = figma.root.children.find((p) => p.name === spec.page); if (!page) throw new Error('page missing: ' + spec.page);
   await figma.setCurrentPageAsync(page);
-  const src = page.children.find((n) => n.name === spec.source); if (!src) throw new Error('source missing: ' + spec.source);
-  const groups = {}; for (const g of src.children) groups[g.name] = g;
-  for (const s of spec.sections) for (const g of s.groups) if (!groups[g.from]) throw new Error('group missing: ' + g.from);
+  // Source: a fresh frame from the content generator, else the current v3 frame (re-wrap after a template change)
+  const isV3 = (n) => 'children' in n && n.children.some((c) => c.type === 'INSTANCE' && c.name === 'Header');
+  const src = page.children.find((n) => n.name === spec.source && !isV3(n)) ?? page.children.find((n) => n.name === spec.page && isV3(n));
+  if (!src) throw new Error('source missing: ' + spec.source + ' (or a v3 frame ' + spec.page + ')');
+  const groups = {};
+  if (isV3(src)) { for (const list of src.findAll((n) => n.name === 'Groups')) for (const b of list.children) groups[b.name] = b; }
+  else for (const g of src.children) groups[g.name] = g;
+  const grp = (g) => groups[g.from] ?? (isV3(src) ? groups[g.title] : undefined);
+  for (const s of spec.sections) for (const g of s.groups) if (!grp(g)) throw new Error('group missing: ' + g.from);
   const out = { retired: [src.id], moved: [] };
   src.name += ' (old)'; src.x -= 9000;
   const col = (await figma.variables.getLocalVariableCollectionsAsync()).find((c) => c.name === 'Semantic - Color');
@@ -54,9 +62,10 @@ async function buildFoundationPage(spec) {
       const block = __al(g.title, 'VERTICAL', 'Dimension/Space/400'); list.appendChild(block);
       const label = __al('Label', 'HORIZONTAL', 'Dimension/Space/200'); label.counterAxisAlignItems = 'BASELINE'; block.appendChild(label);
       label.appendChild(__instance('_Doc/Caption Strong', null, { Text: g.title }));
-      const meta = g.meta ?? groups[g.from].children[0].findAll((n) => n.type === 'TEXT')[1]?.characters;
+      const from = grp(g);
+      const meta = g.meta ?? from.children[0].findAll((n) => n.type === 'TEXT')[1]?.characters;
       if (meta) label.appendChild(__instance('_Doc/Caption', null, { Text: meta }));
-      const content = groups[g.from].children[groups[g.from].children.length - 1];
+      const content = from.children[from.children.length - 1];
       block.appendChild(content); out.moved.push(content.id);
     }
     out.sections.push(sec.id);
