@@ -139,8 +139,8 @@
 
 読み取りで分かったこと（直すのは本人。本書では Figma を変えていない）:
 
-- Button ページに古い文書フレームが残っている: frame `Axes (old)` 124:472・`Button (old)` 124:247・`Button (old)` 157:609、instance `Header (old)` 128:392・136:692、section `Example (old)` 128:400・136:710、`Components (old)` 128:474・136:718、`Parts (old)` 128:497
-- _Doc ページに v1・v2 の部品が残っている: v1 `_Doc/Header (old)` 120:29、`_Doc/Note` 120:47、`_Doc/Table Row` 120:58 ほか単体 6、v2 `_Doc/Header` 135:56・Banner 135:57・Chip 135:60（pf-10-figma.md の「退避待ち」）。どれも (old) のフレームからしか使われていない
+- （解消済み、2026-11-12）Button ページに古い文書フレームが残っている: frame `Axes (old)` 124:472・`Button (old)` 124:247・`Button (old)` 157:609、instance `Header (old)` 128:392・136:692、section `Example (old)` 128:400・136:710、`Components (old)` 128:474・136:718、`Parts (old)` 128:497。2026-11-12 に本人の指示で 10 個とも削除した（DEV-397）。今の Button ページにあるのは `Button` 198:722・`Button Spec` 227:870・`Code` 228:871 だけ
+- （解消済み、2026-11-12）_Doc ページに v1・v2 の部品が残っている: v1 `_Doc/Header (old)` 120:29、`_Doc/Note` 120:47、`_Doc/Table Row` 120:58 ほか単体 6、v2 `_Doc/Header` 135:56・Banner 135:57・Chip 135:60。どれも (old) のフレームからしか使われていなかった。DEV-24 で `_Archive` ページへ移し、2026-11-12 に (old) を消してインスタンスが 0 になったのを数えてから 12 個とも削除した（DEV-397、参照切れ 0）。今の `_Doc` には v3 の 4 部品だけがある
 - pf-10-figma.md「Focus Ring ページ」は `Focus Ring (old)` が残っていると書くが、Focus Ring ページにあるのは 77:2 だけ（2026-10-06 に削除済み、todo.md 47 行目）
 - pf-10-figma.md「Icons ページ」は Icon セットの Size を Small / Medium / Large / Extra Large の 4 段と書くが、実物は Extra Small を含む 5 段
 - Cover / Getting Started / Typography / Spacing & Layout / Elevation の 5 ページは空。Palette（61:2）は部品を持たない

@@ -69,7 +69,7 @@
 
 `packages/ui/icons.json` から `packages/ui/figma/icons-stage.js` で生成。`Icon/*` 71（Lucide）、`Brand/*` 10（Simple Icons + LinkedIn）、`Icon` コンポーネントセット（Size Extra Small / Small / Medium / Large / Extra Large の 5 段 = 12 / 16 / 24 / 32 / 48 を `Dimension/Size/300 / 400 / 600 / 800 / 1200` に束縛、`Glyph` は instance swap）。当初は Small〜Extra Large の 4 段で、2026-09-30 に Extra Small を足して 5 段にした（同じ ID のまま更新）。方針は `docs/icons.md`。
 
-2026-11-12（DEV-24）に Foundations ページのテンプレート（下）へ移した。今の文書フレームは `Icons`（225:7）で、節は Icon（`Icon` セット）と Glyphs（用途別 8 グループ）。見本は描き直さずに移したので、部品 87 個（`Icon` セット・`Icon/*`・`Brand/*`）の ID は変わらない。元の枠は `Library (old)`（24:197、ラベルだけが残る）として x −9000 に退避した。手で削除してよい。`Library` の並びを作る生成器は無い（docs/icons.md）ので、アイコンを足したら `Icons` の該当グループの Grid に手で入れる。テンプレートを変えて包み直すときは、`foundation-doc-stage.js icons` が今の v3 の枠を元にする（グループは各節の `Groups` の下から名前で探す。Palette も、`palette-stage.js` で作り直していなければ同じ）。
+2026-11-12（DEV-24）に Foundations ページのテンプレート（下）へ移した。今の文書フレームは `Icons`（225:7）で、節は Icon（`Icon` セット）と Glyphs（用途別 8 グループ）。見本は描き直さずに移したので、部品 87 個（`Icon` セット・`Icon/*`・`Brand/*`）の ID は変わらない。元の枠は `Library (old)`（24:197、ラベルだけが残る）として x −9000 に退避し、2026-11-12 に本人の指示で削除した（DEV-397）。今の Icons ページにある文書フレームは `Icons` だけ。`Library` の並びを作る生成器は無い（docs/icons.md）ので、アイコンを足したら `Icons` の該当グループの Grid に手で入れる。テンプレートを変えて包み直すときは、`foundation-doc-stage.js icons` が今の v3 の枠を元にする（グループは各節の `Groups` の下から名前で探す。Palette も、`palette-stage.js` で作り直していなければ同じ）。
 
 ## Palette ページ（2026-10-05 追加）
 
@@ -79,7 +79,7 @@
 
 再投入: 既存の `Palette` フレームは `Palette (old)` に改名して残す（スクリプトは削除しない）。新しいフレームは右隣に作られるので、見比べてから古いものを手で削除する。2026-10-05 のパレット改訂（docs/pf-08-tokens.md）で再投入済み: `Palette (old)`（61:3）は改訂前、`Palette`（69:2）が現行。`Palette (old)` は 2026-10-06 に本人が削除した（tasks/todo.md）。
 
-2026-11-12（DEV-24）に Foundations ページのテンプレート（下）へ移した。今の文書フレームは `Palette`（225:529）で、節は Neutral（Neutral・Neutral Alpha）と Hues（12 色相）。見本 153 個は描き直さずに移し、153 個すべてが変数に束縛されたままであることを読み戻して確かめた。元の枠は `Palette (old)`（69:2、ラベルだけが残る）として x −9000 に退避した。手で削除してよい。色を変えたら、`palette-stage.js` で再生成し、そのあと `node packages/ui/figma/foundation-doc-stage.js palette` で包み直す（`palette-stage.js` は名前が `Palette` の枠を `(old)` に改名するので、包み直す前の v3 の枠が `(old)` になる）。
+2026-11-12（DEV-24）に Foundations ページのテンプレート（下）へ移した。今の文書フレームは `Palette`（225:529）で、節は Neutral（Neutral・Neutral Alpha）と Hues（12 色相）。見本 153 個は描き直さずに移し、153 個すべてが変数に束縛されたままであることを読み戻して確かめた。元の枠は `Palette (old)`（69:2、ラベルだけが残る）として x −9000 に退避し、2026-11-12 に本人の指示で削除した（DEV-397）。今の Palette ページにある文書フレームは `Palette` だけ。色を変えたら、`palette-stage.js` で再生成し、そのあと `node packages/ui/figma/foundation-doc-stage.js palette` で包み直す（`palette-stage.js` は名前が `Palette` の枠を `(old)` に改名するので、包み直す前の v3 の枠が `(old)` になる）。
 
 ## 変更分だけ再投入する（2026-10-05 追加）
 
@@ -109,7 +109,9 @@
 
 部品は `node packages/ui/figma/doc-page-stage.js` で、ページは `node packages/ui/figma/{button,spinner,focus-ring}-doc-stage.js` で生成する（共通処理は `figma/lib/page.js`）。再生成すると、前のフレームは「(old)」に改名して左へ 9000 ずらす。Example の 1 件ごとに、別の部品（`set`、例: Spinner のページに置く Button）・寸法（`size`）・角丸（`radius`）を指定できる。`header.storybook` を省くと、Storybook の行を隠す（2026-11-12、DEV-24）。
 
-v2（3 列・Banner・Chip）は承認されなかった。2026-11-12（DEV-24）に、使われていない旧部品 12 個を `_Archive` ページ（Internal の末尾）へ名前を変えずに移した。対象は `_Doc/Header (old)`（v1）、`_Doc/Header`（v2）、Section、Axis、Note、Table Row、Banner、Chip、Label、Swatch、Specimen、Bar。インスタンス 72 個は Button ページの「(old)」フレームの中だけにあり、移したあとも参照は切れていない（読み戻しで 0 件）。今の `_Doc` には v3 の 4 部品（Page Header / Section Head / Caption / Caption Strong）だけが残る。`doc-stage.js blocks` を再実行すると旧部品が `_Doc` に作り直されるので、実行しない。
+v2（3 列・Banner・Chip）は承認されなかった。2026-11-12（DEV-24）に、使われていない旧部品 12 個を `_Archive` ページ（Internal の末尾）へ名前を変えずに移した。対象は `_Doc/Header (old)`（v1）、`_Doc/Header`（v2）、Section、Axis、Note、Table Row、Banner、Chip、Label、Swatch、Specimen、Bar。インスタンス 72 個は Button ページの「(old)」フレームの中だけにあり、移したあとも参照は切れていない（読み戻しで 0 件）。
+
+2026-11-12 に本人の指示で、Button ページの (old) 10 個（124:472、124:247、128:392、128:400、128:474、128:497、136:692、136:710、136:718、157:609）を削除し、インスタンスが 0 になったのを数えてから `_Archive` の旧部品 12 個も削除した（DEV-397）。削除後、インスタンスの参照切れは Button 472・Spinner 33・Focus Ring 25 のすべてで 0、どのページにも名前に (old) を含むノードは無い。空になった `_Archive` ページは本人が消す（ページの削除は Agent に禁じられている）ので、本書ではページも無い前提で書く。今の Button ページには `Button`（198:722）、`Button Spec`（227:870）、`Code`（228:871）だけがあり、`_Doc` には v3 の 4 部品（Page Header / Section Head / Caption / Caption Strong）だけがある。`doc-stage.js blocks` を再実行すると旧部品が `_Doc` に作り直されるので、実行しない。
 
 ## Foundations ページのテンプレート（2026-11-12 承認、DEV-24）
 
