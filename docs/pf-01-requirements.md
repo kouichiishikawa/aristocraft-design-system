@@ -88,21 +88,22 @@ Config India 2026（2026-10）で open beta になった 2 つの機能を、§6
 
 - Code layers: MCP からの import はクレジットを消費しない。open beta 中も、作成・編集（Figma Make の agent への指示）はクレジットを消費する。消費量は作業の複雑さで変わる。ヘルプには無料期間の記述は無い
 - Specs: 手で書く・直すのはクレジットを消費しない。Figma の agent を使うと消費する
-- 未確認: Figma MCP の `use_figma`（figma-spec スキル）で Spec を書くときにクレジットを消費するか。最初の同期の前後で、Figma の設定画面のクレジット残量を比べて確かめる
+- 未確認: Figma MCP の `use_figma`（figma-spec スキル）で Spec を書くとき、MCP で import するとき、Play でプレビューするときにクレジットを消費するか。2026-11-12 の Button の試し（DEV-339）では、新しい Mac の Chrome が Figma にサインインできず使う前の残量を読めなかったので、比べていない。次の部品で同期するときに前後の残量を比べる
 
 使える条件（公式ヘルプ、2026-11-09 確認）:
 
 - 両方とも Starter・Professional・Organization・Enterprise で使える。書く・直すにはファイルの編集権限が要る
 - Code layers を MCP で import するには Full seat が要る。import には 10 分以上かかることがあり、プロジェクトによっては手直しが要る
-- Code layers に入れられるのは、install と run ができ、入口と build スクリプトを持つ Web アプリ（3 GB 未満）。public のリポジトリは GitHub をつながなくても URL で clone できる（push と PR はできない）。本リポジトリは public なので、この方法で足りる
+- Code layers に入れられるのは、install と run ができ、入口と build スクリプトを持つ Web アプリ（3 GB 未満）。public のリポジトリは、Figma の画面からなら GitHub をつながなくても URL で clone できる（push と PR はできない）。MCP の import は URL の clone ではなく、手元のプロジェクトを圧縮してアップロードする方式（2026-11-12 に DEV-339 で確認）
 
-未確認（実地の検証は別 issue）:
+Button で試した結果（2026-11-12、DEV-339。手順と詳細は `docs/pf-10-figma.md`「Code layers と Specs」）:
 
-- `packages/ui` の Storybook（npm workspaces のモノレポ）がそのまま code layer で動くか。ヘルプに Storybook の記述は無い
-- 本人の Figma の seat が Full seat か
-- code layer の中で Figma variables を参照できるか
-- Plugin API（`use_figma`）から code layer を作れるか
-- Dev Mode・Code Connect との関係（Code Connect は Organization 以上なので、どちらにしても使わない）
+- seat: `whoami` で hicard（Professional）は Full seat、`specs_enabled` と `code_layers_enabled` は true
+- Storybook（npm workspaces のモノレポ）は code layer として import でき、Play で表示された。ただしそのままでは通らない。(1) プロジェクトの根に `.figma/make/` の 4 つのスクリプト（install / dev / deploy-preview / deploy）が要る。(2) Figma の除外リストに `build` と `dist` があり、`packages/tokens/build`（Style Dictionary の処理本体）が送られない。試しでは一時的な写しの中だけで `sd-build` に改名して通した。続けて使うなら repo 側の対応が要る（pf-10 の案）
+- Spec: `docs/components/button.md` の写しを埋め込み、`getContent` の本文が末尾の改行を除いて手元の Markdown と完全に一致した。一致の基準は「両側の末尾の空白を除いた本文が文字単位で同じ」とする
+- code layer の中で Figma variables は参照できない。Plugin API の型 `CODE_INSTANCE` は塗りも変数の束縛も持たず、ヘルプにも変数の記述は無い。トークンは repo の CSS 変数（`--ac-*`）として code layer に入る
+- Plugin API（`use_figma`）から code layer は作れない。`figma` に作る関数が無い。作るのは MCP の `send_code_to_figma` だけ。位置の移動は Plugin API でできる
+- Dev Mode: ヘルプに記述が無く、Dev Mode の画面では確かめていない（未確認）。Code Connect は Organization 以上なので使わない
 
 出典:
 
