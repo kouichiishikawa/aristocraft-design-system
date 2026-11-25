@@ -60,6 +60,11 @@
 - [ ] 本人: 空の `_Archive` ページを Figma で削除する
 - [ ] 本人: Focus Ring の作例で Light 側の Focused の行が詰まって見える件（リングの間 4px）を直すか決める
 
+## A2UI 対応（2026-11-25 スコープに追加、DS v1 の完成条件。親 DEV-609）
+- [ ] 調査と方針を ADR にまとめる（DEV-610）
+- [ ] 部品を A2UI のカタログとして実装する（DEV-611。DEV-610 のあと）
+- [ ] Storybook に A2UI の JSON から描画する例を置き、CI で検査する（DEV-612。DEV-611 のあと）
+
 ## PF-04 技術構成（2026-09-29 完了）
 - [x] モノレポ化（packages/tokens・ui、examples/next・astro）、接頭辞 ac
 - [x] @aristocraft/ui: Button、tsdown、Storybook 10 + vitest + a11y、GitHub Pages 公開
